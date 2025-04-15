@@ -20,7 +20,6 @@
         ],
         "functions": [
             {
-                "async": "callback",
                 "description": "Creates an alarm. After the delay is expired, the onAlarm event is fired. If there is another alarm with the same name (or no name if none is specified), it will be cancelled and replaced by this alarm.",
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/create",
                 "name": "create",
@@ -52,12 +51,6 @@
                             }
                         },
                         "type": "object"
-                    },
-                    {
-                        "name": "callback",
-                        "optional": true,
-                        "parameters": [],
-                        "type": "function"
                     }
                 ],
                 "support": {
