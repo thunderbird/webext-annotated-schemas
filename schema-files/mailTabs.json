@@ -146,7 +146,6 @@
                         "parameters": [
                             {
                                 "$ref": "mailTabs.MailTab",
-                                "description": "This may return undefined",
                                 "optional": true
                             }
                         ],
@@ -258,7 +257,7 @@
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/mailTabs.html#getselectedfolders-tabid",
                 "async": "callback",
-                "description": "Lists the selected folders in the folder pane.",
+                "description": "Lists the selected folders in the folder pane. Does not include folders which are context-clicked, but not selected. The context-clicked folders are always returned by the $(ref:menus.onClicked) event of the menus API.",
                 "name": "getSelectedFolders",
                 "parameters": [
                     {
@@ -293,7 +292,7 @@
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/mailTabs.html#getselectedmessages-tabid",
                 "async": "callback",
-                "description": "Lists the selected messages in the current folder.",
+                "description": "Lists the selected messages in the current folder. Includes messages in collapsed threads. Does not include messages which are context-clicked, but not selected. The context-clicked messages are always returned by the $(ref:menus.onClicked) event of the menus API.",
                 "name": "getSelectedMessages",
                 "parameters": [
                     {
@@ -325,7 +324,7 @@
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/mailTabs.html#setselectedmessages-tabid-messageids",
                 "async": true,
-                "description": "Selects none, one or multiple messages.",
+                "description": "Selects none, one or multiple messages. Opens collapsed threads to show the selection, if required.",
                 "name": "setSelectedMessages",
                 "parameters": [
                     {

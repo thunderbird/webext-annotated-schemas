@@ -138,6 +138,62 @@
         ],
         "functions": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/commands.html#getall",
+                "async": "callback",
+                "description": "Returns all the registered extension commands for this extension and their shortcut (if active).",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/getAll",
+                "name": "getAll",
+                "parameters": [
+                    {
+                        "description": "Called to return the registered commands.",
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "items": {
+                                    "$ref": "Command"
+                                },
+                                "name": "commands",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "support": {
+                    "version_added": "48"
+                },
+                "type": "function"
+            },
+            {
+                "async": true,
+                "description": "Open extension shortcuts configuration page.",
+                "name": "openShortcutSettings",
+                "parameters": [],
+                "type": "function"
+            },
+            {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/commands.html#reset-name",
+                "async": true,
+                "description": "Reset a command's details to what is specified in the manifest.",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/reset",
+                "name": "reset",
+                "parameters": [
+                    {
+                        "description": "The name of the command.",
+                        "name": "name",
+                        "support": {
+                            "version_added": true
+                        },
+                        "type": "string"
+                    }
+                ],
+                "support": {
+                    "version_added": "60"
+                },
+                "type": "function"
+            },
+            {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/commands.html#update-detail",
                 "async": true,
                 "description": "Update the details of an already defined command.",
@@ -172,55 +228,6 @@
                 ],
                 "support": {
                     "version_added": "60"
-                },
-                "type": "function"
-            },
-            {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/commands.html#reset-name",
-                "async": true,
-                "description": "Reset a command's details to what is specified in the manifest.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/reset",
-                "name": "reset",
-                "parameters": [
-                    {
-                        "description": "The name of the command.",
-                        "name": "name",
-                        "support": {
-                            "version_added": true
-                        },
-                        "type": "string"
-                    }
-                ],
-                "support": {
-                    "version_added": "60"
-                },
-                "type": "function"
-            },
-            {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/commands.html#getall",
-                "async": "callback",
-                "description": "Returns all the registered extension commands for this extension and their shortcut (if active).",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/getAll",
-                "name": "getAll",
-                "parameters": [
-                    {
-                        "description": "Called to return the registered commands.",
-                        "name": "callback",
-                        "optional": true,
-                        "parameters": [
-                            {
-                                "items": {
-                                    "$ref": "Command"
-                                },
-                                "name": "commands",
-                                "type": "array"
-                            }
-                        ],
-                        "type": "function"
-                    }
-                ],
-                "support": {
-                    "version_added": "48"
                 },
                 "type": "function"
             }

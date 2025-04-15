@@ -31,7 +31,7 @@
         "events": [
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/tabs.html#oncreated-tab",
-                "description": "Fired when a tab is created. Note that the tab's URL may not be set at the time this event fired, but you can listen to onUpdated events to be notified when a URL is set.",
+                "description": "Fired when a tab is created. The tab may still be loading, with its title being <var>loading...</var> and its URL being <var>about:blank</var>. To detect when the tab has finished loading, listen to the $(ref:tabs.onUpdated) event.",
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onCreated",
                 "name": "onCreated",
                 "parameters": [
@@ -337,7 +337,7 @@
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/tabs.html#getcurrent",
                 "async": "callback",
-                "description": "Gets the tab that this script call is being made from. May be <var>undefined</var> if called from a non-tab context (for example: a background page or popup view).",
+                "description": "Gets the tab that this script call is being made from. Returns <var>undefined</var> if called from a non-tab context (for example a background page or a popup view).",
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/getCurrent",
                 "name": "getCurrent",
                 "parameters": [
@@ -347,7 +347,6 @@
                         "parameters": [
                             {
                                 "$ref": "Tab",
-                                "description": "This may return undefined",
                                 "name": "tab",
                                 "optional": true
                             }
@@ -467,7 +466,7 @@
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/tabs.html#create-createproperties",
                 "async": "callback",
-                "description": "Creates a new content tab. Use the $(doc:messageDisplay) to open messages. Only supported in <var>normal</var> windows. Same-site links in the loaded page are opened within Thunderbird, all other links are opened in the user's default browser. To override this behavior, add-ons have to register a <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1618828#c3'>content script</a> , capture click events and handle them manually.",
+                "description": "Creates a new content tab. To create message tabs, use the $(ref:messageDisplay.open). Only supported in <var>normal</var> windows. Same-site links in the loaded page are opened within Thunderbird, all other links are opened in the user's default browser. To override this behavior, add-ons have to register a <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1618828#c3'>content script</a> , capture click events and handle them manually.",
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/create",
                 "name": "create",
                 "parameters": [
@@ -481,7 +480,7 @@
                                 "type": "boolean"
                             },
                             "cookieStoreId": {
-                                "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id the new tab should use. Either a custom id created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or a built-in one: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>. **Note:** The naming pattern was deliberately not changed for Thunderbird, but kept for compatibility reasons.",
+                                "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id the new tab should use. Either a custom id created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or a built-in one: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>. **Note:** The naming pattern was deliberately not changed for Thunderbird, but kept for compatibility reasons. The <permission>cookies</permission> permission is required to be able to specify this property. Furthermore, the <permission>contextualIdentities</permission> permission should be requested, to enable the contextual identities feature (enabled by default only on Thunderbird Daily).",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -490,6 +489,16 @@
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
+                            },
+                            "linkHandler": {
+                                "description": "Thunderbird is a mail client, not a browser. It is possible to load a web page, but opening follow-up pages through hyperlinks should be handled by the user's default browser. This property specifies to what extent this behavior should be enforced. The default <var>balanced</var> link handler will open links to the same host directly in Thunderbird, everything else will be opened in the user's default browser. A <var>relaxed</var> link handler will open all links inside of Thunderbird, a <var>strict</var> link handler will open all links in the user's default browser, except links to the same page.",
+                                "enum": [
+                                    "strict",
+                                    "balanced",
+                                    "relaxed"
+                                ],
+                                "optional": true,
+                                "type": "string"
                             },
                             "selected": {
                                 "deprecated": "Please use <var>createProperties.active</var>.",
@@ -521,7 +530,7 @@
                         "parameters": [
                             {
                                 "$ref": "Tab",
-                                "description": "Details about the created tab. Will contain the ID of the new tab.",
+                                "description": "A Promise that will be fulfilled with a $(ref:tabs.Tab) object containing details about the created tab. If the tab could not be created (for example, because it was added to a non-normal window) the promise will be rejected with an error message. The returned promise resolves as soon as the tab has been created. The tab may still be loading, with its title being <var>loading...</var> and its URL being <var>about:blank</var>. To detect when the tab has finished loading, listen to the $(ref:tabs.onUpdated) event before creating the tab.",
                                 "name": "tab"
                             }
                         ],

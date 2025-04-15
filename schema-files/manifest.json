@@ -66,6 +66,7 @@
                         "type": "integer"
                     },
                     "name": {
+                        "description": "Name must be at least 2, and should be at most 75 characters",
                         "optional": false,
                         "preprocess": "localize",
                         "type": "string"
@@ -96,50 +97,48 @@
                                 "additionalProperties": {
                                     "$ref": "UnrecognizedProperty"
                                 },
+                                "postprocess": "checkRequiredManifestBackgroundKeys",
                                 "properties": {
                                     "page": {
-                                        "$ref": "ExtensionURL"
+                                        "$ref": "ExtensionURL",
+                                        "optional": true
                                     },
                                     "persistent": {
                                         "default": true,
                                         "optional": true,
                                         "type": "boolean"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            {
-                                "additionalProperties": {
-                                    "$ref": "UnrecognizedProperty"
-                                },
-                                "properties": {
-                                    "persistent": {
-                                        "default": true,
+                                    },
+                                    "preferred_environment": {
+                                        "items": {
+                                            "enum": [
+                                                "service_worker",
+                                                "document"
+                                            ],
+                                            "onError": "warn",
+                                            "type": "string"
+                                        },
                                         "optional": true,
-                                        "type": "boolean"
+                                        "type": "array"
                                     },
                                     "scripts": {
                                         "items": {
                                             "$ref": "ExtensionURL"
                                         },
+                                        "optional": true,
                                         "type": "array"
                                     },
+                                    "service_worker": {
+                                        "$ref": "ExtensionURL",
+                                        "optional": true
+                                    },
                                     "type": {
+                                        "description": "Only supported for page/scripts; not for service_worker yet, see bug 1775574",
                                         "enum": [
                                             "module",
                                             "classic"
                                         ],
                                         "optional": true,
                                         "type": "string"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            {
-                                "postprocess": "requireBackgroundServiceWorkerEnabled",
-                                "properties": {
-                                    "service_worker": {
-                                        "$ref": "ExtensionURL"
                                     }
                                 },
                                 "type": "object"
@@ -365,6 +364,15 @@
             {
                 "choices": [
                     {
+                        "enum": [],
+                        "type": "string"
+                    }
+                ],
+                "id": "OptionalOnlyPermission"
+            },
+            {
+                "choices": [
+                    {
                         "enum": [
                             "idle"
                         ],
@@ -394,6 +402,9 @@
                 "choices": [
                     {
                         "$ref": "OptionalPermission"
+                    },
+                    {
+                        "$ref": "OptionalOnlyPermission"
                     },
                     {
                         "$ref": "MatchPattern"

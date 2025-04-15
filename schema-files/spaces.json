@@ -2,7 +2,7 @@
     {
         "functions": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/spaces.html#create-name-defaulturl-buttonproperties",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/spaces.html#create-name-tabproperties-buttonproperties",
                 "async": "callback",
                 "description": "Creates a new space and adds its button to the spaces toolbar.",
                 "name": "create",
@@ -14,14 +14,21 @@
                         "type": "string"
                     },
                     {
-                        "description": "The default space url, loaded into a tab when the button in the spaces toolbar is clicked. Supported are <var>https://</var> and <var>http://</var> links, as well as links to WebExtension pages.",
-                        "name": "defaultUrl",
-                        "type": "string"
+                        "choices": [
+                            {
+                                "$ref": "spaces.SpaceTabProperties"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "description": "The properties for the new tab being opened, when the associated button in the spaces toolbar is clicked. Either a <em>string</em> specifiying the default URL, or a $(ref:spaces.SpaceTabProperties) object. The URL may point to a WebExtension page or a web page.",
+                        "name": "tabProperties"
                     },
                     {
-                        "$ref": "spaces.ButtonProperties",
+                        "$ref": "spaces.SpaceButtonProperties",
                         "default": {},
-                        "description": "Properties of the button for the new space.",
+                        "description": "Properties of the button in the spaces toolbar for the new space.",
                         "name": "buttonProperties",
                         "optional": true
                     },
@@ -151,7 +158,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/spaces.html#update-spaceid-defaulturl-buttonproperties",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/spaces.html#update-spaceid-tabproperties-buttonproperties",
                 "async": true,
                 "description": "Updates the specified space. Throws an exception if the requested space does not exist or was not created by this extension.",
                 "name": "update",
@@ -163,14 +170,23 @@
                         "type": "integer"
                     },
                     {
-                        "description": "The default space url, loaded into a tab when the button in the spaces toolbar is clicked. Supported are <var>https://</var> and <var>http://</var> links, as well as links to WebExtension pages.",
-                        "name": "defaultUrl",
-                        "optional": true,
-                        "type": "string"
+                        "choices": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "$ref": "spaces.SpaceTabProperties"
+                            },
+                            {
+                                "$ref": "spaces.SpaceButtonProperties"
+                            }
+                        ],
+                        "description": "The properties for the new tab being opened, when the associated button in the spaces toolbar is clicked. Either a <em>string</em> specifiying the default URL, or a $(ref:spaces.SpaceTabProperties) object. The URL may point to a WebExtension page or a web page.",
+                        "name": "tabProperties"
                     },
                     {
-                        "$ref": "spaces.ButtonProperties",
-                        "description": "Only specified button properties will be updated.",
+                        "$ref": "spaces.SpaceButtonProperties",
+                        "description": "Properties of the button in the spaces toolbar for the specified space Only specified button properties will be updated.",
                         "name": "buttonProperties",
                         "optional": true
                     }
@@ -221,7 +237,35 @@
         "namespace": "spaces",
         "types": [
             {
-                "id": "ButtonProperties",
+                "description": "Properties for the new tab being opened by clicking on the associated button in the spaces toolbar.",
+                "id": "SpaceTabProperties",
+                "properties": {
+                    "cookieStoreId": {
+                        "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id used by the tab. Either a custom id created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or a built-in one: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>. **Note:** The naming pattern was deliberately not changed for Thunderbird, but kept for compatibility reasons. The <permission>cookies</permission> permission is required to be able to specify this property. Furthermore, the <permission>contextualIdentities</permission> permission should be requested, to enable the contextual identities feature (enabled by default only on Thunderbird Daily).",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "linkHandler": {
+                        "description": "Thunderbird is a mail client, not a browser. It is possible to load a web page, but opening follow-up pages through hyperlinks should be handled by the user's default browser. This property specifies to what extent this behavior should be enforced. The default <var>balanced</var> link handler will open links to the same host directly in Thunderbird, everything else will be opened in the user's default browser. A <var>relaxed</var> link handler will open all links inside of Thunderbird, a <var>strict</var> link handler will open all links in the user's default browser, except links to the same page.",
+                        "enum": [
+                            "strict",
+                            "balanced",
+                            "relaxed"
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "The default URL. May point to a WebExtension page or a web page.",
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "description": "Properties of a button in the spaces toolbar.",
+                "id": "SpaceButtonProperties",
                 "properties": {
                     "badgeBackgroundColor": {
                         "choices": [
@@ -263,47 +307,6 @@
                     "title": {
                         "description": "The title for the button in the spaces toolbar, used in the tooltip of the button and as the displayed name in the overflow menu. Reset to the name of the extension, when set to an empty string.",
                         "optional": true,
-                        "type": "string"
-                    }
-                },
-                "type": "object"
-            },
-            {
-                "id": "SpaceButtonProperties",
-                "properties": {
-                    "badgeBackgroundColor": {
-                        "choices": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "$ref": "spaces.ColorArray"
-                            }
-                        ],
-                        "description": "Sets the background color of the badge. Can be specified as an array of four integers in the range [0,255] that make up the RGBA color of the badge. For example, opaque red is <var>[255, 0, 0, 255]</var>. Can also be a string with an HTML color name (<var>red</var>) or a HEX color value (<var>#FF0000</var> or <var>#F00</var>). Reset when set to <var>null</var>.",
-                        "optional": "omit-key-if-missing"
-                    },
-                    "badgeText": {
-                        "description": "Sets the badge text for the button in the spaces toolbar. The badge is displayed on top of the icon. Any number of characters can be set, but only about four can fit in the space. Removed when set to <var>null</var>.",
-                        "optional": "omit-key-if-missing",
-                        "type": "string"
-                    },
-                    "defaultIcons": {
-                        "$ref": "manifest.IconPath",
-                        "description": "The paths to one or more icons for the button in the spaces toolbar. Reset to the extension icon, when set to <var>null</var>.",
-                        "optional": "omit-key-if-missing"
-                    },
-                    "themeIcons": {
-                        "description": "Specifies dark and light icons for the button in the spaces toolbar to be used with themes: The <var>light</var> icons will be used on dark backgrounds and vice versa. At least the set for <em>16px</em> icons should be specified. The set for <em>32px</em> icons will be used on screens with a very high pixel density, if specified. Reset when set to <var>null</var>.",
-                        "items": {
-                            "$ref": "manifest.ThemeIcons"
-                        },
-                        "optional": "omit-key-if-missing",
-                        "type": "array"
-                    },
-                    "title": {
-                        "description": "The title for the button in the spaces toolbar, used in the tooltip of the button and as the displayed name in the overflow menu. Reset to the name of the extension, when set to <var>null</var>.",
-                        "optional": "omit-key-if-missing",
                         "type": "string"
                     }
                 },

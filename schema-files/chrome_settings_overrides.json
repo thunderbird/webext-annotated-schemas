@@ -33,10 +33,18 @@
                                         "type": "string"
                                     },
                                     "favicon_url": {
-                                        "format": "url",
+                                        "choices": [
+                                            {
+                                                "format": "relativeUrl",
+                                                "type": "string"
+                                            },
+                                            {
+                                                "format": "strictRelativeUrl",
+                                                "type": "string"
+                                            }
+                                        ],
                                         "optional": true,
-                                        "preprocess": "localize",
-                                        "type": "string"
+                                        "preprocess": "localize"
                                     },
                                     "image_url": {
                                         "deprecated": "Unsupported on Thunderbird.",

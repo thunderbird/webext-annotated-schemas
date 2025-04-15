@@ -102,6 +102,96 @@
                     "version_added": true
                 },
                 "type": "function"
+            },
+            {
+                "async": "callback",
+                "description": "Decode the provided header into a readable format according to RFC 2047.",
+                "name": "decodeMimeHeader",
+                "parameters": [
+                    {
+                        "name": "headerName",
+                        "type": "string"
+                    },
+                    {
+                        "choices": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        ],
+                        "name": "headerValue"
+                    },
+                    {
+                        "description": "Headers containing multiple mailbox strings need special handling. For example the header <var>=?UTF-8?Q?H=C3=B6rst=2C_Kenny?= <K.Hoerst@invalid>, new@thunderbird.bug</var> will be wrongly decoded to <var>Hörst, Kenny <K.Hoerst@invalid>, new@thunderbird.bug</var>, corrupting the structure of the first mailbox string. This option overrides the default behavior of treating the headers defined in $(ref:messengerUtilities.MailboxHeaders) as mailbox headers.",
+                        "name": "isMailBoxHeader",
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "async": "callback",
+                "description": "Encode the provided header according to RFC 2047.",
+                "name": "encodeMimeHeader",
+                "parameters": [
+                    {
+                        "name": "headerName",
+                        "type": "string"
+                    },
+                    {
+                        "choices": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        ],
+                        "name": "headerValue"
+                    },
+                    {
+                        "description": "Headers containing multiple mailbox strings need special handling. This option overrides the default behavior of treating the headers defined in $(ref:messengerUtilities.MailboxHeaders) as mailbox headers.",
+                        "name": "isMailBoxHeader",
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
             }
         ],
         "namespace": "messengerUtilities",
@@ -130,6 +220,31 @@
                     }
                 },
                 "type": "object"
+            },
+            {
+                "description": "MIME headers, which by default are treated as containing one or more mailbox strings.",
+                "enum": [
+                    "bcc",
+                    "cc",
+                    "from",
+                    "reply-to",
+                    "resent-bcc",
+                    "resent-cc",
+                    "resent-from",
+                    "resent-reply-to",
+                    "resent-sender",
+                    "resent-to",
+                    "sender",
+                    "to",
+                    "approved",
+                    "disposition-notification-to",
+                    "delivered-to",
+                    "return-receipt-to",
+                    "mail-reply-to",
+                    "mail-followup-to"
+                ],
+                "id": "MailboxHeaders",
+                "type": "string"
             }
         ]
     }
