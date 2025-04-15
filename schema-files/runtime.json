@@ -142,6 +142,20 @@
                 "type": "function"
             },
             {
+                "description": "Fired when a connection is made from a USER_SCRIPT world registered through the userScripts API.",
+                "name": "onUserScriptConnect",
+                "parameters": [
+                    {
+                        "$ref": "Port",
+                        "name": "port"
+                    }
+                ],
+                "permissions": [
+                    "userScripts"
+                ],
+                "type": "function"
+            },
+            {
                 "description": "Fired when a connection is made from another extension.",
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onConnectExternal",
                 "name": "onConnectExternal",
@@ -219,6 +233,36 @@
                 },
                 "support": {
                     "version_added": "54"
+                },
+                "type": "function"
+            },
+            {
+                "description": "Fired when a message is sent from a USER_SCRIPT world registered through the userScripts API.",
+                "name": "onUserScriptMessage",
+                "parameters": [
+                    {
+                        "description": "The message sent by the calling script.",
+                        "name": "message",
+                        "optional": true,
+                        "type": "any"
+                    },
+                    {
+                        "$ref": "MessageSender",
+                        "name": "sender"
+                    },
+                    {
+                        "description": "Function to call (at most once) when you have a response. The argument should be any JSON-ifiable object. If you have more than one <code>onMessage</code> listener in the same document, then only one may send a response. This function becomes invalid when the event listener returns, unless you return true from the event listener to indicate you wish to send a response asynchronously (this will keep the message channel open to the other end until <code>sendResponse</code> is called).",
+                        "name": "sendResponse",
+                        "type": "function"
+                    }
+                ],
+                "permissions": [
+                    "userScripts"
+                ],
+                "returns": {
+                    "description": "Return true from the event listener if you wish to call <code>sendResponse</code> after the event listener returns.",
+                    "optional": true,
+                    "type": "boolean"
                 },
                 "type": "function"
             },
@@ -963,6 +1007,11 @@
                     },
                     "url": {
                         "description": "The URL of the page or frame that opened the connection. If the sender is in an iframe, it will be iframe's URL not the URL of the page which hosts it.",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "userScriptWorldId": {
+                        "description": "The worldId of the USER_SCRIPT world that sent the message. Only present on onUserScriptMessage and onUserScriptConnect (in port.sender) events.",
                         "optional": true,
                         "type": "string"
                     }

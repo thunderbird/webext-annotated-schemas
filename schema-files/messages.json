@@ -26,7 +26,7 @@
     {
         "events": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#onupdated-message-changedproperties",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#onupdated-message-changedproperties-oldproperties",
                 "description": "Fired when one or more properties of a message have been updated.",
                 "name": "onUpdated",
                 "parameters": [
@@ -37,6 +37,10 @@
                     {
                         "$ref": "messages.MessageProperties",
                         "name": "changedProperties"
+                    },
+                    {
+                        "$ref": "messages.MessageProperties",
+                        "name": "oldProperties"
                     }
                 ],
                 "support": {
@@ -108,7 +112,7 @@
             },
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#onnewmailreceived-folder-messages",
-                "description": "Fired when a new message is received, and has been through junk classification and message filters.",
+                "description": "Fired when a new message is received, and has been handled by message filters and junk classification. Filters running after junk classification may move the message again.",
                 "extraParameters": [
                     {
                         "description": "Monitor all folders (including all special use folders as defined by $(ref:folders.MailFolderSpecialUse)) instead of just inbox folders and normal folders.",
@@ -249,8 +253,18 @@
                         "name": "options",
                         "optional": true,
                         "properties": {
+                            "decodeContent": {
+                                "description": "Whether to decode quoted-printable or base64 encoded content of message parts. Defaults to <var>true</var>.",
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "decodeHeaders": {
+                                "description": "Whether to decode RFC 2047 encoded headers of message parts. Defaults to <var>true</var>. **Note:** Automatic decoding of headers containing a list of comma separated mailbox strings can have unwanted side effects. Example: <literalinclude>includes/messages/badHeader.js<lang>JavaScript</lang></literalinclude>",
+                                "optional": true,
+                                "type": "boolean"
+                            },
                             "decrypt": {
-                                "description": "Whether the message should be decrypted. If the message could not be decrypted, its parts are omitted. Defaults to true.",
+                                "description": "Whether the message should be decrypted. If the message could not be decrypted, its parts are omitted. Defaults to <var>true</var>.",
                                 "optional": true,
                                 "type": "boolean"
                             }
@@ -274,14 +288,22 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#getraw-messageid-options",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#getraw-message-options",
                 "async": "callback",
-                "description": "Returns the unmodified source of a message. Throws if the message could not be read, for example due to network issues.",
+                "description": "Returns the raw content of a message. Throws if the message could not be read, for example due to network issues.",
                 "name": "getRaw",
                 "parameters": [
                     {
-                        "$ref": "messages.MessageId",
-                        "name": "messageId"
+                        "choices": [
+                            {
+                                "$ref": "messages.MessageId"
+                            },
+                            {
+                                "$ref": "messages.MessagePart"
+                            }
+                        ],
+                        "description": "Either a $(ref:messages.MessageId) of an existing message, or a $(ref:messages.MessagePart) with raw header and raw content data representing a full RFC 822 message (the provided data will be used as-is without applying any further encoding). See the <var>decodeHeaders</var> and <var>decodeContent</var> options of $(ref:messages.getFull) for further details on how to retrieve a $(ref:messages.MessagePart) with raw values. You can use $(ref:messengerUtilities.decodeMimeHeader) and $(ref:messengerUtilities.encodeMimeHeader) to manipulate a raw MessagePart.",
+                        "name": "message"
                     },
                     {
                         "name": "options",
@@ -399,7 +421,7 @@
                     },
                     {
                         "name": "partName",
-                        "pattern": "^\\d+(\\.\\d+)*$",
+                        "pattern": "^\\d+(\\.\\d+\\$?)*$",
                         "type": "string"
                     },
                     {
@@ -688,7 +710,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#move-messageids-folderid",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#move-messageids-folderid-options",
                 "async": true,
                 "description": "Moves messages to a specified folder. If the messages cannot be removed from the source folder, they will be copied instead of moved. Moving external messages will throw an <em>ExtensionError</em>.",
                 "name": "move",
@@ -705,6 +727,18 @@
                         "$ref": "folders.MailFolderId",
                         "description": "The folder to move the messages to.",
                         "name": "folderId"
+                    },
+                    {
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "isUserAction": {
+                                "description": "Whether this move operation should be treated as a user action, for example allowing undo.",
+                                "optional": true,
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
                     }
                 ],
                 "permissions": [
@@ -717,7 +751,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#copy-messageids-folderid",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#copy-messageids-folderid-options",
                 "async": true,
                 "description": "Copies messages to a specified folder.",
                 "name": "copy",
@@ -734,6 +768,18 @@
                         "$ref": "folders.MailFolderId",
                         "description": "The folder to copy the messages to.",
                         "name": "folderId"
+                    },
+                    {
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "isUserAction": {
+                                "description": "Whether this copy operation should be treated as a user action, for example allowing undo.",
+                                "optional": true,
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
                     }
                 ],
                 "permissions": [
@@ -746,9 +792,9 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#delete-messageids-skiptrash",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#delete-messageids-options",
                 "async": true,
-                "description": "Deletes messages permanently, or moves them to the trash folder (honoring the account's deletion behavior settings). Deleting external messages will throw an <em>ExtensionError</em>. The <var>skipTrash</var> parameter allows immediate permanent deletion, bypassing the trash folder.",
+                "description": "Deletes messages permanently, or moves them to the trash folder (honoring the account's deletion behavior settings). Deleting external messages will throw an <em>ExtensionError</em>. The <var>deletePermanently</var> parameter allows immediate permanent deletion, bypassing the trash folder.",
                 "name": "delete",
                 "parameters": [
                     {
@@ -760,10 +806,30 @@
                         "type": "array"
                     },
                     {
-                        "description": "If true, the message will be deleted permanently, regardless of the account's deletion behavior settings.",
-                        "name": "skipTrash",
-                        "optional": true,
-                        "type": "boolean"
+                        "choices": [
+                            {
+                                "deprecated": "Specify the options object instead of a plain boolean to delete messages permanently.",
+                                "description": "Whether the message will be deleted permanently, regardless of the account's deletion behavior settings.",
+                                "type": "boolean"
+                            },
+                            {
+                                "properties": {
+                                    "deletePermanently": {
+                                        "description": "Whether the message will be deleted permanently, regardless of the account's deletion behavior settings. Use this with care!",
+                                        "optional": true,
+                                        "type": "boolean"
+                                    },
+                                    "isUserAction": {
+                                        "description": "Whether this copy operation should be treated as a user action, for example allowing undo. Note: Deleting messages permanently cannot be undone!",
+                                        "optional": true,
+                                        "type": "boolean"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "name": "options",
+                        "optional": true
                     }
                 ],
                 "permissions": [
@@ -777,7 +843,7 @@
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#import-file-folderid-properties",
                 "async": "callback",
-                "description": "Imports a message into a local Thunderbird folder. To import a message into an IMAP folder, add it to a local folder first and then move it to the IMAP folder.",
+                "description": "Imports a message into a folder. Supports local folders, POP and IMAP folders. Throws, if the destination folder already contains a message with the Message-ID of the message being imported.",
                 "name": "import",
                 "parameters": [
                     {
@@ -992,7 +1058,7 @@
                 "id": "MessagePart",
                 "properties": {
                     "body": {
-                        "description": "The content of the part.",
+                        "description": "The quoted-printable or base64 decoded content of the part. Only present for parts with a content type of <var>text/*</var> and only if requested, see the <var>decodeContent</var> option of $(ref:messages.getFull). Use $(ref:messages.getAttachmentFile) to retrieve the content of parts which have a content type other than <var>text/*</var>.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1018,7 +1084,7 @@
                             },
                             "type": "array"
                         },
-                        "description": "A <em>dictionary object</em> of part headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>.",
+                        "description": "A <em>dictionary object</em> of RFC 2047 decoded part headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>. Only present if requested, see the <var>decodeHeaders</var> option of $(ref:messages.getFull).",
                         "optional": true,
                         "type": "object"
                     },
@@ -1039,6 +1105,22 @@
                         },
                         "optional": true,
                         "type": "array"
+                    },
+                    "rawBody": {
+                        "description": "The raw content of the part. Only present if requested, see the <var>decodeContent</var> option of $(ref:messages.getFull).",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "rawHeaders": {
+                        "additionalProperties": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "description": "A <em>dictionary object</em> of raw part headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>. Only present if requested, see the <var>decodeHeaders</var> option of $(ref:messages.getFull).",
+                        "optional": true,
+                        "type": "object"
                     },
                     "size": {
                         "description": "The size of this part. The size of parts with content type <em>message/rfc822</em> is not the actual message size (on disc), but the total size of its decoded body parts, excluding headers.",
@@ -1084,9 +1166,13 @@
                 "type": "object"
             },
             {
-                "description": "Represents an attachment in a message. This includes all MIME parts with a <em>content-disposition</em> header set to <var>attachment</var>, but also related parts like inline images.",
+                "description": "Represents an attachment in a message.",
                 "id": "MessageAttachment",
                 "properties": {
+                    "contentDisposition": {
+                        "description": "The content disposition of the attachment, for example <var>attachment</var> for normal attachments, or <var>inline</var> for inline attachments.",
+                        "type": "string"
+                    },
                     "contentId": {
                         "description": "The content-id of this part. Available for related parts, which are referenced from other places inside the same message (e.g. inline images).",
                         "optional": true,
@@ -1095,6 +1181,16 @@
                     "contentType": {
                         "description": "The content type of the attachment. A value of <var>text/x-moz-deleted</var> indicates that the original attachment was permanently deleted and replaced by a placeholder text attachment with some meta information about the original attachment.",
                         "type": "string"
+                    },
+                    "headers": {
+                        "additionalProperties": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "description": "A <em>dictionary object</em> of RFC 2047 decoded attachment headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>.",
+                        "type": "object"
                     },
                     "message": {
                         "$ref": "messages.MessageHeader",
@@ -1136,6 +1232,62 @@
         ]
     },
     {
+        "events": [
+            {
+                "description": "Fired when a new message tag has been created.",
+                "name": "onCreated",
+                "parameters": [
+                    {
+                        "$ref": "messages.tags.MessageTag",
+                        "name": "tag"
+                    }
+                ],
+                "permissions": [
+                    "messagesTagsList"
+                ],
+                "type": "function"
+            },
+            {
+                "description": "Fired when one or more properties of a message tag have been updated.",
+                "name": "onUpdated",
+                "parameters": [
+                    {
+                        "description": "Unique tag identifier of the updated message tag.",
+                        "name": "key",
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "messages.tags.MessageTagProperties",
+                        "description": "The changed message tag properties.",
+                        "name": "changedProperties"
+                    },
+                    {
+                        "$ref": "messages.tags.MessageTagProperties",
+                        "description": "The old values of the changed message tag properties.",
+                        "name": "oldProperties"
+                    }
+                ],
+                "permissions": [
+                    "messagesTagsList"
+                ],
+                "type": "function"
+            },
+            {
+                "description": "Fired when a message tag has been deleted.",
+                "name": "onDeleted",
+                "parameters": [
+                    {
+                        "description": "Unique tag identifier of the deleted message tag.",
+                        "name": "key",
+                        "type": "string"
+                    }
+                ],
+                "permissions": [
+                    "accountsRead"
+                ],
+                "type": "function"
+            }
+        ],
         "functions": [
             {
                 "async": "callback",
@@ -1163,12 +1315,13 @@
             },
             {
                 "async": true,
-                "description": "Creates a new message tag. Tagging a message will store the tag's key in the user's message. Throws if the specified tag key is used already.",
+                "description": "Creates a new message tag and returns the associated key. Tagging a message will store the tag's key in the user's message. Throws if the specified tag key is used already.",
                 "name": "create",
                 "parameters": [
                     {
-                        "description": "Unique tag identifier (will be converted to lower case). Must not include <var>()<>{/%*\"</var> or spaces.",
+                        "description": "Unique tag identifier (will be converted to lower case). Must not include <var>()<>{/%*\"</var> or spaces. Will be auto-generated if not provided.",
                         "name": "key",
+                        "optional": true,
                         "pattern": "^[^ ()/{%*<>\"]+$",
                         "type": "string"
                     },
@@ -1178,10 +1331,21 @@
                         "type": "string"
                     },
                     {
-                        "description": "Tag color in hex format (i.e.: #000080 for navy blue). Value will be stored as upper case.",
+                        "description": "Tag color in hex format (i.e.: <var>#000080</var> for navy blue).",
                         "name": "color",
                         "pattern": "^#[0-9a-fA-F]{6}",
                         "type": "string"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "name": "key",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "function"
                     }
                 ],
                 "permissions": [
@@ -1201,21 +1365,8 @@
                         "type": "string"
                     },
                     {
-                        "name": "updateProperties",
-                        "properties": {
-                            "color": {
-                                "description": "Tag color in hex format (i.e.: #000080 for navy blue). Value will be stored as upper case.",
-                                "optional": true,
-                                "pattern": "^#[0-9a-fA-F]{6}",
-                                "type": "string"
-                            },
-                            "tag": {
-                                "description": "Human-readable tag name.",
-                                "optional": true,
-                                "type": "string"
-                            }
-                        },
-                        "type": "object"
+                        "$ref": "messages.tags.MessageTagProperties",
+                        "name": "updateProperties"
                     }
                 ],
                 "permissions": [
@@ -1247,7 +1398,7 @@
                 "id": "MessageTag",
                 "properties": {
                     "color": {
-                        "description": "Tag color.",
+                        "description": "Tag color in upper case hex format (i.e.: <var>#000080</var> for navy blue).",
                         "type": "string"
                     },
                     "key": {
@@ -1255,11 +1406,33 @@
                         "type": "string"
                     },
                     "ordinal": {
-                        "description": "Custom sort string (usually empty).",
+                        "description": "A custom sort string.",
                         "type": "string"
                     },
                     "tag": {
                         "description": "Human-readable tag name.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "id": "MessageTagProperties",
+                "properties": {
+                    "color": {
+                        "description": "Tag color in upper case hex format (i.e.: <var>#000080</var> for navy blue).",
+                        "optional": true,
+                        "pattern": "^#[0-9a-fA-F]{6}",
+                        "type": "string"
+                    },
+                    "ordinal": {
+                        "description": "A custom sort string.",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "tag": {
+                        "description": "Human-readable tag name.",
+                        "optional": true,
                         "type": "string"
                     }
                 },

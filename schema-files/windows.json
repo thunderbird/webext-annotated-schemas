@@ -248,12 +248,12 @@
                         "optional": true,
                         "properties": {
                             "allowScriptsToClose": {
-                                "description": "Allow scripts running inside the window to close the window by calling <code>window.close()</code>.",
+                                "description": "Allow scripts running inside the window to close the window by calling <code>window.close()</code>. Defaults to <var>true</var> when the given URL points to an extension page (a page included with this extension and loaded with the <var>moz-extension:</var> protocol), defaults to <var>false</var> otherwise.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "cookieStoreId": {
-                                "description": "The CookieStoreId to use for all tabs that were created when the window is opened.",
+                                "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id which all initially opened tabs should use. Either a custom id created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or a built-in one: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>. **Note:** The naming pattern was deliberately not changed for Thunderbird, but kept for compatibility reasons. The <permission>cookies</permission> permission is required to be able to specify this property. Furthermore, the <permission>contextualIdentities</permission> permission should be requested, to enable the contextual identities feature (enabled by default only on Thunderbird Daily).",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -278,6 +278,16 @@
                                 "description": "The number of pixels to position the new window from the left edge of the screen. If not specified, the new window is offset naturally from the last focused window.",
                                 "optional": true,
                                 "type": "integer"
+                            },
+                            "linkHandler": {
+                                "description": "Thunderbird is a mail client, not a browser. It is possible to load a web page, but opening follow-up pages through hyperlinks should be handled by the user's default browser. This property specifies to what extent this behavior should be enforced. The default <var>balanced</var> link handler will open links to the same host directly in Thunderbird, everything else will be opened in the user's default browser. A <var>relaxed</var> link handler will open all links inside of Thunderbird, a <var>strict</var> link handler will open all links in the user's default browser, except links to the same page.",
+                                "enum": [
+                                    "strict",
+                                    "balanced",
+                                    "relaxed"
+                                ],
+                                "optional": true,
+                                "type": "string"
                             },
                             "state": {
                                 "$ref": "WindowState",

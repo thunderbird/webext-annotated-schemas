@@ -149,7 +149,14 @@
                     "permissions": {
                         "default": [],
                         "items": {
-                            "$ref": "manifest.OptionalPermission"
+                            "choices": [
+                                {
+                                    "$ref": "manifest.OptionalPermission"
+                                },
+                                {
+                                    "$ref": "manifest.OptionalOnlyPermission"
+                                }
+                            ]
                         },
                         "optional": true,
                         "type": "array"
@@ -171,7 +178,14 @@
                     "permissions": {
                         "default": [],
                         "items": {
-                            "$ref": "manifest.Permission"
+                            "choices": [
+                                {
+                                    "$ref": "manifest.Permission"
+                                },
+                                {
+                                    "$ref": "manifest.OptionalOnlyPermission"
+                                }
+                            ]
                         },
                         "optional": true,
                         "type": "array"

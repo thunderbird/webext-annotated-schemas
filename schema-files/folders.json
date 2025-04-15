@@ -263,6 +263,16 @@
                                 "optional": true,
                                 "type": "boolean"
                             },
+                            "lastUsed": {
+                                "$ref": "QueryDateRange",
+                                "description": "Date the folder was last used (folder was accessed, user moved or copied messages into the folder or folder received new messages).",
+                                "optional": true
+                            },
+                            "lastUsedAsDestination": {
+                                "$ref": "QueryDateRange",
+                                "description": "Date the folder was last used as a destination (user moved or copied messages into the folder).",
+                                "optional": true
+                            },
                             "limit": {
                                 "description": "Limits the number of returned folders. If used together with <var>recent</var>, supports being set to $(ref:folders.DEFAULT_MOST_RECENT_LIMIT)",
                                 "optional": true,
@@ -293,9 +303,22 @@
                                 "optional": true
                             },
                             "recent": {
-                                "description": "Whether the folder (excluding subfolders) has been used within the last month, or not. The returned folders will be sorted by their recentness.",
+                                "deprecated": "Deprecated. Use <var>queryInfo.lastUsed</var> and <var>queryInfo.sort</var>.",
+                                "description": "Whether the folder (excluding subfolders) has been used within the last month, or not. The returned folders will be sorted by <var>lastUsed</var>.",
                                 "optional": true,
                                 "type": "boolean"
+                            },
+                            "sort": {
+                                "default": "path",
+                                "description": "The sort order of the returned folders. If not specified, folders will be sorted by <var>path</var>. Sorting by <var>name</var> is case-insensitive.",
+                                "enum": [
+                                    "lastUsed",
+                                    "lastUsedAsDestination",
+                                    "name",
+                                    "path"
+                                ],
+                                "optional": true,
+                                "type": "string"
                             },
                             "specialUse": {
                                 "description": "Match only folders with the specified special use (folders have to match all specified uses).",
@@ -671,7 +694,7 @@
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/folders.html#getunifiedfolder-type-includesubfolders",
                 "async": "callback",
-                "description": "Get one of the special unified mailbox folders, which are virtual search folders and return the content from all mail accounts.",
+                "description": "Get one of the special unified mailbox folders, which are virtual search folders and return the content from all mail accounts. Throws if the requested folder does not exist.",
                 "name": "getUnifiedFolder",
                 "parameters": [
                     {
@@ -714,7 +737,7 @@
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/folders.html#gettagfolder-key",
                 "async": "callback",
-                "description": "Get one of the special unified mailbox tag folders, which are virtual search folders and group messages from all mail accounts based on their tags.",
+                "description": "Get one of the special virtual tag folders, which are virtual search folders and group messages from all mail accounts based on their tags. Throws if the requested folder does not exist.",
                 "name": "getTagFolder",
                 "parameters": [
                     {
@@ -771,7 +794,7 @@
         "properties": {
             "DEFAULT_MOST_RECENT_LIMIT": {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/folders.html#default_most_recent_limit",
-                "description": "The number of most recent folders used in Thunderbird's UI. Controled by the <var>mail.folder_widget.max_recent</var> preference.",
+                "description": "The number of most recent folders used in Thunderbird's UI. Controlled by the <var>mail.folder_widget.max_recent</var> preference.",
                 "support": {
                     "version_added": true
                 },
@@ -785,42 +808,35 @@
                 "properties": {
                     "accountId": {
                         "$ref": "accounts.MailAccountId",
-                        "description": "The id of the account this folder belongs to.",
+                        "description": "The id of the account this folder belongs to. This property is optional and not available for unified mailbox folders or virtual tag folders.",
                         "optional": true
                     },
                     "id": {
                         "$ref": "folders.MailFolderId",
-                        "description": "An identifier for the folder.",
-                        "optional": true
+                        "description": "An identifier for the folder."
                     },
                     "isFavorite": {
                         "description": "Whether this folder is a favorite folder.",
-                        "optional": true,
                         "type": "boolean"
                     },
                     "isRoot": {
                         "description": "Whether this folder is a root folder.",
-                        "optional": true,
                         "type": "boolean"
                     },
                     "isTag": {
                         "description": "Whether this folder is a virtual tag folder.",
-                        "optional": true,
                         "type": "boolean"
                     },
                     "isUnified": {
                         "description": "Whether this folder is a unified mailbox folder.",
-                        "optional": true,
                         "type": "boolean"
                     },
                     "isVirtual": {
                         "description": "Whether this folder is a virtual search folder.",
-                        "optional": true,
                         "type": "boolean"
                     },
                     "name": {
                         "description": "The human-friendly name of this folder.",
-                        "optional": true,
                         "type": "string"
                     },
                     "path": {
@@ -832,11 +848,10 @@
                         "items": {
                             "$ref": "folders.MailFolderSpecialUse"
                         },
-                        "optional": true,
                         "type": "array"
                     },
                     "subFolders": {
-                        "description": "Subfolders of this folder. The property may be <var>null</var>, if inclusion of folders had not been requested. The folders will be returned in the same order as used in Thunderbird's folder pane.",
+                        "description": "Subfolders of this folder. This property is optional and only present if the inclusion of subfolders had been requested. The folders will be returned in the same order as used in Thunderbird's folder pane.",
                         "items": {
                             "$ref": "folders.MailFolder"
                         },
@@ -857,7 +872,12 @@
                 "properties": {
                     "lastUsed": {
                         "$ref": "extensionTypes.Date",
-                        "description": "Date the folder was last used (precision: seconds).",
+                        "description": "Date the folder was last used. It is updated every time the folder was accessed, when the user moved or copied messages into the folder and when the folder received new messages. (precision: seconds).",
+                        "optional": true
+                    },
+                    "lastUsedAsDestination": {
+                        "$ref": "extensionTypes.Date",
+                        "description": "Date the folder was last used as a destination. It is updated every time the user moved or copied messages into the folder. (precision: seconds).",
                         "optional": true
                     },
                     "newMessageCount": {
@@ -942,7 +962,7 @@
                         "type": "integer"
                     },
                     "type": {
-                        "description": "The type of the quota as defined by RFC2087. A <var>STORAGE</var> quota is constraining the available storage in bytes, a <var>MESSAGE</var> quota is constraining the number of storable messages.",
+                        "description": "The type of the quota as defined by RFC 2087. A <var>STORAGE</var> quota is constraining the available storage in bytes, a <var>MESSAGE</var> quota is constraining the number of storable messages.",
                         "enum": [
                             "STORAGE",
                             "MESSAGE"
@@ -961,7 +981,37 @@
                 "type": "object"
             },
             {
-                "description": "An object defining a range.",
+                "choices": [
+                    {
+                        "properties": {
+                            "recent": {
+                                "description": "Whether the date must be considered to be recent by Thunderbird (within the last month) or not, to match the query.",
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "properties": {
+                            "after": {
+                                "$ref": "extensionTypes.Date",
+                                "description": "The minimum date required to match the query.",
+                                "optional": true
+                            },
+                            "before": {
+                                "$ref": "extensionTypes.Date",
+                                "description": "The maximum date required to match the query.",
+                                "optional": true
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "description": "An object defining a range for a date value to be used in queries.",
+                "id": "QueryDateRange"
+            },
+            {
+                "description": "An object defining a range for an integer value to be used in queries.",
                 "id": "QueryRange",
                 "properties": {
                     "max": {
