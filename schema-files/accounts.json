@@ -289,8 +289,15 @@
                         "description": "The root folder associated with this account."
                     },
                     "type": {
-                        "description": "What sort of account this is, e.g. <var>imap</var>, <var>nntp</var>, or <var>pop3</var>.",
-                        "type": "string"
+                        "choices": [
+                            {
+                                "$ref": "accounts.NativeMailAccountType"
+                            },
+                            {
+                                "$ref": "accounts.ExtensionMailAccountType"
+                            }
+                        ],
+                        "description": "What sort of account this is. Either one of the natively supported account types, or an account type added by an extension."
                     }
                 },
                 "type": "object"
@@ -301,14 +308,21 @@
                 "type": "string"
             },
             {
-                "description": "The type of an account.",
+                "description": "The type of an account natively supported by Thunderbird.",
                 "enum": [
                     "imap",
                     "nntp",
                     "none",
-                    "pop3"
+                    "pop3",
+                    "rss"
                 ],
-                "id": "MailAccountType",
+                "id": "NativeMailAccountType",
+                "type": "string"
+            },
+            {
+                "description": "The type of an account which was added by an extension. For the time being there is no guarantee for account types added by extensions to always work as expected.",
+                "id": "ExtensionMailAccountType",
+                "pattern": "^extension:.*$",
                 "type": "string"
             }
         ]

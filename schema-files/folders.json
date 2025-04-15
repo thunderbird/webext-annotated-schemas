@@ -831,7 +831,7 @@
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv2/folders.html#gettagfolder-key",
                 "async": "callback",
-                "description": "Get one of the special unified mailbox tag folders, which are virtual search folders and group messages from all mail accounts based on their tags.",
+                "description": "Get one of the special virtual tag folders, which are virtual search folders and group messages from all mail accounts based on their tags.",
                 "name": "getTagFolder",
                 "parameters": [
                     {
@@ -961,19 +961,12 @@
                         "type": "array"
                     },
                     "subFolders": {
-                        "choices": [
-                            {
-                                "items": {
-                                    "$ref": "folders.MailFolder"
-                                },
-                                "type": "array"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ],
-                        "description": "Subfolders of this folder. The property may be <var>null</var>, if inclusion of folders had not been requested. The folders will be returned in the same order as used in Thunderbird's folder pane.",
-                        "optional": true
+                        "description": "Subfolders of this folder. This property is optional and only present if the inclusion of subfolders had been requested. The folders will be returned in the same order as used in Thunderbird's folder pane.",
+                        "items": {
+                            "$ref": "folders.MailFolder"
+                        },
+                        "optional": true,
+                        "type": "array"
                     },
                     "type": {
                         "$ref": "folders.MailFolderSpecialUse",
