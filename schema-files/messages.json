@@ -26,7 +26,7 @@
     {
         "events": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#onupdated-message-changedproperties-oldproperties",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#onupdated-message-changedproperties-oldproperties",
                 "description": "Fired when one or more properties of a message have been updated.",
                 "name": "onUpdated",
                 "parameters": [
@@ -49,7 +49,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#onmoved-originalmessages-movedmessages",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#onmoved-originalmessages-movedmessages",
                 "description": "Fired when messages have been moved.",
                 "name": "onMoved",
                 "parameters": [
@@ -71,7 +71,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#oncopied-originalmessages-copiedmessages",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#oncopied-originalmessages-copiedmessages",
                 "description": "Fired when messages have been copied.",
                 "name": "onCopied",
                 "parameters": [
@@ -93,7 +93,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#ondeleted-messages",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#ondeleted-messages",
                 "description": "Fired when messages have been permanently deleted.",
                 "name": "onDeleted",
                 "parameters": [
@@ -111,7 +111,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#onnewmailreceived-folder-messages",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#onnewmailreceived-folder-messages",
                 "description": "Fired when a new message is received, and has been handled by message filters and junk classification. Filters running after junk classification may move the message again.",
                 "extraParameters": [
                     {
@@ -143,7 +143,7 @@
         ],
         "functions": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#list-folder",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#list-folder",
                 "async": "callback",
                 "description": "Gets all messages in a folder.",
                 "name": "list",
@@ -180,7 +180,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#continuelist-messagelistid",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#continuelist-messagelistid",
                 "async": "callback",
                 "description": "Returns the next chunk of messages in a list. See $(doc:examples/messageLists) for more information.",
                 "name": "continueList",
@@ -206,7 +206,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#abortlist-messagelistid",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#abortlist-messagelistid",
                 "async": true,
                 "description": "Finalizes the specified list and terminates any process currently still adding messages.",
                 "name": "abortList",
@@ -222,7 +222,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#get-messageid",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#get-messageid",
                 "async": "callback",
                 "description": "Returns the specified message.",
                 "name": "get",
@@ -248,7 +248,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#getfull-messageid-options",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#getfull-messageid-options",
                 "async": "callback",
                 "description": "Returns the specified message, including all headers and MIME parts. Throws if the message could not be read, for example due to network issues.",
                 "name": "getFull",
@@ -296,7 +296,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#getraw-message-options",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#getraw-message-options",
                 "async": "callback",
                 "description": "Returns the raw content of a message. Throws if the message could not be read, for example due to network issues.",
                 "name": "getRaw",
@@ -360,7 +360,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#listattachments-messageid",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#listattachments-messageid",
                 "async": "callback",
                 "description": "Lists the attachments of a message.",
                 "name": "listAttachments",
@@ -389,7 +389,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#listinlinetextparts-messageid",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#listinlinetextparts-messageid",
                 "async": "callback",
                 "description": "Lists all inline text parts of a message. These parts are not returned by $(ref:messages.listAttachments) and usually make up the readable content of the message, mostly with content type <var>text/plain</var> or <var>text/html</var>. If a message only includes a part with content type <var>text/html</var>, the method $(ref:messengerUtilities.convertToPlainText) can be used to retreive a plain text version. \n\n**Note:** A message usually contains only one inline text part per subtype, but technically messages can contain multiple inline text parts per subtype.",
                 "name": "listInlineTextParts",
@@ -418,7 +418,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#getattachmentfile-messageid-partname",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#getattachmentfile-messageid-partname",
                 "async": "callback",
                 "description": "Gets the content of a $(ref:messages.MessageAttachment) as a <a href='https://developer.mozilla.org/docs/Web/API/File'>File</a> object.",
                 "name": "getAttachmentFile",
@@ -451,7 +451,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#deleteattachments-messageid-partnames",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#deleteattachments-messageid-partnames",
                 "async": true,
                 "description": "Deletes the specified attachments and replaces them by placeholder text attachments with meta information about the original attachments and a <var>text/x-moz-deleted</var> content type. This permanently modifies the message.",
                 "name": "deleteAttachments",
@@ -480,7 +480,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#openattachment-messageid-partname-tabid",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#openattachment-messageid-partname-tabid",
                 "async": true,
                 "description": "Opens the specified attachment.",
                 "name": "openAttachment",
@@ -506,7 +506,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#query-queryinfo",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#query-queryinfo",
                 "async": "callback",
                 "description": "Gets all messages that have the specified properties, or all messages if no properties are specified. Messages of unified mailbox folders are not included by default (as that could double the amount of returned messages), but explicitly specifying a unified mailbox folder is supported.",
                 "name": "query",
@@ -701,7 +701,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#update-messageid-newproperties",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#update-messageid-newproperties",
                 "async": true,
                 "description": "Updates message properties and tags. Updating external messages will throw an <em>ExtensionError</em>.",
                 "name": "update",
@@ -724,7 +724,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#move-messageids-destination-options",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#move-messageids-destination-options",
                 "async": true,
                 "description": "Moves messages to a specified folder. If the messages cannot be removed from the source folder, they will be copied instead of moved. Moving external messages will throw an <em>ExtensionError</em>.",
                 "name": "move",
@@ -773,7 +773,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#copy-messageids-destination-options",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#copy-messageids-destination-options",
                 "async": true,
                 "description": "Copies messages to a specified folder.",
                 "name": "copy",
@@ -822,7 +822,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#delete-messageids-options",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#delete-messageids-options",
                 "async": true,
                 "description": "Deletes messages permanently, or moves them to the trash folder (honoring the account's deletion behavior settings). Deleting external messages will throw an <em>ExtensionError</em>. The <var>deletePermanently</var> parameter allows immediate permanent deletion, bypassing the trash folder.",
                 "name": "delete",
@@ -871,7 +871,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#import-file-destination-properties",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#import-file-destination-properties",
                 "async": "callback",
                 "description": "Imports a message into a folder. Supports local folders, POP and IMAP folders. Throws, if the destination folder already contains a message with the Message-ID of the message being imported.",
                 "name": "import",
@@ -921,7 +921,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#archive-messageids",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#archive-messageids",
                 "async": true,
                 "description": "Archives messages using the current settings. Archiving external messages will throw an <em>ExtensionError</em>.",
                 "name": "archive",
@@ -944,7 +944,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#listtags",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#listtags",
                 "async": "callback",
                 "deprecated": "Deprecated since Thunderbird 121 and removed in Manifest V3: messages.listTags() is now available as messages.tags.list().",
                 "description": "Returns a list of tags that can be set on messages, and their human-friendly name, colour, and sort order.",
@@ -970,7 +970,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#createtag-key-tag-color",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#createtag-key-tag-color",
                 "async": true,
                 "deprecated": "Deprecated since Thunderbird 121 and removed in Manifest V3: messages.createTag() is now available as messages.tags.create().",
                 "description": "Creates a new message tag. Tagging a message will store the tag's key in the user's message. Throws if the specified tag key is used already.",
@@ -1003,7 +1003,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#updatetag-key-updateproperties",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#updatetag-key-updateproperties",
                 "async": true,
                 "deprecated": "Deprecated since Thunderbird 121 and removed in Manifest V3: messages.updateTag() is now available as messages.tags.update().",
                 "description": "Updates a message tag. Throws if the specified tag key does not exist.",
@@ -1042,7 +1042,7 @@
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#deletetag-key",
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messages.html#deletetag-key",
                 "async": true,
                 "deprecated": "Deprecated since Thunderbird 121 and removed in Manifest V3: messages.deleteTag() is now available as messages.tags.delete().",
                 "description": "Deletes a message tag, removing it from the list of known tags. Its key will not be removed from tagged messages, but they will appear untagged. Recreating a deleted tag, will make all former tagged messages appear tagged again.",
