@@ -714,7 +714,7 @@
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/folders.html#gettagfolder-key",
                 "async": "callback",
-                "description": "Get one of the special unified mailbox tag folders, which are virtual search folders and group messages from all mail accounts based on their tags.",
+                "description": "Get one of the special virtual tag folders, which are virtual search folders and group messages from all mail accounts based on their tags.",
                 "name": "getTagFolder",
                 "parameters": [
                     {
@@ -785,42 +785,35 @@
                 "properties": {
                     "accountId": {
                         "$ref": "accounts.MailAccountId",
-                        "description": "The id of the account this folder belongs to.",
+                        "description": "The id of the account this folder belongs to. This property is optional and not available for unified mailbox folders or virtual tag folders.",
                         "optional": true
                     },
                     "id": {
                         "$ref": "folders.MailFolderId",
-                        "description": "An identifier for the folder.",
-                        "optional": true
+                        "description": "An identifier for the folder."
                     },
                     "isFavorite": {
                         "description": "Whether this folder is a favorite folder.",
-                        "optional": true,
                         "type": "boolean"
                     },
                     "isRoot": {
                         "description": "Whether this folder is a root folder.",
-                        "optional": true,
                         "type": "boolean"
                     },
                     "isTag": {
                         "description": "Whether this folder is a virtual tag folder.",
-                        "optional": true,
                         "type": "boolean"
                     },
                     "isUnified": {
                         "description": "Whether this folder is a unified mailbox folder.",
-                        "optional": true,
                         "type": "boolean"
                     },
                     "isVirtual": {
                         "description": "Whether this folder is a virtual search folder.",
-                        "optional": true,
                         "type": "boolean"
                     },
                     "name": {
                         "description": "The human-friendly name of this folder.",
-                        "optional": true,
                         "type": "string"
                     },
                     "path": {
@@ -832,11 +825,10 @@
                         "items": {
                             "$ref": "folders.MailFolderSpecialUse"
                         },
-                        "optional": true,
                         "type": "array"
                     },
                     "subFolders": {
-                        "description": "Subfolders of this folder. The property may be <var>null</var>, if inclusion of folders had not been requested. The folders will be returned in the same order as used in Thunderbird's folder pane.",
+                        "description": "Subfolders of this folder. This property is optional and only present if the inclusion of subfolders had been requested. The folders will be returned in the same order as used in Thunderbird's folder pane.",
                         "items": {
                             "$ref": "folders.MailFolder"
                         },
