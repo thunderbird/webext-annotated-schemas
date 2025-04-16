@@ -8,6 +8,10 @@ on:
 jobs:
   update-schema:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
     steps:
       - name: Checkout webext-schemas repo (default branch)
         uses: actions/checkout@v4
@@ -21,6 +25,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+
+      - name: Install GitHub CLI
+        uses: cli/gh-action@v2
 
       - name: Clone webext-schemas-generator
         run: |
@@ -49,6 +56,7 @@ jobs:
           fi
 
       - name: Create Pull Request if changes exist
+        id: cpr
         if: steps.git-check.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
@@ -62,5 +70,10 @@ jobs:
             - Release: release
           labels: automated
           delete-branch: true
-          merge: true
-          merge-method: squash
+      
+      - name: Enable auto-merge for PR
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          gh pr merge --merge --auto "${{ steps.cpr.outputs.pull-request-number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
