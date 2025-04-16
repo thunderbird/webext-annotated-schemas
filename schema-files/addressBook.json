@@ -1,5 +1,6 @@
 [
     {
+        "applicationVersion": "128.9.2",
         "namespace": "manifest",
         "types": [
             {
@@ -244,6 +245,7 @@
         ],
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/addressBooks.html#nodetype",
                 "description": "Indicates the type of a Node.",
                 "enum": [
                     "addressBook",
@@ -251,9 +253,13 @@
                     "mailingList"
                 ],
                 "id": "NodeType",
+                "support": {
+                    "version_added": true
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/addressBooks.html#addressbooknode",
                 "description": "A node representing an address book.",
                 "id": "AddressBookNode",
                 "properties": {
@@ -299,6 +305,9 @@
                         "$ref": "NodeType",
                         "description": "Always set to <var>addressBook</var>."
                     }
+                },
+                "support": {
+                    "version_added": true
                 },
                 "type": "object"
             }

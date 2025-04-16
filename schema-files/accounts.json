@@ -1,5 +1,6 @@
 [
     {
+        "applicationVersion": "128.9.2",
         "namespace": "manifest",
         "types": [
             {
@@ -197,6 +198,7 @@
         ],
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/accounts.html#mailaccount",
                 "description": "An object describing a mail account, as returned for example by the $(ref:accounts.list) and $(ref:accounts.get) methods.",
                 "id": "MailAccount",
                 "properties": {
@@ -231,14 +233,22 @@
                         "description": "What sort of account this is. Either one of the natively supported account types, or an account type added by an extension."
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/accounts.html#mailaccountid",
                 "description": "A unique id representing a $(ref:accounts.MailAccount).",
                 "id": "MailAccountId",
+                "support": {
+                    "version_added": true
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/accounts.html#nativemailaccounttype",
                 "description": "The type of an account natively supported by Thunderbird.",
                 "enum": [
                     "imap",
@@ -248,12 +258,19 @@
                     "rss"
                 ],
                 "id": "NativeMailAccountType",
+                "support": {
+                    "version_added": true
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/accounts.html#extensionmailaccounttype",
                 "description": "The type of an account which was added by an extension. For the time being there is no guarantee for account types added by extensions to always work as expected.",
                 "id": "ExtensionMailAccountType",
                 "pattern": "^extension:.*$",
+                "support": {
+                    "version_added": true
+                },
                 "type": "string"
             }
         ]

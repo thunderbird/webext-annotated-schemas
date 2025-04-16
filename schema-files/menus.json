@@ -1,5 +1,6 @@
 [
     {
+        "applicationVersion": "128.9.2",
         "namespace": "manifest",
         "types": [
             {
@@ -518,6 +519,7 @@
         },
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/menus.html#contexttype",
                 "description": "The different contexts a menu can appear in. Specifying <var>all</var> is equivalent to the combination of all other contexts excluding <var>tab</var> and <var>tools_menu</var>. More information about each context can be found in the <a href='https://developer.thunderbird.net/add-ons/mailextensions/supported-ui-elements#menu-items'>Supported UI Elements</a> article on developer.thunderbird.net.",
                 "enum": [
                     "action",
@@ -546,9 +548,14 @@
                     "video"
                 ],
                 "id": "ContextType",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/ContextType",
+                "support": {
+                    "version_added": true
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/menus.html#itemtype",
                 "description": "The type of menu item.",
                 "enum": [
                     "normal",
@@ -557,9 +564,14 @@
                     "separator"
                 ],
                 "id": "ItemType",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/ItemType",
+                "support": {
+                    "version_added": true
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/menus.html#onshowdata",
                 "description": "Information sent when a context menu is being shown. Some properties are only included if the extension has host permission for the given context, for example <permission>activeTab</permission> for content tabs, <permission>compose</permission> for compose tabs and <permission>messagesRead</permission> for message display tabs.",
                 "id": "OnShowData",
                 "properties": {
@@ -680,11 +692,16 @@
                         "optional": true
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/menus.html#onclickdata",
                 "description": "Information sent when a context menu item is clicked.",
                 "id": "OnClickData",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/OnClickData",
                 "properties": {
                     "attachments": {
                         "description": "The selected attachments. The <permission>compose</permission> permission is required to return attachments of a message being composed. The <permission>messagesRead</permission> permission is required to return attachments of displayed messages.",
@@ -840,9 +857,13 @@
                         "type": "boolean"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/menus.html#menuiconpath",
                 "choices": [
                     {
                         "format": "imageDataOrStrictRelativeUrl",
@@ -854,9 +875,13 @@
                     }
                 ],
                 "description": "The path for a menu icon may be a relative path to an icon file, a <var>moz-extension:</var> URL, an image <var>data:</var> URL, a <var>blob:</var> URL, or a remote <var>http(s):</var> URL.",
-                "id": "MenuIconPath"
+                "id": "MenuIconPath",
+                "support": {
+                    "version_added": true
+                }
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/menus.html#menuicondictionary",
                 "description": "A <em>dictionary object</em> to specify paths for multiple icons in different sizes, so the best matching icon can be used, instead of scaling a standard icon to fit the pixel density of the user's display. Each entry is a <em>name-value</em> pair, with <em>name</em> being a size and <em>value</em> being a $(ref:menus.MenuIconPath). Example: <literalinclude>includes/IconPath.json<lang>JSON</lang></literalinclude>See the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_action#choosing_icon_sizes'>MDN documentation about choosing icon sizes</a> for more information on this. ",
                 "id": "MenuIconDictionary",
                 "patternProperties": {
@@ -864,9 +889,13 @@
                         "$ref": "MenuIconPath"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/menus.html#menuactioncommand",
                 "description": "A predefined command to open an action popup.",
                 "enum": [
                     "_execute_action",
@@ -874,6 +903,9 @@
                     "_execute_message_display_action"
                 ],
                 "id": "MenuActionCommand",
+                "support": {
+                    "version_added": true
+                },
                 "type": "string"
             }
         ]
