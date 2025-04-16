@@ -1,5 +1,6 @@
 [
     {
+        "applicationVersion": "138.0",
         "namespace": "manifest",
         "types": [
             {
@@ -803,6 +804,7 @@
         },
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/folders.html#mailfolder",
                 "description": "An object describing a folder.",
                 "id": "MailFolder",
                 "properties": {
@@ -859,14 +861,22 @@
                         "type": "array"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/folders.html#mailfolderid",
                 "description": "A unique id representing a $(ref:folders.MailFolder) throughout a session. Renaming or moving a folder will invalidate its id.",
                 "id": "MailFolderId",
+                "support": {
+                    "version_added": true
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/folders.html#mailfolderinfo",
                 "description": "An object containing additional information about a folder.",
                 "id": "MailFolderInfo",
                 "properties": {
@@ -904,9 +914,13 @@
                         "type": "integer"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/folders.html#mailfoldercapabilities",
                 "description": "An object containing capability information about a folder.",
                 "id": "MailFolderCapabilities",
                 "properties": {
@@ -936,9 +950,13 @@
                         "type": "boolean"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/folders.html#mailfolderspecialuse",
                 "description": "Supported values for the special use of a folder.",
                 "enum": [
                     "inbox",
@@ -951,9 +969,13 @@
                     "outbox"
                 ],
                 "id": "MailFolderSpecialUse",
+                "support": {
+                    "version_added": true
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/folders.html#mailfolderquota",
                 "description": "An object containing quota information.",
                 "id": "MailFolderQuota",
                 "properties": {
@@ -977,6 +999,9 @@
                         "description": "The currently used quota.",
                         "type": "integer"
                     }
+                },
+                "support": {
+                    "version_added": true
                 },
                 "type": "object"
             },
@@ -1011,6 +1036,7 @@
                 "id": "QueryDateRange"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/folders.html#queryrange",
                 "description": "An object defining a range for an integer value to be used in queries.",
                 "id": "QueryRange",
                 "properties": {
@@ -1025,9 +1051,13 @@
                         "type": "integer"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/folders.html#regularexpression",
                 "id": "RegularExpression",
                 "properties": {
                     "flags": {
@@ -1040,6 +1070,9 @@
                         "description": "A regular expression, for example <var>^Projects \\d{4}$</var>.",
                         "type": "string"
                     }
+                },
+                "support": {
+                    "version_added": true
                 },
                 "type": "object"
             }

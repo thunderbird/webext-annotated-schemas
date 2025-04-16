@@ -1,5 +1,6 @@
 [
     {
+        "applicationVersion": "138.0",
         "namespace": "manifest",
         "types": [
             {
@@ -831,6 +832,7 @@
         "namespace": "compose",
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/compose.html#composerecipient",
                 "choices": [
                     {
                         "description": "A name and email address in the format <var>Name <email@example.com></var>, or just an email address.",
@@ -854,9 +856,13 @@
                         "type": "object"
                     }
                 ],
-                "id": "ComposeRecipient"
+                "id": "ComposeRecipient",
+                "support": {
+                    "version_added": true
+                }
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/compose.html#composerecipientlist",
                 "choices": [
                     {
                         "$ref": "ComposeRecipient"
@@ -868,9 +874,13 @@
                         "type": "array"
                     }
                 ],
-                "id": "ComposeRecipientList"
+                "id": "ComposeRecipientList",
+                "support": {
+                    "version_added": true
+                }
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/compose.html#composestate",
                 "description": "Represent the state of the message composer.",
                 "id": "ComposeState",
                 "properties": {
@@ -883,9 +893,13 @@
                         "type": "boolean"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/compose.html#composedetails",
                 "description": "Used by various functions to represent the state of a message being composed. Note that functions using this type may have a partial implementation.",
                 "id": "ComposeDetails",
                 "properties": {
@@ -1064,9 +1078,13 @@
                         "type": "string"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/compose.html#fileattachment",
                 "description": "Object used to add, update or rename an attachment in a message being composed.",
                 "id": "FileAttachment",
                 "properties": {
@@ -1083,9 +1101,13 @@
                         "type": "string"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/compose.html#composeattachment",
                 "description": "Represents an attachment in a message being composed.",
                 "id": "ComposeAttachment",
                 "properties": {
@@ -1104,9 +1126,13 @@
                         "type": "integer"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/compose.html#customheader",
                 "description": "A custom header definition.",
                 "id": "CustomHeader",
                 "properties": {
@@ -1118,17 +1144,25 @@
                         "type": "string"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
                 "additionalProperties": {
                     "type": "boolean"
                 },
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/compose.html#composedictionaries",
                 "description": "A <em>dictionary object</em> with entries for all installed dictionaries, having a language identifier as <em>key</em> (for example <var>en-US</var>) and a boolean expression as <em>value</em>, indicating whether that dictionary is enabled for spellchecking or not.",
                 "id": "ComposeDictionaries",
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/compose.html#encryptionpropertiesopenpgp",
                 "id": "EncryptionPropertiesOpenPGP",
                 "properties": {
                     "encryptBody": {
@@ -1148,9 +1182,13 @@
                         "type": "boolean"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/compose.html#encryptionpropertiessmime",
                 "id": "EncryptionPropertiesSMIME",
                 "properties": {
                     "encryptBody": {
@@ -1165,6 +1203,9 @@
                         "description": "Whether the message will be signed using the S/MIME technology",
                         "type": "boolean"
                     }
+                },
+                "support": {
+                    "version_added": true
                 },
                 "type": "object"
             }
