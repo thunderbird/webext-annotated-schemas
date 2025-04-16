@@ -1,5 +1,6 @@
 [
     {
+        "applicationVersion": "137.0.3",
         "namespace": "manifest",
         "types": [
             {
@@ -1184,6 +1185,10 @@
                     "other"
                 ],
                 "id": "ResourceType",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/ResourceType",
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "string"
             },
             {
@@ -1254,6 +1259,7 @@
             {
                 "description": "An object describing filters to apply to webRequest events.",
                 "id": "RequestFilter",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/RequestFilter",
                 "properties": {
                     "incognito": {
                         "description": "If provided, requests that do not match the incognito state will be filtered out.",
@@ -1287,6 +1293,9 @@
                         "type": "integer"
                     }
                 },
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "object"
             },
             {
@@ -1314,11 +1323,16 @@
                     },
                     "type": "object"
                 },
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/HttpHeaders",
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "array"
             },
             {
                 "description": "Returns value for event handlers that have the 'blocking' extraInfoSpec applied. Allows the event handler to modify network requests.",
                 "id": "BlockingResponse",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/BlockingResponse",
                 "properties": {
                     "authCredentials": {
                         "description": "Only used as a response to the onAuthRequired event. If set, the request is made using the supplied credentials.",
@@ -1359,11 +1373,15 @@
                         "type": "boolean"
                     }
                 },
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "object"
             },
             {
                 "description": "Contains the certificate properties of the request if it is a secure request.",
                 "id": "CertificateInfo",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/CertificateInfo",
                 "properties": {
                     "fingerprint": {
                         "properties": {
@@ -1416,6 +1434,9 @@
                         "type": "object"
                     }
                 },
+                "support": {
+                    "version_added": "62"
+                },
                 "type": "object"
             },
             {
@@ -1438,6 +1459,7 @@
             {
                 "description": "Contains the security properties of the request (ie. SSL/TLS information).",
                 "id": "SecurityInfo",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/SecurityInfo",
                 "properties": {
                     "certificateTransparencyStatus": {
                         "$ref": "CertificateTransparencyStatus",
@@ -1567,11 +1589,15 @@
                         "type": "array"
                     }
                 },
+                "support": {
+                    "version_added": "62"
+                },
                 "type": "object"
             },
             {
                 "description": "Contains data uploaded in a URL request.",
                 "id": "UploadData",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/UploadData",
                 "properties": {
                     "bytes": {
                         "description": "An ArrayBuffer with a copy of the data.",
@@ -1583,6 +1609,9 @@
                         "optional": true,
                         "type": "string"
                     }
+                },
+                "support": {
+                    "version_added": "45"
                 },
                 "type": "object"
             },
