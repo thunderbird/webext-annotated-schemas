@@ -1,8 +1,8 @@
-name: Update Schema Files
+name: Update Schema Files (beta-mv3)
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # Runs daily at 2:00 AM UTC
+    - cron: '0 1 * * *'   # Runs daily at 1:00 AM UTC
   workflow_dispatch:      # Allow manual trigger as well
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout target branch
         run: |
           git fetch origin
-          git checkout release-mv3  # Adjust to your target branch
+          git checkout beta-mv3
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -32,7 +32,7 @@ jobs:
 
       - name: Run generator script
         run: |
-          node generator/get_thunderbird_schema_files.js --manifest_version=3 --release=release --output=./schema-files/
+          node generator/get_thunderbird_schema_files.js --release=beta --manifest_version=3 --output=./schema-files/
 
       - name: Check for changes
         id: git-check
@@ -52,10 +52,10 @@ jobs:
         if: steps.git-check.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
-          commit-message: "chore: update schema files (automated)"
-          branch: update-schema-files-release-mv3
-          base: release-mv3  # Make sure this is the target branch for the PR
-          title: "Update Schema Files"
+          commit-message: "automated update of schema files (beta-mv3)"
+          branch: update-schema-files-beta-mv3
+          base: beta-mv3
+          title: "Update Schema Files (beta-mv3)"
           body: |
             This PR updates the schema files using the latest version from the generator.
             - Manifest version: 3
