@@ -1,5 +1,6 @@
 [
     {
+        "applicationVersion": "137.0.3",
         "namespace": "manifest",
         "types": [
             {
@@ -946,6 +947,7 @@
         ],
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/action.html#colorarray",
                 "description": "An array of four integers in the range [0,255] that make up the RGBA color. For example, opaque red is <var>[255, 0, 0, 255]</var>.",
                 "id": "ColorArray",
                 "items": {
@@ -954,20 +956,30 @@
                     "type": "integer"
                 },
                 "maxItems": 4,
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/action/ColorArray",
                 "minItems": 4,
+                "support": {
+                    "version_added": "109"
+                },
                 "type": "array"
             },
             {
                 "additionalProperties": {
                     "type": "any"
                 },
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/action.html#imagedatatype",
                 "description": "Pixel data for an image. Must be an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object (for example, from a <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas'>canvas</a> element).",
                 "id": "ImageDataType",
                 "isInstanceOf": "ImageData",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/action/ImageDataType",
                 "postprocess": "convertImageDataToURL",
+                "support": {
+                    "version_added": "109"
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/action.html#imagedatadictionary",
                 "description": "A <em>dictionary object</em> to specify multiple <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> objects in different sizes, so the icon does not have to be scaled for a device with a different pixel density. Each entry is a <em>name-value</em> pair with <em>value</em> being an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object, and <em>name</em> its size. Example: <literalinclude>includes/ImageDataDictionary.json<lang>JavaScript</lang></literalinclude>See the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_action#choosing_icon_sizes'>MDN documentation about choosing icon sizes</a> for more information on this.",
                 "id": "ImageDataDictionary",
                 "patternProperties": {
@@ -975,9 +987,13 @@
                         "$ref": "ImageDataType"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/action.html#onclickdata",
                 "description": "Information sent when an action button is clicked.",
                 "id": "OnClickData",
                 "properties": {
@@ -1000,6 +1016,9 @@
                         },
                         "type": "array"
                     }
+                },
+                "support": {
+                    "version_added": true
                 },
                 "type": "object"
             }
