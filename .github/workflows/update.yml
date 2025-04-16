@@ -1,0 +1,59 @@
+name: Update Schema Files (release-mv2)
+
+on:
+  schedule:
+    - cron: '30 2 * * *'   # Runs daily at 2:30 AM UTC
+  workflow_dispatch:       # Allow manual trigger as well
+
+jobs:
+  update-schema:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout webext-schemas repo (default branch)
+        uses: actions/checkout@v4
+
+      - name: Checkout target branch
+        run: |
+          git fetch origin
+          git checkout release-mv2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Clone webext-schemas-generator
+        run: |
+          git clone https://github.com/thunderbird/webext-schemas-generator.git generator
+
+      - name: Install dependencies
+        run: |
+          npm install --prefix generator
+
+      - name: Run generator script
+        id: generate
+        run: |
+          node generator/get_thunderbird_schema_files.js --release=release --manifest_version=2 --output=./schema-files/
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add schema-files
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected."
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and Push Changes
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git commit -m "Update schema files (release-mv2)"
+          git push origin HEAD:release-mv2
+          git tag -f ${{ steps.generate.outputs.tag_name }}
+          git push origin -f ${{ steps.generate.outputs.tag_name }}
