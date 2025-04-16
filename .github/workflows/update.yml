@@ -1,0 +1,64 @@
+name: Update Schema Files (release-mv3)
+
+on:
+  schedule:
+    - cron: '0 2 * * *'   # Runs daily at 2:00 AM UTC
+  workflow_dispatch:      # Allow manual trigger as well
+
+jobs:
+  update-schema:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout webext-schemas repo (default branch)
+        uses: actions/checkout@v4
+
+      - name: Checkout target branch
+        run: |
+          git fetch origin
+          git checkout release-mv3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Clone webext-schemas-generator
+        run: |
+          git clone https://github.com/thunderbird/webext-schemas-generator.git generator
+
+      - name: Install dependencies
+        run: |
+          npm install --prefix generator
+
+      - name: Run generator script
+        run: |
+          node generator/get_thunderbird_schema_files.js --release=release --manifest_version=3 --output=./schema-files/
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add schema-files
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected."
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request if changes exist
+        if: steps.git-check.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "automated update of schema files (release-mv3)"
+          branch: update-schema-files-release-mv3
+          base: release-mv3
+          title: "Update Schema Files (release-mv3)"
+          body: |
+            This PR updates the schema files using the latest version from the generator.
+            - Manifest version: 3
+            - Release: release
+          labels: automated
+          delete-branch: true
