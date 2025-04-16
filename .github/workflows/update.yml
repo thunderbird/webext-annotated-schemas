@@ -32,6 +32,7 @@ jobs:
           npm install --prefix generator
 
       - name: Run generator script
+        id: generate
         run: |
           node generator/get_thunderbird_schema_files.js --release=release --manifest_version=3 --output=./schema-files/
 
@@ -54,3 +55,5 @@ jobs:
         run: |
           git commit -m "Update schema files (release-mv3)"
           git push origin HEAD:release-mv3
+          git tag -f ${{ steps.generate.outputs.tag_name }}
+          git push origin -f ${{ steps.generate.outputs.tag_name }}
