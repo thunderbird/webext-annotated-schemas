@@ -1,5 +1,6 @@
 [
     {
+        "applicationVersion": "137.0.3",
         "namespace": "manifest",
         "types": [
             {
@@ -280,6 +281,7 @@
         ],
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/identities.html#encryptioncapabilities",
                 "id": "EncryptionCapabilities",
                 "properties": {
                     "canEncrypt": {
@@ -291,9 +293,13 @@
                         "type": "boolean"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/identities.html#mailidentity",
                 "id": "MailIdentity",
                 "properties": {
                     "accountId": {
@@ -361,6 +367,9 @@
                         "optional": true,
                         "type": "boolean"
                     }
+                },
+                "support": {
+                    "version_added": true
                 },
                 "type": "object"
             }

@@ -1,5 +1,6 @@
 [
     {
+        "applicationVersion": "137.0.3",
         "namespace": "manifest",
         "types": [
             {
@@ -1062,6 +1063,7 @@
         },
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/tabs.html#tab",
                 "id": "Tab",
                 "properties": {
                     "active": {
@@ -1155,18 +1157,27 @@
                         "type": "integer"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/tabs.html#tabstatus",
                 "description": "Whether the tabs have completed loading.",
                 "enum": [
                     "loading",
                     "complete"
                 ],
                 "id": "TabStatus",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/TabStatus",
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/tabs.html#tabtype",
                 "description": "Tab types supported by the tabs API.",
                 "enum": [
                     "addressBook",
@@ -1182,9 +1193,13 @@
                     "tasks"
                 ],
                 "id": "TabType",
+                "support": {
+                    "version_added": true
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/tabs.html#windowtype",
                 "description": "The type of a window. Under some circumstances a Window may not be assigned a type property.",
                 "enum": [
                     "normal",
@@ -1196,9 +1211,14 @@
                     "messageDisplay"
                 ],
                 "id": "WindowType",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/WindowType",
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/tabs.html#updatepropertyname",
                 "description": "Event names supported in onUpdated.",
                 "enum": [
                     "favIconUrl",
@@ -1206,9 +1226,13 @@
                     "title"
                 ],
                 "id": "UpdatePropertyName",
+                "support": {
+                    "version_added": true
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/tabs.html#updatefilter",
                 "description": "An object describing filters to apply to tabs.onUpdated events.",
                 "id": "UpdateFilter",
                 "properties": {
@@ -1238,6 +1262,9 @@
                         "optional": true,
                         "type": "integer"
                     }
+                },
+                "support": {
+                    "version_added": true
                 },
                 "type": "object"
             }

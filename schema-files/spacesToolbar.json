@@ -119,6 +119,7 @@
         "namespace": "spacesToolbar",
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/spacesToolbar.html#buttonproperties",
                 "id": "ButtonProperties",
                 "properties": {
                     "badgeBackgroundColor": {
@@ -169,9 +170,13 @@
                         "type": "string"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/spacesToolbar.html#colorarray",
                 "description": "An array of four integers in the range [0,255] that make up the RGBA color. For example, opaque red is <var>[255, 0, 0, 255]</var>.",
                 "id": "ColorArray",
                 "items": {
@@ -181,8 +186,15 @@
                 },
                 "maxItems": 4,
                 "minItems": 4,
+                "support": {
+                    "version_added": true
+                },
                 "type": "array"
             }
         ]
+    },
+    {
+        "applicationVersion": "137.0.3",
+        "namespace": "manifest"
     }
 ]

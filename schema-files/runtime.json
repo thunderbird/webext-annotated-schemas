@@ -1,5 +1,6 @@
 [
     {
+        "applicationVersion": "137.0.3",
         "namespace": "manifest",
         "types": [
             {
@@ -885,6 +886,7 @@
                 ],
                 "description": "An object which allows two way communication with other pages.",
                 "id": "Port",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/Port",
                 "properties": {
                     "disconnect": {
                         "type": "function"
@@ -907,6 +909,9 @@
                         "optional": true
                     }
                 },
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "object"
             },
             {
@@ -916,6 +921,7 @@
                 ],
                 "description": "An object containing information about the script context that sent a message or request.",
                 "id": "MessageSender",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/MessageSender",
                 "properties": {
                     "frameId": {
                         "description": "The $(topic:frame_ids)[frame] that opened the connection. 0 for top-level frames, positive for child frames. This will only be set when <code>tab</code> is set.",
@@ -949,6 +955,9 @@
                         "type": "string"
                     }
                 },
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "object"
             },
             {
@@ -966,6 +975,10 @@
                     "openbsd"
                 ],
                 "id": "PlatformOs",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformOs",
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "string"
             },
             {
@@ -985,6 +998,10 @@
                     "noarch"
                 ],
                 "id": "PlatformArch",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformArch",
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "string"
             },
             {
@@ -994,6 +1011,7 @@
                 ],
                 "description": "An object containing information about the current platform.",
                 "id": "PlatformInfo",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformInfo",
                 "properties": {
                     "arch": {
                         "$ref": "PlatformArch",
@@ -1008,6 +1026,9 @@
                         "$ref": "PlatformOs",
                         "description": "The operating system the browser is running on."
                     }
+                },
+                "support": {
+                    "version_added": "45"
                 },
                 "type": "object"
             },
@@ -1046,6 +1067,10 @@
                     "update_available"
                 ],
                 "id": "RequestUpdateCheckStatus",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/RequestUpdateCheckStatus",
+                "support": {
+                    "version_added": false
+                },
                 "type": "string"
             },
             {
@@ -1060,6 +1085,10 @@
                     "browser_update"
                 ],
                 "id": "OnInstalledReason",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnInstalledReason",
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "string"
             },
             {
@@ -1074,6 +1103,10 @@
                     "periodic"
                 ],
                 "id": "OnRestartRequiredReason",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnRestartRequiredReason",
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "string"
             },
             {
@@ -1082,6 +1115,10 @@
                     "content_script"
                 ],
                 "id": "OnPerformanceWarningCategory",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnPerformanceWarningCategory",
+                "support": {
+                    "version_added": "124"
+                },
                 "type": "string"
             },
             {
@@ -1092,6 +1129,10 @@
                     "high"
                 ],
                 "id": "OnPerformanceWarningSeverity",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnPerformanceWarningSeverity",
+                "support": {
+                    "version_added": "124"
+                },
                 "type": "string"
             }
         ]
