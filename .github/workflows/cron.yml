@@ -6,9 +6,44 @@ on:
   workflow_dispatch:      # Allow manual trigger as well
 
 jobs:
-  update-schema-files:
+  update-schema-files-release-mv2:
     uses: ./.github/workflows/update.yml
     with:
       release: release
       branch: release-mv2
       manifestVersion: 2
+
+  update-schema-files-release-mv3:
+    uses: ./.github/workflows/update.yml
+    with:
+      release: release
+      branch: release-mv3
+      manifestVersion: 3
+
+  update-schema-files-beta-mv2:
+    uses: ./.github/workflows/update.yml
+    with:
+      release: beta
+      branch: beta-mv2
+      manifestVersion: 2
+
+  update-schema-files-beta-mv3:
+    uses: ./.github/workflows/update.yml
+    with:
+      release: beta
+      branch: beta-mv3
+      manifestVersion: 3
+
+  update-schema-files-128-esr-mv2:
+    uses: ./.github/workflows/update.yml
+    with:
+      release: esr128
+      branch: 128-esr-mv2
+      manifestVersion: 2
+
+  update-schema-files-128-esr-mv3:
+    uses: ./.github/workflows/update.yml
+    with:
+      release: esr128
+      branch: 128-esr-mv3
+      manifestVersion: 3
