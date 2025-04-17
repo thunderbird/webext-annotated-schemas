@@ -14,6 +14,7 @@ jobs:
       manifestVersion: 2
 
   update-schema-files-release-mv3:
+    needs: update-schema-files-release-mv2
     uses: ./.github/workflows/update.yml
     with:
       release: release
@@ -21,6 +22,7 @@ jobs:
       manifestVersion: 3
 
   update-schema-files-beta-mv2:
+    needs: update-schema-files-release-mv3
     uses: ./.github/workflows/update.yml
     with:
       release: beta
@@ -28,6 +30,7 @@ jobs:
       manifestVersion: 2
 
   update-schema-files-beta-mv3:
+    needs: update-schema-files-beta-mv2
     uses: ./.github/workflows/update.yml
     with:
       release: beta
@@ -35,6 +38,7 @@ jobs:
       manifestVersion: 3
 
   update-schema-files-128-esr-mv2:
+    needs: update-schema-files-beta-mv3
     uses: ./.github/workflows/update.yml
     with:
       release: esr128
@@ -42,6 +46,7 @@ jobs:
       manifestVersion: 2
 
   update-schema-files-128-esr-mv3:
+    needs: update-schema-files-128-esr-mv2
     uses: ./.github/workflows/update.yml
     with:
       release: esr128
