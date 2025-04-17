@@ -1,5 +1,6 @@
 [
     {
+        "applicationVersion": "138.0",
         "namespace": "manifest",
         "types": [
             {
@@ -1070,12 +1071,17 @@
         ],
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#messageid",
                 "description": "A unique id representing a $(ref:messages.MessageHeader) and the associated message. This id doesn’t refer to the Message-ID email header. It is an internal tracking number that does not remain after a restart. Nor does it follow an email that has been moved to a different folder.",
                 "id": "MessageId",
                 "minimum": 1,
+                "support": {
+                    "version_added": true
+                },
                 "type": "integer"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#inlinetextpart",
                 "description": "An inline part with content type <var>text/*</var>. These parts are not returned by $(ref:messages.listAttachments) and usually make up the readable content of the message, mostly with content type <var>text/plain</var> or <var>text/html</var>",
                 "id": "InlineTextPart",
                 "properties": {
@@ -1088,14 +1094,22 @@
                         "type": "string"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#mailboxheaderstring",
                 "description": "Content may either be a single email address, or a mailbox string (see RFC 5322, section 3.4). Use $(ref:messengerUtilities.parseMailboxString) to extract the name and/or the email from the mailbox string.",
                 "id": "MailBoxHeaderString",
+                "support": {
+                    "version_added": true
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#messageheader",
                 "description": "Basic information about a message.",
                 "id": "MessageHeader",
                 "properties": {
@@ -1185,9 +1199,13 @@
                         "type": "array"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#messagelist",
                 "description": "See $(doc:examples/messageLists) for more information.",
                 "id": "MessageList",
                 "properties": {
@@ -1209,9 +1227,13 @@
                         "type": "array"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#messagepart",
                 "description": "Represents an email message \"part\", which could be the whole message.",
                 "id": "MessagePart",
                 "properties": {
@@ -1286,9 +1308,13 @@
                         "type": "integer"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#messageproperties",
                 "description": "Message properties used in $(ref:messages.update) and $(ref:messages.import). They can also be monitored by $(ref:messages.onUpdated).",
                 "id": "MessageProperties",
                 "properties": {
@@ -1321,9 +1347,13 @@
                         "type": "array"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#messageattachment",
                 "description": "Represents an attachment in a message.",
                 "id": "MessageAttachment",
                 "properties": {
@@ -1368,9 +1398,13 @@
                         "type": "integer"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#queryrange",
                 "description": "An object defining a range.",
                 "id": "QueryRange",
                 "properties": {
@@ -1384,6 +1418,9 @@
                         "optional": true,
                         "type": "integer"
                     }
+                },
+                "support": {
+                    "version_added": true
                 },
                 "type": "object"
             }

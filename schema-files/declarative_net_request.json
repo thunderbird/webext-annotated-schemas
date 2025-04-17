@@ -1,5 +1,6 @@
 [
     {
+        "applicationVersion": "138.0",
         "namespace": "manifest",
         "types": [
             {
@@ -631,6 +632,10 @@
                     "other"
                 ],
                 "id": "ResourceType",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/ResourceType",
+                "support": {
+                    "version_added": "113"
+                },
                 "type": "string"
             },
             {
@@ -644,6 +649,7 @@
             },
             {
                 "id": "MatchedRule",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MatchedRule",
                 "properties": {
                     "extensionId": {
                         "description": "ID of the extension, if this rule belongs to a different extension.",
@@ -659,11 +665,15 @@
                         "type": "string"
                     }
                 },
+                "support": {
+                    "version_added": "113"
+                },
                 "type": "object"
             },
             {
                 "description": "Describes the type of the Rule.action.redirect.transform property.",
                 "id": "URLTransform",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/URLTransform",
                 "properties": {
                     "fragment": {
                         "description": "The new fragment for the request. Should be either empty, in which case the existing fragment is cleared; or should begin with '#'.",
@@ -748,10 +758,14 @@
                         "type": "string"
                     }
                 },
+                "support": {
+                    "version_added": "113"
+                },
                 "type": "object"
             },
             {
                 "id": "Rule",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/Rule",
                 "properties": {
                     "action": {
                         "description": "The action to take if this rule is matched.",
@@ -987,6 +1001,9 @@
                         "optional": true,
                         "type": "integer"
                     }
+                },
+                "support": {
+                    "version_added": "113"
                 },
                 "type": "object"
             },

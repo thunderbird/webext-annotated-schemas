@@ -1,5 +1,6 @@
 [
     {
+        "applicationVersion": "138.0",
         "namespace": "manifest",
         "types": [
             {
@@ -413,6 +414,7 @@
         ],
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/cloudFile.html#cloudfileaccount",
                 "description": "Information about a cloud file account.",
                 "id": "CloudFileAccount",
                 "properties": {
@@ -452,9 +454,13 @@
                         "type": "integer"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/cloudFile.html#cloudfiletemplateinfo",
                 "description": "Defines information to be used in the cloud file entry added to the message.",
                 "id": "CloudFileTemplateInfo",
                 "properties": {
@@ -501,9 +507,13 @@
                         "type": "string"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/cloudFile.html#cloudfile",
                 "description": "Information about a cloud file.",
                 "id": "CloudFile",
                 "properties": {
@@ -523,9 +533,13 @@
                         "type": "string"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/cloudFile.html#relatedcloudfile",
                 "description": "Information about an already uploaded cloud file, which is related to a new upload. For example if the content of a cloud attachment is updated, if a repeatedly used cloud attachment is renamed (and therefore should be re-uploaded to not invalidate existing links) or if the provider has its manifest property <var>reuse_uploads</var> set to <var>false</var>.",
                 "id": "RelatedCloudFile",
                 "properties": {
@@ -553,6 +567,9 @@
                         "optional": true,
                         "type": "string"
                     }
+                },
+                "support": {
+                    "version_added": true
                 },
                 "type": "object"
             }

@@ -1,5 +1,6 @@
 [
     {
+        "applicationVersion": "138.0",
         "namespace": "manifest",
         "types": [
             {
@@ -244,6 +245,7 @@
         ],
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/addressBooks.html#nodetype",
                 "description": "Indicates the type of a Node.",
                 "enum": [
                     "addressBook",
@@ -251,9 +253,13 @@
                     "mailingList"
                 ],
                 "id": "NodeType",
+                "support": {
+                    "version_added": true
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/addressBooks.html#addressbooknode",
                 "description": "A node representing an address book.",
                 "id": "AddressBookNode",
                 "properties": {
@@ -299,6 +305,9 @@
                         "$ref": "NodeType",
                         "description": "Always set to <var>addressBook</var>."
                     }
+                },
+                "support": {
+                    "version_added": true
                 },
                 "type": "object"
             }
@@ -653,6 +662,7 @@
         ],
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/contacts.html#queryinfo",
                 "description": "Object defining a query for $(ref:contacts.quickSearch).",
                 "id": "QueryInfo",
                 "properties": {
@@ -686,9 +696,13 @@
                         "type": "string"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/contacts.html#contactnode",
                 "description": "A node representing a contact in an address book.",
                 "id": "ContactNode",
                 "properties": {
@@ -719,9 +733,13 @@
                         "description": "Always set to <var>contact</var>."
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/contacts.html#contactproperties",
                 "description": "A set of individual properties for a particular contact, and its vCard string. Further information can be found in $(doc:examples/vcard).",
                 "id": "ContactProperties",
                 "patternProperties": {
@@ -736,9 +754,13 @@
                         ]
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/contacts.html#propertychange",
                 "description": "A dictionary of changed properties. Keys are the property name that changed, values are an object containing <var>oldValue</var> and <var>newValue</var>. Values can be either a string or <var>null</var>.",
                 "id": "PropertyChange",
                 "patternProperties": {
@@ -767,6 +789,9 @@
                         },
                         "type": "object"
                     }
+                },
+                "support": {
+                    "version_added": true
                 },
                 "type": "object"
             }
@@ -1083,6 +1108,7 @@
         ],
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/mailingLists.html#mailinglistnode",
                 "description": "A node representing a mailing list.",
                 "id": "MailingListNode",
                 "properties": {
@@ -1126,6 +1152,9 @@
                         "$ref": "addressBooks.NodeType",
                         "description": "Always set to <var>mailingList</var>."
                     }
+                },
+                "support": {
+                    "version_added": true
                 },
                 "type": "object"
             }
