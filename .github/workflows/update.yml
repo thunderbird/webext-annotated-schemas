@@ -1,22 +1,33 @@
-name: Update Schema Files (release-mv3)
+name: Update schema files
 
 on:
-  schedule:
-    - cron: '0 2 * * *'   # Runs daily at 2:00 AM UTC
-  workflow_dispatch:      # Allow manual trigger as well
+  workflow_call:
+    inputs:
+      release:
+        required: true
+        type: string
+        default: esr128
+      branch:
+        required: true
+        type: string
+        default: 128-esr-mv3
+      manifestVersion:
+        required: true
+        type: string
+        default: 3
 
 jobs:
   update-schema:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout webext-schemas repo (default branch)
+      - name: Checkout webext-schemas default branch
         uses: actions/checkout@v4
 
-      - name: Checkout target branch
+      - name: Checkout target branch ${{ inputs.branch }}
         run: |
           git fetch origin
-          git checkout release-mv3
+          git checkout ${{ inputs.branch }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -31,10 +42,10 @@ jobs:
         run: |
           npm install --prefix generator
 
-      - name: Run generator script
+      - name: Run generator script for --release=${{ inputs.release }} --manifest_version=${{ inputs.manifestVersion }}
         id: generate
         run: |
-          node generator/get_thunderbird_schema_files.js --release=release --manifest_version=3 --output=./schema-files/
+          node generator/get_thunderbird_schema_files.js --release=${{ inputs.release }} --manifest_version=${{ inputs.manifestVersion }} --output=./schema-files/
 
       - name: Check for changes
         id: git-check
@@ -50,10 +61,10 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit and Push Changes
+      - name: Commit and Push Changes for ${{ inputs.branch }} with tag ${{ steps.generate.outputs.tag_name }}-mv${{ inputs.manifestVersion }}
         if: steps.git-check.outputs.changed == 'true'
         run: |
-          git commit -m "Update schema files (release-mv3)"
-          git push origin HEAD:release-mv3
-          git tag -f ${{ steps.generate.outputs.tag_name }}
-          git push origin -f ${{ steps.generate.outputs.tag_name }}
+          git commit -m "Update schema files (${{ inputs.branch }}, ${{ steps.generate.outputs.tag_name }})"
+          git push origin HEAD:${{ inputs.branch }}
+          git tag -f ${{ steps.generate.outputs.tag_name }}-mv${{ inputs.manifestVersion }}
+          git push origin -f ${{ steps.generate.outputs.tag_name }}-mv${{ inputs.manifestVersion }}

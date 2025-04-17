@@ -1,0 +1,14 @@
+name: Scheduled update of schema files
+
+on:
+  schedule:
+    - cron: '0 2 * * *'   # Runs daily at 2:00 AM UTC
+  workflow_dispatch:      # Allow manual trigger as well
+
+jobs:
+  update-schema-files:
+    uses: ./.github/workflows/update.yml
+    with:
+      release: release
+      branch: release-mv2
+      manifestVersion: 2
