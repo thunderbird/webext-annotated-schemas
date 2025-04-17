@@ -6,6 +6,7 @@
             {
                 "description": "Description of a declarative rule for handling events.",
                 "id": "Rule",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Rule",
                 "properties": {
                     "actions": {
                         "description": "List of actions that are triggered if one of the condtions is fulfilled.",
@@ -39,6 +40,9 @@
                         "optional": true,
                         "type": "array"
                     }
+                },
+                "support": {
+                    "version_added": false
                 },
                 "type": "object"
             },
@@ -213,11 +217,16 @@
                     }
                 ],
                 "id": "Event",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event",
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             },
             {
                 "description": "Filters URLs for various criteria. See <a href='events#filtered'>event filtering</a>. All criteria are case sensitive.",
                 "id": "UrlFilter",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/UrlFilter",
                 "properties": {
                     "hostContains": {
                         "description": "Matches if the host name of the URL contains a specified string. To test whether a host name component has a prefix 'foo', use hostContains: '.foo'. This matches 'www.foobar.com' and 'foo.com', because an implicit dot is added at the beginning of the host name. Similarly, hostContains can be used to match against component suffix ('foo.') and to exactly match against components ('.foo.'). Suffix- and exact-matching for the last components need to be done separately using hostSuffix, because no implicit dot is added at the end of the host name.",
@@ -340,8 +349,15 @@
                         "type": "string"
                     }
                 },
+                "support": {
+                    "version_added": "50"
+                },
                 "type": "object"
             }
         ]
+    },
+    {
+        "applicationVersion": "128.9.2",
+        "namespace": "manifest"
     }
 ]

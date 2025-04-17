@@ -502,6 +502,7 @@
         },
         "types": [
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv2/windows.html#windowtype",
                 "description": "The type of a window. Under some circumstances a window may not be assigned a type property.",
                 "enum": [
                     "normal",
@@ -510,9 +511,14 @@
                     "messageDisplay"
                 ],
                 "id": "WindowType",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows/WindowType",
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv2/windows.html#windowstate",
                 "description": "The state of this window.",
                 "enum": [
                     "normal",
@@ -522,10 +528,16 @@
                     "docked"
                 ],
                 "id": "WindowState",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows/WindowState",
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv2/windows.html#window",
                 "id": "Window",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows/Window",
                 "properties": {
                     "alwaysOnTop": {
                         "description": "Whether the window is set to be always on top.",
@@ -589,9 +601,13 @@
                         "type": "integer"
                     }
                 },
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "object"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv2/windows.html#createtype",
                 "description": "Specifies what type of window to create. Thunderbird does not support <var>panel</var> and <var>detached_panel</var>, they are interpreted as <var>popup</var>.",
                 "enum": [
                     "normal",
@@ -600,9 +616,14 @@
                     "detached_panel"
                 ],
                 "id": "CreateType",
+                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows/CreateType",
+                "support": {
+                    "version_added": "45"
+                },
                 "type": "string"
             },
             {
+                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv2/windows.html#getinfo",
                 "description": "Specifies additional requirements for the returned windows.",
                 "id": "GetInfo",
                 "properties": {
@@ -620,8 +641,15 @@
                         "type": "array"
                     }
                 },
+                "support": {
+                    "version_added": true
+                },
                 "type": "object"
             }
         ]
+    },
+    {
+        "applicationVersion": "128.9.2",
+        "namespace": "manifest"
     }
 ]
