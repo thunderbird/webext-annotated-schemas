@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "137.0.3",
+        "applicationVersion": "138.0",
         "namespace": "manifest",
         "types": [
             {
@@ -1082,6 +1082,12 @@
                             "tabs"
                         ],
                         "type": "string"
+                    },
+                    "groupId": {
+                        "description": "The ID of the group that the tab belongs to. -1 if the tab does not belong to a tab group.",
+                        "minimum": -1,
+                        "optional": true,
+                        "type": "integer"
                     },
                     "height": {
                         "description": "The height of the tab in pixels.",
