@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "138.0.2",
+        "applicationVersion": "139.0",
         "namespace": "manifest",
         "permissions": [],
         "types": [
@@ -427,6 +427,54 @@
             {
                 "choices": [
                     {
+                        "enum": [
+                            "authenticationInfo",
+                            "bookmarksInfo",
+                            "browsingHistory",
+                            "financialAndPaymentInfo",
+                            "healthInfo",
+                            "locationInfo",
+                            "personalCommunications",
+                            "personallyIdentifyingInfo",
+                            "websiteActivity",
+                            "websiteContent"
+                        ],
+                        "type": "string"
+                    }
+                ],
+                "id": "CommonDataCollectionPermission"
+            },
+            {
+                "choices": [
+                    {
+                        "$ref": "CommonDataCollectionPermission"
+                    },
+                    {
+                        "enum": [
+                            "none"
+                        ],
+                        "type": "string"
+                    }
+                ],
+                "id": "DataCollectionPermission"
+            },
+            {
+                "choices": [
+                    {
+                        "$ref": "CommonDataCollectionPermission"
+                    },
+                    {
+                        "enum": [
+                            "technicalAndInteraction"
+                        ],
+                        "type": "string"
+                    }
+                ],
+                "id": "OptionalDataCollectionPermission"
+            },
+            {
+                "choices": [
+                    {
                         "$ref": "OptionalPermissionNoPrompt"
                     },
                     {
@@ -510,6 +558,31 @@
                     "admin_install_only": {
                         "optional": true,
                         "type": "boolean"
+                    },
+                    "data_collection_permissions": {
+                        "optional": true,
+                        "properties": {
+                            "optional": {
+                                "default": [],
+                                "items": {
+                                    "$ref": "OptionalDataCollectionPermission",
+                                    "onError": "warn"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "required": {
+                                "default": [],
+                                "items": {
+                                    "$ref": "DataCollectionPermission",
+                                    "onError": "warn"
+                                },
+                                "optional": true,
+                                "postprocess": "checkValidRequiredDataCollection",
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
                     },
                     "id": {
                         "$ref": "ExtensionID",
