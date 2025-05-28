@@ -139,6 +139,14 @@
                 "id": "Permissions",
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/Permissions",
                 "properties": {
+                    "data_collection": {
+                        "default": [],
+                        "items": {
+                            "$ref": "manifest.OptionalDataCollectionPermission"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
                     "origins": {
                         "default": [],
                         "items": {
@@ -171,6 +179,14 @@
             {
                 "id": "AnyPermissions",
                 "properties": {
+                    "data_collection": {
+                        "default": [],
+                        "items": {
+                            "$ref": "manifest.OptionalDataCollectionPermission"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
                     "origins": {
                         "default": [],
                         "items": {
@@ -200,7 +216,7 @@
         ]
     },
     {
-        "applicationVersion": "138.0.2",
+        "applicationVersion": "139.0",
         "namespace": "manifest"
     }
 ]
