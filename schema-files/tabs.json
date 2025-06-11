@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0b4",
+        "applicationVersion": "140.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -154,7 +154,7 @@
             },
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/tabs.html#onactivated-activeinfo",
-                "description": "Fires when the active tab in a window changes. Note that the tab's URL may not be set at the time this event fired, but you can listen to onUpdated events to be notified when a URL is set.",
+                "description": "Fires when the active tab in a window changes. The tab's URL may not be set at the time this event fired, listen to the $(ref:tabs.onUpdated) event instead to be notified when a URL is set.",
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onActivated",
                 "name": "onActivated",
                 "parameters": [
@@ -481,7 +481,15 @@
                                 "type": "boolean"
                             },
                             "cookieStoreId": {
-                                "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id the new tab should use. Either a custom id created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or a built-in one: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>. **Note:** The naming pattern was deliberately not changed for Thunderbird, but kept for compatibility reasons. The <permission>cookies</permission> permission is required to be able to specify this property. Furthermore, the <permission>contextualIdentities</permission> permission should be requested, to enable the contextual identities feature (enabled by default only on Thunderbird Daily).",
+                                "annotations": [
+                                    {
+                                        "note": "The naming pattern of the built-in cookie stores was deliberately not changed for Thunderbird, but kept for compatibility reasons."
+                                    },
+                                    {
+                                        "note": "The <permission>cookies</permission> permission is required to be able to specify this property. Furthermore, the <permission>contextualIdentities</permission> permission should be requested, to enable the contextual identities feature (enabled by default only on Thunderbird Daily)."
+                                    }
+                                ],
+                                "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id the new tab should use. Either a custom id created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or a built-in one: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>.",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -595,6 +603,11 @@
                                 "type": "boolean"
                             },
                             "cookieStoreId": {
+                                "annotations": [
+                                    {
+                                        "note": "The naming pattern of the built-in cookie stores was deliberately not changed for Thunderbird, but kept for compatibility reasons."
+                                    }
+                                ],
                                 "choices": [
                                     {
                                         "items": {
@@ -606,7 +619,7 @@
                                         "type": "string"
                                     }
                                 ],
-                                "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id(s) used by the tabs. Either custom ids created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or built-in ones: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>. **Note:** The naming pattern was deliberately not changed for Thunderbird, but kept for compatibility reasons.",
+                                "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id(s) used by the tabs. Either custom ids created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or built-in ones: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>.",
                                 "optional": true
                             },
                             "currentWindow": {
@@ -678,7 +691,7 @@
                                         "type": "array"
                                     }
                                 ],
-                                "description": "Match tabs against one or more <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL Patterns</a>. Note that fragment identifiers are not matched.",
+                                "description": "Match tabs against one or more <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL Patterns</a>. Fragment identifiers are not matched.",
                                 "optional": true
                             },
                             "windowId": {
@@ -745,7 +758,12 @@
                                 "type": "boolean"
                             },
                             "url": {
-                                "description": "A URL of a page to load. If the URL points to a content page (a web page, an extension page or a registered WebExtension protocol handler page), the tab will navigate to the requested page. All other URLs will be opened externally without changing the tab. **Note:** This function will throw an error, if a content page is loaded into a non-content tab (its type must be either <var>content</var> or <var>mail</var>).",
+                                "annotations": [
+                                    {
+                                        "note": "This function will throw an error, if a content page is loaded into a non-content tab (its type must be either <var>content</var> or <var>mail</var>)."
+                                    }
+                                ],
+                                "description": "A URL of a page to load. If the URL points to a content page (a web page, an extension page or a registered WebExtension protocol handler page), the tab will navigate to the requested page. All other URLs will be opened externally without changing the tab.",
                                 "optional": true,
                                 "type": "string"
                             }
@@ -776,7 +794,7 @@
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/tabs.html#move-tabids-moveproperties",
                 "async": "callback",
-                "description": "Moves one or more tabs to a new position within its current window, or to a different window. Note that tabs can only be moved to and from windows of type <var>normal</var>.",
+                "description": "Moves one or more tabs to a new position within its current window, or to a different window. Tabs can only be moved to and from windows of type <var>normal</var>.",
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/move",
                 "name": "move",
                 "parameters": [
@@ -1071,7 +1089,12 @@
                         "type": "boolean"
                     },
                     "cookieStoreId": {
-                        "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id used by the tab. Either a custom id created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or a built-in one: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>. **Note:** The naming pattern was deliberately not changed for Thunderbird, but kept for compatibility reasons.",
+                        "annotations": [
+                            {
+                                "note": "The naming pattern of the built-in cookie stores was deliberately not changed for Thunderbird, but kept for compatibility reasons."
+                            }
+                        ],
+                        "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id used by the tab. Either a custom id created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or a built-in one: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1225,7 +1248,7 @@
             },
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/tabs.html#updatepropertyname",
-                "description": "Event names supported in onUpdated.",
+                "description": "Event names supported in $(ref:tabs.onUpdated).",
                 "enum": [
                     "favIconUrl",
                     "status",
@@ -1239,7 +1262,7 @@
             },
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/tabs.html#updatefilter",
-                "description": "An object describing filters to apply to tabs.onUpdated events.",
+                "description": "An object describing filters to apply to $(ref:tabs.onUpdated) events.",
                 "id": "UpdateFilter",
                 "properties": {
                     "properties": {

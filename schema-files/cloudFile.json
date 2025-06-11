@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0b4",
+        "applicationVersion": "140.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -14,18 +14,23 @@
                         "properties": {
                             "browser_style": {
                                 "default": false,
-                                "description": "Enable browser styles in the <var>management_url</var> page. See the <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/user_interface/Browser_styles'>MDN documentation on browser styles</a> for more information.",
+                                "description": "Enable browser styles in the <var>management_url</var> page. See the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Browser_styles'>MDN documentation on browser styles</a> for more information.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "data_format": {
                                 "deprecated": true,
-                                "description": "This property is no longer used. The only supported data format for the <var>data</var> argument in $(ref:cloudFile.onFileUpload) is <a href='https://developer.mozilla.org/docs/Web/API/File'>File</a>.",
+                                "description": "This property is no longer used. The only supported data format for the <var>data</var> argument in $(ref:cloudFile.onFileUpload) is <a href='https://developer.mozilla.org/en-US/docs/Web/API/File'>File</a>.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "management_url": {
-                                "description": "A page for configuring accounts, to be displayed in the preferences UI. **Note:** Within this UI only a limited subset of the WebExtension APIs is available: <var>cloudFile</var>, <var>extension</var>, <var>i18n</var>, <var>runtime</var>, <var>storage</var>, <var>test</var>.",
+                                "annotations": [
+                                    {
+                                        "note": "Within this UI only a limited subset of the WebExtension APIs is available: <var>cloudFile</var>, <var>extension</var>, <var>i18n</var>, <var>runtime</var>, <var>storage</var>. The id of the to be configured cloud file account can be retrieved via <code>new URL(location.href).searchParams.get('accountId');</code>."
+                                    }
+                                ],
+                                "description": "A page for configuring accounts, to be displayed in the preferences UI.",
                                 "format": "relativeUrl",
                                 "preprocess": "localize",
                                 "type": "string"
@@ -64,6 +69,7 @@
         "allowedContexts": [
             "content"
         ],
+        "description": "The cloudFile (a.k.a. fileLink) API allows to create a provider to store large attachments in the cloud instead of attaching them directly to the message.",
         "events": [
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/cloudFile.html#onfileupload-account-fileinfo-tab-relatedfileinfo",
@@ -470,7 +476,26 @@
                         "properties": {
                             "format": {
                                 "additionalProperties": true,
-                                "description": "A format options object as used by <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat'>Intl.DateTimeFormat</a>. Defaults to: <literalinclude>includes/cloudFile/defaultDateFormat.js<lang>JavaScript</lang></literalinclude>",
+                                "annotations": [
+                                    {
+                                        "text": "Defaults to:"
+                                    },
+                                    {
+                                        "code": [
+                                            "{",
+                                            "  \"day\": \"2-digit\",",
+                                            "  \"month\": \"2-digit\",",
+                                            "  \"year\": \"numeric\",",
+                                            "  \"hour\": \"2-digit\",",
+                                            "  \"minute\": \"2-digit\",",
+                                            "  \"timeZoneName\": \"short\"",
+                                            "}",
+                                            ""
+                                        ],
+                                        "type": "JSON"
+                                    }
+                                ],
+                                "description": "A format options object as used by <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat'>Intl.DateTimeFormat</a>.",
                                 "optional": true,
                                 "type": "object"
                             },

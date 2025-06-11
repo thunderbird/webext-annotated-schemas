@@ -1,5 +1,10 @@
 [
     {
+        "annotations": [
+            {
+                "note": "This API can be used with Thunderbird's main window and popup windows, both of which support web tabs, as well as with other window types like the composer window, which does not. Ensure your code handles each window type appropriately based on its capabilities."
+            }
+        ],
         "description": "The windows API supports creating, modifying and interacting with Thunderbird windows.",
         "events": [
             {
@@ -64,8 +69,13 @@
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "note": "On some Linux window managers, WINDOW_ID_NONE will always be sent immediately preceding a switch from one window to another."
+                    }
+                ],
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/windows.html#onfocuschanged-windowid",
-                "description": "Fired when the currently focused window changes. Will be $(ref:windows.WINDOW_ID_NONE), if all windows have lost focus. **Note:** On some Linux window managers, WINDOW_ID_NONE will always be sent immediately preceding a switch from one window to another.",
+                "description": "Fired when the currently focused window changes. Will be $(ref:windows.WINDOW_ID_NONE), if all windows have lost focus.",
                 "filters": [
                     {
                         "description": "Conditions that the window's type being focused must satisfy. By default it will satisfy <var>['app', 'normal', 'panel', 'popup']</var>, with <var>app</var> and <var>panel</var> window types limited to the extension's own windows.",
@@ -253,7 +263,15 @@
                                 "type": "boolean"
                             },
                             "cookieStoreId": {
-                                "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id which all initially opened tabs should use. Either a custom id created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or a built-in one: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>. **Note:** The naming pattern was deliberately not changed for Thunderbird, but kept for compatibility reasons. The <permission>cookies</permission> permission is required to be able to specify this property. Furthermore, the <permission>contextualIdentities</permission> permission should be requested, to enable the contextual identities feature (enabled by default only on Thunderbird Daily).",
+                                "annotations": [
+                                    {
+                                        "note": "The naming pattern of the built-in cookie stores was deliberately not changed for Thunderbird, but kept for compatibility reasons."
+                                    },
+                                    {
+                                        "note": "The <permission>cookies</permission> permission is required to be able to specify this property. Furthermore, the <permission>contextualIdentities</permission> permission should be requested, to enable the contextual identities feature (enabled by default only on Thunderbird Daily)."
+                                    }
+                                ],
+                                "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id which all initially opened tabs should use. Either a custom id created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or a built-in one: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>.",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -520,6 +538,36 @@
                     "messageCompose",
                     "messageDisplay"
                 ],
+                "enums": {
+                    "messageCompose": {
+                        "annotations": [
+                            {
+                                "text": "A non-modal stand-alone message compose window."
+                            }
+                        ]
+                    },
+                    "messageDisplay": {
+                        "annotations": [
+                            {
+                                "text": "A non-modal stand-alone message display window, viewing a single message."
+                            }
+                        ]
+                    },
+                    "normal": {
+                        "annotations": [
+                            {
+                                "text": "A normal Thunderbird window, a.k.a. 3-pane-window (folder pane, message pane and preview pane)."
+                            }
+                        ]
+                    },
+                    "popup": {
+                        "annotations": [
+                            {
+                                "text": "A non-modal stand-alone popup window."
+                            }
+                        ]
+                    }
+                },
                 "id": "WindowType",
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows/WindowType",
                 "support": {
@@ -625,6 +673,36 @@
                     "panel",
                     "detached_panel"
                 ],
+                "enums": {
+                    "detached_panel": {
+                        "annotations": [
+                            {
+                                "text": "Not supported, same as <var>popup</var>"
+                            }
+                        ]
+                    },
+                    "normal": {
+                        "annotations": [
+                            {
+                                "text": "A normal Thunderbird window, a.k.a. 3-pane-window (folder pane, message pane and preview pane)."
+                            }
+                        ]
+                    },
+                    "panel": {
+                        "annotations": [
+                            {
+                                "text": "Not supported, same as <var>popup</var>"
+                            }
+                        ]
+                    },
+                    "popup": {
+                        "annotations": [
+                            {
+                                "text": "A non-modal stand-alone popup window."
+                            }
+                        ]
+                    }
+                },
                 "id": "CreateType",
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows/CreateType",
                 "support": {
@@ -659,7 +737,7 @@
         ]
     },
     {
-        "applicationVersion": "139.0b4",
+        "applicationVersion": "140.0b2",
         "namespace": "manifest"
     }
 ]

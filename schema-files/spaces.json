@@ -1,5 +1,6 @@
 [
     {
+        "description": "The spaces API allows to manage built-in and custom spaces, and to add buttons for custom spaces to Thunderbird's spaces toolbar.",
         "functions": [
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/spaces.html#create-name-tabproperties-buttonproperties",
@@ -241,7 +242,15 @@
                 "id": "SpaceTabProperties",
                 "properties": {
                     "cookieStoreId": {
-                        "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id used by the tab. Either a custom id created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or a built-in one: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>. **Note:** The naming pattern was deliberately not changed for Thunderbird, but kept for compatibility reasons. The <permission>cookies</permission> permission is required to be able to specify this property. Furthermore, the <permission>contextualIdentities</permission> permission should be requested, to enable the contextual identities feature (enabled by default only on Thunderbird Daily).",
+                        "annotations": [
+                            {
+                                "note": "The naming pattern of the built-in cookie stores was deliberately not changed for Thunderbird, but kept for compatibility reasons."
+                            },
+                            {
+                                "note": " The <permission>cookies</permission> permission is required to be able to specify this property. Furthermore, the <permission>contextualIdentities</permission> permission should be requested, to enable the contextual identities feature (enabled by default only on Thunderbird Daily)."
+                            }
+                        ],
+                        "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id used by the tab. Either a custom id created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or a built-in one: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>.",
                         "optional": true,
                         "type": "string"
                     },
@@ -368,7 +377,7 @@
         ]
     },
     {
-        "applicationVersion": "139.0b4",
+        "applicationVersion": "140.0b2",
         "namespace": "manifest"
     }
 ]

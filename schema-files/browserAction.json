@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0b4",
+        "applicationVersion": "140.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -38,7 +38,7 @@
                             },
                             "browser_style": {
                                 "default": false,
-                                "description": "Enable browser styles. See the <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/user_interface/Browser_styles'>MDN documentation on browser styles</a> for more information.",
+                                "description": "Enable browser styles. See the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Browser_styles'>MDN documentation on browser styles</a> for more information.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -91,7 +91,7 @@
                                 "type": "array"
                             },
                             "theme_icons": {
-                                "description": "Specifies dark and light icons to be used with themes. The <var>light</var> icon is used on dark backgrounds and vice versa. **Note:** The default theme uses the <var>default_icon</var> for light backgrounds (if specified).",
+                                "description": "Specifies dark and light icons to be used with themes. The <var>light</var> icon is used on dark backgrounds and vice versa. The default theme uses the <var>default_icon</var> for light backgrounds (if specified).",
                                 "items": {
                                     "$ref": "ThemeIcons"
                                 },
@@ -971,7 +971,7 @@
                     "type": "any"
                 },
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/browserAction.html#imagedatatype",
-                "description": "Pixel data for an image. Must be an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object (for example, from a <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas'>canvas</a> element).",
+                "description": "Pixel data for an image. Must be an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object (for example, from a <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/canvas'>canvas</a> element).",
                 "id": "ImageDataType",
                 "isInstanceOf": "ImageData",
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/ImageDataType",
@@ -983,7 +983,7 @@
             },
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/browserAction.html#imagedatadictionary",
-                "description": "A <em>dictionary object</em> to specify multiple <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> objects in different sizes, so the icon does not have to be scaled for a device with a different pixel density. Each entry is a <em>name-value</em> pair with <em>value</em> being an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object, and <em>name</em> its size. Example: <literalinclude>includes/ImageDataDictionary.json<lang>JavaScript</lang></literalinclude>See the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_action#choosing_icon_sizes'>MDN documentation about choosing icon sizes</a> for more information on this.",
+                "description": "A <em>dictionary object</em> to specify multiple <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> objects in different sizes, so the icon does not have to be scaled for a device with a different pixel density. Each entry is a <em>name-value</em> pair with <em>value</em> being an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object, and <em>name</em> its size.",
                 "id": "ImageDataDictionary",
                 "patternProperties": {
                     "^[1-9]\\d*$": {
@@ -1015,6 +1015,29 @@
                                 "Ctrl",
                                 "MacCtrl"
                             ],
+                            "enums": {
+                                "Command": {
+                                    "annotations": [
+                                        {
+                                            "text": "Only available on macOS."
+                                        }
+                                    ]
+                                },
+                                "Ctrl": {
+                                    "annotations": [
+                                        {
+                                            "text": "Not available on macOS."
+                                        }
+                                    ]
+                                },
+                                "MacCtrl": {
+                                    "annotations": [
+                                        {
+                                            "text": "Only available on macOS, but of limited use in a click event: Holding down the CTRL key while clicking with the mouse is referred to as a 'CTRL click' under macOS and is interpreted as a right mouse click. In a default profile  the <var>dom.event.treat_ctrl_click_as_right_click.disabled</var> preference is not enabled and the <var>MacCtrl</var> modifier key is not forwarded to the API."
+                                        }
+                                    ]
+                                }
+                            },
                             "type": "string"
                         },
                         "type": "array"
