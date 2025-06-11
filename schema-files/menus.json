@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0b4",
+        "applicationVersion": "140.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -28,6 +28,11 @@
         ]
     },
     {
+        "annotations": [
+            {
+                "text": "Thunderbird's menus API is similar to the $(url:mdn-menus-api)[Firefox menus API], but has been adapted to better suit Thunderbird's specific needs."
+            }
+        ],
         "description": "The menus API allows to add items to Thunderbird's menus. You can choose what types of objects your context menu additions apply to, such as images, hyperlinks, and pages.",
         "events": [
             {
@@ -325,7 +330,7 @@
                                     },
                                     {
                                         "$ref": "tabs.Tab",
-                                        "description": "The details of the tab where the click took place. **Note:** this parameter only present for extensions.",
+                                        "description": "The details of the tab where the click took place.",
                                         "name": "tab"
                                     }
                                 ],
@@ -340,7 +345,7 @@
                                         "type": "string"
                                     }
                                 ],
-                                "description": "**Note:** You cannot change an item to be a child of one of its own descendants.",
+                                "description": "The hierarchical parent of the element. Updating an element to become a child of its own descendants is not supported.",
                                 "optional": true
                             },
                             "targetUrlPatterns": {
@@ -548,6 +553,190 @@
                     "tools_menu",
                     "video"
                 ],
+                "enums": {
+                    "action": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks a browserAction button in a Manifest V3 extension."
+                            }
+                        ]
+                    },
+                    "action_menu": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user opened a browserAction button of type <var>menu</var> in a Manifest V3 extension."
+                            }
+                        ]
+                    },
+                    "all": {
+                        "annotations": [
+                            {
+                                "text": "Equivalent to the combination of all other contexts except for <var>tab</var> and <var>tools_menu</var>."
+                            }
+                        ]
+                    },
+                    "all_message_attachments": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks the summary of the message attachments of a displayed message with more than one attachment."
+                            }
+                        ]
+                    },
+                    "audio": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks an audio element."
+                            }
+                        ]
+                    },
+                    "browser_action": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks a browserAction button."
+                            }
+                        ]
+                    },
+                    "browser_action_menu": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user opened a browserAction button of type <var>menu</var>."
+                            }
+                        ]
+                    },
+                    "compose_action": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks a composeAction button."
+                            }
+                        ]
+                    },
+                    "compose_action_menu": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user opened a composeAction button of type <var>menu</var>."
+                            }
+                        ]
+                    },
+                    "compose_attachments": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks an attachment in the compose window."
+                            }
+                        ]
+                    },
+                    "compose_body": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks in the compose editor."
+                            }
+                        ]
+                    },
+                    "editable": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks an editable element, like a textarea."
+                            }
+                        ]
+                    },
+                    "folder_pane": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks in the folder pane of the main Thunderbird window."
+                            }
+                        ]
+                    },
+                    "frame": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks in a nested iframe."
+                            }
+                        ]
+                    },
+                    "image": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks an image."
+                            }
+                        ]
+                    },
+                    "link": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks on a link."
+                            }
+                        ]
+                    },
+                    "message_attachments": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks a single attachment of a displayed message."
+                            }
+                        ]
+                    },
+                    "message_display_action": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks a messageDisplayAction button."
+                            }
+                        ]
+                    },
+                    "message_display_action_menu": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user opened a messageDisplayAction button of type <var>menu</var>."
+                            }
+                        ]
+                    },
+                    "message_list": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks in the message list (a.k.a. thread pane) of the main Thunderbird window."
+                            }
+                        ]
+                    },
+                    "page": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks in the page, but none of the other page contexts apply (for example, the click is not on an image or a nested iframe or a link)."
+                            }
+                        ]
+                    },
+                    "password": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks on a password input element."
+                            }
+                        ]
+                    },
+                    "selection": {
+                        "annotations": [
+                            {
+                                "text": "Applies when part of the page is selected."
+                            }
+                        ]
+                    },
+                    "tab": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks on a tab (specifically, this refers to the tab-strip or other user interface element enabling the user to switch from one tab to another, not to the page itself)."
+                            }
+                        ]
+                    },
+                    "tools_menu": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user opens the <var>Tools</var> menu of Thunderbird's main menu."
+                            }
+                        ]
+                    },
+                    "video": {
+                        "annotations": [
+                            {
+                                "text": "Applies when the user context-clicks a video element."
+                            }
+                        ]
+                    }
+                },
                 "id": "ContextType",
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/ContextType",
                 "support": {
@@ -621,17 +810,32 @@
                         "type": "string"
                     },
                     "frameUrl": {
-                        "description": "The URL of the frame of the element where the context menu was clicked, if it was in a frame. **Note:** Host permission is required.",
+                        "annotations": [
+                            {
+                                "note": "Host permission is required."
+                            }
+                        ],
+                        "description": "The URL of the frame of the element where the context menu was clicked, if it was in a frame.",
                         "optional": true,
                         "type": "string"
                     },
                     "linkText": {
-                        "description": "If the element is a link, the text of that link. **Note:** Host permission is required.",
+                        "annotations": [
+                            {
+                                "note": "Host permission is required."
+                            }
+                        ],
+                        "description": "If the element is a link, the text of that link.",
                         "optional": true,
                         "type": "string"
                     },
                     "linkUrl": {
-                        "description": "If the element is a link, the URL it points to. **Note:** Host permission is required.",
+                        "annotations": [
+                            {
+                                "note": "Host permission is required."
+                            }
+                        ],
+                        "description": "If the element is a link, the URL it points to.",
                         "optional": true,
                         "type": "string"
                     },
@@ -655,7 +859,12 @@
                         "type": "array"
                     },
                     "pageUrl": {
-                        "description": "The URL of the page where the menu item was clicked. This property is not set if the click occurred in a context where there is no current page, such as in a launcher context menu. **Note:** Host permission is required.",
+                        "annotations": [
+                            {
+                                "note": "Host permission is required."
+                            }
+                        ],
+                        "description": "The URL of the page where the menu item was clicked. This property is not set if the click occurred in a context where there is no current page, such as in a launcher context menu.",
                         "optional": true,
                         "type": "string"
                     },
@@ -673,12 +882,22 @@
                         "optional": true
                     },
                     "selectionText": {
-                        "description": "The text for the context selection, if any. **Note:** Host permission is required.",
+                        "annotations": [
+                            {
+                                "note": "Host permission is required."
+                            }
+                        ],
+                        "description": "The text for the context selection, if any.",
                         "optional": true,
                         "type": "string"
                     },
                     "srcUrl": {
-                        "description": "Will be present for elements with a <em>src</em> URL. **Note:** Host permission is required.",
+                        "annotations": [
+                            {
+                                "note": "Host permission is required."
+                            }
+                        ],
+                        "description": "Will be present for elements with a <em>src</em> URL.",
                         "optional": true,
                         "type": "string"
                     },
@@ -882,8 +1101,26 @@
                 }
             },
             {
+                "annotations": [
+                    {
+                        "text": "Example:"
+                    },
+                    {
+                        "code": [
+                            "{",
+                            "  \"16\": \"icon16.png\",",
+                            "  \"32\": \"icon32.png\"",
+                            "}",
+                            ""
+                        ],
+                        "type": "JSON"
+                    },
+                    {
+                        "text": "See the $(url:mdn-icon-size)[MDN documentation about choosing icon sizes] for more information on this topic."
+                    }
+                ],
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/menus.html#menuicondictionary",
-                "description": "A <em>dictionary object</em> to specify paths for multiple icons in different sizes, so the best matching icon can be used, instead of scaling a standard icon to fit the pixel density of the user's display. Each entry is a <em>name-value</em> pair, with <em>name</em> being a size and <em>value</em> being a $(ref:menus.MenuIconPath). Example: <literalinclude>includes/IconPath.json<lang>JSON</lang></literalinclude>See the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_action#choosing_icon_sizes'>MDN documentation about choosing icon sizes</a> for more information on this. ",
+                "description": "A <em>dictionary object</em> to specify paths for multiple icons in different sizes, so the best matching icon can be used, instead of scaling a standard icon to fit the pixel density of the user's display. Each entry is a <em>name-value</em> pair, with <em>name</em> being a size and <em>value</em> being a $(ref:menus.MenuIconPath).",
                 "id": "MenuIconDictionary",
                 "patternProperties": {
                     "^[1-9]\\d*$": {

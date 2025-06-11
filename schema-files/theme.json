@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0b4",
+        "applicationVersion": "140.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -52,7 +52,21 @@
                         "additionalProperties": {
                             "type": "string"
                         },
-                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map new theme color keys to internal Thunderbird CSS color variables. The example shown below maps the theme color key <var>popup_affordance</var> to the CSS color variable </var>--arrowpanel-dimmed</var>. The new color key is usable as a color reference in $(ref:theme.ThemeType). <literalinclude>includes/theme/theme_experiment_color.json<lang>JSON</lang></literalinclude>",
+                        "annotations": [
+                            {
+                                "text": "The following example maps the theme color key <var>popup_affordance</var> to the CSS variable </var>--arrowpanel-dimmed</var>:"
+                            },
+                            {
+                                "code": [
+                                    "{",
+                                    "  \"popup_affordance\": \"--arrowpanel-dimmed\"",
+                                    "}",
+                                    ""
+                                ],
+                                "type": "JSON"
+                            }
+                        ],
+                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map new theme color keys to internal Thunderbird CSS color variables. The new color key is usable as a color reference in $(ref:theme.ThemeType).",
                         "optional": true,
                         "type": "object"
                     },
@@ -60,7 +74,21 @@
                         "additionalProperties": {
                             "type": "string"
                         },
-                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map new theme image keys to internal Thunderbird CSS image variables. The new image key is usable as an image reference in $(ref:theme.ThemeType). Example: <literalinclude>includes/theme/theme_experiment_image.json<lang>JSON</lang></literalinclude>",
+                        "annotations": [
+                            {
+                                "text": "The following example maps the theme image key <var>theme_toolbar</var> to the CSS variable </var>--toolbar-bgimage</var>:"
+                            },
+                            {
+                                "code": [
+                                    "{",
+                                    "  \"theme_toolbar\": \"--toolbar-bgimage\"",
+                                    "}",
+                                    ""
+                                ],
+                                "type": "JSON"
+                            }
+                        ],
+                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map new theme image keys to internal Thunderbird CSS image variables. The new image key is usable as an image reference in $(ref:theme.ThemeType).",
                         "optional": true,
                         "type": "object"
                     },
@@ -68,13 +96,73 @@
                         "additionalProperties": {
                             "type": "string"
                         },
-                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map new theme property keys to internal Thunderbird CSS property variables. The new property key is usable as a property reference in $(ref:theme.ThemeType). Example: <literalinclude>includes/theme/theme_experiment_property.json<lang>JSON</lang></literalinclude>",
+                        "annotations": [
+                            {
+                                "text": "The following example maps the theme property key <var>toolbar_image_alignment</var> to the CSS variable </var>--toolbar-bgalignment</var>:"
+                            },
+                            {
+                                "code": [
+                                    "{",
+                                    "  \"toolbar_image_alignment\": \"--toolbar-bgalignment\"",
+                                    "}",
+                                    ""
+                                ],
+                                "type": "JSON"
+                            }
+                        ],
+                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map new theme property keys to internal Thunderbird CSS property variables. The new property key is usable as a property reference in $(ref:theme.ThemeType).",
                         "optional": true,
                         "type": "object"
                     },
                     "stylesheet": {
                         "$ref": "ExtensionURL",
-                        "description": "URL to a stylesheet introducing additional CSS variables, extending the theme-able areas of Thunderbird. The <a href='https://github.com/thunderbird/sample-extensions/tree/master/manifest_v2/theme_experiment'>theme_experiment add-on in our example repository</a> is using the stylesheet shown below, to add the <var>--chat-button-color</var> CSS color variable: <literalinclude>includes/theme/theme_experiment_style.css<lang>CSS</lang></literalinclude>The following <em>manifest.json</em> file maps the </var>--chat-button-color</var> CSS color variable to the theme color key <var>exp_chat_button</var> and uses it to set a color for the chat button: <literalinclude>includes/theme/theme_experiment_manifest.json<lang>JSON</lang></literalinclude>",
+                        "annotations": [
+                            {
+                                "text": "The $(url:theme-experiment)[theme_experiment add-on in our example repository] is using the stylesheet shown below, to add the <var>--chat-button-color</var> CSS variable:"
+                            },
+                            {
+                                "code": [
+                                    "image.toolbarbutton-icon[label=\"Chat\"] {",
+                                    "  fill: var(--chat-button-color);",
+                                    "}",
+                                    ""
+                                ],
+                                "type": "CSS"
+                            },
+                            {
+                                "text": "The following <em>manifest.json</em> file maps the </var>--chat-button-color</var> CSS variable to the theme color key <var>exp_chat_button</var> and uses it to set a color for the chat button:"
+                            },
+                            {
+                                "code": [
+                                    "{",
+                                    "  \"name\": \"Theme Experiment\",",
+                                    "  \"description\": \"Changing the color of the chat icon using a theme_experiment.\",",
+                                    "  \"version\": \"1\",",
+                                    "  \"applications\": {",
+                                    "    \"gecko\": {",
+                                    "      \"id\": \"theme_experiment@sample.extensions.thunderbird.net\",",
+                                    "      \"strict_min_version\": \"78.0\"",
+                                    "    }",
+                                    "  },",
+                                    "  \"manifest_version\": 2,",
+                                    "  \"theme_experiment\": {",
+                                    "    \"stylesheet\": \"style.css\",",
+                                    "    \"colors\": {",
+                                    "      \"exp_chat_button\": \"--chat-button-color\"",
+                                    "    }",
+                                    "  },",
+                                    "  \"theme\": {",
+                                    "    \"colors\": {",
+                                    "      \"exp_chat_button\": \"orange\"",
+                                    "    }",
+                                    "  }",
+                                    "}",
+                                    ""
+                                ],
+                                "type": "JSON"
+                            }
+                        ],
+                        "description": "URL to a stylesheet introducing additional CSS variables, extending the theme-able areas of Thunderbird.",
                         "optional": true
                     }
                 },
@@ -414,7 +502,7 @@
                 "properties": {
                     "dark_theme": {
                         "$ref": "ThemeType",
-                        "description": "Fallback properties for the dark system theme.",
+                        "description": "Fallback properties for the dark system theme in a static theme.",
                         "optional": true
                     },
                     "default_locale": {
@@ -432,7 +520,8 @@
                         "type": "object"
                     },
                     "theme": {
-                        "$ref": "ThemeType"
+                        "$ref": "ThemeType",
+                        "description": "Properties for a static theme. A static theme must not contain any other WebExtension logic. If additional logic is required, request the <permission>theme</permission> permission and load/update the theme dynamically. More information about themes can be found in the <a href='https://developer.thunderbird.net/add-ons/web-extension-themes'>theme guide</a>"
                     },
                     "theme_experiment": {
                         "$ref": "ThemeExperiment",

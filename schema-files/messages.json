@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0b4",
+        "applicationVersion": "140.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -25,6 +25,15 @@
         ]
     },
     {
+        "annotations": [
+            {
+                "note": "When the term ``messageId`` is used in these documents, it *doesn't* refer to the Message-ID email header. It is an internal tracking number that does not remain after a restart. Nor does it follow an email that has been moved to a different folder."
+            },
+            {
+                "warning": "Some functions in this API potentially return a lot of messages. See $(doc:guides/messageLists) for more information."
+            }
+        ],
+        "description": "The messages API allows to access and manage the user's messages.",
         "events": [
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#onupdated-message-changedproperties-oldproperties",
@@ -175,7 +184,7 @@
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#continuelist-messagelistid",
                 "async": "callback",
-                "description": "Returns the next chunk of messages in a list. See $(doc:examples/messageLists) for more information.",
+                "description": "Returns the next chunk of messages in a list. See $(doc:guides/messageLists) for more information.",
                 "name": "continueList",
                 "parameters": [
                     {
@@ -260,7 +269,7 @@
                                 "type": "boolean"
                             },
                             "decodeHeaders": {
-                                "description": "Whether to decode RFC 2047 encoded headers of message parts. Defaults to <var>true</var>. **Note:** Automatic decoding of headers containing a list of comma separated mailbox strings can have unwanted side effects. Example: <literalinclude>includes/messages/badHeader.js<lang>JavaScript</lang></literalinclude>",
+                                "description": "Whether to decode RFC 2047 encoded headers of message parts. Defaults to <var>true</var>.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -311,7 +320,34 @@
                         "optional": true,
                         "properties": {
                             "data_format": {
-                                "description": "The message can either be returned as a DOM File (default) or as a <a href='https://developer.mozilla.org/en-US/docs/Web/API/DOMString/Binary'>binary string</a>. It is recommended to use the <var>File</var> format, because the DOM File object can be used as-is with the downloads API and has useful methods to access the content, like <a href='https://developer.mozilla.org/en-US/docs/Web/API/Blob/text'>File.text()</a> and <a href='https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer'>File.arrayBuffer()</a>. Working with binary strings is error prone and needs special handling: <literalinclude>includes/messages/decodeBinaryString.js<lang>JavaScript</lang></literalinclude> (see MDN for <a href='https://developer.mozilla.org/en-US/docs/Web/API/Encoding_API/Encodings'>supported input encodings</a>).",
+                                "annotations": [
+                                    {
+                                        "text": "Working with binary strings is error prone and needs special handling:"
+                                    },
+                                    {
+                                        "code": [
+                                            "/**",
+                                            " * Decodes a binary string using the given encoding format and returns a",
+                                            " * JavaScript string. Produces mangled output if used with anything but a binary",
+                                            " * input string.",
+                                            " */",
+                                            "function decodeBinaryString(binaryString, inputEncoding = \"utf-8\") {",
+                                            "  const buffer = new Uint8Array(binaryString.length);",
+                                            "  for (let i = 0; i < binaryString.length; i++) {",
+                                            "    buffer[i] = binaryString.charCodeAt(i) & 0xff;",
+                                            "  }",
+                                            "  const decoder = new TextDecoder(inputEncoding);",
+                                            "  return decoder.decode(buffer);",
+                                            "}",
+                                            ""
+                                        ],
+                                        "type": "JavaScript"
+                                    },
+                                    {
+                                        "text": " See MDN for $(url:input-encoding)[supported input encodings]."
+                                    }
+                                ],
+                                "description": "The message can either be returned as a DOM File (default) or as a <a href='https://udn.realityripple.com/docs/Web/API/DOMString/Binary'>binary string</a>. It is recommended to use the <var>File</var> format, because the DOM File object can be used as-is with the downloads API and has useful methods to access the content, like <a href='https://developer.mozilla.org/en-US/docs/Web/API/Blob/text'>File.text()</a> and <a href='https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer'>File.arrayBuffer()</a>.",
                                 "enum": [
                                     "BinaryString",
                                     "File"
@@ -382,9 +418,14 @@
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "note": "A message usually contains only one inline text part per subtype, but technically messages can contain multiple inline text parts per subtype."
+                    }
+                ],
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#listinlinetextparts-messageid",
                 "async": "callback",
-                "description": "Lists all inline text parts of a message. These parts are not returned by $(ref:messages.listAttachments) and usually make up the readable content of the message, mostly with content type <var>text/plain</var> or <var>text/html</var>. If a message only includes a part with content type <var>text/html</var>, the method $(ref:messengerUtilities.convertToPlainText) can be used to retreive a plain text version. \n\n**Note:** A message usually contains only one inline text part per subtype, but technically messages can contain multiple inline text parts per subtype.",
+                "description": "Lists all inline text parts of a message. These parts are not returned by $(ref:messages.listAttachments) and usually make up the readable content of the message, mostly with content type <var>text/plain</var> or <var>text/html</var>. If a message only includes a part with content type <var>text/html</var>, the method $(ref:messengerUtilities.convertToPlainText) can be used to retreive a plain text version.",
                 "name": "listInlineTextParts",
                 "parameters": [
                     {
@@ -411,9 +452,25 @@
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "text": "The most simple way to get the content of an attachment is to use the $(url:dom-file-text)[<code>text()</code>] method of the returned $(url:dom-file)[File] object:"
+                    },
+                    {
+                        "code": [
+                            "let attachments = await browser.messages.listAttachments(messageId);",
+                            "for (let att of attachments) {",
+                            "  let file = await browser.messages.getAttachmentFile(messageId, att.partName);",
+                            "  let content = await file.text();",
+                            "}",
+                            ""
+                        ],
+                        "type": "JavaScript"
+                    }
+                ],
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#getattachmentfile-messageid-partname",
                 "async": "callback",
-                "description": "Gets the content of a $(ref:messages.MessageAttachment) as a <a href='https://developer.mozilla.org/docs/Web/API/File'>File</a> object.",
+                "description": "Gets the content of a $(ref:messages.MessageAttachment) as a <a href='https://developer.mozilla.org/en-US/docs/Web/API/File'>File</a> object.",
                 "name": "getAttachmentFile",
                 "parameters": [
                     {
@@ -617,7 +674,7 @@
                                 "type": "boolean"
                             },
                             "online": {
-                                "description": "Query the server directly instead of the local message database. Online queries currently only support querying the <val>headerMessageId</val> property. Currently only supported for NNTP accounts.",
+                                "description": "Query the server directly instead of the local message database. Online queries currently only support querying the <var>headerMessageId</var> property. Currently only supported for NNTP accounts.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -816,12 +873,12 @@
                             {
                                 "properties": {
                                     "deletePermanently": {
-                                        "description": "Whether the message will be deleted permanently, regardless of the account's deletion behavior settings. Use this with care!",
+                                        "description": "Whether the message will be deleted permanently, regardless of the account's deletion behavior settings. A permanently deleted message cannot be restored, even if the action is defined as a user action. Use this with care!",
                                         "optional": true,
                                         "type": "boolean"
                                     },
                                     "isUserAction": {
-                                        "description": "Whether this copy operation should be treated as a user action, for example allowing undo. Note: Deleting messages permanently cannot be undone!",
+                                        "description": "Whether this copy operation should be treated as a user action, for example allowing undo.",
                                         "optional": true,
                                         "type": "boolean"
                                     }
@@ -1048,7 +1105,7 @@
             },
             {
                 "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#messagelist",
-                "description": "See $(doc:examples/messageLists) for more information.",
+                "description": "See $(doc:guides/messageLists) for more information.",
                 "id": "MessageList",
                 "properties": {
                     "id": {
@@ -1269,6 +1326,7 @@
         ]
     },
     {
+        "description": "The messages.tags API allows to manage the user's message tags.",
         "events": [
             {
                 "description": "Fired when a new message tag has been created.",

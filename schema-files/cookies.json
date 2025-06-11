@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0b4",
+        "applicationVersion": "140.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -229,7 +229,7 @@
                             },
                             "sameSite": {
                                 "$ref": "SameSiteStatus",
-                                "default": "no_restriction",
+                                "default": "unspecified",
                                 "description": "The cookie's same-site status.",
                                 "optional": true
                             },
@@ -387,6 +387,7 @@
             {
                 "description": "A cookie's 'SameSite' state (https://tools.ietf.org/html/draft-west-first-party-cookies). 'no_restriction' corresponds to a cookie set without a 'SameSite' attribute, 'lax' to 'SameSite=Lax', and 'strict' to 'SameSite=Strict'.",
                 "enum": [
+                    "unspecified",
                     "no_restriction",
                     "lax",
                     "strict"

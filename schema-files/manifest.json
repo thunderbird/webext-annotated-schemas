@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0b4",
+        "applicationVersion": "140.0b2",
         "namespace": "manifest",
         "permissions": [],
         "types": [
@@ -394,6 +394,11 @@
                 "additionalProperties": {
                     "$ref": "UnrecognizedProperty"
                 },
+                "annotations": [
+                    {
+                        "text": "Define a set of icons for themes depending on whether Thunderbird detects that the theme uses dark or light text. All provided URLs must be relative to the <var>manifest.json</var> file."
+                    }
+                ],
                 "id": "ThemeIcons",
                 "properties": {
                     "dark": {
@@ -479,12 +484,13 @@
                         "enum": [
                             "authenticationInfo",
                             "bookmarksInfo",
-                            "browsingHistory",
+                            "browsingActivity",
                             "financialAndPaymentInfo",
                             "healthInfo",
                             "locationInfo",
                             "personalCommunications",
                             "personallyIdentifyingInfo",
+                            "searchTerms",
                             "websiteActivity",
                             "websiteContent"
                         ],
@@ -569,6 +575,11 @@
                 "type": "string"
             },
             {
+                "annotations": [
+                    {
+                        "text": "A path relative to the root of the extension."
+                    }
+                ],
                 "format": "strictRelativeUrl",
                 "id": "ExtensionURL",
                 "type": "string"
@@ -581,6 +592,19 @@
                 "type": "string"
             },
             {
+                "annotations": [
+                    {
+                        "text": "Defines an image resource. Either a image URL relative the the extensions <var>manifest.json</var> file (supported image formats are <var>JPEG</var>, <var>PNG</var>, <var>APNG</var>, <var>SVG</var> and <var>GIF</var>), or a data URL using a base64 encoded representation of a <var>PNG</var> or <var>JPEG</var> image."
+                    },
+                    {
+                        "text": "Example for a base64 encoded <var>PNG</var> image:"
+                    },
+                    {
+                        "code": [
+                            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
+                        ]
+                    }
+                ],
                 "format": "imageDataOrStrictRelativeUrl",
                 "id": "ImageDataOrExtensionURL",
                 "type": "string"
@@ -830,6 +854,24 @@
                 "type": "object"
             },
             {
+                "annotations": [
+                    {
+                        "text": "Either a <em>string</em> to specify a relative path of a single icon to be used for all sizes, or a <em>dictionary object</em> to specify paths for multiple icons in different sizes, so the icon does not have to be scaled for a device with a different pixel density. Each entry is a <em>name-value</em> pair with <em>value</em> being a relative path to an icon file, and <em>name</em> its size. Example:"
+                    },
+                    {
+                        "code": [
+                            "{",
+                            "  \"16\": \"icon16.png\",",
+                            "  \"32\": \"icon32.png\"",
+                            "}",
+                            ""
+                        ],
+                        "type": "JSON"
+                    },
+                    {
+                        "text": "See the $(url:mdn-icon-size)[MDN documentation about choosing icon sizes] for more information on this topic."
+                    }
+                ],
                 "choices": [
                     {
                         "additionalProperties": false,
