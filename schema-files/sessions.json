@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "140.0b2",
+        "applicationVersion": "140.0b3",
         "namespace": "manifest",
         "types": [
             {
@@ -10,6 +10,15 @@
                         "enum": [
                             "sessions"
                         ],
+                        "enums": {
+                            "sessions": {
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ]
+                            }
+                        },
                         "type": "string"
                     }
                 ]
@@ -28,69 +37,98 @@
         "description": "The sessions API allows to add tab related session data to Thunderbird's tabs, which will be restored on app restart.",
         "functions": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/sessions.html#settabvalue-tabid-key-value",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/sessions.html#settabvalue-tabid-key-value"
+                    },
+                    {
+                        "version_added": "115"
+                    }
+                ],
                 "async": true,
                 "description": "Store a key/value pair associated with a given tab.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/sessions/setTabValue",
                 "name": "setTabValue",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "description": "ID of the tab with which you want to associate the data. Error is thrown if ID is invalid.",
                         "name": "tabId",
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "integer"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "description": "Key that you can later use to retrieve this particular data value.",
                         "name": "key",
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "string"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "name": "value",
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "string"
                     }
                 ],
-                "support": {
-                    "version_added": "57"
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/sessions.html#gettabvalue-tabid-key",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/sessions.html#gettabvalue-tabid-key"
+                    },
+                    {
+                        "version_added": "115"
+                    }
+                ],
                 "async": "callback",
                 "description": "Retrieve a previously stored value for a given tab, given its key. Returns <var>undefined</var> if the requested <var>key</var> does not exist for the given <var>tabId</var>.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/sessions/getTabValue",
                 "name": "getTabValue",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "description": "ID of the tab whose data you are trying to retrieve. Error is thrown if ID is invalid.",
                         "name": "tabId",
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "integer"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "description": "Key identifying the particular value to retrieve.",
                         "name": "key",
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "string"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "string"
                             }
@@ -98,38 +136,42 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "57"
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/sessions.html#removetabvalue-tabid-key",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/sessions.html#removetabvalue-tabid-key"
+                    },
+                    {
+                        "version_added": "115"
+                    }
+                ],
                 "async": true,
                 "description": "Remove a key/value pair from a given tab.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/sessions/removeTabValue",
                 "name": "removeTabValue",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "description": "ID of the tab whose data you are trying to remove. Error is thrown if ID is invalid.",
                         "name": "tabId",
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "integer"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "description": "Key identifying the particular value to remove.",
                         "name": "key",
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "string"
                     }
                 ],
-                "support": {
-                    "version_added": "57"
-                },
                 "type": "function"
             }
         ],
