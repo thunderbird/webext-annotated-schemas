@@ -42,7 +42,7 @@ jobs:
         id: cache-restore
         uses: actions/cache@v3
         with:
-          path: generator/persistent_schema_cache.json
+          path: persistent_schema_cache.json
           key: schema-cache
           restore-keys: |
             schema-cache
@@ -50,7 +50,7 @@ jobs:
       - name: Check if persistent_schema_cache.json exists
         id: check_data
         run: |
-          if [ -f "generator/persistent_schema_cache.json" ]; then
+          if [ -f "persistent_schema_cache.json" ]; then
             echo "found=true" >> "$GITHUB_OUTPUT"
           else
             echo "found=false" >> "$GITHUB_OUTPUT"
@@ -64,7 +64,7 @@ jobs:
 
           for url in $(echo "$releases" | jq -r '.[].assets[]? | select(.name == "persistent_schema_cache.json") | .browser_download_url'); do
             echo "Found persistent_schema_cache.json at: $url"
-            curl -L -o generator/persistent_schema_cache.json "$url"
+            curl -L -o persistent_schema_cache.json "$url"
             echo "Download successful."
             exit 0
           done
@@ -93,7 +93,7 @@ jobs:
       - name: Update cache with new data.json
         uses: actions/cache@v3
         with:
-          path: generator/persistent_schema_cache.json
+          path: persistent_schema_cache.json
           key: schema-cache
 
       - name: Check for changes
