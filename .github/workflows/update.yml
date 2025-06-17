@@ -38,6 +38,40 @@ jobs:
         run: |
           git clone https://github.com/thunderbird/webext-schemas-generator.git generator
 
+      - name: Restore cached persistent_schema_cache.json (if available)
+        id: cache-restore
+        uses: actions/cache@v3
+        with:
+          path: generator/persistent_schema_cache.json
+          key: schema-cache
+          restore-keys: |
+            schema-cache
+
+      - name: Check if persistent_schema_cache.json exists
+        id: check_data
+        run: |
+          if [ -f "generator/persistent_schema_cache.json" ]; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Download fallback from latest release if cache is not found
+        if: steps.check_data.outputs.found == 'false'
+        run: |
+          echo "No cached version found. Looking for persistent_schema_cache.json in a GitHub release..."
+          releases=$(curl -s https://api.github.com/repos/thunderbird/webext-schemas-generator/releases)
+
+          for url in $(echo "$releases" | jq -r '.[].assets[]? | select(.name == "persistent_schema_cache.json") | .browser_download_url'); do
+            echo "Found persistent_schema_cache.json at: $url"
+            curl -L -o generator/persistent_schema_cache.json "$url"
+            echo "Download successful."
+            exit 0
+          done
+
+          echo "No persistent_schema_cache.json found in any release."
+          exit 1
+
       - name: Install dependencies
         run: |
           npm install --prefix generator
@@ -46,6 +80,21 @@ jobs:
         id: generate
         run: |
           node generator/get_thunderbird_schema_files.js --release=${{ inputs.release }} --manifest_version=${{ inputs.manifestVersion }} --output=./schema-files/
+
+      - name: Delete Previous Cache
+        if: ${{ steps.cache-restore.outputs.cache-hit == 'true' }}
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh extension install actions/gh-actions-cache
+          gh actions-cache delete "schema-cache" --confirm
+          
+      - name: Update cache with new data.json
+        uses: actions/cache@v3
+        with:
+          path: generator/persistent_schema_cache.json
+          key: schema-cache
 
       - name: Check for changes
         id: git-check
