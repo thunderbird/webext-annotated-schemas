@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "140.0b2",
+        "applicationVersion": "140.0b3",
         "namespace": "manifest",
         "types": [
             {
@@ -18,6 +18,71 @@
                             "messagesModifyPermanent",
                             "sensitiveDataUpload"
                         ],
+                        "enums": {
+                            "messagesDelete": {
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ]
+                            },
+                            "messagesImport": {
+                                "annotations": [
+                                    {
+                                        "version_added": "106"
+                                    }
+                                ]
+                            },
+                            "messagesModifyPermanent": {
+                                "annotations": [
+                                    {
+                                        "version_added": "123"
+                                    }
+                                ]
+                            },
+                            "messagesMove": {
+                                "annotations": [
+                                    {
+                                        "version_added": "66"
+                                    }
+                                ]
+                            },
+                            "messagesRead": {
+                                "annotations": [
+                                    {
+                                        "version_added": "66"
+                                    }
+                                ]
+                            },
+                            "messagesTags": {
+                                "annotations": [
+                                    {
+                                        "version_added": "102"
+                                    }
+                                ]
+                            },
+                            "messagesTagsList": {
+                                "annotations": [
+                                    {
+                                        "version_added": "122"
+                                    }
+                                ]
+                            },
+                            "messagesUpdate": {
+                                "annotations": [
+                                    {
+                                        "version_added": "122"
+                                    }
+                                ]
+                            },
+                            "sensitiveDataUpload": {
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ]
+                            }
+                        },
                         "type": "string"
                     }
                 ]
@@ -36,95 +101,163 @@
         "description": "The messages API allows to access and manage the user's messages.",
         "events": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#onupdated-message-changedproperties-oldproperties",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#onupdated-message-changedproperties-oldproperties"
+                    },
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "description": "Fired when one or more properties of a message have been updated.",
                 "name": "onUpdated",
                 "parameters": [
                     {
                         "$ref": "messages.MessageHeader",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "message"
                     },
                     {
                         "$ref": "messages.MessageProperties",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "changedProperties"
                     },
                     {
                         "$ref": "messages.MessageProperties",
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
                         "name": "oldProperties"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#onmoved-originalmessages-movedmessages",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#onmoved-originalmessages-movedmessages"
+                    },
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "description": "Fired when messages have been moved.",
                 "name": "onMoved",
                 "parameters": [
                     {
                         "$ref": "messages.MessageList",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "originalMessages"
                     },
                     {
                         "$ref": "messages.MessageList",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "movedMessages"
                     }
                 ],
                 "permissions": [
                     "accountsRead"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#oncopied-originalmessages-copiedmessages",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#oncopied-originalmessages-copiedmessages"
+                    },
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "description": "Fired when messages have been copied.",
                 "name": "onCopied",
                 "parameters": [
                     {
                         "$ref": "messages.MessageList",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "originalMessages"
                     },
                     {
                         "$ref": "messages.MessageList",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "copiedMessages"
                     }
                 ],
                 "permissions": [
                     "accountsRead"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#ondeleted-messages",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#ondeleted-messages"
+                    },
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "description": "Fired when messages have been permanently deleted.",
                 "name": "onDeleted",
                 "parameters": [
                     {
                         "$ref": "messages.MessageList",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "messages"
                     }
                 ],
                 "permissions": [
                     "accountsRead"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#onnewmailreceived-folder-messages",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#onnewmailreceived-folder-messages"
+                    },
+                    {
+                        "version_added": "75"
+                    }
+                ],
                 "description": "Fired when a new message is received, and has been handled by message filters and junk classification. Filters running after junk classification may move the message again.",
                 "extraParameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "Monitor all folders (including all special use folders as defined by $(ref:folders.MailFolderSpecialUse)) instead of just inbox folders and normal folders.",
                         "name": "monitorAllFolders",
                         "optional": true,
@@ -135,39 +268,68 @@
                 "parameters": [
                     {
                         "$ref": "folders.MailFolder",
+                        "annotations": [
+                            {
+                                "version_added": "75"
+                            }
+                        ],
                         "name": "folder"
                     },
                     {
                         "$ref": "messages.MessageList",
+                        "annotations": [
+                            {
+                                "version_added": "75"
+                            }
+                        ],
                         "name": "messages"
                     }
                 ],
                 "permissions": [
                     "accountsRead"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             }
         ],
         "functions": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#list-folderid",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#list-folderid"
+                    },
+                    {
+                        "version_added": "66"
+                    }
+                ],
                 "async": "callback",
                 "description": "Gets all messages in a folder.",
                 "name": "list",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "name": "folderId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "96"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "messages.MessageList"
+                                "$ref": "messages.MessageList",
+                                "annotations": [
+                                    {
+                                        "version_added": "96"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
@@ -176,104 +338,180 @@
                 "permissions": [
                     "accountsRead"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#continuelist-messagelistid",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#continuelist-messagelistid"
+                    },
+                    {
+                        "version_added": "66"
+                    }
+                ],
                 "async": "callback",
                 "description": "Returns the next chunk of messages in a list. See $(doc:guides/messageLists) for more information.",
                 "name": "continueList",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "name": "messageListId",
                         "type": "string"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "96"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "messages.MessageList"
+                                "$ref": "messages.MessageList",
+                                "annotations": [
+                                    {
+                                        "version_added": "96"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#abortlist-messagelistid",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#abortlist-messagelistid"
+                    },
+                    {
+                        "version_added": "120"
+                    }
+                ],
                 "async": true,
                 "description": "Finalizes the specified list and terminates any process currently still adding messages.",
                 "name": "abortList",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "120"
+                            }
+                        ],
                         "name": "messageListId",
                         "type": "string"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#get-messageid",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#get-messageid"
+                    },
+                    {
+                        "version_added": "66"
+                    }
+                ],
                 "async": "callback",
                 "description": "Returns the specified message.",
                 "name": "get",
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "name": "messageId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "96"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "messages.MessageHeader"
+                                "$ref": "messages.MessageHeader",
+                                "annotations": [
+                                    {
+                                        "version_added": "96"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#getfull-messageid-options",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#getfull-messageid-options"
+                    },
+                    {
+                        "version_added": "66"
+                    }
+                ],
                 "async": "callback",
                 "description": "Returns the specified message, including all headers and MIME parts. Throws if the message could not be read, for example due to network issues.",
                 "name": "getFull",
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "name": "messageId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "96"
+                            }
+                        ],
                         "name": "options",
                         "optional": true,
                         "properties": {
                             "decodeContent": {
+                                "annotations": [
+                                    {
+                                        "version_added": "133"
+                                    }
+                                ],
                                 "description": "Whether to decode quoted-printable or base64 encoded content of message parts. Defaults to <var>true</var>.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "decodeHeaders": {
+                                "annotations": [
+                                    {
+                                        "version_added": "133"
+                                    }
+                                ],
                                 "description": "Whether to decode RFC 2047 encoded headers of message parts. Defaults to <var>true</var>.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "decrypt": {
+                                "annotations": [
+                                    {
+                                        "version_added": "125"
+                                    }
+                                ],
                                 "description": "Whether the message should be decrypted. If the message could not be decrypted, its parts are omitted. Defaults to <var>true</var>.",
                                 "optional": true,
                                 "type": "boolean"
@@ -282,40 +520,74 @@
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "125"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "messages.MessagePart"
+                                "$ref": "messages.MessagePart",
+                                "annotations": [
+                                    {
+                                        "version_added": "125"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#getraw-message-options",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#getraw-message-options"
+                    },
+                    {
+                        "version_added": "72"
+                    }
+                ],
                 "async": "callback",
                 "description": "Returns the raw content of a message. Throws if the message could not be read, for example due to network issues.",
                 "name": "getRaw",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "72"
+                            }
+                        ],
                         "choices": [
                             {
-                                "$ref": "messages.MessageId"
+                                "$ref": "messages.MessageId",
+                                "annotations": [
+                                    {
+                                        "version_added": "72"
+                                    }
+                                ]
                             },
                             {
-                                "$ref": "messages.MessagePart"
+                                "$ref": "messages.MessagePart",
+                                "annotations": [
+                                    {
+                                        "version_added": "133"
+                                    }
+                                ]
                             }
                         ],
                         "description": "Either a $(ref:messages.MessageId) of an existing message, or a $(ref:messages.MessagePart) with raw header and raw content data representing a full RFC 822 message (the provided data will be used as-is without applying any further encoding). See the <var>decodeHeaders</var> and <var>decodeContent</var> options of $(ref:messages.getFull) for further details on how to retrieve a $(ref:messages.MessagePart) with raw values. You can use $(ref:messengerUtilities.decodeMimeHeader) and $(ref:messengerUtilities.encodeMimeHeader) to manipulate a raw MessagePart.",
                         "name": "message"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "96"
+                            }
+                        ],
                         "name": "options",
                         "optional": true,
                         "properties": {
@@ -345,6 +617,9 @@
                                     },
                                     {
                                         "text": " See MDN for $(url:input-encoding)[supported input encodings]."
+                                    },
+                                    {
+                                        "version_added": "117"
                                     }
                                 ],
                                 "description": "The message can either be returned as a DOM File (default) or as a <a href='https://udn.realityripple.com/docs/Web/API/DOMString/Binary'>binary string</a>. It is recommended to use the <var>File</var> format, because the DOM File object can be used as-is with the downloads API and has useful methods to access the content, like <a href='https://developer.mozilla.org/en-US/docs/Web/API/Blob/text'>File.text()</a> and <a href='https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer'>File.arrayBuffer()</a>.",
@@ -352,10 +627,31 @@
                                     "BinaryString",
                                     "File"
                                 ],
+                                "enums": {
+                                    "BinaryString": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "117"
+                                            }
+                                        ]
+                                    },
+                                    "File": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "117"
+                                            }
+                                        ]
+                                    }
+                                },
                                 "optional": true,
                                 "type": "string"
                             },
                             "decrypt": {
+                                "annotations": [
+                                    {
+                                        "version_added": "125"
+                                    }
+                                ],
                                 "description": "Whether the message should be decrypted. Throws, if the message could not be decrypted.",
                                 "optional": true,
                                 "type": "boolean"
@@ -364,16 +660,36 @@
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "117"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "117"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "117"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
                                         "additionalProperties": true,
+                                        "annotations": [
+                                            {
+                                                "version_added": "117"
+                                            }
+                                        ],
                                         "isInstanceOf": "File",
                                         "type": "object"
                                     }
@@ -383,26 +699,45 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#listattachments-messageid",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#listattachments-messageid"
+                    },
+                    {
+                        "version_added": "88"
+                    }
+                ],
                 "async": "callback",
                 "description": "Lists the attachments of a message.",
                 "name": "listAttachments",
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
+                        "annotations": [
+                            {
+                                "version_added": "88"
+                            }
+                        ],
                         "name": "messageId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "96"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "96"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "messages.MessageAttachment"
                                 },
@@ -412,31 +747,48 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
                 "annotations": [
                     {
                         "note": "A message usually contains only one inline text part per subtype, but technically messages can contain multiple inline text parts per subtype."
+                    },
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#listinlinetextparts-messageid"
+                    },
+                    {
+                        "version_added": "128"
                     }
                 ],
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#listinlinetextparts-messageid",
                 "async": "callback",
                 "description": "Lists all inline text parts of a message. These parts are not returned by $(ref:messages.listAttachments) and usually make up the readable content of the message, mostly with content type <var>text/plain</var> or <var>text/html</var>. If a message only includes a part with content type <var>text/html</var>, the method $(ref:messengerUtilities.convertToPlainText) can be used to retreive a plain text version.",
                 "name": "listInlineTextParts",
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "messageId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "messages.InlineTextPart"
                                 },
@@ -446,9 +798,6 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
@@ -466,28 +815,53 @@
                             ""
                         ],
                         "type": "JavaScript"
+                    },
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#getattachmentfile-messageid-partname"
+                    },
+                    {
+                        "version_added": "88"
                     }
                 ],
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#getattachmentfile-messageid-partname",
                 "async": "callback",
                 "description": "Gets the content of a $(ref:messages.MessageAttachment) as a <a href='https://developer.mozilla.org/en-US/docs/Web/API/File'>File</a> object.",
                 "name": "getAttachmentFile",
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
+                        "annotations": [
+                            {
+                                "version_added": "88"
+                            }
+                        ],
                         "name": "messageId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "88"
+                            }
+                        ],
                         "name": "partName",
                         "pattern": "^\\d+(\\.\\d+\\$?)*$",
                         "type": "string"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "96"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "additionalProperties": true,
+                                "annotations": [
+                                    {
+                                        "version_added": "96"
+                                    }
+                                ],
                                 "isInstanceOf": "File",
                                 "type": "object"
                             }
@@ -495,22 +869,36 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#deleteattachments-messageid-partnames",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#deleteattachments-messageid-partnames"
+                    },
+                    {
+                        "version_added": "123"
+                    }
+                ],
                 "async": true,
                 "description": "Deletes the specified attachments and replaces them by placeholder text attachments with meta information about the original attachments and a <var>text/x-moz-deleted</var> content type. This permanently modifies the message.",
                 "name": "deleteAttachments",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "123"
+                            }
+                        ],
                         "name": "messageId",
                         "type": "integer"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "123"
+                            }
+                        ],
                         "description": "An array of attachments, identifying the to be deleted attachments by their <var>partName</var>.",
                         "items": {
                             "pattern": "^\\d+(\\.\\d+)*$",
@@ -524,54 +912,97 @@
                 "permissions": [
                     "messagesModifyPermanent"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#openattachment-messageid-partname-tabid",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#openattachment-messageid-partname-tabid"
+                    },
+                    {
+                        "version_added": "114"
+                    }
+                ],
                 "async": true,
                 "description": "Opens the specified attachment.",
                 "name": "openAttachment",
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "name": "messageId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "name": "partName",
                         "pattern": "^\\d+(\\.\\d+)*$",
                         "type": "string"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "description": "The ID of the tab associated with the message opening.",
                         "name": "tabId",
                         "type": "integer"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#query-queryinfo",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#query-queryinfo"
+                    },
+                    {
+                        "version_added": "69"
+                    }
+                ],
                 "async": "callback",
                 "description": "Gets all messages that have the specified properties, or all messages if no properties are specified. Messages of unified mailbox folders are not included by default (as that could double the amount of returned messages), but explicitly specifying a unified mailbox folder is supported.",
                 "name": "query",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "69"
+                            }
+                        ],
                         "default": {},
                         "name": "queryInfo",
                         "optional": true,
                         "properties": {
                             "accountId": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "choices": [
                                     {
-                                        "$ref": "accounts.MailAccountId"
+                                        "$ref": "accounts.MailAccountId",
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ]
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "129"
+                                            }
+                                        ],
                                         "items": {
                                             "$ref": "accounts.MailAccountId"
                                         },
@@ -582,43 +1013,93 @@
                                 "optional": true
                             },
                             "attachment": {
+                                "annotations": [
+                                    {
+                                        "version_added": "96"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "96"
+                                            }
+                                        ],
                                         "type": "boolean"
                                     },
                                     {
-                                        "$ref": "QueryRange"
+                                        "$ref": "QueryRange",
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ]
                                     }
                                 ],
                                 "description": "Whether the message has attachments, or not. Supports to specify a $(ref:messages.QueryRange) (min/max) instead of a simple boolean value (none/some).",
                                 "optional": true
                             },
                             "author": {
+                                "annotations": [
+                                    {
+                                        "version_added": "69"
+                                    }
+                                ],
                                 "description": "Returns only messages with this value matching the author. The search value is a single email address, a name or a combination (e.g.: <var>Name <user@domain.org></var>). The address part of the search value (if provided) must match the author's address completely. The name part of the search value (if provided) must match the author's name partially. All matches are done case-insensitive.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "autoPaginationTimeout": {
+                                "annotations": [
+                                    {
+                                        "version_added": "120"
+                                    }
+                                ],
                                 "description": "Set the timeout in ms after which results should be returned, even if the nominal number of messages-per-page has not yet been reached. Defaults to <var>1000</var> ms. Setting it to <var>0</var> will disable auto-pagination.",
                                 "optional": true,
                                 "type": "integer"
                             },
                             "body": {
+                                "annotations": [
+                                    {
+                                        "version_added": "69"
+                                    }
+                                ],
                                 "description": "Returns only messages with this value in the body of the mail.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "flagged": {
+                                "annotations": [
+                                    {
+                                        "version_added": "69"
+                                    }
+                                ],
                                 "description": "Returns only flagged (or unflagged if false) messages.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "folderId": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "choices": [
                                     {
-                                        "$ref": "folders.MailFolderId"
+                                        "$ref": "folders.MailFolderId",
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ]
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "129"
+                                            }
+                                        ],
                                         "items": {
                                             "$ref": "folders.MailFolderId"
                                         },
@@ -630,90 +1111,180 @@
                             },
                             "fromDate": {
                                 "$ref": "extensionTypes.Date",
+                                "annotations": [
+                                    {
+                                        "version_added": "69"
+                                    }
+                                ],
                                 "description": "Returns only messages with a date after this value.",
                                 "optional": true
                             },
                             "fromMe": {
+                                "annotations": [
+                                    {
+                                        "version_added": "69"
+                                    }
+                                ],
                                 "description": "Returns only messages with the author's address matching any configured identity.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "fullText": {
+                                "annotations": [
+                                    {
+                                        "version_added": "69"
+                                    }
+                                ],
                                 "description": "Returns only messages with this value somewhere in the mail (subject, body or author).",
                                 "optional": true,
                                 "type": "string"
                             },
                             "headerMessageId": {
+                                "annotations": [
+                                    {
+                                        "version_added": "85"
+                                    }
+                                ],
                                 "description": "Returns only messages with a Message-ID header matching this value.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "includeSubFolders": {
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ],
                                 "description": "Search the specified folder recursively.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "junk": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "description": "Returns only messages whith the specified junk state.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "junkScore": {
                                 "$ref": "QueryRange",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "description": "Returns only messages with a junk score in the specified range.",
                                 "optional": true
                             },
                             "messagesPerPage": {
+                                "annotations": [
+                                    {
+                                        "version_added": "120"
+                                    }
+                                ],
                                 "description": "Set the nominal number of messages-per-page for this query. Defaults to <var>100</var> messages.",
                                 "optional": true,
                                 "type": "integer"
                             },
                             "new": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "description": "Returns only messages with the specified new state.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "online": {
+                                "annotations": [
+                                    {
+                                        "version_added": "129"
+                                    }
+                                ],
                                 "description": "Query the server directly instead of the local message database. Online queries currently only support querying the <var>headerMessageId</var> property. Currently only supported for NNTP accounts.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "read": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "description": "Returns only messages with the specified read state.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "recipients": {
+                                "annotations": [
+                                    {
+                                        "version_added": "69"
+                                    }
+                                ],
                                 "description": "Returns only messages whose recipients match all specified addresses. The search value is a semicolon separated list of email addresses, names or combinations (e.g.: <var>Name <user@domain.org></var>). For a match, all specified addresses must equal a recipient's address completely and all specified names must match a recipient's name partially. All matches are done case-insensitive.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "returnMessageListId": {
+                                "annotations": [
+                                    {
+                                        "version_added": "120"
+                                    }
+                                ],
                                 "description": "The <em>messageListId</em> is usually returned together with the first page, after some messages have been found. Enabling this option will change the return value of this function and return the <em>messageListId</em> directly.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "size": {
                                 "$ref": "QueryRange",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "description": "Returns only messages with a size in the specified byte range.",
                                 "optional": true
                             },
                             "subject": {
+                                "annotations": [
+                                    {
+                                        "version_added": "69"
+                                    }
+                                ],
                                 "description": "Returns only messages whose subject contains the provided string.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "tags": {
                                 "$ref": "messages.tags.TagsDetail",
+                                "annotations": [
+                                    {
+                                        "version_added": "74"
+                                    }
+                                ],
                                 "description": "Returns only messages with the specified tags. For a list of available tags, call the $(ref:messages.tags.list) method.",
                                 "optional": true
                             },
                             "toDate": {
                                 "$ref": "extensionTypes.Date",
+                                "annotations": [
+                                    {
+                                        "version_added": "69"
+                                    }
+                                ],
                                 "description": "Returns only messages with a date before this value.",
                                 "optional": true
                             },
                             "toMe": {
+                                "annotations": [
+                                    {
+                                        "version_added": "69"
+                                    }
+                                ],
                                 "description": "Returns only messages with at least one recipient address matching any configured identity.",
                                 "optional": true,
                                 "type": "boolean"
@@ -722,15 +1293,35 @@
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "96"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "96"
+                                    }
+                                ],
                                 "choices": [
                                     {
-                                        "$ref": "messages.MessageList"
+                                        "$ref": "messages.MessageList",
+                                        "annotations": [
+                                            {
+                                                "version_added": "96"
+                                            }
+                                        ]
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "120"
+                                            }
+                                        ],
                                         "type": "string"
                                     }
                                 ]
@@ -739,41 +1330,64 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#update-messageid-newproperties",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#update-messageid-newproperties"
+                    },
+                    {
+                        "version_added": "66"
+                    }
+                ],
                 "async": true,
                 "description": "Updates message properties and tags. Updating external messages will throw an <em>ExtensionError</em>.",
                 "name": "update",
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "name": "messageId"
                     },
                     {
                         "$ref": "messages.MessageProperties",
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "name": "newProperties"
                     }
                 ],
                 "permissions": [
                     "messagesUpdate"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#move-messageids-folderid-options",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#move-messageids-folderid-options"
+                    },
+                    {
+                        "version_added": "66"
+                    }
+                ],
                 "async": true,
                 "description": "Moves messages to a specified folder. If the messages cannot be removed from the source folder, they will be copied instead of moved. Moving external messages will throw an <em>ExtensionError</em>.",
                 "name": "move",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "description": "The IDs of the messages to move.",
                         "items": {
                             "$ref": "messages.MessageId"
@@ -783,14 +1397,29 @@
                     },
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "description": "The folder to move the messages to.",
                         "name": "folderId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
                         "name": "options",
                         "optional": true,
                         "properties": {
                             "isUserAction": {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
                                 "description": "Whether this move operation should be treated as a user action, for example allowing undo.",
                                 "optional": true,
                                 "type": "boolean"
@@ -803,18 +1432,27 @@
                     "accountsRead",
                     "messagesMove"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#copy-messageids-folderid-options",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#copy-messageids-folderid-options"
+                    },
+                    {
+                        "version_added": "66"
+                    }
+                ],
                 "async": true,
                 "description": "Copies messages to a specified folder.",
                 "name": "copy",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "description": "The IDs of the messages to copy.",
                         "items": {
                             "$ref": "messages.MessageId"
@@ -824,14 +1462,29 @@
                     },
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "description": "The folder to copy the messages to.",
                         "name": "folderId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
                         "name": "options",
                         "optional": true,
                         "properties": {
                             "isUserAction": {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
                                 "description": "Whether this copy operation should be treated as a user action, for example allowing undo.",
                                 "optional": true,
                                 "type": "boolean"
@@ -844,18 +1497,27 @@
                     "accountsRead",
                     "messagesMove"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#delete-messageids-options",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#delete-messageids-options"
+                    },
+                    {
+                        "version_added": "66"
+                    }
+                ],
                 "async": true,
                 "description": "Deletes messages permanently, or moves them to the trash folder (honoring the account's deletion behavior settings). Deleting external messages will throw an <em>ExtensionError</em>. The <var>deletePermanently</var> parameter allows immediate permanent deletion, bypassing the trash folder.",
                 "name": "delete",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "description": "The IDs of the messages to delete.",
                         "items": {
                             "$ref": "messages.MessageId"
@@ -864,20 +1526,45 @@
                         "type": "array"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "choices": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "66"
+                                    }
+                                ],
                                 "deprecated": "Specify the options object instead of a plain boolean to delete messages permanently.",
                                 "description": "Whether the message will be deleted permanently, regardless of the account's deletion behavior settings.",
                                 "type": "boolean"
                             },
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
                                 "properties": {
                                     "deletePermanently": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "137"
+                                            }
+                                        ],
                                         "description": "Whether the message will be deleted permanently, regardless of the account's deletion behavior settings. A permanently deleted message cannot be restored, even if the action is defined as a user action. Use this with care!",
                                         "optional": true,
                                         "type": "boolean"
                                     },
                                     "isUserAction": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "137"
+                                            }
+                                        ],
                                         "description": "Whether this copy operation should be treated as a user action, for example allowing undo.",
                                         "optional": true,
                                         "type": "boolean"
@@ -893,39 +1580,68 @@
                 "permissions": [
                     "messagesDelete"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#import-file-folderid-properties",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#import-file-folderid-properties"
+                    },
+                    {
+                        "version_added": "106"
+                    }
+                ],
                 "async": "callback",
                 "description": "Imports a message into a folder. Supports local folders, POP and IMAP folders. Throws, if the destination folder already contains a message with the Message-ID of the message being imported.",
                 "name": "import",
                 "parameters": [
                     {
                         "additionalProperties": true,
+                        "annotations": [
+                            {
+                                "version_added": "106"
+                            }
+                        ],
                         "isInstanceOf": "File",
                         "name": "file",
                         "type": "object"
                     },
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "106"
+                            }
+                        ],
                         "description": "The folder to import the messages into.",
                         "name": "folderId"
                     },
                     {
                         "$ref": "messages.MessageProperties",
+                        "annotations": [
+                            {
+                                "version_added": "106"
+                            }
+                        ],
                         "name": "properties",
                         "optional": true
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "106"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "messages.MessageHeader"
+                                "$ref": "messages.MessageHeader",
+                                "annotations": [
+                                    {
+                                        "version_added": "106"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
@@ -935,18 +1651,27 @@
                     "accountsRead",
                     "messagesImport"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#archive-messageids",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#archive-messageids"
+                    },
+                    {
+                        "version_added": "68"
+                    }
+                ],
                 "async": true,
                 "description": "Archives messages using the current settings. Archiving external messages will throw an <em>ExtensionError</em>.",
                 "name": "archive",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "68"
+                            }
+                        ],
                         "description": "The IDs of the messages to archive.",
                         "items": {
                             "$ref": "messages.MessageId"
@@ -958,9 +1683,6 @@
                 "permissions": [
                     "messagesMove"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             }
         ],
@@ -970,52 +1692,91 @@
         ],
         "types": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#messageid",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#messageid"
+                    },
+                    {
+                        "version_added": "122"
+                    }
+                ],
                 "description": "A unique id representing a $(ref:messages.MessageHeader) and the associated message. This id doesn’t refer to the Message-ID email header. It is an internal tracking number that does not remain after a restart. Nor does it follow an email that has been moved to a different folder.",
                 "id": "MessageId",
                 "minimum": 1,
-                "support": {
-                    "version_added": true
-                },
                 "type": "integer"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#inlinetextpart",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#inlinetextpart"
+                    },
+                    {
+                        "version_added": "128"
+                    }
+                ],
                 "description": "An inline part with content type <var>text/*</var>. These parts are not returned by $(ref:messages.listAttachments) and usually make up the readable content of the message, mostly with content type <var>text/plain</var> or <var>text/html</var>",
                 "id": "InlineTextPart",
                 "properties": {
                     "content": {
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "description": "The content of this inline text part.",
                         "type": "string"
                     },
                     "contentType": {
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "description": "The content type of the part. Most common types for inline text parts are <var>text/plain</var> and <var>text/html</var>. Possible other (deprecated) types are <var>text/richtext</var> and <var>text/enriched</var>. Some calendaring services include an inline text part with type <var>text/calendar</var>.",
                         "type": "string"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#mailboxheaderstring",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#mailboxheaderstring"
+                    },
+                    {
+                        "version_added": "131"
+                    }
+                ],
                 "description": "Content may either be a single email address, or a mailbox string (see RFC 5322, section 3.4). Use $(ref:messengerUtilities.parseMailboxString) to extract the name and/or the email from the mailbox string.",
                 "id": "MailBoxHeaderString",
-                "support": {
-                    "version_added": true
-                },
                 "type": "string"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#messageheader",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#messageheader"
+                    },
+                    {
+                        "version_added": "89"
+                    }
+                ],
                 "description": "Basic information about a message.",
                 "id": "MessageHeader",
                 "properties": {
                     "author": {
-                        "$ref": "messages.MailBoxHeaderString"
+                        "$ref": "messages.MailBoxHeaderString",
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ]
                     },
                     "bccList": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "The Bcc recipients. Not populated for news/nntp messages.",
                         "items": {
                             "$ref": "messages.MailBoxHeaderString"
@@ -1023,6 +1784,11 @@
                         "type": "array"
                     },
                     "ccList": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "The Cc recipients. Not populated for news/nntp messages.",
                         "items": {
                             "$ref": "messages.MailBoxHeaderString"
@@ -1030,52 +1796,112 @@
                         "type": "array"
                     },
                     "date": {
-                        "$ref": "extensionTypes.Date"
+                        "$ref": "extensionTypes.Date",
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ]
                     },
                     "external": {
+                        "annotations": [
+                            {
+                                "version_added": "106"
+                            }
+                        ],
                         "description": "Whether this message is a real message or an external message (opened from a file or from an attachment).",
                         "type": "boolean"
                     },
                     "flagged": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "Whether this message is flagged (a.k.a. starred).",
                         "type": "boolean"
                     },
                     "folder": {
                         "$ref": "folders.MailFolder",
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "The <permission>accountsRead</permission> permission is required for this property to be included. Not available for external or attached messages.",
                         "optional": true
                     },
                     "headerMessageId": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "The message-id header of the message.",
                         "type": "string"
                     },
                     "headersOnly": {
+                        "annotations": [
+                            {
+                                "version_added": "102"
+                            }
+                        ],
                         "description": "Some account types (for example <var>pop3</var>) allow to download only the headers of the message, but not its body. The body of such messages will not be available.",
                         "type": "boolean"
                     },
                     "id": {
-                        "$ref": "messages.MessageId"
+                        "$ref": "messages.MessageId",
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ]
                     },
                     "junk": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "Whether the message has been marked as junk. Always <var>false</var> for news/nntp messages and external messages.",
                         "type": "boolean"
                     },
                     "junkScore": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "The junk score associated with the message. Always <var>0</var> for news/nntp messages and external messages.",
                         "maximum": 100,
                         "minimum": 0,
                         "type": "integer"
                     },
                     "new": {
+                        "annotations": [
+                            {
+                                "version_added": "106"
+                            }
+                        ],
                         "description": "Whether the message has been received recently and is marked as new.",
                         "type": "boolean"
                     },
                     "read": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "Whether the message has been marked as read. Not available for external or attached messages.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "recipients": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "The To recipients. Not populated for news/nntp messages.",
                         "items": {
                             "$ref": "messages.MailBoxHeaderString"
@@ -1083,14 +1909,29 @@
                         "type": "array"
                     },
                     "size": {
+                        "annotations": [
+                            {
+                                "version_added": "90"
+                            }
+                        ],
                         "description": "The total size of the message in bytes.",
                         "type": "integer"
                     },
                     "subject": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "The subject of the message.",
                         "type": "string"
                     },
                     "tags": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "Tags associated with this message. For a list of available tags, use $(ref:messages.tags.list).",
                         "items": {
                             "type": "string"
@@ -1098,54 +1939,97 @@
                         "type": "array"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#messagelist",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#messagelist"
+                    },
+                    {
+                        "version_added": "89"
+                    }
+                ],
                 "description": "See $(doc:guides/messageLists) for more information.",
                 "id": "MessageList",
                 "properties": {
                     "id": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "choices": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "89"
+                                    }
+                                ],
                                 "type": "string"
                             },
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "127"
+                                    }
+                                ],
                                 "type": "null"
                             }
                         ],
                         "description": "Id of the message list, to be used with $(ref:messages.continueList) or $(ref:messages.abortList)."
                     },
                     "messages": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "items": {
                             "$ref": "messages.MessageHeader"
                         },
                         "type": "array"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#messagepart",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#messagepart"
+                    },
+                    {
+                        "version_added": "89"
+                    }
+                ],
                 "description": "Represents an email message \"part\", which could be the whole message.",
                 "id": "MessagePart",
                 "properties": {
                     "body": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "The quoted-printable or base64 decoded content of the part. Only present for parts with a content type of <var>text/*</var> and only if requested, see the <var>decodeContent</var> option of $(ref:messages.getFull). Use $(ref:messages.getAttachmentFile) to retrieve the content of parts which have a content type other than <var>text/*</var>.",
                         "optional": true,
                         "type": "string"
                     },
                     "contentType": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "optional": true,
                         "type": "string"
                     },
                     "decryptionStatus": {
+                        "annotations": [
+                            {
+                                "version_added": "125"
+                            }
+                        ],
                         "description": "The decryption status, only available for the root part.",
                         "enum": [
                             "none",
@@ -1153,6 +2037,36 @@
                             "success",
                             "fail"
                         ],
+                        "enums": {
+                            "fail": {
+                                "annotations": [
+                                    {
+                                        "version_added": "125"
+                                    }
+                                ]
+                            },
+                            "none": {
+                                "annotations": [
+                                    {
+                                        "version_added": "125"
+                                    }
+                                ]
+                            },
+                            "skipped": {
+                                "annotations": [
+                                    {
+                                        "version_added": "125"
+                                    }
+                                ]
+                            },
+                            "success": {
+                                "annotations": [
+                                    {
+                                        "version_added": "125"
+                                    }
+                                ]
+                            }
+                        },
                         "optional": true,
                         "type": "string"
                     },
@@ -1163,21 +2077,41 @@
                             },
                             "type": "array"
                         },
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "A <em>dictionary object</em> of RFC 2047 decoded part headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>. Only present if requested, see the <var>decodeHeaders</var> option of $(ref:messages.getFull).",
                         "optional": true,
                         "type": "object"
                     },
                     "name": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "Name of the part, if it is a file.",
                         "optional": true,
                         "type": "string"
                     },
                     "partName": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "The identifier of this part, used in $(ref:messages.getAttachmentFile).",
                         "optional": true,
                         "type": "string"
                     },
                     "parts": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "Any sub-parts of this part.",
                         "items": {
                             "$ref": "messages.MessagePart"
@@ -1186,6 +2120,11 @@
                         "type": "array"
                     },
                     "rawBody": {
+                        "annotations": [
+                            {
+                                "version_added": "133"
+                            }
+                        ],
                         "description": "The raw content of the part. Only present if requested, see the <var>decodeContent</var> option of $(ref:messages.getFull).",
                         "optional": true,
                         "type": "string"
@@ -1197,47 +2136,86 @@
                             },
                             "type": "array"
                         },
+                        "annotations": [
+                            {
+                                "version_added": "133"
+                            }
+                        ],
                         "description": "A <em>dictionary object</em> of raw part headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>. Only present if requested, see the <var>decodeHeaders</var> option of $(ref:messages.getFull).",
                         "optional": true,
                         "type": "object"
                     },
                     "size": {
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "description": "The size of this part. The size of parts with content type <em>message/rfc822</em> is not the actual message size (on disc), but the total size of its decoded body parts, excluding headers.",
                         "optional": true,
                         "type": "integer"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#messageproperties",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#messageproperties"
+                    },
+                    {
+                        "version_added": "106"
+                    }
+                ],
                 "description": "Message properties used in $(ref:messages.update) and $(ref:messages.import). They can also be monitored by $(ref:messages.onUpdated).",
                 "id": "MessageProperties",
                 "properties": {
                     "flagged": {
+                        "annotations": [
+                            {
+                                "version_added": "106"
+                            }
+                        ],
                         "description": "Whether the message is flagged (a.k.a starred).",
                         "optional": true,
                         "type": "boolean"
                     },
                     "junk": {
+                        "annotations": [
+                            {
+                                "version_added": "106"
+                            }
+                        ],
                         "description": "Whether the message is marked as junk. Only supported in $(ref:messages.update).",
                         "optional": true,
                         "type": "boolean"
                     },
                     "new": {
+                        "annotations": [
+                            {
+                                "version_added": "106"
+                            }
+                        ],
                         "description": "Whether the message is marked as new. Only supported in $(ref:messages.import).",
                         "optional": true,
                         "type": "boolean"
                     },
                     "read": {
+                        "annotations": [
+                            {
+                                "version_added": "106"
+                            }
+                        ],
                         "description": "Whether the message is marked as read.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "tags": {
+                        "annotations": [
+                            {
+                                "version_added": "106"
+                            }
+                        ],
                         "description": "Tags associated with this message. For a list of available tags, call the $(ref:messages.tags.list) method.",
                         "items": {
                             "type": "string"
@@ -1246,26 +2224,45 @@
                         "type": "array"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#messageattachment",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#messageattachment"
+                    },
+                    {
+                        "version_added": "98"
+                    }
+                ],
                 "description": "Represents an attachment in a message.",
                 "id": "MessageAttachment",
                 "properties": {
                     "contentDisposition": {
+                        "annotations": [
+                            {
+                                "version_added": "135"
+                            }
+                        ],
                         "description": "The content disposition of the attachment, for example <var>attachment</var> for normal attachments, or <var>inline</var> for inline attachments.",
                         "type": "string"
                     },
                     "contentId": {
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "description": "The content-id of this part. Available for related parts, which are referenced from other places inside the same message (e.g. inline images).",
                         "optional": true,
                         "type": "string"
                     },
                     "contentType": {
+                        "annotations": [
+                            {
+                                "version_added": "98"
+                            }
+                        ],
                         "description": "The content type of the attachment. A value of <var>text/x-moz-deleted</var> indicates that the original attachment was permanently deleted and replaced by a placeholder text attachment with some meta information about the original attachment.",
                         "type": "string"
                     },
@@ -1276,50 +2273,86 @@
                             },
                             "type": "array"
                         },
+                        "annotations": [
+                            {
+                                "version_added": "135"
+                            }
+                        ],
                         "description": "A <em>dictionary object</em> of RFC 2047 decoded attachment headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>.",
                         "type": "object"
                     },
                     "message": {
                         "$ref": "messages.MessageHeader",
+                        "annotations": [
+                            {
+                                "version_added": "106"
+                            }
+                        ],
                         "description": "A MessageHeader, if this attachment is a message.",
                         "optional": true
                     },
                     "name": {
+                        "annotations": [
+                            {
+                                "version_added": "98"
+                            }
+                        ],
                         "description": "The name, as displayed to the user, of this attachment. This is usually but not always the filename of the attached file.",
                         "type": "string"
                     },
                     "partName": {
+                        "annotations": [
+                            {
+                                "version_added": "98"
+                            }
+                        ],
                         "description": "Identifies the MIME part of the message associated with this attachment.",
                         "type": "string"
                     },
                     "size": {
+                        "annotations": [
+                            {
+                                "version_added": "98"
+                            }
+                        ],
                         "description": "The size in bytes of this attachment.",
                         "type": "integer"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#queryrange",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.html#queryrange"
+                    },
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "description": "An object defining a range.",
                 "id": "QueryRange",
                 "properties": {
                     "max": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "The maximum value required to match the query.",
                         "optional": true,
                         "type": "integer"
                     },
                     "min": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "The minimum value required to match the query.",
                         "optional": true,
                         "type": "integer"
                     }
-                },
-                "support": {
-                    "version_added": true
                 },
                 "type": "object"
             }
@@ -1329,11 +2362,24 @@
         "description": "The messages.tags API allows to manage the user's message tags.",
         "events": [
             {
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.tags.html#oncreated-tag"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
                 "description": "Fired when a new message tag has been created.",
                 "name": "onCreated",
                 "parameters": [
                     {
                         "$ref": "messages.tags.MessageTag",
+                        "annotations": [
+                            {
+                                "version_added": "136"
+                            }
+                        ],
                         "name": "tag"
                     }
                 ],
@@ -1343,21 +2389,44 @@
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.tags.html#onupdated-key-changedproperties-oldproperties"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
                 "description": "Fired when one or more properties of a message tag have been updated.",
                 "name": "onUpdated",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "136"
+                            }
+                        ],
                         "description": "Unique tag identifier of the updated message tag.",
                         "name": "key",
                         "type": "string"
                     },
                     {
                         "$ref": "messages.tags.MessageTagProperties",
+                        "annotations": [
+                            {
+                                "version_added": "136"
+                            }
+                        ],
                         "description": "The changed message tag properties.",
                         "name": "changedProperties"
                     },
                     {
                         "$ref": "messages.tags.MessageTagProperties",
+                        "annotations": [
+                            {
+                                "version_added": "136"
+                            }
+                        ],
                         "description": "The old values of the changed message tag properties.",
                         "name": "oldProperties"
                     }
@@ -1368,10 +2437,23 @@
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.tags.html#ondeleted-key"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
                 "description": "Fired when a message tag has been deleted.",
                 "name": "onDeleted",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "136"
+                            }
+                        ],
                         "description": "Unique tag identifier of the deleted message tag.",
                         "name": "key",
                         "type": "string"
@@ -1385,15 +2467,33 @@
         ],
         "functions": [
             {
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.tags.html#list"
+                    },
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "async": "callback",
                 "description": "Returns a list of tags that can be set on messages, and their human-friendly name, colour, and sort order.",
                 "name": "list",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "messages.tags.MessageTag"
                                 },
@@ -1409,11 +2509,24 @@
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.tags.html#create-key-tag-color"
+                    },
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "async": true,
                 "description": "Creates a new message tag and returns the associated key. Tagging a message will store the tag's key in the user's message. Throws if the specified tag key is used already.",
                 "name": "create",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "Unique tag identifier (will be converted to lower case). Must not include <var>()<>{/%*\"</var> or spaces. Will be auto-generated if not provided.",
                         "name": "key",
                         "optional": true,
@@ -1421,21 +2534,41 @@
                         "type": "string"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "Human-readable tag name.",
                         "name": "tag",
                         "type": "string"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "Tag color in hex format (i.e.: <var>#000080</var> for navy blue).",
                         "name": "color",
                         "pattern": "^#[0-9a-fA-F]{6}",
                         "type": "string"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "136"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "136"
+                                    }
+                                ],
                                 "name": "key",
                                 "type": "string"
                             }
@@ -1449,11 +2582,24 @@
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.tags.html#update-key-updateproperties"
+                    },
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "async": true,
                 "description": "Updates a message tag. Throws if the specified tag key does not exist.",
                 "name": "update",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "Unique tag identifier (will be converted to lower case). Must not include <var>()<>{/%*\"</var> or spaces.",
                         "name": "key",
                         "pattern": "^[^ ()/{%*<>\"]+$",
@@ -1461,6 +2607,11 @@
                     },
                     {
                         "$ref": "messages.tags.MessageTagProperties",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "name": "updateProperties"
                     }
                 ],
@@ -1470,11 +2621,24 @@
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.tags.html#delete-key"
+                    },
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "async": true,
                 "description": "Deletes a message tag, removing it from the list of known tags. Its key will not be removed from tagged messages, but they will appear untagged. Recreating a deleted tag, will make all former tagged messages appear tagged again.",
                 "name": "delete",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "Unique tag identifier (will be converted to lower case). Must not include <var>()<>{/%*\"</var> or spaces.",
                         "name": "key",
                         "pattern": "^[^ ()/{%*<>\"]+$",
@@ -1490,21 +2654,49 @@
         "namespace": "messages.tags",
         "types": [
             {
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.tags.html#messagetag"
+                    },
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "id": "MessageTag",
                 "properties": {
                     "color": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "Tag color in upper case hex format (i.e.: <var>#000080</var> for navy blue).",
                         "type": "string"
                     },
                     "key": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "Unique tag identifier.",
                         "type": "string"
                     },
                     "ordinal": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "A custom sort string.",
                         "type": "string"
                     },
                     "tag": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "Human-readable tag name.",
                         "type": "string"
                     }
@@ -1512,20 +2704,43 @@
                 "type": "object"
             },
             {
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.tags.html#messagetagproperties"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
                 "id": "MessageTagProperties",
                 "properties": {
                     "color": {
+                        "annotations": [
+                            {
+                                "version_added": "136"
+                            }
+                        ],
                         "description": "Tag color in upper case hex format (i.e.: <var>#000080</var> for navy blue).",
                         "optional": true,
                         "pattern": "^#[0-9a-fA-F]{6}",
                         "type": "string"
                     },
                     "ordinal": {
+                        "annotations": [
+                            {
+                                "version_added": "136"
+                            }
+                        ],
                         "description": "A custom sort string.",
                         "optional": true,
                         "type": "string"
                     },
                     "tag": {
+                        "annotations": [
+                            {
+                                "version_added": "136"
+                            }
+                        ],
                         "description": "Human-readable tag name.",
                         "optional": true,
                         "type": "string"
@@ -1534,18 +2749,52 @@
                 "type": "object"
             },
             {
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv3/messages.tags.html#tagsdetail"
+                    },
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "description": "Used for filtering messages by tag in various methods. Note that functions using this type may have a partial implementation.",
                 "id": "TagsDetail",
                 "properties": {
                     "mode": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "Whether all of the tag filters must apply, or any of them.",
                         "enum": [
                             "all",
                             "any"
                         ],
+                        "enums": {
+                            "all": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ]
+                            },
+                            "any": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ]
+                            }
+                        },
                         "type": "string"
                     },
                     "tags": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "A <em>dictionary object</em> with one or more filter condition as <em>key-value</em> pairs, the <em>key</em> being the tag to filter on, and the <em>value</em> being a boolean expression, requesting whether a message must include (<var>true</var>) or exclude (<var>false</var>) the tag. For a list of available tags, call the $(ref:messages.tags.list) method.",
                         "patternProperties": {
                             ".*": {
