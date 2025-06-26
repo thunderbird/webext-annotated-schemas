@@ -1,5 +1,5 @@
-Manifest V3 WebExtension schema files for Thunderbird ESR 128
-=============================================================
+Manifest V3 WebExtension schema files for Thunderbird ESR
+=========================================================
 
 These files represent the entire set of supported Manifest V3 WebExtension APIs
-in Thunderbird ESR 128. They are generated through the [webext-schemas-generator repository](https://github.com/thunderbird/webext-schemas-generator).
+in Thunderbird ESR. They are generated through the [webext-schemas-generator repository](https://github.com/thunderbird/webext-schemas-generator).
