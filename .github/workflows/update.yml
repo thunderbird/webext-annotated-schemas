@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout webext-schemas default branch
+      - name: Checkout webext-annotated-schemas default branch
         uses: actions/checkout@v4
 
       - name: Checkout target branch ${{ inputs.branch }}
@@ -34,9 +34,9 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Clone webext-schemas-generator
+      - name: Clone webext-annotated-schemas-generator
         run: |
-          git clone https://github.com/thunderbird/webext-schemas-generator.git generator
+          git clone https://github.com/thunderbird/webext-annotated-schemas-generator.git generator
 
       - name: Restore cached persistent_schema_cache.json (if available)
         id: cache-restore
@@ -60,7 +60,7 @@ jobs:
         if: steps.check_data.outputs.found == 'false'
         run: |
           echo "No cached version found. Looking for persistent_schema_cache.json in a GitHub release..."
-          releases=$(curl -s https://api.github.com/repos/thunderbird/webext-schemas-generator/releases)
+          releases=$(curl -s https://api.github.com/repos/thunderbird/webext-annotated-schemas-generator/releases)
 
           for url in $(echo "$releases" | jq -r '.[].assets[]? | select(.name == "persistent_schema_cache.json") | .browser_download_url'); do
             echo "Found persistent_schema_cache.json at: $url"
