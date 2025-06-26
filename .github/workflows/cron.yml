@@ -22,23 +22,23 @@ jobs:
       branch: beta-mv3
       manifestVersion: 3
 
-  update-schema-files-esr-mv2:
-    if: ${{ always() }}
-    needs: update-schema-files-beta-mv3
-    uses: ./.github/workflows/update.yml
-    with:
-      release: esr
-      branch: esr-mv2
-      manifestVersion: 2
+  # update-schema-files-esr-mv2:
+  #   if: ${{ always() }}
+  #   needs: update-schema-files-beta-mv3
+  #   uses: ./.github/workflows/update.yml
+  #   with:
+  #     release: esr
+  #     branch: esr-mv2
+  #     manifestVersion: 2
 
-  update-schema-files-esr-mv3:
-    if: ${{ always() }}
-    needs: update-schema-files-esr-mv2
-    uses: ./.github/workflows/update.yml
-    with:
-      release: esr
-      branch: esr-mv3
-      manifestVersion: 3
+  # update-schema-files-esr-mv3:
+  #   if: ${{ always() }}
+  #   needs: update-schema-files-esr-mv2
+  #   uses: ./.github/workflows/update.yml
+  #   with:
+  #     release: esr
+  #     branch: esr-mv3
+  #     manifestVersion: 3
 
   # update-schema-files-release-mv2:
   #   if: ${{ always() }}
