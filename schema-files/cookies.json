@@ -1,0 +1,1173 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "OptionalPermissionNoPrompt",
+                "choices": [
+                    {
+                        "enum": [
+                            "cookies"
+                        ],
+                        "enums": {
+                            "cookies": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "events": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/onChanged"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "name": "onChanged",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/onChanged"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "changeInfo",
+                        "properties": {
+                            "cause": {
+                                "$ref": "OnChangedCause",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/onChanged"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ]
+                            },
+                            "cookie": {
+                                "$ref": "Cookie",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/onChanged"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ]
+                            },
+                            "removed": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/onChanged"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/get"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Provides access to cookies from private browsing mode and container tabs since version 52."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned; previously, the earliest created cookie was returned."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "get",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/get"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Provides access to cookies from private browsing mode and container tabs since version 52."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned; previously, the earliest created cookie was returned."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "firstPartyDomain": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/get"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Provides access to cookies from private browsing mode and container tabs since version 52."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned; previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "name": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/get"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Provides access to cookies from private browsing mode and container tabs since version 52."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned; previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "partitionKey": {
+                                "$ref": "PartitionKey",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/get"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Provides access to cookies from private browsing mode and container tabs since version 52."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned; previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "storeId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/get"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Provides access to cookies from private browsing mode and container tabs since version 52."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned; previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/get"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Provides access to cookies from private browsing mode and container tabs since version 52."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned; previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "$ref": "Cookie",
+                                "name": "cookie",
+                                "optional": true
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAll"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "getAll",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAll"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "domain": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAll"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "firstPartyDomain": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAll"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": "omit-key-if-missing",
+                                "type": "string"
+                            },
+                            "name": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAll"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "partitionKey": {
+                                "$ref": "PartitionKey",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAll"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "path": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAll"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "secure": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAll"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "session": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAll"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "storeId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAll"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAll"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "items": {
+                                    "$ref": "Cookie"
+                                },
+                                "name": "cookies",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "set",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "domain": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "expirationDate": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "number"
+                            },
+                            "firstPartyDomain": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "httpOnly": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "name": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "partitionKey": {
+                                "$ref": "PartitionKey",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "path": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "sameSite": {
+                                "$ref": "SameSiteStatus",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "default": "unspecified",
+                                "optional": true
+                            },
+                            "secure": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "storeId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "value": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "$ref": "Cookie",
+                                "name": "cookie",
+                                "optional": true
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/remove"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "remove",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/remove"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "firstPartyDomain": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/remove"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "name": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/remove"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "partitionKey": {
+                                "$ref": "PartitionKey",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/remove"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "storeId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/remove"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/remove"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "From Firefox 133, sorts cookies according to <a href=\"https://datatracker.ietf.org/doc/html/rfc6265#section-5.4\">RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "name": "details",
+                                "optional": true,
+                                "properties": {
+                                    "firstPartyDomain": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "partitionKey": {
+                                        "$ref": "PartitionKey",
+                                        "optional": true
+                                    },
+                                    "storeId": {
+                                        "type": "string"
+                                    },
+                                    "url": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAllCookieStores"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 52, only the default cookie store was visible. From version 52 onwards, the cookie stores for private browsing mode and container tabs are also readable."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "getAllCookieStores",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAllCookieStores"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 52, only the default cookie store was visible. From version 52 onwards, the cookie stores for private browsing mode and container tabs are also readable."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAllCookieStores"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 52, only the default cookie store was visible. From version 52 onwards, the cookie stores for private browsing mode and container tabs are also readable."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "items": {
+                                    "$ref": "CookieStore"
+                                },
+                                "name": "cookieStores",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "cookies",
+        "permissions": [
+            "cookies"
+        ],
+        "types": [
+            {
+                "enum": [
+                    "unspecified",
+                    "no_restriction",
+                    "lax",
+                    "strict"
+                ],
+                "id": "SameSiteStatus",
+                "type": "string"
+            },
+            {
+                "id": "PartitionKey",
+                "properties": {
+                    "hasCrossSiteAncestor": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "topLevelSite": {
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/Cookie"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "id": "Cookie",
+                "properties": {
+                    "domain": {
+                        "type": "string"
+                    },
+                    "expirationDate": {
+                        "optional": true,
+                        "type": "number"
+                    },
+                    "firstPartyDomain": {
+                        "annotations": [
+                            {
+                                "version_added": "59"
+                            }
+                        ],
+                        "type": "string"
+                    },
+                    "hostOnly": {
+                        "type": "boolean"
+                    },
+                    "httpOnly": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "partitionKey": {
+                        "$ref": "PartitionKey",
+                        "annotations": [
+                            {
+                                "version_added": "94"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "path": {
+                        "type": "string"
+                    },
+                    "sameSite": {
+                        "$ref": "SameSiteStatus",
+                        "annotations": [
+                            {
+                                "version_added": "63"
+                            }
+                        ]
+                    },
+                    "secure": {
+                        "type": "boolean"
+                    },
+                    "session": {
+                        "type": "boolean"
+                    },
+                    "storeId": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/CookieStore"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "id": "CookieStore",
+                "properties": {
+                    "id": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "type": "string"
+                    },
+                    "incognito": {
+                        "annotations": [
+                            {
+                                "version_added": "52"
+                            }
+                        ],
+                        "type": "boolean"
+                    },
+                    "tabIds": {
+                        "annotations": [
+                            {
+                                "version_added": "52"
+                            }
+                        ],
+                        "items": {
+                            "type": "integer"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/OnChangedCause"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "enum": [
+                    "evicted",
+                    "expired",
+                    "explicit",
+                    "expired_overwrite",
+                    "overwrite"
+                ],
+                "id": "OnChangedCause",
+                "type": "string"
+            }
+        ]
+    }
+]

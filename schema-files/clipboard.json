@@ -1,0 +1,51 @@
+[
+    {
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/clipboard/setImageData"
+                    },
+                    {
+                        "version_added": "57"
+                    }
+                ],
+                "async": true,
+                "name": "setImageData",
+                "parameters": [
+                    {
+                        "additionalProperties": true,
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/clipboard/setImageData"
+                            },
+                            {
+                                "version_added": "57"
+                            }
+                        ],
+                        "isInstanceOf": "ArrayBuffer",
+                        "name": "imageData",
+                        "type": "object"
+                    },
+                    {
+                        "enum": [
+                            "jpeg",
+                            "png"
+                        ],
+                        "name": "imageType",
+                        "type": "string"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "clipboard",
+        "permissions": [
+            "clipboardWrite"
+        ]
+    },
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest"
+    }
+]

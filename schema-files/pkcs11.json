@@ -1,0 +1,149 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "OptionalPermission",
+                "choices": [
+                    {
+                        "enum": [
+                            "pkcs11"
+                        ],
+                        "enums": {
+                            "pkcs11": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/isModuleInstalled"
+                    },
+                    {
+                        "version_added": "58"
+                    }
+                ],
+                "async": true,
+                "name": "isModuleInstalled",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/isModuleInstalled"
+                            },
+                            {
+                                "version_added": "58"
+                            }
+                        ],
+                        "name": "name",
+                        "type": "string"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/installModule"
+                    },
+                    {
+                        "version_added": "58"
+                    }
+                ],
+                "async": true,
+                "name": "installModule",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/installModule"
+                            },
+                            {
+                                "version_added": "58"
+                            }
+                        ],
+                        "name": "name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "flags",
+                        "optional": true,
+                        "type": "integer"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/uninstallModule"
+                    },
+                    {
+                        "version_added": "58"
+                    }
+                ],
+                "async": true,
+                "name": "uninstallModule",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/uninstallModule"
+                            },
+                            {
+                                "version_added": "58"
+                            }
+                        ],
+                        "name": "name",
+                        "type": "string"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/getModuleSlots"
+                    },
+                    {
+                        "version_added": "58"
+                    }
+                ],
+                "async": true,
+                "name": "getModuleSlots",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/getModuleSlots"
+                            },
+                            {
+                                "version_added": "58"
+                            }
+                        ],
+                        "name": "name",
+                        "type": "string"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "pkcs11",
+        "permissions": [
+            "pkcs11"
+        ]
+    }
+]

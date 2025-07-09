@@ -1,0 +1,3697 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "OptionalPermissionNoPrompt",
+                "choices": [
+                    {
+                        "enum": [
+                            "webRequest",
+                            "webRequestAuthProvider",
+                            "webRequestBlocking",
+                            "webRequestFilterResponse",
+                            "webRequestFilterResponse.serviceWorkerScript"
+                        ],
+                        "enums": {
+                            "webRequest": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            },
+                            "webRequestAuthProvider": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            },
+                            "webRequestBlocking": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            },
+                            "webRequestFilterResponse": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            },
+                            "webRequestFilterResponse.serviceWorkerScript": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "events": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Asynchronous event listeners are supported from version 52."
+                    },
+                    {
+                        "version_added": "46"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "RequestFilter",
+                        "name": "filter"
+                    },
+                    {
+                        "items": {
+                            "$ref": "OnBeforeRequestOptions"
+                        },
+                        "name": "extraInfoSpec",
+                        "optional": true,
+                        "type": "array"
+                    }
+                ],
+                "name": "onBeforeRequest",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Asynchronous event listeners are supported from version 52."
+                            },
+                            {
+                                "version_added": "46"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "cookieStoreId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "documentUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "incognito": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "method": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "originUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "parentFrameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "requestBody": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "optional": true,
+                                "properties": {
+                                    "error": {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Asynchronous event listeners are supported from version 52."
+                                            },
+                                            {
+                                                "version_added": "46"
+                                            }
+                                        ],
+                                        "optional": true,
+                                        "type": "string"
+                                    },
+                                    "formData": {
+                                        "additionalProperties": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Asynchronous event listeners are supported from version 52."
+                                            },
+                                            {
+                                                "version_added": "46"
+                                            }
+                                        ],
+                                        "optional": true,
+                                        "properties": {},
+                                        "type": "object"
+                                    },
+                                    "raw": {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Asynchronous event listeners are supported from version 52."
+                                            },
+                                            {
+                                                "version_added": "46"
+                                            }
+                                        ],
+                                        "items": {
+                                            "$ref": "UploadData"
+                                        },
+                                        "optional": true,
+                                        "type": "array"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "requestId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "thirdParty": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "boolean"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "type": {
+                                "$ref": "ResourceType",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "urlClassification": {
+                                "$ref": "UrlClassification",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "optional": true
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "returns": {
+                    "$ref": "BlockingResponse",
+                    "optional": true
+                },
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Asynchronous event listeners are supported from version 52."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "RequestFilter",
+                        "name": "filter"
+                    },
+                    {
+                        "items": {
+                            "$ref": "OnBeforeSendHeadersOptions"
+                        },
+                        "name": "extraInfoSpec",
+                        "optional": true,
+                        "type": "array"
+                    }
+                ],
+                "name": "onBeforeSendHeaders",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Asynchronous event listeners are supported from version 52."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "cookieStoreId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "documentUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "incognito": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "method": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "originUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "parentFrameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "requestHeaders": {
+                                "$ref": "HttpHeaders",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "requestId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "thirdParty": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "boolean"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "type": {
+                                "$ref": "ResourceType",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "urlClassification": {
+                                "$ref": "UrlClassification",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "returns": {
+                    "$ref": "BlockingResponse",
+                    "optional": true
+                },
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "RequestFilter",
+                        "name": "filter"
+                    },
+                    {
+                        "items": {
+                            "$ref": "OnSendHeadersOptions"
+                        },
+                        "name": "extraInfoSpec",
+                        "optional": true,
+                        "type": "array"
+                    }
+                ],
+                "name": "onSendHeaders",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "cookieStoreId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "documentUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "incognito": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "method": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "originUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "parentFrameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "requestHeaders": {
+                                "$ref": "HttpHeaders",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "requestId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "thirdParty": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "boolean"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "type": {
+                                "$ref": "ResourceType",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "urlClassification": {
+                                "$ref": "UrlClassification",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Asynchronous event listeners are supported from version 52."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "RequestFilter",
+                        "name": "filter"
+                    },
+                    {
+                        "items": {
+                            "$ref": "OnHeadersReceivedOptions"
+                        },
+                        "name": "extraInfoSpec",
+                        "optional": true,
+                        "type": "array"
+                    }
+                ],
+                "name": "onHeadersReceived",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Modification of the 'Content-Type' header is supported from version 51."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Asynchronous event listeners are supported from version 52."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "cookieStoreId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "documentUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "incognito": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "method": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "originUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "parentFrameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "requestId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "responseHeaders": {
+                                "$ref": "HttpHeaders",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "statusCode": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "statusLine": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "thirdParty": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "boolean"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "type": {
+                                "$ref": "ResourceType",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "urlClassification": {
+                                "$ref": "UrlClassification",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Modification of the 'Content-Type' header is supported from version 51."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Asynchronous event listeners are supported from version 52."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "returns": {
+                    "$ref": "BlockingResponse",
+                    "optional": true
+                },
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                    },
+                    {
+                        "version_added": "54"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "RequestFilter",
+                        "name": "filter"
+                    },
+                    {
+                        "items": {
+                            "$ref": "OnAuthRequiredOptions"
+                        },
+                        "name": "extraInfoSpec",
+                        "optional": true,
+                        "postprocess": "mutuallyExclusiveBlockingOrAsyncBlocking",
+                        "type": "array"
+                    }
+                ],
+                "name": "onAuthRequired",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "To handle a request asynchronously, return a Promise from the listener."
+                            },
+                            {
+                                "version_added": "54"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "challenger": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "properties": {
+                                    "host": {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "To handle a request asynchronously, return a Promise from the listener."
+                                            },
+                                            {
+                                                "version_added": "54"
+                                            }
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "port": {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "To handle a request asynchronously, return a Promise from the listener."
+                                            },
+                                            {
+                                                "version_added": "54"
+                                            }
+                                        ],
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "cookieStoreId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "documentUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "incognito": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "isProxy": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "boolean"
+                            },
+                            "method": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "originUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "parentFrameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "realm": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "requestId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "responseHeaders": {
+                                "$ref": "HttpHeaders",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "scheme": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "statusCode": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "statusLine": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "thirdParty": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "boolean"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "type": {
+                                "$ref": "ResourceType",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "urlClassification": {
+                                "$ref": "UrlClassification",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onAuthRequired"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "To handle a request asynchronously, return a Promise from the listener."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "optional": true
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "asyncCallback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "$ref": "BlockingResponse",
+                                "name": "response"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "returns": {
+                    "$ref": "BlockingResponse",
+                    "optional": true
+                },
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "RequestFilter",
+                        "name": "filter"
+                    },
+                    {
+                        "items": {
+                            "$ref": "OnResponseStartedOptions"
+                        },
+                        "name": "extraInfoSpec",
+                        "optional": true,
+                        "type": "array"
+                    }
+                ],
+                "name": "onResponseStarted",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "cookieStoreId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "documentUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "fromCache": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "boolean"
+                            },
+                            "incognito": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "ip": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "method": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "originUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "parentFrameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "requestId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "responseHeaders": {
+                                "$ref": "HttpHeaders",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "statusCode": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "statusLine": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "thirdParty": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "boolean"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "type": {
+                                "$ref": "ResourceType",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "urlClassification": {
+                                "$ref": "UrlClassification",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                    },
+                    {
+                        "version_added": "46"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "RequestFilter",
+                        "name": "filter"
+                    },
+                    {
+                        "items": {
+                            "$ref": "OnBeforeRedirectOptions"
+                        },
+                        "name": "extraInfoSpec",
+                        "optional": true,
+                        "type": "array"
+                    }
+                ],
+                "name": "onBeforeRedirect",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                            },
+                            {
+                                "version_added": "46"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "cookieStoreId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "documentUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "fromCache": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "boolean"
+                            },
+                            "incognito": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "ip": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "method": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "originUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "parentFrameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "redirectUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "requestId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "responseHeaders": {
+                                "$ref": "HttpHeaders",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "statusCode": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "statusLine": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "thirdParty": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "boolean"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "type": {
+                                "$ref": "ResourceType",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "urlClassification": {
+                                "$ref": "UrlClassification",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
+                                    },
+                                    {
+                                        "version_added": "46"
+                                    }
+                                ],
+                                "optional": true
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "RequestFilter",
+                        "name": "filter"
+                    },
+                    {
+                        "items": {
+                            "$ref": "OnCompletedOptions"
+                        },
+                        "name": "extraInfoSpec",
+                        "optional": true,
+                        "type": "array"
+                    }
+                ],
+                "name": "onCompleted",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "cookieStoreId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "documentUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "fromCache": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "boolean"
+                            },
+                            "incognito": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "ip": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "method": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "originUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "parentFrameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "requestId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "requestSize": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "responseHeaders": {
+                                "$ref": "HttpHeaders",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "responseSize": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "statusCode": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "statusLine": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "thirdParty": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "boolean"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "type": {
+                                "$ref": "ResourceType",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "urlClassification": {
+                                "$ref": "UrlClassification",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "RequestFilter",
+                        "name": "filter"
+                    }
+                ],
+                "name": "onErrorOccurred",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "cookieStoreId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "documentUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "error": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "fromCache": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "boolean"
+                            },
+                            "incognito": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "ip": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "method": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "originUrl": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "parentFrameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "requestId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "thirdParty": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "boolean"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "type": {
+                                "$ref": "ResourceType",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "urlClassification": {
+                                "$ref": "UrlClassification",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/handlerBehaviorChanged"
+                    }
+                ],
+                "async": "callback",
+                "name": "handlerBehaviorChanged",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/handlerBehaviorChanged"
+                            }
+                        ],
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/filterResponseData"
+                    },
+                    {
+                        "version_added": "57"
+                    }
+                ],
+                "name": "filterResponseData",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/filterResponseData"
+                            },
+                            {
+                                "version_added": "57"
+                            }
+                        ],
+                        "name": "requestId",
+                        "type": "string"
+                    }
+                ],
+                "permissions": [
+                    "webRequestBlocking"
+                ],
+                "returns": {
+                    "additionalProperties": {
+                        "type": "any"
+                    },
+                    "isInstanceOf": "StreamFilter",
+                    "type": "object"
+                },
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/getSecurityInfo"
+                    },
+                    {
+                        "version_added": "62"
+                    }
+                ],
+                "async": true,
+                "name": "getSecurityInfo",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/getSecurityInfo"
+                            },
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "name": "requestId",
+                        "type": "string"
+                    },
+                    {
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "certificateChain": {
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "rawDER": {
+                                "optional": true,
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "webRequest",
+        "permissions": [
+            "webRequest"
+        ],
+        "properties": {
+            "MAX_HANDLER_BEHAVIOR_CHANGED_CALLS_PER_10_MINUTES": {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/MAX_HANDLER_BEHAVIOR_CHANGED_CALLS_PER_10_MINUTES"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "value": 20
+            }
+        },
+        "types": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/ResourceType"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "enum": [
+                    "main_frame",
+                    "sub_frame",
+                    "stylesheet",
+                    "script",
+                    "image",
+                    "object",
+                    "xmlhttprequest",
+                    "xslt",
+                    "ping",
+                    "beacon",
+                    "xml_dtd",
+                    "font",
+                    "media",
+                    "websocket",
+                    "csp_report",
+                    "imageset",
+                    "web_manifest",
+                    "speculative",
+                    "json",
+                    "other"
+                ],
+                "enums": {
+                    "beacon": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "csp_report": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "font": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "image": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "imageset": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "json": {
+                        "annotations": [
+                            {
+                                "bcd": true,
+                                "note": "The \"json\" property is supported from Firefox 135, but requests of this type are only available from Firefox 138."
+                            },
+                            {
+                                "version_added": "138"
+                            }
+                        ]
+                    },
+                    "main_frame": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "media": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "object": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "other": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "ping": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "script": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "speculative": {
+                        "annotations": [
+                            {
+                                "version_added": "63"
+                            }
+                        ]
+                    },
+                    "stylesheet": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "sub_frame": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "web_manifest": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "websocket": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "xml_dtd": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "xmlhttprequest": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    },
+                    "xslt": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ]
+                    }
+                },
+                "id": "ResourceType",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "blocking",
+                    "requestBody"
+                ],
+                "id": "OnBeforeRequestOptions",
+                "postprocess": "webRequestBlockingPermissionRequired",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "requestHeaders",
+                    "blocking"
+                ],
+                "id": "OnBeforeSendHeadersOptions",
+                "postprocess": "webRequestBlockingPermissionRequired",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "requestHeaders"
+                ],
+                "id": "OnSendHeadersOptions",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "blocking",
+                    "responseHeaders"
+                ],
+                "id": "OnHeadersReceivedOptions",
+                "postprocess": "webRequestBlockingPermissionRequired",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "responseHeaders",
+                    "blocking",
+                    "asyncBlocking"
+                ],
+                "id": "OnAuthRequiredOptions",
+                "postprocess": "webRequestBlockingOrAuthProviderPermissionRequired",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "responseHeaders"
+                ],
+                "id": "OnResponseStartedOptions",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "responseHeaders"
+                ],
+                "id": "OnBeforeRedirectOptions",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "responseHeaders"
+                ],
+                "id": "OnCompletedOptions",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/RequestFilter"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "From Firefox 78 onwards, if a filter contains unrecognized values in its <code>types</code> property, then these values are ignored and <code>addListener()</code> proceeds."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before Firefox 78, if a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "id": "RequestFilter",
+                "properties": {
+                    "incognito": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "tabId": {
+                        "annotations": [
+                            {
+                                "version_added": "53"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "integer"
+                    },
+                    "types": {
+                        "items": {
+                            "$ref": "ResourceType",
+                            "onError": "warn"
+                        },
+                        "minItems": 1,
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "urls": {
+                        "annotations": [
+                            {
+                                "bcd": true,
+                                "note": "Before Firefox 56, moz-extension:// URLs were not allowed."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "type": "array"
+                    },
+                    "windowId": {
+                        "annotations": [
+                            {
+                                "version_added": "53"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/HttpHeaders"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "id": "HttpHeaders",
+                "items": {
+                    "properties": {
+                        "binaryValue": {
+                            "items": {
+                                "type": "integer"
+                            },
+                            "optional": true,
+                            "type": "array"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "optional": true,
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "type": "array"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/BlockingResponse"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "id": "BlockingResponse",
+                "properties": {
+                    "authCredentials": {
+                        "optional": true,
+                        "properties": {
+                            "password": {
+                                "type": "string"
+                            },
+                            "username": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "cancel": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "redirectUrl": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "requestHeaders": {
+                        "$ref": "HttpHeaders",
+                        "optional": true
+                    },
+                    "responseHeaders": {
+                        "$ref": "HttpHeaders",
+                        "optional": true
+                    },
+                    "upgradeToSecure": {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/BlockingResponse"
+                            },
+                            {
+                                "version_added": "59"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/CertificateInfo"
+                    },
+                    {
+                        "version_added": "62"
+                    }
+                ],
+                "id": "CertificateInfo",
+                "properties": {
+                    "fingerprint": {
+                        "properties": {
+                            "sha1": {
+                                "type": "string"
+                            },
+                            "sha256": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "isBuiltInRoot": {
+                        "type": "boolean"
+                    },
+                    "issuer": {
+                        "type": "string"
+                    },
+                    "rawDER": {
+                        "items": {
+                            "type": "integer"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "serialNumber": {
+                        "type": "string"
+                    },
+                    "subject": {
+                        "type": "string"
+                    },
+                    "subjectPublicKeyInfoDigest": {
+                        "properties": {
+                            "sha256": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "validity": {
+                        "properties": {
+                            "end": {
+                                "type": "integer"
+                            },
+                            "start": {
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "enum": [
+                    "not_applicable",
+                    "policy_compliant",
+                    "policy_not_enough_scts",
+                    "policy_not_diverse_scts"
+                ],
+                "id": "CertificateTransparencyStatus",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "cipher"
+                ],
+                "id": "TransportWeaknessReasons",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/SecurityInfo"
+                    },
+                    {
+                        "version_added": "62"
+                    }
+                ],
+                "id": "SecurityInfo",
+                "properties": {
+                    "certificateTransparencyStatus": {
+                        "$ref": "CertificateTransparencyStatus",
+                        "annotations": [
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "certificates": {
+                        "annotations": [
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "items": {
+                            "$ref": "CertificateInfo"
+                        },
+                        "type": "array"
+                    },
+                    "cipherSuite": {
+                        "annotations": [
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "errorMessage": {
+                        "annotations": [
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "hpkp": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "hsts": {
+                        "annotations": [
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "isDomainMismatch": {
+                        "annotations": [
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "isExtendedValidation": {
+                        "annotations": [
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "isNotValidAtThisTime": {
+                        "annotations": [
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "isUntrusted": {
+                        "annotations": [
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "keaGroupName": {
+                        "annotations": [
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "overridableErrorCategory": {
+                        "enum": [
+                            "trust_error",
+                            "domain_mismatch",
+                            "expired_or_not_yet_valid"
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "protocolVersion": {
+                        "annotations": [
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "enum": [
+                            "TLSv1",
+                            "TLSv1.1",
+                            "TLSv1.2",
+                            "TLSv1.3",
+                            "unknown"
+                        ],
+                        "enums": {
+                            "TLSv1": {
+                                "annotations": [
+                                    {
+                                        "version_added": "62"
+                                    }
+                                ]
+                            },
+                            "TLSv1.1": {
+                                "annotations": [
+                                    {
+                                        "version_added": "62"
+                                    }
+                                ]
+                            },
+                            "TLSv1.2": {
+                                "annotations": [
+                                    {
+                                        "version_added": "62"
+                                    }
+                                ]
+                            },
+                            "TLSv1.3": {
+                                "annotations": [
+                                    {
+                                        "version_added": "62"
+                                    }
+                                ]
+                            },
+                            "unknown": {
+                                "annotations": [
+                                    {
+                                        "version_added": "62"
+                                    }
+                                ]
+                            }
+                        },
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "secretKeyLength": {
+                        "annotations": [
+                            {
+                                "version_added": "109"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "number"
+                    },
+                    "signatureSchemeName": {
+                        "annotations": [
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "state": {
+                        "annotations": [
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "enum": [
+                            "insecure",
+                            "weak",
+                            "broken",
+                            "secure"
+                        ],
+                        "enums": {
+                            "broken": {
+                                "annotations": [
+                                    {
+                                        "version_added": "62"
+                                    }
+                                ]
+                            },
+                            "insecure": {
+                                "annotations": [
+                                    {
+                                        "version_added": "62"
+                                    }
+                                ]
+                            },
+                            "secure": {
+                                "annotations": [
+                                    {
+                                        "version_added": "62"
+                                    }
+                                ]
+                            },
+                            "weak": {
+                                "annotations": [
+                                    {
+                                        "version_added": "62"
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    },
+                    "usedDelegatedCredentials": {
+                        "annotations": [
+                            {
+                                "version_added": "112"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "usedEch": {
+                        "annotations": [
+                            {
+                                "version_added": "112"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "usedOcsp": {
+                        "annotations": [
+                            {
+                                "version_added": "112"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "usedPrivateDns": {
+                        "annotations": [
+                            {
+                                "version_added": "112"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "weaknessReasons": {
+                        "annotations": [
+                            {
+                                "version_added": "62"
+                            }
+                        ],
+                        "items": {
+                            "$ref": "TransportWeaknessReasons"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/UploadData"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "id": "UploadData",
+                "properties": {
+                    "bytes": {
+                        "optional": true,
+                        "type": "any"
+                    },
+                    "file": {
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "enum": [
+                    "fingerprinting",
+                    "fingerprinting_content",
+                    "cryptomining",
+                    "cryptomining_content",
+                    "emailtracking",
+                    "emailtracking_content",
+                    "tracking",
+                    "tracking_ad",
+                    "tracking_analytics",
+                    "tracking_social",
+                    "tracking_content",
+                    "any_basic_tracking",
+                    "any_strict_tracking",
+                    "any_social_tracking",
+                    "consentmanager",
+                    "antifraud"
+                ],
+                "id": "UrlClassificationFlags",
+                "type": "string"
+            },
+            {
+                "id": "UrlClassificationParty",
+                "items": {
+                    "$ref": "UrlClassificationFlags"
+                },
+                "type": "array"
+            },
+            {
+                "id": "UrlClassification",
+                "properties": {
+                    "firstParty": {
+                        "$ref": "UrlClassificationParty"
+                    },
+                    "thirdParty": {
+                        "$ref": "UrlClassificationParty"
+                    }
+                },
+                "type": "object"
+            }
+        ]
+    }
+]

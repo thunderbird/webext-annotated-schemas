@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "140.0b3",
+        "applicationVersion": "141.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -34,7 +34,6 @@
         ]
     },
     {
-        "description": "The addressBooks API allows to access and manage the user's address books.",
         "events": [
             {
                 "annotations": [
@@ -45,7 +44,6 @@
                         "version_added": "64"
                     }
                 ],
-                "description": "Fired when an address book is created.",
                 "name": "onCreated",
                 "parameters": [
                     {
@@ -69,7 +67,6 @@
                         "version_added": "64"
                     }
                 ],
-                "description": "Fired when an address book is renamed.",
                 "name": "onUpdated",
                 "parameters": [
                     {
@@ -93,7 +90,6 @@
                         "version_added": "64"
                     }
                 ],
-                "description": "Fired when an addressBook is deleted.",
                 "name": "onDeleted",
                 "parameters": [
                     {
@@ -120,7 +116,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Opens the address book user interface.",
                 "name": "openUI",
                 "parameters": [
                     {
@@ -157,7 +152,6 @@
                     }
                 ],
                 "async": true,
-                "description": "Closes the address book user interface.",
                 "name": "closeUI",
                 "parameters": [],
                 "type": "function"
@@ -172,7 +166,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets a list of the user's address books, optionally including all contacts and mailing lists.",
                 "name": "list",
                 "parameters": [
                     {
@@ -182,7 +175,6 @@
                             }
                         ],
                         "default": false,
-                        "description": "If set to true, results will include contacts and mailing lists for each address book.",
                         "name": "complete",
                         "optional": true,
                         "type": "boolean"
@@ -223,7 +215,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets a single address book, optionally including all contacts and mailing lists.",
                 "name": "get",
                 "parameters": [
                     {
@@ -242,7 +233,6 @@
                             }
                         ],
                         "default": false,
-                        "description": "If set to true, results will include contacts and mailing lists for this address book.",
                         "name": "complete",
                         "optional": true,
                         "type": "boolean"
@@ -280,7 +270,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Creates a new, empty address book.",
                 "name": "create",
                 "parameters": [
                     {
@@ -317,7 +306,6 @@
                                         "version_added": "89"
                                     }
                                 ],
-                                "description": "The id of the new address book.",
                                 "type": "string"
                             }
                         ],
@@ -336,7 +324,6 @@
                     }
                 ],
                 "async": true,
-                "description": "Renames an address book.",
                 "name": "update",
                 "parameters": [
                     {
@@ -380,7 +367,6 @@
                     }
                 ],
                 "async": true,
-                "description": "Removes an address book, and all associated contacts and mailing lists.",
                 "name": "delete",
                 "parameters": [
                     {
@@ -410,7 +396,6 @@
                         "version_added": "64"
                     }
                 ],
-                "description": "Indicates the type of a Node.",
                 "enum": [
                     "addressBook",
                     "contact",
@@ -451,7 +436,6 @@
                         "version_added": "64"
                     }
                 ],
-                "description": "A node representing an address book.",
                 "id": "AddressBookNode",
                 "properties": {
                     "contacts": {
@@ -460,7 +444,6 @@
                                 "version_added": "64"
                             }
                         ],
-                        "description": "A list of contacts held by this node's address book or mailing list.",
                         "items": {
                             "$ref": "contacts.ContactNode"
                         },
@@ -473,7 +456,6 @@
                                 "version_added": "64"
                             }
                         ],
-                        "description": "The unique identifier for the node. IDs are unique within the current profile, and they remain valid even after the program is restarted.",
                         "type": "string"
                     },
                     "mailingLists": {
@@ -482,7 +464,6 @@
                                 "version_added": "64"
                             }
                         ],
-                        "description": "A list of mailingLists in this node's address book.",
                         "items": {
                             "$ref": "mailingLists.MailingListNode"
                         },
@@ -503,7 +484,6 @@
                                 "version_added": "64"
                             }
                         ],
-                        "description": "The <var>id</var> of the parent object.",
                         "optional": true,
                         "type": "string"
                     },
@@ -513,7 +493,6 @@
                                 "version_added": "64"
                             }
                         ],
-                        "description": "Indicates if the object is read-only.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -523,7 +502,6 @@
                                 "version_added": "91"
                             }
                         ],
-                        "description": "Indicates if the address book is accessed via remote look-up.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -533,8 +511,7 @@
                             {
                                 "version_added": "64"
                             }
-                        ],
-                        "description": "Always set to <var>addressBook</var>."
+                        ]
                     }
                 },
                 "type": "object"
@@ -556,7 +533,6 @@
                 "text": "So far, only the API for search-only address books has been implemented."
             }
         ],
-        "description": "The address book provider API allows to add address books, which are not stored or cached by Thunderbird itself, but are handled completely by the extension. Address books created by the this API will forward all access requests to the WebExtension.",
         "events": [
             {
                 "annotations": [
@@ -602,7 +578,6 @@
                         "version_added": "91"
                     }
                 ],
-                "description": "Registering this listener will create a read-only address book, similar to an LDAP address book. When selecting this address book, users will first see no contacts, but they can search for contacts, which will fire this event. Contacts returned by the listener callback will be displayed as contact cards in the address book. Several listeners can be registered, to create multiple address books.",
                 "extraParameters": [
                     {
                         "annotations": [
@@ -610,7 +585,6 @@
                                 "version_added": "91"
                             }
                         ],
-                        "description": "Descriptions for the address book created by registering this listener.",
                         "name": "parameters",
                         "properties": {
                             "addressBookName": {
@@ -619,7 +593,6 @@
                                         "version_added": "91"
                                     }
                                 ],
-                                "description": "The name of the created address book. If not provided, the name of the extension is used.",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -629,7 +602,6 @@
                                         "version_added": "91"
                                     }
                                 ],
-                                "description": "The unique identifier of the created address book. If not provided, a unique identifier will be generated for you.",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -639,7 +611,6 @@
                                         "version_added": "91"
                                     }
                                 ],
-                                "description": "Whether the address book search queries are using encrypted protocols like HTTPS.",
                                 "optional": true,
                                 "type": "boolean"
                             }
@@ -664,7 +635,6 @@
                                 "version_added": "91"
                             }
                         ],
-                        "description": "The search text that the user entered. Not available when invoked from the advanced address book search dialog.",
                         "name": "searchString",
                         "optional": true,
                         "type": "string"
@@ -678,7 +648,6 @@
                                 "version_added": "91"
                             }
                         ],
-                        "description": "The boolean query expression corresponding to the search.",
                         "name": "query",
                         "optional": true,
                         "type": "string"
@@ -693,7 +662,6 @@
         ]
     },
     {
-        "description": "The contacts API allows to access and manage the user's contacts.",
         "events": [
             {
                 "annotations": [
@@ -704,7 +672,6 @@
                         "version_added": "127"
                     }
                 ],
-                "description": "Fired when a contact is created.",
                 "name": "onCreated",
                 "parameters": [
                     {
@@ -728,7 +695,6 @@
                         "version_added": "127"
                     }
                 ],
-                "description": "Fired when a contact is changed.",
                 "name": "onUpdated",
                 "parameters": [
                     {
@@ -761,7 +727,6 @@
                         "version_added": "127"
                     }
                 ],
-                "description": "Fired when a contact is removed from an address book.",
                 "name": "onDeleted",
                 "parameters": [
                     {
@@ -797,7 +762,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets all the contacts in the address book with the id <var>parentId</var>.",
                 "name": "list",
                 "parameters": [
                     {
@@ -845,7 +809,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets all contacts matching <var>queryInfo</var>.",
                 "name": "query",
                 "parameters": [
                     {
@@ -893,7 +856,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets a single contact.",
                 "name": "get",
                 "parameters": [
                     {
@@ -938,7 +900,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets the photo associated with this contact. Returns <var>null</var>, if no photo is available.",
                 "name": "getPhoto",
                 "parameters": [
                     {
@@ -1002,7 +963,6 @@
                     }
                 ],
                 "async": true,
-                "description": "Sets the photo associated with this contact.",
                 "name": "setPhoto",
                 "parameters": [
                     {
@@ -1038,7 +998,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Adds a new contact to the address book with the id <var>parentId</var>.",
                 "name": "create",
                 "parameters": [
                     {
@@ -1056,7 +1015,6 @@
                                 "version_added": "127"
                             }
                         ],
-                        "description": "The vCard for the new contact. If it includes an (optional) id and an existing contact has this id already, an exception is thrown.",
                         "name": "vCard",
                         "type": "string"
                     },
@@ -1075,7 +1033,6 @@
                                         "version_added": "128"
                                     }
                                 ],
-                                "description": "The ID of the new contact.",
                                 "type": "string"
                             }
                         ],
@@ -1094,7 +1051,6 @@
                     }
                 ],
                 "async": true,
-                "description": "Updates a contact.",
                 "name": "update",
                 "parameters": [
                     {
@@ -1112,7 +1068,6 @@
                                 "version_added": "127"
                             }
                         ],
-                        "description": "The updated vCard for the contact.",
                         "name": "vCard",
                         "type": "string"
                     }
@@ -1129,7 +1084,6 @@
                     }
                 ],
                 "async": true,
-                "description": "Removes a contact from the address book. The contact is also removed from any mailing lists it is a member of.",
                 "name": "delete",
                 "parameters": [
                     {
@@ -1159,7 +1113,6 @@
                         "version_added": "127"
                     }
                 ],
-                "description": "Object defining a query for $(ref:contacts.quickSearch).",
                 "id": "QueryInfo",
                 "properties": {
                     "includeLocal": {
@@ -1169,7 +1122,6 @@
                             }
                         ],
                         "default": true,
-                        "description": "Whether to include results from local address books. Defaults to <var>true</var>.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1180,7 +1132,6 @@
                             }
                         ],
                         "default": true,
-                        "description": "Whether to include results from read-only address books. Defaults to <var>true</var>.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1191,7 +1142,6 @@
                             }
                         ],
                         "default": true,
-                        "description": "Whether to include results from read-write address books. Defaults to <var>true</var>.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1202,7 +1152,6 @@
                             }
                         ],
                         "default": true,
-                        "description": "Whether to include results from remote address books. Defaults to <var>true</var>.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1212,7 +1161,6 @@
                                 "version_added": "127"
                             }
                         ],
-                        "description": "The id of the address book to search. If not specified, all address books are searched.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1222,7 +1170,6 @@
                                 "version_added": "127"
                             }
                         ],
-                        "description": "One or more space-separated terms to search for in predefined contact fields (defined by the preference <var>mail.addr_book.quicksearchquery.format</var>).",
                         "optional": true,
                         "type": "string"
                     }
@@ -1238,7 +1185,6 @@
                         "version_added": "127"
                     }
                 ],
-                "description": "A node representing a contact in an address book.",
                 "id": "ContactNode",
                 "properties": {
                     "id": {
@@ -1247,7 +1193,6 @@
                                 "version_added": "127"
                             }
                         ],
-                        "description": "The unique identifier for the node. IDs are unique within the current profile, and they remain valid even after the program is restarted.",
                         "type": "string"
                     },
                     "parentId": {
@@ -1256,7 +1201,6 @@
                                 "version_added": "127"
                             }
                         ],
-                        "description": "The <var>id</var> of the parent object.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1266,7 +1210,6 @@
                                 "version_added": "127"
                             }
                         ],
-                        "description": "Indicates if the object is read-only.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1276,7 +1219,6 @@
                                 "version_added": "127"
                             }
                         ],
-                        "description": "Indicates if the object came from a remote address book.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1286,8 +1228,7 @@
                             {
                                 "version_added": "127"
                             }
-                        ],
-                        "description": "Always set to <var>contact</var>."
+                        ]
                     },
                     "vCard": {
                         "annotations": [
@@ -1309,7 +1250,6 @@
                         "version_added": "127"
                     }
                 ],
-                "description": "A set of individual properties for a particular contact, and its vCard string. Further information can be found in $(doc:guides/vcard).",
                 "id": "ContactProperties",
                 "patternProperties": {
                     "^\\w+$": {
@@ -1344,7 +1284,6 @@
                         "version_added": "127"
                     }
                 ],
-                "description": "A dictionary of changed properties. Keys are the property name that changed, values are an object containing <var>oldValue</var> and <var>newValue</var>. Values can be either a string or <var>null</var>.",
                 "id": "PropertyChange",
                 "patternProperties": {
                     "^\\w+$": {
@@ -1408,7 +1347,6 @@
         ]
     },
     {
-        "description": "The mailingLists API allows to access and manage the user's mailing lists.",
         "events": [
             {
                 "annotations": [
@@ -1419,7 +1357,6 @@
                         "version_added": "127"
                     }
                 ],
-                "description": "Fired when a mailing list is created.",
                 "name": "onCreated",
                 "parameters": [
                     {
@@ -1443,7 +1380,6 @@
                         "version_added": "127"
                     }
                 ],
-                "description": "Fired when a mailing list is changed.",
                 "name": "onUpdated",
                 "parameters": [
                     {
@@ -1467,7 +1403,6 @@
                         "version_added": "127"
                     }
                 ],
-                "description": "Fired when a mailing list is deleted.",
                 "name": "onDeleted",
                 "parameters": [
                     {
@@ -1500,7 +1435,6 @@
                         "version_added": "127"
                     }
                 ],
-                "description": "Fired when a contact is added to the mailing list.",
                 "name": "onMemberAdded",
                 "parameters": [
                     {
@@ -1524,7 +1458,6 @@
                         "version_added": "127"
                     }
                 ],
-                "description": "Fired when a contact is removed from the mailing list.",
                 "name": "onMemberRemoved",
                 "parameters": [
                     {
@@ -1560,7 +1493,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets all the mailing lists in the address book with id <var>parentId</var>.",
                 "name": "list",
                 "parameters": [
                     {
@@ -1608,7 +1540,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets a single mailing list.",
                 "name": "get",
                 "parameters": [
                     {
@@ -1653,7 +1584,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Creates a new mailing list in the address book with id <var>parentId</var>.",
                 "name": "create",
                 "parameters": [
                     {
@@ -1673,15 +1603,6 @@
                         ],
                         "name": "properties",
                         "properties": {
-                            "description": {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
-                                "optional": true,
-                                "type": "string"
-                            },
                             "name": {
                                 "annotations": [
                                     {
@@ -1717,7 +1638,6 @@
                                         "version_added": "127"
                                     }
                                 ],
-                                "description": "The ID of the new mailing list.",
                                 "type": "string"
                             }
                         ],
@@ -1736,7 +1656,6 @@
                     }
                 ],
                 "async": true,
-                "description": "Edits the properties of a mailing list.",
                 "name": "update",
                 "parameters": [
                     {
@@ -1756,15 +1675,6 @@
                         ],
                         "name": "properties",
                         "properties": {
-                            "description": {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
-                                "optional": true,
-                                "type": "string"
-                            },
                             "name": {
                                 "annotations": [
                                     {
@@ -1798,7 +1708,6 @@
                     }
                 ],
                 "async": true,
-                "description": "Removes the mailing list.",
                 "name": "delete",
                 "parameters": [
                     {
@@ -1823,7 +1732,6 @@
                     }
                 ],
                 "async": true,
-                "description": "Adds a contact to the mailing list with id <var>id</var>. If the contact and mailing list are in different address books, the contact will also be copied to the list's address book.",
                 "name": "addMember",
                 "parameters": [
                     {
@@ -1857,7 +1765,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets all contacts that are members of the mailing list with id <var>id</var>.",
                 "name": "listMembers",
                 "parameters": [
                     {
@@ -1905,7 +1812,6 @@
                     }
                 ],
                 "async": true,
-                "description": "Removes a contact from the mailing list with id <var>id</var>. This does not delete the contact from the address book.",
                 "name": "removeMember",
                 "parameters": [
                     {
@@ -1944,7 +1850,6 @@
                         "version_added": "127"
                     }
                 ],
-                "description": "A node representing a mailing list.",
                 "id": "MailingListNode",
                 "properties": {
                     "contacts": {
@@ -1953,20 +1858,11 @@
                                 "version_added": "127"
                             }
                         ],
-                        "description": "A list of contacts held by this node's address book or mailing list.",
                         "items": {
                             "$ref": "contacts.ContactNode"
                         },
                         "optional": true,
                         "type": "array"
-                    },
-                    "description": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
-                        "type": "string"
                     },
                     "id": {
                         "annotations": [
@@ -1974,7 +1870,6 @@
                                 "version_added": "127"
                             }
                         ],
-                        "description": "The unique identifier for the node. IDs are unique within the current profile, and they remain valid even after the program is restarted.",
                         "type": "string"
                     },
                     "name": {
@@ -1999,7 +1894,6 @@
                                 "version_added": "127"
                             }
                         ],
-                        "description": "The <var>id</var> of the parent object.",
                         "optional": true,
                         "type": "string"
                     },
@@ -2009,7 +1903,6 @@
                                 "version_added": "127"
                             }
                         ],
-                        "description": "Indicates if the object is read-only.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -2019,7 +1912,6 @@
                                 "version_added": "127"
                             }
                         ],
-                        "description": "Indicates if the object came from a remote address book.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -2029,8 +1921,7 @@
                             {
                                 "version_added": "127"
                             }
-                        ],
-                        "description": "Always set to <var>mailingList</var>."
+                        ]
                     }
                 },
                 "type": "object"

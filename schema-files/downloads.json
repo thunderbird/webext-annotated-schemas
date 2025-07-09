@@ -1,0 +1,1582 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "OptionalPermission",
+                "choices": [
+                    {
+                        "enum": [
+                            "downloads",
+                            "downloads.open"
+                        ],
+                        "enums": {
+                            "downloads": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            },
+                            "downloads.open": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "events": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onCreated"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "name": "onCreated",
+                "parameters": [
+                    {
+                        "$ref": "DownloadItem",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onCreated"
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ],
+                        "name": "downloadItem"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onErased"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "name": "onErased",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onErased"
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ],
+                        "name": "downloadId",
+                        "type": "integer"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "name": "onChanged",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                            },
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "name": "downloadDelta",
+                        "properties": {
+                            "canResume": {
+                                "$ref": "BooleanDelta",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "danger": {
+                                "$ref": "StringDelta",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "endTime": {
+                                "$ref": "StringDelta",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "error": {
+                                "$ref": "StringDelta",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "exists": {
+                                "$ref": "BooleanDelta",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "fileSize": {
+                                "$ref": "DoubleDelta",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "filename": {
+                                "$ref": "StringDelta",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "id": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "mime": {
+                                "$ref": "StringDelta",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "paused": {
+                                "$ref": "BooleanDelta",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "startTime": {
+                                "$ref": "StringDelta",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "state": {
+                                "$ref": "StringDelta",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "totalBytes": {
+                                "$ref": "DoubleDelta",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "url": {
+                                "$ref": "StringDelta",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "async": "callback",
+                "name": "download",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                            },
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "name": "options",
+                        "properties": {
+                            "allowHttpErrors": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "default": false,
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "body": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "conflictAction": {
+                                "$ref": "FilenameConflictAction",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "cookieStoreId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "filename": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "headers": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "items": {
+                                    "properties": {
+                                        "name": {
+                                            "annotations": [
+                                                {
+                                                    "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                                                },
+                                                {
+                                                    "version_added": "47"
+                                                }
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "annotations": [
+                                                {
+                                                    "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                                                },
+                                                {
+                                                    "version_added": "47"
+                                                }
+                                            ],
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "incognito": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "default": false,
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "method": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "enum": [
+                                    "GET",
+                                    "POST"
+                                ],
+                                "enums": {
+                                    "GET": {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                                            },
+                                            {
+                                                "version_added": "47"
+                                            }
+                                        ]
+                                    },
+                                    "POST": {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                                            },
+                                            {
+                                                "version_added": "47"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "saveAs": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "format": "url",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "name": "downloadId",
+                                "type": "integer"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/search"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "async": "callback",
+                "name": "search",
+                "parameters": [
+                    {
+                        "$ref": "DownloadQuery",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/search"
+                            },
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "name": "query"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "items": {
+                                    "$ref": "DownloadItem"
+                                },
+                                "name": "results",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/pause"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "async": "callback",
+                "name": "pause",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/pause"
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ],
+                        "name": "downloadId",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/resume"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "async": "callback",
+                "name": "resume",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/resume"
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ],
+                        "name": "downloadId",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/cancel"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "async": "callback",
+                "name": "cancel",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/cancel"
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ],
+                        "name": "downloadId",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/getFileIcon"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "async": "callback",
+                "name": "getFileIcon",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/getFileIcon"
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ],
+                        "name": "downloadId",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "size": {
+                                "maximum": 127,
+                                "minimum": 1,
+                                "optional": true,
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "name": "iconURL",
+                                "optional": true,
+                                "type": "string"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/open"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "async": "callback",
+                "name": "open",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/open"
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ],
+                        "name": "downloadId",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "permissions": [
+                    "downloads.open"
+                ],
+                "requireUserInput": true,
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/show"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "async": "callback",
+                "name": "show",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/show"
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ],
+                        "name": "downloadId",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "name": "success",
+                                "type": "boolean"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/showDefaultFolder"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "name": "showDefaultFolder",
+                "parameters": [],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/erase"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "async": "callback",
+                "name": "erase",
+                "parameters": [
+                    {
+                        "$ref": "DownloadQuery",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/erase"
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ],
+                        "name": "query"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "items": {
+                                    "type": "integer"
+                                },
+                                "name": "erasedIds",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/removeFile"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "async": "callback",
+                "name": "removeFile",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/removeFile"
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ],
+                        "name": "downloadId",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/acceptDanger"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
+                "name": "acceptDanger",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/acceptDanger"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "name": "downloadId",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            },
+            {
+                "name": "drag",
+                "parameters": [
+                    {
+                        "name": "downloadId",
+                        "type": "integer"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/setShelfEnabled"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
+                "name": "setShelfEnabled",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/setShelfEnabled"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "name": "enabled",
+                        "type": "boolean"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            }
+        ],
+        "namespace": "downloads",
+        "permissions": [
+            "downloads"
+        ],
+        "types": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/FilenameConflictAction"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "enum": [
+                    "uniquify",
+                    "overwrite",
+                    "prompt"
+                ],
+                "enums": {
+                    "prompt": {
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ]
+                    }
+                },
+                "id": "FilenameConflictAction",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/InterruptReason"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Only returns these errors: <code>NETWORK_FAILED</code>, <code>FILE_FAILED</code>, <code>CRASH</code>, <code>USER_CANCELED</code>, <code>SERVER_BAD_CONTENT</code>, <code>SERVER_FORBIDDEN</code>, <code>SERVER_UNAUTHORIZED</code>, and <code>SERVER_FAILED</code>."
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "enum": [
+                    "FILE_FAILED",
+                    "FILE_ACCESS_DENIED",
+                    "FILE_NO_SPACE",
+                    "FILE_NAME_TOO_LONG",
+                    "FILE_TOO_LARGE",
+                    "FILE_VIRUS_INFECTED",
+                    "FILE_TRANSIENT_ERROR",
+                    "FILE_BLOCKED",
+                    "FILE_SECURITY_CHECK_FAILED",
+                    "FILE_TOO_SHORT",
+                    "NETWORK_FAILED",
+                    "NETWORK_TIMEOUT",
+                    "NETWORK_DISCONNECTED",
+                    "NETWORK_SERVER_DOWN",
+                    "NETWORK_INVALID_REQUEST",
+                    "SERVER_FAILED",
+                    "SERVER_NO_RANGE",
+                    "SERVER_BAD_CONTENT",
+                    "SERVER_UNAUTHORIZED",
+                    "SERVER_CERT_PROBLEM",
+                    "SERVER_FORBIDDEN",
+                    "USER_CANCELED",
+                    "USER_SHUTDOWN",
+                    "CRASH"
+                ],
+                "id": "InterruptReason",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/DangerType"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "enum": [
+                    "file",
+                    "url",
+                    "content",
+                    "uncommon",
+                    "host",
+                    "unwanted",
+                    "safe",
+                    "accepted"
+                ],
+                "id": "DangerType",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/State"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "enum": [
+                    "in_progress",
+                    "interrupted",
+                    "complete"
+                ],
+                "id": "State",
+                "type": "string"
+            },
+            {
+                "id": "DownloadItem",
+                "properties": {
+                    "byExtensionId": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "byExtensionName": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "bytesReceived": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "type": "number"
+                    },
+                    "canResume": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "type": "boolean"
+                    },
+                    "cookieStoreId": {
+                        "annotations": [
+                            {
+                                "version_added": "92"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "danger": {
+                        "$ref": "DangerType",
+                        "annotations": [
+                            {
+                                "bcd": true,
+                                "note": "Always given as 'safe'."
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ]
+                    },
+                    "endTime": {
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "error": {
+                        "$ref": "InterruptReason",
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "estimatedEndTime": {
+                        "annotations": [
+                            {
+                                "version_added": "57"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "exists": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "type": "boolean"
+                    },
+                    "fileSize": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "type": "number"
+                    },
+                    "filename": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "type": "string"
+                    },
+                    "id": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "type": "integer"
+                    },
+                    "incognito": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "type": "boolean"
+                    },
+                    "mime": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "paused": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "type": "boolean"
+                    },
+                    "referrer": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "startTime": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "type": "string"
+                    },
+                    "state": {
+                        "$ref": "State",
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ]
+                    },
+                    "totalBytes": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "type": "number"
+                    },
+                    "url": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/StringDelta"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "id": "StringDelta",
+                "properties": {
+                    "current": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "previous": {
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/DoubleDelta"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "id": "DoubleDelta",
+                "properties": {
+                    "current": {
+                        "optional": true,
+                        "type": "number"
+                    },
+                    "previous": {
+                        "optional": true,
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/BooleanDelta"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "id": "BooleanDelta",
+                "properties": {
+                    "current": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "previous": {
+                        "optional": true,
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/DownloadTime"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "choices": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/DownloadTime"
+                            },
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "pattern": "^[1-9]\\d*$",
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "extensionTypes.Date"
+                    }
+                ],
+                "id": "DownloadTime"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/DownloadQuery"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "id": "DownloadQuery",
+                "properties": {
+                    "bytesReceived": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "number"
+                    },
+                    "cookieStoreId": {
+                        "annotations": [
+                            {
+                                "version_added": "92"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "danger": {
+                        "$ref": "DangerType",
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "endTime": {
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "endedAfter": {
+                        "$ref": "DownloadTime",
+                        "annotations": [
+                            {
+                                "bcd": true,
+                                "note": "The parameter is ignored."
+                            },
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "endedBefore": {
+                        "$ref": "DownloadTime",
+                        "annotations": [
+                            {
+                                "bcd": true,
+                                "note": "The parameter is ignored."
+                            },
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "error": {
+                        "$ref": "InterruptReason",
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "exists": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "fileSize": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "number"
+                    },
+                    "filename": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "filenameRegex": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "id": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "integer"
+                    },
+                    "limit": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "integer"
+                    },
+                    "mime": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "orderBy": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "paused": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "query": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "startTime": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "startedAfter": {
+                        "$ref": "DownloadTime",
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "startedBefore": {
+                        "$ref": "DownloadTime",
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "state": {
+                        "$ref": "State",
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "totalBytes": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "number"
+                    },
+                    "totalBytesGreater": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "number"
+                    },
+                    "totalBytesLess": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "number"
+                    },
+                    "url": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "urlRegex": {
+                        "annotations": [
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        ]
+    }
+]

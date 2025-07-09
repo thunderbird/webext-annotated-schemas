@@ -1,0 +1,85 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "id": "ProtocolHandler",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "protocol": {
+                        "choices": [
+                            {
+                                "enum": [
+                                    "bitcoin",
+                                    "dat",
+                                    "dweb",
+                                    "ftp",
+                                    "geo",
+                                    "gopher",
+                                    "im",
+                                    "ipfs",
+                                    "ipns",
+                                    "irc",
+                                    "ircs",
+                                    "magnet",
+                                    "mailto",
+                                    "matrix",
+                                    "mms",
+                                    "news",
+                                    "nntp",
+                                    "sip",
+                                    "sms",
+                                    "smsto",
+                                    "ssb",
+                                    "ssh",
+                                    "tel",
+                                    "urn",
+                                    "webcal",
+                                    "wtai",
+                                    "xmpp"
+                                ],
+                                "type": "string"
+                            },
+                            {
+                                "pattern": "^(ext|web)\\+[a-z0-9.+-]+$",
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "uriTemplate": {
+                        "choices": [
+                            {
+                                "$ref": "ExtensionURL"
+                            },
+                            {
+                                "$ref": "HttpURL"
+                            }
+                        ],
+                        "preprocess": "localize"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "$extend": "WebExtensionManifest",
+                "properties": {
+                    "protocol_handlers": {
+                        "annotations": [
+                            {
+                                "version_added": true
+                            }
+                        ],
+                        "items": {
+                            "$ref": "ProtocolHandler"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    }
+                }
+            }
+        ]
+    }
+]

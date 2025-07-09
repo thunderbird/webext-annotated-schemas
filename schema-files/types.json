@@ -1,0 +1,149 @@
+[
+    {
+        "namespace": "types",
+        "types": [
+            {
+                "enum": [
+                    "regular",
+                    "regular_only",
+                    "incognito_persistent",
+                    "incognito_session_only"
+                ],
+                "id": "SettingScope",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "not_controllable",
+                    "controlled_by_other_extensions",
+                    "controllable_by_this_extension",
+                    "controlled_by_this_extension"
+                ],
+                "id": "LevelOfControl",
+                "type": "string"
+            },
+            {
+                "events": [
+                    {
+                        "name": "onChange",
+                        "parameters": [
+                            {
+                                "name": "details",
+                                "properties": {
+                                    "incognitoSpecific": {
+                                        "optional": true,
+                                        "type": "boolean"
+                                    },
+                                    "levelOfControl": {
+                                        "$ref": "types.LevelOfControl"
+                                    },
+                                    "value": {
+                                        "type": "any"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "functions": [
+                    {
+                        "async": "callback",
+                        "name": "get",
+                        "parameters": [
+                            {
+                                "name": "details",
+                                "properties": {
+                                    "incognito": {
+                                        "optional": true,
+                                        "type": "boolean"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "name": "callback",
+                                "parameters": [
+                                    {
+                                        "name": "details",
+                                        "properties": {
+                                            "incognitoSpecific": {
+                                                "optional": true,
+                                                "type": "boolean"
+                                            },
+                                            "levelOfControl": {
+                                                "$ref": "types.LevelOfControl"
+                                            },
+                                            "value": {
+                                                "type": "any"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
+                        "async": "callback",
+                        "name": "set",
+                        "parameters": [
+                            {
+                                "name": "details",
+                                "properties": {
+                                    "scope": {
+                                        "$ref": "types.SettingScope",
+                                        "optional": true
+                                    },
+                                    "value": {
+                                        "type": "any"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "name": "callback",
+                                "optional": true,
+                                "parameters": [],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
+                        "async": "callback",
+                        "name": "clear",
+                        "parameters": [
+                            {
+                                "name": "details",
+                                "properties": {
+                                    "scope": {
+                                        "$ref": "types.SettingScope",
+                                        "optional": true
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "name": "callback",
+                                "optional": true,
+                                "parameters": [],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "id": "Setting",
+                "type": "object"
+            }
+        ]
+    },
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest"
+    }
+]

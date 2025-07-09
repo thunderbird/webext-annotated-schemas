@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "140.0b3",
+        "applicationVersion": "141.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -24,7 +24,6 @@
                                     }
                                 ],
                                 "default": false,
-                                "description": "Enable browser styles. See the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Browser_styles'>MDN documentation on browser styles</a> for more information.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -34,7 +33,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "Defines the location the composeAction button will appear. The default location is <var>maintoolbar</var>.",
                                 "enum": [
                                     "maintoolbar",
                                     "formattoolbar"
@@ -65,7 +63,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "The paths to one or more icons for the composeAction button.",
                                 "optional": true
                             },
                             "default_label": {
@@ -74,7 +71,6 @@
                                         "version_added": "84"
                                     }
                                 ],
-                                "description": "The label of the composeAction button, defaults to its title. Can be set to an empty string to not display any label. If the containing toolbar is configured to display text only, the title will be used as fallback.",
                                 "optional": true,
                                 "preprocess": "localize",
                                 "type": "string"
@@ -85,7 +81,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "The html document to be opened as a popup when the user clicks on the composeAction button. Ignored for action buttons with type <var>menu</var>.",
                                 "format": "relativeUrl",
                                 "optional": true,
                                 "preprocess": "localize",
@@ -97,7 +92,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "The title of the composeAction button. This shows up in the tooltip and the label. Defaults to the add-on name.",
                                 "optional": true,
                                 "preprocess": "localize",
                                 "type": "string"
@@ -108,7 +102,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "Specifies dark and light icons to be used with themes. The <var>light</var> icon is used on dark backgrounds and vice versa. The default theme uses the <var>default_icon</var> for light backgrounds (if specified).",
                                 "items": {
                                     "$ref": "ThemeIcons"
                                 },
@@ -123,7 +116,6 @@
                                     }
                                 ],
                                 "default": "button",
-                                "description": "Specifies the type of the button. Default type is <var>button</var>.",
                                 "enum": [
                                     "button",
                                     "menu"
@@ -155,7 +147,6 @@
         ]
     },
     {
-        "description": "Use a composeAction to put a button in the message composition toolbars. In addition to its icon, a composeAction button can also have a tooltip, a badge, and a popup.",
         "events": [
             {
                 "annotations": [
@@ -166,7 +157,6 @@
                         "version_added": "64"
                     }
                 ],
-                "description": "Fired when a composeAction button is clicked. This event will not fire if the composeAction has a popup. This is a user input event handler. For asynchronous listeners some <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/User_actions'>restrictions</a> apply.",
                 "name": "onClicked",
                 "parameters": [
                     {
@@ -203,7 +193,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Sets the title of the composeAction button. Is used as tooltip and as the label.",
                 "name": "setTitle",
                 "parameters": [
                     {
@@ -220,7 +209,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "Sets the title only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -248,8 +236,7 @@
                                         ],
                                         "type": "null"
                                     }
-                                ],
-                                "description": "A string the composeAction button should display as its label and when moused over. Cleared by setting it to <var>null</var> or an empty string (title defined the manifest will be used)."
+                                ]
                             },
                             "windowId": {
                                 "annotations": [
@@ -257,7 +244,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
@@ -290,7 +276,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets the title of the composeAction button.",
                 "name": "getTitle",
                 "parameters": [
                     {
@@ -307,7 +292,6 @@
                                         "version_added": "108"
                                     }
                                 ],
-                                "description": "Specifies for which tab the title should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -318,7 +302,6 @@
                                         "version_added": "108"
                                     }
                                 ],
-                                "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
@@ -361,7 +344,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Sets the label of the composeAction button. Can be used to set different values for the tooltip (defined by the title) and the label. Additionally, the label can be set to an empty string, not showing any label at all.",
                 "name": "setLabel",
                 "parameters": [
                     {
@@ -395,8 +377,7 @@
                                         ],
                                         "type": "null"
                                     }
-                                ],
-                                "description": "A string the composeAction button should use as its label, overriding the defined title. Can be set to an empty string to not display any label at all. If the containing toolbar is configured to display text only, its title will be used. Cleared by setting it to <var>null</var>."
+                                ]
                             },
                             "tabId": {
                                 "annotations": [
@@ -404,7 +385,6 @@
                                         "version_added": "84"
                                     }
                                 ],
-                                "description": "Sets the label only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -415,7 +395,6 @@
                                         "version_added": "84"
                                     }
                                 ],
-                                "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
@@ -448,7 +427,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets the label of the composeAction button. Returns <var>null</var>, if no label has been set and the title is used.",
                 "name": "getLabel",
                 "parameters": [
                     {
@@ -465,7 +443,6 @@
                                         "version_added": "108"
                                     }
                                 ],
-                                "description": "Specifies for which tab the label should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -476,7 +453,6 @@
                                         "version_added": "108"
                                     }
                                 ],
-                                "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
@@ -536,7 +512,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Sets the icon for the composeAction button. Either the <var>path</var> or the <var>imageData</var> property must be specified.",
                 "name": "setIcon",
                 "parameters": [
                     {
@@ -571,7 +546,6 @@
                                         ]
                                     }
                                 ],
-                                "description": "The image data for one or more icons for the composeAction button.",
                                 "optional": true
                             },
                             "path": {
@@ -581,7 +555,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "The paths to one or more icons for the composeAction button.",
                                 "optional": true
                             },
                             "tabId": {
@@ -590,7 +563,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "Sets the icon only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -601,7 +573,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
@@ -634,7 +605,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Sets the html document to be opened as a popup when the user clicks on the composeAction button.",
                 "name": "setPopup",
                 "parameters": [
                     {
@@ -668,8 +638,7 @@
                                         ],
                                         "type": "null"
                                     }
-                                ],
-                                "description": "The html file to show in a popup. Can be set to an empty string to not open a popup. Cleared by setting it to <var>null</var> (action will use the popup value defined in the manifest)."
+                                ]
                             },
                             "tabId": {
                                 "annotations": [
@@ -677,7 +646,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "Sets the popup only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -688,7 +656,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
@@ -721,7 +688,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets the html document set as the popup for this composeAction button.",
                 "name": "getPopup",
                 "parameters": [
                     {
@@ -738,7 +704,6 @@
                                         "version_added": "108"
                                     }
                                 ],
-                                "description": "Specifies for which tab the popup document should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -749,7 +714,6 @@
                                         "version_added": "108"
                                     }
                                 ],
-                                "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
@@ -792,7 +756,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Sets the badge text for the composeAction button. The badge is displayed on top of the icon.",
                 "name": "setBadgeText",
                 "parameters": [
                     {
@@ -809,7 +772,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "Sets the badge text only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -837,8 +799,7 @@
                                         ],
                                         "type": "null"
                                     }
-                                ],
-                                "description": "Any number of characters can be passed, but only about four can fit in the space. Cleared by setting it to <var>null</var> or an empty string."
+                                ]
                             },
                             "windowId": {
                                 "annotations": [
@@ -846,7 +807,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
@@ -879,7 +839,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets the badge text of the composeAction button.",
                 "name": "getBadgeText",
                 "parameters": [
                     {
@@ -896,7 +855,6 @@
                                         "version_added": "108"
                                     }
                                 ],
-                                "description": "Specifies for which tab the badge text should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -907,7 +865,6 @@
                                         "version_added": "108"
                                     }
                                 ],
-                                "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
@@ -950,7 +907,6 @@
                     }
                 ],
                 "async": true,
-                "description": "Sets the text color for the badge.",
                 "name": "setBadgeTextColor",
                 "parameters": [
                     {
@@ -992,8 +948,7 @@
                                         ],
                                         "type": "null"
                                     }
-                                ],
-                                "description": "The color to use as text color in the badge. Cleared by setting it to <var>null</var>."
+                                ]
                             },
                             "tabId": {
                                 "annotations": [
@@ -1001,7 +956,6 @@
                                         "version_added": "128"
                                     }
                                 ],
-                                "description": "Sets the text color for the badge only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -1012,7 +966,6 @@
                                         "version_added": "128"
                                     }
                                 ],
-                                "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
@@ -1034,7 +987,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets the text color of the badge.",
                 "name": "getBadgeTextColor",
                 "parameters": [
                     {
@@ -1051,7 +1003,6 @@
                                         "version_added": "128"
                                     }
                                 ],
-                                "description": "Specifies for which tab the badge text color should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -1062,7 +1013,6 @@
                                         "version_added": "128"
                                     }
                                 ],
-                                "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
@@ -1105,7 +1055,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Sets the background color for the badge.",
                 "name": "setBadgeBackgroundColor",
                 "parameters": [
                     {
@@ -1147,8 +1096,7 @@
                                         ],
                                         "type": "null"
                                     }
-                                ],
-                                "description": "The color to use as background in the badge. Cleared by setting it to <var>null</var>."
+                                ]
                             },
                             "tabId": {
                                 "annotations": [
@@ -1156,7 +1104,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "Sets the background color for the badge only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -1167,7 +1114,6 @@
                                         "version_added": "64"
                                     }
                                 ],
-                                "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
@@ -1200,7 +1146,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets the badge background color of the composeAction button.",
                 "name": "getBadgeBackgroundColor",
                 "parameters": [
                     {
@@ -1217,7 +1162,6 @@
                                         "version_added": "108"
                                     }
                                 ],
-                                "description": "Specifies for which tab the badge background color should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -1228,7 +1172,6 @@
                                         "version_added": "108"
                                     }
                                 ],
-                                "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
@@ -1271,7 +1214,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Enables the composeAction button for a specific tab (if a <var>tabId</var> is provided), or for all tabs which do not have a custom enable state. Once the enable state of a tab has been updated individually, all further changes to its state have to be done individually as well. By default, a composeAction button is enabled.",
                 "name": "enable",
                 "parameters": [
                     {
@@ -1280,7 +1222,6 @@
                                 "version_added": "64"
                             }
                         ],
-                        "description": "The id of the tab for which you want to modify the composeAction button.",
                         "minimum": 0,
                         "name": "tabId",
                         "optional": true,
@@ -1310,7 +1251,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Disables the composeAction button for a specific tab (if a <var>tabId</var> is provided), or for all tabs which do not have a custom enable state. Once the enable state of a tab has been updated individually, all further changes to its state have to be done individually as well.",
                 "name": "disable",
                 "parameters": [
                     {
@@ -1319,7 +1259,6 @@
                                 "version_added": "64"
                             }
                         ],
-                        "description": "The id of the tab for which you want to modify the composeAction button.",
                         "minimum": 0,
                         "name": "tabId",
                         "optional": true,
@@ -1349,7 +1288,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Checks whether the composeAction button is enabled.",
                 "name": "isEnabled",
                 "parameters": [
                     {
@@ -1366,7 +1304,6 @@
                                         "version_added": "108"
                                     }
                                 ],
-                                "description": "Specifies for which tab the state should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -1377,7 +1314,6 @@
                                         "version_added": "108"
                                     }
                                 ],
-                                "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
@@ -1419,7 +1355,6 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Opens the action's popup window in the specified window. Defaults to the current window. Returns false if the popup could not be opened because the action has no popup, is of type <var>menu</var>, is disabled or has been removed from the toolbar.",
                 "name": "openPopup",
                 "parameters": [
                     {
@@ -1428,7 +1363,6 @@
                                 "version_added": "113"
                             }
                         ],
-                        "description": "An object with information about the popup to open.",
                         "name": "options",
                         "optional": true,
                         "properties": {
@@ -1438,7 +1372,6 @@
                                         "version_added": "113"
                                     }
                                 ],
-                                "description": "Defaults to the current window.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer"
@@ -1484,7 +1417,6 @@
                         "version_added": "64"
                     }
                 ],
-                "description": "An array of four integers in the range [0,255] that make up the RGBA color. For example, opaque red is <var>[255, 0, 0, 255]</var>.",
                 "id": "ColorArray",
                 "items": {
                     "maximum": 255,
@@ -1507,7 +1439,6 @@
                         "version_added": "64"
                     }
                 ],
-                "description": "Pixel data for an image. Must be an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object (for example, from a <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/canvas'>canvas</a> element).",
                 "id": "ImageDataType",
                 "isInstanceOf": "ImageData",
                 "postprocess": "convertImageDataToURL",
@@ -1522,7 +1453,6 @@
                         "version_added": "90"
                     }
                 ],
-                "description": "A <em>dictionary object</em> to specify multiple <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> objects in different sizes, so the icon does not have to be scaled for a device with a different pixel density. Each entry is a <em>name-value</em> pair with <em>value</em> being an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object, and <em>name</em> its size.",
                 "id": "ImageDataDictionary",
                 "patternProperties": {
                     "^[1-9]\\d*$": {
@@ -1540,7 +1470,6 @@
                         "version_added": "74"
                     }
                 ],
-                "description": "Information sent when a composeAction button is clicked.",
                 "id": "OnClickData",
                 "properties": {
                     "button": {
@@ -1549,7 +1478,6 @@
                                 "version_added": "74"
                             }
                         ],
-                        "description": "An integer value of button by which menu item was clicked.",
                         "optional": true,
                         "type": "integer"
                     },
@@ -1559,7 +1487,6 @@
                                 "version_added": "74"
                             }
                         ],
-                        "description": "An array of keyboard modifiers that were held while the menu item was clicked.",
                         "items": {
                             "enum": [
                                 "Shift",

@@ -1,0 +1,189 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "OptionalPermission",
+                "choices": [
+                    {
+                        "enum": [
+                            "privacy"
+                        ],
+                        "enums": {
+                            "privacy": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "namespace": "privacy",
+        "permissions": [
+            "privacy"
+        ]
+    },
+    {
+        "namespace": "privacy.network",
+        "permissions": [
+            "privacy"
+        ],
+        "properties": {
+            "globalPrivacyControl": {
+                "$ref": "types.Setting"
+            },
+            "httpsOnlyMode": {
+                "$ref": "types.Setting"
+            },
+            "networkPredictionEnabled": {
+                "$ref": "types.Setting"
+            },
+            "peerConnectionEnabled": {
+                "$ref": "types.Setting"
+            },
+            "tlsVersionRestriction": {
+                "$ref": "types.Setting"
+            },
+            "webRTCIPHandlingPolicy": {
+                "$ref": "types.Setting"
+            }
+        },
+        "types": [
+            {
+                "enum": [
+                    "default",
+                    "default_public_and_private_interfaces",
+                    "default_public_interface_only",
+                    "disable_non_proxied_udp",
+                    "proxy_only"
+                ],
+                "id": "IPHandlingPolicy",
+                "type": "string"
+            },
+            {
+                "id": "tlsVersionRestrictionConfig",
+                "properties": {
+                    "maximum": {
+                        "enum": [
+                            "TLSv1",
+                            "TLSv1.1",
+                            "TLSv1.2",
+                            "TLSv1.3",
+                            "unknown"
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "minimum": {
+                        "enum": [
+                            "TLSv1",
+                            "TLSv1.1",
+                            "TLSv1.2",
+                            "TLSv1.3",
+                            "unknown"
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "enum": [
+                    "always",
+                    "private_browsing",
+                    "never"
+                ],
+                "id": "HTTPSOnlyModeOption",
+                "type": "string"
+            }
+        ]
+    },
+    {
+        "namespace": "privacy.services",
+        "permissions": [
+            "privacy"
+        ],
+        "properties": {
+            "passwordSavingEnabled": {
+                "$ref": "types.Setting"
+            }
+        }
+    },
+    {
+        "namespace": "privacy.websites",
+        "permissions": [
+            "privacy"
+        ],
+        "properties": {
+            "cookieConfig": {
+                "$ref": "types.Setting"
+            },
+            "firstPartyIsolate": {
+                "$ref": "types.Setting"
+            },
+            "hyperlinkAuditingEnabled": {
+                "$ref": "types.Setting"
+            },
+            "protectedContentEnabled": {
+                "$ref": "types.Setting",
+                "unsupported": true
+            },
+            "referrersEnabled": {
+                "$ref": "types.Setting"
+            },
+            "resistFingerprinting": {
+                "$ref": "types.Setting"
+            },
+            "thirdPartyCookiesAllowed": {
+                "$ref": "types.Setting",
+                "unsupported": true
+            },
+            "trackingProtectionMode": {
+                "$ref": "types.Setting"
+            }
+        },
+        "types": [
+            {
+                "enum": [
+                    "always",
+                    "never",
+                    "private_browsing"
+                ],
+                "id": "TrackingProtectionModeOption",
+                "type": "string"
+            },
+            {
+                "id": "CookieConfig",
+                "properties": {
+                    "behavior": {
+                        "enum": [
+                            "allow_all",
+                            "reject_all",
+                            "reject_third_party",
+                            "allow_visited",
+                            "reject_trackers",
+                            "reject_trackers_and_partition_foreign"
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "nonPersistentCookies": {
+                        "default": false,
+                        "optional": true,
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            }
+        ]
+    }
+]

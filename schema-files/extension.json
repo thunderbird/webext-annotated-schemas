@@ -1,0 +1,361 @@
+[
+    {
+        "allowedContexts": [
+            "content",
+            "devtools"
+        ],
+        "events": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/onRequest"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
+                "name": "onRequest",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/onRequest"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "name": "request",
+                        "optional": true,
+                        "type": "any"
+                    },
+                    {
+                        "$ref": "runtime.MessageSender",
+                        "name": "sender"
+                    },
+                    {
+                        "name": "sendResponse",
+                        "type": "function"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/onRequestExternal"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
+                "name": "onRequestExternal",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/onRequestExternal"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "name": "request",
+                        "optional": true,
+                        "type": "any"
+                    },
+                    {
+                        "$ref": "runtime.MessageSender",
+                        "name": "sender"
+                    },
+                    {
+                        "name": "sendResponse",
+                        "type": "function"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            }
+        ],
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getViews"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then its return value will not include the extension's background page."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "name": "getViews",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getViews"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then its return value will not include the extension's background page."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "fetchProperties",
+                        "optional": true,
+                        "properties": {
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getViews"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then its return value will not include the extension's background page."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "integer"
+                            },
+                            "type": {
+                                "$ref": "ViewType",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getViews"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then its return value will not include the extension's background page."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true
+                            },
+                            "windowId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getViews"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then its return value will not include the extension's background page."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "returns": {
+                    "items": {
+                        "additionalProperties": {
+                            "type": "any"
+                        },
+                        "isInstanceOf": "Window",
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getBackgroundPage"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "name": "getBackgroundPage",
+                "parameters": [],
+                "returns": {
+                    "additionalProperties": {
+                        "type": "any"
+                    },
+                    "isInstanceOf": "Window",
+                    "optional": true,
+                    "type": "object"
+                },
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/isAllowedIncognitoAccess"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "async": "callback",
+                "name": "isAllowedIncognitoAccess",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/isAllowedIncognitoAccess"
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/isAllowedIncognitoAccess"
+                                    },
+                                    {
+                                        "version_added": "48"
+                                    }
+                                ],
+                                "name": "isAllowedAccess",
+                                "type": "boolean"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/isAllowedFileSchemeAccess"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "async": "callback",
+                "name": "isAllowedFileSchemeAccess",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/isAllowedFileSchemeAccess"
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/isAllowedFileSchemeAccess"
+                                    },
+                                    {
+                                        "version_added": "48"
+                                    }
+                                ],
+                                "name": "isAllowedAccess",
+                                "type": "boolean"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/setUpdateUrlData"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
+                "name": "setUpdateUrlData",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/setUpdateUrlData"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "maxLength": 1024,
+                        "name": "data",
+                        "type": "string"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            }
+        ],
+        "namespace": "extension",
+        "properties": {
+            "inIncognitoContext": {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/inIncognitoContext"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "optional": true,
+                "type": "boolean"
+            }
+        },
+        "types": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/ViewType"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "enum": [
+                    "tab",
+                    "popup",
+                    "sidebar"
+                ],
+                "enums": {
+                    "sidebar": {
+                        "annotations": [
+                            {
+                                "version_added": "54"
+                            }
+                        ]
+                    }
+                },
+                "id": "ViewType",
+                "type": "string"
+            }
+        ]
+    },
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest"
+    }
+]

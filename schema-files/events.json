@@ -1,0 +1,512 @@
+[
+    {
+        "namespace": "events",
+        "types": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Rule"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
+                "id": "Rule",
+                "properties": {
+                    "actions": {
+                        "items": {
+                            "type": "any"
+                        },
+                        "type": "array"
+                    },
+                    "conditions": {
+                        "items": {
+                            "type": "any"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "priority": {
+                        "optional": true,
+                        "type": "integer"
+                    },
+                    "tags": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event"
+                    },
+                    {
+                        "version_added": "≤53"
+                    }
+                ],
+                "functions": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addListener"
+                            },
+                            {
+                                "version_added": "≤59"
+                            }
+                        ],
+                        "name": "addListener",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addListener"
+                                    },
+                                    {
+                                        "version_added": "≤59"
+                                    }
+                                ],
+                                "name": "callback",
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/removeListener"
+                            },
+                            {
+                                "version_added": "≤59"
+                            }
+                        ],
+                        "name": "removeListener",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/removeListener"
+                                    },
+                                    {
+                                        "version_added": "≤59"
+                                    }
+                                ],
+                                "name": "callback",
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/hasListener"
+                            },
+                            {
+                                "version_added": "≤59"
+                            }
+                        ],
+                        "name": "hasListener",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/hasListener"
+                                    },
+                                    {
+                                        "version_added": "≤59"
+                                    }
+                                ],
+                                "name": "callback",
+                                "type": "function"
+                            }
+                        ],
+                        "returns": {
+                            "type": "boolean"
+                        },
+                        "type": "function"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/hasListeners"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "name": "hasListeners",
+                        "parameters": [],
+                        "returns": {
+                            "type": "boolean"
+                        },
+                        "type": "function"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addRules"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "name": "addRules",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addRules"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "name": "eventName",
+                                "type": "string"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addRules"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "name": "webViewInstanceId",
+                                "type": "integer"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addRules"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "items": {
+                                    "$ref": "Rule"
+                                },
+                                "name": "rules",
+                                "type": "array"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addRules"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "name": "callback",
+                                "optional": true,
+                                "parameters": [
+                                    {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addRules"
+                                            },
+                                            {
+                                                "version_added": false
+                                            }
+                                        ],
+                                        "items": {
+                                            "$ref": "Rule"
+                                        },
+                                        "name": "rules",
+                                        "type": "array"
+                                    }
+                                ],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function",
+                        "unsupported": true
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/getRules"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "name": "getRules",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/getRules"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "name": "eventName",
+                                "type": "string"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/getRules"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "name": "webViewInstanceId",
+                                "type": "integer"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/getRules"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "items": {
+                                    "type": "string"
+                                },
+                                "name": "ruleIdentifiers",
+                                "optional": true,
+                                "type": "array"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/getRules"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "name": "callback",
+                                "parameters": [
+                                    {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/getRules"
+                                            },
+                                            {
+                                                "version_added": false
+                                            }
+                                        ],
+                                        "items": {
+                                            "$ref": "Rule"
+                                        },
+                                        "name": "rules",
+                                        "type": "array"
+                                    }
+                                ],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function",
+                        "unsupported": true
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/removeRules"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "name": "removeRules",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/removeRules"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "name": "eventName",
+                                "type": "string"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/removeRules"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "name": "webViewInstanceId",
+                                "type": "integer"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/removeRules"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "items": {
+                                    "type": "string"
+                                },
+                                "name": "ruleIdentifiers",
+                                "optional": true,
+                                "type": "array"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/removeRules"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "name": "callback",
+                                "optional": true,
+                                "parameters": [],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function",
+                        "unsupported": true
+                    }
+                ],
+                "id": "Event",
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/UrlFilter"
+                    },
+                    {
+                        "version_added": "50"
+                    }
+                ],
+                "id": "UrlFilter",
+                "properties": {
+                    "hostContains": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "hostEquals": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "hostPrefix": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "hostSuffix": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "originAndPathMatches": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "pathContains": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "pathEquals": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "pathPrefix": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "pathSuffix": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "ports": {
+                        "items": {
+                            "choices": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "items": {
+                                        "type": "integer"
+                                    },
+                                    "maxItems": 2,
+                                    "minItems": 2,
+                                    "type": "array"
+                                }
+                            ]
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "queryContains": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "queryEquals": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "queryPrefix": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "querySuffix": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "schemes": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "urlContains": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "urlEquals": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "urlMatches": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "urlPrefix": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "urlSuffix": {
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        ]
+    },
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest"
+    }
+]

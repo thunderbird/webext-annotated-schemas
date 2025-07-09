@@ -1,0 +1,667 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "OptionalPermission",
+                "choices": [
+                    {
+                        "enum": [
+                            "management"
+                        ],
+                        "enums": {
+                            "management": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "events": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/onDisabled"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 56, only extensions whose <code>type</code> is <code>'theme'</code> are supported."
+                    },
+                    {
+                        "version_added": "55"
+                    }
+                ],
+                "name": "onDisabled",
+                "parameters": [
+                    {
+                        "$ref": "ExtensionInfo",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/onDisabled"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 56, only extensions whose <code>type</code> is <code>'theme'</code> are supported."
+                            },
+                            {
+                                "version_added": "55"
+                            }
+                        ],
+                        "name": "info"
+                    }
+                ],
+                "permissions": [
+                    "management"
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/onEnabled"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 56, only extensions whose <code>type</code> is <code>'theme'</code> are supported."
+                    },
+                    {
+                        "version_added": "55"
+                    }
+                ],
+                "name": "onEnabled",
+                "parameters": [
+                    {
+                        "$ref": "ExtensionInfo",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/onEnabled"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 56, only extensions whose <code>type</code> is <code>'theme'</code> are supported."
+                            },
+                            {
+                                "version_added": "55"
+                            }
+                        ],
+                        "name": "info"
+                    }
+                ],
+                "permissions": [
+                    "management"
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/onInstalled"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 56, only extensions whose <code>type</code> is <code>'theme'</code> are supported."
+                    },
+                    {
+                        "version_added": "55"
+                    }
+                ],
+                "name": "onInstalled",
+                "parameters": [
+                    {
+                        "$ref": "ExtensionInfo",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/onInstalled"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 56, only extensions whose <code>type</code> is <code>'theme'</code> are supported."
+                            },
+                            {
+                                "version_added": "55"
+                            }
+                        ],
+                        "name": "info"
+                    }
+                ],
+                "permissions": [
+                    "management"
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/onUninstalled"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 56, only extensions whose <code>type</code> is <code>'theme'</code> are supported."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "This event is not fired when the extension is in the \"pending uninstall\" state. The event is fired as expected once the extension is completely removed (for example, when the <code>about:addons</code> tab is closed)."
+                    },
+                    {
+                        "version_added": "55"
+                    }
+                ],
+                "name": "onUninstalled",
+                "parameters": [
+                    {
+                        "$ref": "ExtensionInfo",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/onUninstalled"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 56, only extensions whose <code>type</code> is <code>'theme'</code> are supported."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "This event is not fired when the extension is in the \"pending uninstall\" state. The event is fired as expected once the extension is completely removed (for example, when the <code>about:addons</code> tab is closed)."
+                            },
+                            {
+                                "version_added": "55"
+                            }
+                        ],
+                        "name": "info"
+                    }
+                ],
+                "permissions": [
+                    "management"
+                ],
+                "type": "function"
+            }
+        ],
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/getAll"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 56, only extensions whose 'type' is 'theme' are returned."
+                    },
+                    {
+                        "version_added": "55"
+                    }
+                ],
+                "async": "callback",
+                "name": "getAll",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/getAll"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 56, only extensions whose 'type' is 'theme' are returned."
+                            },
+                            {
+                                "version_added": "55"
+                            }
+                        ],
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/getAll"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 56, only extensions whose 'type' is 'theme' are returned."
+                                    },
+                                    {
+                                        "version_added": "55"
+                                    }
+                                ],
+                                "items": {
+                                    "$ref": "ExtensionInfo"
+                                },
+                                "name": "result",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "permissions": [
+                    "management"
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/get"
+                    },
+                    {
+                        "version_added": "56"
+                    }
+                ],
+                "async": "callback",
+                "name": "get",
+                "parameters": [
+                    {
+                        "$ref": "manifest.ExtensionID",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/get"
+                            },
+                            {
+                                "version_added": "56"
+                            }
+                        ],
+                        "name": "id"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "$ref": "ExtensionInfo",
+                                "name": "result"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "permissions": [
+                    "management"
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/install"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "The installable file pointed to by <code>url</code> must be a <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/Themes\">theme</a>, and not a normal browser extension."
+                    },
+                    {
+                        "version_added": "63"
+                    }
+                ],
+                "async": "callback",
+                "name": "install",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/install"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "The installable file pointed to by <code>url</code> must be a <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/Themes\">theme</a>, and not a normal browser extension."
+                            },
+                            {
+                                "version_added": "63"
+                            }
+                        ],
+                        "name": "options",
+                        "properties": {
+                            "hash": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/install"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "The installable file pointed to by <code>url</code> must be a <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/Themes\">theme</a>, and not a normal browser extension."
+                                    },
+                                    {
+                                        "version_added": "63"
+                                    }
+                                ],
+                                "optional": true,
+                                "pattern": "^(sha256|sha512):[0-9a-fA-F]{64,128}$",
+                                "type": "string"
+                            },
+                            "url": {
+                                "$ref": "manifest.HttpURL",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/install"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "The installable file pointed to by <code>url</code> must be a <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/Themes\">theme</a>, and not a normal browser extension."
+                                    },
+                                    {
+                                        "version_added": "63"
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "name": "result",
+                                "properties": {
+                                    "id": {
+                                        "$ref": "manifest.ExtensionID"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "permissions": [
+                    "management"
+                ],
+                "requireUserInput": true,
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/getSelf"
+                    },
+                    {
+                        "version_added": "51"
+                    }
+                ],
+                "async": "callback",
+                "name": "getSelf",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/getSelf"
+                            },
+                            {
+                                "version_added": "51"
+                            }
+                        ],
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "$ref": "ExtensionInfo",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/getSelf"
+                                    },
+                                    {
+                                        "version_added": "51"
+                                    }
+                                ],
+                                "name": "result"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/uninstallSelf"
+                    },
+                    {
+                        "version_added": "51"
+                    }
+                ],
+                "async": "callback",
+                "name": "uninstallSelf",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/uninstallSelf"
+                            },
+                            {
+                                "version_added": "51"
+                            }
+                        ],
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "dialogMessage": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/uninstallSelf"
+                                    },
+                                    {
+                                        "version_added": "51"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "showConfirmDialog": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/uninstallSelf"
+                                    },
+                                    {
+                                        "version_added": "51"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/setEnabled"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Only extensions whose 'type' is 'theme' can be enabled and disabled."
+                    },
+                    {
+                        "version_added": "55"
+                    }
+                ],
+                "async": "callback",
+                "name": "setEnabled",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/setEnabled"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Only extensions whose 'type' is 'theme' can be enabled and disabled."
+                            },
+                            {
+                                "version_added": "55"
+                            }
+                        ],
+                        "name": "id",
+                        "type": "string"
+                    },
+                    {
+                        "name": "enabled",
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "permissions": [
+                    "management"
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "management",
+        "types": [
+            {
+                "id": "IconInfo",
+                "properties": {
+                    "size": {
+                        "type": "integer"
+                    },
+                    "url": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "enum": [
+                    "unknown",
+                    "permissions_increase"
+                ],
+                "id": "ExtensionDisabledReason",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "extension",
+                    "theme"
+                ],
+                "id": "ExtensionType",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "development",
+                    "normal",
+                    "sideload",
+                    "admin",
+                    "other"
+                ],
+                "id": "ExtensionInstallType",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/ExtensionInfo"
+                    },
+                    {
+                        "version_added": "51"
+                    }
+                ],
+                "id": "ExtensionInfo",
+                "properties": {
+                    "disabledReason": {
+                        "$ref": "ExtensionDisabledReason",
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "enabled": {
+                        "type": "boolean"
+                    },
+                    "homepageUrl": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "hostPermissions": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "icons": {
+                        "items": {
+                            "$ref": "IconInfo"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "installType": {
+                        "$ref": "ExtensionInstallType",
+                        "annotations": []
+                    },
+                    "mayDisable": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "optionsUrl": {
+                        "type": "string"
+                    },
+                    "permissions": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "shortName": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "type": {
+                        "$ref": "ExtensionType",
+                        "annotations": [
+                            {
+                                "version_added": "55"
+                            }
+                        ]
+                    },
+                    "updateUrl": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "string"
+                    },
+                    "versionName": {
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        ]
+    }
+]
