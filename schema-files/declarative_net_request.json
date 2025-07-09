@@ -1,0 +1,1504 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "Permission",
+                "choices": [
+                    {
+                        "enum": [
+                            "declarativeNetRequest"
+                        ],
+                        "enums": {
+                            "declarativeNetRequest": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "$extend": "OptionalPermission",
+                "choices": [
+                    {
+                        "enum": [
+                            "declarativeNetRequestFeedback"
+                        ],
+                        "enums": {
+                            "declarativeNetRequestFeedback": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "$extend": "PermissionNoPrompt",
+                "choices": [
+                    {
+                        "enum": [
+                            "declarativeNetRequestWithHostAccess"
+                        ],
+                        "enums": {
+                            "declarativeNetRequestWithHostAccess": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "$extend": "WebExtensionManifest",
+                "properties": {
+                    "declarative_net_request": {
+                        "additionalProperties": {
+                            "$ref": "UnrecognizedProperty"
+                        },
+                        "annotations": [
+                            {
+                                "version_added": true
+                            }
+                        ],
+                        "optional": true,
+                        "properties": {
+                            "rule_resources": {
+                                "items": {
+                                    "additionalProperties": {
+                                        "$ref": "UnrecognizedProperty"
+                                    },
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean"
+                                        },
+                                        "id": {
+                                            "pattern": "^[^_]",
+                                            "type": "string"
+                                        },
+                                        "path": {
+                                            "$ref": "manifest.ExtensionURL"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "minItems": 1,
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateDynamicRules"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "async": "callback",
+                "name": "updateDynamicRules",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateDynamicRules"
+                            },
+                            {
+                                "version_added": "113"
+                            }
+                        ],
+                        "name": "options",
+                        "properties": {
+                            "addRules": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateDynamicRules"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "items": {
+                                    "$ref": "Rule"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "removeRuleIds": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateDynamicRules"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "items": {
+                                    "type": "integer"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateSessionRules"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "async": "callback",
+                "name": "updateSessionRules",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateSessionRules"
+                            },
+                            {
+                                "version_added": "113"
+                            }
+                        ],
+                        "name": "options",
+                        "properties": {
+                            "addRules": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateSessionRules"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "items": {
+                                    "$ref": "Rule"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "removeRuleIds": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateSessionRules"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "items": {
+                                    "type": "integer"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/getEnabledRulesets"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "async": "callback",
+                "name": "getEnabledRulesets",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/getEnabledRulesets"
+                            },
+                            {
+                                "version_added": "113"
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/getEnabledRulesets"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "items": {
+                                    "type": "string"
+                                },
+                                "name": "rulesetIds",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateEnabledRulesets"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "async": "callback",
+                "name": "updateEnabledRulesets",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateEnabledRulesets"
+                            },
+                            {
+                                "version_added": "113"
+                            }
+                        ],
+                        "name": "updateRulesetOptions",
+                        "properties": {
+                            "disableRulesetIds": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateEnabledRulesets"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "default": [],
+                                "items": {
+                                    "type": "string"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "enableRulesetIds": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateEnabledRulesets"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "default": [],
+                                "items": {
+                                    "type": "string"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateStaticRules"
+                    },
+                    {
+                        "version_added": "128"
+                    }
+                ],
+                "async": "callback",
+                "name": "updateStaticRules",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateStaticRules"
+                            },
+                            {
+                                "version_added": "128"
+                            }
+                        ],
+                        "name": "options",
+                        "properties": {
+                            "disableRuleIds": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateStaticRules"
+                                    },
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
+                                "default": [],
+                                "items": {
+                                    "type": "integer"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "enableRuleIds": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateStaticRules"
+                                    },
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
+                                "default": [],
+                                "items": {
+                                    "type": "integer"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "rulesetId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateStaticRules"
+                                    },
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/getAvailableStaticRuleCount"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "async": "callback",
+                "name": "getAvailableStaticRuleCount",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/getAvailableStaticRuleCount"
+                            },
+                            {
+                                "version_added": "113"
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/getAvailableStaticRuleCount"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "name": "count",
+                                "type": "integer"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/getDisabledRuleIds"
+                    },
+                    {
+                        "version_added": "128"
+                    }
+                ],
+                "async": "callback",
+                "name": "getDisabledRuleIds",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/getDisabledRuleIds"
+                            },
+                            {
+                                "version_added": "128"
+                            }
+                        ],
+                        "name": "options",
+                        "properties": {
+                            "rulesetId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/getDisabledRuleIds"
+                                    },
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "items": {
+                                    "type": "integer"
+                                },
+                                "name": "disabledRuleIds",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/getDynamicRules"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "async": "callback",
+                "name": "getDynamicRules",
+                "parameters": [
+                    {
+                        "$ref": "GetRulesFilter",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/getDynamicRules"
+                            },
+                            {
+                                "version_added": "113"
+                            }
+                        ],
+                        "name": "filter",
+                        "optional": true
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "items": {
+                                    "$ref": "Rule"
+                                },
+                                "name": "dynamicRules",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/getSessionRules"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "async": "callback",
+                "name": "getSessionRules",
+                "parameters": [
+                    {
+                        "$ref": "GetRulesFilter",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/getSessionRules"
+                            },
+                            {
+                                "version_added": "113"
+                            }
+                        ],
+                        "name": "filter",
+                        "optional": true
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "items": {
+                                    "$ref": "Rule"
+                                },
+                                "name": "sessionRules",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/isRegexSupported"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "async": "callback",
+                "name": "isRegexSupported",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/isRegexSupported"
+                            },
+                            {
+                                "version_added": "113"
+                            }
+                        ],
+                        "name": "regexOptions",
+                        "properties": {
+                            "isCaseSensitive": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/isRegexSupported"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "default": false,
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "regex": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/isRegexSupported"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "requireCapturing": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/isRegexSupported"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "default": false,
+                                "optional": true,
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "name": "result",
+                                "properties": {
+                                    "isSupported": {
+                                        "type": "boolean"
+                                    },
+                                    "reason": {
+                                        "$ref": "UnsupportedRegexReason",
+                                        "optional": true
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/testMatchOutcome"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "async": "callback",
+                "name": "testMatchOutcome",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/testMatchOutcome"
+                            },
+                            {
+                                "version_added": "113"
+                            }
+                        ],
+                        "name": "request",
+                        "properties": {
+                            "initiator": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/testMatchOutcome"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "method": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/testMatchOutcome"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "default": "get",
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/testMatchOutcome"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "default": -1,
+                                "optional": true,
+                                "type": "integer"
+                            },
+                            "type": {
+                                "$ref": "ResourceType",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/testMatchOutcome"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/testMatchOutcome"
+                                    },
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "includeOtherExtensions": {
+                                "optional": true,
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "name": "result",
+                                "properties": {
+                                    "matchedRules": {
+                                        "items": {
+                                            "$ref": "MatchedRule"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "permissions": [
+                    "declarativeNetRequestFeedback"
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "declarativeNetRequest",
+        "permissions": [
+            "declarativeNetRequest",
+            "declarativeNetRequestWithHostAccess"
+        ],
+        "properties": {
+            "DYNAMIC_RULESET_ID": {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/DYNAMIC_RULESET_ID"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "type": "string",
+                "value": "_dynamic"
+            },
+            "GUARANTEED_MINIMUM_STATIC_RULES": {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/GUARANTEED_MINIMUM_STATIC_RULES"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "type": "number"
+            },
+            "MAX_NUMBER_OF_DISABLED_STATIC_RULES": {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_DISABLED_STATIC_RULES"
+                    },
+                    {
+                        "version_added": "128"
+                    }
+                ],
+                "type": "number"
+            },
+            "MAX_NUMBER_OF_DYNAMIC_AND_SESSION_RULES": {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_DYNAMIC_AND_SESSION_RULES"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Deprecated in Firefox 128. Use <code>MAX_NUMBER_OF_DYNAMIC_RULES</code> and <code>MAX_NUMBER_OF_SESSION_RULES</code> instead."
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "type": "number"
+            },
+            "MAX_NUMBER_OF_DYNAMIC_RULES": {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_DYNAMIC_RULES"
+                    },
+                    {
+                        "version_added": "128"
+                    }
+                ],
+                "type": "number"
+            },
+            "MAX_NUMBER_OF_ENABLED_STATIC_RULESETS": {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_ENABLED_STATIC_RULESETS"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "type": "number"
+            },
+            "MAX_NUMBER_OF_REGEX_RULES": {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_REGEX_RULES"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "type": "number"
+            },
+            "MAX_NUMBER_OF_SESSION_RULES": {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_SESSION_RULES"
+                    },
+                    {
+                        "version_added": "128"
+                    }
+                ],
+                "type": "number"
+            },
+            "MAX_NUMBER_OF_STATIC_RULESETS": {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_STATIC_RULESETS"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "type": "number"
+            },
+            "SESSION_RULESET_ID": {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/SESSION_RULESET_ID"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "type": "string",
+                "value": "_session"
+            }
+        },
+        "types": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/ResourceType"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "enum": [
+                    "main_frame",
+                    "sub_frame",
+                    "stylesheet",
+                    "script",
+                    "image",
+                    "object",
+                    "object_subrequest",
+                    "xmlhttprequest",
+                    "xslt",
+                    "ping",
+                    "beacon",
+                    "xml_dtd",
+                    "font",
+                    "media",
+                    "websocket",
+                    "csp_report",
+                    "imageset",
+                    "web_manifest",
+                    "speculative",
+                    "json",
+                    "other"
+                ],
+                "enums": {
+                    "beacon": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "csp_report": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "font": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "image": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "imageset": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "json": {
+                        "annotations": [
+                            {
+                                "bcd": true,
+                                "note": "The \"json\" property is supported from Firefox 135, but requests of this type are only available from Firefox 138."
+                            },
+                            {
+                                "version_added": "138"
+                            }
+                        ]
+                    },
+                    "main_frame": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "media": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "object": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "object_subrequest": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "other": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "ping": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "script": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "speculative": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "stylesheet": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "sub_frame": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "web_manifest": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "websocket": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "xml_dtd": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "xmlhttprequest": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    },
+                    "xslt": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ]
+                    }
+                },
+                "id": "ResourceType",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "syntaxError",
+                    "memoryLimitExceeded"
+                ],
+                "id": "UnsupportedRegexReason",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MatchedRule"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "id": "MatchedRule",
+                "properties": {
+                    "extensionId": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "ruleId": {
+                        "type": "integer"
+                    },
+                    "rulesetId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/URLTransform"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "id": "URLTransform",
+                "properties": {
+                    "fragment": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "host": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "password": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "path": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "port": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "query": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "queryTransform": {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ],
+                        "optional": true,
+                        "properties": {
+                            "addOrReplaceParams": {
+                                "annotations": [
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "items": {
+                                    "properties": {
+                                        "key": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "113"
+                                                }
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "replaceOnly": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "113"
+                                                }
+                                            ],
+                                            "default": false,
+                                            "optional": true,
+                                            "type": "boolean"
+                                        },
+                                        "value": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "113"
+                                                }
+                                            ],
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "removeParams": {
+                                "annotations": [
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
+                                "items": {
+                                    "type": "string"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "scheme": {
+                        "enum": [
+                            "http",
+                            "https",
+                            "moz-extension"
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "username": {
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/Rule"
+                    },
+                    {
+                        "version_added": "113"
+                    }
+                ],
+                "id": "Rule",
+                "properties": {
+                    "action": {
+                        "properties": {
+                            "redirect": {
+                                "optional": true,
+                                "properties": {
+                                    "extensionPath": {
+                                        "optional": true,
+                                        "type": "string"
+                                    },
+                                    "regexSubstitution": {
+                                        "optional": true,
+                                        "type": "string"
+                                    },
+                                    "transform": {
+                                        "$ref": "URLTransform",
+                                        "optional": true
+                                    },
+                                    "url": {
+                                        "format": "url",
+                                        "optional": true,
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "requestHeaders": {
+                                "items": {
+                                    "properties": {
+                                        "header": {
+                                            "type": "string"
+                                        },
+                                        "operation": {
+                                            "enum": [
+                                                "append",
+                                                "set",
+                                                "remove"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "optional": true,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "minItems": 1,
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "responseHeaders": {
+                                "items": {
+                                    "properties": {
+                                        "header": {
+                                            "type": "string"
+                                        },
+                                        "operation": {
+                                            "enum": [
+                                                "append",
+                                                "set",
+                                                "remove"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "optional": true,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "minItems": 1,
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "type": {
+                                "enum": [
+                                    "block",
+                                    "redirect",
+                                    "allow",
+                                    "upgradeScheme",
+                                    "modifyHeaders",
+                                    "allowAllRequests"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "condition": {
+                        "properties": {
+                            "domainType": {
+                                "enum": [
+                                    "firstParty",
+                                    "thirdParty"
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "excludedInitiatorDomains": {
+                                "items": {
+                                    "format": "canonicalDomain",
+                                    "type": "string"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "excludedRequestDomains": {
+                                "items": {
+                                    "format": "canonicalDomain",
+                                    "type": "string"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "excludedRequestMethods": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "excludedResourceTypes": {
+                                "items": {
+                                    "$ref": "ResourceType"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "excludedTabIds": {
+                                "items": {
+                                    "type": "integer"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "initiatorDomains": {
+                                "items": {
+                                    "format": "canonicalDomain",
+                                    "type": "string"
+                                },
+                                "minItems": 1,
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "isUrlFilterCaseSensitive": {
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "regexFilter": {
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "requestDomains": {
+                                "items": {
+                                    "format": "canonicalDomain",
+                                    "type": "string"
+                                },
+                                "minItems": 1,
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "requestMethods": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "minItems": 1,
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "resourceTypes": {
+                                "items": {
+                                    "$ref": "ResourceType"
+                                },
+                                "minItems": 1,
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "tabIds": {
+                                "items": {
+                                    "type": "integer"
+                                },
+                                "minItems": 1,
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "urlFilter": {
+                                "optional": true,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "id": {
+                        "minimum": 1,
+                        "type": "integer"
+                    },
+                    "priority": {
+                        "default": 1,
+                        "minimum": 1,
+                        "optional": true,
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "id": "GetRulesFilter",
+                "properties": {
+                    "ruleIds": {
+                        "items": {
+                            "type": "integer"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        ]
+    }
+]

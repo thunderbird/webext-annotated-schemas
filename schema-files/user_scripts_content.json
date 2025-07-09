@@ -1,0 +1,64 @@
+[
+    {
+        "allowedContexts": [
+            "content"
+        ],
+        "events": [
+            {
+                "allowedContexts": [
+                    "content",
+                    "content_only"
+                ],
+                "name": "onBeforeScript",
+                "parameters": [
+                    {
+                        "name": "userScript",
+                        "properties": {
+                            "defineGlobals": {
+                                "parameters": [
+                                    {
+                                        "name": "sourceObject",
+                                        "type": "object"
+                                    }
+                                ],
+                                "type": "function"
+                            },
+                            "export": {
+                                "parameters": [
+                                    {
+                                        "name": "value",
+                                        "type": "any"
+                                    }
+                                ],
+                                "returns": {
+                                    "type": "any"
+                                },
+                                "type": "function"
+                            },
+                            "global": {
+                                "type": "any"
+                            },
+                            "metadata": {
+                                "type": "any"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "permissions": [
+                    "manifest:user_scripts.api_script"
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "userScripts",
+        "permissions": [
+            "manifest:user_scripts",
+            "userScripts"
+        ]
+    },
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest"
+    }
+]

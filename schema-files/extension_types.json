@@ -1,0 +1,266 @@
+[
+    {
+        "namespace": "extensionTypes",
+        "types": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extensionTypes/ImageFormat"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "enum": [
+                    "jpeg",
+                    "png"
+                ],
+                "id": "ImageFormat",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extensionTypes/ImageDetails"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "id": "ImageDetails",
+                "properties": {
+                    "format": {
+                        "$ref": "ImageFormat",
+                        "optional": true
+                    },
+                    "quality": {
+                        "maximum": 100,
+                        "minimum": 0,
+                        "optional": true,
+                        "type": "integer"
+                    },
+                    "rect": {
+                        "annotations": [
+                            {
+                                "version_added": "82"
+                            }
+                        ],
+                        "optional": true,
+                        "properties": {
+                            "height": {
+                                "annotations": [
+                                    {
+                                        "version_added": "82"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "width": {
+                                "annotations": [
+                                    {
+                                        "version_added": "82"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "x": {
+                                "annotations": [
+                                    {
+                                        "version_added": "82"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "y": {
+                                "annotations": [
+                                    {
+                                        "version_added": "82"
+                                    }
+                                ],
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "resetScrollPosition": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "scale": {
+                        "annotations": [
+                            {
+                                "version_added": "82"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extensionTypes/RunAt"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "enum": [
+                    "document_start",
+                    "document_end",
+                    "document_idle"
+                ],
+                "id": "RunAt",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "ISOLATED",
+                    "MAIN"
+                ],
+                "id": "ExecutionWorld",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
+                        "version_added": "53"
+                    }
+                ],
+                "enum": [
+                    "user",
+                    "author"
+                ],
+                "id": "CSSOrigin",
+                "type": "string"
+            },
+            {
+                "id": "InjectDetails",
+                "properties": {
+                    "allFrames": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "code": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "cssOrigin": {
+                        "$ref": "CSSOrigin",
+                        "optional": true
+                    },
+                    "file": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "frameId": {
+                        "minimum": 0,
+                        "optional": true,
+                        "type": "integer"
+                    },
+                    "matchAboutBlank": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "runAt": {
+                        "$ref": "RunAt",
+                        "default": "document_idle",
+                        "optional": true
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "choices": [
+                    {
+                        "format": "date",
+                        "type": "string"
+                    },
+                    {
+                        "minimum": 0,
+                        "type": "integer"
+                    },
+                    {
+                        "additionalProperties": {
+                            "type": "any"
+                        },
+                        "isInstanceOf": "Date",
+                        "type": "object"
+                    }
+                ],
+                "id": "Date"
+            },
+            {
+                "annotations": [
+                    {
+                        "text": "Specify code, either by pointing to a file or by providing the code directly. Only one of the two is allowed."
+                    }
+                ],
+                "choices": [
+                    {
+                        "properties": {
+                            "file": {
+                                "$ref": "manifest.ExtensionURL",
+                                "annotations": [
+                                    {
+                                        "text": "A URL relative to the extension's <var>manifest.json</var> file, and pointing to a JavaScript file to register."
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "properties": {
+                            "code": {
+                                "annotations": [
+                                    {
+                                        "text": "A string of JavaScript code to register."
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "id": "ExtensionFileOrCode"
+            },
+            {
+                "choices": [
+                    {
+                        "type": "null"
+                    },
+                    {
+                        "type": "number"
+                    },
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "type": "boolean"
+                    },
+                    {
+                        "items": {
+                            "$ref": "PlainJSONValue"
+                        },
+                        "type": "array"
+                    },
+                    {
+                        "additionalProperties": {
+                            "$ref": "PlainJSONValue"
+                        },
+                        "type": "object"
+                    }
+                ],
+                "id": "PlainJSONValue"
+            }
+        ]
+    },
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest"
+    }
+]

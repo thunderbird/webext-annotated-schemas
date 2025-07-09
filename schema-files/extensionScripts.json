@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "140.0b3",
+        "applicationVersion": "141.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -48,7 +48,6 @@
                     }
                 ],
                 "async": true,
-                "description": "Register a compose script programmatically.",
                 "name": "register",
                 "parameters": [
                     {
@@ -78,7 +77,6 @@
                         "version_added": "82"
                     }
                 ],
-                "description": "Details of a compose script registered programmatically.",
                 "id": "RegisteredComposeScriptOptions",
                 "properties": {
                     "css": {
@@ -87,7 +85,6 @@
                                 "version_added": "82"
                             }
                         ],
-                        "description": "The list of CSS files to inject.",
                         "items": {
                             "$ref": "extensionTypes.ExtensionFileOrCode"
                         },
@@ -100,7 +97,6 @@
                                 "version_added": "82"
                             }
                         ],
-                        "description": "The list of JavaScript files to inject.",
                         "items": {
                             "$ref": "extensionTypes.ExtensionFileOrCode"
                         },
@@ -119,7 +115,6 @@
                         "version_added": "82"
                     }
                 ],
-                "description": "An object that represents a compose script registered programmatically.",
                 "functions": [
                     {
                         "annotations": [
@@ -128,7 +123,6 @@
                             }
                         ],
                         "async": true,
-                        "description": "Unregister a compose script registered programmatically.",
                         "name": "unregister",
                         "parameters": [],
                         "type": "function"
@@ -154,7 +148,6 @@
                     }
                 ],
                 "async": true,
-                "description": "Register a message display script programmatically.",
                 "name": "register",
                 "parameters": [
                     {
@@ -184,7 +177,6 @@
                         "version_added": "82"
                     }
                 ],
-                "description": "Details of a message display script registered programmatically",
                 "id": "RegisteredMessageDisplayScriptOptions",
                 "properties": {
                     "css": {
@@ -193,7 +185,6 @@
                                 "version_added": "82"
                             }
                         ],
-                        "description": "The list of CSS files to inject",
                         "items": {
                             "$ref": "extensionTypes.ExtensionFileOrCode"
                         },
@@ -206,7 +197,6 @@
                                 "version_added": "82"
                             }
                         ],
-                        "description": "The list of JavaScript files to inject",
                         "items": {
                             "$ref": "extensionTypes.ExtensionFileOrCode"
                         },
@@ -220,7 +210,6 @@
                             }
                         ],
                         "default": "document_idle",
-                        "description": "Determines when the files specified in css and js are injected. The states directly correspond to <code>Document.readyState</code>: <var>loading</var>, <var>interactive</var> and <var>complete</var>",
                         "enum": [
                             "document_start",
                             "document_end",
@@ -264,7 +253,6 @@
                         "version_added": "82"
                     }
                 ],
-                "description": "An object that represents a message display script registered programmatically",
                 "functions": [
                     {
                         "annotations": [
@@ -273,7 +261,6 @@
                             }
                         ],
                         "async": true,
-                        "description": "Unregister a message display script registered programmatically",
                         "name": "unregister",
                         "parameters": [],
                         "type": "function"

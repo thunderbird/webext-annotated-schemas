@@ -1,0 +1,665 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "OptionalPermissionNoPrompt",
+                "choices": [
+                    {
+                        "enum": [
+                            "scripting"
+                        ],
+                        "enums": {
+                            "scripting": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/executeScript"
+                    },
+                    {
+                        "version_added": "102"
+                    }
+                ],
+                "async": "callback",
+                "name": "executeScript",
+                "parameters": [
+                    {
+                        "$ref": "ScriptInjection",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/executeScript"
+                            },
+                            {
+                                "version_added": "102"
+                            }
+                        ],
+                        "name": "injection"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "items": {
+                                    "$ref": "InjectionResult"
+                                },
+                                "name": "results",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/insertCSS"
+                    },
+                    {
+                        "version_added": "102"
+                    }
+                ],
+                "async": "callback",
+                "name": "insertCSS",
+                "parameters": [
+                    {
+                        "$ref": "CSSInjection",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/insertCSS"
+                            },
+                            {
+                                "version_added": "102"
+                            }
+                        ],
+                        "name": "injection"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/removeCSS"
+                    },
+                    {
+                        "version_added": "102"
+                    }
+                ],
+                "async": "callback",
+                "name": "removeCSS",
+                "parameters": [
+                    {
+                        "$ref": "CSSInjection",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/removeCSS"
+                            },
+                            {
+                                "version_added": "102"
+                            }
+                        ],
+                        "name": "injection"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/registerContentScripts"
+                    },
+                    {
+                        "version_added": "102"
+                    }
+                ],
+                "async": "callback",
+                "name": "registerContentScripts",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/registerContentScripts"
+                            },
+                            {
+                                "version_added": "102"
+                            }
+                        ],
+                        "items": {
+                            "$ref": "RegisteredContentScript"
+                        },
+                        "name": "scripts",
+                        "type": "array"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/getRegisteredContentScripts"
+                    },
+                    {
+                        "version_added": "102"
+                    }
+                ],
+                "async": "callback",
+                "name": "getRegisteredContentScripts",
+                "parameters": [
+                    {
+                        "$ref": "ContentScriptFilter",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/getRegisteredContentScripts"
+                            },
+                            {
+                                "version_added": "102"
+                            }
+                        ],
+                        "name": "filter",
+                        "optional": true
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "items": {
+                                    "$ref": "RegisteredContentScript"
+                                },
+                                "name": "scripts",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/unregisterContentScripts"
+                    },
+                    {
+                        "version_added": "102"
+                    }
+                ],
+                "async": "callback",
+                "name": "unregisterContentScripts",
+                "parameters": [
+                    {
+                        "$ref": "ContentScriptFilter",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/unregisterContentScripts"
+                            },
+                            {
+                                "version_added": "102"
+                            }
+                        ],
+                        "name": "filter",
+                        "optional": true
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
+                    },
+                    {
+                        "version_added": "102"
+                    }
+                ],
+                "async": "callback",
+                "name": "updateContentScripts",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
+                            },
+                            {
+                                "version_added": "102"
+                            }
+                        ],
+                        "items": {
+                            "properties": {
+                                "allFrames": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
+                                        },
+                                        {
+                                            "version_added": "102"
+                                        }
+                                    ],
+                                    "optional": true,
+                                    "type": "boolean"
+                                },
+                                "css": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
+                                        },
+                                        {
+                                            "version_added": "102"
+                                        }
+                                    ],
+                                    "items": {
+                                        "$ref": "manifest.ExtensionURL"
+                                    },
+                                    "optional": true,
+                                    "type": "array"
+                                },
+                                "excludeMatches": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
+                                        },
+                                        {
+                                            "version_added": "102"
+                                        }
+                                    ],
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "optional": true,
+                                    "type": "array"
+                                },
+                                "id": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
+                                        },
+                                        {
+                                            "version_added": "102"
+                                        }
+                                    ],
+                                    "type": "string"
+                                },
+                                "js": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
+                                        },
+                                        {
+                                            "version_added": "102"
+                                        }
+                                    ],
+                                    "items": {
+                                        "$ref": "manifest.ExtensionURL"
+                                    },
+                                    "optional": true,
+                                    "type": "array"
+                                },
+                                "matchOriginAsFallback": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
+                                        },
+                                        {
+                                            "version_added": "102"
+                                        }
+                                    ],
+                                    "optional": true,
+                                    "type": "boolean"
+                                },
+                                "matches": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
+                                        },
+                                        {
+                                            "version_added": "102"
+                                        }
+                                    ],
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "optional": true,
+                                    "type": "array"
+                                },
+                                "persistAcrossSessions": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
+                                        },
+                                        {
+                                            "version_added": "102"
+                                        }
+                                    ],
+                                    "default": true,
+                                    "optional": true,
+                                    "type": "boolean"
+                                },
+                                "runAt": {
+                                    "$ref": "extensionTypes.RunAt",
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
+                                        },
+                                        {
+                                            "version_added": "102"
+                                        }
+                                    ],
+                                    "optional": true
+                                },
+                                "world": {
+                                    "$ref": "ExecutionWorld",
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
+                                        },
+                                        {
+                                            "version_added": "102"
+                                        }
+                                    ],
+                                    "optional": true
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "name": "scripts",
+                        "type": "array"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "scripting",
+        "permissions": [
+            "scripting"
+        ],
+        "types": [
+            {
+                "id": "ScriptInjection",
+                "properties": {
+                    "args": {
+                        "items": {
+                            "type": "any"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "files": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "func": {
+                        "optional": true,
+                        "type": "function"
+                    },
+                    "injectImmediately": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "target": {
+                        "$ref": "InjectionTarget"
+                    },
+                    "world": {
+                        "$ref": "ExecutionWorld",
+                        "optional": true
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "id": "InjectionResult",
+                "properties": {
+                    "error": {
+                        "optional": true,
+                        "type": "any"
+                    },
+                    "frameId": {
+                        "type": "integer"
+                    },
+                    "result": {
+                        "optional": true,
+                        "type": "any"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/InjectionTarget"
+                    },
+                    {
+                        "version_added": "102"
+                    }
+                ],
+                "id": "InjectionTarget",
+                "properties": {
+                    "allFrames": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "frameIds": {
+                        "items": {
+                            "type": "number"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "tabId": {
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "id": "CSSInjection",
+                "properties": {
+                    "css": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "files": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "origin": {
+                        "default": "AUTHOR",
+                        "enum": [
+                            "USER",
+                            "AUTHOR"
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "target": {
+                        "$ref": "InjectionTarget"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "id": "ContentScriptFilter",
+                "properties": {
+                    "ids": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/ExecutionWorld"
+                    },
+                    {
+                        "version_added": "102"
+                    }
+                ],
+                "enum": [
+                    "ISOLATED",
+                    "MAIN"
+                ],
+                "enums": {
+                    "ISOLATED": {
+                        "annotations": [
+                            {
+                                "version_added": "102"
+                            }
+                        ]
+                    },
+                    "MAIN": {
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ]
+                    }
+                },
+                "id": "ExecutionWorld",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/RegisteredContentScript"
+                    },
+                    {
+                        "version_added": "102"
+                    }
+                ],
+                "id": "RegisteredContentScript",
+                "properties": {
+                    "allFrames": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "css": {
+                        "items": {
+                            "$ref": "manifest.ExtensionURL"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "excludeMatches": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "js": {
+                        "items": {
+                            "$ref": "manifest.ExtensionURL"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "matchOriginAsFallback": {
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "matches": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "persistAcrossSessions": {
+                        "annotations": [
+                            {
+                                "bcd": true,
+                                "note": "Since Firefox 105, this option is optional and accepts any boolean value."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Prior to Firefox 105, this option was required and only accepted the <code>false</code> value."
+                            },
+                            {
+                                "version_added": "102"
+                            }
+                        ],
+                        "default": true,
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "runAt": {
+                        "$ref": "extensionTypes.RunAt",
+                        "optional": true
+                    },
+                    "world": {
+                        "$ref": "ExecutionWorld",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
+                        "optional": true
+                    }
+                },
+                "type": "object"
+            }
+        ]
+    }
+]

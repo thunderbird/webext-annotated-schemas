@@ -1,0 +1,528 @@
+[
+    {
+        "events": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onClosed"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "name": "onClosed",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onClosed"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "notificationId",
+                        "type": "string"
+                    },
+                    {
+                        "name": "byUser",
+                        "type": "boolean"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onClicked"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "name": "onClicked",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onClicked"
+                            },
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "name": "notificationId",
+                        "type": "string"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onButtonClicked"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
+                "name": "onButtonClicked",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onButtonClicked"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "name": "notificationId",
+                        "type": "string"
+                    },
+                    {
+                        "name": "buttonIndex",
+                        "type": "number"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "name": "onPermissionLevelChanged",
+                "parameters": [
+                    {
+                        "$ref": "PermissionLevel",
+                        "name": "level"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            },
+            {
+                "name": "onShowSettings",
+                "parameters": [],
+                "type": "function",
+                "unsupported": true
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onShown"
+                    },
+                    {
+                        "version_added": "56"
+                    }
+                ],
+                "name": "onShown",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onShown"
+                            },
+                            {
+                                "version_added": "56"
+                            }
+                        ],
+                        "name": "notificationId",
+                        "type": "string"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/create"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "create",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/create"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "notificationId",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "CreateNotificationOptions",
+                        "name": "options"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "name": "notificationId",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/update"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
+                "async": "callback",
+                "name": "update",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/update"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "name": "notificationId",
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "UpdateNotificationOptions",
+                        "name": "options"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "name": "wasUpdated",
+                                "type": "boolean"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/clear"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "clear",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/clear"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "notificationId",
+                        "type": "string"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "name": "wasCleared",
+                                "type": "boolean"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/getAll"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "getAll",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/getAll"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "additionalProperties": {
+                                    "$ref": "CreateNotificationOptions"
+                                },
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/getAll"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "name": "notifications",
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "async": "callback",
+                "name": "getPermissionLevel",
+                "parameters": [
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "$ref": "PermissionLevel",
+                                "name": "level"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            }
+        ],
+        "namespace": "notifications",
+        "permissions": [
+            "notifications"
+        ],
+        "types": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/TemplateType"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Only the 'basic' type is supported."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "enum": [
+                    "basic",
+                    "image",
+                    "list",
+                    "progress"
+                ],
+                "id": "TemplateType",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "granted",
+                    "denied"
+                ],
+                "id": "PermissionLevel",
+                "type": "string"
+            },
+            {
+                "id": "NotificationItem",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "id": "CreateNotificationOptions",
+                "properties": {
+                    "appIconMaskUrl": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "buttons": {
+                        "items": {
+                            "properties": {
+                                "iconUrl": {
+                                    "optional": true,
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "optional": true,
+                        "type": "array",
+                        "unsupported": true
+                    },
+                    "contextMessage": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "eventTime": {
+                        "optional": true,
+                        "type": "number"
+                    },
+                    "iconUrl": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "imageUrl": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "isClickable": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "items": {
+                        "items": {
+                            "$ref": "NotificationItem"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "priority": {
+                        "maximum": 2,
+                        "minimum": -2,
+                        "optional": true,
+                        "type": "integer"
+                    },
+                    "progress": {
+                        "maximum": 100,
+                        "minimum": 0,
+                        "optional": true,
+                        "type": "integer"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "$ref": "TemplateType"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "id": "UpdateNotificationOptions",
+                "properties": {
+                    "appIconMaskUrl": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "buttons": {
+                        "items": {
+                            "properties": {
+                                "iconUrl": {
+                                    "optional": true,
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "optional": true,
+                        "type": "array",
+                        "unsupported": true
+                    },
+                    "contextMessage": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "eventTime": {
+                        "optional": true,
+                        "type": "number"
+                    },
+                    "iconUrl": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "imageUrl": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "isClickable": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "items": {
+                        "items": {
+                            "$ref": "NotificationItem"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "message": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "priority": {
+                        "maximum": 2,
+                        "minimum": -2,
+                        "optional": true,
+                        "type": "integer"
+                    },
+                    "progress": {
+                        "maximum": 100,
+                        "minimum": 0,
+                        "optional": true,
+                        "type": "integer"
+                    },
+                    "title": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "type": {
+                        "$ref": "TemplateType",
+                        "optional": true
+                    }
+                },
+                "type": "object"
+            }
+        ]
+    },
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest"
+    }
+]

@@ -1,0 +1,1744 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "OptionalPermission",
+                "choices": [
+                    {
+                        "enum": [
+                            "webNavigation"
+                        ],
+                        "enums": {
+                            "webNavigation": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "events": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Filtering is supported from version 50."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "EventUrlFilters",
+                        "name": "filters",
+                        "optional": true
+                    }
+                ],
+                "name": "onBeforeNavigate",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Filtering is supported from version 50."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "If the filter parameter is empty, Firefox raises an exception."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "parentFrameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "processId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer",
+                                "unsupported": true
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Filtering is supported from version 50."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "EventUrlFilters",
+                        "name": "filters",
+                        "optional": true
+                    }
+                ],
+                "name": "onCommitted",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Filtering is supported from version 50."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "If the filter parameter is empty, Firefox raises an exception."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "processId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer",
+                                "unsupported": true
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "transitionQualifiers": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "items": {
+                                    "$ref": "TransitionQualifier"
+                                },
+                                "type": "array"
+                            },
+                            "transitionType": {
+                                "$ref": "TransitionType",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Filtering is supported from version 50."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "EventUrlFilters",
+                        "name": "filters",
+                        "optional": true
+                    }
+                ],
+                "name": "onDOMContentLoaded",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Filtering is supported from version 50."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "If the filter parameter is empty, Firefox raises an exception."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "processId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer",
+                                "unsupported": true
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Filtering is supported from version 50."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "EventUrlFilters",
+                        "name": "filters",
+                        "optional": true
+                    }
+                ],
+                "name": "onCompleted",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Filtering is supported from version 50."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "If the filter parameter is empty, Firefox raises an exception."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "processId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer",
+                                "unsupported": true
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Filtering is supported from version 50."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "EventUrlFilters",
+                        "name": "filters",
+                        "optional": true
+                    }
+                ],
+                "name": "onErrorOccurred",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Filtering is supported from version 50."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "If the filter parameter is empty, Firefox raises an exception."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "error": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string",
+                                "unsupported": true
+                            },
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "processId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer",
+                                "unsupported": true
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "If a blocked popup is unblocked by the user, the event is then sent."
+                    },
+                    {
+                        "version_added": "54"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "EventUrlFilters",
+                        "name": "filters",
+                        "optional": true
+                    }
+                ],
+                "name": "onCreatedNavigationTarget",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "If the filter parameter is empty, Firefox raises an exception."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "If a blocked popup is unblocked by the user, the event is then sent."
+                            },
+                            {
+                                "version_added": "54"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "sourceFrameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If a blocked popup is unblocked by the user, the event is then sent."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "sourceProcessId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If a blocked popup is unblocked by the user, the event is then sent."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "sourceTabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If a blocked popup is unblocked by the user, the event is then sent."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If a blocked popup is unblocked by the user, the event is then sent."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If a blocked popup is unblocked by the user, the event is then sent."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If a blocked popup is unblocked by the user, the event is then sent."
+                                    },
+                                    {
+                                        "version_added": "54"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Filtering is supported from version 50."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "EventUrlFilters",
+                        "name": "filters",
+                        "optional": true
+                    }
+                ],
+                "name": "onReferenceFragmentUpdated",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Filtering is supported from version 50."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "If the filter parameter is empty, Firefox raises an exception."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "processId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer",
+                                "unsupported": true
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "transitionQualifiers": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "items": {
+                                    "$ref": "TransitionQualifier"
+                                },
+                                "type": "array"
+                            },
+                            "transitionType": {
+                                "$ref": "TransitionType",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Filtering is supported from version 50."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If the filter parameter is empty, Firefox raises an exception."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onTabReplaced"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Although you can add listeners for this event, it will never fire because the underlying functionality is not supported."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "name": "onTabReplaced",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onTabReplaced"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Although you can add listeners for this event, it will never fire because the underlying functionality is not supported."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "replacedTabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onTabReplaced"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Although you can add listeners for this event, it will never fire because the underlying functionality is not supported."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onTabReplaced"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Although you can add listeners for this event, it will never fire because the underlying functionality is not supported."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onTabReplaced"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Although you can add listeners for this event, it will never fire because the underlying functionality is not supported."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "extraParameters": [
+                    {
+                        "$ref": "EventUrlFilters",
+                        "name": "filters",
+                        "optional": true
+                    }
+                ],
+                "name": "onHistoryStateUpdated",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
+                            },
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "processId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "type": "integer",
+                                "unsupported": true
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "type": "integer"
+                            },
+                            "timeStamp": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "type": "number"
+                            },
+                            "transitionQualifiers": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "items": {
+                                    "$ref": "TransitionQualifier"
+                                },
+                                "type": "array"
+                            },
+                            "transitionType": {
+                                "$ref": "TransitionType",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getFrame"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "async": "callback",
+                "name": "getFrame",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getFrame"
+                            },
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "frameId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getFrame"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "minimum": 0,
+                                "type": "integer"
+                            },
+                            "processId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getFrame"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "integer"
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getFrame"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "minimum": 0,
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "name": "details",
+                                "optional": true,
+                                "properties": {
+                                    "errorOccurred": {
+                                        "optional": true,
+                                        "type": "boolean"
+                                    },
+                                    "frameId": {
+                                        "type": "integer"
+                                    },
+                                    "parentFrameId": {
+                                        "type": "integer"
+                                    },
+                                    "tabId": {
+                                        "type": "integer"
+                                    },
+                                    "url": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getAllFrames"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "The returned objects do not include the <code>errorOccurred</code> property. See <a href=\"https://bugzil.la/1248418\">bug 1248418</a>."
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "async": "callback",
+                "name": "getAllFrames",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getAllFrames"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "The returned objects do not include the <code>errorOccurred</code> property. See <a href=\"https://bugzil.la/1248418\">bug 1248418</a>."
+                            },
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getAllFrames"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "The returned objects do not include the <code>errorOccurred</code> property. See <a href=\"https://bugzil.la/1248418\">bug 1248418</a>."
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "minimum": 0,
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "items": {
+                                    "properties": {
+                                        "errorOccurred": {
+                                            "optional": true,
+                                            "type": "boolean"
+                                        },
+                                        "frameId": {
+                                            "type": "integer"
+                                        },
+                                        "parentFrameId": {
+                                            "type": "integer"
+                                        },
+                                        "processId": {
+                                            "type": "integer",
+                                            "unsupported": true
+                                        },
+                                        "tabId": {
+                                            "type": "integer"
+                                        },
+                                        "url": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "name": "details",
+                                "optional": true,
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "webNavigation",
+        "permissions": [
+            "webNavigation"
+        ],
+        "types": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/TransitionType"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "enum": [
+                    "link",
+                    "typed",
+                    "auto_bookmark",
+                    "auto_subframe",
+                    "manual_subframe",
+                    "generated",
+                    "start_page",
+                    "form_submit",
+                    "reload",
+                    "keyword",
+                    "keyword_generated"
+                ],
+                "enums": {
+                    "auto_bookmark": {
+                        "annotations": [
+                            {
+                                "version_added": "49"
+                            }
+                        ]
+                    },
+                    "auto_subframe": {
+                        "annotations": [
+                            {
+                                "bcd": true,
+                                "note": "Partially supported as the default transition type for subframes."
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ]
+                    },
+                    "form_submit": {
+                        "annotations": [
+                            {
+                                "version_added": "48"
+                            }
+                        ]
+                    },
+                    "generated": {
+                        "annotations": [
+                            {
+                                "version_added": "49"
+                            }
+                        ]
+                    },
+                    "keyword": {
+                        "annotations": [
+                            {
+                                "version_added": "49"
+                            }
+                        ]
+                    },
+                    "keyword_generated": {
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ]
+                    },
+                    "link": {
+                        "annotations": [
+                            {
+                                "bcd": true,
+                                "note": "Partially supported as the default transition type for top-level frames."
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ]
+                    },
+                    "manual_subframe": {
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ]
+                    },
+                    "reload": {
+                        "annotations": [
+                            {
+                                "version_added": "48"
+                            }
+                        ]
+                    },
+                    "start_page": {
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ]
+                    },
+                    "typed": {
+                        "annotations": [
+                            {
+                                "version_added": "49"
+                            }
+                        ]
+                    }
+                },
+                "id": "TransitionType",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/TransitionQualifier"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "'server_redirect' is limited to top-level frames and 'client_redirect' is not supplied when redirections are created by JavaScript."
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "enum": [
+                    "client_redirect",
+                    "server_redirect",
+                    "forward_back",
+                    "from_address_bar"
+                ],
+                "enums": {
+                    "from_address_bar": {
+                        "annotations": [
+                            {
+                                "version_added": "49"
+                            }
+                        ]
+                    }
+                },
+                "id": "TransitionQualifier",
+                "type": "string"
+            },
+            {
+                "id": "EventUrlFilters",
+                "properties": {
+                    "url": {
+                        "items": {
+                            "$ref": "events.UrlFilter"
+                        },
+                        "minItems": 1,
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        ]
+    }
+]

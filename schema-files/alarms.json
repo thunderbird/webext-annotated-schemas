@@ -1,0 +1,282 @@
+[
+    {
+        "events": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/onAlarm"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "name": "onAlarm",
+                "parameters": [
+                    {
+                        "$ref": "Alarm",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/onAlarm"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "name"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/create"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "create",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/create"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "name",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "alarmInfo",
+                        "properties": {
+                            "delayInMinutes": {
+                                "optional": true,
+                                "type": "number"
+                            },
+                            "periodInMinutes": {
+                                "optional": true,
+                                "type": "number"
+                            },
+                            "when": {
+                                "optional": true,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/get"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "get",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/get"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "name",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "$ref": "Alarm",
+                                "name": "alarm",
+                                "optional": true
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/getAll"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "getAll",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/getAll"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/getAll"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "items": {
+                                    "$ref": "Alarm"
+                                },
+                                "name": "alarms",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/clear"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "clear",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/clear"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "name",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "name": "wasCleared",
+                                "type": "boolean"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/clearAll"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "clearAll",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/clearAll"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/clearAll"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "name": "wasCleared",
+                                "type": "boolean"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "alarms",
+        "permissions": [
+            "alarms"
+        ],
+        "types": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/Alarm"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "id": "Alarm",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "periodInMinutes": {
+                        "optional": true,
+                        "type": "number"
+                    },
+                    "scheduledTime": {
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            }
+        ]
+    },
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest"
+    }
+]

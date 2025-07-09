@@ -1,0 +1,133 @@
+[
+    {
+        "events": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/onStateChanged"
+                    },
+                    {
+                        "version_added": "51"
+                    }
+                ],
+                "name": "onStateChanged",
+                "parameters": [
+                    {
+                        "$ref": "IdleState",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/onStateChanged"
+                            },
+                            {
+                                "version_added": "51"
+                            }
+                        ],
+                        "name": "newState"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/queryState"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 51, Firefox always reports 'active'. After version 51, Firefox reports 'active' or 'idle' as appropriate."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "queryState",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/queryState"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 51, Firefox always reports 'active'. After version 51, Firefox reports 'active' or 'idle' as appropriate."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "minimum": 15,
+                        "name": "detectionIntervalInSeconds",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "$ref": "IdleState",
+                                "name": "newState"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/setDetectionInterval"
+                    },
+                    {
+                        "version_added": "51"
+                    }
+                ],
+                "name": "setDetectionInterval",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/setDetectionInterval"
+                            },
+                            {
+                                "version_added": "51"
+                            }
+                        ],
+                        "minimum": 15,
+                        "name": "intervalInSeconds",
+                        "type": "integer"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "idle",
+        "permissions": [
+            "idle"
+        ],
+        "types": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/IdleState"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "enum": [
+                    "active",
+                    "idle"
+                ],
+                "id": "IdleState",
+                "type": "string"
+            }
+        ]
+    },
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest"
+    }
+]

@@ -1,0 +1,192 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "OptionalOnlyPermission",
+                "choices": [
+                    {
+                        "enum": [
+                            "userScripts"
+                        ],
+                        "enums": {
+                            "userScripts": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "$extend": "WebExtensionManifest",
+                "properties": {
+                    "user_scripts": {
+                        "additionalProperties": {
+                            "$ref": "UnrecognizedProperty"
+                        },
+                        "annotations": [
+                            {
+                                "version_added": true
+                            }
+                        ],
+                        "optional": true,
+                        "properties": {
+                            "api_script": {
+                                "$ref": "manifest.ExtensionURL",
+                                "optional": true
+                            }
+                        },
+                        "type": "object"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/register"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "An incompatible version of this function is available for Manifest V2. See <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts_legacy/register\">userScripts (Legacy)</a>."
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "async": "callback",
+                "name": "register",
+                "parameters": [
+                    {
+                        "$ref": "UserScriptOptions",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/register"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "An incompatible version of this function is available for Manifest V2. See <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts_legacy/register\">userScripts (Legacy)</a>."
+                            },
+                            {
+                                "version_added": "136"
+                            }
+                        ],
+                        "name": "userScriptOptions"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "name": "legacyRegisteredUserScript",
+                                "properties": {
+                                    "unregister": {
+                                        "async": true,
+                                        "parameters": [],
+                                        "type": "function"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "userScripts",
+        "permissions": [
+            "manifest:user_scripts",
+            "userScripts"
+        ],
+        "types": [
+            {
+                "id": "UserScriptOptions",
+                "properties": {
+                    "allFrames": {
+                        "default": false,
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "cookieStoreId": {
+                        "choices": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "minItems": 1,
+                                "type": "array"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "excludeGlobs": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "excludeMatches": {
+                        "items": {
+                            "$ref": "manifest.MatchPattern"
+                        },
+                        "minItems": 1,
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "includeGlobs": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "js": {
+                        "items": {
+                            "$ref": "extensionTypes.ExtensionFileOrCode"
+                        },
+                        "minItems": 1,
+                        "optional": false,
+                        "type": "array"
+                    },
+                    "matchAboutBlank": {
+                        "default": false,
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "matches": {
+                        "items": {
+                            "$ref": "manifest.MatchPattern"
+                        },
+                        "minItems": 1,
+                        "optional": false,
+                        "type": "array"
+                    },
+                    "runAt": {
+                        "$ref": "extensionTypes.RunAt",
+                        "default": "document_idle",
+                        "optional": true
+                    },
+                    "scriptMetadata": {
+                        "$ref": "extensionTypes.PlainJSONValue",
+                        "optional": true
+                    }
+                },
+                "type": "object"
+            }
+        ]
+    }
+]

@@ -1,0 +1,153 @@
+[
+    {
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contentScripts/register"
+                    },
+                    {
+                        "version_added": "59"
+                    }
+                ],
+                "async": true,
+                "name": "register",
+                "parameters": [
+                    {
+                        "$ref": "RegisteredContentScriptOptions",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contentScripts/register"
+                            },
+                            {
+                                "version_added": "59"
+                            }
+                        ],
+                        "name": "contentScriptOptions"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "contentScripts",
+        "types": [
+            {
+                "id": "RegisteredContentScriptOptions",
+                "properties": {
+                    "allFrames": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "cookieStoreId": {
+                        "choices": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "minItems": 1,
+                                "type": "array"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "css": {
+                        "items": {
+                            "$ref": "extensionTypes.ExtensionFileOrCode"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "excludeGlobs": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "excludeMatches": {
+                        "items": {
+                            "$ref": "manifest.MatchPattern"
+                        },
+                        "minItems": 1,
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "includeGlobs": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "js": {
+                        "items": {
+                            "$ref": "extensionTypes.ExtensionFileOrCode"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "matchAboutBlank": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "matchOriginAsFallback": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "matches": {
+                        "items": {
+                            "$ref": "manifest.MatchPattern"
+                        },
+                        "minItems": 1,
+                        "optional": false,
+                        "type": "array"
+                    },
+                    "runAt": {
+                        "$ref": "extensionTypes.RunAt",
+                        "optional": true
+                    },
+                    "world": {
+                        "$ref": "extensionTypes.ExecutionWorld",
+                        "optional": true
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contentScripts/RegisteredContentScript"
+                    },
+                    {
+                        "version_added": "59"
+                    }
+                ],
+                "functions": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contentScripts/RegisteredContentScript/unregister"
+                            },
+                            {
+                                "version_added": "59"
+                            }
+                        ],
+                        "async": true,
+                        "name": "unregister",
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "id": "RegisteredContentScript",
+                "type": "object"
+            }
+        ]
+    },
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest"
+    }
+]

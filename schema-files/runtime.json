@@ -1,0 +1,1627 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "OptionalPermission",
+                "choices": [
+                    {
+                        "enum": [
+                            "nativeMessaging"
+                        ],
+                        "enums": {
+                            "nativeMessaging": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "allowedContexts": [
+            "content",
+            "devtools"
+        ],
+        "events": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onStartup"
+                    },
+                    {
+                        "version_added": "52"
+                    }
+                ],
+                "name": "onStartup",
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 55, this event is not triggered for temporarily installed add-ons."
+                    },
+                    {
+                        "version_added": "52"
+                    }
+                ],
+                "name": "onInstalled",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 55, this event is not triggered for temporarily installed add-ons."
+                            },
+                            {
+                                "version_added": "52"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "id": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 55, this event is not triggered for temporarily installed add-ons."
+                                    },
+                                    {
+                                        "version_added": "52"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string",
+                                "unsupported": true
+                            },
+                            "previousVersion": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 55, this event is not triggered for temporarily installed add-ons."
+                                    },
+                                    {
+                                        "version_added": "52"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "reason": {
+                                "$ref": "OnInstalledReason",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 55, this event is not triggered for temporarily installed add-ons."
+                                    },
+                                    {
+                                        "version_added": "52"
+                                    }
+                                ]
+                            },
+                            "temporary": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 55, this event is not triggered for temporarily installed add-ons."
+                                    },
+                                    {
+                                        "version_added": "52"
+                                    }
+                                ],
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onSuspend"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "This event does not fire until Firefox 106, when event pages are available."
+                    },
+                    {
+                        "version_added": "100"
+                    }
+                ],
+                "name": "onSuspend",
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onSuspendCanceled"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "This event does not fire until Firefox 106, when event pages are available."
+                    },
+                    {
+                        "version_added": "100"
+                    }
+                ],
+                "name": "onSuspendCanceled",
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUpdateAvailable"
+                    },
+                    {
+                        "version_added": "51"
+                    }
+                ],
+                "name": "onUpdateAvailable",
+                "parameters": [
+                    {
+                        "additionalProperties": {
+                            "type": "any"
+                        },
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUpdateAvailable"
+                            },
+                            {
+                                "version_added": "51"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "version": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUpdateAvailable"
+                                    },
+                                    {
+                                        "version_added": "51"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onBrowserUpdateAvailable"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
+                "name": "onBrowserUpdateAvailable",
+                "parameters": [],
+                "type": "function",
+                "unsupported": true
+            },
+            {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onConnect"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "name": "onConnect",
+                "parameters": [
+                    {
+                        "$ref": "Port",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onConnect"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "port"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUserScriptConnect"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Available for use with Manifest V3 only."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Requires the <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts#permissions\"><code>userScripts</code> permission</a>."
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "name": "onUserScriptConnect",
+                "parameters": [
+                    {
+                        "$ref": "Port",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUserScriptConnect"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Available for use with Manifest V3 only."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Requires the <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts#permissions\"><code>userScripts</code> permission</a>."
+                            },
+                            {
+                                "version_added": "136"
+                            }
+                        ],
+                        "name": "port"
+                    }
+                ],
+                "permissions": [
+                    "userScripts"
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onConnectExternal"
+                    },
+                    {
+                        "version_added": "54"
+                    }
+                ],
+                "name": "onConnectExternal",
+                "parameters": [
+                    {
+                        "$ref": "Port",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onConnectExternal"
+                            },
+                            {
+                                "version_added": "54"
+                            }
+                        ],
+                        "name": "port"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "name": "onMessage",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "message",
+                        "optional": true,
+                        "type": "any"
+                    },
+                    {
+                        "$ref": "MessageSender",
+                        "name": "sender"
+                    },
+                    {
+                        "name": "sendResponse",
+                        "type": "function"
+                    }
+                ],
+                "returns": {
+                    "optional": true,
+                    "type": "boolean"
+                },
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessageExternal"
+                    },
+                    {
+                        "version_added": "54"
+                    }
+                ],
+                "name": "onMessageExternal",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessageExternal"
+                            },
+                            {
+                                "version_added": "54"
+                            }
+                        ],
+                        "name": "message",
+                        "optional": true,
+                        "type": "any"
+                    },
+                    {
+                        "$ref": "MessageSender",
+                        "name": "sender"
+                    },
+                    {
+                        "name": "sendResponse",
+                        "type": "function"
+                    }
+                ],
+                "returns": {
+                    "optional": true,
+                    "type": "boolean"
+                },
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUserScriptMessage"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Available for use with Manifest V3 only."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Requires the <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts#permissions\"><code>userScripts</code> permission</a>."
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "name": "onUserScriptMessage",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUserScriptMessage"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Available for use with Manifest V3 only."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Requires the <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts#permissions\"><code>userScripts</code> permission</a>."
+                            },
+                            {
+                                "version_added": "136"
+                            }
+                        ],
+                        "name": "message",
+                        "optional": true,
+                        "type": "any"
+                    },
+                    {
+                        "$ref": "MessageSender",
+                        "name": "sender"
+                    },
+                    {
+                        "name": "sendResponse",
+                        "type": "function"
+                    }
+                ],
+                "permissions": [
+                    "userScripts"
+                ],
+                "returns": {
+                    "optional": true,
+                    "type": "boolean"
+                },
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onRestartRequired"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
+                "name": "onRestartRequired",
+                "parameters": [
+                    {
+                        "$ref": "OnRestartRequiredReason",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onRestartRequired"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "name": "reason"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onPerformanceWarning"
+                    },
+                    {
+                        "version_added": "124"
+                    }
+                ],
+                "name": "onPerformanceWarning",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onPerformanceWarning"
+                            },
+                            {
+                                "version_added": "124"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "category": {
+                                "$ref": "OnPerformanceWarningCategory",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onPerformanceWarning"
+                                    },
+                                    {
+                                        "version_added": "124"
+                                    }
+                                ]
+                            },
+                            "severity": {
+                                "$ref": "OnPerformanceWarningSeverity",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onPerformanceWarning"
+                                    },
+                                    {
+                                        "version_added": "124"
+                                    }
+                                ]
+                            },
+                            "tabId": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onPerformanceWarning"
+                                    },
+                                    {
+                                        "version_added": "124"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBackgroundPage"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then it will always return <code>null</code>."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "getBackgroundPage",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBackgroundPage"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then it will always return <code>null</code>."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "additionalProperties": {
+                                    "type": "any"
+                                },
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBackgroundPage"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then it will always return <code>null</code>."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "isInstanceOf": "Window",
+                                "name": "backgroundPage",
+                                "optional": true,
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getContexts"
+                    },
+                    {
+                        "version_added": "127"
+                    }
+                ],
+                "async": "callback",
+                "name": "getContexts",
+                "parameters": [
+                    {
+                        "$ref": "ContextFilter",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getContexts"
+                            },
+                            {
+                                "version_added": "127"
+                            }
+                        ],
+                        "name": "filter"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "items": {
+                                    "$ref": "ExtensionContext"
+                                },
+                                "name": "contexts",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/openOptionsPage"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
+                "async": "callback",
+                "name": "openOptionsPage",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/openOptionsPage"
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ],
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getManifest"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Returns null for missing values, and removes unsupported keys."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "name": "getManifest",
+                "parameters": [],
+                "returns": {
+                    "additionalProperties": {
+                        "type": "any"
+                    },
+                    "properties": {},
+                    "type": "object"
+                },
+                "type": "function"
+            },
+            {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getURL"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "name": "getURL",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getURL"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "path",
+                        "type": "string"
+                    }
+                ],
+                "returns": {
+                    "type": "string"
+                },
+                "type": "function"
+            },
+            {
+                "allowCrossOriginArguments": true,
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getFrameId"
+                    },
+                    {
+                        "version_added": "96"
+                    }
+                ],
+                "name": "getFrameId",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getFrameId"
+                            },
+                            {
+                                "version_added": "96"
+                            }
+                        ],
+                        "name": "target",
+                        "type": "any"
+                    }
+                ],
+                "returns": {
+                    "type": "number"
+                },
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/setUninstallURL"
+                    }
+                ],
+                "async": "callback",
+                "name": "setUninstallURL",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/setUninstallURL"
+                            }
+                        ],
+                        "maxLength": 1023,
+                        "name": "url",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/reload"
+                    },
+                    {
+                        "version_added": "51"
+                    }
+                ],
+                "name": "reload",
+                "parameters": [],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/requestUpdateCheck"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
+                "async": "callback",
+                "name": "requestUpdateCheck",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/requestUpdateCheck"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "$ref": "RequestUpdateCheckStatus",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/requestUpdateCheck"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "name": "status"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/requestUpdateCheck"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "name": "details",
+                                "optional": true,
+                                "properties": {
+                                    "version": {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/requestUpdateCheck"
+                                            },
+                                            {
+                                                "version_added": false
+                                            }
+                                        ],
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            },
+            {
+                "name": "restart",
+                "parameters": [],
+                "type": "function",
+                "unsupported": true
+            },
+            {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/connect"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "name": "connect",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/connect"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "extensionId",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "connectInfo",
+                        "optional": true,
+                        "properties": {
+                            "includeTlsChannelId": {
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "name": {
+                                "optional": true,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "returns": {
+                    "$ref": "Port"
+                },
+                "type": "function"
+            },
+            {
+                "allowedContexts": [
+                    "content"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/connectNative"
+                    },
+                    {
+                        "version_added": "50"
+                    }
+                ],
+                "name": "connectNative",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/connectNative"
+                            },
+                            {
+                                "version_added": "50"
+                            }
+                        ],
+                        "name": "application",
+                        "pattern": "^\\w+(\\.\\w+)*$",
+                        "type": "string"
+                    }
+                ],
+                "permissions": [
+                    "nativeMessaging"
+                ],
+                "returns": {
+                    "$ref": "Port"
+                },
+                "type": "function"
+            },
+            {
+                "allowAmbiguousOptionalArguments": true,
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "responseCallback",
+                "name": "sendMessage",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "extensionId",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "message",
+                        "type": "any"
+                    },
+                    {
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "includeTlsChannelId": {
+                                "optional": true,
+                                "type": "boolean",
+                                "unsupported": true
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "responseCallback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "name": "response",
+                                "type": "any"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "allowedContexts": [
+                    "content"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendNativeMessage"
+                    },
+                    {
+                        "version_added": "50"
+                    }
+                ],
+                "async": "responseCallback",
+                "name": "sendNativeMessage",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendNativeMessage"
+                            },
+                            {
+                                "version_added": "50"
+                            }
+                        ],
+                        "name": "application",
+                        "pattern": "^\\w+(\\.\\w+)*$",
+                        "type": "string"
+                    },
+                    {
+                        "name": "message",
+                        "type": "any"
+                    },
+                    {
+                        "name": "responseCallback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "name": "response",
+                                "type": "any"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "permissions": [
+                    "nativeMessaging"
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBrowserInfo"
+                    },
+                    {
+                        "version_added": "51"
+                    }
+                ],
+                "async": "callback",
+                "name": "getBrowserInfo",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBrowserInfo"
+                            },
+                            {
+                                "version_added": "51"
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "$ref": "BrowserInfo",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBrowserInfo"
+                                    },
+                                    {
+                                        "version_added": "51"
+                                    }
+                                ],
+                                "name": "browserInfo"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPlatformInfo"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "async": "callback",
+                "name": "getPlatformInfo",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPlatformInfo"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "$ref": "PlatformInfo",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPlatformInfo"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "name": "platformInfo"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPackageDirectoryEntry"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
+                "async": "callback",
+                "name": "getPackageDirectoryEntry",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPackageDirectoryEntry"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "additionalProperties": {
+                                    "type": "any"
+                                },
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPackageDirectoryEntry"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
+                                "isInstanceOf": "DirectoryEntry",
+                                "name": "directoryEntry",
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            }
+        ],
+        "namespace": "runtime",
+        "properties": {
+            "id": {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/id"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "type": "string"
+            },
+            "lastError": {
+                "additionalProperties": {
+                    "type": "any"
+                },
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/lastError"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "optional": true,
+                "properties": {
+                    "message": {
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "types": [
+            {
+                "enum": [
+                    "BACKGROUND",
+                    "POPUP",
+                    "SIDE_PANEL",
+                    "TAB"
+                ],
+                "id": "ContextType",
+                "type": "string"
+            },
+            {
+                "id": "ExtensionContext",
+                "properties": {
+                    "contextId": {
+                        "type": "string"
+                    },
+                    "contextType": {
+                        "$ref": "ContextType"
+                    },
+                    "documentId": {
+                        "optional": true,
+                        "type": "string",
+                        "unsupported": true
+                    },
+                    "documentOrigin": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "documentUrl": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "frameId": {
+                        "type": "integer"
+                    },
+                    "incognito": {
+                        "type": "boolean"
+                    },
+                    "tabId": {
+                        "type": "integer"
+                    },
+                    "windowId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "additionalProperties": {
+                    "type": "any"
+                },
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/Port"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "id": "Port",
+                "properties": {
+                    "disconnect": {
+                        "type": "function"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "onDisconnect": {
+                        "$ref": "events.Event"
+                    },
+                    "onMessage": {
+                        "$ref": "events.Event"
+                    },
+                    "postMessage": {
+                        "type": "function"
+                    },
+                    "sender": {
+                        "$ref": "MessageSender",
+                        "optional": true
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/MessageSender"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 54, 'id' was the add-on's internal UUID, not the add-on ID."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "id": "MessageSender",
+                "properties": {
+                    "frameId": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "integer"
+                    },
+                    "id": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "tab": {
+                        "$ref": "tabs.Tab",
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "tlsChannelId": {
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string",
+                        "unsupported": true
+                    },
+                    "url": {
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "userScriptWorldId": {
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformOs"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "enum": [
+                    "mac",
+                    "win",
+                    "android",
+                    "cros",
+                    "linux",
+                    "openbsd"
+                ],
+                "id": "PlatformOs",
+                "type": "string"
+            },
+            {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformArch"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "enum": [
+                    "aarch64",
+                    "arm",
+                    "ppc64",
+                    "s390x",
+                    "sparc64",
+                    "x86-32",
+                    "x86-64",
+                    "noarch"
+                ],
+                "id": "PlatformArch",
+                "type": "string"
+            },
+            {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformInfo"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "id": "PlatformInfo",
+                "properties": {
+                    "arch": {
+                        "$ref": "PlatformArch"
+                    },
+                    "nacl_arch": {
+                        "$ref": "PlatformNaclArch",
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "unsupported": true
+                    },
+                    "os": {
+                        "$ref": "PlatformOs"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "id": "BrowserInfo",
+                "properties": {
+                    "buildID": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "vendor": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/RequestUpdateCheckStatus"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
+                "enum": [
+                    "throttled",
+                    "no_update",
+                    "update_available"
+                ],
+                "id": "RequestUpdateCheckStatus",
+                "type": "string"
+            },
+            {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnInstalledReason"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "enum": [
+                    "install",
+                    "update",
+                    "browser_update"
+                ],
+                "id": "OnInstalledReason",
+                "type": "string"
+            },
+            {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnRestartRequiredReason"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "enum": [
+                    "app_update",
+                    "os_update",
+                    "periodic"
+                ],
+                "id": "OnRestartRequiredReason",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnPerformanceWarningCategory"
+                    },
+                    {
+                        "version_added": "124"
+                    }
+                ],
+                "enum": [
+                    "content_script"
+                ],
+                "id": "OnPerformanceWarningCategory",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnPerformanceWarningSeverity"
+                    },
+                    {
+                        "version_added": "124"
+                    }
+                ],
+                "enum": [
+                    "low",
+                    "medium",
+                    "high"
+                ],
+                "id": "OnPerformanceWarningSeverity",
+                "type": "string"
+            }
+        ]
+    }
+]

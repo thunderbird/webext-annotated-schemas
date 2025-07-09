@@ -1,0 +1,245 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "WebExtensionManifest",
+                "properties": {
+                    "default_locale": {
+                        "annotations": [
+                            {
+                                "version_added": true
+                            }
+                        ],
+                        "optional": "true",
+                        "type": "string"
+                    },
+                    "l10n_resources": {
+                        "annotations": [
+                            {
+                                "version_added": true
+                            }
+                        ],
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "privileged": true,
+                        "type": "array"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "allowedContexts": [
+            "content",
+            "devtools"
+        ],
+        "defaultContexts": [
+            "content",
+            "devtools"
+        ],
+        "events": [],
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/getAcceptLanguages"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "async": "callback",
+                "name": "getAcceptLanguages",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/getAcceptLanguages"
+                            },
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/getAcceptLanguages"
+                                    },
+                                    {
+                                        "version_added": "47"
+                                    }
+                                ],
+                                "items": {
+                                    "$ref": "LanguageCode"
+                                },
+                                "name": "languages",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/getMessage"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Firefox 47 and earlier returns \"??\" instead of \"\" if the message is not found in _locales, <a href=\"https://bugzil.la/1258199\">bug 1258199</a> changed this act to match Chrome, landed on Firefox 48."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "name": "getMessage",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/getMessage"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Firefox 47 and earlier returns \"??\" instead of \"\" if the message is not found in _locales, <a href=\"https://bugzil.la/1258199\">bug 1258199</a> changed this act to match Chrome, landed on Firefox 48."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "messageName",
+                        "type": "string"
+                    },
+                    {
+                        "name": "substitutions",
+                        "optional": true,
+                        "type": "any"
+                    }
+                ],
+                "returns": {
+                    "type": "string"
+                },
+                "type": "function"
+            },
+            {
+                "async": "callback",
+                "name": "getPreferredSystemLanguages",
+                "parameters": [
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "items": {
+                                    "$ref": "LanguageCode"
+                                },
+                                "name": "languages",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/getUILanguage"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Firefox 55 and earlier returns a language tag that's separated with the underscore character instead of hyphen, see <a href=\"https://bugzil.la/1374552\">bug 1374552</a>."
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "name": "getUILanguage",
+                "parameters": [],
+                "returns": {
+                    "type": "string"
+                },
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/detectLanguage"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
+                "async": "callback",
+                "name": "detectLanguage",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/detectLanguage"
+                            },
+                            {
+                                "version_added": "47"
+                            }
+                        ],
+                        "name": "text",
+                        "type": "string"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "name": "result",
+                                "properties": {
+                                    "isReliable": {
+                                        "type": "boolean"
+                                    },
+                                    "languages": {
+                                        "items": {
+                                            "properties": {
+                                                "language": {
+                                                    "$ref": "LanguageCode"
+                                                },
+                                                "percentage": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "i18n",
+        "types": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/LanguageCode"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "id": "LanguageCode",
+                "type": "string"
+            }
+        ]
+    }
+]

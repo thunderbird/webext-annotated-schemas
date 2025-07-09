@@ -1,0 +1,755 @@
+[
+    {
+        "allowedContexts": [
+            "content",
+            "devtools"
+        ],
+        "defaultContexts": [
+            "content",
+            "devtools"
+        ],
+        "events": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/onChanged"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "name": "onChanged",
+                "parameters": [
+                    {
+                        "additionalProperties": {
+                            "$ref": "StorageChange"
+                        },
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/onChanged"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "name": "changes",
+                        "type": "object"
+                    },
+                    {
+                        "name": "areaName",
+                        "type": "string"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "storage",
+        "permissions": [
+            "storage"
+        ],
+        "properties": {
+            "local": {
+                "$ref": "StorageArea",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/local"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "The storage API is supported in content scripts from version 48."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "properties": {
+                    "QUOTA_BYTES": {
+                        "value": 5242880
+                    }
+                }
+            },
+            "managed": {
+                "$ref": "StorageArea",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/managed"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Platform-specific storage backends, such as Windows registry keys, are not supported."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Enforcement of extension-provided storage schemas is not supported."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "The <code>onChanged</code> event is not supported."
+                    },
+                    {
+                        "version_added": "57"
+                    }
+                ],
+                "properties": {
+                    "QUOTA_BYTES": {
+                        "value": 5242880
+                    }
+                }
+            },
+            "session": {
+                "$ref": "StorageAreaWithUsage",
+                "allowedContexts": [
+                    "devtools"
+                ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/session"
+                    },
+                    {
+                        "version_added": "115"
+                    }
+                ],
+                "properties": {
+                    "QUOTA_BYTES": {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/session/QUOTA_BYTES"
+                            },
+                            {
+                                "version_added": "131"
+                            }
+                        ]
+                    }
+                }
+            },
+            "sync": {
+                "$ref": "StorageAreaWithUsage",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/sync"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 79, storage quota limits are not enforced."
+                    },
+                    {
+                        "version_added": "53"
+                    }
+                ],
+                "properties": {
+                    "MAX_ITEMS": {
+                        "value": 512
+                    },
+                    "MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE": {
+                        "value": 1000000
+                    },
+                    "MAX_WRITE_OPERATIONS_PER_HOUR": {
+                        "value": 1800
+                    },
+                    "MAX_WRITE_OPERATIONS_PER_MINUTE": {
+                        "value": 120
+                    },
+                    "QUOTA_BYTES": {
+                        "value": 102400
+                    },
+                    "QUOTA_BYTES_PER_ITEM": {
+                        "value": 8192
+                    }
+                }
+            }
+        },
+        "types": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageChange"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "id": "StorageChange",
+                "properties": {
+                    "newValue": {
+                        "optional": true,
+                        "type": "any"
+                    },
+                    "oldValue": {
+                        "optional": true,
+                        "type": "any"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
+                "events": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/onChanged"
+                            },
+                            {
+                                "version_added": "101"
+                            }
+                        ],
+                        "name": "onChanged",
+                        "parameters": [
+                            {
+                                "additionalProperties": {
+                                    "$ref": "StorageChange"
+                                },
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/onChanged"
+                                    },
+                                    {
+                                        "version_added": "101"
+                                    }
+                                ],
+                                "name": "changes",
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "functions": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "async": "callback",
+                        "name": "get",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "choices": [
+                                    {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get"
+                                            },
+                                            {
+                                                "version_added": "45"
+                                            }
+                                        ],
+                                        "type": "string"
+                                    },
+                                    {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get"
+                                            },
+                                            {
+                                                "version_added": "45"
+                                            }
+                                        ],
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    },
+                                    {
+                                        "additionalProperties": {
+                                            "type": "any"
+                                        },
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get"
+                                            },
+                                            {
+                                                "version_added": "45"
+                                            }
+                                        ],
+                                        "type": "object"
+                                    }
+                                ],
+                                "name": "keys",
+                                "optional": true
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "name": "callback",
+                                "parameters": [
+                                    {
+                                        "additionalProperties": {
+                                            "type": "any"
+                                        },
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get"
+                                            },
+                                            {
+                                                "version_added": "45"
+                                            }
+                                        ],
+                                        "name": "items",
+                                        "type": "object"
+                                    }
+                                ],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Supported by the <code>sync</code> and, from Firefox 131, <code>session</code> storage areas."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Not implemented in <code>local</code>, see <a href=\"https://bugzil.la/1385832\">bug 1385832</a>"
+                            },
+                            {
+                                "version_added": "78"
+                            }
+                        ],
+                        "async": "callback",
+                        "name": "getBytesInUse",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Supported by the <code>sync</code> and, from Firefox 131, <code>session</code> storage areas."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Not implemented in <code>local</code>, see <a href=\"https://bugzil.la/1385832\">bug 1385832</a>"
+                                    },
+                                    {
+                                        "version_added": "78"
+                                    }
+                                ],
+                                "choices": [
+                                    {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse"
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Supported by the <code>sync</code> and, from Firefox 131, <code>session</code> storage areas."
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Not implemented in <code>local</code>, see <a href=\"https://bugzil.la/1385832\">bug 1385832</a>"
+                                            },
+                                            {
+                                                "version_added": "78"
+                                            }
+                                        ],
+                                        "type": "string"
+                                    },
+                                    {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse"
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Supported by the <code>sync</code> and, from Firefox 131, <code>session</code> storage areas."
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Not implemented in <code>local</code>, see <a href=\"https://bugzil.la/1385832\">bug 1385832</a>"
+                                            },
+                                            {
+                                                "version_added": "78"
+                                            }
+                                        ],
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    }
+                                ],
+                                "name": "keys",
+                                "optional": true
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Supported by the <code>sync</code> and, from Firefox 131, <code>session</code> storage areas."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Not implemented in <code>local</code>, see <a href=\"https://bugzil.la/1385832\">bug 1385832</a>"
+                                    },
+                                    {
+                                        "version_added": "78"
+                                    }
+                                ],
+                                "name": "callback",
+                                "parameters": [
+                                    {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse"
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Supported by the <code>sync</code> and, from Firefox 131, <code>session</code> storage areas."
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Not implemented in <code>local</code>, see <a href=\"https://bugzil.la/1385832\">bug 1385832</a>"
+                                            },
+                                            {
+                                                "version_added": "78"
+                                            }
+                                        ],
+                                        "name": "bytesInUse",
+                                        "type": "integer"
+                                    }
+                                ],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function",
+                        "unsupported": true
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/set"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "async": "callback",
+                        "name": "set",
+                        "parameters": [
+                            {
+                                "additionalProperties": {
+                                    "type": "any"
+                                },
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/set"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "name": "items",
+                                "type": "object"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/set"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "name": "callback",
+                                "optional": true,
+                                "parameters": [],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "async": "callback",
+                        "name": "remove",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "choices": [
+                                    {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove"
+                                            },
+                                            {
+                                                "version_added": "45"
+                                            }
+                                        ],
+                                        "type": "string"
+                                    },
+                                    {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove"
+                                            },
+                                            {
+                                                "version_added": "45"
+                                            }
+                                        ],
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    }
+                                ],
+                                "name": "keys"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "name": "callback",
+                                "optional": true,
+                                "parameters": [],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/clear"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "async": "callback",
+                        "name": "clear",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/clear"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
+                                "name": "callback",
+                                "optional": true,
+                                "parameters": [],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "id": "StorageArea",
+                "type": "object"
+            },
+            {
+                "events": [
+                    {
+                        "name": "onChanged",
+                        "parameters": [
+                            {
+                                "additionalProperties": {
+                                    "$ref": "StorageChange"
+                                },
+                                "name": "changes",
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "functions": [
+                    {
+                        "async": "callback",
+                        "name": "get",
+                        "parameters": [
+                            {
+                                "choices": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    },
+                                    {
+                                        "additionalProperties": {
+                                            "type": "any"
+                                        },
+                                        "type": "object"
+                                    }
+                                ],
+                                "name": "keys",
+                                "optional": true
+                            },
+                            {
+                                "name": "callback",
+                                "parameters": [
+                                    {
+                                        "additionalProperties": {
+                                            "type": "any"
+                                        },
+                                        "name": "items",
+                                        "type": "object"
+                                    }
+                                ],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
+                        "async": "callback",
+                        "name": "getBytesInUse",
+                        "parameters": [
+                            {
+                                "choices": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    }
+                                ],
+                                "name": "keys",
+                                "optional": true
+                            },
+                            {
+                                "name": "callback",
+                                "parameters": [
+                                    {
+                                        "name": "bytesInUse",
+                                        "type": "integer"
+                                    }
+                                ],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
+                        "async": "callback",
+                        "name": "set",
+                        "parameters": [
+                            {
+                                "additionalProperties": {
+                                    "type": "any"
+                                },
+                                "name": "items",
+                                "type": "object"
+                            },
+                            {
+                                "name": "callback",
+                                "optional": true,
+                                "parameters": [],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
+                        "async": "callback",
+                        "name": "remove",
+                        "parameters": [
+                            {
+                                "choices": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    }
+                                ],
+                                "name": "keys"
+                            },
+                            {
+                                "name": "callback",
+                                "optional": true,
+                                "parameters": [],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
+                        "async": "callback",
+                        "name": "clear",
+                        "parameters": [
+                            {
+                                "name": "callback",
+                                "optional": true,
+                                "parameters": [],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "id": "StorageAreaWithUsage",
+                "type": "object"
+            }
+        ]
+    },
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest"
+    }
+]

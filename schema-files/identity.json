@@ -1,0 +1,285 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "PermissionNoPrompt",
+                "choices": [
+                    {
+                        "enum": [
+                            "identity"
+                        ],
+                        "enums": {
+                            "identity": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "events": [
+            {
+                "name": "onSignInChanged",
+                "parameters": [
+                    {
+                        "$ref": "AccountInfo",
+                        "name": "account"
+                    },
+                    {
+                        "name": "signedIn",
+                        "type": "boolean"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            }
+        ],
+        "functions": [
+            {
+                "async": "callback",
+                "name": "getAccounts",
+                "parameters": [
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "items": {
+                                    "$ref": "AccountInfo"
+                                },
+                                "name": "results",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            },
+            {
+                "async": "callback",
+                "name": "getAuthToken",
+                "parameters": [
+                    {
+                        "name": "details",
+                        "optional": true,
+                        "properties": {
+                            "account": {
+                                "$ref": "AccountInfo",
+                                "optional": true
+                            },
+                            "interactive": {
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "scopes": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "items": {
+                                    "$ref": "AccountInfo"
+                                },
+                                "name": "results",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            },
+            {
+                "async": "callback",
+                "name": "getProfileUserInfo",
+                "parameters": [
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "name": "userinfo",
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            },
+            {
+                "async": "callback",
+                "name": "removeCachedAuthToken",
+                "parameters": [
+                    {
+                        "name": "details",
+                        "properties": {
+                            "token": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "name": "userinfo",
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function",
+                "unsupported": true
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity/launchWebAuthFlow"
+                    },
+                    {
+                        "version_added": "53"
+                    }
+                ],
+                "async": "callback",
+                "name": "launchWebAuthFlow",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity/launchWebAuthFlow"
+                            },
+                            {
+                                "version_added": "53"
+                            }
+                        ],
+                        "name": "details",
+                        "properties": {
+                            "interactive": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity/launchWebAuthFlow"
+                                    },
+                                    {
+                                        "version_added": "53"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "url": {
+                                "$ref": "manifest.HttpURL",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity/launchWebAuthFlow"
+                                    },
+                                    {
+                                        "version_added": "53"
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "name": " responseUrl",
+                                "optional": true,
+                                "type": "string"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity/getRedirectURL"
+                    },
+                    {
+                        "version_added": "53"
+                    }
+                ],
+                "name": "getRedirectURL",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity/getRedirectURL"
+                            },
+                            {
+                                "version_added": "53"
+                            }
+                        ],
+                        "default": "",
+                        "name": "path",
+                        "optional": true,
+                        "type": "string"
+                    }
+                ],
+                "returns": {
+                    "type": "string"
+                },
+                "type": "function"
+            }
+        ],
+        "namespace": "identity",
+        "permissions": [
+            "identity"
+        ],
+        "types": [
+            {
+                "id": "AccountInfo",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        ]
+    }
+]

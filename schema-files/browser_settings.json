@@ -1,0 +1,283 @@
+[
+    {
+        "applicationVersion": "141.0b2",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "OptionalPermission",
+                "choices": [
+                    {
+                        "enum": [
+                            "browserSettings"
+                        ],
+                        "enums": {
+                            "browserSettings": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "namespace": "browserSettings",
+        "permissions": [
+            "browserSettings"
+        ],
+        "properties": {
+            "allowPopupsForUserEvents": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/allowPopupsForUserEvents"
+                    },
+                    {
+                        "version_added": "57"
+                    }
+                ]
+            },
+            "cacheEnabled": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/cacheEnabled"
+                    },
+                    {
+                        "version_added": "56"
+                    }
+                ]
+            },
+            "closeTabsByDoubleClick": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "version_added": false
+                    },
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/closeTabsByDoubleClick"
+                    }
+                ]
+            },
+            "contextMenuShowEvent": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/contextMenuShowEvent"
+                    },
+                    {
+                        "version_added": "59"
+                    }
+                ]
+            },
+            "ftpProtocolEnabled": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/ftpProtocolEnabled"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "From version 88, this setting is read-only (see <a href=\"https://bugzil.la/1626365\">bug 1626365</a>)."
+                    },
+                    {
+                        "version_added": "72"
+                    }
+                ]
+            },
+            "homepageOverride": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "version_added": false
+                    },
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/homepageOverride"
+                    }
+                ]
+            },
+            "imageAnimationBehavior": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/imageAnimationBehavior"
+                    },
+                    {
+                        "version_added": "57"
+                    }
+                ]
+            },
+            "newTabPageOverride": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "version_added": false
+                    },
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/newTabPageOverride"
+                    }
+                ]
+            },
+            "newTabPosition": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "version_added": false
+                    },
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/newTabPosition"
+                    }
+                ]
+            },
+            "openBookmarksInNewTabs": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "version_added": false
+                    },
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/openBookmarksInNewTabs"
+                    }
+                ]
+            },
+            "openSearchResultsInNewTabs": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "version_added": false
+                    },
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/openSearchResultsInNewTabs"
+                    }
+                ]
+            },
+            "openUrlbarResultsInNewTabs": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "version_added": false
+                    },
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/openUrlbarResultsInNewTabs"
+                    }
+                ]
+            },
+            "overrideContentColorScheme": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/overrideContentColorScheme"
+                    },
+                    {
+                        "version_added": "95"
+                    }
+                ]
+            },
+            "overrideDocumentColors": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/overrideDocumentColors"
+                    },
+                    {
+                        "version_added": "61"
+                    }
+                ]
+            },
+            "useDocumentFonts": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/useDocumentFonts"
+                    },
+                    {
+                        "version_added": "61"
+                    }
+                ]
+            },
+            "webNotificationsDisabled": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/webNotificationsDisabled"
+                    },
+                    {
+                        "version_added": "58"
+                    }
+                ]
+            },
+            "zoomFullPage": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/zoomFullPage"
+                    },
+                    {
+                        "version_added": "75"
+                    }
+                ]
+            },
+            "zoomSiteSpecific": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "version_added": false
+                    },
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/zoomSiteSpecific"
+                    }
+                ]
+            }
+        },
+        "types": [
+            {
+                "enum": [
+                    "normal",
+                    "none",
+                    "once"
+                ],
+                "id": "ImageAnimationBehavior",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "mouseup",
+                    "mousedown"
+                ],
+                "id": "ContextMenuMouseEvent",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "off",
+                    "full",
+                    "tagged_only"
+                ],
+                "id": "ColorManagementMode",
+                "type": "string"
+            }
+        ]
+    },
+    {
+        "namespace": "browserSettings.colorManagement",
+        "permissions": [
+            "browserSettings"
+        ],
+        "properties": {
+            "mode": {
+                "$ref": "types.Setting"
+            },
+            "useNativeSRGB": {
+                "$ref": "types.Setting"
+            },
+            "useWebRenderCompositor": {
+                "$ref": "types.Setting"
+            }
+        }
+    }
+]
