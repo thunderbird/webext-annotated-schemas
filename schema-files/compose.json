@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "141.0b4",
+        "applicationVersion": "142.0b1",
         "namespace": "manifest",
         "types": [
             {
@@ -235,6 +235,9 @@
                             },
                             "messages": {
                                 "annotations": [
+                                    {
+                                        "note": "Starting with Thunderbird version 142, the File Carbon Copy (FCC) configuration is no longer respected during save operations. Regardless of any FCC settings, only one message is saved, and it is stored in the default folder for the given save mode."
+                                    },
                                     {
                                         "version_added": "105"
                                     }
@@ -1379,6 +1382,9 @@
                                     "messages": {
                                         "annotations": [
                                             {
+                                                "note": "Starting with Thunderbird version 142, the File Carbon Copy (FCC) configuration is no longer respected during save operations. Regardless of any FCC settings, only one message is saved, and it is stored in the default folder for the given save mode."
+                                            },
+                                            {
                                                 "version_added": "102"
                                             }
                                         ],
@@ -1623,14 +1629,6 @@
                         ],
                         "choices": [
                             {
-                                "$ref": "folders.MailFolderId",
-                                "annotations": [
-                                    {
-                                        "version_added": "102"
-                                    }
-                                ]
-                            },
-                            {
                                 "$ref": "folders.MailFolder",
                                 "annotations": [
                                     {
@@ -1641,7 +1639,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "102"
                                     }
                                 ],
                                 "enum": [
@@ -1651,12 +1649,20 @@
                                     "": {
                                         "annotations": [
                                             {
-                                                "version_added": "121"
+                                                "version_added": "102"
                                             }
                                         ]
                                     }
                                 },
                                 "type": "string"
+                            },
+                            {
+                                "$ref": "folders.MailFolderId",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ]
                             }
                         ],
                         "optional": true
@@ -1895,14 +1901,6 @@
                         ],
                         "choices": [
                             {
-                                "$ref": "folders.MailFolderId",
-                                "annotations": [
-                                    {
-                                        "version_added": "102"
-                                    }
-                                ]
-                            },
-                            {
                                 "$ref": "folders.MailFolder",
                                 "annotations": [
                                     {
@@ -1913,7 +1911,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "102"
                                     }
                                 ],
                                 "enum": [
@@ -1923,12 +1921,20 @@
                                     "": {
                                         "annotations": [
                                             {
-                                                "version_added": "121"
+                                                "version_added": "102"
                                             }
                                         ]
                                     }
                                 },
                                 "type": "string"
+                            },
+                            {
+                                "$ref": "folders.MailFolderId",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ]
                             }
                         ],
                         "optional": true
