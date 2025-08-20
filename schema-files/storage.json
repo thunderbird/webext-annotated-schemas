@@ -449,6 +449,26 @@
                         "unsupported": true
                     },
                     {
+                        "async": "callback",
+                        "name": "getKeys",
+                        "parameters": [
+                            {
+                                "name": "callback",
+                                "parameters": [
+                                    {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "name": "keys",
+                                        "type": "array"
+                                    }
+                                ],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
                         "annotations": [
                             {
                                 "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/set"
@@ -684,6 +704,26 @@
                     },
                     {
                         "async": "callback",
+                        "name": "getKeys",
+                        "parameters": [
+                            {
+                                "name": "callback",
+                                "parameters": [
+                                    {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "name": "keys",
+                                        "type": "array"
+                                    }
+                                ],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
+                        "async": "callback",
                         "name": "set",
                         "parameters": [
                             {
@@ -749,7 +789,7 @@
         ]
     },
     {
-        "applicationVersion": "142.0b4",
+        "applicationVersion": "143.0b1",
         "namespace": "manifest"
     }
 ]
