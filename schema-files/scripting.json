@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "143.0b4",
+        "applicationVersion": "144.0b1",
         "namespace": "manifest",
         "types": [
             {
@@ -289,6 +289,18 @@
                                     },
                                     "optional": true,
                                     "type": "array"
+                                },
+                                "cssOrigin": {
+                                    "$ref": "extensionTypes.CSSOrigin",
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
+                                        },
+                                        {
+                                            "version_added": "102"
+                                        }
+                                    ],
+                                    "optional": true
                                 },
                                 "excludeMatches": {
                                     "annotations": [
@@ -592,6 +604,10 @@
                         },
                         "optional": true,
                         "type": "array"
+                    },
+                    "cssOrigin": {
+                        "$ref": "extensionTypes.CSSOrigin",
+                        "optional": true
                     },
                     "excludeMatches": {
                         "items": {
