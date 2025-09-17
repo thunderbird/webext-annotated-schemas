@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "128.11.0esr",
+        "applicationVersion": "140.3.0esr",
         "namespace": "manifest",
         "types": [
             {
@@ -10,18 +10,40 @@
                         "enum": [
                             "theme"
                         ],
+                        "enums": {
+                            "theme": {
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ]
+                            }
+                        },
                         "type": "string"
                     }
                 ]
             },
             {
+                "annotations": [
+                    {
+                        "version_added": "86"
+                    }
+                ],
                 "choices": [
                     {
-                        "description": "A string containing a valid <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors/Color_values'>CSS color string</a>, including hexadecimal or functional representations. For example the color *crimson* can be specified as: <li><var>crimson</var> <li><var>#dc143c</var> <li><var>rgb(220, 20, 60)</var> (or <var>rgba(220, 20, 60, 0.5)</var> to set 50% opacity) <li><var>hsl(348, 83%, 47%)</var> (or <var>hsla(348, 83%, 47%, 0.5)</var> to set 50% opacity)",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "type": "string"
                     },
                     {
-                        "description": "An RGB array of 3 integers. For example <var>[220, 20, 60]</var> for the color *crimson*.",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "items": {
                             "maximum": 255,
                             "minimum": 0,
@@ -32,7 +54,11 @@
                         "type": "array"
                     },
                     {
-                        "description": "An RGBA array of 3 integers and a fractional (a float between 0 and 1). For example <var>[220, 20, 60, 0.5]<var> for the color *crimson* with 50% opacity.",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "items": {
                             "type": "number"
                         },
@@ -41,18 +67,37 @@
                         "type": "array"
                     }
                 ],
-                "description": "Defines a color value.",
                 "id": "ThemeColor"
             },
             {
-                "description": "Defines additional color, image and property keys to be used in $(ref:theme.ThemeType), extending the theme-able areas of Thunderbird.",
+                "annotations": [
+                    {
+                        "version_added": "86"
+                    }
+                ],
                 "id": "ThemeExperiment",
                 "properties": {
                     "colors": {
                         "additionalProperties": {
                             "type": "string"
                         },
-                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map new theme color keys to internal Thunderbird CSS color variables. The example shown below maps the theme color key <var>popup_affordance</var> to the CSS color variable </var>--arrowpanel-dimmed</var>. The new color key is usable as a color reference in $(ref:theme.ThemeType). <literalinclude>includes/theme/theme_experiment_color.json<lang>JSON</lang></literalinclude>",
+                        "annotations": [
+                            {
+                                "text": "The following example maps the theme color key <var>popup_affordance</var> to the CSS variable </var>--arrowpanel-dimmed</var>:"
+                            },
+                            {
+                                "code": [
+                                    "{",
+                                    "  \"popup_affordance\": \"--arrowpanel-dimmed\"",
+                                    "}",
+                                    ""
+                                ],
+                                "type": "JSON"
+                            },
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "optional": true,
                         "type": "object"
                     },
@@ -60,7 +105,23 @@
                         "additionalProperties": {
                             "type": "string"
                         },
-                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map new theme image keys to internal Thunderbird CSS image variables. The new image key is usable as an image reference in $(ref:theme.ThemeType). Example: <literalinclude>includes/theme/theme_experiment_image.json<lang>JSON</lang></literalinclude>",
+                        "annotations": [
+                            {
+                                "text": "The following example maps the theme image key <var>theme_toolbar</var> to the CSS variable </var>--toolbar-bgimage</var>:"
+                            },
+                            {
+                                "code": [
+                                    "{",
+                                    "  \"theme_toolbar\": \"--toolbar-bgimage\"",
+                                    "}",
+                                    ""
+                                ],
+                                "type": "JSON"
+                            },
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "optional": true,
                         "type": "object"
                     },
@@ -68,13 +129,77 @@
                         "additionalProperties": {
                             "type": "string"
                         },
-                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map new theme property keys to internal Thunderbird CSS property variables. The new property key is usable as a property reference in $(ref:theme.ThemeType). Example: <literalinclude>includes/theme/theme_experiment_property.json<lang>JSON</lang></literalinclude>",
+                        "annotations": [
+                            {
+                                "text": "The following example maps the theme property key <var>toolbar_image_alignment</var> to the CSS variable </var>--toolbar-bgalignment</var>:"
+                            },
+                            {
+                                "code": [
+                                    "{",
+                                    "  \"toolbar_image_alignment\": \"--toolbar-bgalignment\"",
+                                    "}",
+                                    ""
+                                ],
+                                "type": "JSON"
+                            },
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "optional": true,
                         "type": "object"
                     },
                     "stylesheet": {
                         "$ref": "ExtensionURL",
-                        "description": "URL to a stylesheet introducing additional CSS variables, extending the theme-able areas of Thunderbird. The <a href='https://github.com/thunderbird/sample-extensions/tree/master/manifest_v2/theme_experiment'>theme_experiment add-on in our example repository</a> is using the stylesheet shown below, to add the <var>--chat-button-color</var> CSS color variable: <literalinclude>includes/theme/theme_experiment_style.css<lang>CSS</lang></literalinclude>The following <em>manifest.json</em> file maps the </var>--chat-button-color</var> CSS color variable to the theme color key <var>exp_chat_button</var> and uses it to set a color for the chat button: <literalinclude>includes/theme/theme_experiment_manifest.json<lang>JSON</lang></literalinclude>",
+                        "annotations": [
+                            {
+                                "text": "The $(url:theme-experiment)[theme_experiment add-on in our example repository] is using the stylesheet shown below, to add the <var>--chat-button-color</var> CSS variable:"
+                            },
+                            {
+                                "code": [
+                                    "image.toolbarbutton-icon[label=\"Chat\"] {",
+                                    "  fill: var(--chat-button-color);",
+                                    "}",
+                                    ""
+                                ],
+                                "type": "CSS"
+                            },
+                            {
+                                "text": "The following <em>manifest.json</em> file maps the </var>--chat-button-color</var> CSS variable to the theme color key <var>exp_chat_button</var> and uses it to set a color for the chat button:"
+                            },
+                            {
+                                "code": [
+                                    "{",
+                                    "  \"name\": \"Theme Experiment\",",
+                                    "  \"description\": \"Changing the color of the chat icon using a theme_experiment.\",",
+                                    "  \"version\": \"1\",",
+                                    "  \"applications\": {",
+                                    "    \"gecko\": {",
+                                    "      \"id\": \"theme_experiment@sample.extensions.thunderbird.net\",",
+                                    "      \"strict_min_version\": \"78.0\"",
+                                    "    }",
+                                    "  },",
+                                    "  \"manifest_version\": 2,",
+                                    "  \"theme_experiment\": {",
+                                    "    \"stylesheet\": \"style.css\",",
+                                    "    \"colors\": {",
+                                    "      \"exp_chat_button\": \"--chat-button-color\"",
+                                    "    }",
+                                    "  },",
+                                    "  \"theme\": {",
+                                    "    \"colors\": {",
+                                    "      \"exp_chat_button\": \"orange\"",
+                                    "    }",
+                                    "  }",
+                                    "}",
+                                    ""
+                                ],
+                                "type": "JSON"
+                            },
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "optional": true
                     }
                 },
@@ -84,225 +209,400 @@
                 "additionalProperties": {
                     "$ref": "UnrecognizedProperty"
                 },
-                "description": "Contains the color, image and property settings of a theme.",
+                "annotations": [
+                    {
+                        "version_added": "86"
+                    }
+                ],
                 "id": "ThemeType",
                 "properties": {
                     "colors": {
                         "additionalProperties": {
                             "$ref": "ThemeColor"
                         },
-                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map color values to theme color keys. The following built-in theme color keys are supported:",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "optional": true,
                         "properties": {
                             "accentcolor": {
                                 "$ref": "ThemeColor",
-                                "deprecated": "Unsupported colors property, use <var>theme.colors.frame</var>, this alias is ignored in Thunderbird >= 70.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "bookmark_text": {
                                 "$ref": "ThemeColor",
-                                "description": "Not used in Thunderbird.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "button_background_active": {
                                 "$ref": "ThemeColor",
-                                "description": "The color of the background of the pressed toolbar buttons.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "button_background_hover": {
                                 "$ref": "ThemeColor",
-                                "description": "The color of the background of the toolbar buttons on hover.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "frame": {
                                 "$ref": "ThemeColor",
-                                "description": "The background color of the header area.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "frame_inactive": {
                                 "$ref": "ThemeColor",
-                                "description": "The background color of the header area when the window is inactive.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "icons": {
                                 "$ref": "ThemeColor",
-                                "description": "The color of the toolbar icons. Defaults to the color specified by <var>toolbar_text</var>.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "icons_attention": {
                                 "$ref": "ThemeColor",
-                                "description": "The color of the toolbar icons in attention state such as the chat icon with new messages.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "ntp_background": {
                                 "$ref": "ThemeColor",
-                                "description": "Not used in Thunderbird.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "ntp_text": {
                                 "$ref": "ThemeColor",
-                                "description": "Not used in Thunderbird.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "popup": {
                                 "$ref": "ThemeColor",
-                                "description": "The background color of popups such as the AppMenu.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "popup_border": {
                                 "$ref": "ThemeColor",
-                                "description": "The border color of popups.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "popup_highlight": {
                                 "$ref": "ThemeColor",
-                                "description": "The background color of items highlighted using the keyboard inside popups.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "popup_highlight_text": {
                                 "$ref": "ThemeColor",
-                                "description": "The text color of items highlighted using the keyboard inside popups.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "popup_text": {
                                 "$ref": "ThemeColor",
-                                "description": "The text color of popups.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "sidebar": {
                                 "$ref": "ThemeColor",
-                                "description": "The background color of the trees.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "sidebar_border": {
                                 "$ref": "ThemeColor",
-                                "description": "The border color of the trees.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "sidebar_highlight": {
                                 "$ref": "ThemeColor",
-                                "description": "The background color of highlighted rows in trees.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "sidebar_highlight_border": {
                                 "$ref": "ThemeColor",
-                                "description": "The border color of highlighted rows in trees.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "sidebar_highlight_text": {
                                 "$ref": "ThemeColor",
-                                "description": "The text color of highlighted rows in trees.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "sidebar_text": {
                                 "$ref": "ThemeColor",
-                                "description": "The text color of the trees. Needed to enable the tree theming.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "tab_background_separator": {
                                 "$ref": "ThemeColor",
-                                "description": "The color of the vertical separator of the background tabs.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "tab_background_text": {
                                 "$ref": "ThemeColor",
-                                "description": "The text color of the unselected tabs.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "tab_line": {
                                 "$ref": "ThemeColor",
-                                "description": "The color of the selected tab line.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "tab_loading": {
                                 "$ref": "ThemeColor",
-                                "description": "The color of the tab loading indicator.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "tab_selected": {
                                 "$ref": "ThemeColor",
-                                "description": "Background color of the selected tab. Defaults to the color specified by <var>toolbar</var>.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "tab_text": {
                                 "$ref": "ThemeColor",
-                                "description": "The text color for the selected tab. Defaults to the color specified by <var>toolbar_text</var>.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "textcolor": {
                                 "$ref": "ThemeColor",
-                                "deprecated": "Unsupported color property, use <var>theme.colors.tab_background_text</var>, this alias is ignored in Thunderbird >= 70.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "toolbar": {
                                 "$ref": "ThemeColor",
-                                "description": "The background color of the toolbars. Also used as default value for <var>tab_selected</var>.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "toolbar_bottom_separator": {
                                 "$ref": "ThemeColor",
-                                "description": "The color of the line separating the bottom of the toolbar from the region below.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "toolbar_field": {
                                 "$ref": "ThemeColor",
-                                "description": "The background color for fields in the toolbar, such as the search field.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "toolbar_field_border": {
                                 "$ref": "ThemeColor",
-                                "description": "The border color for fields in the toolbar.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "toolbar_field_border_focus": {
                                 "$ref": "ThemeColor",
-                                "description": "The focused border color for fields in the toolbar.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "toolbar_field_focus": {
                                 "$ref": "ThemeColor",
-                                "description": "The focused background color for fields in the toolbar.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "toolbar_field_highlight": {
                                 "$ref": "ThemeColor",
-                                "description": "The background color used to indicate the current selection of text in the search field.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "toolbar_field_highlight_text": {
                                 "$ref": "ThemeColor",
-                                "description": "The color used to draw text that's currently selected in the search field.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "toolbar_field_separator": {
                                 "$ref": "ThemeColor",
-                                "deprecated": "This color property is ignored in >= 89.",
-                                "description": "Not used in Thunderbird.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "toolbar_field_text": {
                                 "$ref": "ThemeColor",
-                                "description": "The text color for fields in the toolbar.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "toolbar_field_text_focus": {
                                 "$ref": "ThemeColor",
-                                "description": "The text color in the focused fields in the toolbar.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "toolbar_text": {
                                 "$ref": "ThemeColor",
-                                "description": "The text color in the main Thunderbird toolbar. Also used as default value for <var>icons</var> and <var>tab_text</var>.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "toolbar_top_separator": {
                                 "$ref": "ThemeColor",
-                                "description": "The color of the line separating the top of the toolbar from the region above.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "toolbar_vertical_separator": {
                                 "$ref": "ThemeColor",
-                                "description": "The color of the vertical separators on the toolbars.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             }
                         },
@@ -312,11 +612,19 @@
                         "additionalProperties": {
                             "$ref": "ImageDataOrExtensionURL"
                         },
-                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map images to theme image keys. The following built-in theme image keys are supported:",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "optional": true,
                         "properties": {
                             "additional_backgrounds": {
-                                "description": "Additional images added to the header area and displayed behind the <var>theme_frame</var> image.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "ImageDataOrExtensionURL"
                                 },
@@ -326,12 +634,20 @@
                             },
                             "headerURL": {
                                 "$ref": "ImageDataOrExtensionURL",
-                                "deprecated": "Unsupported images property, use <var>theme.images.theme_frame</var>, this alias is ignored in Thunderbird >= 70.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "theme_frame": {
                                 "$ref": "ImageDataOrExtensionURL",
-                                "description": "Foreground image on the header area.",
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "optional": true
                             }
                         },
@@ -341,10 +657,19 @@
                         "additionalProperties": {
                             "type": "string"
                         },
-                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map property values to theme property keys. The following built-in theme property keys are supported:",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "optional": true,
                         "properties": {
                             "additional_backgrounds_alignment": {
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "items": {
                                     "enum": [
                                         "bottom",
@@ -362,6 +687,106 @@
                                         "right center",
                                         "right top"
                                     ],
+                                    "enums": {
+                                        "bottom": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "center": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "center bottom": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "center center": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "center top": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "left": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "left bottom": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "left center": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "left top": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "right": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "right bottom": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "right center": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "right top": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "top": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        }
+                                    },
                                     "type": "string"
                                 },
                                 "maxItems": 15,
@@ -369,6 +794,11 @@
                                 "type": "array"
                             },
                             "additional_backgrounds_tiling": {
+                                "annotations": [
+                                    {
+                                        "version_added": "86"
+                                    }
+                                ],
                                 "items": {
                                     "enum": [
                                         "no-repeat",
@@ -376,6 +806,36 @@
                                         "repeat-x",
                                         "repeat-y"
                                     ],
+                                    "enums": {
+                                        "no-repeat": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "repeat": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "repeat-x": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        },
+                                        "repeat-y": {
+                                            "annotations": [
+                                                {
+                                                    "version_added": "86"
+                                                }
+                                            ]
+                                        }
+                                    },
                                     "type": "string"
                                 },
                                 "maxItems": 15,
@@ -383,22 +843,76 @@
                                 "type": "array"
                             },
                             "color_scheme": {
-                                "description": "If set, overrides the general theme (context menus, toolbars, content area).",
+                                "annotations": [
+                                    {
+                                        "version_added": "100"
+                                    }
+                                ],
                                 "enum": [
                                     "light",
                                     "dark",
                                     "auto"
                                 ],
+                                "enums": {
+                                    "auto": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "100"
+                                            }
+                                        ]
+                                    },
+                                    "dark": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "100"
+                                            }
+                                        ]
+                                    },
+                                    "light": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "100"
+                                            }
+                                        ]
+                                    }
+                                },
                                 "optional": true,
                                 "type": "string"
                             },
                             "content_color_scheme": {
-                                "description": "If set, overrides the color scheme for the content area.",
+                                "annotations": [
+                                    {
+                                        "version_added": "100"
+                                    }
+                                ],
                                 "enum": [
                                     "light",
                                     "dark",
                                     "auto"
                                 ],
+                                "enums": {
+                                    "auto": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "100"
+                                            }
+                                        ]
+                                    },
+                                    "dark": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "100"
+                                            }
+                                        ]
+                                    },
+                                    "light": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "100"
+                                            }
+                                        ]
+                                    }
+                                },
                                 "optional": true,
                                 "type": "string"
                             }
@@ -409,20 +923,37 @@
                 "type": "object"
             },
             {
-                "description": "Contents of manifest.json for a static theme",
+                "annotations": [
+                    {
+                        "version_added": "86"
+                    }
+                ],
                 "id": "ThemeManifest",
                 "properties": {
                     "dark_theme": {
                         "$ref": "ThemeType",
-                        "description": "Fallback properties for the dark system theme.",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "optional": true
                     },
                     "default_locale": {
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "optional": true,
                         "type": "string"
                     },
                     "icons": {
-                        "description": "Icons shown in the Add-ons Manager.",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "optional": true,
                         "patternProperties": {
                             "^[1-9]\\d*$": {
@@ -432,11 +963,20 @@
                         "type": "object"
                     },
                     "theme": {
-                        "$ref": "ThemeType"
+                        "$ref": "ThemeType",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ]
                     },
                     "theme_experiment": {
                         "$ref": "ThemeExperiment",
-                        "description": "CSS file with additional styles.",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "optional": true
                     }
                 },
@@ -447,7 +987,11 @@
                 "properties": {
                     "theme_experiment": {
                         "$ref": "ThemeExperiment",
-                        "description": "A theme experiment allows modifying the user interface of Thunderbird beyond what is currently possible using the built-in color, image and property keys of $(ref:theme.ThemeType). These experiments are a precursor to proposing new theme features for inclusion in Thunderbird. Experimentation is done by mapping internal CSS color, image and property variables to new theme keys and using them in $(ref:theme.ThemeType) and by loading additional style sheets to add new CSS variables, extending the theme-able areas of Thunderbird. Can be used in static and dynamic themes.",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "optional": true
                     }
                 }
@@ -455,140 +999,158 @@
         ]
     },
     {
-        "description": "The theme API allows for customization of Thunderbird's visual elements.",
         "events": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/theme.html#onupdated-updateinfo",
-                "description": "Fired when a new theme has been applied",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/theme/onUpdated",
+                "annotations": [
+                    {
+                        "version_added": "86"
+                    }
+                ],
                 "name": "onUpdated",
                 "parameters": [
                     {
                         "$ref": "ThemeUpdateInfo",
-                        "description": "Details of the theme update",
-                        "name": "updateInfo",
-                        "support": {
-                            "version_added": true
-                        }
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
+                        "name": "updateInfo"
                     }
                 ],
-                "support": {
-                    "version_added": "58"
-                },
                 "type": "function"
             }
         ],
         "functions": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/theme.html#getcurrent-windowid",
+                "annotations": [
+                    {
+                        "version_added": "86"
+                    }
+                ],
                 "async": "callback",
-                "description": "Returns the current theme for the specified window or the last focused window.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/theme/getCurrent",
                 "name": "getCurrent",
                 "parameters": [
                     {
-                        "description": "The window for which we want the theme.",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "name": "windowId",
                         "optional": true,
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "integer"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "96"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "ThemeType"
+                                "$ref": "ThemeType",
+                                "annotations": [
+                                    {
+                                        "version_added": "96"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "58"
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/theme.html#update-windowid-details",
+                "annotations": [
+                    {
+                        "version_added": "86"
+                    }
+                ],
                 "async": true,
-                "description": "Make complete updates to the theme. Resolves when the update has completed.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/theme/update",
                 "name": "update",
                 "parameters": [
                     {
-                        "description": "The id of the window to update. No id updates all windows.",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "name": "windowId",
                         "optional": true,
-                        "support": {
-                            "version_added": "57"
-                        },
                         "type": "integer"
                     },
                     {
                         "$ref": "manifest.ThemeType",
-                        "description": "The properties of the theme to update.",
-                        "name": "details",
-                        "support": {
-                            "version_added": true
-                        }
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
+                        "name": "details"
                     }
                 ],
                 "permissions": [
                     "theme"
                 ],
-                "support": {
-                    "version_added": "55"
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/theme.html#reset-windowid",
+                "annotations": [
+                    {
+                        "version_added": "86"
+                    }
+                ],
                 "async": true,
-                "description": "Removes the updates made to the theme.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/theme/reset",
                 "name": "reset",
                 "parameters": [
                     {
-                        "description": "The id of the window to reset. No id resets all windows.",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "name": "windowId",
                         "optional": true,
-                        "support": {
-                            "version_added": "57"
-                        },
                         "type": "integer"
                     }
                 ],
                 "permissions": [
                     "theme"
                 ],
-                "support": {
-                    "version_added": "56"
-                },
                 "type": "function"
             }
         ],
         "namespace": "theme",
         "types": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/theme.html#themeupdateinfo",
-                "description": "Info provided in the onUpdated listener.",
+                "annotations": [
+                    {
+                        "version_added": "86"
+                    }
+                ],
                 "id": "ThemeUpdateInfo",
                 "properties": {
                     "theme": {
                         "$ref": "ThemeType",
-                        "description": "The new theme after update"
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ]
                     },
                     "windowId": {
-                        "description": "The id of the window the theme has been applied to",
+                        "annotations": [
+                            {
+                                "version_added": "86"
+                            }
+                        ],
                         "optional": true,
                         "type": "integer"
                     }
-                },
-                "support": {
-                    "version_added": true
                 },
                 "type": "object"
             }

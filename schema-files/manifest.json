@@ -1,11 +1,10 @@
 [
     {
-        "applicationVersion": "128.11.0esr",
+        "applicationVersion": "140.3.0esr",
         "namespace": "manifest",
         "permissions": [],
         "types": [
             {
-                "description": "Common properties for all manifest.json files",
                 "id": "ManifestBase",
                 "properties": {
                     "author": {
@@ -17,11 +16,6 @@
                     "browser_specific_settings": {
                         "$ref": "BrowserSpecificSettings",
                         "optional": true
-                    },
-                    "description": {
-                        "optional": true,
-                        "preprocess": "localize",
-                        "type": "string"
                     },
                     "developer": {
                         "optional": true,
@@ -62,7 +56,6 @@
                         "type": "integer"
                     },
                     "name": {
-                        "description": "Name must be at least 2, at should be at most 75 characters",
                         "optional": false,
                         "preprocess": "localize",
                         "type": "string"
@@ -84,55 +77,52 @@
                 "additionalProperties": {
                     "$ref": "UnrecognizedProperty"
                 },
-                "description": "Represents a WebExtension manifest.json file",
                 "id": "WebExtensionManifest",
                 "properties": {
                     "background": {
-                        "choices": [
-                            {
-                                "additionalProperties": {
-                                    "$ref": "UnrecognizedProperty"
-                                },
-                                "properties": {
-                                    "page": {
-                                        "$ref": "ExtensionURL"
-                                    }
-                                },
-                                "type": "object"
+                        "additionalProperties": {
+                            "$ref": "UnrecognizedProperty"
+                        },
+                        "optional": true,
+                        "postprocess": "checkRequiredManifestBackgroundKeys",
+                        "properties": {
+                            "page": {
+                                "$ref": "ExtensionURL",
+                                "optional": true
                             },
-                            {
-                                "additionalProperties": {
-                                    "$ref": "UnrecognizedProperty"
+                            "preferred_environment": {
+                                "items": {
+                                    "enum": [
+                                        "service_worker",
+                                        "document"
+                                    ],
+                                    "onError": "warn",
+                                    "type": "string"
                                 },
-                                "properties": {
-                                    "scripts": {
-                                        "items": {
-                                            "$ref": "ExtensionURL"
-                                        },
-                                        "type": "array"
-                                    },
-                                    "type": {
-                                        "enum": [
-                                            "module",
-                                            "classic"
-                                        ],
-                                        "optional": true,
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object"
+                                "optional": true,
+                                "type": "array"
                             },
-                            {
-                                "postprocess": "requireBackgroundServiceWorkerEnabled",
-                                "properties": {
-                                    "service_worker": {
-                                        "$ref": "ExtensionURL"
-                                    }
+                            "scripts": {
+                                "items": {
+                                    "$ref": "ExtensionURL"
                                 },
-                                "type": "object"
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "service_worker": {
+                                "$ref": "ExtensionURL",
+                                "optional": true
+                            },
+                            "type": {
+                                "enum": [
+                                    "module",
+                                    "classic"
+                                ],
+                                "optional": true,
+                                "type": "string"
                             }
-                        ],
-                        "optional": true
+                        },
+                        "type": "object"
                     },
                     "content_scripts": {
                         "items": {
@@ -149,7 +139,6 @@
                         "optional": true,
                         "properties": {
                             "extension_pages": {
-                                "description": "The Content Security Policy used for extension pages.",
                                 "format": "contentSecurityPolicy",
                                 "optional": true,
                                 "type": "string"
@@ -187,7 +176,6 @@
                     },
                     "incognito": {
                         "default": "spanning",
-                        "description": "The 'split' value is not supported.",
                         "enum": [
                             "not_allowed",
                             "spanning",
@@ -225,7 +213,6 @@
                     },
                     "options_page": {
                         "$ref": "ExtensionURL",
-                        "description": "Alias property for options_ui.page, ignored when options_ui.page is set. When using this property the options page is always opened in a new tab.",
                         "optional": true
                     },
                     "options_ui": {
@@ -235,7 +222,6 @@
                         "optional": true,
                         "properties": {
                             "browser_style": {
-                                "description": "Defaults to true in Manifest V2; Deprecated in Manifest V3.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -305,7 +291,6 @@
                 "type": "object"
             },
             {
-                "description": "Represents a WebExtension language pack manifest.json file",
                 "id": "WebExtensionLangpackManifest",
                 "properties": {
                     "langpack_id": {
@@ -371,7 +356,6 @@
                 "type": "object"
             },
             {
-                "description": "Represents a WebExtension dictionary manifest.json file",
                 "id": "WebExtensionDictionaryManifest",
                 "properties": {
                     "dictionaries": {
@@ -388,59 +372,39 @@
                 "type": "object"
             },
             {
-                "description": "Represents a WebExtension site permissions manifest.json file",
-                "id": "WebExtensionSitePermissionsManifest",
-                "properties": {
-                    "install_origins": {
-                        "items": {
-                            "format": "origin",
-                            "type": "string"
-                        },
-                        "maxItems": 1,
-                        "minItems": 1,
-                        "type": "array"
-                    },
-                    "site_permissions": {
-                        "items": {
-                            "$ref": "SitePermission"
-                        },
-                        "minItems": 1,
-                        "type": "array"
-                    }
-                },
-                "type": "object"
-            },
-            {
                 "additionalProperties": {
                     "$ref": "UnrecognizedProperty"
                 },
+                "annotations": [
+                    {
+                        "text": "Define a set of icons for themes depending on whether Thunderbird detects that the theme uses dark or light text. All provided URLs must be relative to the <var>manifest.json</var> file."
+                    }
+                ],
                 "id": "ThemeIcons",
                 "properties": {
                     "dark": {
-                        "$ref": "ExtensionURL",
-                        "description": "The dark icon to use for light themes"
+                        "$ref": "ExtensionURL"
                     },
                     "light": {
-                        "$ref": "ExtensionURL",
-                        "description": "A light icon to use for dark themes"
+                        "$ref": "ExtensionURL"
                     },
                     "size": {
-                        "description": "The size of the icons",
                         "type": "integer"
                     }
                 },
                 "type": "object"
             },
             {
-                "choices": [
-                    {
-                        "enum": [
-                            "idle"
-                        ],
-                        "type": "string"
-                    }
+                "enum": [],
+                "id": "OptionalOnlyPermission",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "idle"
                 ],
-                "id": "OptionalPermissionNoPrompt"
+                "id": "OptionalPermissionNoPrompt",
+                "type": "string"
             },
             {
                 "choices": [
@@ -465,21 +429,65 @@
                         "$ref": "OptionalPermission"
                     },
                     {
+                        "$ref": "OptionalOnlyPermission"
+                    },
+                    {
                         "$ref": "MatchPattern"
                     }
                 ],
                 "id": "OptionalPermissionOrOrigin"
             },
             {
+                "enum": [
+                    "mozillaAddons"
+                ],
+                "id": "PermissionPrivileged",
+                "type": "string"
+            },
+            {
+                "enum": [
+                    "authenticationInfo",
+                    "bookmarksInfo",
+                    "browsingActivity",
+                    "financialAndPaymentInfo",
+                    "healthInfo",
+                    "locationInfo",
+                    "personalCommunications",
+                    "personallyIdentifyingInfo",
+                    "searchTerms",
+                    "websiteActivity",
+                    "websiteContent"
+                ],
+                "id": "CommonDataCollectionPermission",
+                "type": "string"
+            },
+            {
                 "choices": [
                     {
+                        "$ref": "CommonDataCollectionPermission"
+                    },
+                    {
                         "enum": [
-                            "mozillaAddons"
+                            "none"
                         ],
                         "type": "string"
                     }
                 ],
-                "id": "PermissionPrivileged"
+                "id": "DataCollectionPermission"
+            },
+            {
+                "choices": [
+                    {
+                        "$ref": "CommonDataCollectionPermission"
+                    },
+                    {
+                        "enum": [
+                            "technicalAndInteraction"
+                        ],
+                        "type": "string"
+                    }
+                ],
+                "id": "OptionalDataCollectionPermission"
             },
             {
                 "choices": [
@@ -523,24 +531,17 @@
                 "id": "PermissionOrOrigin"
             },
             {
-                "choices": [
-                    {
-                        "enum": [
-                            "midi",
-                            "midi-sysex"
-                        ],
-                        "type": "string"
-                    }
-                ],
-                "id": "SitePermission"
-            },
-            {
                 "format": "url",
                 "id": "HttpURL",
                 "pattern": "^https?://.*$",
                 "type": "string"
             },
             {
+                "annotations": [
+                    {
+                        "text": "A path relative to the root of the extension."
+                    }
+                ],
                 "format": "strictRelativeUrl",
                 "id": "ExtensionURL",
                 "type": "string"
@@ -553,6 +554,19 @@
                 "type": "string"
             },
             {
+                "annotations": [
+                    {
+                        "text": "Defines an image resource. Either a image URL relative the the extensions <var>manifest.json</var> file (supported image formats are <var>JPEG</var>, <var>PNG</var>, <var>APNG</var>, <var>SVG</var> and <var>GIF</var>), or a data URL using a base64 encoded representation of a <var>PNG</var> or <var>JPEG</var> image."
+                    },
+                    {
+                        "text": "Example for a base64 encoded <var>PNG</var> image:"
+                    },
+                    {
+                        "code": [
+                            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
+                        ]
+                    }
+                ],
                 "format": "imageDataOrStrictRelativeUrl",
                 "id": "ImageDataOrExtensionURL",
                 "type": "string"
@@ -579,6 +593,31 @@
                     "admin_install_only": {
                         "optional": true,
                         "type": "boolean"
+                    },
+                    "data_collection_permissions": {
+                        "optional": true,
+                        "properties": {
+                            "optional": {
+                                "default": [],
+                                "items": {
+                                    "$ref": "OptionalDataCollectionPermission",
+                                    "onError": "warn"
+                                },
+                                "optional": true,
+                                "type": "array"
+                            },
+                            "required": {
+                                "default": [],
+                                "items": {
+                                    "$ref": "DataCollectionPermission",
+                                    "onError": "warn"
+                                },
+                                "optional": true,
+                                "postprocess": "checkValidRequiredDataCollection",
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
                     },
                     "id": {
                         "$ref": "ExtensionID",
@@ -680,33 +719,24 @@
                         "type": "string"
                     }
                 ],
-                "description": "Same as MatchPattern above, but excludes <all_urls>",
                 "id": "MatchPatternRestricted"
             },
             {
-                "choices": [
-                    {
-                        "pattern": "^resource://(\\*|\\*\\.[^*/]+|[^*/]+)/.*$|^about:",
-                        "type": "string"
-                    }
-                ],
-                "description": "Mostly unrestricted match patterns for privileged add-ons. This should technically be rejected for unprivileged add-ons, but, reasons. The MatchPattern class will still refuse privileged schemes for those extensions.",
-                "id": "MatchPatternUnestricted"
+                "id": "MatchPatternUnestricted",
+                "pattern": "^resource://(\\*|\\*\\.[^*/]+|[^*/]+)/.*$|^about:",
+                "type": "string"
             },
             {
                 "additionalProperties": {
                     "$ref": "UnrecognizedProperty"
                 },
-                "description": "Details of the script or CSS to inject. Either the code or the file property must be set, but both may not be set at the same time. Based on InjectDetails, but using underscore rather than camel case naming conventions.",
                 "id": "ContentScript",
                 "properties": {
                     "all_frames": {
-                        "description": "If allFrames is <code>true</code>, implies that the JavaScript or CSS should be injected into all frames of current page. By default, it's <code>false</code> and is only injected into the top frame.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "css": {
-                        "description": "The list of CSS files to inject",
                         "items": {
                             "$ref": "ExtensionURL"
                         },
@@ -736,7 +766,6 @@
                         "type": "array"
                     },
                     "js": {
-                        "description": "The list of JS files to inject",
                         "items": {
                             "$ref": "ExtensionURL"
                         },
@@ -744,12 +773,10 @@
                         "type": "array"
                     },
                     "match_about_blank": {
-                        "description": "If match_about_blank is true, then the code is also injected in about:blank and about:srcdoc frames if your extension has access to its parent document. Ignored if match_origin_as_fallback is specified. By default it is <code>false</code>.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "match_origin_as_fallback": {
-                        "description": "If match_origin_as_fallback is true, then the code is also injected in about:, data:, blob: when their origin matches the pattern in 'matches', even if the actual document origin is opaque (due to the use of CSP sandbox or iframe sandbox). Match patterns in 'matches' must specify a wildcard path glob. By default it is <code>false</code>.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -764,19 +791,35 @@
                     "run_at": {
                         "$ref": "extensionTypes.RunAt",
                         "default": "document_idle",
-                        "description": "The soonest that the JavaScript or CSS will be injected into the tab. Defaults to \"document_idle\".",
                         "optional": true
                     },
                     "world": {
                         "$ref": "extensionTypes.ExecutionWorld",
                         "default": "ISOLATED",
-                        "description": "The JavaScript world for a script to execute within. Defaults to \"ISOLATED\".",
                         "optional": true
                     }
                 },
                 "type": "object"
             },
             {
+                "annotations": [
+                    {
+                        "text": "Either a <em>string</em> to specify a relative path of a single icon to be used for all sizes, or a <em>dictionary object</em> to specify paths for multiple icons in different sizes, so the icon does not have to be scaled for a device with a different pixel density. Each entry is a <em>name-value</em> pair with <em>value</em> being a relative path to an icon file, and <em>name</em> its size. Example:"
+                    },
+                    {
+                        "code": [
+                            "{",
+                            "  \"16\": \"icon16.png\",",
+                            "  \"32\": \"icon32.png\"",
+                            "}",
+                            ""
+                        ],
+                        "type": "JSON"
+                    },
+                    {
+                        "text": "See the $(url:mdn-icon-size)[MDN documentation about choosing icon sizes] for more information on this topic."
+                    }
+                ],
                 "choices": [
                     {
                         "additionalProperties": false,
@@ -817,7 +860,6 @@
                 "type": "object"
             },
             {
-                "deprecated": "An unexpected property was found in the WebExtension manifest.",
                 "id": "UnrecognizedProperty",
                 "type": "any"
             }

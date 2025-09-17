@@ -1,11 +1,606 @@
 [
     {
-        "applicationVersion": "128.11.0esr",
+        "applicationVersion": "140.3.0esr",
         "namespace": "manifest",
         "types": [
             {
+                "$extend": "OptionalOnlyPermission",
+                "choices": [
+                    {
+                        "enum": [
+                            "userScripts"
+                        ],
+                        "enums": {
+                            "userScripts": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            },
+            {
                 "$extend": "WebExtensionManifest",
                 "properties": {}
+            }
+        ]
+    },
+    {
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/register"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "An incompatible version of this function is available for Manifest V2. See <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts_legacy/register\">userScripts (Legacy)</a>."
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "async": true,
+                "name": "register",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/register"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "An incompatible version of this function is available for Manifest V2. See <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts_legacy/register\">userScripts (Legacy)</a>."
+                            },
+                            {
+                                "version_added": "136"
+                            }
+                        ],
+                        "items": {
+                            "$ref": "RegisteredUserScript"
+                        },
+                        "name": "scripts",
+                        "type": "array"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "async": true,
+                "name": "update",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
+                            },
+                            {
+                                "version_added": "136"
+                            }
+                        ],
+                        "items": {
+                            "properties": {
+                                "allFrames": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
+                                        },
+                                        {
+                                            "version_added": "136"
+                                        }
+                                    ],
+                                    "optional": true,
+                                    "type": "boolean"
+                                },
+                                "excludeGlobs": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
+                                        },
+                                        {
+                                            "version_added": "136"
+                                        }
+                                    ],
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "optional": true,
+                                    "type": "array"
+                                },
+                                "excludeMatches": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
+                                        },
+                                        {
+                                            "version_added": "136"
+                                        }
+                                    ],
+                                    "items": {
+                                        "$ref": "manifest.MatchPattern"
+                                    },
+                                    "optional": true,
+                                    "type": "array"
+                                },
+                                "id": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
+                                        },
+                                        {
+                                            "version_added": "136"
+                                        }
+                                    ],
+                                    "optional": false,
+                                    "type": "string"
+                                },
+                                "includeGlobs": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
+                                        },
+                                        {
+                                            "version_added": "136"
+                                        }
+                                    ],
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "optional": true,
+                                    "type": "array"
+                                },
+                                "js": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
+                                        },
+                                        {
+                                            "version_added": "136"
+                                        }
+                                    ],
+                                    "items": {
+                                        "$ref": "ScriptSource"
+                                    },
+                                    "optional": false,
+                                    "type": "array"
+                                },
+                                "matches": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
+                                        },
+                                        {
+                                            "version_added": "136"
+                                        }
+                                    ],
+                                    "items": {
+                                        "$ref": "manifest.MatchPattern"
+                                    },
+                                    "optional": true,
+                                    "type": "array"
+                                },
+                                "runAt": {
+                                    "$ref": "extensionTypes.RunAt",
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
+                                        },
+                                        {
+                                            "version_added": "136"
+                                        }
+                                    ],
+                                    "optional": true
+                                },
+                                "world": {
+                                    "$ref": "ExecutionWorld",
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
+                                        },
+                                        {
+                                            "version_added": "136"
+                                        }
+                                    ],
+                                    "optional": true
+                                },
+                                "worldId": {
+                                    "annotations": [
+                                        {
+                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
+                                        },
+                                        {
+                                            "version_added": "136"
+                                        }
+                                    ],
+                                    "optional": true,
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "name": "scripts",
+                        "type": "array"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/unregister"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "async": true,
+                "name": "unregister",
+                "parameters": [
+                    {
+                        "$ref": "UserScriptFilter",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/unregister"
+                            },
+                            {
+                                "version_added": "136"
+                            }
+                        ],
+                        "name": "filter",
+                        "optional": true
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/getScripts"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "async": "callback",
+                "name": "getScripts",
+                "parameters": [
+                    {
+                        "$ref": "UserScriptFilter",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/getScripts"
+                            },
+                            {
+                                "version_added": "136"
+                            }
+                        ],
+                        "name": "filter",
+                        "optional": true
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "items": {
+                                    "$ref": "RegisteredUserScript"
+                                },
+                                "name": "scripts",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/configureWorld"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "async": true,
+                "name": "configureWorld",
+                "parameters": [
+                    {
+                        "$ref": "WorldProperties",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/configureWorld"
+                            },
+                            {
+                                "version_added": "136"
+                            }
+                        ],
+                        "name": "properties"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/resetWorldConfiguration"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "async": true,
+                "name": "resetWorldConfiguration",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/resetWorldConfiguration"
+                            },
+                            {
+                                "version_added": "136"
+                            }
+                        ],
+                        "default": "",
+                        "name": "worldId",
+                        "optional": true,
+                        "type": "string"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/getWorldConfigurations"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "async": "callback",
+                "name": "getWorldConfigurations",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/getWorldConfigurations"
+                            },
+                            {
+                                "version_added": "136"
+                            }
+                        ],
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/getWorldConfigurations"
+                                    },
+                                    {
+                                        "version_added": "136"
+                                    }
+                                ],
+                                "items": {
+                                    "$ref": "WorldProperties"
+                                },
+                                "name": "configurations",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "userScripts",
+        "permissions": [
+            "manifest:user_scripts",
+            "userScripts"
+        ],
+        "types": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/RegisteredUserScript"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "id": "RegisteredUserScript",
+                "properties": {
+                    "allFrames": {
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "excludeGlobs": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "excludeMatches": {
+                        "items": {
+                            "$ref": "manifest.MatchPattern"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "id": {
+                        "optional": false,
+                        "type": "string"
+                    },
+                    "includeGlobs": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "js": {
+                        "items": {
+                            "$ref": "ScriptSource"
+                        },
+                        "optional": false,
+                        "type": "array"
+                    },
+                    "matches": {
+                        "items": {
+                            "$ref": "manifest.MatchPattern"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "runAt": {
+                        "$ref": "extensionTypes.RunAt",
+                        "optional": true
+                    },
+                    "world": {
+                        "$ref": "ExecutionWorld",
+                        "optional": true
+                    },
+                    "worldId": {
+                        "annotations": [
+                            {
+                                "version_added": "136"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/ExecutionWorld"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "enum": [
+                    "MAIN",
+                    "USER_SCRIPT"
+                ],
+                "id": "ExecutionWorld",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/UserScriptFilter"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "id": "UserScriptFilter",
+                "properties": {
+                    "ids": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/ScriptSource"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "choices": [
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/ScriptSource"
+                            },
+                            {
+                                "version_added": "136"
+                            }
+                        ],
+                        "properties": {
+                            "file": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/ScriptSource"
+                                    },
+                                    {
+                                        "version_added": "136"
+                                    }
+                                ],
+                                "format": "unresolvedRelativeUrl",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "id": "ScriptSource"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/WorldProperties"
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
+                "id": "WorldProperties",
+                "properties": {
+                    "csp": {
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "messaging": {
+                        "default": false,
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "worldId": {
+                        "annotations": [
+                            {
+                                "version_added": "136"
+                            }
+                        ],
+                        "default": "",
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
             }
         ]
     }

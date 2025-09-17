@@ -2,109 +2,190 @@
     {
         "functions": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/spaces.html#create-name-defaulturl-buttonproperties",
+                "annotations": [
+                    {
+                        "version_added": "114"
+                    }
+                ],
                 "async": "callback",
-                "description": "Creates a new space and adds its button to the spaces toolbar.",
                 "name": "create",
                 "parameters": [
                     {
-                        "description": "The name to assign to this space. May only contain alphanumeric characters and underscores. Must be unique for this extension.",
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "name": "name",
                         "pattern": "^[a-zA-Z0-9_]+$",
                         "type": "string"
                     },
                     {
-                        "description": "The default space url, loaded into a tab when the button in the spaces toolbar is clicked. Supported are <var>https://</var> and <var>http://</var> links, as well as links to WebExtension pages.",
-                        "name": "defaultUrl",
-                        "type": "string"
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "114"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            {
+                                "$ref": "spaces.SpaceTabProperties",
+                                "annotations": [
+                                    {
+                                        "version_added": "135"
+                                    }
+                                ]
+                            }
+                        ],
+                        "name": "tabProperties"
                     },
                     {
                         "$ref": "spaces.SpaceButtonProperties",
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "default": {},
-                        "description": "Properties of the button for the new space.",
                         "name": "buttonProperties",
                         "optional": true
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "spaces.Space",
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "name": "space"
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/spaces.html#get-spaceid",
+                "annotations": [
+                    {
+                        "version_added": "115"
+                    }
+                ],
                 "async": "callback",
-                "description": "Retrieves details about the specified space.",
                 "name": "get",
                 "parameters": [
                     {
-                        "description": "The id of the space.",
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "minimum": 1,
                         "name": "spaceId",
                         "type": "integer"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "spaces.Space",
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "name": "space"
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/spaces.html#query-queryinfo",
+                "annotations": [
+                    {
+                        "version_added": "115"
+                    }
+                ],
                 "async": "callback",
-                "description": "Gets all spaces that have the specified properties, or all spaces if no properties are specified.",
                 "name": "query",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "default": {},
                         "name": "queryInfo",
                         "optional": true,
                         "properties": {
                             "extensionId": {
-                                "description": "Id of the extension which should own the spaces. The <permission>management</permission> permission is required to be able to match against extension ids.",
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "string"
                             },
                             "isBuiltIn": {
-                                "description": "Spaces should be default Thunderbird spaces.",
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "isSelfOwned": {
-                                "description": "Spaces should have been created by this extension.",
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "name": {
-                                "description": "The name of the spaces (names are not unique).",
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "optional": true,
                                 "pattern": "^[a-zA-Z0-9_]+$",
                                 "type": "string"
                             },
                             "spaceId": {
-                                "description": "The id of the space.",
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "minimum": 1,
                                 "optional": true,
                                 "type": "integer"
@@ -113,10 +194,20 @@
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "spaces.Space"
                                 },
@@ -127,127 +218,283 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/spaces.html#remove-spaceid",
+                "annotations": [
+                    {
+                        "version_added": "114"
+                    }
+                ],
                 "async": true,
-                "description": "Removes the specified space, closes all its tabs and removes its button from the spaces toolbar. Throws an exception if the requested space does not exist or was not created by this extension.",
                 "name": "remove",
                 "parameters": [
                     {
-                        "description": "The id of the space.",
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "minimum": 1,
                         "name": "spaceId",
                         "type": "integer"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/spaces.html#update-spaceid-defaulturl-buttonproperties",
+                "annotations": [
+                    {
+                        "version_added": "114"
+                    }
+                ],
                 "async": true,
-                "description": "Updates the specified space. Throws an exception if the requested space does not exist or was not created by this extension.",
                 "name": "update",
                 "parameters": [
                     {
-                        "description": "The id of the space.",
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "minimum": 1,
                         "name": "spaceId",
                         "type": "integer"
                     },
                     {
-                        "description": "The default space url, loaded into a tab when the button in the spaces toolbar is clicked. Supported are <var>https://</var> and <var>http://</var> links, as well as links to WebExtension pages.",
-                        "name": "defaultUrl",
-                        "optional": true,
-                        "type": "string"
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "114"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            {
+                                "$ref": "spaces.SpaceTabProperties",
+                                "annotations": [
+                                    {
+                                        "version_added": "135"
+                                    }
+                                ]
+                            },
+                            {
+                                "$ref": "spaces.SpaceButtonProperties",
+                                "annotations": [
+                                    {
+                                        "version_added": "135"
+                                    }
+                                ]
+                            }
+                        ],
+                        "name": "tabProperties"
                     },
                     {
                         "$ref": "spaces.SpaceButtonProperties",
-                        "description": "Only specified button properties will be updated.",
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "name": "buttonProperties",
                         "optional": true
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/spaces.html#open-spaceid-windowid",
+                "annotations": [
+                    {
+                        "version_added": "114"
+                    }
+                ],
                 "async": "callback",
-                "description": "Opens or switches to the specified space. Throws an exception if the requested space does not exist or was not created by this extension.",
                 "name": "open",
                 "parameters": [
                     {
-                        "description": "The id of the space.",
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "minimum": 1,
                         "name": "spaceId",
                         "type": "integer"
                     },
                     {
-                        "description": "The id of the normal window, where the space should be opened. Defaults to the most recent normal window.",
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "minimum": -2,
                         "name": "windowId",
                         "optional": true,
                         "type": "integer"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "tabs.Tab",
-                                "description": "Details about the opened or activated space tab.",
+                                "annotations": [
+                                    {
+                                        "version_added": "114"
+                                    }
+                                ],
                                 "name": "tab"
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             }
         ],
         "namespace": "spaces",
         "types": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/spaces.html#spacebuttonproperties",
+                "annotations": [
+                    {
+                        "version_added": "135"
+                    }
+                ],
+                "id": "SpaceTabProperties",
+                "properties": {
+                    "cookieStoreId": {
+                        "annotations": [
+                            {
+                                "note": "The naming pattern of the built-in cookie stores was deliberately not changed for Thunderbird, but kept for compatibility reasons."
+                            },
+                            {
+                                "note": " The <permission>cookies</permission> permission is required to be able to specify this property. Furthermore, the <permission>contextualIdentities</permission> permission should be requested, to enable the contextual identities feature (enabled by default only on Thunderbird Daily)."
+                            },
+                            {
+                                "version_added": "135"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "linkHandler": {
+                        "annotations": [
+                            {
+                                "version_added": "136"
+                            }
+                        ],
+                        "enum": [
+                            "strict",
+                            "balanced",
+                            "relaxed"
+                        ],
+                        "enums": {
+                            "balanced": {
+                                "annotations": [
+                                    {
+                                        "version_added": "136"
+                                    }
+                                ]
+                            },
+                            "relaxed": {
+                                "annotations": [
+                                    {
+                                        "version_added": "136"
+                                    }
+                                ]
+                            },
+                            "strict": {
+                                "annotations": [
+                                    {
+                                        "version_added": "136"
+                                    }
+                                ]
+                            }
+                        },
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "url": {
+                        "annotations": [
+                            {
+                                "version_added": "135"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "version_added": "114"
+                    }
+                ],
                 "id": "SpaceButtonProperties",
                 "properties": {
                     "badgeBackgroundColor": {
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "choices": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "114"
+                                    }
+                                ],
                                 "type": "string"
                             },
                             {
-                                "$ref": "spaces.ColorArray"
+                                "$ref": "spaces.ColorArray",
+                                "annotations": [
+                                    {
+                                        "version_added": "114"
+                                    }
+                                ]
                             }
                         ],
-                        "description": "Sets the background color of the badge. Can be specified as an array of four integers in the range [0,255] that make up the RGBA color of the badge. For example, opaque red is <var>[255, 0, 0, 255]</var>. Can also be a string with an HTML color name (<var>red</var>) or a HEX color value (<var>#FF0000</var> or <var>#F00</var>). Reset when set to <var>null</var>.",
                         "optional": "omit-key-if-missing"
                     },
                     "badgeText": {
-                        "description": "Sets the badge text for the button in the spaces toolbar. The badge is displayed on top of the icon. Any number of characters can be set, but only about four can fit in the space. Removed when set to <var>null</var>.",
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "optional": "omit-key-if-missing",
                         "type": "string"
                     },
                     "defaultIcons": {
                         "$ref": "manifest.IconPath",
-                        "description": "The paths to one or more icons for the button in the spaces toolbar. Reset to the extension icon, when set to <var>null</var>.",
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "optional": "omit-key-if-missing"
                     },
                     "themeIcons": {
-                        "description": "Specifies dark and light icons for the button in the spaces toolbar to be used with themes: The <var>light</var> icons will be used on dark backgrounds and vice versa. At least the set for <em>16px</em> icons should be specified. The set for <em>32px</em> icons will be used on screens with a very high pixel density, if specified. Reset when set to <var>null</var>.",
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "items": {
                             "$ref": "manifest.ThemeIcons"
                         },
@@ -255,19 +502,23 @@
                         "type": "array"
                     },
                     "title": {
-                        "description": "The title for the button in the spaces toolbar, used in the tooltip of the button and as the displayed name in the overflow menu. Reset to the name of the extension, when set to <var>null</var>.",
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "optional": "omit-key-if-missing",
                         "type": "string"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/spaces.html#colorarray",
-                "description": "An array of four integers in the range [0,255] that make up the RGBA color. For example, opaque red is <var>[255, 0, 0, 255]</var>.",
+                "annotations": [
+                    {
+                        "version_added": "114"
+                    }
+                ],
                 "id": "ColorArray",
                 "items": {
                     "maximum": 255,
@@ -276,48 +527,66 @@
                 },
                 "maxItems": 4,
                 "minItems": 4,
-                "support": {
-                    "version_added": true
-                },
                 "type": "array"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/spaces.html#space",
+                "annotations": [
+                    {
+                        "version_added": "115"
+                    }
+                ],
                 "id": "Space",
                 "properties": {
                     "extensionId": {
-                        "description": "The id of the extension which owns the space. The <permission>management</permission> permission is required to include this property.",
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "optional": true,
                         "type": "string"
                     },
                     "id": {
-                        "description": "The id of the space.",
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "minimum": 1,
                         "type": "integer"
                     },
                     "isBuiltIn": {
-                        "description": "Whether this space is one of the default Thunderbird spaces, or an extension space.",
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "type": "boolean"
                     },
                     "isSelfOwned": {
-                        "description": "Whether this space was created by this extension.",
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "type": "boolean"
                     },
                     "name": {
-                        "description": "The name of the space. Names are unique for a single extension, but different extensions may use the same name.",
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "pattern": "^[a-zA-Z0-9_]+$",
                         "type": "string"
                     }
-                },
-                "support": {
-                    "version_added": true
                 },
                 "type": "object"
             }
         ]
     },
     {
-        "applicationVersion": "128.11.0esr",
+        "applicationVersion": "140.3.0esr",
         "namespace": "manifest"
     }
 ]

@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "128.11.0esr",
+        "applicationVersion": "140.3.0esr",
         "namespace": "manifest",
         "types": [
             {
@@ -10,49 +10,98 @@
                         "additionalProperties": {
                             "$ref": "UnrecognizedProperty"
                         },
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "optional": true,
                         "properties": {
                             "browser_style": {
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "default": false,
-                                "description": "Enable browser styles. See the <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/user_interface/Browser_styles'>MDN documentation on browser styles</a> for more information.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "default_area": {
-                                "description": "Defines the location the composeAction button will appear. The default location is <var>maintoolbar</var>.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "enum": [
                                     "maintoolbar",
                                     "formattoolbar"
                                 ],
+                                "enums": {
+                                    "formattoolbar": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "64"
+                                            }
+                                        ]
+                                    },
+                                    "maintoolbar": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "64"
+                                            }
+                                        ]
+                                    }
+                                },
                                 "optional": true,
                                 "type": "string"
                             },
                             "default_icon": {
                                 "$ref": "manifest.IconPath",
-                                "description": "The paths to one or more icons for the composeAction button.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "default_label": {
-                                "description": "The label of the composeAction button, defaults to its title. Can be set to an empty string to not display any label. If the containing toolbar is configured to display text only, the title will be used as fallback.",
+                                "annotations": [
+                                    {
+                                        "version_added": "84"
+                                    }
+                                ],
                                 "optional": true,
                                 "preprocess": "localize",
                                 "type": "string"
                             },
                             "default_popup": {
-                                "description": "The html document to be opened as a popup when the user clicks on the composeAction button. Ignored for action buttons with type <var>menu</var>.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "format": "relativeUrl",
                                 "optional": true,
                                 "preprocess": "localize",
                                 "type": "string"
                             },
                             "default_title": {
-                                "description": "The title of the composeAction button. This shows up in the tooltip and the label. Defaults to the add-on name.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "optional": true,
                                 "preprocess": "localize",
                                 "type": "string"
                             },
                             "theme_icons": {
-                                "description": "Specifies dark and light icons to be used with themes. The <var>light</var> icon is used on dark backgrounds and vice versa. **Note:** The default theme uses the <var>default_icon</var> for light backgrounds (if specified).",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "ThemeIcons"
                                 },
@@ -61,12 +110,32 @@
                                 "type": "array"
                             },
                             "type": {
+                                "annotations": [
+                                    {
+                                        "version_added": "90"
+                                    }
+                                ],
                                 "default": "button",
-                                "description": "Specifies the type of the button. Default type is <var>button</var>.",
                                 "enum": [
                                     "button",
                                     "menu"
                                 ],
+                                "enums": {
+                                    "button": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "90"
+                                            }
+                                        ]
+                                    },
+                                    "menu": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "90"
+                                            }
+                                        ]
+                                    }
+                                },
                                 "optional": true,
                                 "type": "string"
                             }
@@ -78,117 +147,175 @@
         ]
     },
     {
-        "description": "Use a composeAction to put a button in the message composition toolbars. In addition to its icon, a composeAction button can also have a tooltip, a badge, and a popup.",
         "events": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#onclicked-tab-info",
-                "description": "Fired when a composeAction button is clicked. This event will not fire if the composeAction has a popup. This is a user input event handler. For asynchronous listeners some <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/User_actions'>restrictions</a> apply.",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "name": "onClicked",
                 "parameters": [
                     {
                         "$ref": "tabs.Tab",
-                        "name": "tab",
-                        "support": {
-                            "version_added": true
-                        }
+                        "annotations": [
+                            {
+                                "version_added": "74"
+                            }
+                        ],
+                        "name": "tab"
                     },
                     {
                         "$ref": "OnClickData",
+                        "annotations": [
+                            {
+                                "version_added": "74"
+                            }
+                        ],
                         "name": "info",
                         "optional": true
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             }
         ],
         "functions": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#settitle-details",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "async": "callback",
-                "description": "Sets the title of the composeAction button. Is used as tooltip and as the label.",
                 "name": "setTitle",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "description": "Sets the title only for the given tab.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "title": {
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "64"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "64"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
-                                ],
-                                "description": "A string the composeAction button should display as its label and when moused over. Cleared by setting it to <var>null</var> or an empty string (title defined the manifest will be used)."
+                                ]
                             },
                             "windowId": {
-                                "description": "Will throw an error if used.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
                                 "unsupported": true
                             }
                         },
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#gettitle-details",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "async": "callback",
-                "description": "Gets the title of the composeAction button.",
                 "name": "getTitle",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "description": "Specifies for which tab the title should be retrieved. If no tab is specified, the global value is retrieved.",
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "description": "Will throw an error if used.",
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
                                 "unsupported": true
                             }
                         },
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "name": "result",
                                 "type": "string"
                             }
@@ -196,100 +323,159 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#setlabel-details",
+                "annotations": [
+                    {
+                        "version_added": "84"
+                    }
+                ],
                 "async": "callback",
-                "description": "Sets the label of the composeAction button. Can be used to set different values for the tooltip (defined by the title) and the label. Additionally, the label can be set to an empty string, not showing any label at all.",
                 "name": "setLabel",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "84"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "label": {
+                                "annotations": [
+                                    {
+                                        "version_added": "84"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "84"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "84"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
-                                ],
-                                "description": "A string the composeAction button should use as its label, overriding the defined title. Can be set to an empty string to not display any label at all. If the containing toolbar is configured to display text only, its title will be used. Cleared by setting it to <var>null</var>."
+                                ]
                             },
                             "tabId": {
-                                "description": "Sets the label only for the given tab.",
+                                "annotations": [
+                                    {
+                                        "version_added": "84"
+                                    }
+                                ],
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "description": "Will throw an error if used.",
+                                "annotations": [
+                                    {
+                                        "version_added": "84"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
                                 "unsupported": true
                             }
                         },
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "84"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#getlabel-details",
+                "annotations": [
+                    {
+                        "version_added": "84"
+                    }
+                ],
                 "async": "callback",
-                "description": "Gets the label of the composeAction button. Returns <var>null</var>, if no label has been set and the title is used.",
                 "name": "getLabel",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "84"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "description": "Specifies for which tab the label should be retrieved. If no tab is specified, the global value is retrieved.",
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "description": "Will throw an error if used.",
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
                                 "unsupported": true
                             }
                         },
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "84"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "84"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "84"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "127"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
                                 ],
@@ -299,152 +485,234 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#seticon-details",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "async": "callback",
-                "description": "Sets the icon for the composeAction button. Either the <var>path</var> or the <var>imageData</var> property must be specified.",
                 "name": "setIcon",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "imageData": {
-                                "choices": [
+                                "annotations": [
                                     {
-                                        "$ref": "ImageDataType"
-                                    },
-                                    {
-                                        "$ref": "ImageDataDictionary"
+                                        "version_added": "64"
                                     }
                                 ],
-                                "description": "The image data for one or more icons for the composeAction button.",
+                                "choices": [
+                                    {
+                                        "$ref": "ImageDataType",
+                                        "annotations": [
+                                            {
+                                                "version_added": "64"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "$ref": "ImageDataDictionary",
+                                        "annotations": [
+                                            {
+                                                "version_added": "64"
+                                            }
+                                        ]
+                                    }
+                                ],
                                 "optional": true
                             },
                             "path": {
                                 "$ref": "manifest.IconPath",
-                                "description": "The paths to one or more icons for the composeAction button.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "tabId": {
-                                "description": "Sets the icon only for the given tab.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "description": "Will throw an error if used.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
                                 "unsupported": true
                             }
                         },
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#setpopup-details",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "async": "callback",
-                "description": "Sets the html document to be opened as a popup when the user clicks on the composeAction button.",
                 "name": "setPopup",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "popup": {
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "64"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "64"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
-                                ],
-                                "description": "The html file to show in a popup. Can be set to an empty string to not open a popup. Cleared by setting it to <var>null</var> (action will use the popup value defined in the manifest)."
+                                ]
                             },
                             "tabId": {
-                                "description": "Sets the popup only for the given tab.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "description": "Will throw an error if used.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
                                 "unsupported": true
                             }
                         },
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#getpopup-details",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "async": "callback",
-                "description": "Gets the html document set as the popup for this composeAction button.",
                 "name": "getPopup",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "description": "Specifies for which tab the popup document should be retrieved. If no tab is specified, the global value is retrieved.",
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "description": "Will throw an error if used.",
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
                                 "unsupported": true
                             }
                         },
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "name": "result",
                                 "type": "string"
                             }
@@ -452,95 +720,144 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#setbadgetext-details",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "async": "callback",
-                "description": "Sets the badge text for the composeAction button. The badge is displayed on top of the icon.",
                 "name": "setBadgeText",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "description": "Sets the badge text only for the given tab.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "text": {
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "64"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "64"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
-                                ],
-                                "description": "Any number of characters can be passed, but only about four can fit in the space. Cleared by setting it to <var>null</var> or an empty string."
+                                ]
                             },
                             "windowId": {
-                                "description": "Will throw an error if used.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
                                 "unsupported": true
                             }
                         },
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#getbadgetext-details",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "async": "callback",
-                "description": "Gets the badge text of the composeAction button.",
                 "name": "getBadgeText",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "description": "Specifies for which tab the badge text should be retrieved. If no tab is specified, the global value is retrieved.",
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "description": "Will throw an error if used.",
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
                                 "unsupported": true
                             }
                         },
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "name": "result",
                                 "type": "string"
                             }
@@ -548,310 +865,459 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#setbadgetextcolor-details",
+                "annotations": [
+                    {
+                        "version_added": "128"
+                    }
+                ],
                 "async": true,
-                "description": "Sets the text color for the badge.",
                 "name": "setBadgeTextColor",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "color": {
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "128"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
-                                        "$ref": "ColorArray"
+                                        "$ref": "ColorArray",
+                                        "annotations": [
+                                            {
+                                                "version_added": "128"
+                                            }
+                                        ]
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "128"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
-                                ],
-                                "description": "The color to use as text color in the badge. Cleared by setting it to <var>null</var>."
+                                ]
                             },
                             "tabId": {
-                                "description": "Sets the text color for the badge only for the given tab.",
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "description": "Will throw an error if used.",
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
                                 "unsupported": true
                             }
                         },
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "object"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#getbadgetextcolor-details",
+                "annotations": [
+                    {
+                        "version_added": "128"
+                    }
+                ],
                 "async": "callback",
-                "description": "Gets the text color of the badge.",
                 "name": "getBadgeTextColor",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "description": "Specifies for which tab the badge text color should be retrieved. If no tab is specified, the global value is retrieved.",
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "description": "Will throw an error if used.",
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
                                 "unsupported": true
                             }
                         },
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "ColorArray",
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "name": "result"
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#setbadgebackgroundcolor-details",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "async": "callback",
-                "description": "Sets the background color for the badge.",
                 "name": "setBadgeBackgroundColor",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "color": {
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "64"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
-                                        "$ref": "ColorArray"
+                                        "$ref": "ColorArray",
+                                        "annotations": [
+                                            {
+                                                "version_added": "64"
+                                            }
+                                        ]
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "64"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
-                                ],
-                                "description": "The color to use as background in the badge. Cleared by setting it to <var>null</var>."
+                                ]
                             },
                             "tabId": {
-                                "description": "Sets the background color for the badge only for the given tab.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "description": "Will throw an error if used.",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
                                 "unsupported": true
                             }
                         },
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#getbadgebackgroundcolor-details",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "async": "callback",
-                "description": "Gets the badge background color of the composeAction button.",
                 "name": "getBadgeBackgroundColor",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "description": "Specifies for which tab the badge background color should be retrieved. If no tab is specified, the global value is retrieved.",
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "description": "Will throw an error if used.",
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
                                 "unsupported": true
                             }
                         },
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "ColorArray",
+                                "annotations": [
+                                    {
+                                        "version_added": "64"
+                                    }
+                                ],
                                 "name": "result"
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#enable-tabid",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "async": "callback",
-                "description": "Enables the composeAction button for a specific tab (if a <var>tabId</var> is provided), or for all tabs which do not have a custom enable state. Once the enable state of a tab has been updated individually, all further changes to its state have to be done individually as well. By default, a composeAction button is enabled.",
                 "name": "enable",
                 "parameters": [
                     {
-                        "description": "The id of the tab for which you want to modify the composeAction button.",
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "minimum": 0,
                         "name": "tabId",
                         "optional": true,
                         "type": "integer"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#disable-tabid",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "async": "callback",
-                "description": "Disables the composeAction button for a specific tab (if a <var>tabId</var> is provided), or for all tabs which do not have a custom enable state. Once the enable state of a tab has been updated individually, all further changes to its state have to be done individually as well.",
                 "name": "disable",
                 "parameters": [
                     {
-                        "description": "The id of the tab for which you want to modify the composeAction button.",
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "minimum": 0,
                         "name": "tabId",
                         "optional": true,
                         "type": "integer"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#isenabled-details",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "async": "callback",
-                "description": "Checks whether the composeAction button is enabled.",
                 "name": "isEnabled",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "64"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "description": "Specifies for which tab the state should be retrieved. If no tab is specified, the global value is retrieved.",
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "description": "Will throw an error if used.",
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer",
                                 "unsupported": true
                             }
                         },
-                        "support": {
-                            "version_added": true
-                        },
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "96"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "96"
+                                    }
+                                ],
                                 "type": "boolean"
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#openpopup-options",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "async": "callback",
-                "description": "Opens the action's popup window in the specified window. Defaults to the current window. Returns false if the popup could not be opened because the action has no popup, is of type <var>menu</var>, is disabled or has been removed from the toolbar.",
                 "name": "openPopup",
                 "parameters": [
                     {
-                        "description": "An object with information about the popup to open.",
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ],
                         "name": "options",
                         "optional": true,
                         "properties": {
                             "windowId": {
-                                "description": "Defaults to the current window.",
+                                "annotations": [
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer"
@@ -860,19 +1326,26 @@
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
                                 "type": "boolean"
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             }
         ],
@@ -882,8 +1355,11 @@
         ],
         "types": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#colorarray",
-                "description": "An array of four integers in the range [0,255] that make up the RGBA color. For example, opaque red is <var>[255, 0, 0, 255]</var>.",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "id": "ColorArray",
                 "items": {
                     "maximum": 255,
@@ -892,51 +1368,59 @@
                 },
                 "maxItems": 4,
                 "minItems": 4,
-                "support": {
-                    "version_added": true
-                },
                 "type": "array"
             },
             {
                 "additionalProperties": {
                     "type": "any"
                 },
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#imagedatatype",
-                "description": "Pixel data for an image. Must be an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object (for example, from a <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas'>canvas</a> element).",
+                "annotations": [
+                    {
+                        "version_added": "64"
+                    }
+                ],
                 "id": "ImageDataType",
                 "isInstanceOf": "ImageData",
                 "postprocess": "convertImageDataToURL",
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#imagedatadictionary",
-                "description": "A <em>dictionary object</em> to specify multiple <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> objects in different sizes, so the icon does not have to be scaled for a device with a different pixel density. Each entry is a <em>name-value</em> pair with <em>value</em> being an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object, and <em>name</em> its size. Example: <literalinclude>includes/ImageDataDictionary.json<lang>JavaScript</lang></literalinclude>See the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_action#choosing_icon_sizes'>MDN documentation about choosing icon sizes</a> for more information on this.",
+                "annotations": [
+                    {
+                        "version_added": "90"
+                    }
+                ],
                 "id": "ImageDataDictionary",
                 "patternProperties": {
                     "^[1-9]\\d*$": {
                         "$ref": "ImageDataType"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/128-esr-mv3/composeAction.html#onclickdata",
-                "description": "Information sent when a composeAction button is clicked.",
+                "annotations": [
+                    {
+                        "version_added": "74"
+                    }
+                ],
                 "id": "OnClickData",
                 "properties": {
                     "button": {
-                        "description": "An integer value of button by which menu item was clicked.",
+                        "annotations": [
+                            {
+                                "version_added": "74"
+                            }
+                        ],
                         "optional": true,
                         "type": "integer"
                     },
                     "modifiers": {
-                        "description": "An array of keyboard modifiers that were held while the menu item was clicked.",
+                        "annotations": [
+                            {
+                                "version_added": "74"
+                            }
+                        ],
                         "items": {
                             "enum": [
                                 "Shift",
@@ -945,13 +1429,56 @@
                                 "Ctrl",
                                 "MacCtrl"
                             ],
+                            "enums": {
+                                "Alt": {
+                                    "annotations": [
+                                        {
+                                            "version_added": "74"
+                                        }
+                                    ]
+                                },
+                                "Command": {
+                                    "annotations": [
+                                        {
+                                            "text": "Only available on macOS."
+                                        },
+                                        {
+                                            "version_added": "74"
+                                        }
+                                    ]
+                                },
+                                "Ctrl": {
+                                    "annotations": [
+                                        {
+                                            "text": "Not available on macOS."
+                                        },
+                                        {
+                                            "version_added": "74"
+                                        }
+                                    ]
+                                },
+                                "MacCtrl": {
+                                    "annotations": [
+                                        {
+                                            "text": "Only available on macOS, but of limited use in a click event: Holding down the CTRL key while clicking with the mouse is referred to as a 'CTRL click' under macOS and is interpreted as a right mouse click. In a default profile  the <var>dom.event.treat_ctrl_click_as_right_click.disabled</var> preference is not enabled and the <var>MacCtrl</var> modifier key is not forwarded to the API."
+                                        },
+                                        {
+                                            "version_added": "74"
+                                        }
+                                    ]
+                                },
+                                "Shift": {
+                                    "annotations": [
+                                        {
+                                            "version_added": "74"
+                                        }
+                                    ]
+                                }
+                            },
                             "type": "string"
                         },
                         "type": "array"
                     }
-                },
-                "support": {
-                    "version_added": true
                 },
                 "type": "object"
             }
