@@ -1,12 +1,17 @@
 [
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest",
         "types": [
             {
                 "$extend": "Permission",
                 "choices": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": true
+                            }
+                        ],
                         "pattern": "^experiments(\\.\\w+)+$",
                         "type": "string"
                     }
@@ -19,6 +24,11 @@
                         "additionalProperties": {
                             "$ref": "experiments.ExperimentAPI"
                         },
+                        "annotations": [
+                            {
+                                "version_added": true
+                            }
+                        ],
                         "optional": true,
                         "privileged": true,
                         "type": "object"

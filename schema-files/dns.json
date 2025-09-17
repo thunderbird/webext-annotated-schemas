@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest",
         "types": [
             {
@@ -10,6 +10,15 @@
                         "enum": [
                             "dns"
                         ],
+                        "enums": {
+                            "dns": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
                         "type": "string"
                     }
                 ]
@@ -17,15 +26,28 @@
         ]
     },
     {
-        "description": "Asynchronous DNS API",
         "functions": [
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/dns/resolve"
+                    },
+                    {
+                        "version_added": "60"
+                    }
+                ],
                 "async": true,
-                "description": "Resolves a hostname to a DNS record.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/dns/resolve",
                 "name": "resolve",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/dns/resolve"
+                            },
+                            {
+                                "version_added": "60"
+                            }
+                        ],
                         "name": "hostname",
                         "type": "string"
                     },
@@ -36,9 +58,6 @@
                         "optional": true
                     }
                 ],
-                "support": {
-                    "version_added": "60"
-                },
                 "type": "function"
             }
         ],
@@ -48,7 +67,6 @@
         ],
         "types": [
             {
-                "description": "An object encapsulating a DNS Record.",
                 "id": "DNSRecord",
                 "properties": {
                     "addresses": {
@@ -58,12 +76,10 @@
                         "type": "array"
                     },
                     "canonicalName": {
-                        "description": "The canonical hostname for this record.  this value is empty if the record was not fetched with the 'canonical_name' flag.",
                         "optional": true,
                         "type": "string"
                     },
                     "isTRR": {
-                        "description": "Record retreived with TRR.",
                         "type": "string"
                     }
                 },

@@ -1,32 +1,63 @@
 [
     {
-        "description": "Use the <code>browser.idle</code> API to detect when the machine's idle state changes.",
         "events": [
             {
-                "description": "Fired when the system changes to an active or idle state. The event fires with \"idle\" if the the user has not generated any input for a specified number of seconds, and \"active\" when the user generates input on an idle system.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/onStateChanged",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/onStateChanged"
+                    },
+                    {
+                        "version_added": "51"
+                    }
+                ],
                 "name": "onStateChanged",
                 "parameters": [
                     {
                         "$ref": "IdleState",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/onStateChanged"
+                            },
+                            {
+                                "version_added": "51"
+                            }
+                        ],
                         "name": "newState"
                     }
                 ],
-                "support": {
-                    "version_added": "51"
-                },
                 "type": "function"
             }
         ],
         "functions": [
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/queryState"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 51, Firefox always reports 'active'. After version 51, Firefox reports 'active' or 'idle' as appropriate."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "async": "callback",
-                "description": "Returns \"idle\" if the user has not generated any input for a specified number of seconds, or \"active\" otherwise.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/queryState",
                 "name": "queryState",
                 "parameters": [
                     {
-                        "description": "The system is considered idle if detectionIntervalInSeconds seconds have elapsed since the last user input detected.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/queryState"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 51, Firefox always reports 'active'. After version 51, Firefox reports 'active' or 'idle' as appropriate."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "minimum": 15,
                         "name": "detectionIntervalInSeconds",
                         "type": "integer"
@@ -42,26 +73,33 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "function"
             },
             {
-                "description": "Sets the interval, in seconds, used to determine when the system is in an idle state for onStateChanged events. The default interval is 60 seconds.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/setDetectionInterval",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/setDetectionInterval"
+                    },
+                    {
+                        "version_added": "51"
+                    }
+                ],
                 "name": "setDetectionInterval",
                 "parameters": [
                     {
-                        "description": "Threshold, in seconds, used to determine when the system is in an idle state.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/setDetectionInterval"
+                            },
+                            {
+                                "version_added": "51"
+                            }
+                        ],
                         "minimum": 15,
                         "name": "intervalInSeconds",
                         "type": "integer"
                     }
                 ],
-                "support": {
-                    "version_added": "51"
-                },
                 "type": "function"
             }
         ],
@@ -71,21 +109,25 @@
         ],
         "types": [
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/IdleState"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "enum": [
                     "active",
                     "idle"
                 ],
                 "id": "IdleState",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/IdleState",
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "string"
             }
         ]
     },
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest"
     }
 ]

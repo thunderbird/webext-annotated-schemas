@@ -2,73 +2,96 @@
     {
         "events": [
             {
-                "description": "Fired when the notification closed, either by the system or by user action.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onClosed",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onClosed"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "name": "onClosed",
                 "parameters": [
                     {
-                        "description": "The notificationId of the closed notification.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onClosed"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "name": "notificationId",
                         "type": "string"
                     },
                     {
-                        "description": "True if the notification was closed by the user.",
                         "name": "byUser",
-                        "support": {
-                            "version_added": false
-                        },
                         "type": "boolean"
                     }
                 ],
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "function"
             },
             {
-                "description": "Fired when the user clicked in a non-button area of the notification.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onClicked",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onClicked"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
                 "name": "onClicked",
                 "parameters": [
                     {
-                        "description": "The notificationId of the clicked notification.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onClicked"
+                            },
+                            {
+                                "version_added": "47"
+                            }
+                        ],
                         "name": "notificationId",
                         "type": "string"
                     }
                 ],
-                "support": {
-                    "version_added": "47"
-                },
                 "type": "function"
             },
             {
-                "description": "Fired when the  user pressed a button in the notification.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onButtonClicked",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onButtonClicked"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
                 "name": "onButtonClicked",
                 "parameters": [
                     {
-                        "description": "The notificationId of the clicked notification.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onButtonClicked"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
                         "name": "notificationId",
                         "type": "string"
                     },
                     {
-                        "description": "The index of the button clicked by the user.",
                         "name": "buttonIndex",
                         "type": "number"
                     }
                 ],
-                "support": {
-                    "version_added": false
-                },
                 "type": "function"
             },
             {
-                "description": "Fired when the user changes the permission level.",
                 "name": "onPermissionLevelChanged",
                 "parameters": [
                     {
                         "$ref": "PermissionLevel",
-                        "description": "The new permission level.",
                         "name": "level"
                     }
                 ],
@@ -76,45 +99,66 @@
                 "unsupported": true
             },
             {
-                "description": "Fired when the user clicked on a link for the app's notification settings.",
                 "name": "onShowSettings",
                 "parameters": [],
                 "type": "function",
                 "unsupported": true
             },
             {
-                "description": "Fired when the notification is shown.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onShown",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onShown"
+                    },
+                    {
+                        "version_added": "56"
+                    }
+                ],
                 "name": "onShown",
                 "parameters": [
                     {
-                        "description": "The notificationId of the shown notification.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onShown"
+                            },
+                            {
+                                "version_added": "56"
+                            }
+                        ],
                         "name": "notificationId",
                         "type": "string"
                     }
                 ],
-                "support": {
-                    "version_added": "56"
-                },
                 "type": "function"
             }
         ],
         "functions": [
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/create"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "async": "callback",
-                "description": "Creates and displays a notification.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/create",
                 "name": "create",
                 "parameters": [
                     {
-                        "description": "Identifier of the notification. If it is empty, this method generates an id. If it matches an existing notification, this method first clears that notification before proceeding with the create operation.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/create"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "name": "notificationId",
                         "optional": true,
                         "type": "string"
                     },
                     {
                         "$ref": "CreateNotificationOptions",
-                        "description": "Contents of the notification.",
                         "name": "options"
                     },
                     {
@@ -122,7 +166,6 @@
                         "optional": true,
                         "parameters": [
                             {
-                                "description": "The notification id (either supplied or generated) that represents the created notification.",
                                 "name": "notificationId",
                                 "type": "string"
                             }
@@ -130,25 +173,34 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/update"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
                 "async": "callback",
-                "description": "Updates an existing notification.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/update",
                 "name": "update",
                 "parameters": [
                     {
-                        "description": "The id of the notification to be updated.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/update"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
                         "name": "notificationId",
                         "type": "string"
                     },
                     {
                         "$ref": "UpdateNotificationOptions",
-                        "description": "Contents of the notification to update to.",
                         "name": "options"
                     },
                     {
@@ -156,7 +208,6 @@
                         "optional": true,
                         "parameters": [
                             {
-                                "description": "Indicates whether a matching notification existed.",
                                 "name": "wasUpdated",
                                 "type": "boolean"
                             }
@@ -164,20 +215,30 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": false
-                },
                 "type": "function",
                 "unsupported": true
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/clear"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "async": "callback",
-                "description": "Clears an existing notification.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/clear",
                 "name": "clear",
                 "parameters": [
                     {
-                        "description": "The id of the notification to be updated.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/clear"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "name": "notificationId",
                         "type": "string"
                     },
@@ -186,7 +247,6 @@
                         "optional": true,
                         "parameters": [
                             {
-                                "description": "Indicates whether a matching notification existed.",
                                 "name": "wasCleared",
                                 "type": "boolean"
                             }
@@ -194,25 +254,43 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/getAll"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "async": "callback",
-                "description": "Retrieves all the notifications.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/getAll",
                 "name": "getAll",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/getAll"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "name": "callback",
                         "parameters": [
                             {
                                 "additionalProperties": {
                                     "$ref": "CreateNotificationOptions"
                                 },
-                                "description": "The set of notifications currently in the system.",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/getAll"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
                                 "name": "notifications",
                                 "type": "object"
                             }
@@ -220,14 +298,10 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "function"
             },
             {
                 "async": "callback",
-                "description": "Retrieves whether the user has enabled notifications from this app or extension.",
                 "name": "getPermissionLevel",
                 "parameters": [
                     {
@@ -235,7 +309,6 @@
                         "parameters": [
                             {
                                 "$ref": "PermissionLevel",
-                                "description": "The current permission level.",
                                 "name": "level"
                             }
                         ],
@@ -252,6 +325,18 @@
         ],
         "types": [
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/TemplateType"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Only the 'basic' type is supported."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "enum": [
                     "basic",
                     "image",
@@ -259,10 +344,6 @@
                     "progress"
                 ],
                 "id": "TemplateType",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/TemplateType",
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "string"
             },
             {
@@ -277,11 +358,9 @@
                 "id": "NotificationItem",
                 "properties": {
                     "message": {
-                        "description": "Additional details about this item.",
                         "type": "string"
                     },
                     "title": {
-                        "description": "Title of one item of a list notification.",
                         "type": "string"
                     }
                 },
@@ -291,12 +370,10 @@
                 "id": "CreateNotificationOptions",
                 "properties": {
                     "appIconMaskUrl": {
-                        "description": "A URL to the app icon mask.",
                         "optional": true,
                         "type": "string"
                     },
                     "buttons": {
-                        "description": "Text and icons for up to two notification action buttons.",
                         "items": {
                             "properties": {
                                 "iconUrl": {
@@ -314,32 +391,26 @@
                         "unsupported": true
                     },
                     "contextMessage": {
-                        "description": "Alternate notification content with a lower-weight font.",
                         "optional": true,
                         "type": "string"
                     },
                     "eventTime": {
-                        "description": "A timestamp associated with the notification, in milliseconds past the epoch.",
                         "optional": true,
                         "type": "number"
                     },
                     "iconUrl": {
-                        "description": "A URL to the sender's avatar, app icon, or a thumbnail for image notifications.",
                         "optional": true,
                         "type": "string"
                     },
                     "imageUrl": {
-                        "description": "A URL to the image thumbnail for image-type notifications.",
                         "optional": true,
                         "type": "string"
                     },
                     "isClickable": {
-                        "description": "Whether to show UI indicating that the app will visibly respond to clicks on the body of a notification.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "items": {
-                        "description": "Items for multi-item notifications.",
                         "items": {
                             "$ref": "NotificationItem"
                         },
@@ -347,30 +418,25 @@
                         "type": "array"
                     },
                     "message": {
-                        "description": "Main notification content.",
                         "type": "string"
                     },
                     "priority": {
-                        "description": "Priority ranges from -2 to 2. -2 is lowest priority. 2 is highest. Zero is default.",
                         "maximum": 2,
                         "minimum": -2,
                         "optional": true,
                         "type": "integer"
                     },
                     "progress": {
-                        "description": "Current progress ranges from 0 to 100.",
                         "maximum": 100,
                         "minimum": 0,
                         "optional": true,
                         "type": "integer"
                     },
                     "title": {
-                        "description": "Title of the notification (e.g. sender name for email).",
                         "type": "string"
                     },
                     "type": {
-                        "$ref": "TemplateType",
-                        "description": "Which type of notification to display."
+                        "$ref": "TemplateType"
                     }
                 },
                 "type": "object"
@@ -379,12 +445,10 @@
                 "id": "UpdateNotificationOptions",
                 "properties": {
                     "appIconMaskUrl": {
-                        "description": "A URL to the app icon mask.",
                         "optional": true,
                         "type": "string"
                     },
                     "buttons": {
-                        "description": "Text and icons for up to two notification action buttons.",
                         "items": {
                             "properties": {
                                 "iconUrl": {
@@ -402,32 +466,26 @@
                         "unsupported": true
                     },
                     "contextMessage": {
-                        "description": "Alternate notification content with a lower-weight font.",
                         "optional": true,
                         "type": "string"
                     },
                     "eventTime": {
-                        "description": "A timestamp associated with the notification, in milliseconds past the epoch.",
                         "optional": true,
                         "type": "number"
                     },
                     "iconUrl": {
-                        "description": "A URL to the sender's avatar, app icon, or a thumbnail for image notifications.",
                         "optional": true,
                         "type": "string"
                     },
                     "imageUrl": {
-                        "description": "A URL to the image thumbnail for image-type notifications.",
                         "optional": true,
                         "type": "string"
                     },
                     "isClickable": {
-                        "description": "Whether to show UI indicating that the app will visibly respond to clicks on the body of a notification.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "items": {
-                        "description": "Items for multi-item notifications.",
                         "items": {
                             "$ref": "NotificationItem"
                         },
@@ -435,32 +493,27 @@
                         "type": "array"
                     },
                     "message": {
-                        "description": "Main notification content.",
                         "optional": true,
                         "type": "string"
                     },
                     "priority": {
-                        "description": "Priority ranges from -2 to 2. -2 is lowest priority. 2 is highest. Zero is default.",
                         "maximum": 2,
                         "minimum": -2,
                         "optional": true,
                         "type": "integer"
                     },
                     "progress": {
-                        "description": "Current progress ranges from 0 to 100.",
                         "maximum": 100,
                         "minimum": 0,
                         "optional": true,
                         "type": "integer"
                     },
                     "title": {
-                        "description": "Title of the notification (e.g. sender name for email).",
                         "optional": true,
                         "type": "string"
                     },
                     "type": {
                         "$ref": "TemplateType",
-                        "description": "Which type of notification to display.",
                         "optional": true
                     }
                 },
@@ -469,7 +522,7 @@
         ]
     },
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest"
     }
 ]

@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest",
         "types": [
             {
@@ -10,16 +10,30 @@
                         "additionalProperties": {
                             "$ref": "UnrecognizedProperty"
                         },
+                        "annotations": [
+                            {
+                                "version_added": "68"
+                            }
+                        ],
                         "optional": true,
                         "properties": {
                             "search_provider": {
                                 "additionalProperties": {
                                     "$ref": "UnrecognizedProperty"
                                 },
+                                "annotations": [
+                                    {
+                                        "version_added": "68"
+                                    }
+                                ],
                                 "optional": true,
                                 "properties": {
                                     "alternate_urls": {
-                                        "deprecated": "Unsupported on Thunderbird.",
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "items": {
                                             "format": "url",
                                             "preprocess": "localize",
@@ -29,17 +43,36 @@
                                         "type": "array"
                                     },
                                     "encoding": {
-                                        "description": "Encoding of the search term.",
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "optional": true,
                                         "type": "string"
                                     },
                                     "favicon_url": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "choices": [
                                             {
+                                                "annotations": [
+                                                    {
+                                                        "version_added": "68"
+                                                    }
+                                                ],
                                                 "format": "relativeUrl",
                                                 "type": "string"
                                             },
                                             {
+                                                "annotations": [
+                                                    {
+                                                        "version_added": "135"
+                                                    }
+                                                ],
                                                 "format": "strictRelativeUrl",
                                                 "type": "string"
                                             }
@@ -48,43 +81,78 @@
                                         "preprocess": "localize"
                                     },
                                     "image_url": {
-                                        "deprecated": "Unsupported on Thunderbird.",
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "format": "url",
                                         "optional": true,
                                         "preprocess": "localize",
                                         "type": "string"
                                     },
                                     "image_url_post_params": {
-                                        "deprecated": "Unsupported on Thunderbird.",
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "optional": true,
                                         "preprocess": "localize",
                                         "type": "string"
                                     },
                                     "instant_url": {
-                                        "deprecated": "Unsupported on Thunderbird.",
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "format": "url",
                                         "optional": true,
                                         "preprocess": "localize",
                                         "type": "string"
                                     },
                                     "instant_url_post_params": {
-                                        "deprecated": "Unsupported on Thunderbird.",
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "optional": true,
                                         "preprocess": "localize",
                                         "type": "string"
                                     },
                                     "is_default": {
-                                        "description": "Sets the default engine to a built-in engine only.",
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "optional": true,
                                         "type": "boolean"
                                     },
                                     "keyword": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "choices": [
                                             {
+                                                "annotations": [
+                                                    {
+                                                        "version_added": "68"
+                                                    }
+                                                ],
                                                 "preprocess": "localize",
                                                 "type": "string"
                                             },
                                             {
+                                                "annotations": [
+                                                    {
+                                                        "version_added": "81"
+                                                    }
+                                                ],
                                                 "items": {
                                                     "preprocess": "localize",
                                                     "type": "string"
@@ -96,33 +164,74 @@
                                         "optional": true
                                     },
                                     "name": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "preprocess": "localize",
                                         "type": "string"
                                     },
                                     "params": {
-                                        "description": "A list of optional search url parameters. This allows the addition of search url parameters based on how the search is performed in Thunderbird.",
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "items": {
                                             "properties": {
                                                 "condition": {
-                                                    "description": "The type of param can be either \"purpose\" or \"pref\".",
+                                                    "annotations": [
+                                                        {
+                                                            "version_added": "68"
+                                                        }
+                                                    ],
                                                     "enum": [
                                                         "purpose",
                                                         "pref"
                                                     ],
+                                                    "enums": {
+                                                        "pref": {
+                                                            "annotations": [
+                                                                {
+                                                                    "version_added": "68"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "purpose": {
+                                                            "annotations": [
+                                                                {
+                                                                    "version_added": "68"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
                                                     "optional": true,
                                                     "type": "string"
                                                 },
                                                 "name": {
-                                                    "description": "A url parameter name",
+                                                    "annotations": [
+                                                        {
+                                                            "version_added": "68"
+                                                        }
+                                                    ],
                                                     "type": "string"
                                                 },
                                                 "pref": {
-                                                    "description": "The preference to retrieve the value from.",
+                                                    "annotations": [
+                                                        {
+                                                            "version_added": "68"
+                                                        }
+                                                    ],
                                                     "optional": true,
                                                     "type": "string"
                                                 },
                                                 "purpose": {
-                                                    "description": "The context that initiates a search, required if condition is \"purpose\".",
+                                                    "annotations": [
+                                                        {
+                                                            "version_added": "68"
+                                                        }
+                                                    ],
                                                     "enum": [
                                                         "contextmenu",
                                                         "searchbar",
@@ -130,11 +239,52 @@
                                                         "keyword",
                                                         "newtab"
                                                     ],
+                                                    "enums": {
+                                                        "contextmenu": {
+                                                            "annotations": [
+                                                                {
+                                                                    "version_added": "68"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "homepage": {
+                                                            "annotations": [
+                                                                {
+                                                                    "version_added": "68"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "keyword": {
+                                                            "annotations": [
+                                                                {
+                                                                    "version_added": "68"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "newtab": {
+                                                            "annotations": [
+                                                                {
+                                                                    "version_added": "68"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "searchbar": {
+                                                            "annotations": [
+                                                                {
+                                                                    "version_added": "68"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
                                                     "optional": true,
                                                     "type": "string"
                                                 },
                                                 "value": {
-                                                    "description": "A url parameter value.",
+                                                    "annotations": [
+                                                        {
+                                                            "version_added": "68"
+                                                        }
+                                                    ],
                                                     "optional": true,
                                                     "preprocess": "localize",
                                                     "type": "string"
@@ -146,11 +296,20 @@
                                         "type": "array"
                                     },
                                     "prepopulated_id": {
-                                        "deprecated": "Unsupported on Thunderbird.",
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "optional": true,
                                         "type": "integer"
                                     },
                                     "search_form": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "format": "url",
                                         "optional": true,
                                         "pattern": "^https://.*$",
@@ -158,37 +317,63 @@
                                         "type": "string"
                                     },
                                     "search_url": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "format": "url",
                                         "pattern": "^https://.*$",
                                         "preprocess": "localize",
                                         "type": "string"
                                     },
                                     "search_url_get_params": {
-                                        "description": "GET parameters to the search_url as a query string.",
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "optional": true,
                                         "preprocess": "localize",
                                         "type": "string"
                                     },
                                     "search_url_post_params": {
-                                        "description": "POST parameters to the search_url as a query string.",
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "optional": true,
                                         "preprocess": "localize",
                                         "type": "string"
                                     },
                                     "suggest_url": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "optional": true,
                                         "pattern": "^https://.*$|^$",
                                         "preprocess": "localize",
                                         "type": "string"
                                     },
                                     "suggest_url_get_params": {
-                                        "description": "GET parameters to the suggest_url as a query string.",
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "optional": true,
                                         "preprocess": "localize",
                                         "type": "string"
                                     },
                                     "suggest_url_post_params": {
-                                        "description": "POST parameters to the suggest_url as a query string.",
+                                        "annotations": [
+                                            {
+                                                "version_added": "68"
+                                            }
+                                        ],
                                         "optional": true,
                                         "preprocess": "localize",
                                         "type": "string"

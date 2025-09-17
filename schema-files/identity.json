@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest",
         "types": [
             {
@@ -10,6 +10,15 @@
                         "enum": [
                             "identity"
                         ],
+                        "enums": {
+                            "identity": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
                         "type": "string"
                     }
                 ]
@@ -17,10 +26,8 @@
         ]
     },
     {
-        "description": "Use the chrome.identity API to get OAuth2 access tokens. ",
         "events": [
             {
-                "description": "Fired when signin state changes for an account on the user's profile.",
                 "name": "onSignInChanged",
                 "parameters": [
                     {
@@ -39,7 +46,6 @@
         "functions": [
             {
                 "async": "callback",
-                "description": "Retrieves a list of AccountInfo objects describing the accounts present on the profile.",
                 "name": "getAccounts",
                 "parameters": [
                     {
@@ -61,7 +67,6 @@
             },
             {
                 "async": "callback",
-                "description": "Gets an OAuth2 access token using the client ID and scopes specified in the oauth2 section of manifest.json.",
                 "name": "getAuthToken",
                 "parameters": [
                     {
@@ -106,7 +111,6 @@
             },
             {
                 "async": "callback",
-                "description": "Retrieves email address and obfuscated gaia id of the user signed into a profile.",
                 "name": "getProfileUserInfo",
                 "parameters": [
                     {
@@ -133,7 +137,6 @@
             },
             {
                 "async": "callback",
-                "description": "Removes an OAuth2 access token from the Identity API's token cache.",
                 "name": "removeCachedAuthToken",
                 "parameters": [
                     {
@@ -169,20 +172,50 @@
                 "unsupported": true
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity/launchWebAuthFlow"
+                    },
+                    {
+                        "version_added": "53"
+                    }
+                ],
                 "async": "callback",
-                "description": "Starts an auth flow at the specified URL.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity/launchWebAuthFlow",
                 "name": "launchWebAuthFlow",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity/launchWebAuthFlow"
+                            },
+                            {
+                                "version_added": "53"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "interactive": {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity/launchWebAuthFlow"
+                                    },
+                                    {
+                                        "version_added": "53"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "url": {
-                                "$ref": "manifest.HttpURL"
+                                "$ref": "manifest.HttpURL",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity/launchWebAuthFlow"
+                                    },
+                                    {
+                                        "version_added": "53"
+                                    }
+                                ]
                             }
                         },
                         "type": "object"
@@ -199,19 +232,29 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "53"
-                },
                 "type": "function"
             },
             {
-                "description": "Generates a redirect URL to be used in |launchWebAuthFlow|.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity/getRedirectURL",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity/getRedirectURL"
+                    },
+                    {
+                        "version_added": "53"
+                    }
+                ],
                 "name": "getRedirectURL",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity/getRedirectURL"
+                            },
+                            {
+                                "version_added": "53"
+                            }
+                        ],
                         "default": "",
-                        "description": "The path appended to the end of the generated URL. ",
                         "name": "path",
                         "optional": true,
                         "type": "string"
@@ -219,9 +262,6 @@
                 ],
                 "returns": {
                     "type": "string"
-                },
-                "support": {
-                    "version_added": "53"
                 },
                 "type": "function"
             }
@@ -232,11 +272,9 @@
         ],
         "types": [
             {
-                "description": "An object encapsulating an OAuth account id.",
                 "id": "AccountInfo",
                 "properties": {
                     "id": {
-                        "description": "A unique identifier for the account. This ID will not change for the lifetime of the account. ",
                         "type": "string"
                     }
                 },

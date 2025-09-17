@@ -8,30 +8,38 @@
             "content",
             "devtools"
         ],
-        "description": "Use the <code>browser.storage</code> API to store, retrieve, and track changes to user data.",
         "events": [
             {
-                "description": "Fired when one or more items change.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/onChanged",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/onChanged"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "name": "onChanged",
                 "parameters": [
                     {
                         "additionalProperties": {
                             "$ref": "StorageChange"
                         },
-                        "description": "Object mapping each key that changed to its corresponding $(ref:storage.StorageChange) for that item.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/onChanged"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "name": "changes",
                         "type": "object"
                     },
                     {
-                        "description": "The name of the storage area (<code>\"sync\"</code>, <code>\"local\"</code> or <code>\"managed\"</code>) the changes are for.",
                         "name": "areaName",
                         "type": "string"
                     }
                 ],
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "function"
             }
         ],
@@ -42,30 +50,50 @@
         "properties": {
             "local": {
                 "$ref": "StorageArea",
-                "description": "Items in the <code>local</code> storage area are local to each machine.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/local",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/local"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "The storage API is supported in content scripts from version 48."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "properties": {
                     "QUOTA_BYTES": {
-                        "description": "The maximum amount (in bytes) of data that can be stored in local storage, as measured by the JSON stringification of every value plus every key's length. This value will be ignored if the extension has the <code>unlimitedStorage</code> permission. Updates that would cause this limit to be exceeded fail immediately and set $(ref:runtime.lastError).",
                         "value": 5242880
                     }
-                },
-                "support": {
-                    "version_added": "45"
                 }
             },
             "managed": {
                 "$ref": "StorageArea",
-                "description": "Items in the <code>managed</code> storage area are set by administrators or native applications, and are read-only for the extension; trying to modify this namespace results in an error.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/managed",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/managed"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Platform-specific storage backends, such as Windows registry keys, are not supported."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Enforcement of extension-provided storage schemas is not supported."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "The <code>onChanged</code> event is not supported."
+                    },
+                    {
+                        "version_added": "57"
+                    }
+                ],
                 "properties": {
                     "QUOTA_BYTES": {
-                        "description": "The maximum size (in bytes) of the managed storage JSON manifest file. Files larger than this limit will fail to load.",
                         "value": 5242880
                     }
-                },
-                "support": {
-                    "version_added": "57"
                 }
             },
             "session": {
@@ -73,85 +101,119 @@
                 "allowedContexts": [
                     "devtools"
                 ],
-                "description": "Items in the <code>session</code> storage area are kept in memory, and only until the either browser or extension is closed or reloaded.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/session",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/session"
+                    },
+                    {
+                        "version_added": "115"
+                    }
+                ],
                 "properties": {
                     "QUOTA_BYTES": {
-                        "description": "The maximum amount of data (in bytes, currently at 10MB) that can be stored in session storage, as measured by the StructuredCloneHolder of every value plus every key's length."
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/session/QUOTA_BYTES"
+                            },
+                            {
+                                "version_added": "131"
+                            }
+                        ]
                     }
-                },
-                "support": {
-                    "version_added": "115"
                 }
             },
             "sync": {
                 "$ref": "StorageAreaWithUsage",
-                "description": "Items in the <code>sync</code> storage area are synced by the browser.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/sync",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/sync"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 79, storage quota limits are not enforced."
+                    },
+                    {
+                        "version_added": "53"
+                    }
+                ],
                 "properties": {
                     "MAX_ITEMS": {
-                        "description": "The maximum number of items that can be stored in sync storage. Updates that would cause this limit to be exceeded will fail immediately and set $(ref:runtime.lastError).",
                         "value": 512
                     },
                     "MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE": {
-                        "deprecated": "The storage.sync API no longer has a sustained write operation quota.",
-                        "description": "",
                         "value": 1000000
                     },
                     "MAX_WRITE_OPERATIONS_PER_HOUR": {
-                        "description": "<p>The maximum number of <code>set</code>, <code>remove</code>, or <code>clear</code> operations that can be performed each hour. This is 1 every 2 seconds, a lower ceiling than the short term higher writes-per-minute limit.</p><p>Updates that would cause this limit to be exceeded fail immediately and set $(ref:runtime.lastError).</p>",
                         "value": 1800
                     },
                     "MAX_WRITE_OPERATIONS_PER_MINUTE": {
-                        "description": "<p>The maximum number of <code>set</code>, <code>remove</code>, or <code>clear</code> operations that can be performed each minute. This is 2 per second, providing higher throughput than writes-per-hour over a shorter period of time.</p><p>Updates that would cause this limit to be exceeded fail immediately and set $(ref:runtime.lastError).</p>",
                         "value": 120
                     },
                     "QUOTA_BYTES": {
-                        "description": "The maximum total amount (in bytes) of data that can be stored in sync storage, as measured by the JSON stringification of every value plus every key's length. Updates that would cause this limit to be exceeded fail immediately and set $(ref:runtime.lastError).",
                         "value": 102400
                     },
                     "QUOTA_BYTES_PER_ITEM": {
-                        "description": "The maximum size (in bytes) of each individual item in sync storage, as measured by the JSON stringification of its value plus its key length. Updates containing items larger than this limit will fail immediately and set $(ref:runtime.lastError).",
                         "value": 8192
                     }
-                },
-                "support": {
-                    "version_added": "53"
                 }
             }
         },
         "types": [
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageChange"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "id": "StorageChange",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageChange",
                 "properties": {
                     "newValue": {
-                        "description": "The new value of the item, if there is a new value.",
                         "optional": true,
                         "type": "any"
                     },
                     "oldValue": {
-                        "description": "The old value of the item, if there was an old value.",
                         "optional": true,
                         "type": "any"
                     }
                 },
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "object"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "events": [
                     {
-                        "description": "Fired when one or more items change.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/onChanged"
+                            },
+                            {
+                                "version_added": "101"
+                            }
+                        ],
                         "name": "onChanged",
                         "parameters": [
                             {
                                 "additionalProperties": {
                                     "$ref": "StorageChange"
                                 },
-                                "description": "Object mapping each key that changed to its corresponding $(ref:storage.StorageChange) for that item.",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/onChanged"
+                                    },
+                                    {
+                                        "version_added": "101"
+                                    }
+                                ],
                                 "name": "changes",
                                 "type": "object"
                             }
@@ -161,16 +223,47 @@
                 ],
                 "functions": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "async": "callback",
-                        "description": "Gets one or more items from storage.",
                         "name": "get",
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get"
+                                            },
+                                            {
+                                                "version_added": "45"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get"
+                                            },
+                                            {
+                                                "version_added": "45"
+                                            }
+                                        ],
                                         "items": {
                                             "type": "string"
                                         },
@@ -180,23 +273,43 @@
                                         "additionalProperties": {
                                             "type": "any"
                                         },
-                                        "description": "Storage items to return in the callback, where the values are replaced with those from storage if they exist.",
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get"
+                                            },
+                                            {
+                                                "version_added": "45"
+                                            }
+                                        ],
                                         "type": "object"
                                     }
                                 ],
-                                "description": "A single key to get, list of keys to get, or a dictionary specifying default values (see description of the object).  An empty list or object will return an empty result object.  Pass in <code>null</code> to get the entire contents of storage.",
                                 "name": "keys",
                                 "optional": true
                             },
                             {
-                                "description": "Callback with storage items, or on failure (in which case $(ref:runtime.lastError) will be set).",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
                                 "name": "callback",
                                 "parameters": [
                                     {
                                         "additionalProperties": {
                                             "type": "any"
                                         },
-                                        "description": "Object with items in their key-value mappings.",
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get"
+                                            },
+                                            {
+                                                "version_added": "45"
+                                            }
+                                        ],
                                         "name": "items",
                                         "type": "object"
                                     }
@@ -207,32 +320,124 @@
                         "type": "function"
                     },
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Supported by the <code>sync</code> and, from Firefox 131, <code>session</code> storage areas."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Not implemented in <code>local</code>, see <a href=\"https://bugzil.la/1385832\">bug 1385832</a>"
+                            },
+                            {
+                                "version_added": "78"
+                            }
+                        ],
                         "async": "callback",
-                        "description": "Gets the amount of space (in bytes) being used by one or more items.",
                         "name": "getBytesInUse",
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Supported by the <code>sync</code> and, from Firefox 131, <code>session</code> storage areas."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Not implemented in <code>local</code>, see <a href=\"https://bugzil.la/1385832\">bug 1385832</a>"
+                                    },
+                                    {
+                                        "version_added": "78"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse"
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Supported by the <code>sync</code> and, from Firefox 131, <code>session</code> storage areas."
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Not implemented in <code>local</code>, see <a href=\"https://bugzil.la/1385832\">bug 1385832</a>"
+                                            },
+                                            {
+                                                "version_added": "78"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse"
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Supported by the <code>sync</code> and, from Firefox 131, <code>session</code> storage areas."
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Not implemented in <code>local</code>, see <a href=\"https://bugzil.la/1385832\">bug 1385832</a>"
+                                            },
+                                            {
+                                                "version_added": "78"
+                                            }
+                                        ],
                                         "items": {
                                             "type": "string"
                                         },
                                         "type": "array"
                                     }
                                 ],
-                                "description": "A single key or list of keys to get the total usage for. An empty list will return 0. Pass in <code>null</code> to get the total usage of all of storage.",
                                 "name": "keys",
                                 "optional": true
                             },
                             {
-                                "description": "Callback with the amount of space being used by storage, or on failure (in which case $(ref:runtime.lastError) will be set).",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Supported by the <code>sync</code> and, from Firefox 131, <code>session</code> storage areas."
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Not implemented in <code>local</code>, see <a href=\"https://bugzil.la/1385832\">bug 1385832</a>"
+                                    },
+                                    {
+                                        "version_added": "78"
+                                    }
+                                ],
                                 "name": "callback",
                                 "parameters": [
                                     {
-                                        "description": "Amount of space being used in storage, in bytes.",
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse"
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Supported by the <code>sync</code> and, from Firefox 131, <code>session</code> storage areas."
+                                            },
+                                            {
+                                                "bcd": true,
+                                                "note": "Not implemented in <code>local</code>, see <a href=\"https://bugzil.la/1385832\">bug 1385832</a>"
+                                            },
+                                            {
+                                                "version_added": "78"
+                                            }
+                                        ],
                                         "name": "bytesInUse",
                                         "type": "integer"
                                     }
@@ -245,19 +450,60 @@
                     },
                     {
                         "async": "callback",
-                        "description": "Sets multiple items.",
+                        "name": "getKeys",
+                        "parameters": [
+                            {
+                                "name": "callback",
+                                "parameters": [
+                                    {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "name": "keys",
+                                        "type": "array"
+                                    }
+                                ],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/set"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
+                        "async": "callback",
                         "name": "set",
                         "parameters": [
                             {
                                 "additionalProperties": {
                                     "type": "any"
                                 },
-                                "description": "<p>An object which gives each key/value pair to update storage with. Any other key/value pairs in storage will not be affected.</p><p>Primitive values such as numbers will serialize as expected. Values with a <code>typeof</code> <code>\"object\"</code> and <code>\"function\"</code> will typically serialize to <code>{}</code>, with the exception of <code>Array</code> (serializes as expected), <code>Date</code>, and <code>Regex</code> (serialize using their <code>String</code> representation).</p>",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/set"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
                                 "name": "items",
                                 "type": "object"
                             },
                             {
-                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/set"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [],
@@ -267,27 +513,64 @@
                         "type": "function"
                     },
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "async": "callback",
-                        "description": "Removes one or more items from storage.",
                         "name": "remove",
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove"
+                                            },
+                                            {
+                                                "version_added": "45"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove"
+                                            },
+                                            {
+                                                "version_added": "45"
+                                            }
+                                        ],
                                         "items": {
                                             "type": "string"
                                         },
                                         "type": "array"
                                     }
                                 ],
-                                "description": "A single key or a list of keys for items to remove.",
                                 "name": "keys"
                             },
                             {
-                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [],
@@ -297,12 +580,26 @@
                         "type": "function"
                     },
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/clear"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "async": "callback",
-                        "description": "Removes all items from storage.",
                         "name": "clear",
                         "parameters": [
                             {
-                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/clear"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [],
@@ -313,23 +610,17 @@
                     }
                 ],
                 "id": "StorageArea",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea",
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "object"
             },
             {
                 "events": [
                     {
-                        "description": "Fired when one or more items change.",
                         "name": "onChanged",
                         "parameters": [
                             {
                                 "additionalProperties": {
                                     "$ref": "StorageChange"
                                 },
-                                "description": "Object mapping each key that changed to its corresponding $(ref:storage.StorageChange) for that item.",
                                 "name": "changes",
                                 "type": "object"
                             }
@@ -340,7 +631,6 @@
                 "functions": [
                     {
                         "async": "callback",
-                        "description": "Gets one or more items from storage.",
                         "name": "get",
                         "parameters": [
                             {
@@ -358,23 +648,19 @@
                                         "additionalProperties": {
                                             "type": "any"
                                         },
-                                        "description": "Storage items to return in the callback, where the values are replaced with those from storage if they exist.",
                                         "type": "object"
                                     }
                                 ],
-                                "description": "A single key to get, list of keys to get, or a dictionary specifying default values (see description of the object).  An empty list or object will return an empty result object.  Pass in <code>null</code> to get the entire contents of storage.",
                                 "name": "keys",
                                 "optional": true
                             },
                             {
-                                "description": "Callback with storage items, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "parameters": [
                                     {
                                         "additionalProperties": {
                                             "type": "any"
                                         },
-                                        "description": "Object with items in their key-value mappings.",
                                         "name": "items",
                                         "type": "object"
                                     }
@@ -386,7 +672,6 @@
                     },
                     {
                         "async": "callback",
-                        "description": "Gets the amount of space (in bytes) being used by one or more items.",
                         "name": "getBytesInUse",
                         "parameters": [
                             {
@@ -401,16 +686,13 @@
                                         "type": "array"
                                     }
                                 ],
-                                "description": "A single key or list of keys to get the total usage for. An empty list will return 0. Pass in <code>null</code> to get the total usage of all of storage.",
                                 "name": "keys",
                                 "optional": true
                             },
                             {
-                                "description": "Callback with the amount of space being used by storage, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "parameters": [
                                     {
-                                        "description": "Amount of space being used in storage, in bytes.",
                                         "name": "bytesInUse",
                                         "type": "integer"
                                     }
@@ -422,19 +704,36 @@
                     },
                     {
                         "async": "callback",
-                        "description": "Sets multiple items.",
+                        "name": "getKeys",
+                        "parameters": [
+                            {
+                                "name": "callback",
+                                "parameters": [
+                                    {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "name": "keys",
+                                        "type": "array"
+                                    }
+                                ],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
+                    },
+                    {
+                        "async": "callback",
                         "name": "set",
                         "parameters": [
                             {
                                 "additionalProperties": {
                                     "type": "any"
                                 },
-                                "description": "<p>An object which gives each key/value pair to update storage with. Any other key/value pairs in storage will not be affected.</p><p>Primitive values such as numbers will serialize as expected. Values with a <code>typeof</code> <code>\"object\"</code> and <code>\"function\"</code> will typically serialize to <code>{}</code>, with the exception of <code>Array</code> (serializes as expected), <code>Date</code>, and <code>Regex</code> (serialize using their <code>String</code> representation).</p>",
                                 "name": "items",
                                 "type": "object"
                             },
                             {
-                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [],
@@ -445,7 +744,6 @@
                     },
                     {
                         "async": "callback",
-                        "description": "Removes one or more items from storage.",
                         "name": "remove",
                         "parameters": [
                             {
@@ -460,11 +758,9 @@
                                         "type": "array"
                                     }
                                 ],
-                                "description": "A single key or a list of keys for items to remove.",
                                 "name": "keys"
                             },
                             {
-                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [],
@@ -475,11 +771,9 @@
                     },
                     {
                         "async": "callback",
-                        "description": "Removes all items from storage.",
                         "name": "clear",
                         "parameters": [
                             {
-                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [],
@@ -495,7 +789,7 @@
         ]
     },
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest"
     }
 ]

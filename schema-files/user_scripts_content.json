@@ -9,18 +9,14 @@
                     "content",
                     "content_only"
                 ],
-                "description": "Event called when a new userScript global has been created",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/onBeforeScript",
                 "name": "onBeforeScript",
                 "parameters": [
                     {
                         "name": "userScript",
                         "properties": {
                             "defineGlobals": {
-                                "description": "Exports all the properties of a given plain object as userScript globals",
                                 "parameters": [
                                     {
-                                        "description": "A plain object whose properties are exported as userScript globals",
                                         "name": "sourceObject",
                                         "type": "object"
                                     }
@@ -28,10 +24,8 @@
                                 "type": "function"
                             },
                             "export": {
-                                "description": "Convert a given value to make it accessible to the userScript code",
                                 "parameters": [
                                     {
-                                        "description": "A value to convert into an object accessible to the userScript",
                                         "name": "value",
                                         "type": "any"
                                     }
@@ -42,11 +36,9 @@
                                 "type": "function"
                             },
                             "global": {
-                                "description": "The userScript global",
                                 "type": "any"
                             },
                             "metadata": {
-                                "description": "The userScript metadata (as set in userScripts.register)",
                                 "type": "any"
                             }
                         },
@@ -56,9 +48,6 @@
                 "permissions": [
                     "manifest:user_scripts.api_script"
                 ],
-                "support": {
-                    "version_added": "68"
-                },
                 "type": "function"
             }
         ],
@@ -69,7 +58,7 @@
         ]
     },
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest"
     }
 ]

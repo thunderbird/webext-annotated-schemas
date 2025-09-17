@@ -2,28 +2,48 @@
     {
         "functions": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/spacesToolbar.html#addbutton-id-properties",
+                "annotations": [
+                    {
+                        "version_added": "100"
+                    }
+                ],
                 "async": "callback",
-                "description": "Adds a new button to the spaces toolbar. Throws an exception, if the used <var>id</var> is not unique within the extension.",
                 "name": "addButton",
                 "parameters": [
                     {
-                        "description": "The unique id to assign to this button. May only contain alphanumeric characters and underscores.",
+                        "annotations": [
+                            {
+                                "version_added": "100"
+                            }
+                        ],
                         "name": "id",
                         "pattern": "^[a-zA-Z0-9_]+$",
                         "type": "string"
                     },
                     {
                         "$ref": "spacesToolbar.ButtonProperties",
-                        "description": "Properties of the new button. The <var>url</var> is mandatory.",
+                        "annotations": [
+                            {
+                                "version_added": "100"
+                            }
+                        ],
                         "name": "properties"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "description": "The id of the space belonging to the newly created button, as used by the tabs API.",
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "minimum": 1,
                                 "name": "spaceId",
                                 "type": "integer"
@@ -32,127 +52,193 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/spacesToolbar.html#removebutton-id",
+                "annotations": [
+                    {
+                        "version_added": "100"
+                    }
+                ],
                 "async": true,
-                "description": "Removes the specified button from the spaces toolbar. Throws an exception if the requested spaces toolbar button does not exist or was not created by this extension. If the tab of this button is currently open, it will be closed.",
                 "name": "removeButton",
                 "parameters": [
                     {
-                        "description": "The id of the spaces toolbar button, which is to be removed. May only contain alphanumeric characters and underscores.",
+                        "annotations": [
+                            {
+                                "version_added": "100"
+                            }
+                        ],
                         "name": "id",
                         "pattern": "^[a-zA-Z0-9_]+$",
                         "type": "string"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/spacesToolbar.html#updatebutton-id-properties",
+                "annotations": [
+                    {
+                        "version_added": "100"
+                    }
+                ],
                 "async": true,
-                "description": "Updates properties of the specified spaces toolbar button. Throws an exception if the requested spaces toolbar button does not exist or was not created by this extension.",
                 "name": "updateButton",
                 "parameters": [
                     {
-                        "description": "The id of the spaces toolbar button, which is to be updated. May only contain alphanumeric characters and underscores.",
+                        "annotations": [
+                            {
+                                "version_added": "100"
+                            }
+                        ],
                         "name": "id",
                         "pattern": "^[a-zA-Z0-9_]+$",
                         "type": "string"
                     },
                     {
                         "$ref": "spacesToolbar.ButtonProperties",
-                        "description": "Only specified properties will be updated.",
+                        "annotations": [
+                            {
+                                "version_added": "100"
+                            }
+                        ],
                         "name": "properties"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/spacesToolbar.html#clickbutton-id-windowid",
+                "annotations": [
+                    {
+                        "version_added": "114"
+                    }
+                ],
                 "async": "callback",
-                "description": "Trigger a click on the specified spaces toolbar button. Throws an exception if the requested spaces toolbar button does not exist or was not created by this extension.",
                 "name": "clickButton",
                 "parameters": [
                     {
-                        "description": "The id of the spaces toolbar button. May only contain alphanumeric characters and underscores.",
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "name": "id",
                         "pattern": "^[a-zA-Z0-9_]+$",
                         "type": "string"
                     },
                     {
-                        "description": "The id of the normal window, where the spaces toolbar button should be clicked. Defaults to the most recent normal window.",
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "minimum": -2,
                         "name": "windowId",
                         "optional": true,
                         "type": "integer"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "114"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "tabs.Tab",
-                                "description": "Details about the opened or activated tab.",
+                                "annotations": [
+                                    {
+                                        "version_added": "114"
+                                    }
+                                ],
                                 "name": "tab"
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             }
         ],
         "namespace": "spacesToolbar",
         "types": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/spacesToolbar.html#buttonproperties",
+                "annotations": [
+                    {
+                        "version_added": "100"
+                    }
+                ],
                 "id": "ButtonProperties",
                 "properties": {
                     "badgeBackgroundColor": {
+                        "annotations": [
+                            {
+                                "version_added": "100"
+                            }
+                        ],
                         "choices": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "100"
+                                    }
+                                ],
                                 "type": "string"
                             },
                             {
-                                "$ref": "ColorArray"
+                                "$ref": "ColorArray",
+                                "annotations": [
+                                    {
+                                        "version_added": "100"
+                                    }
+                                ]
                             }
                         ],
-                        "description": "Sets the background color of the badge. Can be specified as an array of four integers in the range [0,255] that make up the RGBA color of the badge. For example, opaque red is <var>[255, 0, 0, 255]</var>. Can also be a string with an HTML color name (<var>red</var>) or a HEX color value (<var>#FF0000</var> or <var>#F00</var>). Reset when set to an empty string.",
                         "optional": true
                     },
                     "badgeText": {
-                        "description": "Sets the badge text for the spaces toolbar button. The badge is displayed on top of the icon. Any number of characters can be set, but only about four can fit in the space. Removed when set to an empty string.",
+                        "annotations": [
+                            {
+                                "version_added": "100"
+                            }
+                        ],
                         "optional": true,
                         "type": "string"
                     },
                     "defaultIcons": {
+                        "annotations": [
+                            {
+                                "version_added": "100"
+                            }
+                        ],
                         "choices": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "100"
+                                    }
+                                ],
                                 "type": "string"
                             },
                             {
-                                "$ref": "manifest.IconPath"
+                                "$ref": "manifest.IconPath",
+                                "annotations": [
+                                    {
+                                        "version_added": "100"
+                                    }
+                                ]
                             }
                         ],
-                        "description": "The paths to one or more icons for the button in the spaces toolbar. Defaults to the extension icon, if set to an empty string.",
                         "optional": true
                     },
                     "themeIcons": {
-                        "description": "Specifies dark and light icons for the spaces toolbar button to be used with themes: The <var>light</var> icons will be used on dark backgrounds and vice versa. At least the set for <em>16px</em> icons should be specified. The set for <em>32px</em> icons will be used on screens with a very high pixel density, if specified.",
+                        "annotations": [
+                            {
+                                "version_added": "100"
+                            }
+                        ],
                         "items": {
                             "$ref": "manifest.ThemeIcons"
                         },
@@ -160,24 +246,32 @@
                         "type": "array"
                     },
                     "title": {
-                        "description": "The title for the spaces toolbar button, used in the tooltip of the button and as the displayed name in the overflow menu. Defaults to the name of the extension, if set to an empty string.",
+                        "annotations": [
+                            {
+                                "version_added": "100"
+                            }
+                        ],
                         "optional": true,
                         "type": "string"
                     },
                     "url": {
-                        "description": "The page url, loaded into a tab when the button is clicked. Supported are <var>https://</var> and <var>http://</var> links, as well as links to WebExtension pages.",
+                        "annotations": [
+                            {
+                                "version_added": "100"
+                            }
+                        ],
                         "optional": true,
                         "type": "string"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/spacesToolbar.html#colorarray",
-                "description": "An array of four integers in the range [0,255] that make up the RGBA color. For example, opaque red is <var>[255, 0, 0, 255]</var>.",
+                "annotations": [
+                    {
+                        "version_added": "100"
+                    }
+                ],
                 "id": "ColorArray",
                 "items": {
                     "maximum": 255,
@@ -186,15 +280,12 @@
                 },
                 "maxItems": 4,
                 "minItems": 4,
-                "support": {
-                    "version_added": true
-                },
                 "type": "array"
             }
         ]
     },
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest"
     }
 ]

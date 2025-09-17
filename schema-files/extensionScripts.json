@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest",
         "types": [
             {
@@ -11,6 +11,22 @@
                             "messagesModify",
                             "sensitiveDataUpload"
                         ],
+                        "enums": {
+                            "messagesModify": {
+                                "annotations": [
+                                    {
+                                        "version_added": "82"
+                                    }
+                                ]
+                            },
+                            "sensitiveDataUpload": {
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ]
+                            }
+                        },
                         "type": "string"
                     }
                 ]
@@ -20,19 +36,27 @@
     {
         "functions": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/composeScripts.html#register-composescriptoptions",
+                "annotations": [
+                    {
+                        "note": "Registered scripts will only be applied to newly opened message composer tabs. To apply the script to already open message composer tab, manually inject your script by calling $(ref:tabs.executeScript) for each of the open <var>messageCompose</var> tabs."
+                    },
+                    {
+                        "version_added": "82"
+                    }
+                ],
                 "async": true,
-                "description": "Register a compose script programmatically. **Note:** Registered scripts will only be applied to newly opened message composer tabs. To apply the script to already open message composer tab, manually inject your script by calling $(ref:tabs.executeScript) for each of the open <var>messageCompose</var> tabs.",
                 "name": "register",
                 "parameters": [
                     {
                         "$ref": "RegisteredComposeScriptOptions",
+                        "annotations": [
+                            {
+                                "version_added": "82"
+                            }
+                        ],
                         "name": "composeScriptOptions"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             }
         ],
@@ -42,12 +66,19 @@
         ],
         "types": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/composeScripts.html#registeredcomposescriptoptions",
-                "description": "Details of a compose script registered programmatically.",
+                "annotations": [
+                    {
+                        "version_added": "82"
+                    }
+                ],
                 "id": "RegisteredComposeScriptOptions",
                 "properties": {
                     "css": {
-                        "description": "The list of CSS files to inject.",
+                        "annotations": [
+                            {
+                                "version_added": "82"
+                            }
+                        ],
                         "items": {
                             "$ref": "extensionTypes.ExtensionFileOrCode"
                         },
@@ -55,7 +86,11 @@
                         "type": "array"
                     },
                     "js": {
-                        "description": "The list of JavaScript files to inject.",
+                        "annotations": [
+                            {
+                                "version_added": "82"
+                            }
+                        ],
                         "items": {
                             "$ref": "extensionTypes.ExtensionFileOrCode"
                         },
@@ -63,27 +98,28 @@
                         "type": "array"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/composeScripts.html#registeredcomposescript",
-                "description": "An object that represents a compose script registered programmatically.",
+                "annotations": [
+                    {
+                        "version_added": "82"
+                    }
+                ],
                 "functions": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "82"
+                            }
+                        ],
                         "async": true,
-                        "description": "Unregister a compose script registered programmatically.",
                         "name": "unregister",
                         "parameters": [],
                         "type": "function"
                     }
                 ],
                 "id": "RegisteredComposeScript",
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             }
         ]
@@ -91,19 +127,27 @@
     {
         "functions": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messageDisplayScripts.html#register-messagedisplayscriptoptions",
+                "annotations": [
+                    {
+                        "note": "Registered scripts will only be applied to newly opened messages. To apply the script to already open messages, manually inject your script by calling $(ref:tabs.executeScript) for each of the open <var>messageDisplay</var> tabs."
+                    },
+                    {
+                        "version_added": "82"
+                    }
+                ],
                 "async": true,
-                "description": "Register a message display script programmatically. **Note:** Registered scripts will only be applied to newly opened messages. To apply the script to already open messages, manually inject your script by calling $(ref:tabs.executeScript) for each of the open <var>messageDisplay</var> tabs.",
                 "name": "register",
                 "parameters": [
                     {
                         "$ref": "RegisteredMessageDisplayScriptOptions",
+                        "annotations": [
+                            {
+                                "version_added": "82"
+                            }
+                        ],
                         "name": "messageDisplayScriptOptions"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             }
         ],
@@ -113,12 +157,19 @@
         ],
         "types": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messageDisplayScripts.html#registeredmessagedisplayscriptoptions",
-                "description": "Details of a message display script registered programmatically",
+                "annotations": [
+                    {
+                        "version_added": "82"
+                    }
+                ],
                 "id": "RegisteredMessageDisplayScriptOptions",
                 "properties": {
                     "css": {
-                        "description": "The list of CSS files to inject",
+                        "annotations": [
+                            {
+                                "version_added": "82"
+                            }
+                        ],
                         "items": {
                             "$ref": "extensionTypes.ExtensionFileOrCode"
                         },
@@ -126,7 +177,11 @@
                         "type": "array"
                     },
                     "js": {
-                        "description": "The list of JavaScript files to inject",
+                        "annotations": [
+                            {
+                                "version_added": "82"
+                            }
+                        ],
                         "items": {
                             "$ref": "extensionTypes.ExtensionFileOrCode"
                         },
@@ -134,38 +189,66 @@
                         "type": "array"
                     },
                     "runAt": {
+                        "annotations": [
+                            {
+                                "version_added": "126"
+                            }
+                        ],
                         "default": "document_idle",
-                        "description": "Determines when the files specified in css and js are injected. The states directly correspond to <code>Document.readyState</code>: <var>loading</var>, <var>interactive</var> and <var>complete</var>",
                         "enum": [
                             "document_start",
                             "document_end",
                             "document_idle"
                         ],
+                        "enums": {
+                            "document_end": {
+                                "annotations": [
+                                    {
+                                        "version_added": "126"
+                                    }
+                                ]
+                            },
+                            "document_idle": {
+                                "annotations": [
+                                    {
+                                        "version_added": "126"
+                                    }
+                                ]
+                            },
+                            "document_start": {
+                                "annotations": [
+                                    {
+                                        "version_added": "126"
+                                    }
+                                ]
+                            }
+                        },
                         "optional": true,
                         "type": "string"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv2/messageDisplayScripts.html#registeredmessagedisplayscript",
-                "description": "An object that represents a message display script registered programmatically",
+                "annotations": [
+                    {
+                        "version_added": "82"
+                    }
+                ],
                 "functions": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "82"
+                            }
+                        ],
                         "async": true,
-                        "description": "Unregister a message display script registered programmatically",
                         "name": "unregister",
                         "parameters": [],
                         "type": "function"
                     }
                 ],
                 "id": "RegisteredMessageDisplayScript",
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             }
         ]

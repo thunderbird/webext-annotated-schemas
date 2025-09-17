@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest",
         "types": [
             {
@@ -10,6 +10,15 @@
                         "enum": [
                             "userScripts"
                         ],
+                        "enums": {
+                            "userScripts": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
                         "type": "string"
                     }
                 ]
@@ -21,6 +30,11 @@
                         "additionalProperties": {
                             "$ref": "UnrecognizedProperty"
                         },
+                        "annotations": [
+                            {
+                                "version_added": true
+                            }
+                        ],
                         "optional": true,
                         "properties": {
                             "api_script": {
@@ -37,25 +51,45 @@
     {
         "functions": [
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/register"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "An incompatible version of this function is available for Manifest V2. See <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts_legacy/register\">userScripts (Legacy)</a>."
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
                 "async": "callback",
-                "description": "Register a user script programmatically given its $(ref:userScripts.UserScriptOptions), and resolves to an object with the unregister() function",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/register",
                 "name": "register",
                 "parameters": [
                     {
                         "$ref": "UserScriptOptions",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/register"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "An incompatible version of this function is available for Manifest V2. See <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts_legacy/register\">userScripts (Legacy)</a>."
+                            },
+                            {
+                                "version_added": "136"
+                            }
+                        ],
                         "name": "userScriptOptions"
                     },
                     {
                         "name": "callback",
                         "parameters": [
                             {
-                                "description": "An object that represents a user script registered programmatically",
                                 "name": "legacyRegisteredUserScript",
                                 "properties": {
                                     "unregister": {
                                         "async": true,
-                                        "description": "Unregister a user script registered programmatically",
                                         "parameters": [],
                                         "type": "function"
                                     }
@@ -66,9 +100,6 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "68"
-                },
                 "type": "function"
             }
         ],
@@ -79,12 +110,10 @@
         ],
         "types": [
             {
-                "description": "Details of a user script",
                 "id": "UserScriptOptions",
                 "properties": {
                     "allFrames": {
                         "default": false,
-                        "description": "If allFrames is <code>true</code>, implies that the JavaScript should be injected into all frames of current page. By default, it's <code>false</code> and is only injected into the top frame.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -101,7 +130,6 @@
                                 "type": "string"
                             }
                         ],
-                        "description": "limit the set of matched tabs to those that belong to the given cookie store id",
                         "optional": true
                     },
                     "excludeGlobs": {
@@ -127,7 +155,6 @@
                         "type": "array"
                     },
                     "js": {
-                        "description": "The list of JS files to inject",
                         "items": {
                             "$ref": "extensionTypes.ExtensionFileOrCode"
                         },
@@ -137,7 +164,6 @@
                     },
                     "matchAboutBlank": {
                         "default": false,
-                        "description": "If matchAboutBlank is true, then the code is also injected in about:blank and about:srcdoc frames if your extension has access to its parent document. Code cannot be inserted in top-level about:-frames. By default it is <code>false</code>.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -152,12 +178,10 @@
                     "runAt": {
                         "$ref": "extensionTypes.RunAt",
                         "default": "document_idle",
-                        "description": "The soonest that the JavaScript will be injected into the tab. Defaults to \"document_idle\".",
                         "optional": true
                     },
                     "scriptMetadata": {
                         "$ref": "extensionTypes.PlainJSONValue",
-                        "description": "An opaque user script metadata value",
                         "optional": true
                     }
                 },
