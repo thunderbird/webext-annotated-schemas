@@ -1,0 +1,534 @@
+[
+    {
+        "functions": [
+            {
+                "annotations": [
+                    {
+                        "version_added": "137"
+                    }
+                ],
+                "async": "callback",
+                "name": "convertToPlainText",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "name": "body",
+                        "type": "string"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "flowed": {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "version_added": "137"
+                    }
+                ],
+                "async": "callback",
+                "name": "formatFileSize",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "name": "sizeInBytes",
+                        "type": "integer"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
+                                "type": "string"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "version_added": "137"
+                    }
+                ],
+                "async": "callback",
+                "name": "parseMailboxString",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "name": "mailboxString",
+                        "type": "string"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "name": "preserveGroups",
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
+                                "items": {
+                                    "$ref": "messengerUtilities.ParsedMailbox"
+                                },
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "version_added": "137"
+                    }
+                ],
+                "async": "callback",
+                "name": "decodeMimeHeader",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "name": "headerName",
+                        "type": "string"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        ],
+                        "name": "headerValue"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "name": "isMailBoxHeader",
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "version_added": "137"
+                    }
+                ],
+                "async": "callback",
+                "name": "encodeMimeHeader",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "name": "headerName",
+                        "type": "string"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        ],
+                        "name": "headerValue"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "name": "isMailBoxHeader",
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "messengerUtilities",
+        "types": [
+            {
+                "annotations": [
+                    {
+                        "version_added": "137"
+                    }
+                ],
+                "id": "ParsedMailbox",
+                "properties": {
+                    "email": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "group": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "items": {
+                            "$ref": "messengerUtilities.ParsedMailbox"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "name": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "annotations": [
+                    {
+                        "version_added": "137"
+                    }
+                ],
+                "enum": [
+                    "bcc",
+                    "cc",
+                    "from",
+                    "reply-to",
+                    "resent-bcc",
+                    "resent-cc",
+                    "resent-from",
+                    "resent-reply-to",
+                    "resent-sender",
+                    "resent-to",
+                    "sender",
+                    "to",
+                    "approved",
+                    "disposition-notification-to",
+                    "delivered-to",
+                    "return-receipt-to",
+                    "mail-reply-to",
+                    "mail-followup-to"
+                ],
+                "enums": {
+                    "approved": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "bcc": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "cc": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "delivered-to": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "disposition-notification-to": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "from": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "mail-followup-to": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "mail-reply-to": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "reply-to": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "resent-bcc": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "resent-cc": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "resent-from": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "resent-reply-to": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "resent-sender": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "resent-to": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "return-receipt-to": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "sender": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    },
+                    "to": {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ]
+                    }
+                },
+                "id": "MailboxHeaders",
+                "type": "string"
+            }
+        ]
+    },
+    {
+        "applicationVersion": "140.3.0esr",
+        "namespace": "manifest"
+    }
+]

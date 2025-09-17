@@ -1,0 +1,52 @@
+[
+    {
+        "applicationVersion": "140.3.0esr",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "OptionalPermission",
+                "choices": [
+                    {
+                        "enum": [
+                            "messengerSettings"
+                        ],
+                        "enums": {
+                            "messengerSettings": {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "namespace": "messengerSettings",
+        "permissions": [
+            "messengerSettings"
+        ],
+        "properties": {
+            "messageLineLengthLimit": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "version_added": "137"
+                    }
+                ]
+            },
+            "messagePlainTextFlowedOutputEnabled": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "version_added": "137"
+                    }
+                ]
+            }
+        }
+    }
+]
