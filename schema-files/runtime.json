@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest",
         "types": [
             {
@@ -10,6 +10,15 @@
                         "enum": [
                             "nativeMessaging"
                         ],
+                        "enums": {
+                            "nativeMessaging": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
                         "type": "string"
                     }
                 ]
@@ -21,105 +30,203 @@
             "content",
             "devtools"
         ],
-        "description": "Use the <code>browser.runtime</code> API to retrieve the background page, return details about the manifest, and listen for and respond to events in the app or extension lifecycle. You can also use this API to convert the relative path of URLs to fully-qualified URLs.",
         "events": [
             {
-                "description": "Fired when a profile that has this extension installed first starts up. This event is not fired for incognito profiles.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onStartup",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onStartup"
+                    },
+                    {
+                        "version_added": "52"
+                    }
+                ],
                 "name": "onStartup",
-                "support": {
-                    "version_added": "52"
-                },
                 "type": "function"
             },
             {
-                "description": "Fired when the extension is first installed, when the extension is updated to a new version, and when the browser is updated to a new version.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 55, this event is not triggered for temporarily installed add-ons."
+                    },
+                    {
+                        "version_added": "52"
+                    }
+                ],
                 "name": "onInstalled",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 55, this event is not triggered for temporarily installed add-ons."
+                            },
+                            {
+                                "version_added": "52"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "id": {
-                                "description": "Indicates the ID of the imported shared module extension which updated. This is present only if 'reason' is 'shared_module_update'.",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 55, this event is not triggered for temporarily installed add-ons."
+                                    },
+                                    {
+                                        "version_added": "52"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "string",
                                 "unsupported": true
                             },
                             "previousVersion": {
-                                "description": "Indicates the previous version of the extension, which has just been updated. This is present only if 'reason' is 'update'.",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 55, this event is not triggered for temporarily installed add-ons."
+                                    },
+                                    {
+                                        "version_added": "52"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "string"
                             },
                             "reason": {
                                 "$ref": "OnInstalledReason",
-                                "description": "The reason that this event is being dispatched."
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 55, this event is not triggered for temporarily installed add-ons."
+                                    },
+                                    {
+                                        "version_added": "52"
+                                    }
+                                ]
                             },
                             "temporary": {
-                                "description": "Indicates whether the addon is installed as a temporary extension.",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "Before version 55, this event is not triggered for temporarily installed add-ons."
+                                    },
+                                    {
+                                        "version_added": "52"
+                                    }
+                                ],
                                 "type": "boolean"
                             }
                         },
                         "type": "object"
                     }
                 ],
-                "support": {
-                    "version_added": "52"
-                },
                 "type": "function"
             },
             {
-                "description": "Sent to the event page just before it is unloaded. This gives the extension opportunity to do some clean up. Note that since the page is unloading, any asynchronous operations started while handling this event are not guaranteed to complete. If more activity for the event page occurs before it gets unloaded the onSuspendCanceled event will be sent and the page won't be unloaded. ",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onSuspend",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onSuspend"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "This event does not fire until Firefox 106, when event pages are available."
+                    },
+                    {
+                        "version_added": "100"
+                    }
+                ],
                 "name": "onSuspend",
-                "support": {
-                    "version_added": "100"
-                },
                 "type": "function"
             },
             {
-                "description": "Sent after onSuspend to indicate that the app won't be unloaded after all.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onSuspendCanceled",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onSuspendCanceled"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "This event does not fire until Firefox 106, when event pages are available."
+                    },
+                    {
+                        "version_added": "100"
+                    }
+                ],
                 "name": "onSuspendCanceled",
-                "support": {
-                    "version_added": "100"
-                },
                 "type": "function"
             },
             {
-                "description": "Fired when an update is available, but isn't installed immediately because the app is currently running. If you do nothing, the update will be installed the next time the background page gets unloaded, if you want it to be installed sooner you can explicitly call $(ref:runtime.reload). If your extension is using a persistent background page, the background page of course never gets unloaded, so unless you call $(ref:runtime.reload) manually in response to this event the update will not get installed until the next time the browser itself restarts. If no handlers are listening for this event, and your extension has a persistent background page, it behaves as if $(ref:runtime.reload) is called in response to this event.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUpdateAvailable",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUpdateAvailable"
+                    },
+                    {
+                        "version_added": "51"
+                    }
+                ],
                 "name": "onUpdateAvailable",
                 "parameters": [
                     {
                         "additionalProperties": {
                             "type": "any"
                         },
-                        "description": "The manifest details of the available update.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUpdateAvailable"
+                            },
+                            {
+                                "version_added": "51"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "version": {
-                                "description": "The version number of the available update.",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUpdateAvailable"
+                                    },
+                                    {
+                                        "version_added": "51"
+                                    }
+                                ],
                                 "type": "string"
                             }
                         },
                         "type": "object"
                     }
                 ],
-                "support": {
-                    "version_added": "51"
-                },
                 "type": "function"
             },
             {
-                "deprecated": "Please use $(ref:runtime.onRestartRequired).",
-                "description": "Fired when an update for the browser is available, but isn't installed immediately because a browser restart is required.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onBrowserUpdateAvailable",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onBrowserUpdateAvailable"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
                 "name": "onBrowserUpdateAvailable",
                 "parameters": [],
-                "support": {
-                    "version_added": false
-                },
                 "type": "function",
                 "unsupported": true
             },
@@ -128,26 +235,68 @@
                     "content",
                     "devtools"
                 ],
-                "description": "Fired when a connection is made from either an extension process or a content script.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onConnect",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onConnect"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "name": "onConnect",
                 "parameters": [
                     {
                         "$ref": "Port",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onConnect"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "name": "port"
                     }
                 ],
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "function"
             },
             {
-                "description": "Fired when a connection is made from a USER_SCRIPT world registered through the userScripts API.",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUserScriptConnect"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Available for use with Manifest V3 only."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Requires the <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts#permissions\"><code>userScripts</code> permission</a>."
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
                 "name": "onUserScriptConnect",
                 "parameters": [
                     {
                         "$ref": "Port",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUserScriptConnect"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Available for use with Manifest V3 only."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Requires the <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts#permissions\"><code>userScripts</code> permission</a>."
+                            },
+                            {
+                                "version_added": "136"
+                            }
+                        ],
                         "name": "port"
                     }
                 ],
@@ -157,18 +306,29 @@
                 "type": "function"
             },
             {
-                "description": "Fired when a connection is made from another extension.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onConnectExternal",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onConnectExternal"
+                    },
+                    {
+                        "version_added": "54"
+                    }
+                ],
                 "name": "onConnectExternal",
                 "parameters": [
                     {
                         "$ref": "Port",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onConnectExternal"
+                            },
+                            {
+                                "version_added": "54"
+                            }
+                        ],
                         "name": "port"
                     }
                 ],
-                "support": {
-                    "version_added": "54"
-                },
                 "type": "function"
             },
             {
@@ -176,12 +336,25 @@
                     "content",
                     "devtools"
                 ],
-                "description": "Fired when a message is sent from either an extension process or a content script.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "name": "onMessage",
                 "parameters": [
                     {
-                        "description": "The message sent by the calling script.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "name": "message",
                         "optional": true,
                         "type": "any"
@@ -191,28 +364,36 @@
                         "name": "sender"
                     },
                     {
-                        "description": "Function to call (at most once) when you have a response. The argument should be any JSON-ifiable object. If you have more than one <code>onMessage</code> listener in the same document, then only one may send a response. This function becomes invalid when the event listener returns, unless you return true from the event listener to indicate you wish to send a response asynchronously (this will keep the message channel open to the other end until <code>sendResponse</code> is called).",
                         "name": "sendResponse",
                         "type": "function"
                     }
                 ],
                 "returns": {
-                    "description": "Return true from the event listener if you wish to call <code>sendResponse</code> after the event listener returns.",
                     "optional": true,
                     "type": "boolean"
-                },
-                "support": {
-                    "version_added": "45"
                 },
                 "type": "function"
             },
             {
-                "description": "Fired when a message is sent from another extension/app. Cannot be used in a content script.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessageExternal",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessageExternal"
+                    },
+                    {
+                        "version_added": "54"
+                    }
+                ],
                 "name": "onMessageExternal",
                 "parameters": [
                     {
-                        "description": "The message sent by the calling script.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessageExternal"
+                            },
+                            {
+                                "version_added": "54"
+                            }
+                        ],
                         "name": "message",
                         "optional": true,
                         "type": "any"
@@ -222,27 +403,52 @@
                         "name": "sender"
                     },
                     {
-                        "description": "Function to call (at most once) when you have a response. The argument should be any JSON-ifiable object. If you have more than one <code>onMessage</code> listener in the same document, then only one may send a response. This function becomes invalid when the event listener returns, unless you return true from the event listener to indicate you wish to send a response asynchronously (this will keep the message channel open to the other end until <code>sendResponse</code> is called).",
                         "name": "sendResponse",
                         "type": "function"
                     }
                 ],
                 "returns": {
-                    "description": "Return true from the event listener if you wish to call <code>sendResponse</code> after the event listener returns.",
                     "optional": true,
                     "type": "boolean"
-                },
-                "support": {
-                    "version_added": "54"
                 },
                 "type": "function"
             },
             {
-                "description": "Fired when a message is sent from a USER_SCRIPT world registered through the userScripts API.",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUserScriptMessage"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Available for use with Manifest V3 only."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Requires the <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts#permissions\"><code>userScripts</code> permission</a>."
+                    },
+                    {
+                        "version_added": "136"
+                    }
+                ],
                 "name": "onUserScriptMessage",
                 "parameters": [
                     {
-                        "description": "The message sent by the calling script.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUserScriptMessage"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Available for use with Manifest V3 only."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Requires the <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts#permissions\"><code>userScripts</code> permission</a>."
+                            },
+                            {
+                                "version_added": "136"
+                            }
+                        ],
                         "name": "message",
                         "optional": true,
                         "type": "any"
@@ -252,7 +458,6 @@
                         "name": "sender"
                     },
                     {
-                        "description": "Function to call (at most once) when you have a response. The argument should be any JSON-ifiable object. If you have more than one <code>onMessage</code> listener in the same document, then only one may send a response. This function becomes invalid when the event listener returns, unless you return true from the event listener to indicate you wish to send a response asynchronously (this will keep the message channel open to the other end until <code>sendResponse</code> is called).",
                         "name": "sendResponse",
                         "type": "function"
                     }
@@ -261,51 +466,91 @@
                     "userScripts"
                 ],
                 "returns": {
-                    "description": "Return true from the event listener if you wish to call <code>sendResponse</code> after the event listener returns.",
                     "optional": true,
                     "type": "boolean"
                 },
                 "type": "function"
             },
             {
-                "description": "Fired when an app or the device that it runs on needs to be restarted. The app should close all its windows at its earliest convenient time to let the restart to happen. If the app does nothing, a restart will be enforced after a 24-hour grace period has passed. Currently, this event is only fired for Chrome OS kiosk apps.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onRestartRequired",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onRestartRequired"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
                 "name": "onRestartRequired",
                 "parameters": [
                     {
                         "$ref": "OnRestartRequiredReason",
-                        "description": "The reason that the event is being dispatched.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onRestartRequired"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
                         "name": "reason"
                     }
                 ],
-                "support": {
-                    "version_added": false
-                },
                 "type": "function",
                 "unsupported": true
             },
             {
-                "description": "Fired when a runtime performance issue is detected with the extension. Observe this event to be proactively notified of runtime performance problems with the extension.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onPerformanceWarning",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onPerformanceWarning"
+                    },
+                    {
+                        "version_added": "124"
+                    }
+                ],
                 "name": "onPerformanceWarning",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onPerformanceWarning"
+                            },
+                            {
+                                "version_added": "124"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "category": {
                                 "$ref": "OnPerformanceWarningCategory",
-                                "description": "The performance warning event category, e.g. 'content_script'."
-                            },
-                            "description": {
-                                "description": "An explanation of what the warning means, and hopefully how to address it.",
-                                "type": "string"
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onPerformanceWarning"
+                                    },
+                                    {
+                                        "version_added": "124"
+                                    }
+                                ]
                             },
                             "severity": {
                                 "$ref": "OnPerformanceWarningSeverity",
-                                "description": "The performance warning event severity, e.g. 'high'."
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onPerformanceWarning"
+                                    },
+                                    {
+                                        "version_added": "124"
+                                    }
+                                ]
                             },
                             "tabId": {
-                                "description": "The $(ref:tabs.Tab) that the performance warning relates to, if any.",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onPerformanceWarning"
+                                    },
+                                    {
+                                        "version_added": "124"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "integer"
                             }
@@ -313,27 +558,57 @@
                         "type": "object"
                     }
                 ],
-                "support": {
-                    "version_added": "124"
-                },
                 "type": "function"
             }
         ],
         "functions": [
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBackgroundPage"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then it will always return <code>null</code>."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "async": "callback",
-                "description": "Retrieves the JavaScript 'window' object for the background page running inside the current extension/app. If the background page is an event page, the system will ensure it is loaded before calling the callback. If there is no background page, an error is set.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBackgroundPage",
                 "name": "getBackgroundPage",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBackgroundPage"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then it will always return <code>null</code>."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "name": "callback",
                         "parameters": [
                             {
                                 "additionalProperties": {
                                     "type": "any"
                                 },
-                                "description": "The JavaScript 'window' object for the background page.",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBackgroundPage"
+                                    },
+                                    {
+                                        "bcd": true,
+                                        "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then it will always return <code>null</code>."
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
                                 "isInstanceOf": "Window",
                                 "name": "backgroundPage",
                                 "optional": true,
@@ -343,26 +618,36 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getContexts"
+                    },
+                    {
+                        "version_added": "127"
+                    }
+                ],
                 "async": "callback",
-                "description": "Fetches information about active contexts associated with this extension",
                 "name": "getContexts",
                 "parameters": [
                     {
                         "$ref": "ContextFilter",
-                        "description": "A filter to find matching context.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getContexts"
+                            },
+                            {
+                                "version_added": "127"
+                            }
+                        ],
                         "name": "filter"
                     },
                     {
                         "name": "callback",
                         "parameters": [
                             {
-                                "description": "The matching contexts, if any.",
                                 "items": {
                                     "$ref": "ExtensionContext"
                                 },
@@ -376,21 +661,32 @@
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/openOptionsPage"
+                    },
+                    {
+                        "version_added": "48"
+                    }
+                ],
                 "async": "callback",
-                "description": "<p>Open your Extension's options page, if possible.</p><p>The precise behavior may depend on your manifest's <code>$(topic:optionsV2)[options_ui]</code> or <code>$(topic:options)[options_page]</code> key, or what the browser happens to support at the time.</p><p>If your Extension does not declare an options page, or the browser failed to create one for some other reason, the callback will set $(ref:lastError).</p>",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/openOptionsPage",
                 "name": "openOptionsPage",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/openOptionsPage"
+                            },
+                            {
+                                "version_added": "48"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "48"
-                },
                 "type": "function"
             },
             {
@@ -398,20 +694,26 @@
                     "content",
                     "devtools"
                 ],
-                "description": "Returns details about the app or extension from the manifest. The object returned is a serialization of the full $(topic:manifest)[manifest file].",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getManifest",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getManifest"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Returns null for missing values, and removes unsupported keys."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "name": "getManifest",
                 "parameters": [],
                 "returns": {
                     "additionalProperties": {
                         "type": "any"
                     },
-                    "description": "The manifest details.",
                     "properties": {},
                     "type": "object"
-                },
-                "support": {
-                    "version_added": "45"
                 },
                 "type": "function"
             },
@@ -420,22 +722,31 @@
                     "content",
                     "devtools"
                 ],
-                "description": "Converts a relative path within an app/extension install directory to a fully-qualified URL.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getURL",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getURL"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "name": "getURL",
                 "parameters": [
                     {
-                        "description": "A path to a resource within an app/extension expressed relative to its install directory.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getURL"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "name": "path",
                         "type": "string"
                     }
                 ],
                 "returns": {
-                    "description": "The fully-qualified URL to the resource.",
                     "type": "string"
-                },
-                "support": {
-                    "version_added": "45"
                 },
                 "type": "function"
             },
@@ -445,82 +756,132 @@
                     "content",
                     "devtools"
                 ],
-                "description": "Get the frameId of any window global or frame element.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getFrameId",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getFrameId"
+                    },
+                    {
+                        "version_added": "96"
+                    }
+                ],
                 "name": "getFrameId",
                 "parameters": [
                     {
-                        "description": "A WindowProxy or a Browsing Context container element (IFrame, Frame, Embed, Object) for the target frame.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getFrameId"
+                            },
+                            {
+                                "version_added": "96"
+                            }
+                        ],
                         "name": "target",
                         "type": "any"
                     }
                 ],
                 "returns": {
-                    "description": "The frameId of the target frame, or -1 if it doesn't exist.",
                     "type": "number"
-                },
-                "support": {
-                    "version_added": "96"
                 },
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/setUninstallURL"
+                    }
+                ],
                 "async": "callback",
-                "description": "Sets the URL to be visited upon uninstallation. This may be used to clean up server-side data, do analytics, and implement surveys. Maximum 1023 characters.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/setUninstallURL",
                 "name": "setUninstallURL",
                 "parameters": [
                     {
-                        "description": "URL to be opened after the extension is uninstalled. This URL must have an http: or https: scheme. Set an empty string to not open a new tab upon uninstallation.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/setUninstallURL"
+                            }
+                        ],
                         "maxLength": 1023,
                         "name": "url",
                         "optional": true,
                         "type": "string"
                     },
                     {
-                        "description": "Called when the uninstall URL is set. If the given URL is invalid, $(ref:runtime.lastError) will be set.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": false
-                },
                 "type": "function"
             },
             {
-                "description": "Reloads the app or extension.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/reload",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/reload"
+                    },
+                    {
+                        "version_added": "51"
+                    }
+                ],
                 "name": "reload",
                 "parameters": [],
-                "support": {
-                    "version_added": "51"
-                },
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/requestUpdateCheck"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
                 "async": "callback",
-                "description": "Requests an update check for this app/extension.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/requestUpdateCheck",
                 "name": "requestUpdateCheck",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/requestUpdateCheck"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
                         "name": "callback",
                         "parameters": [
                             {
                                 "$ref": "RequestUpdateCheckStatus",
-                                "description": "Result of the update check.",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/requestUpdateCheck"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
                                 "name": "status"
                             },
                             {
-                                "description": "If an update is available, this contains more information about the available update.",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/requestUpdateCheck"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
                                 "name": "details",
                                 "optional": true,
                                 "properties": {
                                     "version": {
-                                        "description": "The version of the available update.",
+                                        "annotations": [
+                                            {
+                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/requestUpdateCheck"
+                                            },
+                                            {
+                                                "version_added": false
+                                            }
+                                        ],
                                         "type": "string"
                                     }
                                 },
@@ -530,14 +891,10 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": false
-                },
                 "type": "function",
                 "unsupported": true
             },
             {
-                "description": "Restart the device when the app runs in kiosk mode. Otherwise, it's no-op.",
                 "name": "restart",
                 "parameters": [],
                 "type": "function",
@@ -548,12 +905,25 @@
                     "content",
                     "devtools"
                 ],
-                "description": "Attempts to connect to connect listeners within an extension/app (such as the background page), or other extensions/apps. This is useful for content scripts connecting to their extension processes, inter-app/extension communication, and $(topic:manifest/externally_connectable)[web messaging]. Note that this does not connect to any listeners in a content script. Extensions may connect to content scripts embedded in tabs via $(ref:tabs.connect).",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/connect",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/connect"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "name": "connect",
                 "parameters": [
                     {
-                        "description": "The ID of the extension or app to connect to. If omitted, a connection will be attempted with your own extension. Required if sending messages from a web page for $(topic:manifest/externally_connectable)[web messaging].",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/connect"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "name": "extensionId",
                         "optional": true,
                         "type": "string"
@@ -563,12 +933,10 @@
                         "optional": true,
                         "properties": {
                             "includeTlsChannelId": {
-                                "description": "Whether the TLS channel ID will be passed into onConnectExternal for processes that are listening for the connection event.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "name": {
-                                "description": "Will be passed into onConnect for processes that are listening for the connection event.",
                                 "optional": true,
                                 "type": "string"
                             }
@@ -577,11 +945,7 @@
                     }
                 ],
                 "returns": {
-                    "$ref": "Port",
-                    "description": "Port through which messages can be sent and received. The port's $(ref:runtime.Port onDisconnect) event is fired if the extension/app does not exist. "
-                },
-                "support": {
-                    "version_added": "45"
+                    "$ref": "Port"
                 },
                 "type": "function"
             },
@@ -589,12 +953,25 @@
                 "allowedContexts": [
                     "content"
                 ],
-                "description": "Connects to a native application in the host machine.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/connectNative",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/connectNative"
+                    },
+                    {
+                        "version_added": "50"
+                    }
+                ],
                 "name": "connectNative",
                 "parameters": [
                     {
-                        "description": "The name of the registered application to connect to.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/connectNative"
+                            },
+                            {
+                                "version_added": "50"
+                            }
+                        ],
                         "name": "application",
                         "pattern": "^\\w+(\\.\\w+)*$",
                         "type": "string"
@@ -604,11 +981,7 @@
                     "nativeMessaging"
                 ],
                 "returns": {
-                    "$ref": "Port",
-                    "description": "Port through which messages can be sent and received with the application"
-                },
-                "support": {
-                    "version_added": "50"
+                    "$ref": "Port"
                 },
                 "type": "function"
             },
@@ -618,13 +991,26 @@
                     "content",
                     "devtools"
                 ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "async": "responseCallback",
-                "description": "Sends a single message to event listeners within your extension/app or a different extension/app. Similar to $(ref:runtime.connect) but only sends a single message, with an optional response. If sending to your extension, the $(ref:runtime.onMessage) event will be fired in each page, or $(ref:runtime.onMessageExternal), if a different extension. Note that extensions cannot send messages to content scripts using this method. To send messages to content scripts, use $(ref:tabs.sendMessage).",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage",
                 "name": "sendMessage",
                 "parameters": [
                     {
-                        "description": "The ID of the extension/app to send the message to. If omitted, the message will be sent to your own extension/app. Required if sending messages from a web page for $(topic:manifest/externally_connectable)[web messaging].",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "name": "extensionId",
                         "optional": true,
                         "type": "string"
@@ -638,7 +1024,6 @@
                         "optional": true,
                         "properties": {
                             "includeTlsChannelId": {
-                                "description": "Whether the TLS channel ID will be passed into onMessageExternal for processes that are listening for the connection event.",
                                 "optional": true,
                                 "type": "boolean",
                                 "unsupported": true
@@ -651,7 +1036,6 @@
                         "optional": true,
                         "parameters": [
                             {
-                                "description": "The JSON response object sent by the handler of the message. If an error occurs while connecting to the extension, the callback will be called with no arguments and $(ref:runtime.lastError) will be set to the error message.",
                                 "name": "response",
                                 "type": "any"
                             }
@@ -659,28 +1043,37 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "function"
             },
             {
                 "allowedContexts": [
                     "content"
                 ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendNativeMessage"
+                    },
+                    {
+                        "version_added": "50"
+                    }
+                ],
                 "async": "responseCallback",
-                "description": "Send a single message to a native application.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendNativeMessage",
                 "name": "sendNativeMessage",
                 "parameters": [
                     {
-                        "description": "The name of the native messaging host.",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendNativeMessage"
+                            },
+                            {
+                                "version_added": "50"
+                            }
+                        ],
                         "name": "application",
                         "pattern": "^\\w+(\\.\\w+)*$",
                         "type": "string"
                     },
                     {
-                        "description": "The message that will be passed to the native messaging host.",
                         "name": "message",
                         "type": "any"
                     },
@@ -689,7 +1082,6 @@
                         "optional": true,
                         "parameters": [
                             {
-                                "description": "The response message sent by the native messaging host. If an error occurs while connecting to the native messaging host, the callback will be called with no arguments and $(ref:runtime.lastError) will be set to the error message.",
                                 "name": "response",
                                 "type": "any"
                             }
@@ -700,70 +1092,125 @@
                 "permissions": [
                     "nativeMessaging"
                 ],
-                "support": {
-                    "version_added": "50"
-                },
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBrowserInfo"
+                    },
+                    {
+                        "version_added": "51"
+                    }
+                ],
                 "async": "callback",
-                "description": "Returns information about the current browser.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBrowserInfo",
                 "name": "getBrowserInfo",
                 "parameters": [
                     {
-                        "description": "Called with results",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBrowserInfo"
+                            },
+                            {
+                                "version_added": "51"
+                            }
+                        ],
                         "name": "callback",
                         "parameters": [
                             {
                                 "$ref": "BrowserInfo",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBrowserInfo"
+                                    },
+                                    {
+                                        "version_added": "51"
+                                    }
+                                ],
                                 "name": "browserInfo"
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "51"
-                },
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPlatformInfo"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "async": "callback",
-                "description": "Returns information about the current platform.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPlatformInfo",
                 "name": "getPlatformInfo",
                 "parameters": [
                     {
-                        "description": "Called with results",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPlatformInfo"
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "name": "callback",
                         "parameters": [
                             {
                                 "$ref": "PlatformInfo",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPlatformInfo"
+                                    },
+                                    {
+                                        "version_added": "45"
+                                    }
+                                ],
                                 "name": "platformInfo"
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPackageDirectoryEntry"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
                 "async": "callback",
-                "description": "Returns a DirectoryEntry for the package directory.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPackageDirectoryEntry",
                 "name": "getPackageDirectoryEntry",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPackageDirectoryEntry"
+                            },
+                            {
+                                "version_added": false
+                            }
+                        ],
                         "name": "callback",
                         "parameters": [
                             {
                                 "additionalProperties": {
                                     "type": "any"
                                 },
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPackageDirectoryEntry"
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ],
                                 "isInstanceOf": "DirectoryEntry",
                                 "name": "directoryEntry",
                                 "type": "object"
@@ -772,9 +1219,6 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": false
-                },
                 "type": "function",
                 "unsupported": true
             }
@@ -786,11 +1230,14 @@
                     "content",
                     "devtools"
                 ],
-                "description": "The ID of the extension/app.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/id",
-                "support": {
-                    "version_added": "45"
-                },
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/id"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "type": "string"
             },
             "lastError": {
@@ -801,25 +1248,26 @@
                     "content",
                     "devtools"
                 ],
-                "description": "This will be defined during an API method callback if there was an error",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/lastError",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/lastError"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
                 "optional": true,
                 "properties": {
                     "message": {
-                        "description": "Details about the error which occurred.",
                         "optional": true,
                         "type": "string"
                     }
-                },
-                "support": {
-                    "version_added": "47"
                 },
                 "type": "object"
             }
         },
         "types": [
             {
-                "description": "A filter to match against existing extension context. Matching contexts must match all specified filters.",
                 "id": "ContextFilter",
                 "properties": {
                     "contextIds": {
@@ -886,7 +1334,6 @@
                 "type": "object"
             },
             {
-                "description": "The type of extension view.",
                 "enum": [
                     "BACKGROUND",
                     "POPUP",
@@ -897,47 +1344,37 @@
                 "type": "string"
             },
             {
-                "description": "A context hosting extension content",
                 "id": "ExtensionContext",
                 "properties": {
                     "contextId": {
-                        "description": "An unique identifier associated to this context",
                         "type": "string"
                     },
                     "contextType": {
-                        "$ref": "ContextType",
-                        "description": "The type of the context"
+                        "$ref": "ContextType"
                     },
                     "documentId": {
-                        "description": "An UUID for the document associated with this context, or undefined if it is not hosted in a document",
                         "optional": true,
                         "type": "string",
                         "unsupported": true
                     },
                     "documentOrigin": {
-                        "description": "The origin of the document associated with this context, or undefined if it is not hosted in a document",
                         "optional": true,
                         "type": "string"
                     },
                     "documentUrl": {
-                        "description": "The URL of the document associated with this context, or undefined if it is not hosted in a document",
                         "optional": true,
                         "type": "string"
                     },
                     "frameId": {
-                        "description": "The frame ID for this context, or -1 if it is not hosted in a frame.",
                         "type": "integer"
                     },
                     "incognito": {
-                        "description": "Whether the context is associated with an private browsing context.",
                         "type": "boolean"
                     },
                     "tabId": {
-                        "description": "The tab ID for this context, or -1 if it is not hosted in a tab.",
                         "type": "integer"
                     },
                     "windowId": {
-                        "description": "The window ID for this context, or -1 if it is not hosted in a window.",
                         "type": "integer"
                     }
                 },
@@ -951,9 +1388,15 @@
                     "content",
                     "devtools"
                 ],
-                "description": "An object which allows two way communication with other pages.",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/Port"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "id": "Port",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/Port",
                 "properties": {
                     "disconnect": {
                         "type": "function"
@@ -972,12 +1415,8 @@
                     },
                     "sender": {
                         "$ref": "MessageSender",
-                        "description": "This property will <b>only</b> be present on ports passed to onConnect/onConnectExternal listeners.",
                         "optional": true
                     }
-                },
-                "support": {
-                    "version_added": "45"
                 },
                 "type": "object"
             },
@@ -986,44 +1425,70 @@
                     "content",
                     "devtools"
                 ],
-                "description": "An object containing information about the script context that sent a message or request.",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/MessageSender"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 54, 'id' was the add-on's internal UUID, not the add-on ID."
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "id": "MessageSender",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/MessageSender",
                 "properties": {
                     "frameId": {
-                        "description": "The $(topic:frame_ids)[frame] that opened the connection. 0 for top-level frames, positive for child frames. This will only be set when <code>tab</code> is set.",
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "optional": true,
                         "type": "integer"
                     },
                     "id": {
-                        "description": "The ID of the extension or app that opened the connection, if any.",
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "optional": true,
                         "type": "string"
                     },
                     "tab": {
                         "$ref": "tabs.Tab",
-                        "description": "The $(ref:tabs.Tab) which opened the connection, if any. This property will <strong>only</strong> be present when the connection was opened from a tab (including content scripts), and <strong>only</strong> if the receiver is an extension, not an app.",
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "optional": true
                     },
                     "tlsChannelId": {
-                        "description": "The TLS channel ID of the page or frame that opened the connection, if requested by the extension or app, and if available.",
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ],
                         "optional": true,
                         "type": "string",
                         "unsupported": true
                     },
                     "url": {
-                        "description": "The URL of the page or frame that opened the connection. If the sender is in an iframe, it will be iframe's URL not the URL of the page which hosts it.",
+                        "annotations": [
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "optional": true,
                         "type": "string"
                     },
                     "userScriptWorldId": {
-                        "description": "The worldId of the USER_SCRIPT world that sent the message. Only present on onUserScriptMessage and onUserScriptConnect (in port.sender) events.",
                         "optional": true,
                         "type": "string"
                     }
-                },
-                "support": {
-                    "version_added": "45"
                 },
                 "type": "object"
             },
@@ -1032,7 +1497,14 @@
                     "content",
                     "devtools"
                 ],
-                "description": "The operating system the browser is running on.",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformOs"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "enum": [
                     "mac",
                     "win",
@@ -1042,10 +1514,6 @@
                     "openbsd"
                 ],
                 "id": "PlatformOs",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformOs",
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "string"
             },
             {
@@ -1053,7 +1521,14 @@
                     "content",
                     "devtools"
                 ],
-                "description": "The machine's processor architecture.",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformArch"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "enum": [
                     "aarch64",
                     "arm",
@@ -1065,10 +1540,6 @@
                     "noarch"
                 ],
                 "id": "PlatformArch",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformArch",
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "string"
             },
             {
@@ -1076,47 +1547,47 @@
                     "content",
                     "devtools"
                 ],
-                "description": "An object containing information about the current platform.",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformInfo"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "id": "PlatformInfo",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformInfo",
                 "properties": {
                     "arch": {
-                        "$ref": "PlatformArch",
-                        "description": "The machine's processor architecture."
+                        "$ref": "PlatformArch"
                     },
                     "nacl_arch": {
                         "$ref": "PlatformNaclArch",
-                        "description": "The native client architecture. This may be different from arch on some platforms.",
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ],
                         "unsupported": true
                     },
                     "os": {
-                        "$ref": "PlatformOs",
-                        "description": "The operating system the browser is running on."
+                        "$ref": "PlatformOs"
                     }
-                },
-                "support": {
-                    "version_added": "45"
                 },
                 "type": "object"
             },
             {
-                "description": "An object containing information about the current browser.",
                 "id": "BrowserInfo",
                 "properties": {
                     "buildID": {
-                        "description": "The browser's build ID/date, for example '20160101'.",
                         "type": "string"
                     },
                     "name": {
-                        "description": "The name of the browser, for example 'Firefox'.",
                         "type": "string"
                     },
                     "vendor": {
-                        "description": "The name of the browser vendor, for example 'Mozilla'.",
                         "type": "string"
                     },
                     "version": {
-                        "description": "The browser's version, for example '42.0.0' or '0.8.1pre'.",
                         "type": "string"
                     }
                 },
@@ -1127,17 +1598,20 @@
                     "content",
                     "devtools"
                 ],
-                "description": "Result of the update check.",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/RequestUpdateCheckStatus"
+                    },
+                    {
+                        "version_added": false
+                    }
+                ],
                 "enum": [
                     "throttled",
                     "no_update",
                     "update_available"
                 ],
                 "id": "RequestUpdateCheckStatus",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/RequestUpdateCheckStatus",
-                "support": {
-                    "version_added": false
-                },
                 "type": "string"
             },
             {
@@ -1145,17 +1619,20 @@
                     "content",
                     "devtools"
                 ],
-                "description": "The reason that this event is being dispatched.",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnInstalledReason"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "enum": [
                     "install",
                     "update",
                     "browser_update"
                 ],
                 "id": "OnInstalledReason",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnInstalledReason",
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "string"
             },
             {
@@ -1163,43 +1640,52 @@
                     "content",
                     "devtools"
                 ],
-                "description": "The reason that the event is being dispatched. 'app_update' is used when the restart is needed because the application is updated to a newer version. 'os_update' is used when the restart is needed because the browser/OS is updated to a newer version. 'periodic' is used when the system runs for more than the permitted uptime set in the enterprise policy.",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnRestartRequiredReason"
+                    },
+                    {
+                        "version_added": "45"
+                    }
+                ],
                 "enum": [
                     "app_update",
                     "os_update",
                     "periodic"
                 ],
                 "id": "OnRestartRequiredReason",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnRestartRequiredReason",
-                "support": {
-                    "version_added": "45"
-                },
                 "type": "string"
             },
             {
-                "description": "The performance warning event category, e.g. 'content_script'.",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnPerformanceWarningCategory"
+                    },
+                    {
+                        "version_added": "124"
+                    }
+                ],
                 "enum": [
                     "content_script"
                 ],
                 "id": "OnPerformanceWarningCategory",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnPerformanceWarningCategory",
-                "support": {
-                    "version_added": "124"
-                },
                 "type": "string"
             },
             {
-                "description": "The performance warning event severity. Will be 'high' for serious and user-visible issues.",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnPerformanceWarningSeverity"
+                    },
+                    {
+                        "version_added": "124"
+                    }
+                ],
                 "enum": [
                     "low",
                     "medium",
                     "high"
                 ],
                 "id": "OnPerformanceWarningSeverity",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnPerformanceWarningSeverity",
-                "support": {
-                    "version_added": "124"
-                },
                 "type": "string"
             }
         ]

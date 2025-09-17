@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest",
         "types": [
             {
@@ -10,6 +10,15 @@
                         "enum": [
                             "accountsFolders"
                         ],
+                        "enums": {
+                            "accountsFolders": {
+                                "annotations": [
+                                    {
+                                        "version_added": "68"
+                                    }
+                                ]
+                            }
+                        },
                         "type": "string"
                     }
                 ]
@@ -19,310 +28,563 @@
     {
         "events": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#oncreated-createdfolder",
-                "description": "Fired when a folder has been created.",
+                "annotations": [
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "name": "onCreated",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolder",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "createdFolder"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#onrenamed-originalfolder-renamedfolder",
-                "description": "Fired when a folder has been renamed.",
+                "annotations": [
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "name": "onRenamed",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolder",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "originalFolder"
                     },
                     {
                         "$ref": "folders.MailFolder",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "renamedFolder"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#onmoved-originalfolder-movedfolder",
-                "description": "Fired when a folder has been moved.",
+                "annotations": [
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "name": "onMoved",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolder",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "originalFolder"
                     },
                     {
                         "$ref": "folders.MailFolder",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "movedFolder"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#oncopied-originalfolder-copiedfolder",
-                "description": "Fired when a folder has been copied.",
+                "annotations": [
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "name": "onCopied",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolder",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "originalFolder"
                     },
                     {
                         "$ref": "folders.MailFolder",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "copiedFolder"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#ondeleted-deletedfolder",
-                "description": "Fired when a folder has been deleted.",
+                "annotations": [
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "name": "onDeleted",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolder",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "deletedFolder"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#onupdated-originalfolder-updatedfolder",
-                "description": "Fired when properties of a folder have changed (<var>specialUse</var> and <var>isFavorite</var>).",
+                "annotations": [
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "name": "onUpdated",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolder",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "name": "originalFolder"
                     },
                     {
                         "$ref": "folders.MailFolder",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "name": "updatedFolder"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#onfolderinfochanged-folder-folderinfo",
-                "description": "Fired when certain information of a folder have changed. Bursts of message count changes are collapsed to a single event.",
+                "annotations": [
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "name": "onFolderInfoChanged",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolder",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "folder"
                     },
                     {
                         "$ref": "folders.MailFolderInfo",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "folderInfo"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             }
         ],
         "functions": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#query-queryinfo",
+                "annotations": [
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "async": "callback",
-                "description": "Gets folders that match the specified properties, or all folders if no properties are specified.",
                 "name": "query",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "default": {},
                         "name": "queryInfo",
                         "optional": true,
                         "properties": {
                             "accountId": {
                                 "$ref": "accounts.MailAccountId",
-                                "description": "Limits the search to folders of the account with the specified id.",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "canAddMessages": {
-                                "description": "Whether the folder supports adding new messages, or not.",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "canAddSubfolders": {
-                                "description": "Whether the folder supports adding new subfolders, or not.",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "canBeDeleted": {
-                                "description": "Whether the folder can be deleted, or not.",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "canBeRenamed": {
-                                "description": "Whether the folder can be renamed, or not.",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "canDeleteMessages": {
-                                "description": "Whether the folder supports deleting messages, or not.",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "folderId": {
                                 "$ref": "folders.MailFolderId",
-                                "description": "Limits the search to the folder with the specified id.",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "hasMessages": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ],
                                         "type": "boolean"
                                     },
                                     {
-                                        "$ref": "QueryRange"
+                                        "$ref": "QueryRange",
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ]
                                     }
                                 ],
-                                "description": "Whether the folder (excluding subfolders) contains messages, or not. Supports to specify a $(ref:folders.QueryRange) (min/max) instead of a simple boolean value (none/some).",
                                 "optional": true
                             },
                             "hasNewMessages": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ],
                                         "type": "boolean"
                                     },
                                     {
-                                        "$ref": "QueryRange"
+                                        "$ref": "QueryRange",
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ]
                                     }
                                 ],
-                                "description": "Whether the folder (excluding subfolders) contains new messages, or not. Supports to specify a $(ref:folders.QueryRange) (min/max) instead of a simple boolean value (none/some).",
                                 "optional": true
                             },
                             "hasSubFolders": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ],
                                         "type": "boolean"
                                     },
                                     {
-                                        "$ref": "QueryRange"
+                                        "$ref": "QueryRange",
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ]
                                     }
                                 ],
-                                "description": "Whether the folder has subfolders, or not. Supports to specify a $(ref:folders.QueryRange) (min/max) instead of a simple boolean value (none/some).",
                                 "optional": true
                             },
                             "hasUnreadMessages": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "choices": [
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ],
                                         "type": "boolean"
                                     },
                                     {
-                                        "$ref": "QueryRange"
+                                        "$ref": "QueryRange",
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ]
                                     }
                                 ],
-                                "description": "Whether the folder (excluding subfolders) contains unread messages, or not. Supports to specify a $(ref:folders.QueryRange) (min/max) instead of a simple boolean value (none/some).",
                                 "optional": true
                             },
                             "isFavorite": {
-                                "description": "Whether the folder is a favorite folder, or not.",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "isRoot": {
-                                "description": "Whether the folder is a root folder, or not.",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "isTag": {
-                                "description": "Whether the folder is a virtual tag folder, or not. Note: Virtual tag folders are always skipped, unless this property is set to <var>true</var>",
+                                "annotations": [
+                                    {
+                                        "version_added": "127"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "isUnified": {
-                                "description": "Whether the folder is a unified mailbox folder, or not. Note: Unified mailbox folders are always skipped, unless this property is set to <var>true</var>",
+                                "annotations": [
+                                    {
+                                        "version_added": "127"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "isVirtual": {
-                                "description": "Whether the folder is a virtual search folder, or not.",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "lastUsed": {
                                 "$ref": "QueryDateRange",
-                                "description": "Date the folder was last used (folder was accessed, user moved or copied messages into the folder or folder received new messages).",
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "lastUsedAsDestination": {
                                 "$ref": "QueryDateRange",
-                                "description": "Date the folder was last used as a destination (user moved or copied messages into the folder).",
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "limit": {
-                                "description": "Limits the number of returned folders. If used together with <var>recent</var>, supports being set to $(ref:folders.DEFAULT_MOST_RECENT_LIMIT)",
+                                "annotations": [
+                                    {
+                                        "version_added": "122"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "integer"
                             },
                             "name": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "choices": [
                                     {
-                                        "$ref": "RegularExpression"
+                                        "$ref": "RegularExpression",
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ]
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ],
                                         "type": "string"
                                     }
                                 ],
-                                "description": "Return only folders whose name is matched by the provided string or regular expression.",
                                 "optional": true
                             },
                             "path": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "choices": [
                                     {
-                                        "$ref": "RegularExpression"
+                                        "$ref": "RegularExpression",
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ]
                                     },
                                     {
+                                        "annotations": [
+                                            {
+                                                "version_added": "121"
+                                            }
+                                        ],
                                         "type": "string"
                                     }
                                 ],
-                                "description": "Return only folders whose path is matched by the provided string or regular expression.",
                                 "optional": true
                             },
                             "recent": {
-                                "deprecated": "Deprecated. Use <var>queryInfo.lastUsed</var> and <var>queryInfo.sort</var>.",
-                                "description": "Whether the folder (excluding subfolders) has been used within the last month, or not. The returned folders will be sorted by <var>lastUsed</var>.",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "sort": {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
                                 "default": "path",
-                                "description": "The sort order of the returned folders. If not specified, folders will be sorted by <var>path</var>. Sorting by <var>name</var> is case-insensitive.",
                                 "enum": [
                                     "lastUsed",
                                     "lastUsedAsDestination",
                                     "name",
                                     "path"
                                 ],
+                                "enums": {
+                                    "lastUsed": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "137"
+                                            }
+                                        ]
+                                    },
+                                    "lastUsedAsDestination": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "137"
+                                            }
+                                        ]
+                                    },
+                                    "name": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "137"
+                                            }
+                                        ]
+                                    },
+                                    "path": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "137"
+                                            }
+                                        ]
+                                    }
+                                },
                                 "optional": true,
                                 "type": "string"
                             },
                             "specialUse": {
-                                "description": "Match only folders with the specified special use (folders have to match all specified uses).",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "folders.MailFolderSpecialUse"
                                 },
@@ -334,10 +596,20 @@
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "folders.MailFolder"
                                 },
@@ -347,64 +619,103 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#get-folderid-includesubfolders",
+                "annotations": [
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "async": "callback",
-                "description": "Returns the specified folder.",
                 "name": "get",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "name": "folderId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "default": false,
-                        "description": "Specifies whether the returned $(ref:folders.MailFolder) should populate its <var>subFolders</var> property and include all its (nested!) subfolders. Defaults to <var>false</var>.",
                         "name": "includeSubFolders",
                         "optional": true,
                         "type": "boolean"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "folders.MailFolder"
+                                "$ref": "folders.MailFolder",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#create-folderid-childname",
+                "annotations": [
+                    {
+                        "version_added": "68"
+                    }
+                ],
                 "async": "callback",
-                "description": "Creates a new subfolder in the specified folder.",
                 "name": "create",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "68"
+                            }
+                        ],
                         "name": "folderId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "68"
+                            }
+                        ],
                         "name": "childName",
                         "type": "string"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "folders.MailFolder"
+                                "$ref": "folders.MailFolder",
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
@@ -413,31 +724,51 @@
                 "permissions": [
                     "accountsFolders"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#rename-folderid-newname",
+                "annotations": [
+                    {
+                        "version_added": "68"
+                    }
+                ],
                 "async": "callback",
-                "description": "Renames a folder.",
                 "name": "rename",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "68"
+                            }
+                        ],
                         "name": "folderId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "68"
+                            }
+                        ],
                         "name": "newName",
                         "type": "string"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "folders.MailFolder"
+                                "$ref": "folders.MailFolder",
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
@@ -446,31 +777,51 @@
                 "permissions": [
                     "accountsFolders"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#move-sourcefolderid-destinationfolderid",
+                "annotations": [
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "async": "callback",
-                "description": "Moves the given source folder into the given destination folder. Throws if the destination already contains a folder with the name of the source folder.",
                 "name": "move",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "sourceFolderId"
                     },
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "destinationFolderId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "folders.MailFolder"
+                                "$ref": "folders.MailFolder",
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
@@ -479,31 +830,51 @@
                 "permissions": [
                     "accountsFolders"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#copy-sourcefolderid-destinationfolderid",
+                "annotations": [
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "async": "callback",
-                "description": "Copies the given source folder into the given destination folder. Throws if the destination already contains a folder with the name of the source folder.",
                 "name": "copy",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "sourceFolderId"
                     },
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "destinationFolderId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "folders.MailFolder"
+                                "$ref": "folders.MailFolder",
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
@@ -512,19 +883,24 @@
                 "permissions": [
                     "accountsFolders"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#delete-folderid",
+                "annotations": [
+                    {
+                        "version_added": "68"
+                    }
+                ],
                 "async": true,
-                "description": "Deletes a folder.",
                 "name": "delete",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "68"
+                            }
+                        ],
                         "name": "folderId"
                     }
                 ],
@@ -532,27 +908,40 @@
                     "accountsFolders",
                     "messagesDelete"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#update-folderid-updateproperties",
+                "annotations": [
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "async": true,
-                "description": "Updates properties of a folder.",
                 "name": "update",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "name": "folderId"
                     },
                     {
-                        "description": "The properties to update.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "name": "updateProperties",
                         "properties": {
                             "isFavorite": {
-                                "description": "Sets or clears the favorite status.",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "boolean"
                             }
@@ -563,85 +952,134 @@
                 "permissions": [
                     "accountsFolders"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#getfolderinfo-folderid",
+                "annotations": [
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "async": "callback",
-                "description": "Get additional information about a folder.",
                 "name": "getFolderInfo",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "folderId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "folders.MailFolderInfo"
+                                "$ref": "folders.MailFolderInfo",
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#getfoldercapabilities-folderid",
+                "annotations": [
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "async": "callback",
-                "description": "Get capability information about a folder.",
                 "name": "getFolderCapabilities",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "name": "folderId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "folders.MailFolderCapabilities"
+                                "$ref": "folders.MailFolderCapabilities",
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#getparentfolders-folderid-includesubfolders",
+                "annotations": [
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "async": "callback",
-                "description": "Get all parent folders as a flat ordered array. The first array entry is the direct parent.",
                 "name": "getParentFolders",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "folderId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "default": false,
-                        "description": "Specifies whether each returned parent $(ref:folders.MailFolder) should populate its <var>subFolders</var> property and include all its (nested!) subfolders. Defaults to <var>false</var>.",
                         "name": "includeSubFolders",
                         "optional": true,
                         "type": "boolean"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "folders.MailFolder"
                                 },
@@ -651,33 +1089,52 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#getsubfolders-folderid-includesubfolders",
+                "annotations": [
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "async": "callback",
-                "description": "Get the subfolders of the specified folder.",
                 "name": "getSubFolders",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "folderId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "default": false,
-                        "description": "Specifies whether each returned direct child $(ref:folders.MailFolder) should populate its <var>subFolders</var> property and include all its (nested!) subfolders. Defaults to <var>false</var>.",
                         "name": "includeSubFolders",
                         "optional": true,
                         "type": "boolean"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "folders.MailFolder"
                                 },
@@ -687,19 +1144,23 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#getunifiedfolder-type-includesubfolders",
+                "annotations": [
+                    {
+                        "version_added": "127"
+                    }
+                ],
                 "async": "callback",
-                "description": "Get one of the special unified mailbox folders, which are virtual search folders and return the content from all mail accounts. Throws if the requested folder does not exist.",
                 "name": "getUnifiedFolder",
                 "parameters": [
                     {
-                        "description": "The requested unified mailbox folder type.",
+                        "annotations": [
+                            {
+                                "version_added": "127"
+                            }
+                        ],
                         "enum": [
                             "inbox",
                             "drafts",
@@ -709,70 +1170,159 @@
                             "archives",
                             "junk"
                         ],
+                        "enums": {
+                            "archives": {
+                                "annotations": [
+                                    {
+                                        "version_added": "127"
+                                    }
+                                ]
+                            },
+                            "drafts": {
+                                "annotations": [
+                                    {
+                                        "version_added": "127"
+                                    }
+                                ]
+                            },
+                            "inbox": {
+                                "annotations": [
+                                    {
+                                        "version_added": "127"
+                                    }
+                                ]
+                            },
+                            "junk": {
+                                "annotations": [
+                                    {
+                                        "version_added": "127"
+                                    }
+                                ]
+                            },
+                            "sent": {
+                                "annotations": [
+                                    {
+                                        "version_added": "127"
+                                    }
+                                ]
+                            },
+                            "templates": {
+                                "annotations": [
+                                    {
+                                        "version_added": "127"
+                                    }
+                                ]
+                            },
+                            "trash": {
+                                "annotations": [
+                                    {
+                                        "version_added": "127"
+                                    }
+                                ]
+                            }
+                        },
                         "name": "type",
                         "type": "string"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "127"
+                            }
+                        ],
                         "default": false,
-                        "description": "Specifies whether the returned $(ref:folders.MailFolder) should populate its <var>subFolders</var> property and include all its (nested!) subfolders. Defaults to <var>false</var>.",
                         "name": "includeSubFolders",
                         "optional": true,
                         "type": "boolean"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "127"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "folders.MailFolder"
+                                "$ref": "folders.MailFolder",
+                                "annotations": [
+                                    {
+                                        "version_added": "127"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#gettagfolder-key",
+                "annotations": [
+                    {
+                        "version_added": "127"
+                    }
+                ],
                 "async": "callback",
-                "description": "Get one of the special virtual tag folders, which are virtual search folders and group messages from all mail accounts based on their tags. Throws if the requested folder does not exist.",
                 "name": "getTagFolder",
                 "parameters": [
                     {
-                        "description": "The tag key of the requested folder. See $(ref:messages.tags.list()) for the available tags. Throws when specifying an invalid tag key.",
+                        "annotations": [
+                            {
+                                "version_added": "127"
+                            }
+                        ],
                         "name": "key",
                         "type": "string"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "127"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "$ref": "folders.MailFolder"
+                                "$ref": "folders.MailFolder",
+                                "annotations": [
+                                    {
+                                        "version_added": "127"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#markasread-folderid",
+                "annotations": [
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "async": "callback",
-                "description": "Marks all messages in a folder as read.",
                 "name": "markAsRead",
                 "parameters": [
                     {
                         "$ref": "folders.MailFolderId",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "name": "folderId"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -782,9 +1332,6 @@
                 "permissions": [
                     "accountsFolders"
                 ],
-                "support": {
-                    "version_added": true
-                },
                 "type": "function"
             }
         ],
@@ -794,66 +1341,113 @@
         ],
         "properties": {
             "DEFAULT_MOST_RECENT_LIMIT": {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#default_most_recent_limit",
-                "description": "The number of most recent folders used in Thunderbird's UI. Controlled by the <var>mail.folder_widget.max_recent</var> preference.",
-                "support": {
-                    "version_added": true
-                },
+                "annotations": [
+                    {
+                        "version_added": "122"
+                    }
+                ],
                 "value": -1
             }
         },
         "types": [
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#mailfolder",
-                "description": "An object describing a folder.",
+                "annotations": [
+                    {
+                        "version_added": "68"
+                    }
+                ],
                 "id": "MailFolder",
                 "properties": {
                     "accountId": {
                         "$ref": "accounts.MailAccountId",
-                        "description": "The id of the account this folder belongs to. This property is optional and not available for unified mailbox folders or virtual tag folders.",
+                        "annotations": [
+                            {
+                                "version_added": "68"
+                            }
+                        ],
                         "optional": true
                     },
                     "id": {
                         "$ref": "folders.MailFolderId",
-                        "description": "An identifier for the folder."
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ]
                     },
                     "isFavorite": {
-                        "description": "Whether this folder is a favorite folder.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "type": "boolean"
                     },
                     "isRoot": {
-                        "description": "Whether this folder is a root folder.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "type": "boolean"
                     },
                     "isTag": {
-                        "description": "Whether this folder is a virtual tag folder.",
+                        "annotations": [
+                            {
+                                "version_added": "127"
+                            }
+                        ],
                         "type": "boolean"
                     },
                     "isUnified": {
-                        "description": "Whether this folder is a unified mailbox folder.",
+                        "annotations": [
+                            {
+                                "version_added": "127"
+                            }
+                        ],
                         "type": "boolean"
                     },
                     "isVirtual": {
-                        "description": "Whether this folder is a virtual search folder.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "type": "boolean"
                     },
                     "name": {
-                        "description": "The human-friendly name of this folder.",
+                        "annotations": [
+                            {
+                                "version_added": "68"
+                            }
+                        ],
                         "type": "string"
                     },
                     "path": {
-                        "description": "Path to this folder in the account. Although paths look predictable, never guess a folder's path, as there are a number of reasons why it may not be what you think it is. Use $(ref:folders.getParentFolders) or $(ref:folders.getSubFolders) to obtain hierarchy information.",
+                        "annotations": [
+                            {
+                                "version_added": "68"
+                            }
+                        ],
                         "type": "string"
                     },
                     "specialUse": {
-                        "description": "The special use of this folder. A folder can have multiple special uses.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "items": {
                             "$ref": "folders.MailFolderSpecialUse"
                         },
                         "type": "array"
                     },
                     "subFolders": {
-                        "description": "Subfolders of this folder. This property is optional and only present if the inclusion of subfolders had been requested. The folders will be returned in the same order as used in Thunderbird's folder pane.",
+                        "annotations": [
+                            {
+                                "version_added": "74"
+                            }
+                        ],
                         "items": {
                             "$ref": "folders.MailFolder"
                         },
@@ -861,42 +1455,58 @@
                         "type": "array"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#mailfolderid",
-                "description": "A unique id representing a $(ref:folders.MailFolder) throughout a session. Renaming or moving a folder will invalidate its id.",
+                "annotations": [
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "id": "MailFolderId",
-                "support": {
-                    "version_added": true
-                },
                 "type": "string"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#mailfolderinfo",
-                "description": "An object containing additional information about a folder.",
+                "annotations": [
+                    {
+                        "version_added": "91"
+                    }
+                ],
                 "id": "MailFolderInfo",
                 "properties": {
                     "lastUsed": {
                         "$ref": "extensionTypes.Date",
-                        "description": "Date the folder was last used. It is updated every time the folder was accessed, when the user moved or copied messages into the folder and when the folder received new messages. (precision: seconds).",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "optional": true
                     },
                     "lastUsedAsDestination": {
                         "$ref": "extensionTypes.Date",
-                        "description": "Date the folder was last used as a destination. It is updated every time the user moved or copied messages into the folder. (precision: seconds).",
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
                         "optional": true
                     },
                     "newMessageCount": {
-                        "description": "Number of new messages in this folder.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "optional": true,
                         "type": "integer"
                     },
                     "quota": {
-                        "description": "Quota information, if available.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "items": {
                             "$ref": "folders.MailFolderQuota"
                         },
@@ -904,60 +1514,88 @@
                         "type": "array"
                     },
                     "totalMessageCount": {
-                        "description": "Number of messages in this folder.",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "optional": true,
                         "type": "integer"
                     },
                     "unreadMessageCount": {
-                        "description": "Number of unread messages in this folder.",
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "optional": true,
                         "type": "integer"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#mailfoldercapabilities",
-                "description": "An object containing capability information about a folder.",
+                "annotations": [
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "id": "MailFolderCapabilities",
                 "properties": {
                     "canAddMessages": {
-                        "description": "Whether this folder supports adding new messages.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "optional": true,
                         "type": "boolean"
                     },
                     "canAddSubfolders": {
-                        "description": "Whether this folder supports adding new subfolders.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "optional": true,
                         "type": "boolean"
                     },
                     "canBeDeleted": {
-                        "description": "Whether this folder can be deleted.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "optional": true,
                         "type": "boolean"
                     },
                     "canBeRenamed": {
-                        "description": "Whether this folder can be renamed.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "optional": true,
                         "type": "boolean"
                     },
                     "canDeleteMessages": {
-                        "description": "Whether this folder supports deleting messages.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "optional": true,
                         "type": "boolean"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#mailfolderspecialuse",
-                "description": "Supported values for the special use of a folder.",
+                "annotations": [
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "enum": [
                     "inbox",
                     "drafts",
@@ -968,111 +1606,241 @@
                     "junk",
                     "outbox"
                 ],
-                "id": "MailFolderSpecialUse",
-                "support": {
-                    "version_added": true
+                "enums": {
+                    "archives": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ]
+                    },
+                    "drafts": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ]
+                    },
+                    "inbox": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ]
+                    },
+                    "junk": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ]
+                    },
+                    "outbox": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ]
+                    },
+                    "sent": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ]
+                    },
+                    "templates": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ]
+                    },
+                    "trash": {
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ]
+                    }
                 },
+                "id": "MailFolderSpecialUse",
                 "type": "string"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#mailfolderquota",
-                "description": "An object containing quota information.",
+                "annotations": [
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "id": "MailFolderQuota",
                 "properties": {
                     "limit": {
-                        "description": "The maximum available quota.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "type": "integer"
                     },
                     "type": {
-                        "description": "The type of the quota as defined by RFC 2087. A <var>STORAGE</var> quota is constraining the available storage in bytes, a <var>MESSAGE</var> quota is constraining the number of storable messages.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "enum": [
                             "STORAGE",
                             "MESSAGE"
                         ],
+                        "enums": {
+                            "MESSAGE": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ]
+                            },
+                            "STORAGE": {
+                                "annotations": [
+                                    {
+                                        "version_added": "121"
+                                    }
+                                ]
+                            }
+                        },
                         "type": "string"
                     },
                     "unused": {
-                        "description": "The currently unused quota.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "type": "integer"
                     },
                     "used": {
-                        "description": "The currently used quota.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "type": "integer"
                     }
-                },
-                "support": {
-                    "version_added": true
                 },
                 "type": "object"
             },
             {
+                "annotations": [
+                    {
+                        "version_added": "137"
+                    }
+                ],
                 "choices": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
                         "properties": {
                             "recent": {
-                                "description": "Whether the date must be considered to be recent by Thunderbird (within the last month) or not, to match the query.",
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
                                 "type": "boolean"
                             }
                         },
                         "type": "object"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "137"
+                            }
+                        ],
                         "properties": {
                             "after": {
                                 "$ref": "extensionTypes.Date",
-                                "description": "The minimum date required to match the query.",
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
                                 "optional": true
                             },
                             "before": {
                                 "$ref": "extensionTypes.Date",
-                                "description": "The maximum date required to match the query.",
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
                                 "optional": true
                             }
                         },
                         "type": "object"
                     }
                 ],
-                "description": "An object defining a range for a date value to be used in queries.",
                 "id": "QueryDateRange"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#queryrange",
-                "description": "An object defining a range for an integer value to be used in queries.",
+                "annotations": [
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "id": "QueryRange",
                 "properties": {
                     "max": {
-                        "description": "The maximum value required to match the query.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "optional": true,
                         "type": "integer"
                     },
                     "min": {
-                        "description": "The minimum value required to match the query.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "optional": true,
                         "type": "integer"
                     }
                 },
-                "support": {
-                    "version_added": true
-                },
                 "type": "object"
             },
             {
-                "api_documentation_url": "https://webextension-api.thunderbird.net/en/release-mv3/folders.html#regularexpression",
+                "annotations": [
+                    {
+                        "version_added": "121"
+                    }
+                ],
                 "id": "RegularExpression",
                 "properties": {
                     "flags": {
-                        "description": "Supported RegExp flags: <var>i</var> = case insensitive, and/or one of <var>u</var> = unicode support or <var>v</var> = extended unicode support",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "optional": true,
                         "pattern": "^(i|u|v|iu|iv|ui|vi)$",
                         "type": "string"
                     },
                     "regexp": {
-                        "description": "A regular expression, for example <var>^Projects \\d{4}$</var>.",
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "type": "string"
                     }
-                },
-                "support": {
-                    "version_added": true
                 },
                 "type": "object"
             }

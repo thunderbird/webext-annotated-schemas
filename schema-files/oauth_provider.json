@@ -1,0 +1,105 @@
+[
+    {
+        "applicationVersion": "143.0",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "WebExtensionManifest",
+                "properties": {
+                    "oauth_provider": {
+                        "annotations": [
+                            {
+                                "version_added": "140"
+                            }
+                        ],
+                        "optional": true,
+                        "properties": {
+                            "authorizationEndpoint": {
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
+                                "format": "url",
+                                "type": "string"
+                            },
+                            "clientId": {
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "clientSecret": {
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "hostnames": {
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
+                                "items": {
+                                    "type": "string"
+                                },
+                                "minItems": 1,
+                                "type": "array"
+                            },
+                            "issuer": {
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "redirectionEndpoint": {
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
+                                "format": "url",
+                                "type": "string"
+                            },
+                            "scopes": {
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            "tokenEndpoint": {
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
+                                "format": "url",
+                                "type": "string"
+                            },
+                            "usePKCE": {
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
+                                "optional": true,
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    }
+                }
+            }
+        ]
+    }
+]

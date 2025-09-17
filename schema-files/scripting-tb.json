@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest",
         "types": [
             {
@@ -10,6 +10,15 @@
                         "enum": [
                             "sensitiveDataUpload"
                         ],
+                        "enums": {
+                            "sensitiveDataUpload": {
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ]
+                            }
+                        },
                         "type": "string"
                     }
                 ]
@@ -19,21 +28,38 @@
     {
         "functions": [
             {
+                "annotations": [
+                    {
+                        "version_added": "128"
+                    }
+                ],
                 "async": "callback",
-                "description": "Returns all registered compose scripts for this extension that match the given filter.",
                 "name": "getRegisteredScripts",
                 "parameters": [
                     {
                         "$ref": "ComposeScriptFilter",
-                        "description": "An object to filter the extension's registered compose scripts.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "filter",
                         "optional": true
                     },
                     {
-                        "description": "The resulting array contains the registered compose scripts.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "callback",
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "ComposeScriptDetails"
                                 },
@@ -47,12 +73,23 @@
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "note": "Registered scripts will only be applied to newly opened message compose tabs. To apply the script to already open message compose tabs, manually inject your script by calling $(ref:scripting.executeScript) for each of the open <var>messageCompose</var> tabs."
+                    },
+                    {
+                        "version_added": "128"
+                    }
+                ],
                 "async": "callback",
-                "description": "Registers one or more compose scripts for this extension, which should be injected into the message compose editor. **Note:** Registered scripts will only be applied to newly opened message compose tabs. To apply the script to already open message compose tabs, manually inject your script by calling $(ref:scripting.executeScript) for each of the open <var>messageCompose</var> tabs.",
                 "name": "registerScripts",
                 "parameters": [
                     {
-                        "description": "Contains a list of compose scripts to be registered. If there are errors during script parsing/file validation, or if the IDs specified already exist, then no scripts are registered.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "items": {
                             "$ref": "ComposeScriptDetails"
                         },
@@ -60,7 +97,11 @@
                         "type": "array"
                     },
                     {
-                        "description": "Invoked upon completion of the registration.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "callback",
                         "parameters": [],
                         "type": "function"
@@ -69,18 +110,30 @@
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "version_added": "128"
+                    }
+                ],
                 "async": "callback",
-                "description": "Unregisters one or more compose scripts for this extension.",
                 "name": "unregisterScripts",
                 "parameters": [
                     {
                         "$ref": "ComposeScriptFilter",
-                        "description": "If specified, only unregisters compose scripts which match the filter. Otherwise, all of the extension's compose scripts are unregistered.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "filter",
                         "optional": true
                     },
                     {
-                        "description": "Invoked upon completion of the unregistration.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "callback",
                         "parameters": [],
                         "type": "function"
@@ -95,10 +148,19 @@
         ],
         "types": [
             {
+                "annotations": [
+                    {
+                        "version_added": "128"
+                    }
+                ],
                 "id": "ComposeScriptDetails",
                 "properties": {
                     "css": {
-                        "description": "The list of CSS files to be injected. These are injected in the order they appear in this array.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "items": {
                             "$ref": "manifest.ExtensionURL"
                         },
@@ -106,11 +168,19 @@
                         "type": "array"
                     },
                     "id": {
-                        "description": "The id of the compose script, specified in the API call.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "type": "string"
                     },
                     "js": {
-                        "description": "The list of JavaScript files to be injected. These are injected in the order they appear in this array.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "items": {
                             "$ref": "manifest.ExtensionURL"
                         },
@@ -119,17 +189,30 @@
                     },
                     "runAt": {
                         "$ref": "extensionTypes.RunAt",
-                        "description": "Specifies when JavaScript files are injected. The preferred and default value is <code>document_idle</code>.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "optional": true
                     }
                 },
                 "type": "object"
             },
             {
+                "annotations": [
+                    {
+                        "version_added": "128"
+                    }
+                ],
                 "id": "ComposeScriptFilter",
                 "properties": {
                     "ids": {
-                        "description": "The IDs of specific compose scripts to retrieve with <code>getRegisteredScripts()</code> or to unregister with <code>unregisterScripts()</code>.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "items": {
                             "type": "string"
                         },
@@ -144,21 +227,38 @@
     {
         "functions": [
             {
+                "annotations": [
+                    {
+                        "version_added": "128"
+                    }
+                ],
                 "async": "callback",
-                "description": "Returns all registered message display scripts for this extension that match the given filter.",
                 "name": "getRegisteredScripts",
                 "parameters": [
                     {
                         "$ref": "MessageDisplayScriptFilter",
-                        "description": "An object to filter the extension's registered message display scripts.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "filter",
                         "optional": true
                     },
                     {
-                        "description": "The resulting array contains the registered message display scripts.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "callback",
                         "parameters": [
                             {
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "MessageDisplayScriptDetails"
                                 },
@@ -172,12 +272,23 @@
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "note": "Registered scripts will only be applied to newly opened messages. To apply the script to already open messages, manually inject your script by calling $(ref:scripting.executeScript) for each of the open <var>messageDisplay</var> tabs."
+                    },
+                    {
+                        "version_added": "128"
+                    }
+                ],
                 "async": "callback",
-                "description": "Registers one or more message display scripts for this extension, which should be injected into displayed messages. **Note:** Registered scripts will only be applied to newly opened messages. To apply the script to already open messages, manually inject your script by calling $(ref:scripting.executeScript) for each of the open <var>messageDisplay</var> tabs.",
                 "name": "registerScripts",
                 "parameters": [
                     {
-                        "description": "Contains a list of message display scripts to be registered. If there are errors during script parsing/file validation, or if the IDs specified already exist, then no scripts are registered.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "items": {
                             "$ref": "MessageDisplayScriptDetails"
                         },
@@ -185,7 +296,11 @@
                         "type": "array"
                     },
                     {
-                        "description": "Invoked upon completion of the registration.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "callback",
                         "parameters": [],
                         "type": "function"
@@ -194,18 +309,30 @@
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "version_added": "128"
+                    }
+                ],
                 "async": "callback",
-                "description": "Unregisters one or more message display scripts for this extension.",
                 "name": "unregisterScripts",
                 "parameters": [
                     {
                         "$ref": "MessageDisplayScriptFilter",
-                        "description": "If specified, only unregisters message display scripts which match the filter. Otherwise, all of the extension's message display scripts are unregistered.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "filter",
                         "optional": true
                     },
                     {
-                        "description": "Invoked upon completion of the unregistration.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "callback",
                         "parameters": [],
                         "type": "function"
@@ -220,10 +347,19 @@
         ],
         "types": [
             {
+                "annotations": [
+                    {
+                        "version_added": "128"
+                    }
+                ],
                 "id": "MessageDisplayScriptDetails",
                 "properties": {
                     "css": {
-                        "description": "The list of CSS files to be injected. These are injected in the order they appear in this array.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "items": {
                             "$ref": "manifest.ExtensionURL"
                         },
@@ -231,11 +367,19 @@
                         "type": "array"
                     },
                     "id": {
-                        "description": "The id of the message display script, specified in the API call.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "type": "string"
                     },
                     "js": {
-                        "description": "The list of JavaScript files to be injected. These are injected in the order they appear in this array.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "items": {
                             "$ref": "manifest.ExtensionURL"
                         },
@@ -244,17 +388,30 @@
                     },
                     "runAt": {
                         "$ref": "extensionTypes.RunAt",
-                        "description": "Specifies when JavaScript files are injected. The preferred and default value is <code>document_idle</code>.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "optional": true
                     }
                 },
                 "type": "object"
             },
             {
+                "annotations": [
+                    {
+                        "version_added": "128"
+                    }
+                ],
                 "id": "MessageDisplayScriptFilter",
                 "properties": {
                     "ids": {
-                        "description": "The IDs of specific message display scripts to retrieve with <code>getRegisteredScripts()</code> or to unregister with <code>unregisterScripts()</code>.",
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "items": {
                             "type": "string"
                         },

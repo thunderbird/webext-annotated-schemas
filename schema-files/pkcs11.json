@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest",
         "types": [
             {
@@ -10,6 +10,15 @@
                         "enum": [
                             "pkcs11"
                         ],
+                        "enums": {
+                            "pkcs11": {
+                                "annotations": [
+                                    {
+                                        "version_added": true
+                                    }
+                                ]
+                            }
+                        },
                         "type": "string"
                     }
                 ]
@@ -17,31 +26,55 @@
         ]
     },
     {
-        "description": "PKCS#11 module management API",
         "functions": [
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/isModuleInstalled"
+                    },
+                    {
+                        "version_added": "58"
+                    }
+                ],
                 "async": true,
-                "description": "checks whether a PKCS#11 module, given by name, is installed",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/isModuleInstalled",
                 "name": "isModuleInstalled",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/isModuleInstalled"
+                            },
+                            {
+                                "version_added": "58"
+                            }
+                        ],
                         "name": "name",
                         "type": "string"
                     }
                 ],
-                "support": {
-                    "version_added": "58"
-                },
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/installModule"
+                    },
+                    {
+                        "version_added": "58"
+                    }
+                ],
                 "async": true,
-                "description": "Install a PKCS#11 module with a given name",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/installModule",
                 "name": "installModule",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/installModule"
+                            },
+                            {
+                                "version_added": "58"
+                            }
+                        ],
                         "name": "name",
                         "type": "string"
                     },
@@ -51,41 +84,60 @@
                         "type": "integer"
                     }
                 ],
-                "support": {
-                    "version_added": "58"
-                },
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/uninstallModule"
+                    },
+                    {
+                        "version_added": "58"
+                    }
+                ],
                 "async": true,
-                "description": "Remove an installed PKCS#11 module from firefox",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/uninstallModule",
                 "name": "uninstallModule",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/uninstallModule"
+                            },
+                            {
+                                "version_added": "58"
+                            }
+                        ],
                         "name": "name",
                         "type": "string"
                     }
                 ],
-                "support": {
-                    "version_added": "58"
-                },
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/getModuleSlots"
+                    },
+                    {
+                        "version_added": "58"
+                    }
+                ],
                 "async": true,
-                "description": "Enumerate a module's slots, each with their name and whether a token is present",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/getModuleSlots",
                 "name": "getModuleSlots",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pkcs11/getModuleSlots"
+                            },
+                            {
+                                "version_added": "58"
+                            }
+                        ],
                         "name": "name",
                         "type": "string"
                     }
                 ],
-                "support": {
-                    "version_added": "58"
-                },
                 "type": "function"
             }
         ],

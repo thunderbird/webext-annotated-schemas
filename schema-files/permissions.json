@@ -2,67 +2,122 @@
     {
         "events": [
             {
-                "description": "Fired when the extension acquires new permissions.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/onAdded",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/onAdded"
+                    },
+                    {
+                        "version_added": "77"
+                    }
+                ],
                 "name": "onAdded",
                 "parameters": [
                     {
                         "$ref": "Permissions",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/onAdded"
+                            },
+                            {
+                                "version_added": "77"
+                            }
+                        ],
                         "name": "permissions"
                     }
                 ],
-                "support": {
-                    "version_added": "77"
-                },
                 "type": "function"
             },
             {
-                "description": "Fired when permissions are removed from the extension.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/onRemoved",
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/onRemoved"
+                    },
+                    {
+                        "version_added": "77"
+                    }
+                ],
                 "name": "onRemoved",
                 "parameters": [
                     {
                         "$ref": "Permissions",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/onRemoved"
+                            },
+                            {
+                                "version_added": "77"
+                            }
+                        ],
                         "name": "permissions"
                     }
                 ],
-                "support": {
-                    "version_added": "77"
-                },
                 "type": "function"
             }
         ],
         "functions": [
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/getAll"
+                    },
+                    {
+                        "version_added": "55"
+                    }
+                ],
                 "async": "callback",
-                "description": "Get a list of all the extension's permissions.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/getAll",
                 "name": "getAll",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/getAll"
+                            },
+                            {
+                                "version_added": "55"
+                            }
+                        ],
                         "name": "callback",
                         "parameters": [
                             {
                                 "$ref": "AnyPermissions",
+                                "annotations": [
+                                    {
+                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/getAll"
+                                    },
+                                    {
+                                        "version_added": "55"
+                                    }
+                                ],
                                 "name": "permissions"
                             }
                         ],
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "55"
-                },
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/contains"
+                    },
+                    {
+                        "version_added": "55"
+                    }
+                ],
                 "async": "callback",
-                "description": "Check if the extension has the given permissions.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/contains",
                 "name": "contains",
                 "parameters": [
                     {
                         "$ref": "AnyPermissions",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/contains"
+                            },
+                            {
+                                "version_added": "55"
+                            }
+                        ],
                         "name": "permissions"
                     },
                     {
@@ -76,22 +131,65 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "55"
-                },
                 "type": "function"
             },
             {
                 "allowedContexts": [
                     "content"
                 ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/request"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "It's not possible to request permissions from within DevTools (<a href=\"https://bugzil.la/1796933\">bug 1796933</a>)."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 101, permissions cannot be requested from a sidebar document (<a href=\"https://bugzil.la/1493396\">bug 1493396</a>)."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 75, permissions cannot be requested from popup panels (see <a href=\"https://bugzil.la/1432083\">bug 1432083</a>)."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 61, permissions cannot be requested from options pages embedded in <code>about:addons</code> (see <a href=\"https://bugzil.la/1382953\">bug 1382953</a>)."
+                    },
+                    {
+                        "version_added": "55"
+                    }
+                ],
                 "async": "callback",
-                "description": "Request the given permissions.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/request",
                 "name": "request",
                 "parameters": [
                     {
                         "$ref": "Permissions",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/request"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "It's not possible to request permissions from within DevTools (<a href=\"https://bugzil.la/1796933\">bug 1796933</a>)."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 101, permissions cannot be requested from a sidebar document (<a href=\"https://bugzil.la/1493396\">bug 1493396</a>)."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 75, permissions cannot be requested from popup panels (see <a href=\"https://bugzil.la/1432083\">bug 1432083</a>)."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Before version 61, permissions cannot be requested from options pages embedded in <code>about:addons</code> (see <a href=\"https://bugzil.la/1382953\">bug 1382953</a>)."
+                            },
+                            {
+                                "version_added": "55"
+                            }
+                        ],
                         "name": "permissions"
                     },
                     {
@@ -106,19 +204,30 @@
                     }
                 ],
                 "requireUserInput": true,
-                "support": {
-                    "version_added": "55"
-                },
                 "type": "function"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/remove"
+                    },
+                    {
+                        "version_added": "55"
+                    }
+                ],
                 "async": "callback",
-                "description": "Relinquish the given permissions.",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/remove",
                 "name": "remove",
                 "parameters": [
                     {
                         "$ref": "Permissions",
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/remove"
+                            },
+                            {
+                                "version_added": "55"
+                            }
+                        ],
                         "name": "permissions"
                     },
                     {
@@ -127,17 +236,21 @@
                         "type": "function"
                     }
                 ],
-                "support": {
-                    "version_added": "55"
-                },
                 "type": "function"
             }
         ],
         "namespace": "permissions",
         "types": [
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/Permissions"
+                    },
+                    {
+                        "version_added": "55"
+                    }
+                ],
                 "id": "Permissions",
-                "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/permissions/Permissions",
                 "properties": {
                     "data_collection": {
                         "default": [],
@@ -170,9 +283,6 @@
                         "optional": true,
                         "type": "array"
                     }
-                },
-                "support": {
-                    "version_added": "55"
                 },
                 "type": "object"
             },
@@ -216,7 +326,7 @@
         ]
     },
     {
-        "applicationVersion": "139.0.1",
+        "applicationVersion": "143.0",
         "namespace": "manifest"
     }
 ]
