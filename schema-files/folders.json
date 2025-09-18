@@ -26,6 +26,7 @@
         ]
     },
     {
+        "description": "The folders API allows to access and manage the user's message folders.",
         "events": [
             {
                 "annotations": [
@@ -33,6 +34,7 @@
                         "version_added": "91"
                     }
                 ],
+                "description": "Fired when a folder has been created.",
                 "name": "onCreated",
                 "parameters": [
                     {
@@ -53,6 +55,7 @@
                         "version_added": "91"
                     }
                 ],
+                "description": "Fired when a folder has been renamed.",
                 "name": "onRenamed",
                 "parameters": [
                     {
@@ -82,6 +85,7 @@
                         "version_added": "91"
                     }
                 ],
+                "description": "Fired when a folder has been moved.",
                 "name": "onMoved",
                 "parameters": [
                     {
@@ -111,6 +115,7 @@
                         "version_added": "91"
                     }
                 ],
+                "description": "Fired when a folder has been copied.",
                 "name": "onCopied",
                 "parameters": [
                     {
@@ -140,6 +145,7 @@
                         "version_added": "91"
                     }
                 ],
+                "description": "Fired when a folder has been deleted.",
                 "name": "onDeleted",
                 "parameters": [
                     {
@@ -160,6 +166,7 @@
                         "version_added": "121"
                     }
                 ],
+                "description": "Fired when properties of a folder have changed (<var>specialUse</var> and <var>isFavorite</var>).",
                 "name": "onUpdated",
                 "parameters": [
                     {
@@ -189,6 +196,7 @@
                         "version_added": "91"
                     }
                 ],
+                "description": "Fired when certain information of a folder have changed. Bursts of message count changes are collapsed to a single event.",
                 "name": "onFolderInfoChanged",
                 "parameters": [
                     {
@@ -221,6 +229,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Gets folders that match the specified properties, or all folders if no properties are specified.",
                 "name": "query",
                 "parameters": [
                     {
@@ -240,6 +249,7 @@
                                         "version_added": "121"
                                     }
                                 ],
+                                "description": "Limits the search to folders of the account with the specified id.",
                                 "optional": true
                             },
                             "canAddMessages": {
@@ -248,6 +258,7 @@
                                         "version_added": "121"
                                     }
                                 ],
+                                "description": "Whether the folder supports adding new messages, or not.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -257,6 +268,7 @@
                                         "version_added": "121"
                                     }
                                 ],
+                                "description": "Whether the folder supports adding new subfolders, or not.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -266,6 +278,7 @@
                                         "version_added": "121"
                                     }
                                 ],
+                                "description": "Whether the folder can be deleted, or not.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -275,6 +288,7 @@
                                         "version_added": "121"
                                     }
                                 ],
+                                "description": "Whether the folder can be renamed, or not.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -284,6 +298,7 @@
                                         "version_added": "121"
                                     }
                                 ],
+                                "description": "Whether the folder supports deleting messages, or not.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -294,6 +309,7 @@
                                         "version_added": "121"
                                     }
                                 ],
+                                "description": "Limits the search to the folder with the specified id.",
                                 "optional": true
                             },
                             "hasMessages": {
@@ -320,6 +336,7 @@
                                         ]
                                     }
                                 ],
+                                "description": "Whether the folder (excluding subfolders) contains messages, or not. Supports to specify a $(ref:folders.QueryRange) (min/max) instead of a simple boolean value (none/some).",
                                 "optional": true
                             },
                             "hasNewMessages": {
@@ -346,6 +363,7 @@
                                         ]
                                     }
                                 ],
+                                "description": "Whether the folder (excluding subfolders) contains new messages, or not. Supports to specify a $(ref:folders.QueryRange) (min/max) instead of a simple boolean value (none/some).",
                                 "optional": true
                             },
                             "hasSubFolders": {
@@ -372,6 +390,7 @@
                                         ]
                                     }
                                 ],
+                                "description": "Whether the folder has subfolders, or not. Supports to specify a $(ref:folders.QueryRange) (min/max) instead of a simple boolean value (none/some).",
                                 "optional": true
                             },
                             "hasUnreadMessages": {
@@ -398,6 +417,7 @@
                                         ]
                                     }
                                 ],
+                                "description": "Whether the folder (excluding subfolders) contains unread messages, or not. Supports to specify a $(ref:folders.QueryRange) (min/max) instead of a simple boolean value (none/some).",
                                 "optional": true
                             },
                             "isFavorite": {
@@ -406,6 +426,7 @@
                                         "version_added": "121"
                                     }
                                 ],
+                                "description": "Whether the folder is a favorite folder, or not.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -415,6 +436,7 @@
                                         "version_added": "121"
                                     }
                                 ],
+                                "description": "Whether the folder is a root folder, or not.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -424,6 +446,7 @@
                                         "version_added": "127"
                                     }
                                 ],
+                                "description": "Whether the folder is a virtual tag folder, or not. Virtual tag folders are always skipped, unless this property is set to <var>true</var>",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -433,6 +456,7 @@
                                         "version_added": "127"
                                     }
                                 ],
+                                "description": "Whether the folder is a unified mailbox folder, or not. Unified mailbox folders are always skipped, unless this property is set to <var>true</var>",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -442,6 +466,7 @@
                                         "version_added": "121"
                                     }
                                 ],
+                                "description": "Whether the folder is a virtual search folder, or not.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -452,6 +477,7 @@
                                         "version_added": "137"
                                     }
                                 ],
+                                "description": "Date the folder was last used (folder was accessed, user moved or copied messages into the folder or folder received new messages).",
                                 "optional": true
                             },
                             "lastUsedAsDestination": {
@@ -461,6 +487,7 @@
                                         "version_added": "137"
                                     }
                                 ],
+                                "description": "Date the folder was last used as a destination (user moved or copied messages into the folder).",
                                 "optional": true
                             },
                             "limit": {
@@ -469,6 +496,7 @@
                                         "version_added": "122"
                                     }
                                 ],
+                                "description": "Limits the number of returned folders. If used together with <var>recent</var>, supports being set to $(ref:folders.DEFAULT_MOST_RECENT_LIMIT)",
                                 "optional": true,
                                 "type": "integer"
                             },
@@ -496,6 +524,7 @@
                                         "type": "string"
                                     }
                                 ],
+                                "description": "Return only folders whose name is matched by the provided string or regular expression.",
                                 "optional": true
                             },
                             "path": {
@@ -522,6 +551,7 @@
                                         "type": "string"
                                     }
                                 ],
+                                "description": "Return only folders whose path is matched by the provided string or regular expression.",
                                 "optional": true
                             },
                             "recent": {
@@ -530,6 +560,8 @@
                                         "version_added": "121"
                                     }
                                 ],
+                                "deprecated": "Deprecated. Use <var>queryInfo.lastUsed</var> and <var>queryInfo.sort</var>.",
+                                "description": "Whether the folder (excluding subfolders) has been used within the last month, or not. The returned folders will be sorted by <var>lastUsed</var>.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -540,6 +572,7 @@
                                     }
                                 ],
                                 "default": "path",
+                                "description": "The sort order of the returned folders. If not specified, folders will be sorted by <var>path</var>. Sorting by <var>name</var> is case-insensitive.",
                                 "enum": [
                                     "lastUsed",
                                     "lastUsedAsDestination",
@@ -585,6 +618,7 @@
                                         "version_added": "121"
                                     }
                                 ],
+                                "description": "Match only folders with the specified special use (folders have to match all specified uses).",
                                 "items": {
                                     "$ref": "folders.MailFolderSpecialUse"
                                 },
@@ -628,6 +662,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Returns the specified folder.",
                 "name": "get",
                 "parameters": [
                     {
@@ -646,6 +681,7 @@
                             }
                         ],
                         "default": false,
+                        "description": "Specifies whether the returned $(ref:folders.MailFolder) should populate its <var>subFolders</var> property and include all its (nested!) subfolders. Defaults to <var>false</var>.",
                         "name": "includeSubFolders",
                         "optional": true,
                         "type": "boolean"
@@ -680,6 +716,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Creates a new subfolder in the specified folder.",
                 "name": "create",
                 "parameters": [
                     {
@@ -733,6 +770,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Renames a folder.",
                 "name": "rename",
                 "parameters": [
                     {
@@ -786,6 +824,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Moves the given source folder into the given destination folder. Throws if the destination already contains a folder with the name of the source folder.",
                 "name": "move",
                 "parameters": [
                     {
@@ -839,6 +878,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Copies the given source folder into the given destination folder. Throws if the destination already contains a folder with the name of the source folder.",
                 "name": "copy",
                 "parameters": [
                     {
@@ -892,6 +932,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Deletes a folder.",
                 "name": "delete",
                 "parameters": [
                     {
@@ -917,6 +958,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Updates properties of a folder.",
                 "name": "update",
                 "parameters": [
                     {
@@ -934,6 +976,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "The properties to update.",
                         "name": "updateProperties",
                         "properties": {
                             "isFavorite": {
@@ -942,6 +985,7 @@
                                         "version_added": "121"
                                     }
                                 ],
+                                "description": "Sets or clears the favorite status.",
                                 "optional": true,
                                 "type": "boolean"
                             }
@@ -961,6 +1005,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Get additional information about a folder.",
                 "name": "getFolderInfo",
                 "parameters": [
                     {
@@ -1002,6 +1047,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Get capability information about a folder.",
                 "name": "getFolderCapabilities",
                 "parameters": [
                     {
@@ -1043,6 +1089,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Get all parent folders as a flat ordered array. The first array entry is the direct parent.",
                 "name": "getParentFolders",
                 "parameters": [
                     {
@@ -1061,6 +1108,7 @@
                             }
                         ],
                         "default": false,
+                        "description": "Specifies whether each returned parent $(ref:folders.MailFolder) should populate its <var>subFolders</var> property and include all its (nested!) subfolders. Defaults to <var>false</var>.",
                         "name": "includeSubFolders",
                         "optional": true,
                         "type": "boolean"
@@ -1098,6 +1146,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Get the subfolders of the specified folder.",
                 "name": "getSubFolders",
                 "parameters": [
                     {
@@ -1116,6 +1165,7 @@
                             }
                         ],
                         "default": false,
+                        "description": "Specifies whether each returned direct child $(ref:folders.MailFolder) should populate its <var>subFolders</var> property and include all its (nested!) subfolders. Defaults to <var>false</var>.",
                         "name": "includeSubFolders",
                         "optional": true,
                         "type": "boolean"
@@ -1153,6 +1203,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Get one of the special unified mailbox folders, which are virtual search folders and return the content from all mail accounts. Throws if the requested folder does not exist.",
                 "name": "getUnifiedFolder",
                 "parameters": [
                     {
@@ -1161,6 +1212,7 @@
                                 "version_added": "127"
                             }
                         ],
+                        "description": "The requested unified mailbox folder type.",
                         "enum": [
                             "inbox",
                             "drafts",
@@ -1231,6 +1283,7 @@
                             }
                         ],
                         "default": false,
+                        "description": "Specifies whether the returned $(ref:folders.MailFolder) should populate its <var>subFolders</var> property and include all its (nested!) subfolders. Defaults to <var>false</var>.",
                         "name": "includeSubFolders",
                         "optional": true,
                         "type": "boolean"
@@ -1265,6 +1318,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Get one of the special virtual tag folders, which are virtual search folders and group messages from all mail accounts based on their tags. Throws if the requested folder does not exist.",
                 "name": "getTagFolder",
                 "parameters": [
                     {
@@ -1273,6 +1327,7 @@
                                 "version_added": "127"
                             }
                         ],
+                        "description": "The tag key of the requested folder. See $(ref:messages.tags.list()) for the available tags. Throws when specifying an invalid tag key.",
                         "name": "key",
                         "type": "string"
                     },
@@ -1306,6 +1361,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Marks all messages in a folder as read.",
                 "name": "markAsRead",
                 "parameters": [
                     {
@@ -1346,6 +1402,7 @@
                         "version_added": "122"
                     }
                 ],
+                "description": "The number of most recent folders used in Thunderbird's UI. Controlled by the <var>mail.folder_widget.max_recent</var> preference.",
                 "value": -1
             }
         },
@@ -1356,6 +1413,7 @@
                         "version_added": "68"
                     }
                 ],
+                "description": "An object describing a folder.",
                 "id": "MailFolder",
                 "properties": {
                     "accountId": {
@@ -1365,6 +1423,7 @@
                                 "version_added": "68"
                             }
                         ],
+                        "description": "The id of the account this folder belongs to. This property is optional and not available for unified mailbox folders or virtual tag folders.",
                         "optional": true
                     },
                     "id": {
@@ -1373,7 +1432,8 @@
                             {
                                 "version_added": "121"
                             }
-                        ]
+                        ],
+                        "description": "An identifier for the folder."
                     },
                     "isFavorite": {
                         "annotations": [
@@ -1381,6 +1441,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "Whether this folder is a favorite folder.",
                         "type": "boolean"
                     },
                     "isRoot": {
@@ -1389,6 +1450,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "Whether this folder is a root folder.",
                         "type": "boolean"
                     },
                     "isTag": {
@@ -1397,6 +1459,7 @@
                                 "version_added": "127"
                             }
                         ],
+                        "description": "Whether this folder is a virtual tag folder.",
                         "type": "boolean"
                     },
                     "isUnified": {
@@ -1405,6 +1468,7 @@
                                 "version_added": "127"
                             }
                         ],
+                        "description": "Whether this folder is a unified mailbox folder.",
                         "type": "boolean"
                     },
                     "isVirtual": {
@@ -1413,6 +1477,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "Whether this folder is a virtual search folder.",
                         "type": "boolean"
                     },
                     "name": {
@@ -1421,6 +1486,7 @@
                                 "version_added": "68"
                             }
                         ],
+                        "description": "The human-friendly name of this folder.",
                         "type": "string"
                     },
                     "path": {
@@ -1429,6 +1495,7 @@
                                 "version_added": "68"
                             }
                         ],
+                        "description": "Path to this folder in the account. Although paths look predictable, never guess a folder's path, as there are a number of reasons why it may not be what you think it is. Use $(ref:folders.getParentFolders) or $(ref:folders.getSubFolders) to obtain hierarchy information.",
                         "type": "string"
                     },
                     "specialUse": {
@@ -1437,6 +1504,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "The special use of this folder. A folder can have multiple special uses.",
                         "items": {
                             "$ref": "folders.MailFolderSpecialUse"
                         },
@@ -1448,6 +1516,7 @@
                                 "version_added": "74"
                             }
                         ],
+                        "description": "Subfolders of this folder. This property is optional and only present if the inclusion of subfolders had been requested. The folders will be returned in the same order as used in Thunderbird's folder pane.",
                         "items": {
                             "$ref": "folders.MailFolder"
                         },
@@ -1463,6 +1532,7 @@
                         "version_added": "121"
                     }
                 ],
+                "description": "A unique id representing a $(ref:folders.MailFolder) throughout a session. Renaming or moving a folder will invalidate its id.",
                 "id": "MailFolderId",
                 "type": "string"
             },
@@ -1472,6 +1542,7 @@
                         "version_added": "91"
                     }
                 ],
+                "description": "An object containing additional information about a folder.",
                 "id": "MailFolderInfo",
                 "properties": {
                     "lastUsed": {
@@ -1481,6 +1552,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "Date the folder was last used. It is updated every time the folder was accessed, when the user moved or copied messages into the folder and when the folder received new messages. (precision: seconds).",
                         "optional": true
                     },
                     "lastUsedAsDestination": {
@@ -1490,6 +1562,7 @@
                                 "version_added": "137"
                             }
                         ],
+                        "description": "Date the folder was last used as a destination. It is updated every time the user moved or copied messages into the folder. (precision: seconds).",
                         "optional": true
                     },
                     "newMessageCount": {
@@ -1498,6 +1571,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "Number of new messages in this folder.",
                         "optional": true,
                         "type": "integer"
                     },
@@ -1507,6 +1581,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "Quota information, if available.",
                         "items": {
                             "$ref": "folders.MailFolderQuota"
                         },
@@ -1519,6 +1594,7 @@
                                 "version_added": "91"
                             }
                         ],
+                        "description": "Number of messages in this folder.",
                         "optional": true,
                         "type": "integer"
                     },
@@ -1528,6 +1604,7 @@
                                 "version_added": "91"
                             }
                         ],
+                        "description": "Number of unread messages in this folder.",
                         "optional": true,
                         "type": "integer"
                     }
@@ -1540,6 +1617,7 @@
                         "version_added": "121"
                     }
                 ],
+                "description": "An object containing capability information about a folder.",
                 "id": "MailFolderCapabilities",
                 "properties": {
                     "canAddMessages": {
@@ -1548,6 +1626,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "Whether this folder supports adding new messages.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1557,6 +1636,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "Whether this folder supports adding new subfolders.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1566,6 +1646,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "Whether this folder can be deleted.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1575,6 +1656,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "Whether this folder can be renamed.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1584,6 +1666,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "Whether this folder supports deleting messages.",
                         "optional": true,
                         "type": "boolean"
                     }
@@ -1596,6 +1679,7 @@
                         "version_added": "121"
                     }
                 ],
+                "description": "Supported values for the special use of a folder.",
                 "enum": [
                     "inbox",
                     "drafts",
@@ -1673,6 +1757,7 @@
                         "version_added": "121"
                     }
                 ],
+                "description": "An object containing quota information.",
                 "id": "MailFolderQuota",
                 "properties": {
                     "limit": {
@@ -1681,6 +1766,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "The maximum available quota.",
                         "type": "integer"
                     },
                     "type": {
@@ -1689,6 +1775,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "The type of the quota as defined by RFC 2087. A <var>STORAGE</var> quota is constraining the available storage in bytes, a <var>MESSAGE</var> quota is constraining the number of storable messages.",
                         "enum": [
                             "STORAGE",
                             "MESSAGE"
@@ -1717,6 +1804,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "The currently unused quota.",
                         "type": "integer"
                     },
                     "used": {
@@ -1725,6 +1813,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "The currently used quota.",
                         "type": "integer"
                     }
                 },
@@ -1750,6 +1839,7 @@
                                         "version_added": "137"
                                     }
                                 ],
+                                "description": "Whether the date must be considered to be recent by Thunderbird (within the last month) or not, to match the query.",
                                 "type": "boolean"
                             }
                         },
@@ -1769,6 +1859,7 @@
                                         "version_added": "137"
                                     }
                                 ],
+                                "description": "The minimum date required to match the query.",
                                 "optional": true
                             },
                             "before": {
@@ -1778,12 +1869,14 @@
                                         "version_added": "137"
                                     }
                                 ],
+                                "description": "The maximum date required to match the query.",
                                 "optional": true
                             }
                         },
                         "type": "object"
                     }
                 ],
+                "description": "An object defining a range for a date value to be used in queries.",
                 "id": "QueryDateRange"
             },
             {
@@ -1792,6 +1885,7 @@
                         "version_added": "121"
                     }
                 ],
+                "description": "An object defining a range for an integer value to be used in queries.",
                 "id": "QueryRange",
                 "properties": {
                     "max": {
@@ -1800,6 +1894,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "The maximum value required to match the query.",
                         "optional": true,
                         "type": "integer"
                     },
@@ -1809,6 +1904,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "The minimum value required to match the query.",
                         "optional": true,
                         "type": "integer"
                     }
@@ -1829,6 +1925,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "Supported RegExp flags: <var>i</var> = case insensitive, and/or one of <var>u</var> = unicode support or <var>v</var> = extended unicode support",
                         "optional": true,
                         "pattern": "^(i|u|v|iu|iv|ui|vi)$",
                         "type": "string"
@@ -1839,6 +1936,7 @@
                                 "version_added": "121"
                             }
                         ],
+                        "description": "A regular expression, for example <var>^Projects \\d{4}$</var>.",
                         "type": "string"
                     }
                 },

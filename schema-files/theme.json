@@ -36,6 +36,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "A string containing a valid <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors/Color_values'>CSS color string</a>, including hexadecimal or functional representations. For example the color *crimson* can be specified as: <li><var>crimson</var> <li><var>#dc143c</var> <li><var>rgb(220, 20, 60)</var> (or <var>rgba(220, 20, 60, 0.5)</var> to set 50% opacity) <li><var>hsl(348, 83%, 47%)</var> (or <var>hsla(348, 83%, 47%, 0.5)</var> to set 50% opacity)",
                         "type": "string"
                     },
                     {
@@ -44,6 +45,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "An RGB array of 3 integers. For example <var>[220, 20, 60]</var> for the color *crimson*.",
                         "items": {
                             "maximum": 255,
                             "minimum": 0,
@@ -59,6 +61,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "An RGBA array of 3 integers and a fractional (a float between 0 and 1). For example <var>[220, 20, 60, 0.5]<var> for the color *crimson* with 50% opacity.",
                         "items": {
                             "type": "number"
                         },
@@ -67,6 +70,7 @@
                         "type": "array"
                     }
                 ],
+                "description": "Defines a color value.",
                 "id": "ThemeColor"
             },
             {
@@ -75,6 +79,7 @@
                         "version_added": "86"
                     }
                 ],
+                "description": "Defines additional color, image and property keys to be used in $(ref:theme.ThemeType), extending the theme-able areas of Thunderbird.",
                 "id": "ThemeExperiment",
                 "properties": {
                     "colors": {
@@ -98,6 +103,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map new theme color keys to internal Thunderbird CSS color variables. The new color key is usable as a color reference in $(ref:theme.ThemeType).",
                         "optional": true,
                         "type": "object"
                     },
@@ -122,6 +128,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map new theme image keys to internal Thunderbird CSS image variables. The new image key is usable as an image reference in $(ref:theme.ThemeType).",
                         "optional": true,
                         "type": "object"
                     },
@@ -146,6 +153,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map new theme property keys to internal Thunderbird CSS property variables. The new property key is usable as a property reference in $(ref:theme.ThemeType).",
                         "optional": true,
                         "type": "object"
                     },
@@ -200,6 +208,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "URL to a stylesheet introducing additional CSS variables, extending the theme-able areas of Thunderbird.",
                         "optional": true
                     }
                 },
@@ -214,6 +223,7 @@
                         "version_added": "86"
                     }
                 ],
+                "description": "Contains the color, image and property settings of a theme.",
                 "id": "ThemeType",
                 "properties": {
                     "colors": {
@@ -225,6 +235,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map color values to theme color keys. The following built-in theme color keys are supported:",
                         "optional": true,
                         "properties": {
                             "accentcolor": {
@@ -234,6 +245,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "deprecated": "Unsupported colors property, use <var>theme.colors.frame</var>, this alias is ignored in Thunderbird >= 70.",
                                 "optional": true
                             },
                             "bookmark_text": {
@@ -243,6 +255,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "Not used in Thunderbird.",
                                 "optional": true
                             },
                             "button_background_active": {
@@ -252,6 +265,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The color of the background of the pressed toolbar buttons.",
                                 "optional": true
                             },
                             "button_background_hover": {
@@ -261,6 +275,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The color of the background of the toolbar buttons on hover.",
                                 "optional": true
                             },
                             "frame": {
@@ -270,6 +285,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The background color of the header area.",
                                 "optional": true
                             },
                             "frame_inactive": {
@@ -279,6 +295,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The background color of the header area when the window is inactive.",
                                 "optional": true
                             },
                             "icons": {
@@ -288,6 +305,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The color of the toolbar icons. Defaults to the color specified by <var>toolbar_text</var>.",
                                 "optional": true
                             },
                             "icons_attention": {
@@ -297,6 +315,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The color of the toolbar icons in attention state such as the chat icon with new messages.",
                                 "optional": true
                             },
                             "ntp_background": {
@@ -306,6 +325,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "Not used in Thunderbird.",
                                 "optional": true
                             },
                             "ntp_text": {
@@ -315,6 +335,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "Not used in Thunderbird.",
                                 "optional": true
                             },
                             "popup": {
@@ -324,6 +345,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The background color of popups such as the AppMenu.",
                                 "optional": true
                             },
                             "popup_border": {
@@ -333,6 +355,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The border color of popups.",
                                 "optional": true
                             },
                             "popup_highlight": {
@@ -342,6 +365,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The background color of items highlighted using the keyboard inside popups.",
                                 "optional": true
                             },
                             "popup_highlight_text": {
@@ -351,6 +375,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The text color of items highlighted using the keyboard inside popups.",
                                 "optional": true
                             },
                             "popup_text": {
@@ -360,6 +385,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The text color of popups.",
                                 "optional": true
                             },
                             "sidebar": {
@@ -369,6 +395,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The background color of the trees.",
                                 "optional": true
                             },
                             "sidebar_border": {
@@ -378,6 +405,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The border color of the trees.",
                                 "optional": true
                             },
                             "sidebar_highlight": {
@@ -387,6 +415,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The background color of highlighted rows in trees.",
                                 "optional": true
                             },
                             "sidebar_highlight_border": {
@@ -396,6 +425,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The border color of highlighted rows in trees.",
                                 "optional": true
                             },
                             "sidebar_highlight_text": {
@@ -405,6 +435,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The text color of highlighted rows in trees.",
                                 "optional": true
                             },
                             "sidebar_text": {
@@ -414,6 +445,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The text color of the trees. Needed to enable the tree theming.",
                                 "optional": true
                             },
                             "tab_background_separator": {
@@ -423,6 +455,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The color of the vertical separator of the background tabs.",
                                 "optional": true
                             },
                             "tab_background_text": {
@@ -432,6 +465,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The text color of the unselected tabs.",
                                 "optional": true
                             },
                             "tab_line": {
@@ -441,6 +475,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The color of the selected tab line.",
                                 "optional": true
                             },
                             "tab_loading": {
@@ -450,6 +485,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The color of the tab loading indicator.",
                                 "optional": true
                             },
                             "tab_selected": {
@@ -459,6 +495,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "Background color of the selected tab. Defaults to the color specified by <var>toolbar</var>.",
                                 "optional": true
                             },
                             "tab_text": {
@@ -468,6 +505,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The text color for the selected tab. Defaults to the color specified by <var>toolbar_text</var>.",
                                 "optional": true
                             },
                             "textcolor": {
@@ -477,6 +515,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "deprecated": "Unsupported color property, use <var>theme.colors.tab_background_text</var>, this alias is ignored in Thunderbird >= 70.",
                                 "optional": true
                             },
                             "toolbar": {
@@ -486,6 +525,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The background color of the toolbars. Also used as default value for <var>tab_selected</var>.",
                                 "optional": true
                             },
                             "toolbar_bottom_separator": {
@@ -495,6 +535,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The color of the line separating the bottom of the toolbar from the region below.",
                                 "optional": true
                             },
                             "toolbar_field": {
@@ -504,6 +545,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The background color for fields in the toolbar, such as the search field.",
                                 "optional": true
                             },
                             "toolbar_field_border": {
@@ -513,6 +555,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The border color for fields in the toolbar.",
                                 "optional": true
                             },
                             "toolbar_field_border_focus": {
@@ -522,6 +565,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The focused border color for fields in the toolbar.",
                                 "optional": true
                             },
                             "toolbar_field_focus": {
@@ -531,6 +575,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The focused background color for fields in the toolbar.",
                                 "optional": true
                             },
                             "toolbar_field_highlight": {
@@ -540,6 +585,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The background color used to indicate the current selection of text in the search field.",
                                 "optional": true
                             },
                             "toolbar_field_highlight_text": {
@@ -549,6 +595,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The color used to draw text that's currently selected in the search field.",
                                 "optional": true
                             },
                             "toolbar_field_separator": {
@@ -558,6 +605,8 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "deprecated": "This color property is ignored in >= 89.",
+                                "description": "Not used in Thunderbird.",
                                 "optional": true
                             },
                             "toolbar_field_text": {
@@ -567,6 +616,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The text color for fields in the toolbar.",
                                 "optional": true
                             },
                             "toolbar_field_text_focus": {
@@ -576,6 +626,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The text color in the focused fields in the toolbar.",
                                 "optional": true
                             },
                             "toolbar_text": {
@@ -585,6 +636,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The text color in the main Thunderbird toolbar. Also used as default value for <var>icons</var> and <var>tab_text</var>.",
                                 "optional": true
                             },
                             "toolbar_top_separator": {
@@ -594,6 +646,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The color of the line separating the top of the toolbar from the region above.",
                                 "optional": true
                             },
                             "toolbar_vertical_separator": {
@@ -603,6 +656,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "The color of the vertical separators on the toolbars.",
                                 "optional": true
                             }
                         },
@@ -617,6 +671,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map images to theme image keys. The following built-in theme image keys are supported:",
                         "optional": true,
                         "properties": {
                             "additional_backgrounds": {
@@ -625,6 +680,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "Additional images added to the header area and displayed behind the <var>theme_frame</var> image.",
                                 "items": {
                                     "$ref": "ImageDataOrExtensionURL"
                                 },
@@ -639,6 +695,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "deprecated": "Unsupported images property, use <var>theme.images.theme_frame</var>, this alias is ignored in Thunderbird >= 70.",
                                 "optional": true
                             },
                             "theme_frame": {
@@ -648,6 +705,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "Foreground image on the header area.",
                                 "optional": true
                             }
                         },
@@ -662,6 +720,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "A <em>dictionary object</em> with one or more <em>key-value</em> pairs to map property values to theme property keys. The following built-in theme property keys are supported:",
                         "optional": true,
                         "properties": {
                             "additional_backgrounds_alignment": {
@@ -848,6 +907,7 @@
                                         "version_added": "100"
                                     }
                                 ],
+                                "description": "If set, overrides the general theme (context menus, toolbars, content area).",
                                 "enum": [
                                     "light",
                                     "dark",
@@ -885,6 +945,7 @@
                                         "version_added": "100"
                                     }
                                 ],
+                                "description": "If set, overrides the color scheme for the content area.",
                                 "enum": [
                                     "light",
                                     "dark",
@@ -928,6 +989,7 @@
                         "version_added": "86"
                     }
                 ],
+                "description": "Contents of manifest.json for a static theme",
                 "id": "ThemeManifest",
                 "properties": {
                     "dark_theme": {
@@ -937,6 +999,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "Fallback properties for the dark system theme in a static theme.",
                         "optional": true
                     },
                     "default_locale": {
@@ -954,6 +1017,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "Icons shown in the Add-ons Manager.",
                         "optional": true,
                         "patternProperties": {
                             "^[1-9]\\d*$": {
@@ -968,7 +1032,8 @@
                             {
                                 "version_added": "86"
                             }
-                        ]
+                        ],
+                        "description": "Properties for a static theme. A static theme must not contain any other WebExtension logic. If additional logic is required, request the <permission>theme</permission> permission and load/update the theme dynamically. More information about themes can be found in the <a href='https://developer.thunderbird.net/add-ons/web-extension-themes'>theme guide</a>"
                     },
                     "theme_experiment": {
                         "$ref": "ThemeExperiment",
@@ -977,6 +1042,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "CSS file with additional styles.",
                         "optional": true
                     }
                 },
@@ -992,6 +1058,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "A theme experiment allows modifying the user interface of Thunderbird beyond what is currently possible using the built-in color, image and property keys of $(ref:theme.ThemeType). These experiments are a precursor to proposing new theme features for inclusion in Thunderbird. Experimentation is done by mapping internal CSS color, image and property variables to new theme keys and using them in $(ref:theme.ThemeType) and by loading additional style sheets to add new CSS variables, extending the theme-able areas of Thunderbird. Can be used in static and dynamic themes.",
                         "optional": true
                     }
                 }
@@ -999,6 +1066,7 @@
         ]
     },
     {
+        "description": "The theme API allows for customization of Thunderbird's visual elements.",
         "events": [
             {
                 "annotations": [
@@ -1006,6 +1074,7 @@
                         "version_added": "86"
                     }
                 ],
+                "description": "Fired when a new theme has been applied",
                 "name": "onUpdated",
                 "parameters": [
                     {
@@ -1015,6 +1084,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "Details of the theme update",
                         "name": "updateInfo"
                     }
                 ],
@@ -1029,6 +1099,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Returns the current theme for the specified window or the last focused window.",
                 "name": "getCurrent",
                 "parameters": [
                     {
@@ -1037,6 +1108,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "The window for which we want the theme.",
                         "name": "windowId",
                         "optional": true,
                         "type": "integer"
@@ -1071,6 +1143,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Make complete updates to the theme. Resolves when the update has completed.",
                 "name": "update",
                 "parameters": [
                     {
@@ -1079,6 +1152,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "The id of the window to update. No id updates all windows.",
                         "name": "windowId",
                         "optional": true,
                         "type": "integer"
@@ -1090,6 +1164,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "The properties of the theme to update.",
                         "name": "details"
                     }
                 ],
@@ -1105,6 +1180,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Removes the updates made to the theme.",
                 "name": "reset",
                 "parameters": [
                     {
@@ -1113,6 +1189,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "The id of the window to reset. No id resets all windows.",
                         "name": "windowId",
                         "optional": true,
                         "type": "integer"
@@ -1132,6 +1209,7 @@
                         "version_added": "86"
                     }
                 ],
+                "description": "Info provided in the onUpdated listener.",
                 "id": "ThemeUpdateInfo",
                 "properties": {
                     "theme": {
@@ -1140,7 +1218,8 @@
                             {
                                 "version_added": "86"
                             }
-                        ]
+                        ],
+                        "description": "The new theme after update"
                     },
                     "windowId": {
                         "annotations": [
@@ -1148,6 +1227,7 @@
                                 "version_added": "86"
                             }
                         ],
+                        "description": "The id of the window the theme has been applied to",
                         "optional": true,
                         "type": "integer"
                     }

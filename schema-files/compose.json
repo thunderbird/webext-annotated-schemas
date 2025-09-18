@@ -42,6 +42,7 @@
         ]
     },
     {
+        "description": "The compose API allows to interact with the message composition window.",
         "events": [
             {
                 "annotations": [
@@ -49,6 +50,7 @@
                         "version_added": "74"
                     }
                 ],
+                "description": "Fired when a message is about to be sent from the compose window. This is a user input event handler. For asynchronous listeners some <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/User_actions'>restrictions</a> apply.",
                 "name": "onBeforeSend",
                 "parameters": [
                     {
@@ -67,6 +69,7 @@
                                 "version_added": "74"
                             }
                         ],
+                        "description": "The current state of the compose window. This is functionally the same as calling the $(ref:compose.getComposeDetails) function.",
                         "name": "details"
                     }
                 ],
@@ -81,6 +84,7 @@
                                     "version_added": "74"
                                 }
                             ],
+                            "description": "Cancels the send.",
                             "optional": true,
                             "type": "boolean"
                         },
@@ -91,6 +95,7 @@
                                     "version_added": "74"
                                 }
                             ],
+                            "description": "Updates the compose window. This is functionally the same as calling the $(ref:compose.setComposeDetails) function.",
                             "optional": true
                         }
                     },
@@ -104,6 +109,7 @@
                         "version_added": "105"
                     }
                 ],
+                "description": "Fired when sending a message succeeded or failed.",
                 "name": "onAfterSend",
                 "parameters": [
                     {
@@ -129,6 +135,7 @@
                                         "version_added": "105"
                                     }
                                 ],
+                                "description": "An error description, if sending the message failed.",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -138,6 +145,7 @@
                                         "version_added": "105"
                                     }
                                 ],
+                                "description": "The header messageId of the outgoing message. Only included for actually sent messages.",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -147,6 +155,7 @@
                                         "version_added": "105"
                                     }
                                 ],
+                                "description": "Copies of the sent message. The number of created copies depends on the applied file carbon copy configuration (fcc).",
                                 "items": {
                                     "$ref": "messages.MessageHeader"
                                 },
@@ -158,6 +167,7 @@
                                         "version_added": "105"
                                     }
                                 ],
+                                "description": "The used send mode.",
                                 "enum": [
                                     "sendNow",
                                     "sendLater"
@@ -195,6 +205,7 @@
                         "version_added": "105"
                     }
                 ],
+                "description": "Fired when saving a message as draft or template succeeded or failed.",
                 "name": "onAfterSave",
                 "parameters": [
                     {
@@ -220,6 +231,7 @@
                                         "version_added": "105"
                                     }
                                 ],
+                                "description": "An error description, if saving the message failed.",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -232,6 +244,7 @@
                                         "version_added": "105"
                                     }
                                 ],
+                                "description": "An array with exactly one element, the saved message.",
                                 "items": {
                                     "$ref": "messages.MessageHeader"
                                 },
@@ -243,6 +256,7 @@
                                         "version_added": "105"
                                     }
                                 ],
+                                "description": "The used save mode.",
                                 "enum": [
                                     "autoSave",
                                     "draft",
@@ -288,6 +302,7 @@
                         "version_added": "78"
                     }
                 ],
+                "description": "Fired when an attachment is added to a message being composed.",
                 "name": "onAttachmentAdded",
                 "parameters": [
                     {
@@ -320,6 +335,7 @@
                         "version_added": "78"
                     }
                 ],
+                "description": "Fired when an attachment is removed from a message being composed.",
                 "name": "onAttachmentRemoved",
                 "parameters": [
                     {
@@ -352,6 +368,7 @@
                         "version_added": "78"
                     }
                 ],
+                "description": "Fired when the user changes the identity that will be used to send a message being composed.",
                 "name": "onIdentityChanged",
                 "parameters": [
                     {
@@ -384,6 +401,7 @@
                         "version_added": "90"
                     }
                 ],
+                "description": "Fired when the state of the message composer changed.",
                 "name": "onComposeStateChanged",
                 "parameters": [
                     {
@@ -413,6 +431,7 @@
                         "version_added": "102"
                     }
                 ],
+                "description": "Fired when one or more dictionaries have been activated or deactivated.",
                 "name": "onActiveDictionariesChanged",
                 "parameters": [
                     {
@@ -448,6 +467,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Open a new message compose window.",
                 "name": "beginNew",
                 "parameters": [
                     {
@@ -457,6 +477,7 @@
                                 "version_added": "67"
                             }
                         ],
+                        "description": "If specified, the message or template to edit as a new message.",
                         "name": "messageId",
                         "optional": true
                     },
@@ -504,6 +525,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Open a new message compose window replying to a given message.",
                 "name": "beginReply",
                 "parameters": [
                     {
@@ -513,6 +535,7 @@
                                 "version_added": "67"
                             }
                         ],
+                        "description": "The message to reply to, as retrieved using other APIs.",
                         "name": "messageId"
                     },
                     {
@@ -597,6 +620,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Open a new message compose window forwarding a given message.",
                 "name": "beginForward",
                 "parameters": [
                     {
@@ -606,6 +630,7 @@
                                 "version_added": "67"
                             }
                         ],
+                        "description": "The message to forward, as retrieved using other APIs.",
                         "name": "messageId"
                     },
                     {
@@ -679,6 +704,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Fetches the current state of a compose window. Currently only a limited amount of information is available, more will be added in later versions.",
                 "name": "getComposeDetails",
                 "parameters": [
                     {
@@ -730,6 +756,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Updates the compose window. The properties of the given $(ref:compose.ComposeDetails) object will be used to overwrite the current values of the specified compose window, so only properties that are to be changed should be included. Modified settings will be treated as user initiated, and turn off further automatic changes on these settings.",
                 "name": "setComposeDetails",
                 "parameters": [
                     {
@@ -764,6 +791,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Returns a $(ref:compose.ComposeDictionaries) object, listing all installed dictionaries, including the information whether they are currently enabled or not.",
                 "name": "getActiveDictionaries",
                 "parameters": [
                     {
@@ -809,6 +837,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Updates the active dictionaries. Throws if the <var>activeDictionaries</var> array contains unknown or invalid language identifiers.",
                 "name": "setActiveDictionaries",
                 "parameters": [
                     {
@@ -846,6 +875,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Lists all of the attachments of the message being composed in the specified tab.",
                 "name": "listAttachments",
                 "parameters": [
                     {
@@ -893,6 +923,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Gets the content of a $(ref:compose.ComposeAttachment) as a <a href='https://developer.mozilla.org/en-US/docs/Web/API/File'>File</a> object.",
                 "name": "getAttachmentFile",
                 "parameters": [
                     {
@@ -901,6 +932,7 @@
                                 "version_added": "98"
                             }
                         ],
+                        "description": "The unique identifier for the attachment.",
                         "name": "id",
                         "type": "integer"
                     },
@@ -936,6 +968,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Adds an attachment to the message being composed in the specified tab.",
                 "name": "addAttachment",
                 "parameters": [
                     {
@@ -1006,6 +1039,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Updates the name and/or the content of an attachment in the message being composed in the specified tab. If the specified attachment is a cloud file attachment and the associated provider failed to update the attachment, the function will throw an <em>ExtensionError</em>.",
                 "name": "updateAttachment",
                 "parameters": [
                     {
@@ -1068,6 +1102,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Removes an attachment from the message being composed in the specified tab.",
                 "name": "removeAttachment",
                 "parameters": [
                     {
@@ -1101,6 +1136,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Sends the message currently being composed. If the send mode is not specified or set to <var>default</var>, the message will be send directly if the user is online and placed in the users outbox otherwise. The returned Promise fulfills once the message has been successfully sent or placed in the user's outbox. Throws when the send process has been aborted by the user, by an $(ref:compose.onBeforeSend) event or if there has been an error while sending the message to the outgoing mail server.",
                 "name": "sendMessage",
                 "parameters": [
                     {
@@ -1183,6 +1219,7 @@
                                                 "version_added": "102"
                                             }
                                         ],
+                                        "description": "The header messageId of the outgoing message. Only included for actually sent messages.",
                                         "optional": true,
                                         "type": "string"
                                     },
@@ -1192,6 +1229,7 @@
                                                 "version_added": "102"
                                             }
                                         ],
+                                        "description": "Copies of the sent message. The number of created copies depends on the applied file carbon copy configuration (fcc).",
                                         "items": {
                                             "$ref": "messages.MessageHeader"
                                         },
@@ -1203,6 +1241,7 @@
                                                 "version_added": "102"
                                             }
                                         ],
+                                        "description": "The used send mode.",
                                         "enum": [
                                             "sendNow",
                                             "sendLater"
@@ -1244,6 +1283,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Saves the message currently being composed as a draft or as a template. If the save mode is not specified, the message will be saved as a draft. The returned Promise fulfills once the message has been successfully saved.",
                 "name": "saveMessage",
                 "parameters": [
                     {
@@ -1321,6 +1361,7 @@
                                                 "version_added": "102"
                                             }
                                         ],
+                                        "description": "An array with exactly one element, the saved message.",
                                         "items": {
                                             "$ref": "messages.MessageHeader"
                                         },
@@ -1332,6 +1373,7 @@
                                                 "version_added": "102"
                                             }
                                         ],
+                                        "description": "The used save mode.",
                                         "enum": [
                                             "draft",
                                             "template"
@@ -1373,6 +1415,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Returns information about the current state of the message composer.",
                 "name": "getComposeState",
                 "parameters": [
                     {
@@ -1424,6 +1467,7 @@
                                 "version_added": "67"
                             }
                         ],
+                        "description": "A name and email address in the format <var>Name <email@example.com></var>, or just an email address.",
                         "type": "string"
                     },
                     {
@@ -1439,6 +1483,7 @@
                                         "version_added": "128"
                                     }
                                 ],
+                                "description": "The ID of a contact or mailing list node from the $(doc:addressBook.contacts) or $(doc:addressBook.mailingLists).",
                                 "type": "string"
                             },
                             "type": {
@@ -1447,6 +1492,7 @@
                                         "version_added": "67"
                                     }
                                 ],
+                                "description": "Which sort of object this ID is for.",
                                 "enum": [
                                     "contact",
                                     "mailingList"
@@ -1510,6 +1556,7 @@
                         "version_added": "90"
                     }
                 ],
+                "description": "Represent the state of the message composer.",
                 "id": "ComposeState",
                 "properties": {
                     "canSendLater": {
@@ -1518,6 +1565,7 @@
                                 "version_added": "90"
                             }
                         ],
+                        "description": "The message can be send later.",
                         "type": "boolean"
                     },
                     "canSendNow": {
@@ -1526,6 +1574,7 @@
                                 "version_added": "90"
                             }
                         ],
+                        "description": "The message can be send now.",
                         "type": "boolean"
                     }
                 },
@@ -1537,6 +1586,7 @@
                         "version_added": "74"
                     }
                 ],
+                "description": "Used by various functions to represent the state of a message being composed. Note that functions using this type may have a partial implementation.",
                 "id": "ComposeDetails",
                 "properties": {
                     "additionalFccFolderId": {
@@ -1546,6 +1596,7 @@
                                 "version_added": "127"
                             }
                         ],
+                        "description": "An additional fcc folder which can be selected while composing the message. Cleared when set to <var>null</var>. The permission <permission>accountsRead</permission> is required to use this property.",
                         "optional": "omit-key-if-missing"
                     },
                     "attachPublicPGPKey": {
@@ -1554,6 +1605,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Whether the public OpenPGP key of the sending identity should be attached to the message.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1566,6 +1618,7 @@
                                 "version_added": "102"
                             }
                         ],
+                        "description": "Whether or not the vCard of the used identity will be attached to the message during send.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1575,6 +1628,7 @@
                                 "version_added": "82"
                             }
                         ],
+                        "description": "Only used in the begin* functions. Attachments to add to the message.",
                         "items": {
                             "choices": [
                                 {
@@ -1613,6 +1667,7 @@
                                 "version_added": "74"
                             }
                         ],
+                        "description": "The HTML content of the message.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1631,6 +1686,7 @@
                                 "version_added": "100"
                             }
                         ],
+                        "description": "Array of custom headers. Headers will be returned in <em>Http-Header-Case</em> (a.k.a. <em>Train-Case</em>). Set an empty array to clear all custom headers.",
                         "items": {
                             "$ref": "CustomHeader"
                         },
@@ -1643,6 +1699,7 @@
                                 "version_added": "102"
                             }
                         ],
+                        "description": "Defines the MIME format of the sent message (ignored on plain text messages). Defaults to <var>auto</var>, which will send html messages as plain text, if they do not include any formatting, and as <var>both</var> otherwise (a multipart/mixed message).",
                         "enum": [
                             "auto",
                             "plaintext",
@@ -1688,6 +1745,7 @@
                                 "version_added": "102"
                             }
                         ],
+                        "description": "Let the sender know when the recipient's server received the message. Not supported by all servers.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1707,6 +1765,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "*Caution*: Setting a value for <var>from</var> does not change the used identity, it overrides the <em>From</em> header. Many email servers do not accept emails where the <em>From</em> header does not match the sender identity. Must be set to exactly one valid email address.",
                         "optional": true
                     },
                     "identityId": {
@@ -1715,6 +1774,7 @@
                                 "version_added": "76"
                             }
                         ],
+                        "description": "The ID of an identity from the $(doc:accounts). The settings from the identity will be used in the composed message. If <var>replyTo</var> is also specified, the <var>replyTo</var> property of the identity is overridden. The permission <permission>accountsRead</permission> is required to include the <var>identityId</var>.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1724,6 +1784,7 @@
                                 "version_added": "125"
                             }
                         ],
+                        "description": "Whether the composer is considered modified by the user. A modified composer asks for confirmation, when it is closed.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1733,6 +1794,7 @@
                                 "version_added": "75"
                             }
                         ],
+                        "description": "Whether the message is an HTML message or a plain text message.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1763,6 +1825,7 @@
                                 "type": "array"
                             }
                         ],
+                        "description": "A single newsgroup name or an array of newsgroup names.",
                         "optional": true
                     },
                     "overrideDefaultFccFolderId": {
@@ -1772,6 +1835,7 @@
                                 "version_added": "127"
                             }
                         ],
+                        "description": " This value overrides the default fcc setting (defined by the used identity) for this message only. Either a $(ref:folders.MailFolderId) specifying the folder for the copy of the sent message, or an empty string to not save a copy at all. Reset when set to <var>null</var>. The permission <permission>accountsRead</permission> is required to use this property.",
                         "optional": "omit-key-if-missing"
                     },
                     "plainTextBody": {
@@ -1780,6 +1844,7 @@
                                 "version_added": "75"
                             }
                         ],
+                        "description": "The plain text content of the message.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1789,6 +1854,7 @@
                                 "version_added": "102"
                             }
                         ],
+                        "description": "The priority of the message.",
                         "enum": [
                             "lowest",
                             "low",
@@ -1843,6 +1909,7 @@
                                 "version_added": "95"
                             }
                         ],
+                        "description": "The id of the original message (in case of draft, template, forward or reply). Read-only. Is <var>undefined</var> in all other cases or if the original message was opened from file.",
                         "optional": true
                     },
                     "replyTo": {
@@ -1860,6 +1927,7 @@
                                 "version_added": "102"
                             }
                         ],
+                        "description": "Add the <em>Disposition-Notification-To</em> header to the message to requests the recipients email client to send a reply once the message has been received. Recipient server may strip the header and the recipient might ignore the request.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1887,6 +1955,7 @@
                                 ]
                             }
                         ],
+                        "description": "The selected encryption technology (<var>OpenPGP</var> or <var>S/MIME</var>) which is to be used to sign and/or encrypt the message. If the sending identity does not support encryption at all, this will be <var>undefined</var>.",
                         "optional": true
                     },
                     "subject": {
@@ -1913,6 +1982,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "Read-only. The type of the message being composed, depending on how the compose window was opened by the user.",
                         "enum": [
                             "draft",
                             "new",
@@ -1969,6 +2039,7 @@
                         "version_added": "98"
                     }
                 ],
+                "description": "Object used to add, update or rename an attachment in a message being composed.",
                 "id": "FileAttachment",
                 "properties": {
                     "file": {
@@ -1978,6 +2049,7 @@
                                 "version_added": "98"
                             }
                         ],
+                        "description": "The new content for the attachment.",
                         "isInstanceOf": "File",
                         "optional": true,
                         "type": "object"
@@ -1988,6 +2060,7 @@
                                 "version_added": "98"
                             }
                         ],
+                        "description": "The new name for the attachment, as displayed to the user. If not specified, the name of the provided <var>file</var> object is used.",
                         "optional": true,
                         "type": "string"
                     }
@@ -2000,6 +2073,7 @@
                         "version_added": "78"
                     }
                 ],
+                "description": "Represents an attachment in a message being composed.",
                 "id": "ComposeAttachment",
                 "properties": {
                     "id": {
@@ -2008,6 +2082,7 @@
                                 "version_added": "78"
                             }
                         ],
+                        "description": "A unique identifier for this attachment.",
                         "type": "integer"
                     },
                     "name": {
@@ -2016,6 +2091,7 @@
                                 "version_added": "78"
                             }
                         ],
+                        "description": "The name of this attachment, as displayed to the user.",
                         "optional": true,
                         "type": "string"
                     },
@@ -2025,6 +2101,7 @@
                                 "version_added": "83"
                             }
                         ],
+                        "description": "The size in bytes of this attachment. Read-only.",
                         "optional": true,
                         "type": "integer"
                     }
@@ -2037,6 +2114,7 @@
                         "version_added": "100"
                     }
                 ],
+                "description": "A custom header definition.",
                 "id": "CustomHeader",
                 "properties": {
                     "name": {
@@ -2045,6 +2123,7 @@
                                 "version_added": "100"
                             }
                         ],
+                        "description": "Name of a custom header, must be prefixed by <var>X-</var> (but not by <var>X-Mozilla-</var>) or be one of the explicitly allowed headers (<var>MSIP_Labels</var>)",
                         "type": "string"
                     },
                     "value": {
@@ -2067,6 +2146,7 @@
                         "version_added": "102"
                     }
                 ],
+                "description": "A <em>dictionary object</em> with entries for all installed dictionaries, having a language identifier as <em>key</em> (for example <var>en-US</var>) and a boolean expression as <em>value</em>, indicating whether that dictionary is enabled for spellchecking or not.",
                 "id": "ComposeDictionaries",
                 "type": "object"
             },
@@ -2087,6 +2167,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Whether encryption of the message body using the OpenPGP technology is enabled.",
                         "type": "boolean"
                     },
                     "encryptSubject": {
@@ -2095,6 +2176,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Whether encryption of the message subject using the OpenPGP technology is enabled (only supported if encryption of the body is enabled a well).",
                         "type": "boolean"
                     },
                     "name": {
@@ -2112,6 +2194,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Whether the message will be signed using the OpenPGP technology.",
                         "type": "boolean"
                     }
                 },
@@ -2134,6 +2217,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Whether encryption of the message body using the S/MIME technology is enabled.",
                         "type": "boolean"
                     },
                     "name": {
@@ -2151,6 +2235,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Whether the message will be signed using the S/MIME technology",
                         "type": "boolean"
                     }
                 },

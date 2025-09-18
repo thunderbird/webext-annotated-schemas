@@ -26,6 +26,7 @@
         ]
     },
     {
+        "description": "Use the <code>browser.browserSettings</code> API to control global settings of the browser.",
         "namespace": "browserSettings",
         "permissions": [
             "browserSettings"
@@ -40,7 +41,8 @@
                     {
                         "version_added": "57"
                     }
-                ]
+                ],
+                "description": "Allows or disallows pop-up windows from opening in response to user events."
             },
             "cacheEnabled": {
                 "$ref": "types.Setting",
@@ -51,7 +53,8 @@
                     {
                         "version_added": "56"
                     }
-                ]
+                ],
+                "description": "Enables or disables the browser cache."
             },
             "closeTabsByDoubleClick": {
                 "$ref": "types.Setting",
@@ -62,7 +65,8 @@
                     {
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/closeTabsByDoubleClick"
                     }
-                ]
+                ],
+                "description": "This boolean setting controls whether the selected tab can be closed with a double click."
             },
             "contextMenuShowEvent": {
                 "$ref": "types.Setting",
@@ -73,7 +77,8 @@
                     {
                         "version_added": "59"
                     }
-                ]
+                ],
+                "description": "Controls after which mouse event context menus popup. This setting's value is of type ContextMenuMouseEvent, which has possible values of <code>mouseup</code> and <code>mousedown</code>."
             },
             "ftpProtocolEnabled": {
                 "$ref": "types.Setting",
@@ -88,7 +93,9 @@
                     {
                         "version_added": "72"
                     }
-                ]
+                ],
+                "deprecated": "FTP support was removed from Firefox in bug 1574475",
+                "description": "Returns whether the FTP protocol is enabled. Read-only."
             },
             "homepageOverride": {
                 "$ref": "types.Setting",
@@ -99,7 +106,8 @@
                     {
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/homepageOverride"
                     }
-                ]
+                ],
+                "description": "Returns the value of the overridden home page. Read-only."
             },
             "imageAnimationBehavior": {
                 "$ref": "types.Setting",
@@ -110,7 +118,8 @@
                     {
                         "version_added": "57"
                     }
-                ]
+                ],
+                "description": "Controls the behaviour of image animation in the browser. This setting's value is of type ImageAnimationBehavior, defaulting to <code>normal</code>."
             },
             "newTabPageOverride": {
                 "$ref": "types.Setting",
@@ -121,7 +130,8 @@
                     {
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/newTabPageOverride"
                     }
-                ]
+                ],
+                "description": "Returns the value of the overridden new tab page. Read-only."
             },
             "newTabPosition": {
                 "$ref": "types.Setting",
@@ -132,7 +142,8 @@
                     {
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/newTabPosition"
                     }
-                ]
+                ],
+                "description": "Controls where new tabs are opened. <val>afterCurrent</val> will open all new tabs next to the current tab, <val>relatedAfterCurrent</val> will open only related tabs next to the current tab, and <val>atEnd</val> will open all tabs at the end of the tab strip. The default is <val>relatedAfterCurrent</val>."
             },
             "openBookmarksInNewTabs": {
                 "$ref": "types.Setting",
@@ -143,7 +154,8 @@
                     {
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/openBookmarksInNewTabs"
                     }
-                ]
+                ],
+                "description": "This boolean setting controls whether bookmarks are opened in the current tab or in a new tab."
             },
             "openSearchResultsInNewTabs": {
                 "$ref": "types.Setting",
@@ -154,7 +166,8 @@
                     {
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/openSearchResultsInNewTabs"
                     }
-                ]
+                ],
+                "description": "This boolean setting controls whether search results are opened in the current tab or in a new tab."
             },
             "openUrlbarResultsInNewTabs": {
                 "$ref": "types.Setting",
@@ -165,7 +178,8 @@
                     {
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/openUrlbarResultsInNewTabs"
                     }
-                ]
+                ],
+                "description": "This boolean setting controls whether urlbar results are opened in the current tab or in a new tab."
             },
             "overrideContentColorScheme": {
                 "$ref": "types.Setting",
@@ -176,7 +190,8 @@
                     {
                         "version_added": "95"
                     }
-                ]
+                ],
+                "description": "This setting controls whether a light or dark color scheme overrides the page's preferred color scheme."
             },
             "overrideDocumentColors": {
                 "$ref": "types.Setting",
@@ -187,7 +202,8 @@
                     {
                         "version_added": "61"
                     }
-                ]
+                ],
+                "description": "This setting controls whether the user-chosen colors override the page's colors."
             },
             "useDocumentFonts": {
                 "$ref": "types.Setting",
@@ -198,10 +214,12 @@
                     {
                         "version_added": "61"
                     }
-                ]
+                ],
+                "description": "This setting controls whether the document's fonts are used."
             },
             "verticalTabs": {
-                "$ref": "types.Setting"
+                "$ref": "types.Setting",
+                "description": "This boolean setting controls whether vertical tabs are enabled."
             },
             "webNotificationsDisabled": {
                 "$ref": "types.Setting",
@@ -212,7 +230,8 @@
                     {
                         "version_added": "58"
                     }
-                ]
+                ],
+                "description": "Disables webAPI notifications."
             },
             "zoomFullPage": {
                 "$ref": "types.Setting",
@@ -223,7 +242,8 @@
                     {
                         "version_added": "75"
                     }
-                ]
+                ],
+                "description": "This boolean setting controls whether zoom is applied to the full page or to text only."
             },
             "zoomSiteSpecific": {
                 "$ref": "types.Setting",
@@ -234,11 +254,13 @@
                     {
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserSettings/zoomSiteSpecific"
                     }
-                ]
+                ],
+                "description": "This boolean setting controls whether zoom is applied on a per-site basis or to the current tab only. If privacy.resistFingerprinting is true, this setting has no effect and zoom is applied to the current tab only."
             }
         },
         "types": [
             {
+                "description": "How images should be animated in the browser.",
                 "enum": [
                     "normal",
                     "none",
@@ -248,6 +270,7 @@
                 "type": "string"
             },
             {
+                "description": "After which mouse event context menus should popup.",
                 "enum": [
                     "mouseup",
                     "mousedown"
@@ -256,6 +279,7 @@
                 "type": "string"
             },
             {
+                "description": "Color management mode.",
                 "enum": [
                     "off",
                     "full",
@@ -267,19 +291,23 @@
         ]
     },
     {
+        "description": "Use the <code>browserSettings.colorManagement</code> API to query and set items related to color management.",
         "namespace": "browserSettings.colorManagement",
         "permissions": [
             "browserSettings"
         ],
         "properties": {
             "mode": {
-                "$ref": "types.Setting"
+                "$ref": "types.Setting",
+                "description": "This setting controls the mode used for color management and must be a string from $(ref:browserSettings.ColorManagementMode)"
             },
             "useNativeSRGB": {
-                "$ref": "types.Setting"
+                "$ref": "types.Setting",
+                "description": "This boolean setting controls whether or not native sRGB color management is used."
             },
             "useWebRenderCompositor": {
-                "$ref": "types.Setting"
+                "$ref": "types.Setting",
+                "description": "This boolean setting controls whether or not the WebRender compositor is used."
             }
         }
     }
