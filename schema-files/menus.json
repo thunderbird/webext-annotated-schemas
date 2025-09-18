@@ -51,6 +51,7 @@
                 "text": "Thunderbird's menus API is similar to the $(url:mdn-menus-api)[Firefox menus API], but has been adapted to better suit Thunderbird's specific needs."
             }
         ],
+        "description": "The menus API allows to add items to Thunderbird's menus. You can choose what types of objects your context menu additions apply to, such as images, hyperlinks, and pages.",
         "events": [
             {
                 "annotations": [
@@ -58,6 +59,7 @@
                         "version_added": "66"
                     }
                 ],
+                "description": "Fired when a context menu item is clicked. This is a user input event handler. For asynchronous listeners some <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/User_actions'>restrictions</a> apply.",
                 "name": "onClicked",
                 "parameters": [
                     {
@@ -67,6 +69,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "Information about the item clicked and the context where the click happened.",
                         "name": "info"
                     },
                     {
@@ -76,6 +79,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "The details of the tab where the click took place. If the click did not take place in a tab, this parameter will be missing.",
                         "name": "tab",
                         "optional": true
                     }
@@ -88,6 +92,7 @@
                         "version_added": "66"
                     }
                 ],
+                "description": "Fired when a menu is shown. The extension can add, modify or remove menu items and call $(ref:menus.refresh) to update the menu.",
                 "name": "onShown",
                 "parameters": [
                     {
@@ -97,6 +102,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "Information about the context of the menu action and the created menu items.",
                         "name": "info"
                     },
                     {
@@ -106,6 +112,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "The details of the tab where the menu was opened.",
                         "name": "tab"
                     }
                 ],
@@ -117,6 +124,7 @@
                         "version_added": "66"
                     }
                 ],
+                "description": "Fired when a menu is hidden. This event is only fired if onShown has fired before.",
                 "name": "onHidden",
                 "parameters": [],
                 "type": "function"
@@ -129,6 +137,7 @@
                         "version_added": "66"
                     }
                 ],
+                "description": "Creates a new context menu item. Note that if an error occurs during creation, you may not find out until the creation callback fires (the details will be in <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/lastError'>runtime.lastError</a>).",
                 "name": "create",
                 "parameters": [
                     {
@@ -145,6 +154,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "The initial state of a checkbox or radio item: <var>true</var> for selected and <var>false</var> for unselected. Only one radio item can be selected at a time in a given group of radio items.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -167,11 +177,13 @@
                                         "$ref": "menus.MenuActionCommand",
                                         "annotations": [
                                             {
+                                                "description": "This is an enum which was added in Thunderbird 124 to explicitly spell out built-in commands, but as they are just strings they have been supported since Thunderbird 66.",
                                                 "version_added": "66"
                                             }
                                         ]
                                     }
                                 ],
+                                "description": "Specifies a command to issue for the context click. Can either be a user defined command, or one of the predefined action commands.",
                                 "optional": true
                             },
                             "contexts": {
@@ -180,6 +192,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "List of contexts this menu item will appear in. Defaults to <var>['page']</var> if not specified.",
                                 "items": {
                                     "$ref": "ContextType"
                                 },
@@ -193,6 +206,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "Lets you restrict the item to apply only to documents whose URL matches one of the given patterns. (This applies to frames as well.) For details on the format of a pattern, see <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>Match Patterns</a>.",
                                 "items": {
                                     "type": "string"
                                 },
@@ -205,6 +219,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "Whether this context menu item is enabled or disabled. Defaults to true.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -232,6 +247,7 @@
                                         ]
                                     }
                                 ],
+                                "description": "Custom icons to display next to the menu item. Custom icons can only be set for items appearing in submenus.",
                                 "optional": true
                             },
                             "id": {
@@ -240,6 +256,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "The unique ID to assign to this item. Mandatory for event pages. Cannot be the same as another ID for this extension.",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -249,6 +266,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "A function that will be called back when the menu item is clicked. Event pages cannot use this.",
                                 "optional": true,
                                 "parameters": [
                                     {
@@ -258,6 +276,7 @@
                                                 "version_added": "66"
                                             }
                                         ],
+                                        "description": "Information about the item clicked and the context where the click happened.",
                                         "name": "info"
                                     },
                                     {
@@ -267,6 +286,7 @@
                                                 "version_added": "66"
                                             }
                                         ],
+                                        "description": "The details of the tab where the click took place.",
                                         "name": "tab"
                                     }
                                 ],
@@ -296,6 +316,7 @@
                                         "type": "string"
                                     }
                                 ],
+                                "description": "The ID of a parent menu item; this makes the item a child of a previously added item.",
                                 "optional": true
                             },
                             "targetUrlPatterns": {
@@ -304,6 +325,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "Similar to documentUrlPatterns, but lets you filter based on the src attribute of img/audio/video tags and the href of anchor tags.",
                                 "items": {
                                     "type": "string"
                                 },
@@ -316,6 +338,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "The text to be displayed in the item; this is <em>required</em> unless <var>type</var> is <var>separator</var>. When the context is <var>selection</var>, you can use <var>%s</var> within the string to show the selected text. For example, if this parameter's value is <var>Translate '%s' to Latin</var> and the user selects the word <var>cool</var>, the context menu item for the selection is <var>Translate 'cool' to Latin</var>. To specify an access key for the new menu entry, include a <var>&</var> before the desired letter in the title. For example <var>&Help</var>.",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -326,6 +349,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "The type of menu item. Defaults to <var>normal</var> if not specified.",
                                 "optional": true
                             },
                             "viewTypes": {
@@ -334,6 +358,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "List of view types where the menu item will be shown. Defaults to any view, including those without a viewType.",
                                 "items": {
                                     "$ref": "extension.ViewType"
                                 },
@@ -347,6 +372,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "Whether the item is visible in the menu.",
                                 "optional": true,
                                 "type": "boolean"
                             }
@@ -359,6 +385,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "Called when the item has been created in the browser. If there were any problems creating the item, details will be available in <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/lastError'>runtime.lastError</a>.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -383,7 +410,8 @@
                             ],
                             "type": "string"
                         }
-                    ]
+                    ],
+                    "description": "The ID of the newly created item."
                 },
                 "type": "function"
             },
@@ -394,6 +422,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Updates a previously created context menu item.",
                 "name": "update",
                 "parameters": [
                     {
@@ -420,6 +449,7 @@
                                 "type": "string"
                             }
                         ],
+                        "description": "The ID of the item to update.",
                         "name": "id"
                     },
                     {
@@ -428,6 +458,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "The properties to update. Accepts the same values as the create function.",
                         "name": "updateProperties",
                         "properties": {
                             "checked": {
@@ -523,6 +554,7 @@
                                                 "version_added": "66"
                                             }
                                         ],
+                                        "description": "The details of the tab where the click took place.",
                                         "name": "tab"
                                     }
                                 ],
@@ -552,6 +584,7 @@
                                         "type": "string"
                                     }
                                 ],
+                                "description": "The hierarchical parent of the element. Updating an element to become a child of its own descendants is not supported.",
                                 "optional": true
                             },
                             "targetUrlPatterns": {
@@ -603,6 +636,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "Whether the item is visible in the menu.",
                                 "optional": true,
                                 "type": "boolean"
                             }
@@ -615,6 +649,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "Called when the context menu has been updated.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -630,6 +665,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Removes a context menu item.",
                 "name": "remove",
                 "parameters": [
                     {
@@ -656,6 +692,7 @@
                                 "type": "string"
                             }
                         ],
+                        "description": "The ID of the context menu item to remove.",
                         "name": "menuItemId"
                     },
                     {
@@ -664,6 +701,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "Called when the context menu has been removed.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -679,6 +717,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Removes all context menu items added by this extension.",
                 "name": "removeAll",
                 "parameters": [
                     {
@@ -687,6 +726,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "Called when removal is complete.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -701,6 +741,7 @@
                         "version_added": "66"
                     }
                 ],
+                "description": "Show the matching menu items from this extension instead of the default menu. This should be called during a <a href='https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event'>contextmenu</a> event handler, and only applies to the menu that opens after this event.",
                 "name": "overrideContext",
                 "parameters": [
                     {
@@ -717,6 +758,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "ContextType to override, to allow menu items from other extensions in the menu. Currently only <var>tab</var> is supported. <var>contextOptions.showDefaults</var> cannot be used with this option.",
                                 "enum": [
                                     "tab"
                                 ],
@@ -739,6 +781,7 @@
                                     }
                                 ],
                                 "default": false,
+                                "description": "Whether to also include default menu items in the menu.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -748,6 +791,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "Required when context is <var>tab</var>. Requires the <permission>tabs</permission> permission.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
@@ -768,6 +812,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Updates the extension items in the shown menu, including changes that have been made since the menu was shown. Has no effect if the menu is hidden. Rebuilding a shown menu is an expensive operation, only invoke this method when necessary.",
                 "name": "refresh",
                 "parameters": [],
                 "type": "function"
@@ -784,6 +829,7 @@
                         "version_added": "66"
                     }
                 ],
+                "description": "The maximum number of top level extension items that can be added to an extension action context menu. Any items beyond this limit will be ignored.",
                 "value": 6
             }
         },
@@ -794,6 +840,7 @@
                         "version_added": "66"
                     }
                 ],
+                "description": "The different contexts a menu can appear in. Specifying <var>all</var> is equivalent to the combination of all other contexts excluding <var>tab</var> and <var>tools_menu</var>. More information about each context can be found in the <a href='https://developer.thunderbird.net/add-ons/mailextensions/supported-ui-elements#menu-items'>Supported UI Elements</a> article on developer.thunderbird.net.",
                 "enum": [
                     "all",
                     "all_message_attachments",
@@ -1079,6 +1126,7 @@
                         "version_added": "66"
                     }
                 ],
+                "description": "The type of menu item.",
                 "enum": [
                     "normal",
                     "checkbox",
@@ -1124,6 +1172,7 @@
                         "version_added": "88"
                     }
                 ],
+                "description": "Information sent when a context menu is being shown. Some properties are only included if the extension has host permission for the given context, for example <permission>activeTab</permission> for content tabs, <permission>compose</permission> for compose tabs and <permission>messagesRead</permission> for message display tabs.",
                 "id": "OnShowData",
                 "properties": {
                     "attachments": {
@@ -1132,6 +1181,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "The selected attachments. The <permission>compose</permission> permission is required to return attachments of a message being composed. The <permission>messagesRead</permission> permission is required to return attachments of displayed messages.",
                         "items": {
                             "choices": [
                                 {
@@ -1161,6 +1211,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "A list of all contexts that apply to the menu.",
                         "items": {
                             "$ref": "ContextType"
                         },
@@ -1173,6 +1224,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "The displayed folder. Only available for the <var>message_list</var> context. The <permission>accountsRead</permission> permission is required.",
                         "optional": true
                     },
                     "editable": {
@@ -1181,6 +1233,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "A flag indicating whether the element is editable (text input, textarea, etc.).",
                         "type": "boolean"
                     },
                     "fieldId": {
@@ -1189,6 +1242,7 @@
                                 "version_added": "89"
                             }
                         ],
+                        "description": "An identifier of the clicked Thunderbird UI element, if any.",
                         "enum": [
                             "composeSubject",
                             "composeTo",
@@ -1253,6 +1307,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "The URL of the frame of the element where the context menu was clicked, if it was in a frame.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1265,6 +1320,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "If the element is a link, the text of that link.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1277,6 +1333,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "If the element is a link, the URL it points to.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1286,6 +1343,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "One of <var>image</var>, <var>video</var>, or <var>audio</var> if the context menu was activated on one of these types of elements.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1295,6 +1353,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "A list of IDs of the menu items that were shown.",
                         "items": {
                             "choices": [
                                 {
@@ -1326,6 +1385,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "The URL of the page where the menu item was clicked. This property is not set if the click occurred in a context where there is no current page, such as in a launcher context menu.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1336,6 +1396,8 @@
                                 "version_added": "88"
                             }
                         ],
+                        "deprecated": "Deprecated since Thunderbird 128 and removed in Manifest V3: The selectedAccount property has been replaced by the selectedFolders property, returning the root folder of the account.",
+                        "description": "The selected account in the folder pane, if the context menu was opened on an account entry. Only available for the <var>folder_pane</var> context. The <permission>accountsRead</permission> permission is required.",
                         "optional": true
                     },
                     "selectedFolder": {
@@ -1345,6 +1407,8 @@
                                 "version_added": "88"
                             }
                         ],
+                        "deprecated": "Deprecated since Thunderbird 128 and removed in Manifest V3: The selectedFolder property has been replaced by the selectedFolders property.",
+                        "description": "The selected folder in the folder pane (where the context menu was opened). Only available for the <var>folder_pane</var> context. The <permission>accountsRead</permission> permission is required.",
                         "optional": true
                     },
                     "selectedFolders": {
@@ -1353,6 +1417,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "The selected folders in the folder pane. Only available for the <var>folder_pane</var> context. The <permission>accountsRead</permission> permission is required. The returned selection includes the folders which would be affected by a context action through Thunderbirds UI, which may not be the actuall selected folders. For example, if the user has multiple folders selected and opens the context menu for a folder outside that selection, only the folder for which the context menu was opened, is returned.",
                         "items": {
                             "$ref": "folders.MailFolder"
                         },
@@ -1366,6 +1431,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "The selected message(s) in the message list (a.k.a. the thread pane). Only available for the <var>message_list</var> context. The <permission>messagesRead</permission> permission is required. The returned selection includes the messages which would be affected by a context action through Thunderbirds UI, which may not be the actuall selected messages. For example, if the user has multiple messages selected and opens the context menu for a message outside that selection, only the message for which the context menu was opened, is returned.",
                         "optional": true
                     },
                     "selectionText": {
@@ -1377,6 +1443,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "The text for the context selection, if any.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1389,6 +1456,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "Will be present for elements with a <em>src</em> URL.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1398,6 +1466,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "An identifier of the clicked content element, if any. Use $(ref:menus.getTargetElement) in the page to find the corresponding element.",
                         "optional": true,
                         "type": "integer"
                     },
@@ -1408,6 +1477,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "The type of view where the menu is shown. May be unset if the menu is not associated with a view.",
                         "optional": true
                     }
                 },
@@ -1419,6 +1489,7 @@
                         "version_added": "66"
                     }
                 ],
+                "description": "Information sent when a context menu item is clicked.",
                 "id": "OnClickData",
                 "properties": {
                     "attachments": {
@@ -1427,6 +1498,7 @@
                                 "version_added": "83"
                             }
                         ],
+                        "description": "The selected attachments. The <permission>compose</permission> permission is required to return attachments of a message being composed. The <permission>messagesRead</permission> permission is required to return attachments of displayed messages.",
                         "items": {
                             "choices": [
                                 {
@@ -1456,6 +1528,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "An integer value of button by which menu item was clicked.",
                         "optional": true,
                         "type": "integer"
                     },
@@ -1465,6 +1538,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "A flag indicating the state of a checkbox or radio item after it is clicked.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -1475,6 +1549,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "The displayed folder. Only available for the <var>message_list</var> context. The <permission>accountsRead</permission> permission is required.",
                         "optional": true
                     },
                     "editable": {
@@ -1483,6 +1558,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "A flag indicating whether the element is editable (text input, textarea, etc.).",
                         "type": "boolean"
                     },
                     "fieldId": {
@@ -1491,6 +1567,7 @@
                                 "version_added": "89"
                             }
                         ],
+                        "description": "An identifier of the clicked Thunderbird UI element, if any.",
                         "enum": [
                             "composeSubject",
                             "composeTo",
@@ -1552,6 +1629,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "The id of the frame of the element where the context menu was clicked.",
                         "minimum": 0,
                         "optional": true,
                         "type": "integer"
@@ -1562,6 +1640,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "The URL of the frame of the element where the context menu was clicked, if it was in a frame.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1571,6 +1650,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "If the element is a link, the text of that link.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1580,6 +1660,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "If the element is a link, the URL it points to.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1589,6 +1670,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "One of <var>image</var>, <var>video</var>, or <var>audio</var> if the context menu was activated on one of these types of elements.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1615,7 +1697,8 @@
                                 ],
                                 "type": "string"
                             }
-                        ]
+                        ],
+                        "description": "The ID of the menu item that was clicked."
                     },
                     "modifiers": {
                         "annotations": [
@@ -1623,6 +1706,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "An array of keyboard modifiers that were held while the menu item was clicked.",
                         "items": {
                             "enum": [
                                 "Shift",
@@ -1678,6 +1762,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "The URL of the page where the menu item was clicked. This property is not set if the click occurred in a context where there is no current page, such as in a launcher context menu.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1705,6 +1790,7 @@
                                 "type": "string"
                             }
                         ],
+                        "description": "The parent ID, if any, for the item clicked.",
                         "optional": true
                     },
                     "selectedAccount": {
@@ -1714,6 +1800,8 @@
                                 "version_added": "88"
                             }
                         ],
+                        "deprecated": "Deprecated since Thunderbird 128 and removed in Manifest V3: The selectedAccount property has been replaced by the selectedFolders property, returning the root folder of the account.",
+                        "description": "The selected account in the folder pane, if the context menu was opened on an account entry. Only available for the <var>folder_pane</var> context. The <permission>accountsRead</permission> permission is required.",
                         "optional": true
                     },
                     "selectedFolder": {
@@ -1723,6 +1811,8 @@
                                 "version_added": "66"
                             }
                         ],
+                        "deprecated": "Deprecated since Thunderbird 128 and removed in Manifest V3: The selectedFolder property has been replaced by the selectedFolders property.",
+                        "description": "The selected folder in the folder pane (where the context menu was opened). Only available for the <var>folder_pane</var> context. The <permission>accountsRead</permission> permission is required.",
                         "optional": true
                     },
                     "selectedFolders": {
@@ -1731,6 +1821,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "The selected folders in the folder pane. Only available for the <var>folder_pane</var> context. The <permission>accountsRead</permission> permission is required. The returned selection includes the folders which would be affected by a context action through Thunderbirds UI, which may not be the actuall selected folders. For example, if the user has multiple folders selected and opens the context menu for a folder outside that selection, only the folder for which the context menu was opened, is returned.",
                         "items": {
                             "$ref": "folders.MailFolder"
                         },
@@ -1744,6 +1835,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "The selected message(s) in the message list (a.k.a. the thread pane). Only available for the <var>message_list</var> context. The <permission>messagesRead</permission> permission is required. The returned selection includes the messages which would be affected by a context action through Thunderbirds UI, which may not be the actuall selected messages. For example, if the user has multiple messages selected and opens the context menu for a message outside that selection, only the message for which the context menu was opened, is returned.",
                         "optional": true
                     },
                     "selectionText": {
@@ -1752,6 +1844,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "The text for the context selection, if any.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1761,6 +1854,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "Will be present for elements with a <em>src</em> URL.",
                         "optional": true,
                         "type": "string"
                     },
@@ -1770,6 +1864,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "An identifier of the clicked content element, if any. Use $(ref:menus.getTargetElement) in the page to find the corresponding element.",
                         "optional": true,
                         "type": "integer"
                     },
@@ -1780,6 +1875,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "The type of view where the menu is clicked. May be unset if the menu is not associated with a view.",
                         "optional": true
                     },
                     "wasChecked": {
@@ -1788,6 +1884,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "A flag indicating the state of a checkbox or radio item before it was clicked.",
                         "optional": true,
                         "type": "boolean"
                     }
@@ -1820,6 +1917,7 @@
                         "type": "string"
                     }
                 ],
+                "description": "The path for a menu icon may be a relative path to an icon file, a <var>moz-extension:</var> URL, an image <var>data:</var> URL, a <var>blob:</var> URL, or a remote <var>http(s):</var> URL.",
                 "id": "MenuIconPath"
             },
             {
@@ -1844,6 +1942,7 @@
                         "version_added": "124"
                     }
                 ],
+                "description": "A <em>dictionary object</em> to specify paths for multiple icons in different sizes, so the best matching icon can be used, instead of scaling a standard icon to fit the pixel density of the user's display. Each entry is a <em>name-value</em> pair, with <em>name</em> being a size and <em>value</em> being a $(ref:menus.MenuIconPath).",
                 "id": "MenuIconDictionary",
                 "patternProperties": {
                     "^[1-9]\\d*$": {
@@ -1858,6 +1957,7 @@
                         "version_added": "131"
                     }
                 ],
+                "description": "A predefined command to open an action popup.",
                 "enum": [
                     "_execute_browser_action",
                     "_execute_compose_action",

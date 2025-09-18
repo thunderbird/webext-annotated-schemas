@@ -26,6 +26,7 @@
         ]
     },
     {
+        "description": "Use the <code>chrome.browsingData</code> API to remove browsing data from a user's local profile.",
         "functions": [
             {
                 "annotations": [
@@ -37,6 +38,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Reports which types of data are currently selected in the 'Clear browsing data' settings UI.  Note: some of the data types included in this API are not available in the settings UI, and some UI settings control more than one data type listed here.",
                 "name": "settings",
                 "parameters": [
                     {
@@ -70,7 +72,8 @@
                                             {
                                                 "version_added": "53"
                                             }
-                                        ]
+                                        ],
+                                        "description": "All of the types will be present in the result, with values of <code>true</code> if they are permitted to be removed (e.g., by enterprise policy) and <code>false</code> if not."
                                     },
                                     "dataToRemove": {
                                         "$ref": "DataTypeSet",
@@ -81,7 +84,8 @@
                                             {
                                                 "version_added": "53"
                                             }
-                                        ]
+                                        ],
+                                        "description": "All of the types will be present in the result, with values of <code>true</code> if they are both selected to be removed and permitted to be removed, otherwise <code>false</code>."
                                     },
                                     "options": {
                                         "$ref": "RemovalOptions",
@@ -117,6 +121,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Clears various types of browsing data stored in a user's profile.",
                 "name": "remove",
                 "parameters": [
                     {
@@ -137,9 +142,11 @@
                     },
                     {
                         "$ref": "DataTypeSet",
+                        "description": "The set of data types to remove.",
                         "name": "dataToRemove"
                     },
                     {
+                        "description": "Called when deletion has completed.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -150,6 +157,7 @@
             },
             {
                 "async": "callback",
+                "description": "Clears websites' appcache data.",
                 "name": "removeAppcache",
                 "parameters": [
                     {
@@ -157,6 +165,7 @@
                         "name": "options"
                     },
                     {
+                        "description": "Called when websites' appcache data has been cleared.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -180,6 +189,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Clears the browser's cache.",
                 "name": "removeCache",
                 "parameters": [
                     {
@@ -199,6 +209,7 @@
                         "name": "options"
                     },
                     {
+                        "description": "Called when the browser's cache has been cleared.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -217,6 +228,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Clears the browser's cookies and server-bound certificates modified within a particular timeframe.",
                 "name": "removeCookies",
                 "parameters": [
                     {
@@ -232,6 +244,7 @@
                         "name": "options"
                     },
                     {
+                        "description": "Called when the browser's cookies and server-bound certificates have been cleared.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -250,6 +263,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Clears the browser's list of downloaded files (<em>not</em> the downloaded files themselves).",
                 "name": "removeDownloads",
                 "parameters": [
                     {
@@ -265,6 +279,7 @@
                         "name": "options"
                     },
                     {
+                        "description": "Called when the browser's list of downloaded files has been cleared.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -275,6 +290,7 @@
             },
             {
                 "async": "callback",
+                "description": "Clears websites' file system data.",
                 "name": "removeFileSystems",
                 "parameters": [
                     {
@@ -282,6 +298,7 @@
                         "name": "options"
                     },
                     {
+                        "description": "Called when websites' file systems have been cleared.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -301,6 +318,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Clears the browser's stored form data (autofill).",
                 "name": "removeFormData",
                 "parameters": [
                     {
@@ -316,6 +334,7 @@
                         "name": "options"
                     },
                     {
+                        "description": "Called when the browser's form data has been cleared.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -338,6 +357,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Clears the browser's history.",
                 "name": "removeHistory",
                 "parameters": [
                     {
@@ -357,6 +377,7 @@
                         "name": "options"
                     },
                     {
+                        "description": "Called when the browser's history has cleared.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -367,6 +388,7 @@
             },
             {
                 "async": "callback",
+                "description": "Clears websites' IndexedDB data.",
                 "name": "removeIndexedDB",
                 "parameters": [
                     {
@@ -374,6 +396,7 @@
                         "name": "options"
                     },
                     {
+                        "description": "Called when websites' IndexedDB data has been cleared.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -397,6 +420,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Clears websites' local storage data.",
                 "name": "removeLocalStorage",
                 "parameters": [
                     {
@@ -416,6 +440,7 @@
                         "name": "options"
                     },
                     {
+                        "description": "Called when websites' local storage has been cleared.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -434,6 +459,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Clears plugins' data.",
                 "name": "removePluginData",
                 "parameters": [
                     {
@@ -449,6 +475,7 @@
                         "name": "options"
                     },
                     {
+                        "description": "Called when plugins' data has been cleared.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -467,6 +494,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Clears the browser's stored passwords.",
                 "name": "removePasswords",
                 "parameters": [
                     {
@@ -482,6 +510,7 @@
                         "name": "options"
                     },
                     {
+                        "description": "Called when the browser's passwords have been cleared.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -492,6 +521,7 @@
             },
             {
                 "async": "callback",
+                "description": "Clears websites' WebSQL data.",
                 "name": "removeWebSQL",
                 "parameters": [
                     {
@@ -499,6 +529,7 @@
                         "name": "options"
                     },
                     {
+                        "description": "Called when websites' WebSQL databases have been cleared.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -515,6 +546,7 @@
         ],
         "types": [
             {
+                "description": "Options that determine exactly what data will be removed.",
                 "id": "RemovalOptions",
                 "properties": {
                     "cookieStoreId": {
@@ -526,6 +558,7 @@
                                 "version_added": "84"
                             }
                         ],
+                        "description": "Only remove data associated with this specific cookieStoreId.",
                         "optional": true,
                         "type": "string"
                     },
@@ -543,6 +576,7 @@
                                 "version_added": "56"
                             }
                         ],
+                        "description": "Only remove data associated with these hostnames (only applies to cookies and localStorage).",
                         "items": {
                             "format": "hostname",
                             "type": "string"
@@ -556,6 +590,7 @@
                                 "version_added": false
                             }
                         ],
+                        "description": "An object whose properties specify which origin types ought to be cleared. If this object isn't specified, it defaults to clearing only \"unprotected\" origins. Please ensure that you <em>really</em> want to remove application data before adding 'protectedWeb' or 'extensions'.",
                         "optional": true,
                         "properties": {
                             "extension": {
@@ -564,6 +599,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "Extensions and packaged applications a user has installed (be _really_ careful!).",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -573,6 +609,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "Websites that have been installed as hosted applications (be careful!).",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -582,6 +619,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "Normal websites.",
                                 "optional": true,
                                 "type": "boolean"
                             }
@@ -599,12 +637,14 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "Remove data accumulated on or after this date, represented in milliseconds since the epoch (accessible via the <code>getTime</code> method of the JavaScript <code>Date</code> object). If absent, defaults to 0 (which would remove all browsing data).",
                         "optional": true
                     }
                 },
                 "type": "object"
             },
             {
+                "description": "A set of data types. Missing data types are interpreted as <code>false</code>.",
                 "id": "DataTypeSet",
                 "properties": {
                     "cache": {
@@ -616,6 +656,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "The browser's cache. Note: when removing data, this clears the <em>entire</em> cache: it is not limited to the range you specify.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -625,6 +666,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "The browser's cookies.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -634,6 +676,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "The browser's download list.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -643,6 +686,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "The browser's stored form data.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -652,6 +696,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "The browser's history.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -661,6 +706,7 @@
                                 "version_added": "57"
                             }
                         ],
+                        "description": "Websites' IndexedDB data.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -670,6 +716,7 @@
                                 "version_added": "57"
                             }
                         ],
+                        "description": "Websites' local storage data.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -679,6 +726,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "Stored passwords.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -688,6 +736,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "Plugins' data.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -697,6 +746,7 @@
                                 "version_added": false
                             }
                         ],
+                        "description": "Server-bound certificates.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -706,6 +756,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "Service Workers.",
                         "optional": true,
                         "type": "boolean"
                     }
