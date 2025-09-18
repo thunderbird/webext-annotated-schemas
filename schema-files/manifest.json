@@ -5,6 +5,7 @@
         "permissions": [],
         "types": [
             {
+                "description": "Common properties for all manifest.json files",
                 "id": "ManifestBase",
                 "properties": {
                     "author": {
@@ -56,6 +57,7 @@
                         "type": "integer"
                     },
                     "name": {
+                        "description": "Name must be at least 2, and should be at most 75 characters",
                         "optional": false,
                         "preprocess": "localize",
                         "type": "string"
@@ -77,6 +79,7 @@
                 "additionalProperties": {
                     "$ref": "UnrecognizedProperty"
                 },
+                "description": "Represents a WebExtension manifest.json file",
                 "id": "WebExtensionManifest",
                 "properties": {
                     "background": {
@@ -114,6 +117,7 @@
                                 "optional": true
                             },
                             "type": {
+                                "description": "Only supported for page/scripts; not for service_worker yet, see bug 1775574",
                                 "enum": [
                                     "module",
                                     "classic"
@@ -139,6 +143,7 @@
                         "optional": true,
                         "properties": {
                             "extension_pages": {
+                                "description": "The Content Security Policy used for extension pages.",
                                 "format": "contentSecurityPolicy",
                                 "optional": true,
                                 "type": "string"
@@ -176,6 +181,7 @@
                     },
                     "incognito": {
                         "default": "spanning",
+                        "description": "The 'split' value is not supported.",
                         "enum": [
                             "not_allowed",
                             "spanning",
@@ -213,6 +219,7 @@
                     },
                     "options_page": {
                         "$ref": "ExtensionURL",
+                        "description": "Alias property for options_ui.page, ignored when options_ui.page is set. When using this property the options page is always opened in a new tab.",
                         "optional": true
                     },
                     "options_ui": {
@@ -222,6 +229,7 @@
                         "optional": true,
                         "properties": {
                             "browser_style": {
+                                "description": "Defaults to true in Manifest V2; Deprecated in Manifest V3.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -291,6 +299,7 @@
                 "type": "object"
             },
             {
+                "description": "Represents a WebExtension language pack manifest.json file",
                 "id": "WebExtensionLangpackManifest",
                 "properties": {
                     "langpack_id": {
@@ -356,6 +365,7 @@
                 "type": "object"
             },
             {
+                "description": "Represents a WebExtension dictionary manifest.json file",
                 "id": "WebExtensionDictionaryManifest",
                 "properties": {
                     "dictionaries": {
@@ -383,12 +393,15 @@
                 "id": "ThemeIcons",
                 "properties": {
                     "dark": {
-                        "$ref": "ExtensionURL"
+                        "$ref": "ExtensionURL",
+                        "description": "The dark icon to use for light themes"
                     },
                     "light": {
-                        "$ref": "ExtensionURL"
+                        "$ref": "ExtensionURL",
+                        "description": "A light icon to use for dark themes"
                     },
                     "size": {
+                        "description": "The size of the icons",
                         "type": "integer"
                     }
                 },
@@ -719,9 +732,11 @@
                         "type": "string"
                     }
                 ],
+                "description": "Same as MatchPattern above, but excludes <all_urls>",
                 "id": "MatchPatternRestricted"
             },
             {
+                "description": "Mostly unrestricted match patterns for privileged add-ons. This should technically be rejected for unprivileged add-ons, but, reasons. The MatchPattern class will still refuse privileged schemes for those extensions.",
                 "id": "MatchPatternUnestricted",
                 "pattern": "^resource://(\\*|\\*\\.[^*/]+|[^*/]+)/.*$|^about:",
                 "type": "string"
@@ -730,13 +745,16 @@
                 "additionalProperties": {
                     "$ref": "UnrecognizedProperty"
                 },
+                "description": "Details of the script or CSS to inject. Either the code or the file property must be set, but both may not be set at the same time. Based on InjectDetails, but using underscore rather than camel case naming conventions.",
                 "id": "ContentScript",
                 "properties": {
                     "all_frames": {
+                        "description": "If allFrames is <code>true</code>, implies that the JavaScript or CSS should be injected into all frames of current page. By default, it's <code>false</code> and is only injected into the top frame.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "css": {
+                        "description": "The list of CSS files to inject",
                         "items": {
                             "$ref": "ExtensionURL"
                         },
@@ -766,6 +784,7 @@
                         "type": "array"
                     },
                     "js": {
+                        "description": "The list of JS files to inject",
                         "items": {
                             "$ref": "ExtensionURL"
                         },
@@ -773,10 +792,12 @@
                         "type": "array"
                     },
                     "match_about_blank": {
+                        "description": "If match_about_blank is true, then the code is also injected in about:blank and about:srcdoc frames if your extension has access to its parent document. Ignored if match_origin_as_fallback is specified. By default it is <code>false</code>.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "match_origin_as_fallback": {
+                        "description": "If match_origin_as_fallback is true, then the code is also injected in about:, data:, blob: when their origin matches the pattern in 'matches', even if the actual document origin is opaque (due to the use of CSP sandbox or iframe sandbox). Match patterns in 'matches' must specify a wildcard path glob. By default it is <code>false</code>.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -791,11 +812,13 @@
                     "run_at": {
                         "$ref": "extensionTypes.RunAt",
                         "default": "document_idle",
+                        "description": "The soonest that the JavaScript or CSS will be injected into the tab. Defaults to \"document_idle\".",
                         "optional": true
                     },
                     "world": {
                         "$ref": "extensionTypes.ExecutionWorld",
                         "default": "ISOLATED",
+                        "description": "The JavaScript world for a script to execute within. Defaults to \"ISOLATED\".",
                         "optional": true
                     }
                 },
@@ -860,6 +883,7 @@
                 "type": "object"
             },
             {
+                "deprecated": "An unexpected property was found in the WebExtension manifest.",
                 "id": "UnrecognizedProperty",
                 "type": "any"
             }

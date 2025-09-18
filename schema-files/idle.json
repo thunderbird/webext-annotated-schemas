@@ -1,5 +1,6 @@
 [
     {
+        "description": "Use the <code>browser.idle</code> API to detect when the machine's idle state changes.",
         "events": [
             {
                 "annotations": [
@@ -10,6 +11,7 @@
                         "version_added": "51"
                     }
                 ],
+                "description": "Fired when the system changes to an active or idle state. The event fires with \"idle\" if the the user has not generated any input for a specified number of seconds, and \"active\" when the user generates input on an idle system.",
                 "name": "onStateChanged",
                 "parameters": [
                     {
@@ -43,6 +45,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Returns \"idle\" if the user has not generated any input for a specified number of seconds, or \"active\" otherwise.",
                 "name": "queryState",
                 "parameters": [
                     {
@@ -58,6 +61,7 @@
                                 "version_added": "45"
                             }
                         ],
+                        "description": "The system is considered idle if detectionIntervalInSeconds seconds have elapsed since the last user input detected.",
                         "minimum": 15,
                         "name": "detectionIntervalInSeconds",
                         "type": "integer"
@@ -84,6 +88,7 @@
                         "version_added": "51"
                     }
                 ],
+                "description": "Sets the interval, in seconds, used to determine when the system is in an idle state for onStateChanged events. The default interval is 60 seconds.",
                 "name": "setDetectionInterval",
                 "parameters": [
                     {
@@ -95,6 +100,7 @@
                                 "version_added": "51"
                             }
                         ],
+                        "description": "Threshold, in seconds, used to determine when the system is in an idle state.",
                         "minimum": 15,
                         "name": "intervalInSeconds",
                         "type": "integer"
