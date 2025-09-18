@@ -1,5 +1,6 @@
 [
     {
+        "description": "The spaces API allows to manage built-in and custom spaces, and to add buttons for custom spaces to Thunderbird's spaces toolbar.",
         "functions": [
             {
                 "annotations": [
@@ -8,6 +9,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Creates a new space and adds its button to the spaces toolbar.",
                 "name": "create",
                 "parameters": [
                     {
@@ -16,6 +18,7 @@
                                 "version_added": "114"
                             }
                         ],
+                        "description": "The name to assign to this space. May only contain alphanumeric characters and underscores. Must be unique for this extension.",
                         "name": "name",
                         "pattern": "^[a-zA-Z0-9_]+$",
                         "type": "string"
@@ -44,6 +47,7 @@
                                 ]
                             }
                         ],
+                        "description": "The properties for the new tab being opened, when the associated button in the spaces toolbar is clicked. Either a <em>string</em> specifying the default URL, or a $(ref:spaces.SpaceTabProperties) object. The URL may point to a WebExtension page or a web page.",
                         "name": "tabProperties"
                     },
                     {
@@ -54,6 +58,7 @@
                             }
                         ],
                         "default": {},
+                        "description": "Properties of the button in the spaces toolbar for the new space.",
                         "name": "buttonProperties",
                         "optional": true
                     },
@@ -88,6 +93,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Retrieves details about the specified space.",
                 "name": "get",
                 "parameters": [
                     {
@@ -96,6 +102,7 @@
                                 "version_added": "115"
                             }
                         ],
+                        "description": "The id of the space.",
                         "minimum": 1,
                         "name": "spaceId",
                         "type": "integer"
@@ -131,6 +138,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Gets all spaces that have the specified properties, or all spaces if no properties are specified.",
                 "name": "query",
                 "parameters": [
                     {
@@ -149,6 +157,7 @@
                                         "version_added": "115"
                                     }
                                 ],
+                                "description": "Id of the extension which should own the spaces. The <permission>management</permission> permission is required to be able to match against extension ids.",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -158,6 +167,7 @@
                                         "version_added": "115"
                                     }
                                 ],
+                                "description": "Spaces should be default Thunderbird spaces.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -167,6 +177,7 @@
                                         "version_added": "115"
                                     }
                                 ],
+                                "description": "Spaces should have been created by this extension.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -176,6 +187,7 @@
                                         "version_added": "115"
                                     }
                                 ],
+                                "description": "The name of the spaces (names are not unique).",
                                 "optional": true,
                                 "pattern": "^[a-zA-Z0-9_]+$",
                                 "type": "string"
@@ -186,6 +198,7 @@
                                         "version_added": "128"
                                     }
                                 ],
+                                "description": "The id of the space.",
                                 "minimum": 1,
                                 "optional": true,
                                 "type": "integer"
@@ -227,6 +240,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Removes the specified space, closes all its tabs and removes its button from the spaces toolbar. Throws an exception if the requested space does not exist or was not created by this extension.",
                 "name": "remove",
                 "parameters": [
                     {
@@ -235,6 +249,7 @@
                                 "version_added": "114"
                             }
                         ],
+                        "description": "The id of the space.",
                         "minimum": 1,
                         "name": "spaceId",
                         "type": "integer"
@@ -249,6 +264,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Updates the specified space. Throws an exception if the requested space does not exist or was not created by this extension.",
                 "name": "update",
                 "parameters": [
                     {
@@ -257,6 +273,7 @@
                                 "version_added": "114"
                             }
                         ],
+                        "description": "The id of the space.",
                         "minimum": 1,
                         "name": "spaceId",
                         "type": "integer"
@@ -293,6 +310,7 @@
                                 ]
                             }
                         ],
+                        "description": "The properties for the new tab being opened, when the associated button in the spaces toolbar is clicked. Either a <em>string</em> specifying the default URL, or a $(ref:spaces.SpaceTabProperties) object. The URL may point to a WebExtension page or a web page.",
                         "name": "tabProperties"
                     },
                     {
@@ -302,6 +320,7 @@
                                 "version_added": "114"
                             }
                         ],
+                        "description": "Properties of the button in the spaces toolbar for the specified space Only specified button properties will be updated.",
                         "name": "buttonProperties",
                         "optional": true
                     }
@@ -315,6 +334,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Opens or switches to the specified space. Throws an exception if the requested space does not exist or was not created by this extension.",
                 "name": "open",
                 "parameters": [
                     {
@@ -323,6 +343,7 @@
                                 "version_added": "114"
                             }
                         ],
+                        "description": "The id of the space.",
                         "minimum": 1,
                         "name": "spaceId",
                         "type": "integer"
@@ -333,6 +354,7 @@
                                 "version_added": "114"
                             }
                         ],
+                        "description": "The id of the normal window, where the space should be opened. Defaults to the most recent normal window.",
                         "minimum": -2,
                         "name": "windowId",
                         "optional": true,
@@ -354,6 +376,7 @@
                                         "version_added": "114"
                                     }
                                 ],
+                                "description": "Details about the opened or activated space tab.",
                                 "name": "tab"
                             }
                         ],
@@ -371,6 +394,7 @@
                         "version_added": "135"
                     }
                 ],
+                "description": "Properties for the new tab being opened by clicking on the associated button in the spaces toolbar.",
                 "id": "SpaceTabProperties",
                 "properties": {
                     "cookieStoreId": {
@@ -385,6 +409,7 @@
                                 "version_added": "135"
                             }
                         ],
+                        "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id used by the tab. Either a custom id created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or a built-in one: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>.",
                         "optional": true,
                         "type": "string"
                     },
@@ -394,6 +419,7 @@
                                 "version_added": "136"
                             }
                         ],
+                        "description": "Thunderbird is a mail client, not a browser. It is possible to load a web page, but opening follow-up pages through hyperlinks should be handled by the user's default browser. This property specifies to what extent this behavior should be enforced. The default <var>balanced</var> link handler will open links to the same host directly in Thunderbird, everything else will be opened in the user's default browser. A <var>relaxed</var> link handler will open all links inside of Thunderbird, a <var>strict</var> link handler will open all links in the user's default browser, except links to the same page.",
                         "enum": [
                             "strict",
                             "balanced",
@@ -431,6 +457,7 @@
                                 "version_added": "135"
                             }
                         ],
+                        "description": "The default URL. May point to a WebExtension page or a web page.",
                         "optional": true,
                         "type": "string"
                     }
@@ -443,6 +470,7 @@
                         "version_added": "114"
                     }
                 ],
+                "description": "Properties of a button in the spaces toolbar.",
                 "id": "SpaceButtonProperties",
                 "properties": {
                     "badgeBackgroundColor": {
@@ -469,6 +497,7 @@
                                 ]
                             }
                         ],
+                        "description": "Sets the background color of the badge. Can be specified as an array of four integers in the range [0,255] that make up the RGBA color of the badge. For example, opaque red is <var>[255, 0, 0, 255]</var>. Can also be a string with an HTML color name (<var>red</var>) or a HEX color value (<var>#FF0000</var> or <var>#F00</var>). Reset when set to <var>null</var>.",
                         "optional": "omit-key-if-missing"
                     },
                     "badgeText": {
@@ -477,6 +506,7 @@
                                 "version_added": "114"
                             }
                         ],
+                        "description": "Sets the badge text for the button in the spaces toolbar. The badge is displayed on top of the icon. Any number of characters can be set, but only about four can fit in the space. Removed when set to <var>null</var>.",
                         "optional": "omit-key-if-missing",
                         "type": "string"
                     },
@@ -487,6 +517,7 @@
                                 "version_added": "114"
                             }
                         ],
+                        "description": "The paths to one or more icons for the button in the spaces toolbar. Reset to the extension icon, when set to <var>null</var>.",
                         "optional": "omit-key-if-missing"
                     },
                     "themeIcons": {
@@ -495,6 +526,7 @@
                                 "version_added": "114"
                             }
                         ],
+                        "description": "Specifies dark and light icons for the button in the spaces toolbar to be used with themes: The <var>light</var> icons will be used on dark backgrounds and vice versa. At least the set for <em>16px</em> icons should be specified. The set for <em>32px</em> icons will be used on screens with a very high pixel density, if specified. Reset when set to <var>null</var>.",
                         "items": {
                             "$ref": "manifest.ThemeIcons"
                         },
@@ -507,6 +539,7 @@
                                 "version_added": "114"
                             }
                         ],
+                        "description": "The title for the button in the spaces toolbar, used in the tooltip of the button and as the displayed name in the overflow menu. Reset to the name of the extension, when set to <var>null</var>.",
                         "optional": "omit-key-if-missing",
                         "type": "string"
                     }
@@ -519,6 +552,7 @@
                         "version_added": "114"
                     }
                 ],
+                "description": "An array of four integers in the range [0,255] that make up the RGBA color. For example, opaque red is <var>[255, 0, 0, 255]</var>.",
                 "id": "ColorArray",
                 "items": {
                     "maximum": 255,
@@ -543,6 +577,7 @@
                                 "version_added": "115"
                             }
                         ],
+                        "description": "The id of the extension which owns the space. The <permission>management</permission> permission is required to include this property.",
                         "optional": true,
                         "type": "string"
                     },
@@ -552,6 +587,7 @@
                                 "version_added": "115"
                             }
                         ],
+                        "description": "The id of the space.",
                         "minimum": 1,
                         "type": "integer"
                     },
@@ -561,6 +597,7 @@
                                 "version_added": "115"
                             }
                         ],
+                        "description": "Whether this space is one of the default Thunderbird spaces, or an extension space.",
                         "type": "boolean"
                     },
                     "isSelfOwned": {
@@ -569,6 +606,7 @@
                                 "version_added": "115"
                             }
                         ],
+                        "description": "Whether this space was created by this extension.",
                         "type": "boolean"
                     },
                     "name": {
@@ -577,6 +615,7 @@
                                 "version_added": "115"
                             }
                         ],
+                        "description": "The name of the space. Names are unique for a single extension, but different extensions may use the same name.",
                         "pattern": "^[a-zA-Z0-9_]+$",
                         "type": "string"
                     }

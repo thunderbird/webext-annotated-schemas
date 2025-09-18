@@ -12,6 +12,7 @@
                                 "version_added": "140"
                             }
                         ],
+                        "description": "Describes an OAuth authentication provider for Thunderbird to use when connecting to mail/address book/calendar services. You will need to have a client ID registered with the provider to use this API.",
                         "optional": true,
                         "properties": {
                             "authorizationEndpoint": {
@@ -20,6 +21,7 @@
                                         "version_added": "140"
                                     }
                                 ],
+                                "description": "OAuth authorization endpoint address.",
                                 "format": "url",
                                 "type": "string"
                             },
@@ -29,6 +31,7 @@
                                         "version_added": "140"
                                     }
                                 ],
+                                "description": "Identifies the OAuth client to the server.",
                                 "type": "string"
                             },
                             "clientSecret": {
@@ -37,6 +40,7 @@
                                         "version_added": "140"
                                     }
                                 ],
+                                "description": "Identifies the OAuth client to the server.",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -46,6 +50,7 @@
                                         "version_added": "140"
                                     }
                                 ],
+                                "description": "One or more hostnames which use this OAuth provider.",
                                 "items": {
                                     "type": "string"
                                 },
@@ -58,6 +63,7 @@
                                         "version_added": "140"
                                     }
                                 ],
+                                "description": "A string to identify this provider in the login manager. This <em>should</em> match the hostname of the authorization endpoint, although that is not required.",
                                 "type": "string"
                             },
                             "redirectionEndpoint": {
@@ -66,6 +72,7 @@
                                         "version_added": "140"
                                     }
                                 ],
+                                "description": "OAuth redirection endpoint.",
                                 "format": "url",
                                 "type": "string"
                             },
@@ -75,6 +82,7 @@
                                         "version_added": "140"
                                     }
                                 ],
+                                "description": "The scopes to request when using this OAuth provider.",
                                 "type": "string"
                             },
                             "tokenEndpoint": {
@@ -83,6 +91,7 @@
                                         "version_added": "140"
                                     }
                                 ],
+                                "description": "OAuth token endpoint address.",
                                 "format": "url",
                                 "type": "string"
                             },
@@ -92,6 +101,7 @@
                                         "version_added": "140"
                                     }
                                 ],
+                                "description": "If the authorization uses PKCE.",
                                 "optional": true,
                                 "type": "boolean"
                             }

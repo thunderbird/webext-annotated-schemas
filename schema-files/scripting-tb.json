@@ -34,6 +34,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Returns all registered compose scripts for this extension that match the given filter.",
                 "name": "getRegisteredScripts",
                 "parameters": [
                     {
@@ -43,6 +44,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "An object to filter the extension's registered compose scripts.",
                         "name": "filter",
                         "optional": true
                     },
@@ -52,6 +54,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "The resulting array contains the registered compose scripts.",
                         "name": "callback",
                         "parameters": [
                             {
@@ -82,6 +85,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Registers one or more compose scripts for this extension, which should be injected into the message compose editor.",
                 "name": "registerScripts",
                 "parameters": [
                     {
@@ -90,6 +94,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Contains a list of compose scripts to be registered. If there are errors during script parsing/file validation, or if the IDs specified already exist, then no scripts are registered.",
                         "items": {
                             "$ref": "ComposeScriptDetails"
                         },
@@ -102,6 +107,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Invoked upon completion of the registration.",
                         "name": "callback",
                         "parameters": [],
                         "type": "function"
@@ -116,6 +122,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Unregisters one or more compose scripts for this extension.",
                 "name": "unregisterScripts",
                 "parameters": [
                     {
@@ -125,6 +132,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "If specified, only unregisters compose scripts which match the filter. Otherwise, all of the extension's compose scripts are unregistered.",
                         "name": "filter",
                         "optional": true
                     },
@@ -134,6 +142,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Invoked upon completion of the unregistration.",
                         "name": "callback",
                         "parameters": [],
                         "type": "function"
@@ -161,6 +170,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "The list of CSS files to be injected. These are injected in the order they appear in this array.",
                         "items": {
                             "$ref": "manifest.ExtensionURL"
                         },
@@ -173,6 +183,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "The id of the compose script, specified in the API call.",
                         "type": "string"
                     },
                     "js": {
@@ -181,6 +192,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "The list of JavaScript files to be injected. These are injected in the order they appear in this array.",
                         "items": {
                             "$ref": "manifest.ExtensionURL"
                         },
@@ -194,6 +206,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Specifies when JavaScript files are injected. The preferred and default value is <code>document_idle</code>.",
                         "optional": true
                     }
                 },
@@ -213,6 +226,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "The IDs of specific compose scripts to retrieve with <code>getRegisteredScripts()</code> or to unregister with <code>unregisterScripts()</code>.",
                         "items": {
                             "type": "string"
                         },
@@ -233,6 +247,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Returns all registered message display scripts for this extension that match the given filter.",
                 "name": "getRegisteredScripts",
                 "parameters": [
                     {
@@ -242,6 +257,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "An object to filter the extension's registered message display scripts.",
                         "name": "filter",
                         "optional": true
                     },
@@ -251,6 +267,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "The resulting array contains the registered message display scripts.",
                         "name": "callback",
                         "parameters": [
                             {
@@ -281,6 +298,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Registers one or more message display scripts for this extension, which should be injected into displayed messages.",
                 "name": "registerScripts",
                 "parameters": [
                     {
@@ -289,6 +307,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Contains a list of message display scripts to be registered. If there are errors during script parsing/file validation, or if the IDs specified already exist, then no scripts are registered.",
                         "items": {
                             "$ref": "MessageDisplayScriptDetails"
                         },
@@ -301,6 +320,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Invoked upon completion of the registration.",
                         "name": "callback",
                         "parameters": [],
                         "type": "function"
@@ -315,6 +335,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Unregisters one or more message display scripts for this extension.",
                 "name": "unregisterScripts",
                 "parameters": [
                     {
@@ -324,6 +345,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "If specified, only unregisters message display scripts which match the filter. Otherwise, all of the extension's message display scripts are unregistered.",
                         "name": "filter",
                         "optional": true
                     },
@@ -333,6 +355,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Invoked upon completion of the unregistration.",
                         "name": "callback",
                         "parameters": [],
                         "type": "function"
@@ -360,6 +383,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "The list of CSS files to be injected. These are injected in the order they appear in this array.",
                         "items": {
                             "$ref": "manifest.ExtensionURL"
                         },
@@ -372,6 +396,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "The id of the message display script, specified in the API call.",
                         "type": "string"
                     },
                     "js": {
@@ -380,6 +405,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "The list of JavaScript files to be injected. These are injected in the order they appear in this array.",
                         "items": {
                             "$ref": "manifest.ExtensionURL"
                         },
@@ -393,6 +419,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Specifies when JavaScript files are injected. The preferred and default value is <code>document_idle</code>.",
                         "optional": true
                     }
                 },
@@ -412,6 +439,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "The IDs of specific message display scripts to retrieve with <code>getRegisteredScripts()</code> or to unregister with <code>unregisterScripts()</code>.",
                         "items": {
                             "type": "string"
                         },
