@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "144.0b1",
+        "applicationVersion": "144.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -26,6 +26,7 @@
         ]
     },
     {
+        "description": "The <code>browser.management</code> API provides ways to manage the list of extensions that are installed and running.",
         "events": [
             {
                 "annotations": [
@@ -40,6 +41,7 @@
                         "version_added": "55"
                     }
                 ],
+                "description": "Fired when an addon has been disabled.",
                 "name": "onDisabled",
                 "parameters": [
                     {
@@ -77,6 +79,7 @@
                         "version_added": "55"
                     }
                 ],
+                "description": "Fired when an addon has been enabled.",
                 "name": "onEnabled",
                 "parameters": [
                     {
@@ -114,6 +117,7 @@
                         "version_added": "55"
                     }
                 ],
+                "description": "Fired when an addon has been installed.",
                 "name": "onInstalled",
                 "parameters": [
                     {
@@ -155,6 +159,7 @@
                         "version_added": "55"
                     }
                 ],
+                "description": "Fired when an addon has been uninstalled.",
                 "name": "onUninstalled",
                 "parameters": [
                     {
@@ -199,6 +204,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Returns a list of information about installed extensions.",
                 "name": "getAll",
                 "parameters": [
                     {
@@ -255,6 +261,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Returns information about the installed extension that has the given ID.",
                 "name": "get",
                 "parameters": [
                     {
@@ -267,6 +274,7 @@
                                 "version_added": "56"
                             }
                         ],
+                        "description": "The ID from an item of $(ref:management.ExtensionInfo).",
                         "name": "id"
                     },
                     {
@@ -300,6 +308,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Installs and enables a theme extension from the given url.",
                 "name": "install",
                 "parameters": [
                     {
@@ -330,6 +339,7 @@
                                         "version_added": "63"
                                     }
                                 ],
+                                "description": "A hash of the XPI file, using sha256 or stronger.",
                                 "optional": true,
                                 "pattern": "^(sha256|sha512):[0-9a-fA-F]{64,128}$",
                                 "type": "string"
@@ -347,7 +357,8 @@
                                     {
                                         "version_added": "63"
                                     }
-                                ]
+                                ],
+                                "description": "URL pointing to the XPI file on addons.mozilla.org or similar."
                             }
                         },
                         "type": "object"
@@ -385,6 +396,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Returns information about the calling extension. Note: This function can be used without requesting the 'management' permission in the manifest.",
                 "name": "getSelf",
                 "parameters": [
                     {
@@ -427,6 +439,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Uninstalls the calling extension. Note: This function can be used without requesting the 'management' permission in the manifest.",
                 "name": "uninstallSelf",
                 "parameters": [
                     {
@@ -450,6 +463,7 @@
                                         "version_added": "51"
                                     }
                                 ],
+                                "description": "The message to display to a user when being asked to confirm removal of the extension.",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -462,6 +476,7 @@
                                         "version_added": "51"
                                     }
                                 ],
+                                "description": "Whether or not a confirm-uninstall dialog should prompt the user. Defaults to false.",
                                 "optional": true,
                                 "type": "boolean"
                             }
@@ -491,6 +506,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Enables or disables the given add-on.",
                 "name": "setEnabled",
                 "parameters": [
                     {
@@ -506,10 +522,12 @@
                                 "version_added": "55"
                             }
                         ],
+                        "description": "ID of the add-on to enable/disable.",
                         "name": "id",
                         "type": "string"
                     },
                     {
+                        "description": "Whether to enable or disable the add-on.",
                         "name": "enabled",
                         "type": "boolean"
                     },
@@ -529,18 +547,22 @@
         "namespace": "management",
         "types": [
             {
+                "description": "Information about an icon belonging to an extension.",
                 "id": "IconInfo",
                 "properties": {
                     "size": {
+                        "description": "A number representing the width and height of the icon. Likely values include (but are not limited to) 128, 48, 24, and 16.",
                         "type": "integer"
                     },
                     "url": {
+                        "description": "The URL for this icon image. To display a grayscale version of the icon (to indicate that an extension is disabled, for example), append <code>?grayscale=true</code> to the URL.",
                         "type": "string"
                     }
                 },
                 "type": "object"
             },
             {
+                "description": "A reason the item is disabled.",
                 "enum": [
                     "unknown",
                     "permissions_increase"
@@ -549,6 +571,7 @@
                 "type": "string"
             },
             {
+                "description": "The type of this extension, 'extension' or 'theme'.",
                 "enum": [
                     "extension",
                     "theme"
@@ -557,6 +580,7 @@
                 "type": "string"
             },
             {
+                "description": "How the extension was installed. One of<br><var>development</var>: The extension was loaded unpacked in developer mode,<br><var>normal</var>: The extension was installed normally via an .xpi file,<br><var>sideload</var>: The extension was installed by other software on the machine,<br><var>admin</var>: The extension was installed by policy,<br><var>other</var>: The extension was installed by other means.",
                 "enum": [
                     "development",
                     "normal",
@@ -576,6 +600,7 @@
                         "version_added": "51"
                     }
                 ],
+                "description": "Information about an installed extension.",
                 "id": "ExtensionInfo",
                 "properties": {
                     "disabledReason": {
@@ -585,16 +610,20 @@
                                 "version_added": false
                             }
                         ],
+                        "description": "A reason the item is disabled.",
                         "optional": true
                     },
                     "enabled": {
+                        "description": "Whether it is currently enabled or disabled.",
                         "type": "boolean"
                     },
                     "homepageUrl": {
+                        "description": "The URL of the homepage of this extension.",
                         "optional": true,
                         "type": "string"
                     },
                     "hostPermissions": {
+                        "description": "Returns a list of host based permissions.",
                         "items": {
                             "type": "string"
                         },
@@ -602,6 +631,7 @@
                         "type": "array"
                     },
                     "icons": {
+                        "description": "A list of icon information. Note that this just reflects what was declared in the manifest, and the actual image at that url may be larger or smaller than what was declared, so you might consider using explicit width and height attributes on img tags referencing these images. See the <a href='manifest/icons'>manifest documentation on icons</a> for more details.",
                         "items": {
                             "$ref": "IconInfo"
                         },
@@ -609,22 +639,28 @@
                         "type": "array"
                     },
                     "id": {
+                        "description": "The extension's unique identifier.",
                         "type": "string"
                     },
                     "installType": {
                         "$ref": "ExtensionInstallType",
-                        "annotations": []
+                        "annotations": [],
+                        "description": "How the extension was installed."
                     },
                     "mayDisable": {
+                        "description": "Whether this extension can be disabled or uninstalled by the user.",
                         "type": "boolean"
                     },
                     "name": {
+                        "description": "The name of this extension.",
                         "type": "string"
                     },
                     "optionsUrl": {
+                        "description": "The url for the item's options page, if it has one.",
                         "type": "string"
                     },
                     "permissions": {
+                        "description": "Returns a list of API based permissions.",
                         "items": {
                             "type": "string"
                         },
@@ -632,6 +668,7 @@
                         "type": "array"
                     },
                     "shortName": {
+                        "description": "A short version of the name of this extension.",
                         "optional": true,
                         "type": "string"
                     },
@@ -641,13 +678,16 @@
                             {
                                 "version_added": "55"
                             }
-                        ]
+                        ],
+                        "description": "The type of this extension, 'extension' or 'theme'."
                     },
                     "updateUrl": {
+                        "description": "The update URL of this extension.",
                         "optional": true,
                         "type": "string"
                     },
                     "version": {
+                        "description": "The <a href='manifest/version'>version</a> of this extension.",
                         "type": "string"
                     },
                     "versionName": {
@@ -656,6 +696,7 @@
                                 "version_added": false
                             }
                         ],
+                        "description": "The <a href='manifest/version#version_name'>version name</a> of this extension if the manifest specified one.",
                         "optional": true,
                         "type": "string"
                     }

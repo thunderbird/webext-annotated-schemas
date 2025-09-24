@@ -1,5 +1,6 @@
 [
     {
+        "description": "Offers the ability to write to the clipboard. Reading is not supported because the clipboard can already be read through the standard web platform APIs.",
         "functions": [
             {
                 "annotations": [
@@ -11,6 +12,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Copy an image to the clipboard. The image is re-encoded before it is written to the clipboard. If the image is invalid, the clipboard is not modified.",
                 "name": "setImageData",
                 "parameters": [
                     {
@@ -23,11 +25,13 @@
                                 "version_added": "57"
                             }
                         ],
+                        "description": "The image data to be copied.",
                         "isInstanceOf": "ArrayBuffer",
                         "name": "imageData",
                         "type": "object"
                     },
                     {
+                        "description": "The type of imageData.",
                         "enum": [
                             "jpeg",
                             "png"
@@ -45,7 +49,7 @@
         ]
     },
     {
-        "applicationVersion": "144.0b1",
+        "applicationVersion": "144.0b2",
         "namespace": "manifest"
     }
 ]

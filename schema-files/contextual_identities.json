@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "144.0b1",
+        "applicationVersion": "144.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -26,6 +26,7 @@
         ]
     },
     {
+        "description": "Use the <code>browser.contextualIdentities</code> API to query and modify contextual identity, also called as containers.",
         "events": [
             {
                 "annotations": [
@@ -36,6 +37,7 @@
                         "version_added": "57"
                     }
                 ],
+                "description": "Fired when a container is updated.",
                 "name": "onUpdated",
                 "parameters": [
                     {
@@ -58,7 +60,8 @@
                                     {
                                         "version_added": "57"
                                     }
-                                ]
+                                ],
+                                "description": "Contextual identity that has been updated"
                             }
                         },
                         "type": "object"
@@ -75,6 +78,7 @@
                         "version_added": "57"
                     }
                 ],
+                "description": "Fired when a new container is created.",
                 "name": "onCreated",
                 "parameters": [
                     {
@@ -97,7 +101,8 @@
                                     {
                                         "version_added": "57"
                                     }
-                                ]
+                                ],
+                                "description": "Contextual identity that has been created"
                             }
                         },
                         "type": "object"
@@ -114,6 +119,7 @@
                         "version_added": "57"
                     }
                 ],
+                "description": "Fired when a container is removed.",
                 "name": "onRemoved",
                 "parameters": [
                     {
@@ -136,7 +142,8 @@
                                     {
                                         "version_added": "57"
                                     }
-                                ]
+                                ],
+                                "description": "Contextual identity that has been removed"
                             }
                         },
                         "type": "object"
@@ -164,6 +171,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Retrieves information about a single contextual identity.",
                 "name": "get",
                 "parameters": [
                     {
@@ -183,6 +191,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "The ID of the contextual identity cookie store. ",
                         "name": "cookieStoreId",
                         "type": "string"
                     }
@@ -203,6 +212,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Retrieves all contextual identities",
                 "name": "query",
                 "parameters": [
                     {
@@ -218,6 +228,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "Information to filter the contextual identities being retrieved.",
                         "name": "details",
                         "properties": {
                             "name": {
@@ -233,6 +244,7 @@
                                         "version_added": "53"
                                     }
                                 ],
+                                "description": "Filters the contextual identity by name.",
                                 "optional": true,
                                 "type": "string"
                             }
@@ -256,6 +268,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Creates a contextual identity with the given data.",
                 "name": "create",
                 "parameters": [
                     {
@@ -271,6 +284,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "Details about the contextual identity being created.",
                         "name": "details",
                         "properties": {
                             "color": {
@@ -286,6 +300,7 @@
                                         "version_added": "53"
                                     }
                                 ],
+                                "description": "The color of the contextual identity.",
                                 "optional": false,
                                 "type": "string"
                             },
@@ -302,6 +317,7 @@
                                         "version_added": "53"
                                     }
                                 ],
+                                "description": "The icon of the contextual identity.",
                                 "optional": false,
                                 "type": "string"
                             },
@@ -318,6 +334,7 @@
                                         "version_added": "53"
                                     }
                                 ],
+                                "description": "The name of the contextual identity.",
                                 "optional": false,
                                 "type": "string"
                             }
@@ -345,6 +362,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Updates a contextual identity with the given data.",
                 "name": "update",
                 "parameters": [
                     {
@@ -364,21 +382,26 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "The ID of the contextual identity cookie store. ",
                         "name": "cookieStoreId",
                         "type": "string"
                     },
                     {
+                        "description": "Details about the contextual identity being created.",
                         "name": "details",
                         "properties": {
                             "color": {
+                                "description": "The color of the contextual identity.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "icon": {
+                                "description": "The icon of the contextual identity.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "name": {
+                                "description": "The name of the contextual identity.",
                                 "optional": true,
                                 "type": "string"
                             }
@@ -398,6 +421,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Reorder one or more contextual identities by their cookieStoreIDs to a given position.",
                 "name": "move",
                 "parameters": [
                     {
@@ -436,9 +460,11 @@
                                 "type": "array"
                             }
                         ],
+                        "description": "The ID or list of IDs of the contextual identity cookie stores. ",
                         "name": "cookieStoreIds"
                     },
                     {
+                        "description": "The position the contextual identity should move to.",
                         "name": "position",
                         "type": "integer"
                     }
@@ -463,6 +489,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Deletes a contextual identity by its cookie Store ID.",
                 "name": "remove",
                 "parameters": [
                     {
@@ -482,6 +509,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "The ID of the contextual identity cookie store. ",
                         "name": "cookieStoreId",
                         "type": "string"
                     }
@@ -503,6 +531,7 @@
                         "version_added": "53"
                     }
                 ],
+                "description": "Represents information about a contextual identity.",
                 "id": "ContextualIdentity",
                 "properties": {
                     "color": {
@@ -511,6 +540,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "The color name of the contextual identity.",
                         "type": "string"
                     },
                     "colorCode": {
@@ -519,6 +549,7 @@
                                 "version_added": "57"
                             }
                         ],
+                        "description": "The color hash of the contextual identity.",
                         "type": "string"
                     },
                     "cookieStoreId": {
@@ -527,6 +558,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "The cookie store ID of the contextual identity.",
                         "type": "string"
                     },
                     "icon": {
@@ -535,6 +567,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "The icon name of the contextual identity.",
                         "type": "string"
                     },
                     "iconUrl": {
@@ -543,6 +576,7 @@
                                 "version_added": "57"
                             }
                         ],
+                        "description": "The icon url of the contextual identity.",
                         "type": "string"
                     },
                     "name": {
@@ -551,6 +585,7 @@
                                 "version_added": "53"
                             }
                         ],
+                        "description": "The name of the contextual identity.",
                         "type": "string"
                     }
                 },

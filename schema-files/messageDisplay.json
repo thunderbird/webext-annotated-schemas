@@ -1,15 +1,14 @@
 [
     {
+        "description": "A message can be displayed in either Thunderbird's main mail tab (a.k.a 3-pane tab), a tab of its own, or in a window of its own. All are referenced by <var>tabId</var> in this API. Display windows are considered to have exactly one tab, which has limited functionality compared to tabs from the main window.",
         "events": [
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messageDisplay.html#onmessagedisplayed-tab-message"
-                    },
-                    {
                         "version_added": "70"
                     }
                 ],
+                "description": "Fired when a message is displayed, whether in a 3-pane tab, a message tab, or a message window.",
                 "name": "onMessageDisplayed",
                 "parameters": [
                     {
@@ -36,12 +35,10 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messageDisplay.html#onmessagesdisplayed-tab-messages-displayedmessages"
-                    },
-                    {
                         "version_added": "81"
                     }
                 ],
+                "description": "Fired when either a single message is displayed or when multiple messages are displayed, whether in a 3-pane tab, a message tab, or a message window.",
                 "name": "onMessagesDisplayed",
                 "parameters": [
                     {
@@ -73,13 +70,11 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messageDisplay.html#getdisplayedmessage-tabid"
-                    },
-                    {
                         "version_added": "70"
                     }
                 ],
                 "async": "callback",
+                "description": "Gets the currently displayed message in the specified tab (even if the tab itself is currently not visible), or the currently active tab. It returns <var>null</var> if no messages are displayed, or if multiple messages are displayed.",
                 "name": "getDisplayedMessage",
                 "parameters": [
                     {
@@ -136,13 +131,11 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messageDisplay.html#getdisplayedmessages-tabid"
-                    },
-                    {
                         "version_added": "81"
                     }
                 ],
                 "async": "callback",
+                "description": "Gets an array of the currently displayed messages in the specified tab (even if the tab itself is currently not visible), or the currently active tab. The array is empty if no messages are displayed.",
                 "name": "getDisplayedMessages",
                 "parameters": [
                     {
@@ -185,13 +178,11 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messageDisplay.html#open-openproperties"
-                    },
-                    {
                         "version_added": "102"
                     }
                 ],
                 "async": "callback",
+                "description": "Opens a message in a new tab or in a new window.",
                 "name": "open",
                 "parameters": [
                     {
@@ -200,6 +191,7 @@
                                 "version_added": "102"
                             }
                         ],
+                        "description": "Settings for opening the message. Exactly one of messageId, headerMessageId or file must be specified.",
                         "name": "openProperties",
                         "properties": {
                             "active": {
@@ -208,6 +200,7 @@
                                         "version_added": "102"
                                     }
                                 ],
+                                "description": "Whether the new tab should become the active tab in the window. Only applicable to messages opened in tabs.",
                                 "optional": true,
                                 "type": "boolean"
                             },
@@ -218,6 +211,7 @@
                                         "version_added": "114"
                                     }
                                 ],
+                                "description": "The DOM file object of a message to be opened.",
                                 "isInstanceOf": "File",
                                 "optional": true,
                                 "type": "object"
@@ -228,6 +222,7 @@
                                         "version_added": "102"
                                     }
                                 ],
+                                "description": "The headerMessageId of a message to be opened. Will throw an <em>ExtensionError</em>, if the provided <var>headerMessageId</var> is unknown or invalid. Not supported for external messages.",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -237,6 +232,7 @@
                                         "version_added": "102"
                                     }
                                 ],
+                                "description": "Where to open the message. If not specified, the users preference is honoured.",
                                 "enum": [
                                     "tab",
                                     "window"
@@ -267,6 +263,7 @@
                                         "version_added": "102"
                                     }
                                 ],
+                                "description": "The id of a message to be opened. Will throw an <em>ExtensionError</em>, if the provided <var>messageId</var> is unknown or invalid.",
                                 "optional": true
                             },
                             "windowId": {
@@ -275,6 +272,7 @@
                                         "version_added": "102"
                                     }
                                 ],
+                                "description": "The id of the window, where the new tab should be created. Defaults to the current window. Only applicable to messages opened in tabs.",
                                 "minimum": -2,
                                 "optional": true,
                                 "type": "integer"
@@ -313,7 +311,7 @@
         ]
     },
     {
-        "applicationVersion": "144.0b1",
+        "applicationVersion": "144.0b2",
         "namespace": "manifest"
     }
 ]

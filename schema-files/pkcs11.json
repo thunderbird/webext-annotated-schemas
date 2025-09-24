@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "144.0b1",
+        "applicationVersion": "144.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -26,6 +26,7 @@
         ]
     },
     {
+        "description": "PKCS#11 module management API",
         "functions": [
             {
                 "annotations": [
@@ -37,6 +38,7 @@
                     }
                 ],
                 "async": true,
+                "description": "checks whether a PKCS#11 module, given by name, is installed",
                 "name": "isModuleInstalled",
                 "parameters": [
                     {
@@ -64,6 +66,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Install a PKCS#11 module with a given name",
                 "name": "installModule",
                 "parameters": [
                     {
@@ -96,6 +99,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Remove an installed PKCS#11 module from firefox",
                 "name": "uninstallModule",
                 "parameters": [
                     {
@@ -123,6 +127,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Enumerate a module's slots, each with their name and whether a token is present",
                 "name": "getModuleSlots",
                 "parameters": [
                     {
