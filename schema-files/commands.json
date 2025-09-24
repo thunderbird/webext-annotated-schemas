@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "143.0",
+        "applicationVersion": "143.0.1",
         "namespace": "manifest",
         "types": [
             {
@@ -9,6 +9,7 @@
                         "version_added": "66"
                     }
                 ],
+                "description": "Definition of a shortcut, for example <var>Alt+F5</var>. The string must match the shortcut format as defined by the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/commands#shortcut_values'>MDN page of the commands API</a>.",
                 "format": "manifestShortcutKey",
                 "id": "KeyName",
                 "type": "string"
@@ -61,6 +62,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "A <em>dictionary object</em> defining one or more commands as <em>name-value</em> pairs, the <em>name</em> being the name of the command and the <em>value</em> being a $(ref:CommandsShortcut).",
                         "optional": true,
                         "type": "object"
                     }
@@ -79,6 +81,7 @@
                 "properties": {
                     "suggested_key": {
                         "additionalProperties": {
+                            "deprecated": "Unknown platform name",
                             "type": "string"
                         },
                         "annotations": [
@@ -95,6 +98,7 @@
                                         "version_added": "140"
                                     }
                                 ],
+                                "description": "Default key combination.",
                                 "optional": true
                             },
                             "linux": {
@@ -104,6 +108,7 @@
                                         "version_added": "140"
                                     }
                                 ],
+                                "description": "Key combination on Linux.",
                                 "optional": true
                             },
                             "mac": {
@@ -113,6 +118,7 @@
                                         "version_added": "140"
                                     }
                                 ],
+                                "description": "Key combination on Mac.",
                                 "optional": true
                             },
                             "windows": {
@@ -122,6 +128,7 @@
                                         "version_added": "140"
                                     }
                                 ],
+                                "description": "Key combination on Windows.",
                                 "optional": true
                             }
                         },
@@ -138,6 +145,7 @@
                 "text": "Thunderbird's commands API is largely the same as the $(url:mdn-commands-api)[Firefox commands API]."
             }
         ],
+        "description": "Use the commands API to add keyboard shortcuts that trigger actions in your extension, for example opening one of the action popups or sending a command to the extension.",
         "events": [
             {
                 "annotations": [
@@ -145,6 +153,7 @@
                         "version_added": "66"
                     }
                 ],
+                "description": "Fired when a registered command is activated using a keyboard shortcut. This is a user input event handler. For asynchronous listeners some <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/User_actions'>restrictions</a> apply.",
                 "name": "onCommand",
                 "parameters": [
                     {
@@ -163,6 +172,7 @@
                                 "version_added": "106"
                             }
                         ],
+                        "description": "The details of the active tab while the command occurred.",
                         "name": "tab"
                     }
                 ],
@@ -174,6 +184,7 @@
                         "version_added": "115"
                     }
                 ],
+                "description": "Fired when a registered command's shortcut is changed.",
                 "name": "onChanged",
                 "parameters": [
                     {
@@ -190,6 +201,7 @@
                                         "version_added": "115"
                                     }
                                 ],
+                                "description": "The name of the shortcut.",
                                 "type": "string"
                             },
                             "newShortcut": {
@@ -198,6 +210,7 @@
                                         "version_added": "115"
                                     }
                                 ],
+                                "description": "The new shortcut active for this command, or blank if not active.",
                                 "type": "string"
                             },
                             "oldShortcut": {
@@ -206,6 +219,7 @@
                                         "version_added": "115"
                                     }
                                 ],
+                                "description": "The old shortcut which is no longer active for this command, or blank if the shortcut was previously inactive.",
                                 "type": "string"
                             }
                         },
@@ -223,6 +237,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Returns all the registered extension commands for this extension and their shortcut (if active).",
                 "name": "getAll",
                 "parameters": [
                     {
@@ -231,6 +246,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "Called to return the registered commands.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [
@@ -259,6 +275,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Open extension shortcuts configuration page.",
                 "name": "openShortcutSettings",
                 "parameters": [],
                 "type": "function"
@@ -270,6 +287,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Reset a command's details to what is specified in the manifest.",
                 "name": "reset",
                 "parameters": [
                     {
@@ -278,6 +296,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "The name of the command.",
                         "name": "name",
                         "type": "string"
                     }
@@ -291,6 +310,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Update the details of an already defined command.",
                 "name": "update",
                 "parameters": [
                     {
@@ -299,6 +319,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "The new details for the command.",
                         "name": "detail",
                         "properties": {
                             "name": {
@@ -307,6 +328,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "The name of the command.",
                                 "type": "string"
                             },
                             "shortcut": {
@@ -315,6 +337,7 @@
                                         "version_added": "66"
                                     }
                                 ],
+                                "description": "An empty string to clear the shortcut, or a string matching the format defined by the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/commands#shortcut_values'>MDN page of the commands API</a>  to set a new shortcut key. If the string does not match this format, the function throws an error.",
                                 "format": "manifestShortcutKeyOrEmpty",
                                 "optional": true,
                                 "type": "string"
@@ -345,6 +368,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "The name of the Extension Command",
                         "optional": true,
                         "type": "string"
                     },
@@ -354,6 +378,7 @@
                                 "version_added": "66"
                             }
                         ],
+                        "description": "The shortcut active for this command, or blank if not active.",
                         "optional": true,
                         "type": "string"
                     }

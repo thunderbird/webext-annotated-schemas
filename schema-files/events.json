@@ -1,5 +1,6 @@
 [
     {
+        "description": "The <code>chrome.events</code> namespace contains common types used by APIs dispatching events to notify you when something interesting happens.",
         "namespace": "events",
         "types": [
             {
@@ -11,29 +12,35 @@
                         "version_added": false
                     }
                 ],
+                "description": "Description of a declarative rule for handling events.",
                 "id": "Rule",
                 "properties": {
                     "actions": {
+                        "description": "List of actions that are triggered if one of the condtions is fulfilled.",
                         "items": {
                             "type": "any"
                         },
                         "type": "array"
                     },
                     "conditions": {
+                        "description": "List of conditions that can trigger the actions.",
                         "items": {
                             "type": "any"
                         },
                         "type": "array"
                     },
                     "id": {
+                        "description": "Optional identifier that allows referencing this rule.",
                         "optional": true,
                         "type": "string"
                     },
                     "priority": {
+                        "description": "Optional priority of this rule. Defaults to 100.",
                         "optional": true,
                         "type": "integer"
                     },
                     "tags": {
+                        "description": "Tags can be used to annotate rules and perform operations on sets of rules.",
                         "items": {
                             "type": "string"
                         },
@@ -52,6 +59,7 @@
                         "version_added": "≤53"
                     }
                 ],
+                "description": "An object which allows the addition and removal of listeners for a Chrome event.",
                 "functions": [
                     {
                         "annotations": [
@@ -62,6 +70,7 @@
                                 "version_added": "≤59"
                             }
                         ],
+                        "description": "Registers an event listener <em>callback</em> to an event.",
                         "name": "addListener",
                         "parameters": [
                             {
@@ -73,6 +82,7 @@
                                         "version_added": "≤59"
                                     }
                                 ],
+                                "description": "Called when an event occurs. The parameters of this function depend on the type of event.",
                                 "name": "callback",
                                 "type": "function"
                             }
@@ -88,6 +98,7 @@
                                 "version_added": "≤59"
                             }
                         ],
+                        "description": "Deregisters an event listener <em>callback</em> from an event.",
                         "name": "removeListener",
                         "parameters": [
                             {
@@ -99,6 +110,7 @@
                                         "version_added": "≤59"
                                     }
                                 ],
+                                "description": "Listener that shall be unregistered.",
                                 "name": "callback",
                                 "type": "function"
                             }
@@ -125,11 +137,13 @@
                                         "version_added": "≤59"
                                     }
                                 ],
+                                "description": "Listener whose registration status shall be tested.",
                                 "name": "callback",
                                 "type": "function"
                             }
                         ],
                         "returns": {
+                            "description": "True if <em>callback</em> is registered to the event.",
                             "type": "boolean"
                         },
                         "type": "function"
@@ -146,6 +160,7 @@
                         "name": "hasListeners",
                         "parameters": [],
                         "returns": {
+                            "description": "True if any event listeners are registered to the event.",
                             "type": "boolean"
                         },
                         "type": "function"
@@ -159,6 +174,7 @@
                                 "version_added": false
                             }
                         ],
+                        "description": "Registers rules to handle events.",
                         "name": "addRules",
                         "parameters": [
                             {
@@ -170,6 +186,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "Name of the event this function affects.",
                                 "name": "eventName",
                                 "type": "string"
                             },
@@ -182,6 +199,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "If provided, this is an integer that uniquely identfies the <webview> associated with this function call.",
                                 "name": "webViewInstanceId",
                                 "type": "integer"
                             },
@@ -194,6 +212,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "Rules to be registered. These do not replace previously registered rules.",
                                 "items": {
                                     "$ref": "Rule"
                                 },
@@ -209,6 +228,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "Called with registered rules.",
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [
@@ -221,6 +241,7 @@
                                                 "version_added": false
                                             }
                                         ],
+                                        "description": "Rules that were registered, the optional parameters are filled with values.",
                                         "items": {
                                             "$ref": "Rule"
                                         },
@@ -243,6 +264,7 @@
                                 "version_added": false
                             }
                         ],
+                        "description": "Returns currently registered rules.",
                         "name": "getRules",
                         "parameters": [
                             {
@@ -254,6 +276,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "Name of the event this function affects.",
                                 "name": "eventName",
                                 "type": "string"
                             },
@@ -266,6 +289,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "If provided, this is an integer that uniquely identfies the <webview> associated with this function call.",
                                 "name": "webViewInstanceId",
                                 "type": "integer"
                             },
@@ -278,6 +302,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "If an array is passed, only rules with identifiers contained in this array are returned.",
                                 "items": {
                                     "type": "string"
                                 },
@@ -294,6 +319,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "Called with registered rules.",
                                 "name": "callback",
                                 "parameters": [
                                     {
@@ -305,6 +331,7 @@
                                                 "version_added": false
                                             }
                                         ],
+                                        "description": "Rules that were registered, the optional parameters are filled with values.",
                                         "items": {
                                             "$ref": "Rule"
                                         },
@@ -327,6 +354,7 @@
                                 "version_added": false
                             }
                         ],
+                        "description": "Unregisters currently registered rules.",
                         "name": "removeRules",
                         "parameters": [
                             {
@@ -338,6 +366,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "Name of the event this function affects.",
                                 "name": "eventName",
                                 "type": "string"
                             },
@@ -350,6 +379,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "If provided, this is an integer that uniquely identfies the <webview> associated with this function call.",
                                 "name": "webViewInstanceId",
                                 "type": "integer"
                             },
@@ -362,6 +392,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "If an array is passed, only rules with identifiers contained in this array are unregistered.",
                                 "items": {
                                     "type": "string"
                                 },
@@ -378,6 +409,7 @@
                                         "version_added": false
                                     }
                                 ],
+                                "description": "Called when rules were unregistered.",
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [],
@@ -400,51 +432,64 @@
                         "version_added": "50"
                     }
                 ],
+                "description": "Filters URLs for various criteria. See <a href='events#filtered'>event filtering</a>. All criteria are case sensitive.",
                 "id": "UrlFilter",
                 "properties": {
                     "hostContains": {
+                        "description": "Matches if the host name of the URL contains a specified string. To test whether a host name component has a prefix 'foo', use hostContains: '.foo'. This matches 'www.foobar.com' and 'foo.com', because an implicit dot is added at the beginning of the host name. Similarly, hostContains can be used to match against component suffix ('foo.') and to exactly match against components ('.foo.'). Suffix- and exact-matching for the last components need to be done separately using hostSuffix, because no implicit dot is added at the end of the host name.",
                         "optional": true,
                         "type": "string"
                     },
                     "hostEquals": {
+                        "description": "Matches if the host name of the URL is equal to a specified string.",
                         "optional": true,
                         "type": "string"
                     },
                     "hostPrefix": {
+                        "description": "Matches if the host name of the URL starts with a specified string.",
                         "optional": true,
                         "type": "string"
                     },
                     "hostSuffix": {
+                        "description": "Matches if the host name of the URL ends with a specified string.",
                         "optional": true,
                         "type": "string"
                     },
                     "originAndPathMatches": {
+                        "description": "Matches if the URL without query segment and fragment identifier matches a specified regular expression. Port numbers are stripped from the URL if they match the default port number. The regular expressions use the <a href=\"https://github.com/google/re2/blob/master/doc/syntax.txt\">RE2 syntax</a>.",
                         "optional": true,
                         "type": "string"
                     },
                     "pathContains": {
+                        "description": "Matches if the path segment of the URL contains a specified string.",
                         "optional": true,
                         "type": "string"
                     },
                     "pathEquals": {
+                        "description": "Matches if the path segment of the URL is equal to a specified string.",
                         "optional": true,
                         "type": "string"
                     },
                     "pathPrefix": {
+                        "description": "Matches if the path segment of the URL starts with a specified string.",
                         "optional": true,
                         "type": "string"
                     },
                     "pathSuffix": {
+                        "description": "Matches if the path segment of the URL ends with a specified string.",
                         "optional": true,
                         "type": "string"
                     },
                     "ports": {
+                        "description": "Matches if the port of the URL is contained in any of the specified port lists. For example <code>[80, 443, [1000, 1200]]</code> matches all requests on port 80, 443 and in the range 1000-1200.",
                         "items": {
                             "choices": [
                                 {
+                                    "description": "A specific port.",
                                     "type": "integer"
                                 },
                                 {
+                                    "description": "A pair of integers identiying the start and end (both inclusive) of a port range.",
                                     "items": {
                                         "type": "integer"
                                     },
@@ -458,22 +503,27 @@
                         "type": "array"
                     },
                     "queryContains": {
+                        "description": "Matches if the query segment of the URL contains a specified string.",
                         "optional": true,
                         "type": "string"
                     },
                     "queryEquals": {
+                        "description": "Matches if the query segment of the URL is equal to a specified string.",
                         "optional": true,
                         "type": "string"
                     },
                     "queryPrefix": {
+                        "description": "Matches if the query segment of the URL starts with a specified string.",
                         "optional": true,
                         "type": "string"
                     },
                     "querySuffix": {
+                        "description": "Matches if the query segment of the URL ends with a specified string.",
                         "optional": true,
                         "type": "string"
                     },
                     "schemes": {
+                        "description": "Matches if the scheme of the URL is equal to any of the schemes specified in the array.",
                         "items": {
                             "type": "string"
                         },
@@ -481,22 +531,27 @@
                         "type": "array"
                     },
                     "urlContains": {
+                        "description": "Matches if the URL (without fragment identifier) contains a specified string. Port numbers are stripped from the URL if they match the default port number.",
                         "optional": true,
                         "type": "string"
                     },
                     "urlEquals": {
+                        "description": "Matches if the URL (without fragment identifier) is equal to a specified string. Port numbers are stripped from the URL if they match the default port number.",
                         "optional": true,
                         "type": "string"
                     },
                     "urlMatches": {
+                        "description": "Matches if the URL (without fragment identifier) matches a specified regular expression. Port numbers are stripped from the URL if they match the default port number. The regular expressions use the <a href=\"https://github.com/google/re2/blob/master/doc/syntax.txt\">RE2 syntax</a>.",
                         "optional": true,
                         "type": "string"
                     },
                     "urlPrefix": {
+                        "description": "Matches if the URL (without fragment identifier) starts with a specified string. Port numbers are stripped from the URL if they match the default port number.",
                         "optional": true,
                         "type": "string"
                     },
                     "urlSuffix": {
+                        "description": "Matches if the URL (without fragment identifier) ends with a specified string. Port numbers are stripped from the URL if they match the default port number.",
                         "optional": true,
                         "type": "string"
                     }
@@ -506,7 +561,7 @@
         ]
     },
     {
-        "applicationVersion": "143.0",
+        "applicationVersion": "143.0.1",
         "namespace": "manifest"
     }
 ]

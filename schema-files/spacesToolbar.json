@@ -1,5 +1,6 @@
 [
     {
+        "description": "The spacesToolbar API allows to manage built-in and custom spaces, and to add buttons for custom spaces to Thunderbird's spaces toolbar.",
         "functions": [
             {
                 "annotations": [
@@ -8,6 +9,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Adds a new button to the spaces toolbar. Throws an exception, if the used <var>id</var> is not unique within the extension.",
                 "name": "addButton",
                 "parameters": [
                     {
@@ -16,6 +18,7 @@
                                 "version_added": "100"
                             }
                         ],
+                        "description": "The unique id to assign to this button. May only contain alphanumeric characters and underscores.",
                         "name": "id",
                         "pattern": "^[a-zA-Z0-9_]+$",
                         "type": "string"
@@ -27,6 +30,7 @@
                                 "version_added": "100"
                             }
                         ],
+                        "description": "Properties of the new button. The <var>url</var> is mandatory.",
                         "name": "properties"
                     },
                     {
@@ -44,6 +48,7 @@
                                         "version_added": "115"
                                     }
                                 ],
+                                "description": "The id of the space belonging to the newly created button, as used by the tabs API.",
                                 "minimum": 1,
                                 "name": "spaceId",
                                 "type": "integer"
@@ -61,6 +66,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Removes the specified button from the spaces toolbar. Throws an exception if the requested spaces toolbar button does not exist or was not created by this extension. If the tab of this button is currently open, it will be closed.",
                 "name": "removeButton",
                 "parameters": [
                     {
@@ -69,6 +75,7 @@
                                 "version_added": "100"
                             }
                         ],
+                        "description": "The id of the spaces toolbar button, which is to be removed. May only contain alphanumeric characters and underscores.",
                         "name": "id",
                         "pattern": "^[a-zA-Z0-9_]+$",
                         "type": "string"
@@ -83,6 +90,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Updates properties of the specified spaces toolbar button. Throws an exception if the requested spaces toolbar button does not exist or was not created by this extension.",
                 "name": "updateButton",
                 "parameters": [
                     {
@@ -91,6 +99,7 @@
                                 "version_added": "100"
                             }
                         ],
+                        "description": "The id of the spaces toolbar button, which is to be updated. May only contain alphanumeric characters and underscores.",
                         "name": "id",
                         "pattern": "^[a-zA-Z0-9_]+$",
                         "type": "string"
@@ -102,6 +111,7 @@
                                 "version_added": "100"
                             }
                         ],
+                        "description": "Only specified properties will be updated.",
                         "name": "properties"
                     }
                 ],
@@ -114,6 +124,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Trigger a click on the specified spaces toolbar button. Throws an exception if the requested spaces toolbar button does not exist or was not created by this extension.",
                 "name": "clickButton",
                 "parameters": [
                     {
@@ -122,6 +133,7 @@
                                 "version_added": "114"
                             }
                         ],
+                        "description": "The id of the spaces toolbar button. May only contain alphanumeric characters and underscores.",
                         "name": "id",
                         "pattern": "^[a-zA-Z0-9_]+$",
                         "type": "string"
@@ -132,6 +144,7 @@
                                 "version_added": "114"
                             }
                         ],
+                        "description": "The id of the normal window, where the spaces toolbar button should be clicked. Defaults to the most recent normal window.",
                         "minimum": -2,
                         "name": "windowId",
                         "optional": true,
@@ -153,6 +166,7 @@
                                         "version_added": "114"
                                     }
                                 ],
+                                "description": "Details about the opened or activated tab.",
                                 "name": "tab"
                             }
                         ],
@@ -196,6 +210,7 @@
                                 ]
                             }
                         ],
+                        "description": "Sets the background color of the badge. Can be specified as an array of four integers in the range [0,255] that make up the RGBA color of the badge. For example, opaque red is <var>[255, 0, 0, 255]</var>. Can also be a string with an HTML color name (<var>red</var>) or a HEX color value (<var>#FF0000</var> or <var>#F00</var>). Reset when set to an empty string.",
                         "optional": true
                     },
                     "badgeText": {
@@ -204,6 +219,7 @@
                                 "version_added": "100"
                             }
                         ],
+                        "description": "Sets the badge text for the spaces toolbar button. The badge is displayed on top of the icon. Any number of characters can be set, but only about four can fit in the space. Removed when set to an empty string.",
                         "optional": true,
                         "type": "string"
                     },
@@ -231,6 +247,7 @@
                                 ]
                             }
                         ],
+                        "description": "The paths to one or more icons for the button in the spaces toolbar. Defaults to the extension icon, if set to an empty string.",
                         "optional": true
                     },
                     "themeIcons": {
@@ -239,6 +256,7 @@
                                 "version_added": "100"
                             }
                         ],
+                        "description": "Specifies dark and light icons for the spaces toolbar button to be used with themes: The <var>light</var> icons will be used on dark backgrounds and vice versa. At least the set for <em>16px</em> icons should be specified. The set for <em>32px</em> icons will be used on screens with a very high pixel density, if specified.",
                         "items": {
                             "$ref": "manifest.ThemeIcons"
                         },
@@ -251,6 +269,7 @@
                                 "version_added": "100"
                             }
                         ],
+                        "description": "The title for the spaces toolbar button, used in the tooltip of the button and as the displayed name in the overflow menu. Defaults to the name of the extension, if set to an empty string.",
                         "optional": true,
                         "type": "string"
                     },
@@ -260,6 +279,7 @@
                                 "version_added": "100"
                             }
                         ],
+                        "description": "The page url, loaded into a tab when the button is clicked. Supported are <var>https://</var> and <var>http://</var> links, as well as links to WebExtension pages.",
                         "optional": true,
                         "type": "string"
                     }
@@ -272,6 +292,7 @@
                         "version_added": "100"
                     }
                 ],
+                "description": "An array of four integers in the range [0,255] that make up the RGBA color. For example, opaque red is <var>[255, 0, 0, 255]</var>.",
                 "id": "ColorArray",
                 "items": {
                     "maximum": 255,
@@ -285,7 +306,7 @@
         ]
     },
     {
-        "applicationVersion": "143.0",
+        "applicationVersion": "143.0.1",
         "namespace": "manifest"
     }
 ]

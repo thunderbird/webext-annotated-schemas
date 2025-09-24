@@ -1,12 +1,14 @@
 [
     {
-        "applicationVersion": "143.0",
+        "applicationVersion": "143.0.1",
         "namespace": "manifest",
         "types": [
             {
+                "description": "Represents a protocol handler definition.",
                 "id": "ProtocolHandler",
                 "properties": {
                     "name": {
+                        "description": "A user-readable title string for the protocol handler. This will be displayed to the user in interface objects as needed.",
                         "type": "string"
                     },
                     "protocol": {
@@ -47,7 +49,8 @@
                                 "pattern": "^(ext|web)\\+[a-z0-9.+-]+$",
                                 "type": "string"
                             }
-                        ]
+                        ],
+                        "description": "The protocol the site wishes to handle, specified as a string. For example, you can register to handle SMS text message links by registering to handle the \"sms\" scheme."
                     },
                     "uriTemplate": {
                         "choices": [
@@ -58,6 +61,7 @@
                                 "$ref": "HttpURL"
                             }
                         ],
+                        "description": "The URL of the handler, as a string. This string should include \"%s\" as a placeholder which will be replaced with the escaped URL of the document to be handled. This URL might be a true URL, or it could be a phone number, email address, or so forth.",
                         "preprocess": "localize"
                     }
                 },
@@ -72,6 +76,7 @@
                                 "version_added": true
                             }
                         ],
+                        "description": "A list of protocol handler definitions.",
                         "items": {
                             "$ref": "ProtocolHandler"
                         },

@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "143.0",
+        "applicationVersion": "143.0.1",
         "namespace": "manifest",
         "types": [
             {
@@ -26,6 +26,7 @@
         ]
     },
     {
+        "description": "The identities API allows to manage the user's identities (each account can have multiple identities).",
         "events": [
             {
                 "annotations": [
@@ -33,6 +34,7 @@
                         "version_added": "91"
                     }
                 ],
+                "description": "Fired when a new identity has been created and added to an account. The event also fires for default identities that are created when a new account is added.",
                 "name": "onCreated",
                 "parameters": [
                     {
@@ -62,6 +64,7 @@
                         "version_added": "91"
                     }
                 ],
+                "description": "Fired when an identity has been removed from an account.",
                 "name": "onDeleted",
                 "parameters": [
                     {
@@ -82,6 +85,7 @@
                         "version_added": "91"
                     }
                 ],
+                "description": "Fired when one or more properties of an identity have been modified. The returned $(ref:identities.MailIdentity) includes only the changed values.",
                 "name": "onUpdated",
                 "parameters": [
                     {
@@ -114,6 +118,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Returns the identities of the specified account, or all identities if no account is specified. Do not expect the returned identities to be in any specific order. Use $(ref:identities.getDefault) to get the default identity of an account.",
                 "name": "list",
                 "parameters": [
                     {
@@ -159,6 +164,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Returns details of the requested identity, or <var>null</var> if it doesn't exist.",
                 "name": "get",
                 "parameters": [
                     {
@@ -217,6 +223,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Create a new identity in the specified account.",
                 "name": "create",
                 "parameters": [
                     {
@@ -270,6 +277,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Attempts to delete the requested identity. Default identities cannot be deleted.",
                 "name": "delete",
                 "parameters": [
                     {
@@ -294,6 +302,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Updates the details of an identity.",
                 "name": "update",
                 "parameters": [
                     {
@@ -347,6 +356,7 @@
                     }
                 ],
                 "async": "callback",
+                "description": "Returns the default identity for the requested account, or <var>null</var> if it is not defined.",
                 "name": "getDefault",
                 "parameters": [
                     {
@@ -405,6 +415,7 @@
                     }
                 ],
                 "async": true,
+                "description": "Sets the default identity for the requested account.",
                 "name": "setDefault",
                 "parameters": [
                     {
@@ -448,6 +459,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Whether the encryption technology is configured to support message encryption.",
                         "type": "boolean"
                     },
                     "canSign": {
@@ -456,6 +468,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "Whether the encryption technology is configured to support message signing.",
                         "type": "boolean"
                     }
                 },
@@ -476,6 +489,7 @@
                                 "version_added": "91"
                             }
                         ],
+                        "description": "The id of the $(ref:accounts.MailAccount) this identity belongs to. The <var>accountId</var> property is read-only.",
                         "optional": true
                     },
                     "composeHtml": {
@@ -484,6 +498,7 @@
                                 "version_added": "91"
                             }
                         ],
+                        "description": "If the identity uses HTML as the default compose format.",
                         "optional": true,
                         "type": "boolean"
                     },
@@ -493,6 +508,7 @@
                                 "version_added": "91"
                             }
                         ],
+                        "description": "The user's email address as used when messages are sent from this identity.",
                         "optional": true,
                         "type": "string"
                     },
@@ -502,6 +518,7 @@
                                 "version_added": "128"
                             }
                         ],
+                        "description": "The encryption capabilities of this identity. Read only.",
                         "optional": true,
                         "properties": {
                             "OpenPGP": {
@@ -510,7 +527,8 @@
                                     {
                                         "version_added": "128"
                                     }
-                                ]
+                                ],
+                                "description": "The capabilities of this identity for the OpenPGP encryption technology."
                             },
                             "S/MIME": {
                                 "$ref": "identities.EncryptionCapabilities",
@@ -518,7 +536,8 @@
                                     {
                                         "version_added": "128"
                                     }
-                                ]
+                                ],
+                                "description": "The capabilities of this identity for the S/MIME encryption technology."
                             }
                         },
                         "type": "object"
@@ -529,6 +548,7 @@
                                 "version_added": "91"
                             }
                         ],
+                        "description": "A unique identifier for this identity. The <var>id</var> property is read-only.",
                         "optional": true,
                         "type": "string"
                     },
@@ -538,6 +558,7 @@
                                 "version_added": "91"
                             }
                         ],
+                        "description": "A user-defined label for this identity.",
                         "optional": true,
                         "type": "string"
                     },
@@ -547,6 +568,7 @@
                                 "version_added": "91"
                             }
                         ],
+                        "description": "The user's name as used when messages are sent from this identity.",
                         "optional": true,
                         "type": "string"
                     },
@@ -556,6 +578,7 @@
                                 "version_added": "91"
                             }
                         ],
+                        "description": "The organization associated with this identity.",
                         "optional": true,
                         "type": "string"
                     },
@@ -565,6 +588,7 @@
                                 "version_added": "91"
                             }
                         ],
+                        "description": "The reply-to email address associated with this identity.",
                         "optional": true,
                         "type": "string"
                     },
@@ -574,6 +598,7 @@
                                 "version_added": "91"
                             }
                         ],
+                        "description": "The signature of the identity.",
                         "optional": true,
                         "type": "string"
                     },
@@ -583,6 +608,7 @@
                                 "version_added": "91"
                             }
                         ],
+                        "description": "If the signature should be interpreted as plain text or as HTML.",
                         "optional": true,
                         "type": "boolean"
                     }

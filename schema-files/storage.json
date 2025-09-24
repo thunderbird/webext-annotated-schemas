@@ -8,6 +8,7 @@
             "content",
             "devtools"
         ],
+        "description": "Use the <code>browser.storage</code> API to store, retrieve, and track changes to user data.",
         "events": [
             {
                 "annotations": [
@@ -18,6 +19,7 @@
                         "version_added": "45"
                     }
                 ],
+                "description": "Fired when one or more items change.",
                 "name": "onChanged",
                 "parameters": [
                     {
@@ -32,10 +34,12 @@
                                 "version_added": "45"
                             }
                         ],
+                        "description": "Object mapping each key that changed to its corresponding $(ref:storage.StorageChange) for that item.",
                         "name": "changes",
                         "type": "object"
                     },
                     {
+                        "description": "The name of the storage area (<code>\"sync\"</code>, <code>\"local\"</code> or <code>\"managed\"</code>) the changes are for.",
                         "name": "areaName",
                         "type": "string"
                     }
@@ -62,8 +66,10 @@
                         "version_added": "45"
                     }
                 ],
+                "description": "Items in the <code>local</code> storage area are local to each machine.",
                 "properties": {
                     "QUOTA_BYTES": {
+                        "description": "The maximum amount (in bytes) of data that can be stored in local storage, as measured by the JSON stringification of every value plus every key's length. This value will be ignored if the extension has the <code>unlimitedStorage</code> permission. Updates that would cause this limit to be exceeded fail immediately and set $(ref:runtime.lastError).",
                         "value": 5242880
                     }
                 }
@@ -90,8 +96,10 @@
                         "version_added": "57"
                     }
                 ],
+                "description": "Items in the <code>managed</code> storage area are set by administrators or native applications, and are read-only for the extension; trying to modify this namespace results in an error.",
                 "properties": {
                     "QUOTA_BYTES": {
+                        "description": "The maximum size (in bytes) of the managed storage JSON manifest file. Files larger than this limit will fail to load.",
                         "value": 5242880
                     }
                 }
@@ -109,6 +117,7 @@
                         "version_added": "115"
                     }
                 ],
+                "description": "Items in the <code>session</code> storage area are kept in memory, and only until the either browser or extension is closed or reloaded.",
                 "properties": {
                     "QUOTA_BYTES": {
                         "annotations": [
@@ -118,7 +127,8 @@
                             {
                                 "version_added": "131"
                             }
-                        ]
+                        ],
+                        "description": "The maximum amount of data (in bytes, currently at 10MB) that can be stored in session storage, as measured by the StructuredCloneHolder of every value plus every key's length."
                     }
                 }
             },
@@ -136,23 +146,31 @@
                         "version_added": "53"
                     }
                 ],
+                "description": "Items in the <code>sync</code> storage area are synced by the browser.",
                 "properties": {
                     "MAX_ITEMS": {
+                        "description": "The maximum number of items that can be stored in sync storage. Updates that would cause this limit to be exceeded will fail immediately and set $(ref:runtime.lastError).",
                         "value": 512
                     },
                     "MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE": {
+                        "deprecated": "The storage.sync API no longer has a sustained write operation quota.",
+                        "description": "",
                         "value": 1000000
                     },
                     "MAX_WRITE_OPERATIONS_PER_HOUR": {
+                        "description": "<p>The maximum number of <code>set</code>, <code>remove</code>, or <code>clear</code> operations that can be performed each hour. This is 1 every 2 seconds, a lower ceiling than the short term higher writes-per-minute limit.</p><p>Updates that would cause this limit to be exceeded fail immediately and set $(ref:runtime.lastError).</p>",
                         "value": 1800
                     },
                     "MAX_WRITE_OPERATIONS_PER_MINUTE": {
+                        "description": "<p>The maximum number of <code>set</code>, <code>remove</code>, or <code>clear</code> operations that can be performed each minute. This is 2 per second, providing higher throughput than writes-per-hour over a shorter period of time.</p><p>Updates that would cause this limit to be exceeded fail immediately and set $(ref:runtime.lastError).</p>",
                         "value": 120
                     },
                     "QUOTA_BYTES": {
+                        "description": "The maximum total amount (in bytes) of data that can be stored in sync storage, as measured by the JSON stringification of every value plus every key's length. Updates that would cause this limit to be exceeded fail immediately and set $(ref:runtime.lastError).",
                         "value": 102400
                     },
                     "QUOTA_BYTES_PER_ITEM": {
+                        "description": "The maximum size (in bytes) of each individual item in sync storage, as measured by the JSON stringification of its value plus its key length. Updates containing items larger than this limit will fail immediately and set $(ref:runtime.lastError).",
                         "value": 8192
                     }
                 }
@@ -171,10 +189,12 @@
                 "id": "StorageChange",
                 "properties": {
                     "newValue": {
+                        "description": "The new value of the item, if there is a new value.",
                         "optional": true,
                         "type": "any"
                     },
                     "oldValue": {
+                        "description": "The old value of the item, if there was an old value.",
                         "optional": true,
                         "type": "any"
                     }
@@ -200,6 +220,7 @@
                                 "version_added": "101"
                             }
                         ],
+                        "description": "Fired when one or more items change.",
                         "name": "onChanged",
                         "parameters": [
                             {
@@ -214,6 +235,7 @@
                                         "version_added": "101"
                                     }
                                 ],
+                                "description": "Object mapping each key that changed to its corresponding $(ref:storage.StorageChange) for that item.",
                                 "name": "changes",
                                 "type": "object"
                             }
@@ -232,6 +254,7 @@
                             }
                         ],
                         "async": "callback",
+                        "description": "Gets one or more items from storage.",
                         "name": "get",
                         "parameters": [
                             {
@@ -281,9 +304,11 @@
                                                 "version_added": "45"
                                             }
                                         ],
+                                        "description": "Storage items to return in the callback, where the values are replaced with those from storage if they exist.",
                                         "type": "object"
                                     }
                                 ],
+                                "description": "A single key to get, list of keys to get, or a dictionary specifying default values (see description of the object).  An empty list or object will return an empty result object.  Pass in <code>null</code> to get the entire contents of storage.",
                                 "name": "keys",
                                 "optional": true
                             },
@@ -296,6 +321,7 @@
                                         "version_added": "45"
                                     }
                                 ],
+                                "description": "Callback with storage items, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "parameters": [
                                     {
@@ -310,6 +336,7 @@
                                                 "version_added": "45"
                                             }
                                         ],
+                                        "description": "Object with items in their key-value mappings.",
                                         "name": "items",
                                         "type": "object"
                                     }
@@ -337,6 +364,7 @@
                             }
                         ],
                         "async": "callback",
+                        "description": "Gets the amount of space (in bytes) being used by one or more items.",
                         "name": "getBytesInUse",
                         "parameters": [
                             {
@@ -399,6 +427,7 @@
                                         "type": "array"
                                     }
                                 ],
+                                "description": "A single key or list of keys to get the total usage for. An empty list will return 0. Pass in <code>null</code> to get the total usage of all of storage.",
                                 "name": "keys",
                                 "optional": true
                             },
@@ -419,6 +448,7 @@
                                         "version_added": "78"
                                     }
                                 ],
+                                "description": "Callback with the amount of space being used by storage, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "parameters": [
                                     {
@@ -438,6 +468,7 @@
                                                 "version_added": "78"
                                             }
                                         ],
+                                        "description": "Amount of space being used in storage, in bytes.",
                                         "name": "bytesInUse",
                                         "type": "integer"
                                     }
@@ -450,12 +481,15 @@
                     },
                     {
                         "async": "callback",
+                        "description": "Gets the keys of all items in storage.",
                         "name": "getKeys",
                         "parameters": [
                             {
+                                "description": "Callback with the keys of all items in storage, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "parameters": [
                                     {
+                                        "description": "The keys of all items in storage.",
                                         "items": {
                                             "type": "string"
                                         },
@@ -478,6 +512,7 @@
                             }
                         ],
                         "async": "callback",
+                        "description": "Sets multiple items.",
                         "name": "set",
                         "parameters": [
                             {
@@ -492,6 +527,7 @@
                                         "version_added": "45"
                                     }
                                 ],
+                                "description": "<p>An object which gives each key/value pair to update storage with. Any other key/value pairs in storage will not be affected.</p><p>Primitive values such as numbers will serialize as expected. Values with a <code>typeof</code> <code>\"object\"</code> and <code>\"function\"</code> will typically serialize to <code>{}</code>, with the exception of <code>Array</code> (serializes as expected), <code>Date</code>, and <code>Regex</code> (serialize using their <code>String</code> representation).</p>",
                                 "name": "items",
                                 "type": "object"
                             },
@@ -504,6 +540,7 @@
                                         "version_added": "45"
                                     }
                                 ],
+                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [],
@@ -522,6 +559,7 @@
                             }
                         ],
                         "async": "callback",
+                        "description": "Removes one or more items from storage.",
                         "name": "remove",
                         "parameters": [
                             {
@@ -560,6 +598,7 @@
                                         "type": "array"
                                     }
                                 ],
+                                "description": "A single key or a list of keys for items to remove.",
                                 "name": "keys"
                             },
                             {
@@ -571,6 +610,7 @@
                                         "version_added": "45"
                                     }
                                 ],
+                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [],
@@ -589,6 +629,7 @@
                             }
                         ],
                         "async": "callback",
+                        "description": "Removes all items from storage.",
                         "name": "clear",
                         "parameters": [
                             {
@@ -600,6 +641,7 @@
                                         "version_added": "45"
                                     }
                                 ],
+                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [],
@@ -615,12 +657,14 @@
             {
                 "events": [
                     {
+                        "description": "Fired when one or more items change.",
                         "name": "onChanged",
                         "parameters": [
                             {
                                 "additionalProperties": {
                                     "$ref": "StorageChange"
                                 },
+                                "description": "Object mapping each key that changed to its corresponding $(ref:storage.StorageChange) for that item.",
                                 "name": "changes",
                                 "type": "object"
                             }
@@ -631,6 +675,7 @@
                 "functions": [
                     {
                         "async": "callback",
+                        "description": "Gets one or more items from storage.",
                         "name": "get",
                         "parameters": [
                             {
@@ -648,19 +693,23 @@
                                         "additionalProperties": {
                                             "type": "any"
                                         },
+                                        "description": "Storage items to return in the callback, where the values are replaced with those from storage if they exist.",
                                         "type": "object"
                                     }
                                 ],
+                                "description": "A single key to get, list of keys to get, or a dictionary specifying default values (see description of the object).  An empty list or object will return an empty result object.  Pass in <code>null</code> to get the entire contents of storage.",
                                 "name": "keys",
                                 "optional": true
                             },
                             {
+                                "description": "Callback with storage items, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "parameters": [
                                     {
                                         "additionalProperties": {
                                             "type": "any"
                                         },
+                                        "description": "Object with items in their key-value mappings.",
                                         "name": "items",
                                         "type": "object"
                                     }
@@ -672,6 +721,7 @@
                     },
                     {
                         "async": "callback",
+                        "description": "Gets the amount of space (in bytes) being used by one or more items.",
                         "name": "getBytesInUse",
                         "parameters": [
                             {
@@ -686,13 +736,16 @@
                                         "type": "array"
                                     }
                                 ],
+                                "description": "A single key or list of keys to get the total usage for. An empty list will return 0. Pass in <code>null</code> to get the total usage of all of storage.",
                                 "name": "keys",
                                 "optional": true
                             },
                             {
+                                "description": "Callback with the amount of space being used by storage, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "parameters": [
                                     {
+                                        "description": "Amount of space being used in storage, in bytes.",
                                         "name": "bytesInUse",
                                         "type": "integer"
                                     }
@@ -704,12 +757,15 @@
                     },
                     {
                         "async": "callback",
+                        "description": "Gets the keys of all items in storage.",
                         "name": "getKeys",
                         "parameters": [
                             {
+                                "description": "Callback with the keys of all items in storage, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "parameters": [
                                     {
+                                        "description": "The keys of all items in storage.",
                                         "items": {
                                             "type": "string"
                                         },
@@ -724,16 +780,19 @@
                     },
                     {
                         "async": "callback",
+                        "description": "Sets multiple items.",
                         "name": "set",
                         "parameters": [
                             {
                                 "additionalProperties": {
                                     "type": "any"
                                 },
+                                "description": "<p>An object which gives each key/value pair to update storage with. Any other key/value pairs in storage will not be affected.</p><p>Primitive values such as numbers will serialize as expected. Values with a <code>typeof</code> <code>\"object\"</code> and <code>\"function\"</code> will typically serialize to <code>{}</code>, with the exception of <code>Array</code> (serializes as expected), <code>Date</code>, and <code>Regex</code> (serialize using their <code>String</code> representation).</p>",
                                 "name": "items",
                                 "type": "object"
                             },
                             {
+                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [],
@@ -744,6 +803,7 @@
                     },
                     {
                         "async": "callback",
+                        "description": "Removes one or more items from storage.",
                         "name": "remove",
                         "parameters": [
                             {
@@ -758,9 +818,11 @@
                                         "type": "array"
                                     }
                                 ],
+                                "description": "A single key or a list of keys for items to remove.",
                                 "name": "keys"
                             },
                             {
+                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [],
@@ -771,9 +833,11 @@
                     },
                     {
                         "async": "callback",
+                        "description": "Removes all items from storage.",
                         "name": "clear",
                         "parameters": [
                             {
+                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [],
@@ -789,7 +853,7 @@
         ]
     },
     {
-        "applicationVersion": "143.0",
+        "applicationVersion": "143.0.1",
         "namespace": "manifest"
     }
 ]
