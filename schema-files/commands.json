@@ -85,6 +85,16 @@
                 ],
                 "id": "CommandsShortcut",
                 "properties": {
+                    "description": {
+                        "annotations": [
+                            {
+                                "version_added": "140"
+                            }
+                        ],
+                        "optional": true,
+                        "preprocess": "localize",
+                        "type": "string"
+                    },
                     "suggested_key": {
                         "additionalProperties": {
                             "deprecated": "Unknown platform name",
@@ -346,6 +356,16 @@
                         "description": "The new details for the command.",
                         "name": "detail",
                         "properties": {
+                            "description": {
+                                "annotations": [
+                                    {
+                                        "version_added": "66"
+                                    }
+                                ],
+                                "description": "The description for the command.",
+                                "optional": true,
+                                "type": "string"
+                            },
                             "name": {
                                 "annotations": [
                                     {
@@ -389,6 +409,16 @@
                 ],
                 "id": "Command",
                 "properties": {
+                    "description": {
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
+                        "description": "The description of the Extension Command",
+                        "optional": true,
+                        "type": "string"
+                    },
                     "name": {
                         "annotations": [
                             {
