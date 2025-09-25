@@ -43,14 +43,6 @@
                 "parameters": [
                     {
                         "$ref": "ScriptInjection",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/executeScript"
-                            },
-                            {
-                                "version_added": "102"
-                            }
-                        ],
                         "description": "The details of the script which to inject.",
                         "name": "injection"
                     },
@@ -86,14 +78,6 @@
                 "parameters": [
                     {
                         "$ref": "CSSInjection",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/insertCSS"
-                            },
-                            {
-                                "version_added": "102"
-                            }
-                        ],
                         "description": "The details of the styles to insert.",
                         "name": "injection"
                     },
@@ -121,14 +105,6 @@
                 "parameters": [
                     {
                         "$ref": "CSSInjection",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/removeCSS"
-                            },
-                            {
-                                "version_added": "102"
-                            }
-                        ],
                         "description": "The details of the styles to remove. Note that the <code>css</code>, <code>files</code>, and <code>origin</code> properties must exactly match the stylesheet inserted through <code>insertCSS</code>. Attempting to remove a non-existent stylesheet is a no-op.",
                         "name": "injection"
                     },
@@ -155,14 +131,6 @@
                 "name": "registerContentScripts",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/registerContentScripts"
-                            },
-                            {
-                                "version_added": "102"
-                            }
-                        ],
                         "description": "Contains a list of scripts to be registered. If there are errors during script parsing/file validation, or if the IDs specified already exist, then no scripts are registered.",
                         "items": {
                             "$ref": "RegisteredContentScript"
@@ -194,14 +162,6 @@
                 "parameters": [
                     {
                         "$ref": "ContentScriptFilter",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/getRegisteredContentScripts"
-                            },
-                            {
-                                "version_added": "102"
-                            }
-                        ],
                         "description": "An object to filter the extension's dynamically registered scripts.",
                         "name": "filter",
                         "optional": true
@@ -238,14 +198,6 @@
                 "parameters": [
                     {
                         "$ref": "ContentScriptFilter",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/unregisterContentScripts"
-                            },
-                            {
-                                "version_added": "102"
-                            }
-                        ],
                         "description": "If specified, only unregisters dynamic content scripts which match the filter. Otherwise, all of the extension's dynamic content scripts are unregistered.",
                         "name": "filter",
                         "optional": true
@@ -273,39 +225,15 @@
                 "name": "updateContentScripts",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
-                            },
-                            {
-                                "version_added": "102"
-                            }
-                        ],
                         "description": "Contains a list of scripts to be updated. If there are errors during script parsing/file validation, or if the IDs specified do not already exist, then no scripts are updated.",
                         "items": {
                             "properties": {
                                 "allFrames": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
-                                        },
-                                        {
-                                            "version_added": "102"
-                                        }
-                                    ],
                                     "description": "If specified true, it will inject into all frames, even if the frame is not the top-most frame in the tab. Each frame is checked independently for URL requirements; it will not inject into child frames if the URL requirements are not met. Defaults to false, meaning that only the top frame is matched.",
                                     "optional": true,
                                     "type": "boolean"
                                 },
                                 "css": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
-                                        },
-                                        {
-                                            "version_added": "102"
-                                        }
-                                    ],
                                     "description": "The list of CSS files to be injected into matching pages. These are injected in the order they appear in this array.",
                                     "items": {
                                         "$ref": "manifest.ExtensionURL"
@@ -314,14 +242,6 @@
                                     "type": "array"
                                 },
                                 "excludeMatches": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
-                                        },
-                                        {
-                                            "version_added": "102"
-                                        }
-                                    ],
                                     "description": "Excludes pages that this content script would otherwise be injected into.",
                                     "items": {
                                         "type": "string"
@@ -330,26 +250,10 @@
                                     "type": "array"
                                 },
                                 "id": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
-                                        },
-                                        {
-                                            "version_added": "102"
-                                        }
-                                    ],
                                     "description": "The id of the content script, specified in the API call.",
                                     "type": "string"
                                 },
                                 "js": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
-                                        },
-                                        {
-                                            "version_added": "102"
-                                        }
-                                    ],
                                     "description": "The list of JavaScript files to be injected into matching pages. These are injected in the order they appear in this array.",
                                     "items": {
                                         "$ref": "manifest.ExtensionURL"
@@ -358,27 +262,11 @@
                                     "type": "array"
                                 },
                                 "matchOriginAsFallback": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
-                                        },
-                                        {
-                                            "version_added": "102"
-                                        }
-                                    ],
                                     "description": "If matchOriginAsFallback is true, then the code is also injected in about:, data:, blob: when their origin matches the pattern in 'matches', even if the actual document origin is opaque (due to the use of CSP sandbox or iframe sandbox). Match patterns in 'matches' must specify a wildcard path glob. By default it is <code>false</code>.",
                                     "optional": true,
                                     "type": "boolean"
                                 },
                                 "matches": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
-                                        },
-                                        {
-                                            "version_added": "102"
-                                        }
-                                    ],
                                     "description": "Specifies which pages this content script will be injected into. Must be specified for <code>registerContentScripts()</code>.",
                                     "items": {
                                         "type": "string"
@@ -387,14 +275,6 @@
                                     "type": "array"
                                 },
                                 "persistAcrossSessions": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
-                                        },
-                                        {
-                                            "version_added": "102"
-                                        }
-                                    ],
                                     "default": true,
                                     "description": "Specifies if this content script will persist into future sessions. Defaults to true.",
                                     "optional": true,
@@ -402,27 +282,11 @@
                                 },
                                 "runAt": {
                                     "$ref": "extensionTypes.RunAt",
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
-                                        },
-                                        {
-                                            "version_added": "102"
-                                        }
-                                    ],
                                     "description": "Specifies when JavaScript files are injected into the web page. The preferred and default value is <code>document_idle</code>.",
                                     "optional": true
                                 },
                                 "world": {
                                     "$ref": "ExecutionWorld",
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/updateContentScripts"
-                                        },
-                                        {
-                                            "version_added": "102"
-                                        }
-                                    ],
                                     "description": "The JavaScript world for a script to execute within. Defaults to \"ISOLATED\".",
                                     "optional": true
                                 }

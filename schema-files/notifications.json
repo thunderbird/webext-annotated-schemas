@@ -14,19 +14,16 @@
                 "name": "onClosed",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onClosed"
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "description": "The notificationId of the closed notification.",
                         "name": "notificationId",
                         "type": "string"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ],
                         "description": "True if the notification was closed by the user.",
                         "name": "byUser",
                         "type": "boolean"
@@ -47,14 +44,6 @@
                 "name": "onClicked",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onClicked"
-                            },
-                            {
-                                "version_added": "47"
-                            }
-                        ],
                         "description": "The notificationId of the clicked notification.",
                         "name": "notificationId",
                         "type": "string"
@@ -75,14 +64,6 @@
                 "name": "onButtonClicked",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onButtonClicked"
-                            },
-                            {
-                                "version_added": false
-                            }
-                        ],
                         "description": "The notificationId of the clicked notification.",
                         "name": "notificationId",
                         "type": "string"
@@ -128,14 +109,6 @@
                 "name": "onShown",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/onShown"
-                            },
-                            {
-                                "version_added": "56"
-                            }
-                        ],
                         "description": "The notificationId of the shown notification.",
                         "name": "notificationId",
                         "type": "string"
@@ -159,14 +132,6 @@
                 "name": "create",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/create"
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "description": "Identifier of the notification. If it is empty, this method generates an id. If it matches an existing notification, this method first clears that notification before proceeding with the create operation.",
                         "name": "notificationId",
                         "optional": true,
@@ -206,14 +171,6 @@
                 "name": "update",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/update"
-                            },
-                            {
-                                "version_added": false
-                            }
-                        ],
                         "description": "The id of the notification to be updated.",
                         "name": "notificationId",
                         "type": "string"
@@ -253,14 +210,6 @@
                 "name": "clear",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/clear"
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "description": "The id of the notification to be updated.",
                         "name": "notificationId",
                         "type": "string"
@@ -294,28 +243,12 @@
                 "name": "getAll",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/getAll"
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "name": "callback",
                         "parameters": [
                             {
                                 "additionalProperties": {
                                     "$ref": "CreateNotificationOptions"
                                 },
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/notifications/getAll"
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The set of notifications currently in the system.",
                                 "name": "notifications",
                                 "type": "object"

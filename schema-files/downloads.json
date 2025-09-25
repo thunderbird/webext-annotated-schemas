@@ -49,14 +49,6 @@
                 "parameters": [
                     {
                         "$ref": "DownloadItem",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onCreated"
-                            },
-                            {
-                                "version_added": "48"
-                            }
-                        ],
                         "name": "downloadItem"
                     }
                 ],
@@ -75,14 +67,6 @@
                 "name": "onErased",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onErased"
-                            },
-                            {
-                                "version_added": "48"
-                            }
-                        ],
                         "description": "The <code>id</code> of the <a href='#type-DownloadItem'>DownloadItem</a> that was erased.",
                         "name": "downloadId",
                         "type": "integer"
@@ -103,192 +87,72 @@
                 "name": "onChanged",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                            },
-                            {
-                                "version_added": "47"
-                            }
-                        ],
                         "name": "downloadDelta",
                         "properties": {
                             "canResume": {
                                 "$ref": "BooleanDelta",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "optional": true
                             },
                             "danger": {
                                 "$ref": "StringDelta",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Describes a change in a <a href='#type-DownloadItem'>DownloadItem</a>'s <code>danger</code>.",
                                 "optional": true
                             },
                             "endTime": {
                                 "$ref": "StringDelta",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Describes a change in a <a href='#type-DownloadItem'>DownloadItem</a>'s <code>endTime</code>.",
                                 "optional": true
                             },
                             "error": {
                                 "$ref": "StringDelta",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Describes a change in a <a href='#type-DownloadItem'>DownloadItem</a>'s <code>error</code>.",
                                 "optional": true
                             },
                             "exists": {
                                 "$ref": "BooleanDelta",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "optional": true
                             },
                             "fileSize": {
                                 "$ref": "DoubleDelta",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Describes a change in a <a href='#type-DownloadItem'>DownloadItem</a>'s <code>fileSize</code>.",
                                 "optional": true
                             },
                             "filename": {
                                 "$ref": "StringDelta",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Describes a change in a <a href='#type-DownloadItem'>DownloadItem</a>'s <code>filename</code>.",
                                 "optional": true
                             },
                             "id": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "The <code>id</code> of the <a href='#type-DownloadItem'>DownloadItem</a> that changed.",
                                 "type": "integer"
                             },
                             "mime": {
                                 "$ref": "StringDelta",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Describes a change in a <a href='#type-DownloadItem'>DownloadItem</a>'s <code>mime</code>.",
                                 "optional": true
                             },
                             "paused": {
                                 "$ref": "BooleanDelta",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Describes a change in a <a href='#type-DownloadItem'>DownloadItem</a>'s <code>paused</code>.",
                                 "optional": true
                             },
                             "startTime": {
                                 "$ref": "StringDelta",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Describes a change in a <a href='#type-DownloadItem'>DownloadItem</a>'s <code>startTime</code>.",
                                 "optional": true
                             },
                             "state": {
                                 "$ref": "StringDelta",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Describes a change in a <a href='#type-DownloadItem'>DownloadItem</a>'s <code>state</code>.",
                                 "optional": true
                             },
                             "totalBytes": {
                                 "$ref": "DoubleDelta",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Describes a change in a <a href='#type-DownloadItem'>DownloadItem</a>'s <code>totalBytes</code>.",
                                 "optional": true
                             },
                             "url": {
                                 "$ref": "StringDelta",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/onChanged"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Describes a change in a <a href='#type-DownloadItem'>DownloadItem</a>'s <code>url</code>.",
                                 "optional": true
                             }
@@ -314,115 +178,43 @@
                 "name": "download",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                            },
-                            {
-                                "version_added": "47"
-                            }
-                        ],
                         "description": "What to download and how.",
                         "name": "options",
                         "properties": {
                             "allowHttpErrors": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "default": false,
                                 "description": "When this flag is set to <code>true</code>, then the browser will allow downloads to proceed after encountering HTTP errors such as <code>404 Not Found</code>.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "body": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Post body.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "conflictAction": {
                                 "$ref": "FilenameConflictAction",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "optional": true
                             },
                             "cookieStoreId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "The cookie store ID of the contextual identity; requires \"cookies\" permission.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "filename": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "A file path relative to the Downloads directory to contain the downloaded file.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "headers": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Extra HTTP headers to send with the request if the URL uses the HTTP[s] protocol. Each header is represented as a dictionary containing the keys <code>name</code> and either <code>value</code> or <code>binaryValue</code>, restricted to those allowed by XMLHttpRequest.",
                                 "items": {
                                     "properties": {
                                         "name": {
-                                            "annotations": [
-                                                {
-                                                    "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                                                },
-                                                {
-                                                    "version_added": "47"
-                                                }
-                                            ],
                                             "description": "Name of the HTTP header.",
                                             "type": "string"
                                         },
                                         "value": {
-                                            "annotations": [
-                                                {
-                                                    "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                                                },
-                                                {
-                                                    "version_added": "47"
-                                                }
-                                            ],
                                             "description": "Value of the HTTP header.",
                                             "type": "string"
                                         }
@@ -433,80 +225,26 @@
                                 "type": "array"
                             },
                             "incognito": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "default": false,
                                 "description": "Whether to associate the download with a private browsing session.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "method": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "The HTTP method to use if the URL uses the HTTP[S] protocol.",
                                 "enum": [
                                     "GET",
                                     "POST"
                                 ],
-                                "enums": {
-                                    "GET": {
-                                        "annotations": [
-                                            {
-                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                                            },
-                                            {
-                                                "version_added": "47"
-                                            }
-                                        ]
-                                    },
-                                    "POST": {
-                                        "annotations": [
-                                            {
-                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                                            },
-                                            {
-                                                "version_added": "47"
-                                            }
-                                        ]
-                                    }
-                                },
                                 "optional": true,
                                 "type": "string"
                             },
                             "saveAs": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Use a file-chooser to allow the user to select a filename. If the option is not specified, the file chooser will be shown only if the Firefox \"Always ask you where to save files\" option is enabled (i.e. the pref <code>browser.download.useDownloadDir</code> is set to <code>false</code>).",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "url": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/download"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "The URL to download.",
                                 "format": "url",
                                 "type": "string"
@@ -543,14 +281,6 @@
                 "parameters": [
                     {
                         "$ref": "DownloadQuery",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/search"
-                            },
-                            {
-                                "version_added": "47"
-                            }
-                        ],
                         "name": "query"
                     },
                     {
@@ -583,14 +313,6 @@
                 "name": "pause",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/pause"
-                            },
-                            {
-                                "version_added": "48"
-                            }
-                        ],
                         "description": "The id of the download to pause.",
                         "name": "downloadId",
                         "type": "integer"
@@ -618,14 +340,6 @@
                 "name": "resume",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/resume"
-                            },
-                            {
-                                "version_added": "48"
-                            }
-                        ],
                         "description": "The id of the download to resume.",
                         "name": "downloadId",
                         "type": "integer"
@@ -653,14 +367,6 @@
                 "name": "cancel",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/cancel"
-                            },
-                            {
-                                "version_added": "48"
-                            }
-                        ],
                         "description": "The id of the download to cancel.",
                         "name": "downloadId",
                         "type": "integer"
@@ -688,14 +394,6 @@
                 "name": "getFileIcon",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/getFileIcon"
-                            },
-                            {
-                                "version_added": "48"
-                            }
-                        ],
                         "description": "The identifier for the download.",
                         "name": "downloadId",
                         "type": "integer"
@@ -742,14 +440,6 @@
                 "name": "open",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/open"
-                            },
-                            {
-                                "version_added": "48"
-                            }
-                        ],
                         "name": "downloadId",
                         "type": "integer"
                     },
@@ -780,14 +470,6 @@
                 "name": "show",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/show"
-                            },
-                            {
-                                "version_added": "48"
-                            }
-                        ],
                         "name": "downloadId",
                         "type": "integer"
                     },
@@ -833,14 +515,6 @@
                 "parameters": [
                     {
                         "$ref": "DownloadQuery",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/erase"
-                            },
-                            {
-                                "version_added": "48"
-                            }
-                        ],
                         "name": "query"
                     },
                     {
@@ -873,14 +547,6 @@
                 "name": "removeFile",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/removeFile"
-                            },
-                            {
-                                "version_added": "48"
-                            }
-                        ],
                         "name": "downloadId",
                         "type": "integer"
                     },
@@ -906,14 +572,6 @@
                 "name": "acceptDanger",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/acceptDanger"
-                            },
-                            {
-                                "version_added": false
-                            }
-                        ],
                         "name": "downloadId",
                         "type": "integer"
                     },
@@ -951,14 +609,6 @@
                 "name": "setShelfEnabled",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/setShelfEnabled"
-                            },
-                            {
-                                "version_added": false
-                            }
-                        ],
                         "name": "enabled",
                         "type": "boolean"
                     }
@@ -1359,14 +1009,6 @@
                 ],
                 "choices": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/DownloadTime"
-                            },
-                            {
-                                "version_added": "47"
-                            }
-                        ],
                         "pattern": "^[1-9]\\d*$",
                         "type": "string"
                     },
