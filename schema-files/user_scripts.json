@@ -49,18 +49,6 @@
                 "name": "register",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/register"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "An incompatible version of this function is available for Manifest V2. See <a href=\"https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts_legacy/register\">userScripts (Legacy)</a>."
-                            },
-                            {
-                                "version_added": "136"
-                            }
-                        ],
                         "description": "List of user scripts to be registered.",
                         "items": {
                             "$ref": "RegisteredUserScript"
@@ -85,40 +73,16 @@
                 "name": "update",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
-                            },
-                            {
-                                "version_added": "136"
-                            }
-                        ],
                         "description": "List of user scripts to be updated.",
                         "items": {
                             "description": "An object that represents a user script registered programmatically",
                             "properties": {
                                 "allFrames": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
-                                        },
-                                        {
-                                            "version_added": "136"
-                                        }
-                                    ],
                                     "description": "If allFrames is <code>true</code>, implies that the JavaScript should be injected into all frames of current page. By default, it's <code>false</code> and is only injected into the top frame.",
                                     "optional": true,
                                     "type": "boolean"
                                 },
                                 "excludeGlobs": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
-                                        },
-                                        {
-                                            "version_added": "136"
-                                        }
-                                    ],
                                     "items": {
                                         "type": "string"
                                     },
@@ -126,14 +90,6 @@
                                     "type": "array"
                                 },
                                 "excludeMatches": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
-                                        },
-                                        {
-                                            "version_added": "136"
-                                        }
-                                    ],
                                     "items": {
                                         "$ref": "manifest.MatchPattern"
                                     },
@@ -141,27 +97,11 @@
                                     "type": "array"
                                 },
                                 "id": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
-                                        },
-                                        {
-                                            "version_added": "136"
-                                        }
-                                    ],
                                     "description": "The ID of the user script specified in the API call. This property must not start with a '_' as it's reserved as a prefix for generated script IDs.",
                                     "optional": false,
                                     "type": "string"
                                 },
                                 "includeGlobs": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
-                                        },
-                                        {
-                                            "version_added": "136"
-                                        }
-                                    ],
                                     "description": "At least one of matches or includeGlobs should be non-empty. The script runs in documents whose URL match either pattern.",
                                     "items": {
                                         "type": "string"
@@ -170,14 +110,6 @@
                                     "type": "array"
                                 },
                                 "js": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
-                                        },
-                                        {
-                                            "version_added": "136"
-                                        }
-                                    ],
                                     "description": "The list of ScriptSource objects defining sources of scripts to be injected into matching pages.",
                                     "items": {
                                         "$ref": "ScriptSource"
@@ -186,14 +118,6 @@
                                     "type": "array"
                                 },
                                 "matches": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
-                                        },
-                                        {
-                                            "version_added": "136"
-                                        }
-                                    ],
                                     "description": "At least one of matches or includeGlobs should be non-empty. The script runs in documents whose URL match either pattern.",
                                     "items": {
                                         "$ref": "manifest.MatchPattern"
@@ -203,39 +127,15 @@
                                 },
                                 "runAt": {
                                     "$ref": "extensionTypes.RunAt",
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
-                                        },
-                                        {
-                                            "version_added": "136"
-                                        }
-                                    ],
                                     "description": "The soonest that the JavaScript will be injected into the tab. Defaults to \"document_idle\".",
                                     "optional": true
                                 },
                                 "world": {
                                     "$ref": "ExecutionWorld",
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
-                                        },
-                                        {
-                                            "version_added": "136"
-                                        }
-                                    ],
                                     "description": "The JavaScript script for a script to execute within. Defaults to \"USER_SCRIPT\".",
                                     "optional": true
                                 },
                                 "worldId": {
-                                    "annotations": [
-                                        {
-                                            "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/update"
-                                        },
-                                        {
-                                            "version_added": "136"
-                                        }
-                                    ],
                                     "description": "If specified, specifies a specific user script world ID to execute in. Only valid if <val>world</val> is omitted or is <val>USER_SCRIPT</val>. If <val>worldId</val> is omitted, the script will execute in the default user script world (\"\"). Values with leading underscores (<val>_</val>) are reserved. The maximum length is 256.",
                                     "optional": true,
                                     "type": "string"
@@ -264,14 +164,6 @@
                 "parameters": [
                     {
                         "$ref": "UserScriptFilter",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/unregister"
-                            },
-                            {
-                                "version_added": "136"
-                            }
-                        ],
                         "description": "If specified, this method unregisters only the user scripts that match it.",
                         "name": "filter",
                         "optional": true
@@ -294,14 +186,6 @@
                 "parameters": [
                     {
                         "$ref": "UserScriptFilter",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/getScripts"
-                            },
-                            {
-                                "version_added": "136"
-                            }
-                        ],
                         "description": "If specified, this method returns only the user scripts that match it.",
                         "name": "filter",
                         "optional": true
@@ -338,14 +222,6 @@
                 "parameters": [
                     {
                         "$ref": "WorldProperties",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/configureWorld"
-                            },
-                            {
-                                "version_added": "136"
-                            }
-                        ],
                         "description": "The desired configuration for a USER_SCRIPT world.",
                         "name": "properties"
                     }
@@ -366,14 +242,6 @@
                 "name": "resetWorldConfiguration",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/resetWorldConfiguration"
-                            },
-                            {
-                                "version_added": "136"
-                            }
-                        ],
                         "default": "",
                         "description": "The ID of the USER_SCRIPT world to reset. If omitted or empty, resets the default world's configuration.",
                         "name": "worldId",
@@ -397,25 +265,9 @@
                 "name": "getWorldConfigurations",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/getWorldConfigurations"
-                            },
-                            {
-                                "version_added": "136"
-                            }
-                        ],
                         "name": "callback",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/getWorldConfigurations"
-                                    },
-                                    {
-                                        "version_added": "136"
-                                    }
-                                ],
                                 "description": "All configurations registered with configureWorld().",
                                 "items": {
                                     "$ref": "WorldProperties"
@@ -569,24 +421,8 @@
                 ],
                 "choices": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/ScriptSource"
-                            },
-                            {
-                                "version_added": "136"
-                            }
-                        ],
                         "properties": {
                             "file": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/ScriptSource"
-                                    },
-                                    {
-                                        "version_added": "136"
-                                    }
-                                ],
                                 "description": "The path of the JavaScript file to inject relative to the extension's root directory.",
                                 "format": "unresolvedRelativeUrl",
                                 "type": "string"

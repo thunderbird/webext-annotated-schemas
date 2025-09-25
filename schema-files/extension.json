@@ -20,14 +20,6 @@
                 "name": "onRequest",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/onRequest"
-                            },
-                            {
-                                "version_added": false
-                            }
-                        ],
                         "description": "The request sent by the calling script.",
                         "name": "request",
                         "optional": true,
@@ -60,14 +52,6 @@
                 "name": "onRequestExternal",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/onRequestExternal"
-                            },
-                            {
-                                "version_added": false
-                            }
-                        ],
                         "description": "The request sent by the calling script.",
                         "name": "request",
                         "optional": true,
@@ -105,68 +89,20 @@
                 "name": "getViews",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getViews"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then its return value will not include the extension's background page."
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "name": "fetchProperties",
                         "optional": true,
                         "properties": {
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getViews"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then its return value will not include the extension's background page."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "Find a view according to a tab id. If this field is omitted, returns all views.",
                                 "optional": true,
                                 "type": "integer"
                             },
                             "type": {
                                 "$ref": "ViewType",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getViews"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then its return value will not include the extension's background page."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The type of view to get. If omitted, returns all views (including background pages and tabs). Valid values: 'tab', 'popup', 'sidebar'.",
                                 "optional": true
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getViews"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then its return value will not include the extension's background page."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The window to restrict the search to. If omitted, returns all views.",
                                 "optional": true,
                                 "type": "integer"
@@ -224,25 +160,9 @@
                 "name": "isAllowedIncognitoAccess",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/isAllowedIncognitoAccess"
-                            },
-                            {
-                                "version_added": "48"
-                            }
-                        ],
                         "name": "callback",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/isAllowedIncognitoAccess"
-                                    },
-                                    {
-                                        "version_added": "48"
-                                    }
-                                ],
                                 "description": "True if the extension has access to Incognito mode, false otherwise.",
                                 "name": "isAllowedAccess",
                                 "type": "boolean"
@@ -267,25 +187,9 @@
                 "name": "isAllowedFileSchemeAccess",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/isAllowedFileSchemeAccess"
-                            },
-                            {
-                                "version_added": "48"
-                            }
-                        ],
                         "name": "callback",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/isAllowedFileSchemeAccess"
-                                    },
-                                    {
-                                        "version_added": "48"
-                                    }
-                                ],
                                 "description": "True if the extension can access the 'file://' scheme, false otherwise.",
                                 "name": "isAllowedAccess",
                                 "type": "boolean"
@@ -309,14 +213,6 @@
                 "name": "setUpdateUrlData",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/setUpdateUrlData"
-                            },
-                            {
-                                "version_added": false
-                            }
-                        ],
                         "maxLength": 1024,
                         "name": "data",
                         "type": "string"
