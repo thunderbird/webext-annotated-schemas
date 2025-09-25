@@ -15,14 +15,6 @@
                 "parameters": [
                     {
                         "$ref": "Alarm",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/onAlarm"
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "description": "The alarm that has expired.",
                         "name": "name"
                     }
@@ -45,14 +37,6 @@
                 "name": "create",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/create"
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "description": "Optional name to identify this alarm. Defaults to the empty string.",
                         "name": "name",
                         "optional": true,
@@ -103,14 +87,6 @@
                 "name": "get",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/get"
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "description": "The name of the alarm to get. Defaults to the empty string.",
                         "name": "name",
                         "optional": true,
@@ -144,25 +120,9 @@
                 "name": "getAll",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/getAll"
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "name": "callback",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/getAll"
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "items": {
                                     "$ref": "Alarm"
                                 },
@@ -189,14 +149,6 @@
                 "name": "clear",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/clear"
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "description": "The name of the alarm to clear. Defaults to the empty string.",
                         "name": "name",
                         "optional": true,
@@ -230,25 +182,9 @@
                 "name": "clearAll",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/clearAll"
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "name": "callback",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/clearAll"
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "Whether any alarm was found to clear.",
                                 "name": "wasCleared",
                                 "type": "boolean"
