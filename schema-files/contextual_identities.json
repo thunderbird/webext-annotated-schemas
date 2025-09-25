@@ -41,26 +41,10 @@
                 "name": "onUpdated",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/onUpdated"
-                            },
-                            {
-                                "version_added": "57"
-                            }
-                        ],
                         "name": "changeInfo",
                         "properties": {
                             "contextualIdentity": {
                                 "$ref": "ContextualIdentity",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/onUpdated"
-                                    },
-                                    {
-                                        "version_added": "57"
-                                    }
-                                ],
                                 "description": "Contextual identity that has been updated"
                             }
                         },
@@ -82,26 +66,10 @@
                 "name": "onCreated",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/onCreated"
-                            },
-                            {
-                                "version_added": "57"
-                            }
-                        ],
                         "name": "changeInfo",
                         "properties": {
                             "contextualIdentity": {
                                 "$ref": "ContextualIdentity",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/onCreated"
-                                    },
-                                    {
-                                        "version_added": "57"
-                                    }
-                                ],
                                 "description": "Contextual identity that has been created"
                             }
                         },
@@ -123,26 +91,10 @@
                 "name": "onRemoved",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/onRemoved"
-                            },
-                            {
-                                "version_added": "57"
-                            }
-                        ],
                         "name": "changeInfo",
                         "properties": {
                             "contextualIdentity": {
                                 "$ref": "ContextualIdentity",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/onRemoved"
-                                    },
-                                    {
-                                        "version_added": "57"
-                                    }
-                                ],
                                 "description": "Contextual identity that has been removed"
                             }
                         },
@@ -175,22 +127,6 @@
                 "name": "get",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/get"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Before version 57, this method resolves its promise with <code>false</code> if the contextual identities feature is disabled."
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Before version 57, this method resolves its promise with <code>null</code> if the given identity is not found."
-                            },
-                            {
-                                "version_added": "53"
-                            }
-                        ],
                         "description": "The ID of the contextual identity cookie store. ",
                         "name": "cookieStoreId",
                         "type": "string"
@@ -216,34 +152,10 @@
                 "name": "query",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/query"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Before version 57, this method resolves its promise with <code>false</code> if the contextual identities feature is disabled."
-                            },
-                            {
-                                "version_added": "53"
-                            }
-                        ],
                         "description": "Information to filter the contextual identities being retrieved.",
                         "name": "details",
                         "properties": {
                             "name": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/query"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Before version 57, this method resolves its promise with <code>false</code> if the contextual identities feature is disabled."
-                                    },
-                                    {
-                                        "version_added": "53"
-                                    }
-                                ],
                                 "description": "Filters the contextual identity by name.",
                                 "optional": true,
                                 "type": "string"
@@ -272,68 +184,20 @@
                 "name": "create",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/create"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Before version 57, this method resolves its promise with <code>false</code> if the contextual identities feature is disabled."
-                            },
-                            {
-                                "version_added": "53"
-                            }
-                        ],
                         "description": "Details about the contextual identity being created.",
                         "name": "details",
                         "properties": {
                             "color": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/create"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Before version 57, this method resolves its promise with <code>false</code> if the contextual identities feature is disabled."
-                                    },
-                                    {
-                                        "version_added": "53"
-                                    }
-                                ],
                                 "description": "The color of the contextual identity.",
                                 "optional": false,
                                 "type": "string"
                             },
                             "icon": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/create"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Before version 57, this method resolves its promise with <code>false</code> if the contextual identities feature is disabled."
-                                    },
-                                    {
-                                        "version_added": "53"
-                                    }
-                                ],
                                 "description": "The icon of the contextual identity.",
                                 "optional": false,
                                 "type": "string"
                             },
                             "name": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/create"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Before version 57, this method resolves its promise with <code>false</code> if the contextual identities feature is disabled."
-                                    },
-                                    {
-                                        "version_added": "53"
-                                    }
-                                ],
                                 "description": "The name of the contextual identity.",
                                 "optional": false,
                                 "type": "string"
@@ -366,22 +230,6 @@
                 "name": "update",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/update"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Before version 57, this method resolves its promise with <code>false</code> if the contextual identities feature is disabled."
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Before version 57, this method resolves its promise with <code>null</code> if the given identity is not found."
-                            },
-                            {
-                                "version_added": "53"
-                            }
-                        ],
                         "description": "The ID of the contextual identity cookie store. ",
                         "name": "cookieStoreId",
                         "type": "string"
@@ -425,35 +273,11 @@
                 "name": "move",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/move"
-                            },
-                            {
-                                "version_added": "123"
-                            }
-                        ],
                         "choices": [
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/move"
-                                    },
-                                    {
-                                        "version_added": "123"
-                                    }
-                                ],
                                 "type": "string"
                             },
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/move"
-                                    },
-                                    {
-                                        "version_added": "123"
-                                    }
-                                ],
                                 "items": {
                                     "type": "string"
                                 },
@@ -493,22 +317,6 @@
                 "name": "remove",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/remove"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Before version 57, this method resolves its promise with <code>false</code> if the contextual identities feature is disabled."
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Before version 57, this method resolves its promise with <code>null</code> if the given identity is not found."
-                            },
-                            {
-                                "version_added": "53"
-                            }
-                        ],
                         "description": "The ID of the contextual identity cookie store. ",
                         "name": "cookieStoreId",
                         "type": "string"
