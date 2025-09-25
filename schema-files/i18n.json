@@ -58,25 +58,9 @@
                 "name": "getAcceptLanguages",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/getAcceptLanguages"
-                            },
-                            {
-                                "version_added": "47"
-                            }
-                        ],
                         "name": "callback",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/getAcceptLanguages"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Array of LanguageCode",
                                 "items": {
                                     "$ref": "LanguageCode"
@@ -107,18 +91,6 @@
                 "name": "getMessage",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/getMessage"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Firefox 47 and earlier returns \"??\" instead of \"\" if the message is not found in _locales, <a href=\"https://bugzil.la/1258199\">bug 1258199</a> changed this act to match Chrome, landed on Firefox 48."
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "description": "The name of the message, as specified in the <code>$(topic:i18n-messages)[messages.json]</code> file.",
                         "name": "messageName",
                         "type": "string"
@@ -172,14 +144,6 @@
                 "name": "detectLanguage",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/detectLanguage"
-                            },
-                            {
-                                "version_added": "47"
-                            }
-                        ],
                         "description": "User input string to be translated.",
                         "name": "text",
                         "type": "string"
