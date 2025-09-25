@@ -57,142 +57,30 @@
                 "name": "onBeforeNavigate",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Filtering is supported from version 50."
-                            },
-                            {
-                                "bcd": true,
-                                "note": "If the filter parameter is empty, Firefox raises an exception."
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "name": "details",
                         "properties": {
                             "frameId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique for a given tab and process.",
                                 "type": "integer"
                             },
                             "parentFrameId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "ID of frame that wraps the frame. Set to -1 of no parent frame exists.",
                                 "type": "integer"
                             },
                             "processId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The ID of the process runs the renderer for this tab.",
                                 "type": "integer",
                                 "unsupported": true
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The ID of the tab in which the navigation is about to occur.",
                                 "type": "integer"
                             },
                             "timeStamp": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The time when the browser was about to start the navigation, in milliseconds since the epoch.",
                                 "type": "number"
                             },
                             "url": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onBeforeNavigate"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "type": "string"
                             }
                         },
@@ -230,122 +118,26 @@
                 "name": "onCommitted",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Filtering is supported from version 50."
-                            },
-                            {
-                                "bcd": true,
-                                "note": "If the filter parameter is empty, Firefox raises an exception."
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "name": "details",
                         "properties": {
                             "frameId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.",
                                 "type": "integer"
                             },
                             "processId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The ID of the process runs the renderer for this tab.",
                                 "type": "integer",
                                 "unsupported": true
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The ID of the tab in which the navigation occurs.",
                                 "type": "integer"
                             },
                             "timeStamp": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The time when the navigation was committed, in milliseconds since the epoch.",
                                 "type": "number"
                             },
                             "transitionQualifiers": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "A list of transition qualifiers.",
                                 "items": {
                                     "$ref": "TransitionQualifier"
@@ -354,41 +146,9 @@
                             },
                             "transitionType": {
                                 "$ref": "TransitionType",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "Cause of the navigation."
                             },
                             "url": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCommitted"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "type": "string"
                             }
                         },
@@ -426,122 +186,26 @@
                 "name": "onDOMContentLoaded",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Filtering is supported from version 50."
-                            },
-                            {
-                                "bcd": true,
-                                "note": "If the filter parameter is empty, Firefox raises an exception."
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "name": "details",
                         "properties": {
                             "frameId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.",
                                 "type": "integer"
                             },
                             "processId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The ID of the process runs the renderer for this tab.",
                                 "type": "integer",
                                 "unsupported": true
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The ID of the tab in which the navigation occurs.",
                                 "type": "integer"
                             },
                             "timeStamp": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The time when the page's DOM was fully constructed, in milliseconds since the epoch.",
                                 "type": "number"
                             },
                             "url": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onDOMContentLoaded"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "type": "string"
                             }
                         },
@@ -579,122 +243,26 @@
                 "name": "onCompleted",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Filtering is supported from version 50."
-                            },
-                            {
-                                "bcd": true,
-                                "note": "If the filter parameter is empty, Firefox raises an exception."
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "name": "details",
                         "properties": {
                             "frameId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.",
                                 "type": "integer"
                             },
                             "processId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The ID of the process runs the renderer for this tab.",
                                 "type": "integer",
                                 "unsupported": true
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The ID of the tab in which the navigation occurs.",
                                 "type": "integer"
                             },
                             "timeStamp": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The time when the document finished loading, in milliseconds since the epoch.",
                                 "type": "number"
                             },
                             "url": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCompleted"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "type": "string"
                             }
                         },
@@ -732,143 +300,31 @@
                 "name": "onErrorOccurred",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Filtering is supported from version 50."
-                            },
-                            {
-                                "bcd": true,
-                                "note": "If the filter parameter is empty, Firefox raises an exception."
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "name": "details",
                         "properties": {
                             "error": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The error description.",
                                 "type": "string",
                                 "unsupported": true
                             },
                             "frameId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.",
                                 "type": "integer"
                             },
                             "processId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The ID of the process runs the renderer for this tab.",
                                 "type": "integer",
                                 "unsupported": true
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The ID of the tab in which the navigation occurs.",
                                 "type": "integer"
                             },
                             "timeStamp": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The time when the error occurred, in milliseconds since the epoch.",
                                 "type": "number"
                             },
                             "url": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onErrorOccurred"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "type": "string"
                             }
                         },
@@ -906,141 +362,29 @@
                 "name": "onCreatedNavigationTarget",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "If the filter parameter is empty, Firefox raises an exception."
-                            },
-                            {
-                                "bcd": true,
-                                "note": "If a blocked popup is unblocked by the user, the event is then sent."
-                            },
-                            {
-                                "version_added": "54"
-                            }
-                        ],
                         "name": "details",
                         "properties": {
                             "sourceFrameId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If a blocked popup is unblocked by the user, the event is then sent."
-                                    },
-                                    {
-                                        "version_added": "54"
-                                    }
-                                ],
                                 "description": "The ID of the frame with sourceTabId in which the navigation is triggered. 0 indicates the main frame.",
                                 "type": "integer"
                             },
                             "sourceProcessId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If a blocked popup is unblocked by the user, the event is then sent."
-                                    },
-                                    {
-                                        "version_added": "54"
-                                    }
-                                ],
                                 "description": "The ID of the process runs the renderer for the source tab.",
                                 "type": "integer"
                             },
                             "sourceTabId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If a blocked popup is unblocked by the user, the event is then sent."
-                                    },
-                                    {
-                                        "version_added": "54"
-                                    }
-                                ],
                                 "description": "The ID of the tab in which the navigation is triggered.",
                                 "type": "integer"
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If a blocked popup is unblocked by the user, the event is then sent."
-                                    },
-                                    {
-                                        "version_added": "54"
-                                    }
-                                ],
                                 "description": "The ID of the tab in which the url is opened",
                                 "type": "integer"
                             },
                             "timeStamp": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If a blocked popup is unblocked by the user, the event is then sent."
-                                    },
-                                    {
-                                        "version_added": "54"
-                                    }
-                                ],
                                 "description": "The time when the browser was about to create a new view, in milliseconds since the epoch.",
                                 "type": "number"
                             },
                             "url": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onCreatedNavigationTarget"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If a blocked popup is unblocked by the user, the event is then sent."
-                                    },
-                                    {
-                                        "version_added": "54"
-                                    }
-                                ],
                                 "description": "The URL to be opened in the new window.",
                                 "type": "string"
                             }
@@ -1079,122 +423,26 @@
                 "name": "onReferenceFragmentUpdated",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Filtering is supported from version 50."
-                            },
-                            {
-                                "bcd": true,
-                                "note": "If the filter parameter is empty, Firefox raises an exception."
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "name": "details",
                         "properties": {
                             "frameId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.",
                                 "type": "integer"
                             },
                             "processId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The ID of the process runs the renderer for this tab.",
                                 "type": "integer",
                                 "unsupported": true
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The ID of the tab in which the navigation occurs.",
                                 "type": "integer"
                             },
                             "timeStamp": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The time when the navigation was committed, in milliseconds since the epoch.",
                                 "type": "number"
                             },
                             "transitionQualifiers": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "A list of transition qualifiers.",
                                 "items": {
                                     "$ref": "TransitionQualifier"
@@ -1203,41 +451,9 @@
                             },
                             "transitionType": {
                                 "$ref": "TransitionType",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "Cause of the navigation."
                             },
                             "url": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onReferenceFragmentUpdated"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Filtering is supported from version 50."
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "If the filter parameter is empty, Firefox raises an exception."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "type": "string"
                             }
                         },
@@ -1263,65 +479,17 @@
                 "name": "onTabReplaced",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onTabReplaced"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Although you can add listeners for this event, it will never fire because the underlying functionality is not supported."
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "name": "details",
                         "properties": {
                             "replacedTabId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onTabReplaced"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Although you can add listeners for this event, it will never fire because the underlying functionality is not supported."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The ID of the tab that was replaced.",
                                 "type": "integer"
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onTabReplaced"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Although you can add listeners for this event, it will never fire because the underlying functionality is not supported."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The ID of the tab that replaced the old tab.",
                                 "type": "integer"
                             },
                             "timeStamp": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onTabReplaced"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "Although you can add listeners for this event, it will never fire because the underlying functionality is not supported."
-                                    },
-                                    {
-                                        "version_added": "45"
-                                    }
-                                ],
                                 "description": "The time when the replacement happened, in milliseconds since the epoch.",
                                 "type": "number"
                             }
@@ -1352,74 +520,26 @@
                 "name": "onHistoryStateUpdated",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
-                            },
-                            {
-                                "version_added": "47"
-                            }
-                        ],
                         "name": "details",
                         "properties": {
                             "frameId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.",
                                 "type": "integer"
                             },
                             "processId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "The ID of the process runs the renderer for this tab.",
                                 "type": "integer",
                                 "unsupported": true
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "The ID of the tab in which the navigation occurs.",
                                 "type": "integer"
                             },
                             "timeStamp": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "The time when the navigation was committed, in milliseconds since the epoch.",
                                 "type": "number"
                             },
                             "transitionQualifiers": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "A list of transition qualifiers.",
                                 "items": {
                                     "$ref": "TransitionQualifier"
@@ -1428,25 +548,9 @@
                             },
                             "transitionType": {
                                 "$ref": "TransitionType",
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "Cause of the navigation."
                             },
                             "url": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "type": "string"
                             }
                         },
@@ -1471,52 +575,20 @@
                 "name": "getFrame",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getFrame"
-                            },
-                            {
-                                "version_added": "47"
-                            }
-                        ],
                         "description": "Information about the frame to retrieve information about.",
                         "name": "details",
                         "properties": {
                             "frameId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getFrame"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "The ID of the frame in the given tab.",
                                 "minimum": 0,
                                 "type": "integer"
                             },
                             "processId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getFrame"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "The ID of the process runs the renderer for this tab.",
                                 "optional": true,
                                 "type": "integer"
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getFrame"
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "The ID of the tab in which the frame is.",
                                 "minimum": 0,
                                 "type": "integer"
@@ -1580,34 +652,10 @@
                 "name": "getAllFrames",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getAllFrames"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "The returned objects do not include the <code>errorOccurred</code> property. See <a href=\"https://bugzil.la/1248418\">bug 1248418</a>."
-                            },
-                            {
-                                "version_added": "47"
-                            }
-                        ],
                         "description": "Information about the tab to retrieve all frames from.",
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getAllFrames"
-                                    },
-                                    {
-                                        "bcd": true,
-                                        "note": "The returned objects do not include the <code>errorOccurred</code> property. See <a href=\"https://bugzil.la/1248418\">bug 1248418</a>."
-                                    },
-                                    {
-                                        "version_added": "47"
-                                    }
-                                ],
                                 "description": "The ID of the tab.",
                                 "minimum": 0,
                                 "type": "integer"

@@ -42,61 +42,21 @@
                 "name": "settings",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/settings"
-                            },
-                            {
-                                "version_added": "53"
-                            }
-                        ],
                         "name": "callback",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/settings"
-                                    },
-                                    {
-                                        "version_added": "53"
-                                    }
-                                ],
                                 "name": "result",
                                 "properties": {
                                     "dataRemovalPermitted": {
                                         "$ref": "DataTypeSet",
-                                        "annotations": [
-                                            {
-                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/settings"
-                                            },
-                                            {
-                                                "version_added": "53"
-                                            }
-                                        ],
                                         "description": "All of the types will be present in the result, with values of <code>true</code> if they are permitted to be removed (e.g., by enterprise policy) and <code>false</code> if not."
                                     },
                                     "dataToRemove": {
                                         "$ref": "DataTypeSet",
-                                        "annotations": [
-                                            {
-                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/settings"
-                                            },
-                                            {
-                                                "version_added": "53"
-                                            }
-                                        ],
                                         "description": "All of the types will be present in the result, with values of <code>true</code> if they are both selected to be removed and permitted to be removed, otherwise <code>false</code>."
                                     },
                                     "options": {
-                                        "$ref": "RemovalOptions",
-                                        "annotations": [
-                                            {
-                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/settings"
-                                            },
-                                            {
-                                                "version_added": "53"
-                                            }
-                                        ]
+                                        "$ref": "RemovalOptions"
                                     }
                                 },
                                 "type": "object"
@@ -126,18 +86,6 @@
                 "parameters": [
                     {
                         "$ref": "RemovalOptions",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/remove"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Specifying <code>dataTypes.history</code> will also remove download history and service workers."
-                            },
-                            {
-                                "version_added": "53"
-                            }
-                        ],
                         "name": "options"
                     },
                     {
@@ -194,18 +142,6 @@
                 "parameters": [
                     {
                         "$ref": "RemovalOptions",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeCache"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "<code>removalOptions.since</code> is not supported."
-                            },
-                            {
-                                "version_added": "53"
-                            }
-                        ],
                         "name": "options"
                     },
                     {
@@ -233,14 +169,6 @@
                 "parameters": [
                     {
                         "$ref": "RemovalOptions",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeCookies"
-                            },
-                            {
-                                "version_added": "53"
-                            }
-                        ],
                         "name": "options"
                     },
                     {
@@ -268,14 +196,6 @@
                 "parameters": [
                     {
                         "$ref": "RemovalOptions",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeDownloads"
-                            },
-                            {
-                                "version_added": "53"
-                            }
-                        ],
                         "name": "options"
                     },
                     {
@@ -323,14 +243,6 @@
                 "parameters": [
                     {
                         "$ref": "RemovalOptions",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeFormData"
-                            },
-                            {
-                                "version_added": "53"
-                            }
-                        ],
                         "name": "options"
                     },
                     {
@@ -362,18 +274,6 @@
                 "parameters": [
                     {
                         "$ref": "RemovalOptions",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeHistory"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "This function also removes download history and service workers."
-                            },
-                            {
-                                "version_added": "53"
-                            }
-                        ],
                         "name": "options"
                     },
                     {
@@ -425,18 +325,6 @@
                 "parameters": [
                     {
                         "$ref": "RemovalOptions",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeLocalStorage"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "<code>removalOptions.since</code> is not supported."
-                            },
-                            {
-                                "version_added": "57"
-                            }
-                        ],
                         "name": "options"
                     },
                     {
@@ -464,14 +352,6 @@
                 "parameters": [
                     {
                         "$ref": "RemovalOptions",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removePluginData"
-                            },
-                            {
-                                "version_added": "53"
-                            }
-                        ],
                         "name": "options"
                     },
                     {
@@ -499,14 +379,6 @@
                 "parameters": [
                     {
                         "$ref": "RemovalOptions",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removePasswords"
-                            },
-                            {
-                                "version_added": "53"
-                            }
-                        ],
                         "name": "options"
                     },
                     {
@@ -614,11 +486,6 @@
                                 "type": "boolean"
                             },
                             "unprotectedWeb": {
-                                "annotations": [
-                                    {
-                                        "version_added": false
-                                    }
-                                ],
                                 "description": "Normal websites.",
                                 "optional": true,
                                 "type": "boolean"

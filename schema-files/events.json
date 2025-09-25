@@ -74,14 +74,6 @@
                         "name": "addListener",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addListener"
-                                    },
-                                    {
-                                        "version_added": "≤59"
-                                    }
-                                ],
                                 "description": "Called when an event occurs. The parameters of this function depend on the type of event.",
                                 "name": "callback",
                                 "type": "function"
@@ -102,14 +94,6 @@
                         "name": "removeListener",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/removeListener"
-                                    },
-                                    {
-                                        "version_added": "≤59"
-                                    }
-                                ],
                                 "description": "Listener that shall be unregistered.",
                                 "name": "callback",
                                 "type": "function"
@@ -129,14 +113,6 @@
                         "name": "hasListener",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/hasListener"
-                                    },
-                                    {
-                                        "version_added": "≤59"
-                                    }
-                                ],
                                 "description": "Listener whose registration status shall be tested.",
                                 "name": "callback",
                                 "type": "function"
@@ -178,40 +154,16 @@
                         "name": "addRules",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addRules"
-                                    },
-                                    {
-                                        "version_added": false
-                                    }
-                                ],
                                 "description": "Name of the event this function affects.",
                                 "name": "eventName",
                                 "type": "string"
                             },
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addRules"
-                                    },
-                                    {
-                                        "version_added": false
-                                    }
-                                ],
                                 "description": "If provided, this is an integer that uniquely identfies the <webview> associated with this function call.",
                                 "name": "webViewInstanceId",
                                 "type": "integer"
                             },
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addRules"
-                                    },
-                                    {
-                                        "version_added": false
-                                    }
-                                ],
                                 "description": "Rules to be registered. These do not replace previously registered rules.",
                                 "items": {
                                     "$ref": "Rule"
@@ -220,27 +172,11 @@
                                 "type": "array"
                             },
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addRules"
-                                    },
-                                    {
-                                        "version_added": false
-                                    }
-                                ],
                                 "description": "Called with registered rules.",
                                 "name": "callback",
                                 "optional": true,
                                 "parameters": [
                                     {
-                                        "annotations": [
-                                            {
-                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/addRules"
-                                            },
-                                            {
-                                                "version_added": false
-                                            }
-                                        ],
                                         "description": "Rules that were registered, the optional parameters are filled with values.",
                                         "items": {
                                             "$ref": "Rule"
@@ -268,40 +204,16 @@
                         "name": "getRules",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/getRules"
-                                    },
-                                    {
-                                        "version_added": false
-                                    }
-                                ],
                                 "description": "Name of the event this function affects.",
                                 "name": "eventName",
                                 "type": "string"
                             },
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/getRules"
-                                    },
-                                    {
-                                        "version_added": false
-                                    }
-                                ],
                                 "description": "If provided, this is an integer that uniquely identfies the <webview> associated with this function call.",
                                 "name": "webViewInstanceId",
                                 "type": "integer"
                             },
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/getRules"
-                                    },
-                                    {
-                                        "version_added": false
-                                    }
-                                ],
                                 "description": "If an array is passed, only rules with identifiers contained in this array are returned.",
                                 "items": {
                                     "type": "string"
@@ -311,26 +223,10 @@
                                 "type": "array"
                             },
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/getRules"
-                                    },
-                                    {
-                                        "version_added": false
-                                    }
-                                ],
                                 "description": "Called with registered rules.",
                                 "name": "callback",
                                 "parameters": [
                                     {
-                                        "annotations": [
-                                            {
-                                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/getRules"
-                                            },
-                                            {
-                                                "version_added": false
-                                            }
-                                        ],
                                         "description": "Rules that were registered, the optional parameters are filled with values.",
                                         "items": {
                                             "$ref": "Rule"
@@ -358,40 +254,16 @@
                         "name": "removeRules",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/removeRules"
-                                    },
-                                    {
-                                        "version_added": false
-                                    }
-                                ],
                                 "description": "Name of the event this function affects.",
                                 "name": "eventName",
                                 "type": "string"
                             },
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/removeRules"
-                                    },
-                                    {
-                                        "version_added": false
-                                    }
-                                ],
                                 "description": "If provided, this is an integer that uniquely identfies the <webview> associated with this function call.",
                                 "name": "webViewInstanceId",
                                 "type": "integer"
                             },
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/removeRules"
-                                    },
-                                    {
-                                        "version_added": false
-                                    }
-                                ],
                                 "description": "If an array is passed, only rules with identifiers contained in this array are unregistered.",
                                 "items": {
                                     "type": "string"
@@ -401,14 +273,6 @@
                                 "type": "array"
                             },
                             {
-                                "annotations": [
-                                    {
-                                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/events/Event/removeRules"
-                                    },
-                                    {
-                                        "version_added": false
-                                    }
-                                ],
                                 "description": "Called when rules were unregistered.",
                                 "name": "callback",
                                 "optional": true,

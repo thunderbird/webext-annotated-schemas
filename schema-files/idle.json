@@ -16,14 +16,6 @@
                 "parameters": [
                     {
                         "$ref": "IdleState",
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/onStateChanged"
-                            },
-                            {
-                                "version_added": "51"
-                            }
-                        ],
                         "name": "newState"
                     }
                 ],
@@ -49,18 +41,6 @@
                 "name": "queryState",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/queryState"
-                            },
-                            {
-                                "bcd": true,
-                                "note": "Before version 51, Firefox always reports 'active'. After version 51, Firefox reports 'active' or 'idle' as appropriate."
-                            },
-                            {
-                                "version_added": "45"
-                            }
-                        ],
                         "description": "The system is considered idle if detectionIntervalInSeconds seconds have elapsed since the last user input detected.",
                         "minimum": 15,
                         "name": "detectionIntervalInSeconds",
@@ -92,14 +72,6 @@
                 "name": "setDetectionInterval",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/idle/setDetectionInterval"
-                            },
-                            {
-                                "version_added": "51"
-                            }
-                        ],
                         "description": "Threshold, in seconds, used to determine when the system is in an idle state.",
                         "minimum": 15,
                         "name": "intervalInSeconds",
