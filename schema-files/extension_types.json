@@ -133,6 +133,7 @@
                     "author"
                 ],
                 "id": "CSSOrigin",
+                "preprocess": "stringToLowerCase",
                 "type": "string"
             },
             {
@@ -151,6 +152,7 @@
                     },
                     "cssOrigin": {
                         "$ref": "CSSOrigin",
+                        "default": "author",
                         "description": "The css origin of the stylesheet to inject. Defaults to \"author\".",
                         "optional": true
                     },
@@ -268,7 +270,7 @@
         ]
     },
     {
-        "applicationVersion": "143.0.1",
+        "applicationVersion": "144.0",
         "namespace": "manifest"
     }
 ]

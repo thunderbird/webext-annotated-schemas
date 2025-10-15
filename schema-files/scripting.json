@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "143.0.1",
+        "applicationVersion": "144.0",
         "namespace": "manifest",
         "types": [
             {
@@ -248,6 +248,10 @@
                                     },
                                     "optional": true,
                                     "type": "array"
+                                },
+                                "cssOrigin": {
+                                    "$ref": "extensionTypes.CSSOrigin",
+                                    "optional": true
                                 },
                                 "excludeMatches": {
                                     "description": "Excludes pages that this content script would otherwise be injected into.",
@@ -517,6 +521,10 @@
                         },
                         "optional": true,
                         "type": "array"
+                    },
+                    "cssOrigin": {
+                        "$ref": "extensionTypes.CSSOrigin",
+                        "optional": true
                     },
                     "excludeMatches": {
                         "description": "Excludes pages that this content script would otherwise be injected into.",
