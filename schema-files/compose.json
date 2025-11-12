@@ -5,7 +5,7 @@
                 "version_added": "74"
             }
         ],
-        "applicationVersion": "145.0b4",
+        "applicationVersion": "146.0b1",
         "namespace": "manifest",
         "types": [
             {
@@ -171,7 +171,7 @@
                                         "version_added": "105"
                                     }
                                 ],
-                                "description": "Copies of the sent message. The number of created copies depends on the applied file carbon copy configuration (fcc).",
+                                "description": "Copies of the sent message. The number of created copies depends on the applied file carbon copy configuration (fcc). The <permission>messagesRead</permission> permission is required for this property to be included.",
                                 "items": {
                                     "$ref": "messages.MessageHeader"
                                 },
@@ -263,7 +263,7 @@
                                         "version_added": "105"
                                     }
                                 ],
-                                "description": "An array with exactly one element, the saved message.",
+                                "description": "An array with exactly one element, the saved message. The <permission>messagesRead</permission> permission is required for this property to be included.",
                                 "items": {
                                     "$ref": "messages.MessageHeader"
                                 },
@@ -2010,7 +2010,7 @@
                                 ]
                             }
                         ],
-                        "description": " This value overrides the default fcc setting (defined by the used identity) for this message only. Either a $(ref:folders.MailFolder) specifying the folder for the copy of the sent message, or an empty string to not save a copy at all. The permission <permission>accountsRead</permission> is required to use this property.",
+                        "description": "This value overrides the default fcc setting (defined by the used identity) for this message only. Either a $(ref:folders.MailFolder) specifying the folder for the copy of the sent message, or an empty string to not save a copy at all. The permission <permission>accountsRead</permission> is required to use this property.",
                         "optional": true
                     },
                     "plainTextBody": {
@@ -2084,7 +2084,7 @@
                                 "version_added": "95"
                             }
                         ],
-                        "description": "The id of the original message (in case of draft, template, forward or reply). Read-only. Is <var>undefined</var> in all other cases or if the original message was opened from file.",
+                        "description": "The id of the original message (in case of draft, template, forward or reply). Read-only. Is <var>undefined</var> in all other cases or if the original message was opened from file. The <permission>messagesRead</permission> permission is required to use this property.",
                         "optional": true
                     },
                     "replyTo": {
