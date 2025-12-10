@@ -5,7 +5,7 @@
                 "version_added": "62"
             }
         ],
-        "applicationVersion": "146.0b3",
+        "applicationVersion": "147.0b1",
         "namespace": "manifest",
         "types": [
             {
@@ -1246,7 +1246,7 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Moves one or more tabs to a new position within its current window, or to a different window. Tabs can only be moved to and from windows of type <var>normal</var>.",
+                "description": "Moves one or more tabs to a new position within its current window, or to a different window. Tabs can only be moved to and from windows of type <var>normal</var>. The primary mail tab cannot be moved, attempting to actively reposition it will throw an <em>ExtensionError</em>. Other tabs also cannot be placed before the primary mail tab, they will automatically be positioned after it, ensuring that the primary mail tab always remains first.",
                 "name": "move",
                 "parameters": [
                     {

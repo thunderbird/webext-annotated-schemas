@@ -1,0 +1,275 @@
+[
+    {
+        "applicationVersion": "147.0b1",
+        "namespace": "manifest",
+        "types": [
+            {
+                "$extend": "OptionalPermission",
+                "choices": [
+                    {
+                        "enum": [
+                            "proxy"
+                        ],
+                        "enums": {
+                            "proxy": {
+                                "annotations": [
+                                    {
+                                        "version_added": "147"
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "annotations": [
+            {
+                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy"
+            },
+            {
+                "version_added": "147"
+            }
+        ],
+        "description": "Provides access to global proxy settings for Thunderbird and proxy event listeners to handle dynamic proxy implementations.",
+        "events": [
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onRequest"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Before version 78, the <code>tabId</code> and <code>windowId</code> filter properties are ignored."
+                    },
+                    {
+                        "version_added": "147"
+                    }
+                ],
+                "description": "Fired when proxy data is needed for a request.",
+                "extraParameters": [
+                    {
+                        "$ref": "webRequest.RequestFilter",
+                        "description": "A set of filters that restricts the events that will be sent to this listener.",
+                        "name": "filter"
+                    },
+                    {
+                        "description": "Array of extra information that should be passed to the listener function.",
+                        "items": {
+                            "enum": [
+                                "requestHeaders"
+                            ],
+                            "type": "string"
+                        },
+                        "name": "extraInfoSpec",
+                        "optional": true,
+                        "type": "array"
+                    }
+                ],
+                "name": "onRequest",
+                "parameters": [
+                    {
+                        "name": "details",
+                        "properties": {
+                            "cookieStoreId": {
+                                "description": "The cookie store ID of the contextual identity.",
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "documentUrl": {
+                                "description": "URL of the page into which the requested resource will be loaded.",
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "frameId": {
+                                "description": "The value 0 indicates that the request happens in the main frame; a positive value indicates the ID of a subframe in which the request happens. If the document of a (sub-)frame is loaded (<code>type</code> is <code>main_frame</code> or <code>sub_frame</code>), <code>frameId</code> indicates the ID of this frame, not the ID of the outer frame. Frame IDs are unique within a tab.",
+                                "type": "integer"
+                            },
+                            "fromCache": {
+                                "description": "Indicates if this response was fetched from disk cache.",
+                                "type": "boolean"
+                            },
+                            "incognito": {
+                                "description": "True for private browsing requests.",
+                                "optional": true,
+                                "type": "boolean"
+                            },
+                            "method": {
+                                "description": "Standard HTTP method.",
+                                "type": "string"
+                            },
+                            "originUrl": {
+                                "description": "URL of the resource that triggered this request.",
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "parentFrameId": {
+                                "description": "ID of frame that wraps the frame which sent the request. Set to -1 if no parent frame exists.",
+                                "type": "integer"
+                            },
+                            "requestHeaders": {
+                                "$ref": "webRequest.HttpHeaders",
+                                "description": "The HTTP request headers that are going to be sent out with this request.",
+                                "optional": true
+                            },
+                            "requestId": {
+                                "description": "The ID of the request. Request IDs are unique within a browser session. As a result, they could be used to relate different events of the same request.",
+                                "type": "string"
+                            },
+                            "tabId": {
+                                "description": "The ID of the tab in which the request takes place. Set to -1 if the request isn't related to a tab.",
+                                "type": "integer"
+                            },
+                            "thirdParty": {
+                                "description": "Indicates if this request and its content window hierarchy is third party.",
+                                "type": "boolean"
+                            },
+                            "timeStamp": {
+                                "description": "The time when this signal is triggered, in milliseconds since the epoch.",
+                                "type": "number"
+                            },
+                            "type": {
+                                "$ref": "webRequest.ResourceType",
+                                "description": "How the requested resource will be used."
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "urlClassification": {
+                                "$ref": "webRequest.UrlClassification",
+                                "description": "Url classification if the request has been classified."
+                            }
+                        },
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onError"
+                    }
+                ],
+                "description": "Notifies about errors caused by the invalid use of the proxy API.",
+                "name": "onError",
+                "parameters": [
+                    {
+                        "name": "error",
+                        "type": "object"
+                    }
+                ],
+                "type": "function"
+            }
+        ],
+        "namespace": "proxy",
+        "permissions": [
+            "proxy"
+        ],
+        "properties": {
+            "settings": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "version_added": "false"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Not supported in Thunderbird because it depends on private browsing functionality, which Thunderbird does not fully implement."
+                    },
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/settings"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "From version 88, the <code>ftp</code> setting has no effect because FTP is no longer supported (see <a href=\"https://bugzil.la/1626365\">bug 1626365</a>)."
+                    }
+                ],
+                "description": "Configures proxy settings. This setting's value is an object of type ProxyConfig."
+            }
+        },
+        "types": [
+            {
+                "description": "An object which describes proxy settings.",
+                "id": "ProxyConfig",
+                "properties": {
+                    "autoConfigUrl": {
+                        "description": "A URL to use to configure the proxy.",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "autoLogin": {
+                        "description": "Do not prompt for authentication if password is saved.",
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "ftp": {
+                        "deprecated": true,
+                        "description": "The address of the ftp proxy, can include a port.  Deprecated since Thunderbird 88.",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "http": {
+                        "description": "The address of the http proxy, can include a port.",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "httpProxyAll": {
+                        "description": "Use the http proxy server for all protocols.",
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "passthrough": {
+                        "description": "A list of hosts which should not be proxied.",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "proxyDNS": {
+                        "description": "Proxy DNS when using SOCKS. DNS queries get leaked to the network when set to false. True by default for SOCKS v5. False by default for SOCKS v4.",
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "proxyType": {
+                        "description": "The type of proxy to use.",
+                        "enum": [
+                            "none",
+                            "autoDetect",
+                            "system",
+                            "manual",
+                            "autoConfig"
+                        ],
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "respectBeConservative": {
+                        "default": true,
+                        "description": " If true (the default value), do not use newer TLS protocol features that might have interoperability problems on the Internet. This is intended only for use with critical infrastructure like the updates, and is only available to privileged addons.",
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "socks": {
+                        "description": "The address of the socks proxy, can include a port.",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "socksVersion": {
+                        "description": "The version of the socks proxy.",
+                        "maximum": 5,
+                        "minimum": 4,
+                        "optional": true,
+                        "type": "integer"
+                    },
+                    "ssl": {
+                        "description": "The address of the ssl proxy, can include a port.",
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        ]
+    }
+]
