@@ -5,7 +5,7 @@
                 "version_added": "74"
             }
         ],
-        "applicationVersion": "146.0.1",
+        "applicationVersion": "147.0",
         "namespace": "manifest",
         "types": [
             {
@@ -135,6 +135,7 @@
                                 "version_added": "105"
                             }
                         ],
+                        "description": "The tab of the associated compose window. By the time the event listener is called, this window may have already been destroyed.",
                         "name": "tab"
                     },
                     {
@@ -145,6 +146,15 @@
                         ],
                         "name": "sendInfo",
                         "properties": {
+                            "details": {
+                                "$ref": "ComposeDetails",
+                                "annotations": [
+                                    {
+                                        "version_added": "147"
+                                    }
+                                ],
+                                "description": "The $(ref:compose.ComposeDetails) of the send message."
+                            },
                             "error": {
                                 "annotations": [
                                     {
@@ -244,6 +254,15 @@
                         ],
                         "name": "saveInfo",
                         "properties": {
+                            "details": {
+                                "$ref": "ComposeDetails",
+                                "annotations": [
+                                    {
+                                        "version_added": "147"
+                                    }
+                                ],
+                                "description": "The $(ref:compose.ComposeDetails) of the saved message."
+                            },
                             "error": {
                                 "annotations": [
                                     {
@@ -1549,7 +1568,7 @@
                                 "version_added": "67"
                             }
                         ],
-                        "description": "A name and email address in the format <var>Name <email@example.com></var>, or just an email address.",
+                        "description": "A name and email address in mailbox format (<var>Name <email@example.com></var>), or just an email address. Mailing lists are specified as <var>ListName <ListName></var>. Use $(ref:messengerUtilities.parseMailboxString) to extract the name and/or the email from the mailbox string, or to expand mailing list entries.",
                         "type": "string"
                     },
                     {

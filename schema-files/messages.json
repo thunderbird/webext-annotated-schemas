@@ -5,7 +5,7 @@
                 "version_added": "66"
             }
         ],
-        "applicationVersion": "146.0.1",
+        "applicationVersion": "147.0",
         "namespace": "manifest",
         "types": [
             {
@@ -553,6 +553,76 @@
             {
                 "annotations": [
                     {
+                        "note": "Unlike $(ref:messages.getFull), this function is not MIME-aware and simply returns every header line found before the first blank line that separates the headers from the RFC 822 message body. This includes headers such as <var>Content-Type</var> and <var>Content-Transfer-Encoding</var>, which are otherwise associated with a specific MIME part."
+                    },
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#getheaders-messageid-options"
+                    },
+                    {
+                        "version_added": "147"
+                    }
+                ],
+                "async": "callback",
+                "description": "Returns all message headers of the specified message, without MIME structure parsing. Throws an error if the message cannot be read, for example due to network issues. This function is significantly faster than $(ref:messages.getFull) when only the header information is required.",
+                "name": "getHeaders",
+                "parameters": [
+                    {
+                        "$ref": "messages.MessageId",
+                        "annotations": [
+                            {
+                                "version_added": "147"
+                            }
+                        ],
+                        "name": "messageId"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "147"
+                            }
+                        ],
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "decodeHeaders": {
+                                "annotations": [
+                                    {
+                                        "version_added": "147"
+                                    }
+                                ],
+                                "description": "Whether to decode RFC 2047 encoded headers. Defaults to <var>true</var>.",
+                                "optional": true,
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "147"
+                            }
+                        ],
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "$ref": "messages.HeadersDictionary",
+                                "annotations": [
+                                    {
+                                        "version_added": "147"
+                                    }
+                                ]
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#getraw-message-options"
                     },
                     {
@@ -719,7 +789,7 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Lists the attachments of a message.",
+                "description": "Lists the attachments of a message. If the message is encrypted, the attachments of the decrypted message are listed.",
                 "name": "listAttachments",
                 "parameters": [
                     {
@@ -770,7 +840,7 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Lists all inline text parts of a message. These parts are not returned by $(ref:messages.listAttachments) and usually make up the readable content of the message, mostly with content type <var>text/plain</var> or <var>text/html</var>. If a message only includes a part with content type <var>text/html</var>, the method $(ref:messengerUtilities.convertToPlainText) can be used to retreive a plain text version.",
+                "description": "Lists all inline text parts of a message. These parts are not returned by $(ref:messages.listAttachments) and usually make up the readable content of the message, mostly with content type <var>text/plain</var> or <var>text/html</var>. If a message only includes a part with content type <var>text/html</var>, the method $(ref:messengerUtilities.convertToPlainText) can be used to retreive a plain text version. If the message is encrypted, the inline text parts of the decrypted message are listed.",
                 "name": "listInlineTextParts",
                 "parameters": [
                     {
@@ -832,7 +902,7 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Gets the content of a $(ref:messages.MessageAttachment) as a <a href='https://developer.mozilla.org/en-US/docs/Web/API/File'>File</a> object.",
+                "description": "Gets the content of a $(ref:messages.MessageAttachment) as a <a href='https://developer.mozilla.org/en-US/docs/Web/API/File'>File</a> object. If the message is encrypted, the function retrieves the attachment from the decrypted message.",
                 "name": "getAttachmentFile",
                 "parameters": [
                     {
@@ -850,6 +920,7 @@
                                 "version_added": "88"
                             }
                         ],
+                        "description": "The <var>partName</var> of an attachment to be retrieved from the decrypted message.",
                         "name": "partName",
                         "pattern": "^\\d+(\\.\\d+\\$?)*$",
                         "type": "string"
@@ -889,7 +960,7 @@
                     }
                 ],
                 "async": true,
-                "description": "Deletes the specified attachments and replaces them by placeholder text attachments with meta information about the original attachments and a <var>text/x-moz-deleted</var> content type. This permanently modifies the message.",
+                "description": "Deletes the specified attachments and replaces them by placeholder text attachments with meta information about the original attachments and a <var>text/x-moz-deleted</var> content type. This permanently modifies the message. Deleting attachments of encrypted messages is not supported and will throw an <em>ExtensionError</em>.",
                 "name": "deleteAttachments",
                 "parameters": [
                     {
@@ -2079,20 +2150,14 @@
                         "type": "string"
                     },
                     "headers": {
-                        "additionalProperties": {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
+                        "$ref": "messages.HeadersDictionary",
                         "annotations": [
                             {
                                 "version_added": "89"
                             }
                         ],
                         "description": "A <em>dictionary object</em> of RFC 2047 decoded part headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>. Only present if requested, see the <var>decodeHeaders</var> option of $(ref:messages.getFull).",
-                        "optional": true,
-                        "type": "object"
+                        "optional": true
                     },
                     "name": {
                         "annotations": [
@@ -2138,20 +2203,14 @@
                         "type": "string"
                     },
                     "rawHeaders": {
-                        "additionalProperties": {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
+                        "$ref": "messages.HeadersDictionary",
                         "annotations": [
                             {
                                 "version_added": "133"
                             }
                         ],
                         "description": "A <em>dictionary object</em> of raw part headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>. Only present if requested, see the <var>decodeHeaders</var> option of $(ref:messages.getFull).",
-                        "optional": true,
-                        "type": "object"
+                        "optional": true
                     },
                     "size": {
                         "annotations": [
@@ -2275,19 +2334,13 @@
                         "type": "string"
                     },
                     "headers": {
-                        "additionalProperties": {
-                            "items": {
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
+                        "$ref": "messages.HeadersDictionary",
                         "annotations": [
                             {
                                 "version_added": "135"
                             }
                         ],
-                        "description": "A <em>dictionary object</em> of RFC 2047 decoded attachment headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>.",
-                        "type": "object"
+                        "description": "A <em>dictionary object</em> of RFC 2047 decoded attachment headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>."
                     },
                     "message": {
                         "$ref": "messages.MessageHeader",
@@ -2327,6 +2380,25 @@
                         "type": "integer"
                     }
                 },
+                "type": "object"
+            },
+            {
+                "additionalProperties": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#headersdictionary"
+                    },
+                    {
+                        "version_added": "147"
+                    }
+                ],
+                "description": "A <em>dictionary object</em> of headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>.",
+                "id": "HeadersDictionary",
                 "type": "object"
             },
             {
