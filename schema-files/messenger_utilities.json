@@ -124,7 +124,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv2/messengerUtilities.html#parsemailboxstring-mailboxstring-preservegroups"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv2/messengerUtilities.html#parsemailboxstring-mailboxstring-options"
                     },
                     {
                         "version_added": "137"
@@ -150,10 +150,53 @@
                                 "version_added": "137"
                             }
                         ],
-                        "description": "Keep grouped hierarchies. Groups may be specified in a mailbox string as follows: <var>GroupName : user1 <user1@example.com>, user2@example,com ;</var>.",
-                        "name": "preserveGroups",
-                        "optional": true,
-                        "type": "boolean"
+                        "choices": [
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "137"
+                                    }
+                                ],
+                                "deprecated": "Specify the options object instead of a plain boolean to preserve groups.",
+                                "description": "Keep grouped hierarchies. Groups may be specified in a mailbox string as follows: <var>GroupName : user1 <user1@example.com>, user2@example,com ;</var>.",
+                                "type": "boolean"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "147"
+                                    }
+                                ],
+                                "properties": {
+                                    "expandMailingLists": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "147"
+                                            }
+                                        ],
+                                        "description": "Expand Thunderbird mailing lists (specified as <var>ListName <ListName></var>) and include the parsed primary email addresses of all members. When used together with <var>preserveGroups</var>, the mailing list's name and hierarchy are preserved. If the mailing list does not exist, or the <permission>addressBook</permission> permission is not granted, the entries are not expanded and returned unchanged.",
+                                        "optional": true,
+                                        "permissions": [
+                                            "addressBooks"
+                                        ],
+                                        "type": "boolean"
+                                    },
+                                    "preserveGroups": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "147"
+                                            }
+                                        ],
+                                        "description": "Keep grouped hierarchies. Groups may be specified in a mailbox string as follows: <var>GroupName : user1 <user1@example.com>, user2@example,com ;</var>.",
+                                        "optional": true,
+                                        "type": "boolean"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "name": "options",
+                        "optional": true
                     },
                     {
                         "annotations": [
@@ -572,7 +615,7 @@
         ]
     },
     {
-        "applicationVersion": "146.0.1",
+        "applicationVersion": "147.0",
         "namespace": "manifest"
     }
 ]
