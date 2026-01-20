@@ -5,7 +5,7 @@
                 "version_added": "66"
             }
         ],
-        "applicationVersion": "147.0",
+        "applicationVersion": "149.0a1",
         "namespace": "manifest",
         "types": [
             {
@@ -111,9 +111,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#onupdated-message-changedproperties-oldproperties"
-                    },
-                    {
                         "version_added": "91"
                     }
                 ],
@@ -153,9 +150,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#onmoved-originalmessages-movedmessages"
-                    },
-                    {
                         "version_added": "91"
                     }
                 ],
@@ -188,9 +182,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#oncopied-originalmessages-copiedmessages"
-                    },
                     {
                         "version_added": "91"
                     }
@@ -225,9 +216,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#ondeleted-messages"
-                    },
-                    {
                         "version_added": "91"
                     }
                 ],
@@ -251,9 +239,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#onnewmailreceived-folder-messages"
-                    },
                     {
                         "version_added": "75"
                     }
@@ -303,9 +288,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#list-folderid"
-                    },
-                    {
                         "version_added": "66"
                     }
                 ],
@@ -328,6 +310,150 @@
                                 "version_added": "96"
                             }
                         ],
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "sortOrder": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ],
+                                "description": "The sort order for the returned messages. Ignored if <var>sortType</var> is not specified.",
+                                "enum": [
+                                    "ascending",
+                                    "descending"
+                                ],
+                                "enums": {
+                                    "ascending": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "descending": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "sortType": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ],
+                                "description": "Specifies how the returned messages should be sorted. Default sort order is <var>descending</var>, if not specified otherwise. Returning sorted messages is faster than manually sorting the messages afterwards, but slower than returning the messages in their original order.",
+                                "enum": [
+                                    "author",
+                                    "date",
+                                    "flagged",
+                                    "junk",
+                                    "junkScore",
+                                    "priority",
+                                    "read",
+                                    "recipients",
+                                    "size",
+                                    "subject",
+                                    "tags"
+                                ],
+                                "enums": {
+                                    "author": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "date": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "flagged": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "junk": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "junkScore": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "priority": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "read": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "recipients": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "size": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "subject": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "tags": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "optional": true,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "148"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
@@ -335,7 +461,7 @@
                                 "$ref": "messages.MessageList",
                                 "annotations": [
                                     {
-                                        "version_added": "96"
+                                        "version_added": "148"
                                     }
                                 ]
                             }
@@ -350,9 +476,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#continuelist-messagelistid"
-                    },
                     {
                         "version_added": "66"
                     }
@@ -396,9 +519,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#abortlist-messagelistid"
-                    },
-                    {
                         "version_added": "120"
                     }
                 ],
@@ -420,9 +540,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#get-messageid"
-                    },
                     {
                         "version_added": "66"
                     }
@@ -465,9 +582,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#getfull-messageid-options"
-                    },
                     {
                         "version_added": "66"
                     }
@@ -556,9 +670,6 @@
                         "note": "Unlike $(ref:messages.getFull), this function is not MIME-aware and simply returns every header line found before the first blank line that separates the headers from the RFC 822 message body. This includes headers such as <var>Content-Type</var> and <var>Content-Transfer-Encoding</var>, which are otherwise associated with a specific MIME part."
                     },
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#getheaders-messageid-options"
-                    },
-                    {
                         "version_added": "147"
                     }
                 ],
@@ -622,9 +733,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#getraw-message-options"
-                    },
                     {
                         "version_added": "72"
                     }
@@ -782,9 +890,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#listattachments-messageid"
-                    },
-                    {
                         "version_added": "88"
                     }
                 ],
@@ -833,10 +938,7 @@
                         "note": "A message usually contains only one inline text part per subtype, but technically messages can contain multiple inline text parts per subtype."
                     },
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#listinlinetextparts-messageid"
-                    },
-                    {
-                        "version_added": "128"
+                        "version_added": "129"
                     }
                 ],
                 "async": "callback",
@@ -847,7 +949,7 @@
                         "$ref": "messages.MessageId",
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "129"
                             }
                         ],
                         "name": "messageId"
@@ -855,7 +957,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "129"
                             }
                         ],
                         "name": "callback",
@@ -864,7 +966,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "128"
+                                        "version_added": "129"
                                     }
                                 ],
                                 "items": {
@@ -893,9 +995,6 @@
                             ""
                         ],
                         "type": "JavaScript"
-                    },
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#getattachmentfile-messageid-partname"
                     },
                     {
                         "version_added": "88"
@@ -953,9 +1052,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#deleteattachments-messageid-partnames"
-                    },
-                    {
                         "version_added": "123"
                     }
                 ],
@@ -995,9 +1091,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#openattachment-messageid-partname-tabid"
-                    },
                     {
                         "version_added": "114"
                     }
@@ -1040,9 +1133,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#query-queryinfo"
-                    },
                     {
                         "version_added": "69"
                     }
@@ -1414,9 +1504,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#update-messageid-newproperties"
-                    },
-                    {
                         "version_added": "66"
                     }
                 ],
@@ -1450,9 +1537,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#move-messageids-folderid-options"
-                    },
                     {
                         "version_added": "66"
                     }
@@ -1516,9 +1600,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#copy-messageids-folderid-options"
-                    },
-                    {
                         "version_added": "66"
                     }
                 ],
@@ -1580,9 +1661,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#delete-messageids-options"
-                    },
                     {
                         "version_added": "66"
                     }
@@ -1664,9 +1742,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#import-file-folderid-properties"
-                    },
-                    {
                         "version_added": "106"
                     }
                 ],
@@ -1735,9 +1810,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#archive-messageids"
-                    },
-                    {
                         "version_added": "68"
                     }
                 ],
@@ -1773,9 +1845,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#messageid"
-                    },
-                    {
                         "version_added": "122"
                     }
                 ],
@@ -1787,10 +1856,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#inlinetextpart"
-                    },
-                    {
-                        "version_added": "128"
+                        "version_added": "129"
                     }
                 ],
                 "description": "An inline part with content type <var>text/*</var>. These parts are not returned by $(ref:messages.listAttachments) and usually make up the readable content of the message, mostly with content type <var>text/plain</var> or <var>text/html</var>",
@@ -1799,7 +1865,7 @@
                     "content": {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "129"
                             }
                         ],
                         "description": "The content of this inline text part.",
@@ -1808,7 +1874,7 @@
                     "contentType": {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "129"
                             }
                         ],
                         "description": "The content type of the part. Most common types for inline text parts are <var>text/plain</var> and <var>text/html</var>. Possible other (deprecated) types are <var>text/richtext</var> and <var>text/enriched</var>. Some calendaring services include an inline text part with type <var>text/calendar</var>.",
@@ -1820,9 +1886,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#mailboxheaderstring"
-                    },
-                    {
                         "version_added": "131"
                     }
                 ],
@@ -1832,9 +1895,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#messageheader"
-                    },
                     {
                         "version_added": "89"
                     }
@@ -1880,7 +1940,8 @@
                             {
                                 "version_added": "89"
                             }
-                        ]
+                        ],
+                        "description": "The date and time when the message was sent, according to the Date header in the message."
                     },
                     "external": {
                         "annotations": [
@@ -1965,6 +2026,67 @@
                         "description": "Whether the message has been received recently and is marked as new.",
                         "type": "boolean"
                     },
+                    "priority": {
+                        "annotations": [
+                            {
+                                "version_added": "148"
+                            }
+                        ],
+                        "description": "The priority of the message.",
+                        "enum": [
+                            "none",
+                            "lowest",
+                            "low",
+                            "normal",
+                            "high",
+                            "highest"
+                        ],
+                        "enums": {
+                            "high": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ]
+                            },
+                            "highest": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ]
+                            },
+                            "low": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ]
+                            },
+                            "lowest": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ]
+                            },
+                            "none": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ]
+                            },
+                            "normal": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    },
                     "read": {
                         "annotations": [
                             {
@@ -2023,9 +2145,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#messagelist"
-                    },
-                    {
                         "version_added": "89"
                     }
                 ],
@@ -2074,9 +2193,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#messagepart"
-                    },
                     {
                         "version_added": "89"
                     }
@@ -2228,9 +2344,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#messageproperties"
-                    },
-                    {
                         "version_added": "106"
                     }
                 ],
@@ -2295,9 +2408,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#messageattachment"
-                    },
                     {
                         "version_added": "98"
                     }
@@ -2391,9 +2501,6 @@
                 },
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#headersdictionary"
-                    },
-                    {
                         "version_added": "147"
                     }
                 ],
@@ -2403,9 +2510,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.html#queryrange"
-                    },
                     {
                         "version_added": "121"
                     }
@@ -2449,9 +2553,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.tags.html#oncreated-tag"
-                    },
-                    {
                         "version_added": "136"
                     }
                 ],
@@ -2475,9 +2576,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.tags.html#onupdated-key-changedproperties-oldproperties"
-                    },
                     {
                         "version_added": "136"
                     }
@@ -2524,9 +2622,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.tags.html#ondeleted-key"
-                    },
-                    {
                         "version_added": "136"
                     }
                 ],
@@ -2553,9 +2648,6 @@
         "functions": [
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.tags.html#list"
-                    },
                     {
                         "version_added": "121"
                     }
@@ -2595,9 +2687,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.tags.html#create-key-tag-color"
-                    },
                     {
                         "version_added": "121"
                     }
@@ -2669,9 +2758,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.tags.html#update-key-updateproperties"
-                    },
-                    {
                         "version_added": "121"
                     }
                 ],
@@ -2708,9 +2794,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.tags.html#delete-key"
-                    },
-                    {
                         "version_added": "121"
                     }
                 ],
@@ -2740,9 +2823,6 @@
         "types": [
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.tags.html#messagetag"
-                    },
                     {
                         "version_added": "121"
                     }
@@ -2791,9 +2871,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.tags.html#messagetagproperties"
-                    },
-                    {
                         "version_added": "136"
                     }
                 ],
@@ -2836,9 +2913,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.tags.html#tagsdetail"
-                    },
-                    {
                         "version_added": "121"
                     }
                 ],
@@ -2851,10 +2925,11 @@
                                 "version_added": "121"
                             }
                         ],
-                        "description": "Whether all of the tag filters must apply, or any of them.",
+                        "description": "Whether <var>all</var> of the tag filters must apply, <var>any</var> of them, or <var>none</var>. The <var>none</var> mode ignores the provided filters and selects only messages without any tags.",
                         "enum": [
                             "all",
-                            "any"
+                            "any",
+                            "none"
                         ],
                         "enums": {
                             "all": {
@@ -2868,6 +2943,13 @@
                                 "annotations": [
                                     {
                                         "version_added": "121"
+                                    }
+                                ]
+                            },
+                            "none": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
                                     }
                                 ]
                             }

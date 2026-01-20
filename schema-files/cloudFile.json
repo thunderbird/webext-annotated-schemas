@@ -2,10 +2,10 @@
     {
         "annotations": [
             {
-                "version_added": "64"
+                "version_added": "65"
             }
         ],
-        "applicationVersion": "147.0",
+        "applicationVersion": "149.0a1",
         "namespace": "manifest",
         "types": [
             {
@@ -17,7 +17,7 @@
                         },
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "optional": true,
@@ -50,7 +50,7 @@
                                         "note": "Within this UI only a limited subset of the WebExtension APIs is available: <var>cloudFile</var>, <var>extension</var>, <var>i18n</var>, <var>runtime</var>, <var>storage</var>. The id of the to be configured cloud file account can be retrieved via <code>new URL(location.href).searchParams.get('accountId');</code>."
                                     },
                                     {
-                                        "version_added": "64"
+                                        "version_added": "65"
                                     }
                                 ],
                                 "description": "A page for configuring accounts, to be displayed in the preferences UI.",
@@ -61,7 +61,7 @@
                             "name": {
                                 "annotations": [
                                     {
-                                        "version_added": "64"
+                                        "version_added": "65"
                                     }
                                 ],
                                 "description": "Name of the cloud file service.",
@@ -71,7 +71,7 @@
                             "new_account_url": {
                                 "annotations": [
                                     {
-                                        "version_added": "64"
+                                        "version_added": "65"
                                     }
                                 ],
                                 "deprecated": true,
@@ -93,7 +93,7 @@
                             "service_url": {
                                 "annotations": [
                                     {
-                                        "version_added": "64"
+                                        "version_added": "65"
                                     }
                                 ],
                                 "deprecated": true,
@@ -114,7 +114,7 @@
         ],
         "annotations": [
             {
-                "version_added": "64"
+                "version_added": "65"
             }
         ],
         "description": "The cloudFile (a.k.a. fileLink) API allows to create a provider to store large attachments in the cloud instead of attaching them directly to the message.",
@@ -122,10 +122,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/cloudFile.html#onfileupload-account-fileinfo-tab-relatedfileinfo"
-                    },
-                    {
-                        "version_added": "64"
+                        "version_added": "65"
                     }
                 ],
                 "description": "Fired when a file should be uploaded to the cloud file provider.",
@@ -135,7 +132,7 @@
                         "$ref": "CloudFileAccount",
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "The account used for the file upload.",
@@ -145,7 +142,7 @@
                         "$ref": "CloudFile",
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "The file to upload.",
@@ -178,7 +175,7 @@
                         "aborted": {
                             "annotations": [
                                 {
-                                    "version_added": "64"
+                                    "version_added": "65"
                                 }
                             ],
                             "description": "Set this to <var>true</var> if the file upload was aborted by the user and an $(ref:cloudFile.onFileUploadAbort) event has been received. No error message will be shown to the user.",
@@ -225,7 +222,7 @@
                         "url": {
                             "annotations": [
                                 {
-                                    "version_added": "64"
+                                    "version_added": "65"
                                 }
                             ],
                             "description": "The URL where the uploaded file can be accessed.",
@@ -240,10 +237,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/cloudFile.html#onfileuploadabort-account-fileid-tab"
-                    },
-                    {
-                        "version_added": "64"
+                        "version_added": "65"
                     }
                 ],
                 "name": "onFileUploadAbort",
@@ -252,7 +246,7 @@
                         "$ref": "CloudFileAccount",
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "The account used for the file upload.",
@@ -261,7 +255,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "An identifier for this file.",
@@ -284,9 +278,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/cloudFile.html#onfilerename-account-fileid-newname-tab"
-                    },
                     {
                         "version_added": "97"
                     }
@@ -383,10 +374,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/cloudFile.html#onfiledeleted-account-fileid-tab"
-                    },
-                    {
-                        "version_added": "64"
+                        "version_added": "65"
                     }
                 ],
                 "description": "Fired when a previously uploaded file should be deleted.",
@@ -396,7 +384,7 @@
                         "$ref": "CloudFileAccount",
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "The account used for the file upload.",
@@ -405,7 +393,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "An identifier for this file.",
@@ -429,10 +417,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/cloudFile.html#onaccountadded-account"
-                    },
-                    {
-                        "version_added": "64"
+                        "version_added": "65"
                     }
                 ],
                 "description": "Fired when a cloud file account of this add-on was created.",
@@ -442,7 +427,7 @@
                         "$ref": "CloudFileAccount",
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "The created account.",
@@ -454,10 +439,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/cloudFile.html#onaccountdeleted-accountid"
-                    },
-                    {
-                        "version_added": "64"
+                        "version_added": "65"
                     }
                 ],
                 "description": "Fired when a cloud file account of this add-on was deleted.",
@@ -466,7 +448,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "The id of the removed account.",
@@ -484,10 +466,7 @@
                 ],
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/cloudFile.html#getaccount-accountid"
-                    },
-                    {
-                        "version_added": "64"
+                        "version_added": "65"
                     }
                 ],
                 "async": "callback",
@@ -497,7 +476,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "Unique identifier of the account.",
@@ -534,10 +513,7 @@
                 ],
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/cloudFile.html#getallaccounts"
-                    },
-                    {
-                        "version_added": "64"
+                        "version_added": "65"
                     }
                 ],
                 "async": "callback",
@@ -576,10 +552,7 @@
                 ],
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/cloudFile.html#updateaccount-accountid-updateproperties"
-                    },
-                    {
-                        "version_added": "64"
+                        "version_added": "65"
                     }
                 ],
                 "async": "callback",
@@ -589,7 +562,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "Unique identifier of the account.",
@@ -599,7 +572,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "name": "updateProperties",
@@ -607,7 +580,7 @@
                             "configured": {
                                 "annotations": [
                                     {
-                                        "version_added": "64"
+                                        "version_added": "65"
                                     }
                                 ],
                                 "description": "If true, the account is configured and ready to use. Only configured accounts are offered to the user.",
@@ -617,7 +590,7 @@
                             "managementUrl": {
                                 "annotations": [
                                     {
-                                        "version_added": "64"
+                                        "version_added": "65"
                                     }
                                 ],
                                 "description": "A page for configuring accounts, to be displayed in the preferences UI.",
@@ -628,7 +601,7 @@
                             "spaceRemaining": {
                                 "annotations": [
                                     {
-                                        "version_added": "64"
+                                        "version_added": "65"
                                     }
                                 ],
                                 "description": "The amount of remaining space on the cloud provider, in bytes. Set to <var>-1</var> if unsupported.",
@@ -639,7 +612,7 @@
                             "spaceUsed": {
                                 "annotations": [
                                     {
-                                        "version_added": "64"
+                                        "version_added": "65"
                                     }
                                 ],
                                 "description": "The amount of space already used on the cloud provider, in bytes. Set to <var>-1</var> if unsupported.",
@@ -650,7 +623,7 @@
                             "uploadSizeLimit": {
                                 "annotations": [
                                     {
-                                        "version_added": "64"
+                                        "version_added": "65"
                                     }
                                 ],
                                 "description": "The maximum size in bytes for a single file to upload. Set to <var>-1</var> if unlimited.",
@@ -694,10 +667,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/cloudFile.html#cloudfileaccount"
-                    },
-                    {
-                        "version_added": "64"
+                        "version_added": "65"
                     }
                 ],
                 "description": "Information about a cloud file account.",
@@ -706,7 +676,7 @@
                     "configured": {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "If true, the account is configured and ready to use. Only configured accounts are offered to the user.",
@@ -715,7 +685,7 @@
                     "id": {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "Unique identifier of the account.",
@@ -724,7 +694,7 @@
                     "managementUrl": {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "A page for configuring accounts, to be displayed in the preferences UI.",
@@ -734,7 +704,7 @@
                     "name": {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "A user-friendly name for this account.",
@@ -743,7 +713,7 @@
                     "spaceRemaining": {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "The amount of remaining space on the cloud provider, in bytes. Set to <var>-1</var> if unsupported.",
@@ -754,7 +724,7 @@
                     "spaceUsed": {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "The amount of space already used on the cloud provider, in bytes. Set to <var>-1</var> if unsupported.",
@@ -765,7 +735,7 @@
                     "uploadSizeLimit": {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "The maximum size in bytes for a single file to upload. Set to <var>-1</var> if unlimited.",
@@ -778,9 +748,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/cloudFile.html#cloudfiletemplateinfo"
-                    },
                     {
                         "version_added": "96"
                     }
@@ -893,10 +860,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/cloudFile.html#cloudfile"
-                    },
-                    {
-                        "version_added": "64"
+                        "version_added": "65"
                     }
                 ],
                 "description": "Information about a cloud file.",
@@ -906,7 +870,7 @@
                         "additionalProperties": true,
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "Contents of the file to be transferred.",
@@ -916,7 +880,7 @@
                     "id": {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "An identifier for this file.",
@@ -926,7 +890,7 @@
                     "name": {
                         "annotations": [
                             {
-                                "version_added": "64"
+                                "version_added": "65"
                             }
                         ],
                         "description": "Filename of the file to be transferred.",
@@ -937,9 +901,6 @@
             },
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/cloudFile.html#relatedcloudfile"
-                    },
                     {
                         "version_added": "98"
                     }

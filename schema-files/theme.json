@@ -5,7 +5,7 @@
                 "version_added": "86"
             }
         ],
-        "applicationVersion": "147.0",
+        "applicationVersion": "149.0a1",
         "namespace": "manifest",
         "types": [
             {
@@ -914,9 +914,10 @@
                                 ],
                                 "description": "If set, overrides the general theme (context menus, toolbars, content area).",
                                 "enum": [
+                                    "auto",
                                     "light",
                                     "dark",
-                                    "auto"
+                                    "system"
                                 ],
                                 "enums": {
                                     "auto": {
@@ -937,6 +938,13 @@
                                         "annotations": [
                                             {
                                                 "version_added": "100"
+                                            }
+                                        ]
+                                    },
+                                    "system": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
                                             }
                                         ]
                                     }
@@ -952,9 +960,10 @@
                                 ],
                                 "description": "If set, overrides the color scheme for the content area.",
                                 "enum": [
+                                    "auto",
                                     "light",
                                     "dark",
-                                    "auto"
+                                    "system"
                                 ],
                                 "enums": {
                                     "auto": {
@@ -975,6 +984,13 @@
                                         "annotations": [
                                             {
                                                 "version_added": "100"
+                                            }
+                                        ]
+                                    },
+                                    "system": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
                                             }
                                         ]
                                     }
@@ -1081,9 +1097,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/theme.html#onupdated-updateinfo"
-                    },
-                    {
                         "version_added": "86"
                     }
                 ],
@@ -1107,9 +1120,6 @@
         "functions": [
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/theme.html#getcurrent-windowid"
-                    },
                     {
                         "version_added": "86"
                     }
@@ -1155,9 +1165,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/theme.html#update-windowid-details"
-                    },
-                    {
                         "version_added": "86"
                     }
                 ],
@@ -1195,9 +1202,6 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/theme.html#reset-windowid"
-                    },
-                    {
                         "version_added": "86"
                     }
                 ],
@@ -1227,9 +1231,6 @@
         "types": [
             {
                 "annotations": [
-                    {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/theme.html#themeupdateinfo"
-                    },
                     {
                         "version_added": "86"
                     }
