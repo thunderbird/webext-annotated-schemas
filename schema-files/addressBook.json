@@ -722,6 +722,27 @@
             {
                 "annotations": [
                     {
+                        "version_added": "149"
+                    }
+                ],
+                "description": "Fired when a large number of contacts are added. The contacts are not emitted for performance reasons. The event indicates significant changes, and consumers should rebuild any cached representation of the address book.",
+                "name": "onManyCreated",
+                "parameters": [
+                    {
+                        "$ref": "AddressBookNode",
+                        "annotations": [
+                            {
+                                "version_added": "149"
+                            }
+                        ],
+                        "name": "node"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
                         "version_added": "127"
                     }
                 ],
