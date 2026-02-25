@@ -78,6 +78,9 @@
             {
                 "annotations": [
                     {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/mailTabs.html#query-queryinfo"
+                    },
+                    {
                         "version_added": "66"
                     }
                 ],
@@ -317,7 +320,7 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Lists the messages in the current view, honoring sort order and filters.",
+                "description": "Lists the messages in the current view, honoring sort order and filters as used in the UI. Sort order of the returned messages can be overridden via the <var>options</var> parameter",
                 "name": "getListedMessages",
                 "parameters": [
                     {
@@ -338,6 +341,150 @@
                                 "version_added": "121"
                             }
                         ],
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "sortOrder": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ],
+                                "description": "The sort order for the returned messages. Ignored if <var>sortType</var> is not specified.",
+                                "enum": [
+                                    "ascending",
+                                    "descending"
+                                ],
+                                "enums": {
+                                    "ascending": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "descending": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "sortType": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ],
+                                "description": "Specifies how the returned messages should be sorted. This does not change the actual sort of the displayed messages. Default sort order is <var>descending</var>, if not specified otherwise. Returning sorted messages is faster than manually sorting the messages afterwards, but slower than returning the messages in their original order.",
+                                "enum": [
+                                    "author",
+                                    "date",
+                                    "flagged",
+                                    "junk",
+                                    "junkScore",
+                                    "priority",
+                                    "read",
+                                    "recipients",
+                                    "size",
+                                    "subject",
+                                    "tags"
+                                ],
+                                "enums": {
+                                    "author": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "date": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "flagged": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "junk": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "junkScore": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "priority": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "read": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "recipients": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "size": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "subject": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "tags": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "optional": true,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "148"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
@@ -345,7 +492,7 @@
                                 "$ref": "messages.MessageList",
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "148"
                                     }
                                 ]
                             }
@@ -628,6 +775,9 @@
             {
                 "annotations": [
                     {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/mailTabs.html#foldermode"
+                    },
+                    {
                         "version_added": "127"
                     }
                 ],
@@ -689,6 +839,9 @@
             },
             {
                 "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/mailTabs.html#mailtab"
+                    },
                     {
                         "version_added": "89"
                     }
@@ -1066,6 +1219,9 @@
             {
                 "annotations": [
                     {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/mailTabs.html#mailtabproperties"
+                    },
+                    {
                         "version_added": "121"
                     }
                 ],
@@ -1419,6 +1575,9 @@
             {
                 "annotations": [
                     {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/mailTabs.html#quickfiltertextdetail"
+                    },
+                    {
                         "version_added": "66"
                     }
                 ],
@@ -1479,7 +1638,7 @@
         ]
     },
     {
-        "applicationVersion": "147.0.2",
+        "applicationVersion": "148.0",
         "namespace": "manifest"
     }
 ]
