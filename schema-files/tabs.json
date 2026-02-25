@@ -5,7 +5,7 @@
                 "version_added": "62"
             }
         ],
-        "applicationVersion": "148.0b6",
+        "applicationVersion": "149.0b1",
         "namespace": "manifest",
         "types": [
             {
@@ -1457,6 +1457,9 @@
                     "groupId": {
                         "annotations": [
                             {
+                                "note": "Thunderbird does not support tab groups. This property will always be <code>-1<code> and cannot be changed."
+                            },
+                            {
                                 "version_added": "138"
                             }
                         ],
@@ -1524,6 +1527,20 @@
                         ],
                         "description": "The id of the space.",
                         "minimum": 1,
+                        "optional": true,
+                        "type": "integer"
+                    },
+                    "splitViewId": {
+                        "annotations": [
+                            {
+                                "note": "Thunderbird does not support Split View. This property will always be <code>-1<code> and cannot be changed."
+                            },
+                            {
+                                "version_added": "149"
+                            }
+                        ],
+                        "description": "The ID of the Split View that the tab belongs to. -1 if the tab does not belong to a split view.",
+                        "minimum": -1,
                         "optional": true,
                         "type": "integer"
                     },
