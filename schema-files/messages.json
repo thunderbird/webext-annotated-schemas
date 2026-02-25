@@ -5,7 +5,7 @@
                 "version_added": "66"
             }
         ],
-        "applicationVersion": "147.0.2",
+        "applicationVersion": "148.0",
         "namespace": "manifest",
         "types": [
             {
@@ -303,7 +303,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv2/messages.html#list-folder"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv2/messages.html#list-folder-options"
                     },
                     {
                         "version_added": "66"
@@ -346,6 +346,150 @@
                                 "version_added": "96"
                             }
                         ],
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "sortOrder": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ],
+                                "description": "The sort order for the returned messages. Ignored if <var>sortType</var> is not specified.",
+                                "enum": [
+                                    "ascending",
+                                    "descending"
+                                ],
+                                "enums": {
+                                    "ascending": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "descending": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "sortType": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ],
+                                "description": "Specifies how the returned messages should be sorted. Default sort order is <var>descending</var>, if not specified otherwise. Returning sorted messages is faster than manually sorting the messages afterwards, but slower than returning the messages in their original order.",
+                                "enum": [
+                                    "author",
+                                    "date",
+                                    "flagged",
+                                    "junk",
+                                    "junkScore",
+                                    "priority",
+                                    "read",
+                                    "recipients",
+                                    "size",
+                                    "subject",
+                                    "tags"
+                                ],
+                                "enums": {
+                                    "author": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "date": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "flagged": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "junk": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "junkScore": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "priority": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "read": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "recipients": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "size": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "subject": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    },
+                                    "tags": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "148"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "optional": true,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "148"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
@@ -353,7 +497,7 @@
                                 "$ref": "messages.MessageList",
                                 "annotations": [
                                     {
-                                        "version_added": "96"
+                                        "version_added": "148"
                                     }
                                 ]
                             }
@@ -2149,7 +2293,8 @@
                             {
                                 "version_added": "89"
                             }
-                        ]
+                        ],
+                        "description": "The date and time when the message was sent, according to the Date header in the message."
                     },
                     "external": {
                         "annotations": [
@@ -2233,6 +2378,67 @@
                         ],
                         "description": "Whether the message has been received recently and is marked as new.",
                         "type": "boolean"
+                    },
+                    "priority": {
+                        "annotations": [
+                            {
+                                "version_added": "148"
+                            }
+                        ],
+                        "description": "The priority of the message.",
+                        "enum": [
+                            "none",
+                            "lowest",
+                            "low",
+                            "normal",
+                            "high",
+                            "highest"
+                        ],
+                        "enums": {
+                            "high": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ]
+                            },
+                            "highest": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ]
+                            },
+                            "low": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ]
+                            },
+                            "lowest": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ]
+                            },
+                            "none": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ]
+                            },
+                            "normal": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
                     },
                     "read": {
                         "annotations": [
@@ -3120,10 +3326,11 @@
                                 "version_added": "121"
                             }
                         ],
-                        "description": "Whether all of the tag filters must apply, or any of them.",
+                        "description": "Whether <var>all</var> of the tag filters must apply, <var>any</var> of them, or <var>none</var>. The <var>none</var> mode ignores the provided filters and selects only messages without any tags.",
                         "enum": [
                             "all",
-                            "any"
+                            "any",
+                            "none"
                         ],
                         "enums": {
                             "all": {
@@ -3137,6 +3344,13 @@
                                 "annotations": [
                                     {
                                         "version_added": "121"
+                                    }
+                                ]
+                            },
+                            "none": {
+                                "annotations": [
+                                    {
+                                        "version_added": "148"
                                     }
                                 ]
                             }
