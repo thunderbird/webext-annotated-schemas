@@ -5,7 +5,7 @@
                 "version_added": "64"
             }
         ],
-        "applicationVersion": "148.0.1",
+        "applicationVersion": "149.0",
         "namespace": "manifest",
         "types": [
             {
@@ -751,6 +751,30 @@
                         "annotations": [
                             {
                                 "version_added": "64"
+                            }
+                        ],
+                        "name": "node"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv2/contacts.html#onmanycreated-node"
+                    },
+                    {
+                        "version_added": "149"
+                    }
+                ],
+                "description": "Fired when a large number of contacts are added. The contacts are not emitted for performance reasons. The event indicates significant changes, and consumers should rebuild any cached representation of the address book.",
+                "name": "onManyCreated",
+                "parameters": [
+                    {
+                        "$ref": "AddressBookNode",
+                        "annotations": [
+                            {
+                                "version_added": "149"
                             }
                         ],
                         "name": "node"
