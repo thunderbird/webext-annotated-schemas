@@ -2,7 +2,7 @@
     {
         "annotations": [
             {
-                "version_added": "66"
+                "version_added": "66.0a1"
             }
         ],
         "applicationVersion": "140.9.0esr",
@@ -19,7 +19,7 @@
                             "menus": {
                                 "annotations": [
                                     {
-                                        "version_added": "77"
+                                        "version_added": "77.0a1"
                                     }
                                 ]
                             }
@@ -39,7 +39,7 @@
                             "menus.overrideContext": {
                                 "annotations": [
                                     {
-                                        "version_added": "77"
+                                        "version_added": "77.0a1"
                                     }
                                 ]
                             }
@@ -56,7 +56,7 @@
                 "text": "Thunderbird's menus API is similar to the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/menus'>Firefox menus API</a>, but has been adapted to better suit Thunderbird's specific needs."
             },
             {
-                "version_added": "66"
+                "version_added": "66.0a1"
             }
         ],
         "description": "The menus API allows to add items to Thunderbird's menus. You can choose what types of objects your context menu additions apply to, such as images, hyperlinks, and pages.",
@@ -64,7 +64,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "description": "Fired when a context menu item is clicked. This is a user input event handler. For asynchronous listeners some <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/User_actions'>restrictions</a> apply.",
@@ -74,7 +74,7 @@
                         "$ref": "OnClickData",
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "Information about the item clicked and the context where the click happened.",
@@ -84,7 +84,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "The details of the tab where the click took place. If the click did not take place in a tab, this parameter will be missing.",
@@ -97,7 +97,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "description": "Fired when a menu is shown. The extension can add, modify or remove menu items and call $(ref:menus.refresh) to update the menu.",
@@ -107,7 +107,7 @@
                         "$ref": "OnShowData",
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "Information about the context of the menu action and the created menu items.",
@@ -117,7 +117,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "The details of the tab where the menu was opened.",
@@ -129,7 +129,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "description": "Fired when a menu is hidden. This event is only fired if onShown has fired before.",
@@ -142,7 +142,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "description": "Creates a new context menu item. Note that if an error occurs during creation, you may not find out until the creation callback fires (the details will be in <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/lastError'>runtime.lastError</a>).",
@@ -151,7 +151,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "name": "createProperties",
@@ -159,7 +159,7 @@
                             "checked": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "The initial state of a checkbox or radio item: <var>true</var> for selected and <var>false</var> for unselected. Only one radio item can be selected at a time in a given group of radio items.",
@@ -169,14 +169,14 @@
                             "command": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "66"
+                                                "version_added": "66.0a1"
                                             }
                                         ],
                                         "type": "string"
@@ -197,7 +197,7 @@
                             "contexts": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "List of contexts this menu item will appear in. Defaults to <var>['page']</var> if not specified.",
@@ -211,7 +211,7 @@
                             "documentUrlPatterns": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "Lets you restrict the item to apply only to documents whose URL matches one of the given patterns. (This applies to frames as well.) For details on the format of a pattern, see <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>Match Patterns</a>.",
@@ -224,7 +224,7 @@
                             "enabled": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "Whether this context menu item is enabled or disabled. Defaults to true.",
@@ -234,7 +234,7 @@
                             "icons": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "choices": [
@@ -242,7 +242,7 @@
                                         "$ref": "MenuIconPath",
                                         "annotations": [
                                             {
-                                                "version_added": "66"
+                                                "version_added": "66.0a1"
                                             }
                                         ]
                                     },
@@ -250,7 +250,7 @@
                                         "$ref": "MenuIconDictionary",
                                         "annotations": [
                                             {
-                                                "version_added": "124"
+                                                "version_added": "124.0a1"
                                             }
                                         ]
                                     }
@@ -261,7 +261,7 @@
                             "id": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "The unique ID to assign to this item. Mandatory for event pages. Cannot be the same as another ID for this extension.",
@@ -271,7 +271,7 @@
                             "onclick": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "A function that will be called back when the menu item is clicked. Event pages cannot use this.",
@@ -281,7 +281,7 @@
                                         "$ref": "OnClickData",
                                         "annotations": [
                                             {
-                                                "version_added": "66"
+                                                "version_added": "66.0a1"
                                             }
                                         ],
                                         "description": "Information about the item clicked and the context where the click happened.",
@@ -291,7 +291,7 @@
                                         "$ref": "tabs.Tab",
                                         "annotations": [
                                             {
-                                                "version_added": "66"
+                                                "version_added": "66.0a1"
                                             }
                                         ],
                                         "description": "The details of the tab where the click took place.",
@@ -303,14 +303,14 @@
                             "parentId": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "66"
+                                                "version_added": "66.0a1"
                                             }
                                         ],
                                         "type": "integer"
@@ -318,7 +318,7 @@
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "66"
+                                                "version_added": "66.0a1"
                                             }
                                         ],
                                         "type": "string"
@@ -330,7 +330,7 @@
                             "targetUrlPatterns": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "Similar to documentUrlPatterns, but lets you filter based on the src attribute of img/audio/video tags and the href of anchor tags.",
@@ -343,7 +343,7 @@
                             "title": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "The text to be displayed in the item; this is <em>required</em> unless <var>type</var> is <var>separator</var>. When the context is <var>selection</var>, you can use <var>%s</var> within the string to show the selected text. For example, if this parameter's value is <var>Translate '%s' to Latin</var> and the user selects the word <var>cool</var>, the context menu item for the selection is <var>Translate 'cool' to Latin</var>. To specify an access key for the new menu entry, include a <var>&</var> before the desired letter in the title. For example <var>&Help</var>.",
@@ -354,7 +354,7 @@
                                 "$ref": "ItemType",
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "The type of menu item. Defaults to <var>normal</var> if not specified.",
@@ -363,7 +363,7 @@
                             "viewTypes": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "List of view types where the menu item will be shown. Defaults to any view, including those without a viewType.",
@@ -377,7 +377,7 @@
                             "visible": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "Whether the item is visible in the menu.",
@@ -390,7 +390,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "Called when the item has been created in the browser. If there were any problems creating the item, details will be available in <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/lastError'>runtime.lastError</a>.",
@@ -405,7 +405,7 @@
                         {
                             "annotations": [
                                 {
-                                    "version_added": "66"
+                                    "version_added": "66.0a1"
                                 }
                             ],
                             "type": "integer"
@@ -413,7 +413,7 @@
                         {
                             "annotations": [
                                 {
-                                    "version_added": "66"
+                                    "version_added": "66.0a1"
                                 }
                             ],
                             "type": "string"
@@ -426,7 +426,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "async": "callback",
@@ -436,14 +436,14 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "choices": [
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "type": "integer"
@@ -451,7 +451,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "type": "string"
@@ -463,7 +463,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "The properties to update. Accepts the same values as the create function.",
@@ -472,7 +472,7 @@
                             "checked": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "optional": true,
@@ -481,7 +481,7 @@
                             "contexts": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "items": {
@@ -494,7 +494,7 @@
                             "documentUrlPatterns": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "items": {
@@ -506,7 +506,7 @@
                             "enabled": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "optional": true,
@@ -515,7 +515,7 @@
                             "icons": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "choices": [
@@ -523,7 +523,7 @@
                                         "$ref": "MenuIconPath",
                                         "annotations": [
                                             {
-                                                "version_added": "66"
+                                                "version_added": "66.0a1"
                                             }
                                         ]
                                     },
@@ -531,7 +531,7 @@
                                         "$ref": "MenuIconDictionary",
                                         "annotations": [
                                             {
-                                                "version_added": "124"
+                                                "version_added": "124.0a1"
                                             }
                                         ]
                                     }
@@ -541,7 +541,7 @@
                             "onclick": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "optional": "omit-key-if-missing",
@@ -550,7 +550,7 @@
                                         "$ref": "OnClickData",
                                         "annotations": [
                                             {
-                                                "version_added": "66"
+                                                "version_added": "66.0a1"
                                             }
                                         ],
                                         "name": "info"
@@ -559,7 +559,7 @@
                                         "$ref": "tabs.Tab",
                                         "annotations": [
                                             {
-                                                "version_added": "66"
+                                                "version_added": "66.0a1"
                                             }
                                         ],
                                         "description": "The details of the tab where the click took place.",
@@ -571,14 +571,14 @@
                             "parentId": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "66"
+                                                "version_added": "66.0a1"
                                             }
                                         ],
                                         "type": "integer"
@@ -586,7 +586,7 @@
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "66"
+                                                "version_added": "66.0a1"
                                             }
                                         ],
                                         "type": "string"
@@ -598,7 +598,7 @@
                             "targetUrlPatterns": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "items": {
@@ -610,7 +610,7 @@
                             "title": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "optional": true,
@@ -620,7 +620,7 @@
                                 "$ref": "ItemType",
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "optional": true
@@ -628,7 +628,7 @@
                             "viewTypes": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "items": {
@@ -641,7 +641,7 @@
                             "visible": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "Whether the item is visible in the menu.",
@@ -654,7 +654,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "Called when the context menu has been updated.",
@@ -669,7 +669,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "async": "callback",
@@ -679,14 +679,14 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "choices": [
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "type": "integer"
@@ -694,7 +694,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "type": "string"
@@ -706,7 +706,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "Called when the context menu has been removed.",
@@ -721,7 +721,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "async": "callback",
@@ -731,7 +731,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "Called when removal is complete.",
@@ -746,7 +746,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "description": "Show the matching menu items from this extension instead of the default menu. This should be called during a <a href='https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event'>contextmenu</a> event handler, and only applies to the menu that opens after this event.",
@@ -755,7 +755,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "name": "contextOptions",
@@ -763,7 +763,7 @@
                             "context": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "ContextType to override, to allow menu items from other extensions in the menu. Currently only <var>tab</var> is supported. <var>contextOptions.showDefaults</var> cannot be used with this option.",
@@ -774,7 +774,7 @@
                                     "tab": {
                                         "annotations": [
                                             {
-                                                "version_added": "66"
+                                                "version_added": "66.0a1"
                                             }
                                         ]
                                     }
@@ -785,7 +785,7 @@
                             "showDefaults": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "default": false,
@@ -796,7 +796,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "Required when context is <var>tab</var>. Requires the <permission>tabs</permission> permission.",
@@ -816,7 +816,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "async": true,
@@ -834,10 +834,7 @@
             "ACTION_MENU_TOP_LEVEL_LIMIT": {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/menus.html#action_menu_top_level_limit"
-                    },
-                    {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "description": "The maximum number of top level extension items that can be added to an extension action context menu. Any items beyond this limit will be ignored.",
@@ -848,10 +845,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/menus.html#contexttype"
-                    },
-                    {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "description": "The different contexts a menu can appear in. Specifying <var>all</var> is equivalent to the combination of all other contexts excluding <var>tab</var> and <var>tools_menu</var>. More information about each context can be found in the <a href='https://developer.thunderbird.net/add-ons/mailextensions/supported-ui-elements#menu-items'>Supported UI Elements</a> article on developer.thunderbird.net.",
@@ -889,7 +883,7 @@
                                 "text": "Equivalent to the combination of all other contexts except for <var>tab</var> and <var>tools_menu</var>."
                             },
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
@@ -899,7 +893,7 @@
                                 "text": "Applies when the user context-clicks the summary of the message attachments of a displayed message with more than one attachment."
                             },
                             {
-                                "version_added": "98"
+                                "version_added": "98.0a1"
                             }
                         ]
                     },
@@ -909,7 +903,7 @@
                                 "text": "Applies when the user context-clicks an audio element."
                             },
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
@@ -919,7 +913,7 @@
                                 "text": "Applies when the user context-clicks a browserAction button."
                             },
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
@@ -929,7 +923,7 @@
                                 "text": "Applies when the user opened a browserAction button of type <var>menu</var>."
                             },
                             {
-                                "version_added": "90"
+                                "version_added": "90.0a1"
                             }
                         ]
                     },
@@ -939,7 +933,7 @@
                                 "text": "Applies when the user context-clicks a composeAction button."
                             },
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ]
                     },
@@ -949,7 +943,7 @@
                                 "text": "Applies when the user opened a composeAction button of type <var>menu</var>."
                             },
                             {
-                                "version_added": "90"
+                                "version_added": "90.0a1"
                             }
                         ]
                     },
@@ -959,7 +953,7 @@
                                 "text": "Applies when the user context-clicks an attachment in the compose window."
                             },
                             {
-                                "version_added": "83"
+                                "version_added": "83.0a1"
                             }
                         ]
                     },
@@ -969,7 +963,7 @@
                                 "text": "Applies when the user context-clicks in the compose editor."
                             },
                             {
-                                "version_added": "111"
+                                "version_added": "111.0a1"
                             }
                         ]
                     },
@@ -979,7 +973,7 @@
                                 "text": "Applies when the user context-clicks an editable element, like a textarea."
                             },
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
@@ -989,7 +983,7 @@
                                 "text": "Applies when the user context-clicks in the folder pane of the main Thunderbird window."
                             },
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
@@ -999,14 +993,14 @@
                                 "text": "Applies when the user context-clicks in a nested iframe."
                             },
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
                     "header_pane_link": {
                         "annotations": [
                             {
-                                "version_added": "137"
+                                "version_added": "137.0a1"
                             }
                         ]
                     },
@@ -1016,7 +1010,7 @@
                                 "text": "Applies when the user context-clicks an image."
                             },
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
@@ -1026,7 +1020,7 @@
                                 "text": "Applies when the user context-clicks on a link."
                             },
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
@@ -1036,7 +1030,7 @@
                                 "text": "Applies when the user context-clicks a single attachment of a displayed message."
                             },
                             {
-                                "version_added": "98"
+                                "version_added": "98.0a1"
                             }
                         ]
                     },
@@ -1046,7 +1040,7 @@
                                 "text": "Applies when the user context-clicks a messageDisplayAction button."
                             },
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ]
                     },
@@ -1056,7 +1050,7 @@
                                 "text": "Applies when the user opened a messageDisplayAction button of type <var>menu</var>."
                             },
                             {
-                                "version_added": "90"
+                                "version_added": "90.0a1"
                             }
                         ]
                     },
@@ -1066,7 +1060,7 @@
                                 "text": "Applies when the user context-clicks in the message list (a.k.a. thread pane) of the main Thunderbird window."
                             },
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
@@ -1076,7 +1070,7 @@
                                 "text": "Applies when the user context-clicks in the page, but none of the other page contexts apply (for example, the click is not on an image or a nested iframe or a link)."
                             },
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
@@ -1086,7 +1080,7 @@
                                 "text": "Applies when the user context-clicks on a password input element."
                             },
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
@@ -1096,7 +1090,7 @@
                                 "text": "Applies when part of the page is selected."
                             },
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
@@ -1106,7 +1100,7 @@
                                 "text": "Applies when the user context-clicks on a tab (specifically, this refers to the tab-strip or other user interface element enabling the user to switch from one tab to another, not to the page itself)."
                             },
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
@@ -1116,7 +1110,7 @@
                                 "text": "Applies when the user opens the <var>Tools</var> menu of Thunderbird's main menu."
                             },
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ]
                     },
@@ -1126,7 +1120,7 @@
                                 "text": "Applies when the user context-clicks a video element."
                             },
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     }
@@ -1137,10 +1131,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/menus.html#itemtype"
-                    },
-                    {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "description": "The type of menu item.",
@@ -1154,28 +1145,28 @@
                     "checkbox": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
                     "normal": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
                     "radio": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     },
                     "separator": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ]
                     }
@@ -1186,10 +1177,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/menus.html#onshowdata"
-                    },
-                    {
-                        "version_added": "88"
+                        "version_added": "88.0a1"
                     }
                 ],
                 "description": "Information sent when a context menu is being shown. Some properties are only included if the extension has host permission for the given context, for example <permission>activeTab</permission> for content tabs, <permission>compose</permission> for compose tabs and <permission>messagesRead</permission> for message display tabs.",
@@ -1198,7 +1186,7 @@
                     "attachments": {
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "The selected attachments. The <permission>compose</permission> permission is required to return attachments of a message being composed. The <permission>messagesRead</permission> permission is required to return attachments of displayed messages.",
@@ -1208,7 +1196,7 @@
                                     "$ref": "compose.ComposeAttachment",
                                     "annotations": [
                                         {
-                                            "version_added": "88"
+                                            "version_added": "88.0a1"
                                         }
                                     ]
                                 },
@@ -1216,7 +1204,7 @@
                                     "$ref": "messages.MessageAttachment",
                                     "annotations": [
                                         {
-                                            "version_added": "98"
+                                            "version_added": "98.0a1"
                                         }
                                     ]
                                 }
@@ -1228,7 +1216,7 @@
                     "contexts": {
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "A list of all contexts that apply to the menu.",
@@ -1241,7 +1229,7 @@
                         "$ref": "folders.MailFolder",
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "The displayed folder. Only available for the <var>message_list</var> context. The <permission>accountsRead</permission> permission is required.",
@@ -1250,7 +1238,7 @@
                     "editable": {
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "A flag indicating whether the element is editable (text input, textarea, etc.).",
@@ -1259,7 +1247,7 @@
                     "fieldId": {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "description": "An identifier of the clicked Thunderbird UI element, if any.",
@@ -1275,42 +1263,42 @@
                             "composeBcc": {
                                 "annotations": [
                                     {
-                                        "version_added": "98"
+                                        "version_added": "98.0a1"
                                     }
                                 ]
                             },
                             "composeCc": {
                                 "annotations": [
                                     {
-                                        "version_added": "98"
+                                        "version_added": "98.0a1"
                                     }
                                 ]
                             },
                             "composeNewsgroupTo": {
                                 "annotations": [
                                     {
-                                        "version_added": "98"
+                                        "version_added": "98.0a1"
                                     }
                                 ]
                             },
                             "composeReplyTo": {
                                 "annotations": [
                                     {
-                                        "version_added": "98"
+                                        "version_added": "98.0a1"
                                     }
                                 ]
                             },
                             "composeSubject": {
                                 "annotations": [
                                     {
-                                        "version_added": "98"
+                                        "version_added": "98.0a1"
                                     }
                                 ]
                             },
                             "composeTo": {
                                 "annotations": [
                                     {
-                                        "version_added": "98"
+                                        "version_added": "98.0a1"
                                     }
                                 ]
                             }
@@ -1324,7 +1312,7 @@
                                 "note": "Host permission is required."
                             },
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "The URL of the frame of the element where the context menu was clicked, if it was in a frame.",
@@ -1337,7 +1325,7 @@
                                 "note": "Host permission is required."
                             },
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "If the element is a link, the text of that link.",
@@ -1350,7 +1338,7 @@
                                 "note": "Host permission is required."
                             },
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "If the element is a link, the URL it points to.",
@@ -1360,7 +1348,7 @@
                     "mediaType": {
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "One of <var>image</var>, <var>video</var>, or <var>audio</var> if the context menu was activated on one of these types of elements.",
@@ -1370,7 +1358,7 @@
                     "menuIds": {
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "A list of IDs of the menu items that were shown.",
@@ -1379,7 +1367,7 @@
                                 {
                                     "annotations": [
                                         {
-                                            "version_added": "88"
+                                            "version_added": "88.0a1"
                                         }
                                     ],
                                     "type": "integer"
@@ -1387,7 +1375,7 @@
                                 {
                                     "annotations": [
                                         {
-                                            "version_added": "88"
+                                            "version_added": "88.0a1"
                                         }
                                     ],
                                     "type": "string"
@@ -1402,7 +1390,7 @@
                                 "note": "Host permission is required."
                             },
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "The URL of the page where the menu item was clicked. This property is not set if the click occurred in a context where there is no current page, such as in a launcher context menu.",
@@ -1413,7 +1401,7 @@
                         "$ref": "accounts.MailAccount",
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "deprecated": "Deprecated since Thunderbird 128 and removed in Manifest V3: The selectedAccount property has been replaced by the selectedFolders property, returning the root folder of the account.",
@@ -1424,7 +1412,7 @@
                         "$ref": "folders.MailFolder",
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "deprecated": "Deprecated since Thunderbird 128 and removed in Manifest V3: The selectedFolder property has been replaced by the selectedFolders property.",
@@ -1434,7 +1422,7 @@
                     "selectedFolders": {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "128.0a1"
                             }
                         ],
                         "description": "The selected folders in the folder pane. Only available for the <var>folder_pane</var> context. The <permission>accountsRead</permission> permission is required. The returned selection includes the folders which would be affected by a context action through Thunderbirds UI, which may not be the actuall selected folders. For example, if the user has multiple folders selected and opens the context menu for a folder outside that selection, only the folder for which the context menu was opened, is returned.",
@@ -1448,7 +1436,7 @@
                         "$ref": "messages.MessageList",
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "The selected message(s) in the message list (a.k.a. the thread pane). Only available for the <var>message_list</var> context. The <permission>messagesRead</permission> permission is required. The returned selection includes the messages which would be affected by a context action through Thunderbirds UI, which may not be the actuall selected messages. For example, if the user has multiple messages selected and opens the context menu for a message outside that selection, only the message for which the context menu was opened, is returned.",
@@ -1460,7 +1448,7 @@
                                 "note": "Host permission is required."
                             },
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "The text for the context selection, if any.",
@@ -1473,7 +1461,7 @@
                                 "note": "Host permission is required."
                             },
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "Will be present for elements with a <em>src</em> URL.",
@@ -1483,7 +1471,7 @@
                     "targetElementId": {
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "An identifier of the clicked content element, if any. Use $(ref:menus.getTargetElement) in the page to find the corresponding element.",
@@ -1494,7 +1482,7 @@
                         "$ref": "extension.ViewType",
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "The type of view where the menu is shown. May be unset if the menu is not associated with a view.",
@@ -1506,10 +1494,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/menus.html#onclickdata"
-                    },
-                    {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "description": "Information sent when a context menu item is clicked.",
@@ -1518,7 +1503,7 @@
                     "attachments": {
                         "annotations": [
                             {
-                                "version_added": "83"
+                                "version_added": "83.0a1"
                             }
                         ],
                         "description": "The selected attachments. The <permission>compose</permission> permission is required to return attachments of a message being composed. The <permission>messagesRead</permission> permission is required to return attachments of displayed messages.",
@@ -1528,7 +1513,7 @@
                                     "$ref": "compose.ComposeAttachment",
                                     "annotations": [
                                         {
-                                            "version_added": "83"
+                                            "version_added": "83.0a1"
                                         }
                                     ]
                                 },
@@ -1536,7 +1521,7 @@
                                     "$ref": "messages.MessageAttachment",
                                     "annotations": [
                                         {
-                                            "version_added": "98"
+                                            "version_added": "98.0a1"
                                         }
                                     ]
                                 }
@@ -1548,7 +1533,7 @@
                     "button": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "An integer value of button by which menu item was clicked.",
@@ -1558,7 +1543,7 @@
                     "checked": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "A flag indicating the state of a checkbox or radio item after it is clicked.",
@@ -1569,7 +1554,7 @@
                         "$ref": "folders.MailFolder",
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "The displayed folder. Only available for the <var>message_list</var> context. The <permission>accountsRead</permission> permission is required.",
@@ -1578,7 +1563,7 @@
                     "editable": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "A flag indicating whether the element is editable (text input, textarea, etc.).",
@@ -1587,7 +1572,7 @@
                     "fieldId": {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "description": "An identifier of the clicked Thunderbird UI element, if any.",
@@ -1603,42 +1588,42 @@
                             "composeBcc": {
                                 "annotations": [
                                     {
-                                        "version_added": "90"
+                                        "version_added": "90.0a1"
                                     }
                                 ]
                             },
                             "composeCc": {
                                 "annotations": [
                                     {
-                                        "version_added": "90"
+                                        "version_added": "90.0a1"
                                     }
                                 ]
                             },
                             "composeNewsgroupTo": {
                                 "annotations": [
                                     {
-                                        "version_added": "90"
+                                        "version_added": "90.0a1"
                                     }
                                 ]
                             },
                             "composeReplyTo": {
                                 "annotations": [
                                     {
-                                        "version_added": "90"
+                                        "version_added": "90.0a1"
                                     }
                                 ]
                             },
                             "composeSubject": {
                                 "annotations": [
                                     {
-                                        "version_added": "90"
+                                        "version_added": "90.0a1"
                                     }
                                 ]
                             },
                             "composeTo": {
                                 "annotations": [
                                     {
-                                        "version_added": "90"
+                                        "version_added": "90.0a1"
                                     }
                                 ]
                             }
@@ -1649,7 +1634,7 @@
                     "frameId": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "The id of the frame of the element where the context menu was clicked.",
@@ -1660,7 +1645,7 @@
                     "frameUrl": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "The URL of the frame of the element where the context menu was clicked, if it was in a frame.",
@@ -1670,7 +1655,7 @@
                     "linkText": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "If the element is a link, the text of that link.",
@@ -1680,7 +1665,7 @@
                     "linkUrl": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "If the element is a link, the URL it points to.",
@@ -1690,7 +1675,7 @@
                     "mediaType": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "One of <var>image</var>, <var>video</var>, or <var>audio</var> if the context menu was activated on one of these types of elements.",
@@ -1700,14 +1685,14 @@
                     "menuItemId": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "choices": [
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "type": "integer"
@@ -1715,7 +1700,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "type": "string"
@@ -1726,7 +1711,7 @@
                     "modifiers": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "An array of keyboard modifiers that were held while the menu item was clicked.",
@@ -1742,35 +1727,35 @@
                                 "Alt": {
                                     "annotations": [
                                         {
-                                            "version_added": "66"
+                                            "version_added": "66.0a1"
                                         }
                                     ]
                                 },
                                 "Command": {
                                     "annotations": [
                                         {
-                                            "version_added": "66"
+                                            "version_added": "66.0a1"
                                         }
                                     ]
                                 },
                                 "Ctrl": {
                                     "annotations": [
                                         {
-                                            "version_added": "66"
+                                            "version_added": "66.0a1"
                                         }
                                     ]
                                 },
                                 "MacCtrl": {
                                     "annotations": [
                                         {
-                                            "version_added": "66"
+                                            "version_added": "66.0a1"
                                         }
                                     ]
                                 },
                                 "Shift": {
                                     "annotations": [
                                         {
-                                            "version_added": "66"
+                                            "version_added": "66.0a1"
                                         }
                                     ]
                                 }
@@ -1782,7 +1767,7 @@
                     "pageUrl": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "The URL of the page where the menu item was clicked. This property is not set if the click occurred in a context where there is no current page, such as in a launcher context menu.",
@@ -1792,14 +1777,14 @@
                     "parentMenuItemId": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "choices": [
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "type": "integer"
@@ -1807,7 +1792,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "type": "string"
@@ -1820,7 +1805,7 @@
                         "$ref": "accounts.MailAccount",
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "deprecated": "Deprecated since Thunderbird 128 and removed in Manifest V3: The selectedAccount property has been replaced by the selectedFolders property, returning the root folder of the account.",
@@ -1831,7 +1816,7 @@
                         "$ref": "folders.MailFolder",
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "deprecated": "Deprecated since Thunderbird 128 and removed in Manifest V3: The selectedFolder property has been replaced by the selectedFolders property.",
@@ -1841,7 +1826,7 @@
                     "selectedFolders": {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "128.0a1"
                             }
                         ],
                         "description": "The selected folders in the folder pane. Only available for the <var>folder_pane</var> context. The <permission>accountsRead</permission> permission is required. The returned selection includes the folders which would be affected by a context action through Thunderbirds UI, which may not be the actuall selected folders. For example, if the user has multiple folders selected and opens the context menu for a folder outside that selection, only the folder for which the context menu was opened, is returned.",
@@ -1855,7 +1840,7 @@
                         "$ref": "messages.MessageList",
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "The selected message(s) in the message list (a.k.a. the thread pane). Only available for the <var>message_list</var> context. The <permission>messagesRead</permission> permission is required. The returned selection includes the messages which would be affected by a context action through Thunderbirds UI, which may not be the actuall selected messages. For example, if the user has multiple messages selected and opens the context menu for a message outside that selection, only the message for which the context menu was opened, is returned.",
@@ -1864,7 +1849,7 @@
                     "selectionText": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "The text for the context selection, if any.",
@@ -1874,7 +1859,7 @@
                     "srcUrl": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "Will be present for elements with a <em>src</em> URL.",
@@ -1884,7 +1869,7 @@
                     "targetElementId": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "An identifier of the clicked content element, if any. Use $(ref:menus.getTargetElement) in the page to find the corresponding element.",
@@ -1895,7 +1880,7 @@
                         "$ref": "extension.ViewType",
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "The type of view where the menu is clicked. May be unset if the menu is not associated with a view.",
@@ -1904,7 +1889,7 @@
                     "wasChecked": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "A flag indicating the state of a checkbox or radio item before it was clicked.",
@@ -1917,14 +1902,14 @@
             {
                 "annotations": [
                     {
-                        "version_added": "122"
+                        "version_added": "122.0a1"
                     }
                 ],
                 "choices": [
                     {
                         "annotations": [
                             {
-                                "version_added": "122"
+                                "version_added": "122.0a1"
                             }
                         ],
                         "format": "imageDataOrStrictRelativeUrl",
@@ -1933,7 +1918,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "122"
+                                "version_added": "122.0a1"
                             }
                         ],
                         "pattern": "^(moz-extension|blob|http|https):.*$",
@@ -1962,7 +1947,7 @@
                         "text": "See the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_action#choosing_icon_sizes'>MDN documentation about choosing icon sizes</a> for more information on this topic."
                     },
                     {
-                        "version_added": "124"
+                        "version_added": "124.0a1"
                     }
                 ],
                 "description": "A <em>dictionary object</em> to specify paths for multiple icons in different sizes, so the best matching icon can be used, instead of scaling a standard icon to fit the pixel density of the user's display. Each entry is a <em>name-value</em> pair, with <em>name</em> being a size and <em>value</em> being a $(ref:menus.MenuIconPath).",
@@ -1977,7 +1962,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "131"
+                        "version_added": "131.0a1"
                     }
                 ],
                 "description": "A predefined command to open an action popup.",
@@ -1990,21 +1975,21 @@
                     "_execute_browser_action": {
                         "annotations": [
                             {
-                                "version_added": "131"
+                                "version_added": "131.0a1"
                             }
                         ]
                     },
                     "_execute_compose_action": {
                         "annotations": [
                             {
-                                "version_added": "131"
+                                "version_added": "131.0a1"
                             }
                         ]
                     },
                     "_execute_message_display_action": {
                         "annotations": [
                             {
-                                "version_added": "131"
+                                "version_added": "131.0a1"
                             }
                         ]
                     }
