@@ -2,7 +2,7 @@
     {
         "annotations": [
             {
-                "version_added": "66"
+                "version_added": "66.0a1"
             }
         ],
         "applicationVersion": "140.9.0esr",
@@ -19,7 +19,7 @@
                             "accountsRead": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ]
                             }
@@ -33,7 +33,7 @@
     {
         "annotations": [
             {
-                "version_added": "66"
+                "version_added": "66.0a1"
             }
         ],
         "description": "The accounts API provides access to the user's server accounts.",
@@ -41,10 +41,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/accounts.html#oncreated-accountid-account"
-                    },
-                    {
-                        "version_added": "98"
+                        "version_added": "98.0a1"
                     }
                 ],
                 "description": "Fired when a new account has been created.",
@@ -54,7 +51,7 @@
                         "$ref": "MailAccountId",
                         "annotations": [
                             {
-                                "version_added": "98"
+                                "version_added": "98.0a1"
                             }
                         ],
                         "name": "accountId"
@@ -63,7 +60,7 @@
                         "$ref": "MailAccount",
                         "annotations": [
                             {
-                                "version_added": "98"
+                                "version_added": "98.0a1"
                             }
                         ],
                         "name": "account"
@@ -74,10 +71,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/accounts.html#ondeleted-accountid"
-                    },
-                    {
-                        "version_added": "98"
+                        "version_added": "98.0a1"
                     }
                 ],
                 "description": "Fired when an account has been removed.",
@@ -87,7 +81,7 @@
                         "$ref": "MailAccountId",
                         "annotations": [
                             {
-                                "version_added": "98"
+                                "version_added": "98.0a1"
                             }
                         ],
                         "name": "accountId"
@@ -98,10 +92,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/accounts.html#onupdated-accountid-changedvalues"
-                    },
-                    {
-                        "version_added": "98"
+                        "version_added": "98.0a1"
                     }
                 ],
                 "description": "Fired when a property of an account has been modified. Folders and identities of accounts are not monitored by this event, use the dedicated folder and identity events instead. A changed <var>defaultIdentity</var> is reported only after a different identity has been assigned as default identity, but not after a property of the default identity has been changed.",
@@ -111,7 +102,7 @@
                         "$ref": "MailAccountId",
                         "annotations": [
                             {
-                                "version_added": "98"
+                                "version_added": "98.0a1"
                             }
                         ],
                         "name": "accountId"
@@ -119,7 +110,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "98"
+                                "version_added": "98.0a1"
                             }
                         ],
                         "name": "changedValues",
@@ -128,7 +119,7 @@
                                 "$ref": "identities.MailIdentity",
                                 "annotations": [
                                     {
-                                        "version_added": "98"
+                                        "version_added": "98.0a1"
                                     }
                                 ],
                                 "description": "The default identity of this account."
@@ -136,7 +127,7 @@
                             "name": {
                                 "annotations": [
                                     {
-                                        "version_added": "98"
+                                        "version_added": "98.0a1"
                                     }
                                 ],
                                 "description": "The human-friendly name of this account.",
@@ -153,10 +144,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/accounts.html#list-includesubfolders"
-                    },
-                    {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "async": "callback",
@@ -166,7 +154,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "default": false,
@@ -178,7 +166,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91"
+                                "version_added": "91.0a1"
                             }
                         ],
                         "name": "callback",
@@ -187,7 +175,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "91"
+                                        "version_added": "91.0a1"
                                     }
                                 ],
                                 "items": {
@@ -204,10 +192,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/accounts.html#get-accountid-includesubfolders"
-                    },
-                    {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "async": "callback",
@@ -218,7 +203,7 @@
                         "$ref": "MailAccountId",
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "name": "accountId"
@@ -226,7 +211,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "default": false,
@@ -238,7 +223,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91"
+                                "version_added": "91.0a1"
                             }
                         ],
                         "name": "callback",
@@ -247,7 +232,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "91"
+                                        "version_added": "91.0a1"
                                     }
                                 ],
                                 "choices": [
@@ -255,14 +240,14 @@
                                         "$ref": "accounts.MailAccount",
                                         "annotations": [
                                             {
-                                                "version_added": "91"
+                                                "version_added": "91.0a1"
                                             }
                                         ]
                                     },
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "127"
+                                                "version_added": "127.0a1"
                                             }
                                         ],
                                         "type": "null"
@@ -278,10 +263,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/accounts.html#getdefault-includesubfolders"
-                    },
-                    {
-                        "version_added": "85"
+                        "version_added": "85.0a1"
                     }
                 ],
                 "async": "callback",
@@ -291,7 +273,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "default": false,
@@ -303,7 +285,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91"
+                                "version_added": "91.0a1"
                             }
                         ],
                         "name": "callback",
@@ -312,7 +294,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "91"
+                                        "version_added": "91.0a1"
                                     }
                                 ],
                                 "choices": [
@@ -320,14 +302,14 @@
                                         "$ref": "accounts.MailAccount",
                                         "annotations": [
                                             {
-                                                "version_added": "91"
+                                                "version_added": "91.0a1"
                                             }
                                         ]
                                     },
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "127"
+                                                "version_added": "127.0a1"
                                             }
                                         ],
                                         "type": "null"
@@ -349,10 +331,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/accounts.html#mailaccount"
-                    },
-                    {
-                        "version_added": "88"
+                        "version_added": "88.0a1"
                     }
                 ],
                 "description": "An object describing a mail account, as returned for example by the $(ref:accounts.list) and $(ref:accounts.get) methods.",
@@ -362,7 +341,7 @@
                         "$ref": "MailAccountId",
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "A unique identifier for this account."
@@ -370,7 +349,7 @@
                     "identities": {
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "The identities associated with this account. The default identity is listed first, others in no particular order.",
@@ -382,7 +361,7 @@
                     "name": {
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "The human-friendly name of this account.",
@@ -392,7 +371,7 @@
                         "$ref": "folders.MailFolder",
                         "annotations": [
                             {
-                                "version_added": "121"
+                                "version_added": "121.0a1"
                             }
                         ],
                         "description": "The root folder associated with this account."
@@ -400,7 +379,7 @@
                     "type": {
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "choices": [
@@ -408,7 +387,7 @@
                                 "$ref": "accounts.NativeMailAccountType",
                                 "annotations": [
                                     {
-                                        "version_added": "88"
+                                        "version_added": "88.0a1"
                                     }
                                 ]
                             },
@@ -416,7 +395,7 @@
                                 "$ref": "accounts.ExtensionMailAccountType",
                                 "annotations": [
                                     {
-                                        "version_added": "130"
+                                        "version_added": "130.0b2"
                                     }
                                 ]
                             }
@@ -429,10 +408,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/accounts.html#mailaccountid"
-                    },
-                    {
-                        "version_added": "121"
+                        "version_added": "121.0a1"
                     }
                 ],
                 "description": "A unique id representing a $(ref:accounts.MailAccount).",
@@ -442,10 +418,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/accounts.html#nativemailaccounttype"
-                    },
-                    {
-                        "version_added": "130"
+                        "version_added": "130.0b2"
                     }
                 ],
                 "description": "The type of an account natively supported by Thunderbird.",
@@ -460,35 +433,35 @@
                     "imap": {
                         "annotations": [
                             {
-                                "version_added": "130"
+                                "version_added": "130.0b2"
                             }
                         ]
                     },
                     "local": {
                         "annotations": [
                             {
-                                "version_added": "130"
+                                "version_added": "130.0b2"
                             }
                         ]
                     },
                     "nntp": {
                         "annotations": [
                             {
-                                "version_added": "130"
+                                "version_added": "130.0b2"
                             }
                         ]
                     },
                     "pop3": {
                         "annotations": [
                             {
-                                "version_added": "130"
+                                "version_added": "130.0b2"
                             }
                         ]
                     },
                     "rss": {
                         "annotations": [
                             {
-                                "version_added": "130"
+                                "version_added": "130.0b2"
                             }
                         ]
                     }
@@ -499,10 +472,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/accounts.html#extensionmailaccounttype"
-                    },
-                    {
-                        "version_added": "130"
+                        "version_added": "130.0b2"
                     }
                 ],
                 "description": "The type of an account which was added by an extension. For the time being there is no guarantee for account types added by extensions to always work as expected.",

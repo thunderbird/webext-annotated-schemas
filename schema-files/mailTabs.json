@@ -2,7 +2,7 @@
     {
         "annotations": [
             {
-                "version_added": "66"
+                "version_added": "66.0a1"
             }
         ],
         "description": "The mailTabs API allows to interact with Thunderbird's main mail tab (a.k.a 3-pane tab).",
@@ -10,10 +10,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#ondisplayedfolderchanged-tab-displayedfolder"
-                    },
-                    {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "description": "Fired when the displayed folder changes in any mail tab.",
@@ -23,7 +20,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "76"
+                                "version_added": "76.0a1"
                             }
                         ],
                         "name": "tab"
@@ -32,7 +29,7 @@
                         "$ref": "folders.MailFolder",
                         "annotations": [
                             {
-                                "version_added": "76"
+                                "version_added": "76.0a1"
                             }
                         ],
                         "name": "displayedFolder"
@@ -46,10 +43,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#onselectedmessageschanged-tab-selectedmessages"
-                    },
-                    {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "description": "Fired when the selected messages change in any mail tab.",
@@ -59,7 +53,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "76"
+                                "version_added": "76.0a1"
                             }
                         ],
                         "name": "tab"
@@ -68,7 +62,7 @@
                         "$ref": "messages.MessageList",
                         "annotations": [
                             {
-                                "version_added": "76"
+                                "version_added": "76.0a1"
                             }
                         ],
                         "name": "selectedMessages"
@@ -84,10 +78,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#query-queryinfo"
-                    },
-                    {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "async": "callback",
@@ -97,7 +88,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "default": {},
@@ -107,7 +98,7 @@
                             "active": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "Whether the tabs are active in their windows.",
@@ -117,7 +108,7 @@
                             "currentWindow": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "Whether the tabs are in the current window.",
@@ -127,7 +118,7 @@
                             "lastFocusedWindow": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "Whether the tabs are in the last focused window.",
@@ -137,7 +128,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "The ID of the parent window, or $(ref:windows.WINDOW_ID_CURRENT) for the current window.",
@@ -151,7 +142,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "name": "callback",
@@ -160,7 +151,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ],
                                 "items": {
@@ -177,10 +168,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#get-tabid"
-                    },
-                    {
-                        "version_added": "89"
+                        "version_added": "89.0a1"
                     }
                 ],
                 "async": "callback",
@@ -190,7 +178,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "description": "ID of the requested mail tab. Throws if the requested <var>tabId</var> does not belong to a mail tab.",
@@ -200,7 +188,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "name": "callback",
@@ -210,7 +198,7 @@
                                 "$ref": "mailTabs.MailTab",
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             }
@@ -223,10 +211,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#create-createproperties"
-                    },
-                    {
-                        "version_added": "121"
+                        "version_added": "121.0a1"
                     }
                 ],
                 "async": "callback",
@@ -237,7 +222,7 @@
                         "$ref": "mailTabs.MailTabProperties",
                         "annotations": [
                             {
-                                "version_added": "121"
+                                "version_added": "121.0a1"
                             }
                         ],
                         "default": {},
@@ -247,7 +232,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "121"
+                                "version_added": "121.0a1"
                             }
                         ],
                         "name": "callback",
@@ -257,7 +242,7 @@
                                 "$ref": "mailTabs.MailTab",
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ],
                                 "description": "Details about the created mail tab. Will contain the ID of the new tab.",
@@ -272,10 +257,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#update-tabid-updateproperties"
-                    },
-                    {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "async": "callback",
@@ -285,7 +267,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "Defaults to the active tab of the current window.",
@@ -298,7 +280,7 @@
                         "$ref": "mailTabs.MailTabProperties",
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "name": "updateProperties"
@@ -306,7 +288,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "121"
+                                "version_added": "121.0a1"
                             }
                         ],
                         "name": "callback",
@@ -316,7 +298,7 @@
                                 "$ref": "mailTabs.MailTab",
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ],
                                 "description": "Details about the updated mail tab.",
@@ -331,10 +313,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#getlistedmessages-tabid"
-                    },
-                    {
-                        "version_added": "121"
+                        "version_added": "121.0a1"
                     }
                 ],
                 "async": "callback",
@@ -344,7 +323,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "121"
+                                "version_added": "121.0a1"
                             }
                         ],
                         "description": "Defaults to the active tab of the current window.",
@@ -356,7 +335,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "121"
+                                "version_added": "121.0a1"
                             }
                         ],
                         "name": "callback",
@@ -366,7 +345,7 @@
                                 "$ref": "messages.MessageList",
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             }
@@ -382,10 +361,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#getselectedfolders-tabid"
-                    },
-                    {
-                        "version_added": "128"
+                        "version_added": "128.0b2"
                     }
                 ],
                 "async": "callback",
@@ -395,7 +371,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "128.0b2"
                             }
                         ],
                         "description": "Defaults to the active tab of the current window.",
@@ -407,7 +383,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "128.0b2"
                             }
                         ],
                         "name": "callback",
@@ -416,7 +392,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "128"
+                                        "version_added": "128.0b2"
                                     }
                                 ],
                                 "items": {
@@ -436,10 +412,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#getselectedmessages-tabid"
-                    },
-                    {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "async": "callback",
@@ -449,7 +422,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "Defaults to the active tab of the current window.",
@@ -461,7 +434,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "name": "callback",
@@ -471,7 +444,7 @@
                                 "$ref": "messages.MessageList",
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             }
@@ -487,10 +460,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#setselectedmessages-tabid-messageids"
-                    },
-                    {
-                        "version_added": "106"
+                        "version_added": "106.0a1"
                     }
                 ],
                 "async": true,
@@ -500,7 +470,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "106"
+                                "version_added": "106.0a1"
                             }
                         ],
                         "description": "Defaults to the active tab of the current window.",
@@ -512,7 +482,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "106"
+                                "version_added": "106.0a1"
                             }
                         ],
                         "description": "The IDs of the messages, which should be selected. The mail tab will switch to the folder of the selected messages. Throws if they belong to different folders. Array can be empty to deselect any currently selected message.",
@@ -532,10 +502,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#setquickfilter-tabid-properties"
-                    },
-                    {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "async": true,
@@ -545,7 +512,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "Defaults to the active tab of the current window.",
@@ -557,7 +524,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "name": "properties",
@@ -565,7 +532,7 @@
                             "attachment": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "Shows only messages with attachments.",
@@ -575,7 +542,7 @@
                             "contact": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "Shows only messages from people in the address book.",
@@ -585,7 +552,7 @@
                             "flagged": {
                                 "annotations": [
                                     {
-                                        "version_added": "68"
+                                        "version_added": "68.0a1"
                                     }
                                 ],
                                 "description": "Shows only flagged messages.",
@@ -595,7 +562,7 @@
                             "show": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "Shows or hides the Quick Filter bar.",
@@ -605,14 +572,14 @@
                             "tags": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "66"
+                                                "version_added": "66.0a1"
                                             }
                                         ],
                                         "type": "boolean"
@@ -621,7 +588,7 @@
                                         "$ref": "messages.tags.TagsDetail",
                                         "annotations": [
                                             {
-                                                "version_added": "66"
+                                                "version_added": "66.0a1"
                                             }
                                         ]
                                     }
@@ -633,7 +600,7 @@
                                 "$ref": "mailTabs.QuickFilterTextDetail",
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "Shows only messages matching the supplied text.",
@@ -642,7 +609,7 @@
                             "unread": {
                                 "annotations": [
                                     {
-                                        "version_added": "66"
+                                        "version_added": "66.0a1"
                                     }
                                 ],
                                 "description": "Shows only unread messages.",
@@ -661,10 +628,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#foldermode"
-                    },
-                    {
-                        "version_added": "127"
+                        "version_added": "127.0a1"
                     }
                 ],
                 "description": "A supported folder mode in the folder pane.",
@@ -680,42 +644,42 @@
                     "all": {
                         "annotations": [
                             {
-                                "version_added": "127"
+                                "version_added": "127.0a1"
                             }
                         ]
                     },
                     "favorite": {
                         "annotations": [
                             {
-                                "version_added": "127"
+                                "version_added": "127.0a1"
                             }
                         ]
                     },
                     "recent": {
                         "annotations": [
                             {
-                                "version_added": "127"
+                                "version_added": "127.0a1"
                             }
                         ]
                     },
                     "tags": {
                         "annotations": [
                             {
-                                "version_added": "127"
+                                "version_added": "127.0a1"
                             }
                         ]
                     },
                     "unified": {
                         "annotations": [
                             {
-                                "version_added": "127"
+                                "version_added": "127.0a1"
                             }
                         ]
                     },
                     "unread": {
                         "annotations": [
                             {
-                                "version_added": "127"
+                                "version_added": "127.0a1"
                             }
                         ]
                     }
@@ -726,10 +690,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#mailtab"
-                    },
-                    {
-                        "version_added": "89"
+                        "version_added": "89.0a1"
                     }
                 ],
                 "id": "MailTab",
@@ -737,7 +698,7 @@
                     "active": {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "type": "boolean"
@@ -746,7 +707,7 @@
                         "$ref": "folders.MailFolder",
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "description": "The folder displayed in the mail tab. The <permission>accountsRead</permission> permission is required for this property to be included.",
@@ -756,7 +717,7 @@
                         "$ref": "mailTabs.FolderMode",
                         "annotations": [
                             {
-                                "version_added": "127"
+                                "version_added": "127.0a1"
                             }
                         ],
                         "description": "The folder mode of the currently displayed folder.",
@@ -765,7 +726,7 @@
                     "folderModesEnabled": {
                         "annotations": [
                             {
-                                "version_added": "127"
+                                "version_added": "127.0a1"
                             }
                         ],
                         "description": "The enabled folder modes in the folder pane, and their sort order.",
@@ -779,7 +740,7 @@
                     "folderPaneVisible": {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "description": "Whether the folder pane is visible or not.",
@@ -789,7 +750,7 @@
                     "groupType": {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "128.0a1"
                             }
                         ],
                         "description": "Grouping type of the message list.",
@@ -802,21 +763,21 @@
                             "groupedBySortType": {
                                 "annotations": [
                                     {
-                                        "version_added": "128"
+                                        "version_added": "128.0a1"
                                     }
                                 ]
                             },
                             "groupedByThread": {
                                 "annotations": [
                                     {
-                                        "version_added": "128"
+                                        "version_added": "128.0a1"
                                     }
                                 ]
                             },
                             "ungrouped": {
                                 "annotations": [
                                     {
-                                        "version_added": "128"
+                                        "version_added": "128.0a1"
                                     }
                                 ]
                             }
@@ -827,7 +788,7 @@
                     "layout": {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "description": "The arrangement of the folder pane, message list pane, and message display pane.",
@@ -840,21 +801,21 @@
                             "standard": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "vertical": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "wide": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             }
@@ -864,7 +825,7 @@
                     "messagePaneVisible": {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "description": "Whether the message pane is visible or not.",
@@ -874,7 +835,7 @@
                     "sortOrder": {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "description": "The sort order of the message list.",
@@ -887,21 +848,21 @@
                             "ascending": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "descending": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "none": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             }
@@ -912,7 +873,7 @@
                     "sortType": {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "description": "The primary sort column of the message list.",
@@ -942,140 +903,140 @@
                             "account": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "attachments": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "author": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "correspondent": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "custom": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "date": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "flagged": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "id": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "junkStatus": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "location": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "none": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "priority": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "received": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "recipient": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "size": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "status": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "subject": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "tags": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "thread": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             },
                             "unread": {
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             }
@@ -1086,7 +1047,7 @@
                     "tabId": {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "128.0a1"
                             }
                         ],
                         "type": "integer"
@@ -1094,7 +1055,7 @@
                     "windowId": {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "type": "integer"
@@ -1105,10 +1066,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#mailtabproperties"
-                    },
-                    {
-                        "version_added": "121"
+                        "version_added": "121.0a1"
                     }
                 ],
                 "id": "MailTabProperties",
@@ -1117,7 +1075,7 @@
                         "$ref": "folders.MailFolderId",
                         "annotations": [
                             {
-                                "version_added": "127"
+                                "version_added": "127.0a1"
                             }
                         ],
                         "description": "Sets the folder displayed in the mail tab. Requires the <permission>accountsRead</permission> permission. The previous message selection in the given folder will be restored, if any.",
@@ -1127,7 +1085,7 @@
                         "$ref": "mailTabs.FolderMode",
                         "annotations": [
                             {
-                                "version_added": "127"
+                                "version_added": "127.0a1"
                             }
                         ],
                         "description": "Sets the currently used folder mode, enabling it if required. If used without also specifying <var>displayedFolder</var>, the currently selected folder is re-selected in the new folder mode, if possible.",
@@ -1136,7 +1094,7 @@
                     "folderModesEnabled": {
                         "annotations": [
                             {
-                                "version_added": "127"
+                                "version_added": "127.0a1"
                             }
                         ],
                         "description": "Set the enabled folder modes in the folder pane, and their sort order.",
@@ -1150,7 +1108,7 @@
                     "folderPaneVisible": {
                         "annotations": [
                             {
-                                "version_added": "121"
+                                "version_added": "121.0a1"
                             }
                         ],
                         "description": "Shows or hides the folder pane.",
@@ -1160,7 +1118,7 @@
                     "groupType": {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "128.0a1"
                             }
                         ],
                         "description": "Grouping type of the message list.",
@@ -1173,21 +1131,21 @@
                             "groupedBySortType": {
                                 "annotations": [
                                     {
-                                        "version_added": "128"
+                                        "version_added": "128.0a1"
                                     }
                                 ]
                             },
                             "groupedByThread": {
                                 "annotations": [
                                     {
-                                        "version_added": "128"
+                                        "version_added": "128.0a1"
                                     }
                                 ]
                             },
                             "ungrouped": {
                                 "annotations": [
                                     {
-                                        "version_added": "128"
+                                        "version_added": "128.0a1"
                                     }
                                 ]
                             }
@@ -1198,7 +1156,7 @@
                     "layout": {
                         "annotations": [
                             {
-                                "version_added": "121"
+                                "version_added": "121.0a1"
                             }
                         ],
                         "description": "Sets the arrangement of the folder pane, message list pane, and message display pane. Setting a layout will be applied to all mail tabs.",
@@ -1211,21 +1169,21 @@
                             "standard": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "vertical": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "wide": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             }
@@ -1236,7 +1194,7 @@
                     "messagePaneVisible": {
                         "annotations": [
                             {
-                                "version_added": "121"
+                                "version_added": "121.0a1"
                             }
                         ],
                         "description": "Shows or hides the message display pane.",
@@ -1246,7 +1204,7 @@
                     "sortOrder": {
                         "annotations": [
                             {
-                                "version_added": "121"
+                                "version_added": "121.0a1"
                             }
                         ],
                         "description": "Sorts the list of messages. <var>sortType</var> must also be given.",
@@ -1259,21 +1217,21 @@
                             "ascending": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "descending": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "none": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             }
@@ -1284,7 +1242,7 @@
                     "sortType": {
                         "annotations": [
                             {
-                                "version_added": "121"
+                                "version_added": "121.0a1"
                             }
                         ],
                         "description": "Sorts the list of messages. <var>sortOrder</var> must also be given.",
@@ -1314,140 +1272,140 @@
                             "account": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "attachments": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "author": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "correspondent": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "custom": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "date": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "flagged": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "id": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "junkStatus": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "location": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "none": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "priority": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "received": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "recipient": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "size": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "status": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "subject": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "tags": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "thread": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             },
                             "unread": {
                                 "annotations": [
                                     {
-                                        "version_added": "121"
+                                        "version_added": "121.0a1"
                                     }
                                 ]
                             }
@@ -1461,10 +1419,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#quickfiltertextdetail"
-                    },
-                    {
-                        "version_added": "66"
+                        "version_added": "66.0a1"
                     }
                 ],
                 "id": "QuickFilterTextDetail",
@@ -1472,7 +1427,7 @@
                     "author": {
                         "annotations": [
                             {
-                                "version_added": "68"
+                                "version_added": "68.0a1"
                             }
                         ],
                         "description": "Shows messages where <var>text</var> matches the author.",
@@ -1482,7 +1437,7 @@
                     "body": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "Shows messages where <var>text</var> matches the message body.",
@@ -1492,7 +1447,7 @@
                     "recipients": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "Shows messages where <var>text</var> matches the recipients.",
@@ -1502,7 +1457,7 @@
                     "subject": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "Shows messages where <var>text</var> matches the subject.",
@@ -1512,7 +1467,7 @@
                     "text": {
                         "annotations": [
                             {
-                                "version_added": "66"
+                                "version_added": "66.0a1"
                             }
                         ],
                         "description": "String to match against the <var>recipients</var>, <var>author</var>, <var>subject</var>, or <var>body</var>.",

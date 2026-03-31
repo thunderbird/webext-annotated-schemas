@@ -2,7 +2,7 @@
     {
         "annotations": [
             {
-                "version_added": "74"
+                "version_added": "74.0a1"
             }
         ],
         "applicationVersion": "140.9.0esr",
@@ -21,21 +21,21 @@
                             "compose": {
                                 "annotations": [
                                     {
-                                        "version_added": "74"
+                                        "version_added": "74.0a1"
                                     }
                                 ]
                             },
                             "compose.save": {
                                 "annotations": [
                                     {
-                                        "version_added": "102"
+                                        "version_added": "102.0a1"
                                     }
                                 ]
                             },
                             "compose.send": {
                                 "annotations": [
                                     {
-                                        "version_added": "90"
+                                        "version_added": "90.0a1"
                                     }
                                 ]
                             }
@@ -49,7 +49,7 @@
     {
         "annotations": [
             {
-                "version_added": "67"
+                "version_added": "67.0a1"
             }
         ],
         "description": "The compose API allows to interact with the message composition window.",
@@ -57,10 +57,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#onbeforesend-tab-details"
-                    },
-                    {
-                        "version_added": "74"
+                        "version_added": "74.0a1"
                     }
                 ],
                 "description": "Fired when a message is about to be sent from the compose window. This is a user input event handler. For asynchronous listeners some <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/User_actions'>restrictions</a> apply.",
@@ -70,7 +67,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0a1"
                             }
                         ],
                         "name": "tab"
@@ -79,7 +76,7 @@
                         "$ref": "ComposeDetails",
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0b2"
                             }
                         ],
                         "description": "The current state of the compose window. This is functionally the same as calling the $(ref:compose.getComposeDetails) function.",
@@ -94,7 +91,7 @@
                         "cancel": {
                             "annotations": [
                                 {
-                                    "version_added": "74"
+                                    "version_added": "74.0a1"
                                 }
                             ],
                             "description": "Cancels the send.",
@@ -105,7 +102,7 @@
                             "$ref": "ComposeDetails",
                             "annotations": [
                                 {
-                                    "version_added": "74"
+                                    "version_added": "74.0a1"
                                 }
                             ],
                             "description": "Updates the compose window. This is functionally the same as calling the $(ref:compose.setComposeDetails) function.",
@@ -119,10 +116,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#onaftersend-tab-sendinfo"
-                    },
-                    {
-                        "version_added": "105"
+                        "version_added": "105.0a1"
                     }
                 ],
                 "description": "Fired when sending a message succeeded or failed.",
@@ -132,7 +126,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "105"
+                                "version_added": "105.0a1"
                             }
                         ],
                         "name": "tab"
@@ -140,7 +134,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "105"
+                                "version_added": "105.0a1"
                             }
                         ],
                         "name": "sendInfo",
@@ -148,7 +142,7 @@
                             "error": {
                                 "annotations": [
                                     {
-                                        "version_added": "105"
+                                        "version_added": "105.0a1"
                                     }
                                 ],
                                 "description": "An error description, if sending the message failed.",
@@ -158,7 +152,7 @@
                             "headerMessageId": {
                                 "annotations": [
                                     {
-                                        "version_added": "105"
+                                        "version_added": "105.0a1"
                                     }
                                 ],
                                 "description": "The header messageId of the outgoing message. Only included for actually sent messages.",
@@ -168,7 +162,7 @@
                             "messages": {
                                 "annotations": [
                                     {
-                                        "version_added": "105"
+                                        "version_added": "105.0a1"
                                     }
                                 ],
                                 "description": "Copies of the sent message. The number of created copies depends on the applied file carbon copy configuration (fcc).",
@@ -180,7 +174,7 @@
                             "mode": {
                                 "annotations": [
                                     {
-                                        "version_added": "105"
+                                        "version_added": "105.0a1"
                                     }
                                 ],
                                 "description": "The used send mode.",
@@ -192,14 +186,14 @@
                                     "sendLater": {
                                         "annotations": [
                                             {
-                                                "version_added": "105"
+                                                "version_added": "105.0a1"
                                             }
                                         ]
                                     },
                                     "sendNow": {
                                         "annotations": [
                                             {
-                                                "version_added": "105"
+                                                "version_added": "105.0a1"
                                             }
                                         ]
                                     }
@@ -218,10 +212,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#onaftersave-tab-saveinfo"
-                    },
-                    {
-                        "version_added": "105"
+                        "version_added": "105.0a1"
                     }
                 ],
                 "description": "Fired when saving a message as draft or template succeeded or failed.",
@@ -231,7 +222,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "105"
+                                "version_added": "105.0a1"
                             }
                         ],
                         "name": "tab"
@@ -239,7 +230,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "105"
+                                "version_added": "105.0a1"
                             }
                         ],
                         "name": "saveInfo",
@@ -247,7 +238,7 @@
                             "error": {
                                 "annotations": [
                                     {
-                                        "version_added": "105"
+                                        "version_added": "105.0a1"
                                     }
                                 ],
                                 "description": "An error description, if saving the message failed.",
@@ -257,7 +248,7 @@
                             "messages": {
                                 "annotations": [
                                     {
-                                        "version_added": "105"
+                                        "version_added": "105.0a1"
                                     }
                                 ],
                                 "description": "The saved message(s). The number of saved messages depends on the applied file carbon copy configuration (fcc).",
@@ -269,7 +260,7 @@
                             "mode": {
                                 "annotations": [
                                     {
-                                        "version_added": "105"
+                                        "version_added": "105.0a1"
                                     }
                                 ],
                                 "description": "The used save mode.",
@@ -282,21 +273,21 @@
                                     "autoSave": {
                                         "annotations": [
                                             {
-                                                "version_added": "125"
+                                                "version_added": "125.0a1"
                                             }
                                         ]
                                     },
                                     "draft": {
                                         "annotations": [
                                             {
-                                                "version_added": "105"
+                                                "version_added": "105.0a1"
                                             }
                                         ]
                                     },
                                     "template": {
                                         "annotations": [
                                             {
-                                                "version_added": "105"
+                                                "version_added": "105.0a1"
                                             }
                                         ]
                                     }
@@ -315,10 +306,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#onattachmentadded-tab-attachment"
-                    },
-                    {
-                        "version_added": "78"
+                        "version_added": "78.0a1"
                     }
                 ],
                 "description": "Fired when an attachment is added to a message being composed.",
@@ -328,7 +316,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0a1"
                             }
                         ],
                         "name": "tab"
@@ -337,7 +325,7 @@
                         "$ref": "ComposeAttachment",
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0a1"
                             }
                         ],
                         "name": "attachment"
@@ -351,10 +339,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#onattachmentremoved-tab-attachmentid"
-                    },
-                    {
-                        "version_added": "78"
+                        "version_added": "78.0a1"
                     }
                 ],
                 "description": "Fired when an attachment is removed from a message being composed.",
@@ -364,7 +349,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0a1"
                             }
                         ],
                         "name": "tab"
@@ -372,7 +357,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0a1"
                             }
                         ],
                         "name": "attachmentId",
@@ -387,10 +372,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#onidentitychanged-tab-identityid"
-                    },
-                    {
-                        "version_added": "78"
+                        "version_added": "78.0b2"
                     }
                 ],
                 "description": "Fired when the user changes the identity that will be used to send a message being composed.",
@@ -400,7 +382,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0b2"
                             }
                         ],
                         "name": "tab"
@@ -408,7 +390,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0b2"
                             }
                         ],
                         "name": "identityId",
@@ -423,10 +405,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#oncomposestatechanged-tab-state"
-                    },
-                    {
-                        "version_added": "90"
+                        "version_added": "90.0a1"
                     }
                 ],
                 "description": "Fired when the state of the message composer changed.",
@@ -436,7 +415,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "90"
+                                "version_added": "90.0a1"
                             }
                         ],
                         "name": "tab"
@@ -445,7 +424,7 @@
                         "$ref": "ComposeState",
                         "annotations": [
                             {
-                                "version_added": "90"
+                                "version_added": "90.0a1"
                             }
                         ],
                         "name": "state"
@@ -456,10 +435,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#onactivedictionarieschanged-tab-dictionaries"
-                    },
-                    {
-                        "version_added": "102"
+                        "version_added": "102.0a1"
                     }
                 ],
                 "description": "Fired when one or more dictionaries have been activated or deactivated.",
@@ -469,7 +445,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "102"
+                                "version_added": "102.0a1"
                             }
                         ],
                         "name": "tab"
@@ -478,7 +454,7 @@
                         "$ref": "ComposeDictionaries",
                         "annotations": [
                             {
-                                "version_added": "102"
+                                "version_added": "102.0a1"
                             }
                         ],
                         "name": "dictionaries"
@@ -494,10 +470,7 @@
                         "note": "The compose format can be set by <var>details.isPlainText</var> or by specifying only one of <var>details.body</var> or <var>details.plainTextBody</var>. Otherwise the default compose format of the selected identity is used. If no identity is specified, this function is using the default identity and not the identity of the referenced message."
                     },
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#beginnew-messageid-details"
-                    },
-                    {
-                        "version_added": "67"
+                        "version_added": "67.0a1"
                     }
                 ],
                 "async": "callback",
@@ -508,7 +481,7 @@
                         "$ref": "messages.MessageId",
                         "annotations": [
                             {
-                                "version_added": "67"
+                                "version_added": "67.0a1"
                             }
                         ],
                         "description": "If specified, the message or template to edit as a new message.",
@@ -519,7 +492,7 @@
                         "$ref": "ComposeDetails",
                         "annotations": [
                             {
-                                "version_added": "84"
+                                "version_added": "84.0a1"
                             }
                         ],
                         "name": "details",
@@ -528,7 +501,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "name": "callback",
@@ -538,7 +511,7 @@
                                 "$ref": "tabs.Tab",
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ],
                                 "name": "return"
@@ -555,10 +528,7 @@
                         "note": "The compose format can be set by <var>details.isPlainText</var> or by specifying only one of <var>details.body</var> or <var>details.plainTextBody</var>. Otherwise the default compose format of the selected identity is used. If no identity is specified, this function is using the default identity and not the identity of the referenced message."
                     },
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#beginreply-messageid-replytype-details"
-                    },
-                    {
-                        "version_added": "67"
+                        "version_added": "67.0a1"
                     }
                 ],
                 "async": "callback",
@@ -569,7 +539,7 @@
                         "$ref": "messages.MessageId",
                         "annotations": [
                             {
-                                "version_added": "67"
+                                "version_added": "67.0a1"
                             }
                         ],
                         "description": "The message to reply to, as retrieved using other APIs.",
@@ -578,7 +548,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "67"
+                                "version_added": "67.0a1"
                             }
                         ],
                         "enum": [
@@ -590,21 +560,21 @@
                             "replyToAll": {
                                 "annotations": [
                                     {
-                                        "version_added": "67"
+                                        "version_added": "67.0a1"
                                     }
                                 ]
                             },
                             "replyToList": {
                                 "annotations": [
                                     {
-                                        "version_added": "67"
+                                        "version_added": "67.0a1"
                                     }
                                 ]
                             },
                             "replyToSender": {
                                 "annotations": [
                                     {
-                                        "version_added": "67"
+                                        "version_added": "67.0a1"
                                     }
                                 ]
                             }
@@ -617,7 +587,7 @@
                         "$ref": "ComposeDetails",
                         "annotations": [
                             {
-                                "version_added": "76"
+                                "version_added": "76.0a1"
                             }
                         ],
                         "name": "details",
@@ -626,7 +596,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "name": "callback",
@@ -636,7 +606,7 @@
                                 "$ref": "tabs.Tab",
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ],
                                 "name": "return"
@@ -653,10 +623,7 @@
                         "note": "The compose format can be set by <var>details.isPlainText</var> or by specifying only one of <var>details.body</var> or <var>details.plainTextBody</var>. Otherwise the default compose format of the selected identity is used. If no identity is specified, this function is using the default identity and not the identity of the referenced message."
                     },
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#beginforward-messageid-forwardtype-details"
-                    },
-                    {
-                        "version_added": "67"
+                        "version_added": "67.0a1"
                     }
                 ],
                 "async": "callback",
@@ -667,7 +634,7 @@
                         "$ref": "messages.MessageId",
                         "annotations": [
                             {
-                                "version_added": "67"
+                                "version_added": "67.0a1"
                             }
                         ],
                         "description": "The message to forward, as retrieved using other APIs.",
@@ -676,7 +643,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "67"
+                                "version_added": "67.0a1"
                             }
                         ],
                         "enum": [
@@ -687,14 +654,14 @@
                             "forwardAsAttachment": {
                                 "annotations": [
                                     {
-                                        "version_added": "67"
+                                        "version_added": "67.0a1"
                                     }
                                 ]
                             },
                             "forwardInline": {
                                 "annotations": [
                                     {
-                                        "version_added": "67"
+                                        "version_added": "67.0a1"
                                     }
                                 ]
                             }
@@ -707,7 +674,7 @@
                         "$ref": "ComposeDetails",
                         "annotations": [
                             {
-                                "version_added": "67"
+                                "version_added": "67.0a1"
                             }
                         ],
                         "name": "details",
@@ -716,7 +683,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "name": "callback",
@@ -726,7 +693,7 @@
                                 "$ref": "tabs.Tab",
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ],
                                 "name": "return"
@@ -740,10 +707,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#getcomposedetails-tabid"
-                    },
-                    {
-                        "version_added": "74"
+                        "version_added": "74.0a1"
                     }
                 ],
                 "async": "callback",
@@ -753,7 +717,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0a1"
                             }
                         ],
                         "minimum": 0,
@@ -763,7 +727,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "89"
+                                "version_added": "89.0a1"
                             }
                         ],
                         "name": "callback",
@@ -773,7 +737,7 @@
                                 "$ref": "ComposeDetails",
                                 "annotations": [
                                     {
-                                        "version_added": "89"
+                                        "version_added": "89.0a1"
                                     }
                                 ]
                             }
@@ -795,10 +759,7 @@
                         "note": "The compose format of an existing compose window cannot be changed."
                     },
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#setcomposedetails-tabid-details"
-                    },
-                    {
-                        "version_added": "74"
+                        "version_added": "74.0a1"
                     }
                 ],
                 "async": true,
@@ -808,7 +769,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0a1"
                             }
                         ],
                         "minimum": 0,
@@ -819,7 +780,7 @@
                         "$ref": "ComposeDetails",
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0a1"
                             }
                         ],
                         "name": "details"
@@ -833,10 +794,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#getactivedictionaries-tabid"
-                    },
-                    {
-                        "version_added": "102"
+                        "version_added": "102.0a1"
                     }
                 ],
                 "async": "callback",
@@ -846,7 +804,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "102"
+                                "version_added": "102.0a1"
                             }
                         ],
                         "minimum": 0,
@@ -856,7 +814,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "102"
+                                "version_added": "102.0a1"
                             }
                         ],
                         "name": "callback",
@@ -866,7 +824,7 @@
                                 "$ref": "ComposeDictionaries",
                                 "annotations": [
                                     {
-                                        "version_added": "102"
+                                        "version_added": "102.0a1"
                                     }
                                 ]
                             }
@@ -882,10 +840,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#setactivedictionaries-tabid-activedictionaries"
-                    },
-                    {
-                        "version_added": "102"
+                        "version_added": "102.0a1"
                     }
                 ],
                 "async": true,
@@ -895,7 +850,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "102"
+                                "version_added": "102.0a1"
                             }
                         ],
                         "minimum": 0,
@@ -905,7 +860,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "102"
+                                "version_added": "102.0a1"
                             }
                         ],
                         "items": {
@@ -923,10 +878,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#listattachments-tabid"
-                    },
-                    {
-                        "version_added": "78"
+                        "version_added": "78.0a1"
                     }
                 ],
                 "async": "callback",
@@ -936,7 +888,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0a1"
                             }
                         ],
                         "name": "tabId",
@@ -945,7 +897,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "96"
+                                "version_added": "96.0a1"
                             }
                         ],
                         "name": "callback",
@@ -954,7 +906,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "96"
+                                        "version_added": "96.0a1"
                                     }
                                 ],
                                 "items": {
@@ -974,10 +926,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#getattachmentfile-id"
-                    },
-                    {
-                        "version_added": "98"
+                        "version_added": "98.0a1"
                     }
                 ],
                 "async": "callback",
@@ -987,7 +936,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "98"
+                                "version_added": "98.0a1"
                             }
                         ],
                         "description": "The unique identifier for the attachment.",
@@ -997,7 +946,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "98"
+                                "version_added": "98.0a1"
                             }
                         ],
                         "name": "callback",
@@ -1007,7 +956,7 @@
                                 "additionalProperties": true,
                                 "annotations": [
                                     {
-                                        "version_added": "98"
+                                        "version_added": "98.0a1"
                                     }
                                 ],
                                 "isInstanceOf": "File",
@@ -1022,10 +971,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#addattachment-tabid-attachment"
-                    },
-                    {
-                        "version_added": "78"
+                        "version_added": "78.0a1"
                     }
                 ],
                 "async": "callback",
@@ -1035,7 +981,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0a1"
                             }
                         ],
                         "name": "tabId",
@@ -1044,7 +990,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0a1"
                             }
                         ],
                         "choices": [
@@ -1052,7 +998,7 @@
                                 "$ref": "FileAttachment",
                                 "annotations": [
                                     {
-                                        "version_added": "78"
+                                        "version_added": "78.0a1"
                                     }
                                 ]
                             },
@@ -1060,7 +1006,7 @@
                                 "$ref": "ComposeAttachment",
                                 "annotations": [
                                     {
-                                        "version_added": "98"
+                                        "version_added": "98.0a1"
                                     }
                                 ]
                             }
@@ -1070,7 +1016,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "96"
+                                "version_added": "96.0a1"
                             }
                         ],
                         "name": "callback",
@@ -1080,7 +1026,7 @@
                                 "$ref": "ComposeAttachment",
                                 "annotations": [
                                     {
-                                        "version_added": "96"
+                                        "version_added": "96.0a1"
                                     }
                                 ]
                             }
@@ -1096,10 +1042,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#updateattachment-tabid-attachmentid-attachment"
-                    },
-                    {
-                        "version_added": "78"
+                        "version_added": "78.0a1"
                     }
                 ],
                 "async": "callback",
@@ -1109,7 +1052,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0a1"
                             }
                         ],
                         "name": "tabId",
@@ -1118,7 +1061,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0a1"
                             }
                         ],
                         "name": "attachmentId",
@@ -1128,7 +1071,7 @@
                         "$ref": "FileAttachment",
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0a1"
                             }
                         ],
                         "name": "attachment"
@@ -1136,7 +1079,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "96"
+                                "version_added": "96.0a1"
                             }
                         ],
                         "name": "callback",
@@ -1146,7 +1089,7 @@
                                 "$ref": "ComposeAttachment",
                                 "annotations": [
                                     {
-                                        "version_added": "96"
+                                        "version_added": "96.0a1"
                                     }
                                 ]
                             }
@@ -1162,10 +1105,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#removeattachment-tabid-attachmentid"
-                    },
-                    {
-                        "version_added": "78"
+                        "version_added": "78.0a1"
                     }
                 ],
                 "async": true,
@@ -1175,7 +1115,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0a1"
                             }
                         ],
                         "name": "tabId",
@@ -1184,7 +1124,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0a1"
                             }
                         ],
                         "name": "attachmentId",
@@ -1199,10 +1139,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#sendmessage-tabid-options"
-                    },
-                    {
-                        "version_added": "90"
+                        "version_added": "90.0a1"
                     }
                 ],
                 "async": "callback",
@@ -1212,7 +1149,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "90"
+                                "version_added": "90.0a1"
                             }
                         ],
                         "name": "tabId",
@@ -1221,7 +1158,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "90"
+                                "version_added": "90.0a1"
                             }
                         ],
                         "name": "options",
@@ -1230,7 +1167,7 @@
                             "mode": {
                                 "annotations": [
                                     {
-                                        "version_added": "90"
+                                        "version_added": "90.0a1"
                                     }
                                 ],
                                 "enum": [
@@ -1242,21 +1179,21 @@
                                     "default": {
                                         "annotations": [
                                             {
-                                                "version_added": "90"
+                                                "version_added": "90.0a1"
                                             }
                                         ]
                                     },
                                     "sendLater": {
                                         "annotations": [
                                             {
-                                                "version_added": "90"
+                                                "version_added": "90.0a1"
                                             }
                                         ]
                                     },
                                     "sendNow": {
                                         "annotations": [
                                             {
-                                                "version_added": "90"
+                                                "version_added": "90.0a1"
                                             }
                                         ]
                                     }
@@ -1269,7 +1206,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "90"
+                                "version_added": "90.0a1"
                             }
                         ],
                         "name": "callback",
@@ -1278,7 +1215,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "90"
+                                        "version_added": "90.0a1"
                                     }
                                 ],
                                 "name": "return",
@@ -1286,7 +1223,7 @@
                                     "headerMessageId": {
                                         "annotations": [
                                             {
-                                                "version_added": "102"
+                                                "version_added": "102.0a1"
                                             }
                                         ],
                                         "description": "The header messageId of the outgoing message. Only included for actually sent messages.",
@@ -1296,7 +1233,7 @@
                                     "messages": {
                                         "annotations": [
                                             {
-                                                "version_added": "102"
+                                                "version_added": "102.0a1"
                                             }
                                         ],
                                         "description": "Copies of the sent message. The number of created copies depends on the applied file carbon copy configuration (fcc).",
@@ -1308,7 +1245,7 @@
                                     "mode": {
                                         "annotations": [
                                             {
-                                                "version_added": "102"
+                                                "version_added": "102.0a1"
                                             }
                                         ],
                                         "description": "The used send mode.",
@@ -1320,14 +1257,14 @@
                                             "sendLater": {
                                                 "annotations": [
                                                     {
-                                                        "version_added": "102"
+                                                        "version_added": "102.0a1"
                                                     }
                                                 ]
                                             },
                                             "sendNow": {
                                                 "annotations": [
                                                     {
-                                                        "version_added": "102"
+                                                        "version_added": "102.0a1"
                                                     }
                                                 ]
                                             }
@@ -1349,10 +1286,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#savemessage-tabid-options"
-                    },
-                    {
-                        "version_added": "102"
+                        "version_added": "102.0a1"
                     }
                 ],
                 "async": "callback",
@@ -1362,7 +1296,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "102"
+                                "version_added": "102.0a1"
                             }
                         ],
                         "name": "tabId",
@@ -1371,7 +1305,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "102"
+                                "version_added": "102.0a1"
                             }
                         ],
                         "name": "options",
@@ -1380,7 +1314,7 @@
                             "mode": {
                                 "annotations": [
                                     {
-                                        "version_added": "102"
+                                        "version_added": "102.0a1"
                                     }
                                 ],
                                 "enum": [
@@ -1391,14 +1325,14 @@
                                     "draft": {
                                         "annotations": [
                                             {
-                                                "version_added": "102"
+                                                "version_added": "102.0a1"
                                             }
                                         ]
                                     },
                                     "template": {
                                         "annotations": [
                                             {
-                                                "version_added": "102"
+                                                "version_added": "102.0a1"
                                             }
                                         ]
                                     }
@@ -1411,7 +1345,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "102"
+                                "version_added": "102.0a1"
                             }
                         ],
                         "name": "callback",
@@ -1420,7 +1354,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "102"
+                                        "version_added": "102.0a1"
                                     }
                                 ],
                                 "name": "return",
@@ -1428,7 +1362,7 @@
                                     "messages": {
                                         "annotations": [
                                             {
-                                                "version_added": "102"
+                                                "version_added": "102.0a1"
                                             }
                                         ],
                                         "description": "The saved message(s). The number of saved messages depends on the applied file carbon copy configuration (fcc).",
@@ -1440,7 +1374,7 @@
                                     "mode": {
                                         "annotations": [
                                             {
-                                                "version_added": "102"
+                                                "version_added": "102.0a1"
                                             }
                                         ],
                                         "description": "The used save mode.",
@@ -1452,14 +1386,14 @@
                                             "draft": {
                                                 "annotations": [
                                                     {
-                                                        "version_added": "102"
+                                                        "version_added": "102.0a1"
                                                     }
                                                 ]
                                             },
                                             "template": {
                                                 "annotations": [
                                                     {
-                                                        "version_added": "102"
+                                                        "version_added": "102.0a1"
                                                     }
                                                 ]
                                             }
@@ -1481,10 +1415,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#getcomposestate-tabid"
-                    },
-                    {
-                        "version_added": "90"
+                        "version_added": "90.0a1"
                     }
                 ],
                 "async": "callback",
@@ -1494,7 +1425,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "90"
+                                "version_added": "90.0a1"
                             }
                         ],
                         "name": "tabId",
@@ -1503,7 +1434,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "90"
+                                "version_added": "90.0a1"
                             }
                         ],
                         "name": "callback",
@@ -1513,7 +1444,7 @@
                                 "$ref": "ComposeState",
                                 "annotations": [
                                     {
-                                        "version_added": "90"
+                                        "version_added": "90.0a1"
                                     }
                                 ],
                                 "name": "return"
@@ -1530,17 +1461,14 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#composerecipient"
-                    },
-                    {
-                        "version_added": "67"
+                        "version_added": "67.0a1"
                     }
                 ],
                 "choices": [
                     {
                         "annotations": [
                             {
-                                "version_added": "67"
+                                "version_added": "67.0a1"
                             }
                         ],
                         "description": "A name and email address in the format <var>Name <email@example.com></var>, or just an email address.",
@@ -1549,14 +1477,14 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "67"
+                                "version_added": "67.0a1"
                             }
                         ],
                         "properties": {
                             "nodeId": {
                                 "annotations": [
                                     {
-                                        "version_added": "128"
+                                        "version_added": "128.0a1"
                                     }
                                 ],
                                 "description": "The ID of a contact or mailing list node from the $(doc:addressBook.contacts) or $(doc:addressBook.mailingLists).",
@@ -1565,7 +1493,7 @@
                             "type": {
                                 "annotations": [
                                     {
-                                        "version_added": "67"
+                                        "version_added": "67.0a1"
                                     }
                                 ],
                                 "description": "Which sort of object this ID is for.",
@@ -1577,14 +1505,14 @@
                                     "contact": {
                                         "annotations": [
                                             {
-                                                "version_added": "67"
+                                                "version_added": "67.0a1"
                                             }
                                         ]
                                     },
                                     "mailingList": {
                                         "annotations": [
                                             {
-                                                "version_added": "67"
+                                                "version_added": "67.0a1"
                                             }
                                         ]
                                     }
@@ -1600,10 +1528,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#composerecipientlist"
-                    },
-                    {
-                        "version_added": "74"
+                        "version_added": "74.0a1"
                     }
                 ],
                 "choices": [
@@ -1611,14 +1536,14 @@
                         "$ref": "ComposeRecipient",
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0a1"
                             }
                         ]
                     },
                     {
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0a1"
                             }
                         ],
                         "items": {
@@ -1632,10 +1557,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#composestate"
-                    },
-                    {
-                        "version_added": "90"
+                        "version_added": "90.0a1"
                     }
                 ],
                 "description": "Represent the state of the message composer.",
@@ -1644,7 +1566,7 @@
                     "canSendLater": {
                         "annotations": [
                             {
-                                "version_added": "90"
+                                "version_added": "90.0a1"
                             }
                         ],
                         "description": "The message can be send later.",
@@ -1653,7 +1575,7 @@
                     "canSendNow": {
                         "annotations": [
                             {
-                                "version_added": "90"
+                                "version_added": "90.0a1"
                             }
                         ],
                         "description": "The message can be send now.",
@@ -1665,10 +1587,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#composedetails"
-                    },
-                    {
-                        "version_added": "74"
+                        "version_added": "74.0a1"
                     }
                 ],
                 "description": "Used by various functions to represent the state of a message being composed. Note that functions using this type may have a partial implementation.",
@@ -1678,7 +1597,7 @@
                         "$ref": "folders.MailFolderId",
                         "annotations": [
                             {
-                                "version_added": "127"
+                                "version_added": "127.0a1"
                             }
                         ],
                         "description": "An additional fcc folder which can be selected while composing the message. Cleared when set to <var>null</var>. The permission <permission>accountsRead</permission> is required to use this property.",
@@ -1687,7 +1606,7 @@
                     "attachPublicPGPKey": {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "128.0a1"
                             }
                         ],
                         "description": "Whether the public OpenPGP key of the sending identity should be attached to the message.",
@@ -1700,7 +1619,7 @@
                                 "note": "If the value has not been modified, selecting a different identity will load the default value of the new identity."
                             },
                             {
-                                "version_added": "102"
+                                "version_added": "102.0a1"
                             }
                         ],
                         "description": "Whether or not the vCard of the used identity will be attached to the message during send.",
@@ -1710,7 +1629,7 @@
                     "attachments": {
                         "annotations": [
                             {
-                                "version_added": "82"
+                                "version_added": "82.0a1"
                             }
                         ],
                         "description": "Only used in the begin* functions. Attachments to add to the message.",
@@ -1720,7 +1639,7 @@
                                     "$ref": "FileAttachment",
                                     "annotations": [
                                         {
-                                            "version_added": "82"
+                                            "version_added": "82.0a1"
                                         }
                                     ]
                                 },
@@ -1728,7 +1647,7 @@
                                     "$ref": "ComposeAttachment",
                                     "annotations": [
                                         {
-                                            "version_added": "98"
+                                            "version_added": "98.0a1"
                                         }
                                     ]
                                 }
@@ -1741,7 +1660,7 @@
                         "$ref": "ComposeRecipientList",
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0a1"
                             }
                         ],
                         "optional": true
@@ -1749,7 +1668,7 @@
                     "body": {
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0a1"
                             }
                         ],
                         "description": "The HTML content of the message.",
@@ -1760,7 +1679,7 @@
                         "$ref": "ComposeRecipientList",
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0a1"
                             }
                         ],
                         "optional": true
@@ -1768,7 +1687,7 @@
                     "customHeaders": {
                         "annotations": [
                             {
-                                "version_added": "100"
+                                "version_added": "100.0a1"
                             }
                         ],
                         "description": "Array of custom headers. Headers will be returned in <em>Http-Header-Case</em> (a.k.a. <em>Train-Case</em>). Set an empty array to clear all custom headers.",
@@ -1781,7 +1700,7 @@
                     "deliveryFormat": {
                         "annotations": [
                             {
-                                "version_added": "102"
+                                "version_added": "102.0a1"
                             }
                         ],
                         "description": "Defines the MIME format of the sent message (ignored on plain text messages). Defaults to <var>auto</var>, which will send html messages as plain text, if they do not include any formatting, and as <var>both</var> otherwise (a multipart/mixed message).",
@@ -1795,28 +1714,28 @@
                             "auto": {
                                 "annotations": [
                                     {
-                                        "version_added": "102"
+                                        "version_added": "102.0a1"
                                     }
                                 ]
                             },
                             "both": {
                                 "annotations": [
                                     {
-                                        "version_added": "102"
+                                        "version_added": "102.0a1"
                                     }
                                 ]
                             },
                             "html": {
                                 "annotations": [
                                     {
-                                        "version_added": "102"
+                                        "version_added": "102.0a1"
                                     }
                                 ]
                             },
                             "plaintext": {
                                 "annotations": [
                                     {
-                                        "version_added": "102"
+                                        "version_added": "102.0a1"
                                     }
                                 ]
                             }
@@ -1827,7 +1746,7 @@
                     "deliveryStatusNotification": {
                         "annotations": [
                             {
-                                "version_added": "102"
+                                "version_added": "102.0a1"
                             }
                         ],
                         "description": "Let the sender know when the recipient's server received the message. Not supported by all servers.",
@@ -1838,7 +1757,7 @@
                         "$ref": "ComposeRecipientList",
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0a1"
                             }
                         ],
                         "optional": true
@@ -1847,7 +1766,7 @@
                         "$ref": "ComposeRecipient",
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "*Caution*: Setting a value for <var>from</var> does not change the used identity, it overrides the <em>From</em> header. Many email servers do not accept emails where the <em>From</em> header does not match the sender identity. Must be set to exactly one valid email address.",
@@ -1856,7 +1775,7 @@
                     "identityId": {
                         "annotations": [
                             {
-                                "version_added": "76"
+                                "version_added": "76.0a1"
                             }
                         ],
                         "description": "The ID of an identity from the $(doc:accounts). The settings from the identity will be used in the composed message. If <var>replyTo</var> is also specified, the <var>replyTo</var> property of the identity is overridden. The permission <permission>accountsRead</permission> is required to include the <var>identityId</var>.",
@@ -1866,7 +1785,7 @@
                     "isModified": {
                         "annotations": [
                             {
-                                "version_added": "125"
+                                "version_added": "125.0a1"
                             }
                         ],
                         "description": "Whether the composer is considered modified by the user. A modified composer asks for confirmation, when it is closed.",
@@ -1876,7 +1795,7 @@
                     "isPlainText": {
                         "annotations": [
                             {
-                                "version_added": "75"
+                                "version_added": "75.0a1"
                             }
                         ],
                         "description": "Whether the message is an HTML message or a plain text message.",
@@ -1886,14 +1805,14 @@
                     "newsgroups": {
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0a1"
                             }
                         ],
                         "choices": [
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "74"
+                                        "version_added": "74.0a1"
                                     }
                                 ],
                                 "type": "string"
@@ -1901,7 +1820,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "74"
+                                        "version_added": "74.0a1"
                                     }
                                 ],
                                 "items": {
@@ -1917,7 +1836,7 @@
                         "$ref": "folders.MailFolderId",
                         "annotations": [
                             {
-                                "version_added": "127"
+                                "version_added": "127.0a1"
                             }
                         ],
                         "description": " This value overrides the default fcc setting (defined by the used identity) for this message only. Either a $(ref:folders.MailFolderId) specifying the folder for the copy of the sent message, or an empty string to not save a copy at all. Reset when set to <var>null</var>. The permission <permission>accountsRead</permission> is required to use this property.",
@@ -1926,7 +1845,7 @@
                     "plainTextBody": {
                         "annotations": [
                             {
-                                "version_added": "75"
+                                "version_added": "75.0a1"
                             }
                         ],
                         "description": "The plain text content of the message.",
@@ -1936,7 +1855,7 @@
                     "priority": {
                         "annotations": [
                             {
-                                "version_added": "102"
+                                "version_added": "102.0a1"
                             }
                         ],
                         "description": "The priority of the message.",
@@ -1951,35 +1870,35 @@
                             "high": {
                                 "annotations": [
                                     {
-                                        "version_added": "102"
+                                        "version_added": "102.0a1"
                                     }
                                 ]
                             },
                             "highest": {
                                 "annotations": [
                                     {
-                                        "version_added": "102"
+                                        "version_added": "102.0a1"
                                     }
                                 ]
                             },
                             "low": {
                                 "annotations": [
                                     {
-                                        "version_added": "102"
+                                        "version_added": "102.0a1"
                                     }
                                 ]
                             },
                             "lowest": {
                                 "annotations": [
                                     {
-                                        "version_added": "102"
+                                        "version_added": "102.0a1"
                                     }
                                 ]
                             },
                             "normal": {
                                 "annotations": [
                                     {
-                                        "version_added": "102"
+                                        "version_added": "102.0a1"
                                     }
                                 ]
                             }
@@ -1991,7 +1910,7 @@
                         "$ref": "messages.MessageId",
                         "annotations": [
                             {
-                                "version_added": "95"
+                                "version_added": "95.0a1"
                             }
                         ],
                         "description": "The id of the original message (in case of draft, template, forward or reply). Read-only. Is <var>undefined</var> in all other cases or if the original message was opened from file.",
@@ -2001,7 +1920,7 @@
                         "$ref": "ComposeRecipientList",
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0a1"
                             }
                         ],
                         "optional": true
@@ -2009,7 +1928,7 @@
                     "returnReceipt": {
                         "annotations": [
                             {
-                                "version_added": "102"
+                                "version_added": "102.0a1"
                             }
                         ],
                         "description": "Add the <em>Disposition-Notification-To</em> header to the message to requests the recipients email client to send a reply once the message has been received. Recipient server may strip the header and the recipient might ignore the request.",
@@ -2019,7 +1938,7 @@
                     "selectedEncryptionTechnology": {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "128.0a1"
                             }
                         ],
                         "choices": [
@@ -2027,7 +1946,7 @@
                                 "$ref": "compose.EncryptionPropertiesSMIME",
                                 "annotations": [
                                     {
-                                        "version_added": "128"
+                                        "version_added": "128.0a1"
                                     }
                                 ]
                             },
@@ -2035,7 +1954,7 @@
                                 "$ref": "compose.EncryptionPropertiesOpenPGP",
                                 "annotations": [
                                     {
-                                        "version_added": "128"
+                                        "version_added": "128.0a1"
                                     }
                                 ]
                             }
@@ -2046,7 +1965,7 @@
                     "subject": {
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0a1"
                             }
                         ],
                         "optional": true,
@@ -2056,7 +1975,7 @@
                         "$ref": "ComposeRecipientList",
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "74.0a1"
                             }
                         ],
                         "optional": true
@@ -2064,7 +1983,7 @@
                     "type": {
                         "annotations": [
                             {
-                                "version_added": "88"
+                                "version_added": "88.0a1"
                             }
                         ],
                         "description": "Read-only. The type of the message being composed, depending on how the compose window was opened by the user.",
@@ -2079,35 +1998,35 @@
                             "draft": {
                                 "annotations": [
                                     {
-                                        "version_added": "88"
+                                        "version_added": "88.0a1"
                                     }
                                 ]
                             },
                             "forward": {
                                 "annotations": [
                                     {
-                                        "version_added": "88"
+                                        "version_added": "88.0a1"
                                     }
                                 ]
                             },
                             "new": {
                                 "annotations": [
                                     {
-                                        "version_added": "88"
+                                        "version_added": "88.0a1"
                                     }
                                 ]
                             },
                             "redirect": {
                                 "annotations": [
                                     {
-                                        "version_added": "90"
+                                        "version_added": "90.0a1"
                                     }
                                 ]
                             },
                             "reply": {
                                 "annotations": [
                                     {
-                                        "version_added": "88"
+                                        "version_added": "88.0a1"
                                     }
                                 ]
                             }
@@ -2121,10 +2040,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#fileattachment"
-                    },
-                    {
-                        "version_added": "98"
+                        "version_added": "98.0a1"
                     }
                 ],
                 "description": "Object used to add, update or rename an attachment in a message being composed.",
@@ -2134,7 +2050,7 @@
                         "additionalProperties": true,
                         "annotations": [
                             {
-                                "version_added": "98"
+                                "version_added": "98.0a1"
                             }
                         ],
                         "description": "The new content for the attachment.",
@@ -2145,7 +2061,7 @@
                     "name": {
                         "annotations": [
                             {
-                                "version_added": "98"
+                                "version_added": "98.0a1"
                             }
                         ],
                         "description": "The new name for the attachment, as displayed to the user. If not specified, the name of the provided <var>file</var> object is used.",
@@ -2158,10 +2074,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#composeattachment"
-                    },
-                    {
-                        "version_added": "78"
+                        "version_added": "78.0a1"
                     }
                 ],
                 "description": "Represents an attachment in a message being composed.",
@@ -2170,7 +2083,7 @@
                     "id": {
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0a1"
                             }
                         ],
                         "description": "A unique identifier for this attachment.",
@@ -2179,7 +2092,7 @@
                     "name": {
                         "annotations": [
                             {
-                                "version_added": "78"
+                                "version_added": "78.0a1"
                             }
                         ],
                         "description": "The name of this attachment, as displayed to the user.",
@@ -2189,7 +2102,7 @@
                     "size": {
                         "annotations": [
                             {
-                                "version_added": "83"
+                                "version_added": "83.0a1"
                             }
                         ],
                         "description": "The size in bytes of this attachment. Read-only.",
@@ -2202,10 +2115,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#customheader"
-                    },
-                    {
-                        "version_added": "100"
+                        "version_added": "100.0a1"
                     }
                 ],
                 "description": "A custom header definition.",
@@ -2214,7 +2124,7 @@
                     "name": {
                         "annotations": [
                             {
-                                "version_added": "100"
+                                "version_added": "100.0a1"
                             }
                         ],
                         "description": "Name of a custom header, must be prefixed by <var>X-</var> (but not by <var>X-Mozilla-</var>) or be one of the explicitly allowed headers (<var>MSIP_Labels</var>)",
@@ -2223,7 +2133,7 @@
                     "value": {
                         "annotations": [
                             {
-                                "version_added": "100"
+                                "version_added": "100.0a1"
                             }
                         ],
                         "type": "string"
@@ -2237,10 +2147,7 @@
                 },
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#composedictionaries"
-                    },
-                    {
-                        "version_added": "102"
+                        "version_added": "102.0a1"
                     }
                 ],
                 "description": "A <em>dictionary object</em> with entries for all installed dictionaries, having a language identifier as <em>key</em> (for example <var>en-US</var>) and a boolean expression as <em>value</em>, indicating whether that dictionary is enabled for spellchecking or not.",
@@ -2250,10 +2157,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#encryptionpropertiesopenpgp"
-                    },
-                    {
-                        "version_added": "128"
+                        "version_added": "128.0a1"
                     }
                 ],
                 "id": "EncryptionPropertiesOpenPGP",
@@ -2264,7 +2168,7 @@
                                 "note": "If encryption is enabled, but the <a href='https://support.mozilla.org/en-US/kb/thunderbird-help-cannot-encrypt'>preconditions</a> for sending an encrypted message are not met, the message cannot be sent."
                             },
                             {
-                                "version_added": "128"
+                                "version_added": "128.0a1"
                             }
                         ],
                         "description": "Whether encryption of the message body using the OpenPGP technology is enabled.",
@@ -2273,7 +2177,7 @@
                     "encryptSubject": {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "128.0a1"
                             }
                         ],
                         "description": "Whether encryption of the message subject using the OpenPGP technology is enabled (only supported if encryption of the body is enabled a well).",
@@ -2282,7 +2186,7 @@
                     "name": {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "128.0a1"
                             }
                         ],
                         "pattern": "^OpenPGP$",
@@ -2291,7 +2195,7 @@
                     "signMessage": {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "128.0a1"
                             }
                         ],
                         "description": "Whether the message will be signed using the OpenPGP technology.",
@@ -2303,10 +2207,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/compose.html#encryptionpropertiessmime"
-                    },
-                    {
-                        "version_added": "128"
+                        "version_added": "128.0a1"
                     }
                 ],
                 "id": "EncryptionPropertiesSMIME",
@@ -2317,7 +2218,7 @@
                                 "note": "If encryption is enabled, but the <a href='https://support.mozilla.org/en-US/kb/thunderbird-help-cannot-encrypt'>preconditions</a> for sending an encrypted message are not met, the message cannot be sent."
                             },
                             {
-                                "version_added": "128"
+                                "version_added": "128.0a1"
                             }
                         ],
                         "description": "Whether encryption of the message body using the S/MIME technology is enabled.",
@@ -2326,7 +2227,7 @@
                     "name": {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "128.0a1"
                             }
                         ],
                         "pattern": "^S/MIME$",
@@ -2335,7 +2236,7 @@
                     "signMessage": {
                         "annotations": [
                             {
-                                "version_added": "128"
+                                "version_added": "128.0a1"
                             }
                         ],
                         "description": "Whether the message will be signed using the S/MIME technology",
