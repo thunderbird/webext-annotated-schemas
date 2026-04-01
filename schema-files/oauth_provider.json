@@ -1,6 +1,10 @@
 [
     {
-        "annotations": [],
+        "annotations": [
+            {
+                "version_added": "140"
+            }
+        ],
         "applicationVersion": "151.0a1",
         "namespace": "manifest",
         "types": [
@@ -8,29 +12,49 @@
                 "$extend": "WebExtensionManifest",
                 "properties": {
                     "oauth_provider": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "140"
+                            }
+                        ],
                         "description": "Describes an OAuth authentication provider for Thunderbird to use when connecting to mail/address book/calendar services. You will need to have a client ID registered with the provider to use this API.",
                         "optional": true,
                         "properties": {
                             "authorizationEndpoint": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
                                 "description": "OAuth authorization endpoint address.",
                                 "format": "url",
                                 "type": "string"
                             },
                             "clientId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
                                 "description": "Identifies the OAuth client to the server.",
                                 "type": "string"
                             },
                             "clientSecret": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
                                 "description": "Identifies the OAuth client to the server.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "hostnames": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
                                 "description": "One or more hostnames which use this OAuth provider.",
                                 "items": {
                                     "type": "string"
@@ -39,29 +63,49 @@
                                 "type": "array"
                             },
                             "issuer": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
                                 "description": "A string to identify this provider in the login manager. This <em>should</em> match the hostname of the authorization endpoint, although that is not required.",
                                 "type": "string"
                             },
                             "redirectionEndpoint": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
                                 "description": "OAuth redirection endpoint.",
                                 "format": "url",
                                 "type": "string"
                             },
                             "scopes": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
                                 "description": "The scopes to request when using this OAuth provider.",
                                 "type": "string"
                             },
                             "tokenEndpoint": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
                                 "description": "OAuth token endpoint address.",
                                 "format": "url",
                                 "type": "string"
                             },
                             "usePKCE": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ],
                                 "description": "If the authorization uses PKCE.",
                                 "optional": true,
                                 "type": "boolean"

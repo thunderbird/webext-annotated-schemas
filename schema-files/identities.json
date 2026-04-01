@@ -1,6 +1,10 @@
 [
     {
-        "annotations": [],
+        "annotations": [
+            {
+                "version_added": "91"
+            }
+        ],
         "applicationVersion": "151.0a1",
         "namespace": "manifest",
         "types": [
@@ -13,7 +17,11 @@
                         ],
                         "enums": {
                             "accountsIdentities": {
-                                "annotations": []
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ]
                             }
                         },
                         "type": "string"
@@ -23,26 +31,41 @@
         ]
     },
     {
-        "annotations": [],
+        "annotations": [
+            {
+                "version_added": "91"
+            }
+        ],
         "description": "The identities API allows to manage the user's identities (each account can have multiple identities).",
         "events": [
             {
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/identities.html#oncreated-identityid-identity"
+                    },
+                    {
+                        "version_added": "91"
                     }
                 ],
                 "description": "Fired when a new identity has been created and added to an account. The event also fires for default identities that are created when a new account is added.",
                 "name": "onCreated",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "identityId",
                         "type": "string"
                     },
                     {
                         "$ref": "MailIdentity",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "identity"
                     }
                 ],
@@ -52,13 +75,20 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/identities.html#ondeleted-identityid"
+                    },
+                    {
+                        "version_added": "91"
                     }
                 ],
                 "description": "Fired when an identity has been removed from an account.",
                 "name": "onDeleted",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "identityId",
                         "type": "string"
                     }
@@ -69,19 +99,30 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/identities.html#onupdated-identityid-changedvalues"
+                    },
+                    {
+                        "version_added": "91"
                     }
                 ],
                 "description": "Fired when one or more properties of an identity have been modified. The returned $(ref:identities.MailIdentity) includes only the changed values.",
                 "name": "onUpdated",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "identityId",
                         "type": "string"
                     },
                     {
                         "$ref": "MailIdentity",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "changedValues"
                     }
                 ],
@@ -93,6 +134,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/identities.html#list-accountid"
+                    },
+                    {
+                        "version_added": "91"
                     }
                 ],
                 "async": "callback",
@@ -101,17 +145,29 @@
                 "parameters": [
                     {
                         "$ref": "accounts.MailAccountId",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "accountId",
                         "optional": true
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "identities.MailIdentity"
                                 },
@@ -127,6 +183,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/identities.html#get-identityid"
+                    },
+                    {
+                        "version_added": "91"
                     }
                 ],
                 "async": "callback",
@@ -134,24 +193,44 @@
                 "name": "get",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "identityId",
                         "type": "string"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ],
                                 "choices": [
                                     {
                                         "$ref": "identities.MailIdentity",
-                                        "annotations": []
+                                        "annotations": [
+                                            {
+                                                "version_added": "91"
+                                            }
+                                        ]
                                     },
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "127"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
                                 ]
@@ -166,6 +245,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/identities.html#create-accountid-details"
+                    },
+                    {
+                        "version_added": "91"
                     }
                 ],
                 "async": "callback",
@@ -174,22 +256,38 @@
                 "parameters": [
                     {
                         "$ref": "accounts.MailAccountId",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "accountId"
                     },
                     {
                         "$ref": "identities.MailIdentity",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "details"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "identities.MailIdentity",
-                                "annotations": []
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
@@ -204,6 +302,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/identities.html#delete-identityid"
+                    },
+                    {
+                        "version_added": "91"
                     }
                 ],
                 "async": true,
@@ -211,7 +312,11 @@
                 "name": "delete",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "identityId",
                         "type": "string"
                     }
@@ -225,6 +330,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/identities.html#update-identityid-details"
+                    },
+                    {
+                        "version_added": "91"
                     }
                 ],
                 "async": "callback",
@@ -232,23 +340,39 @@
                 "name": "update",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "identityId",
                         "type": "string"
                     },
                     {
                         "$ref": "identities.MailIdentity",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "details"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "identities.MailIdentity",
-                                "annotations": []
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
@@ -263,6 +387,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/identities.html#getdefault-accountid"
+                    },
+                    {
+                        "version_added": "91"
                     }
                 ],
                 "async": "callback",
@@ -271,23 +398,43 @@
                 "parameters": [
                     {
                         "$ref": "accounts.MailAccountId",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "accountId"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ],
                                 "choices": [
                                     {
                                         "$ref": "identities.MailIdentity",
-                                        "annotations": []
+                                        "annotations": [
+                                            {
+                                                "version_added": "91"
+                                            }
+                                        ]
                                     },
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "127"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
                                 ]
@@ -302,6 +449,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/identities.html#setdefault-accountid-identityid"
+                    },
+                    {
+                        "version_added": "91"
                     }
                 ],
                 "async": true,
@@ -310,11 +460,19 @@
                 "parameters": [
                     {
                         "$ref": "accounts.MailAccountId",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "accountId"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "identityId",
                         "type": "string"
                     }
@@ -331,17 +489,28 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/identities.html#encryptioncapabilities"
+                    },
+                    {
+                        "version_added": "128"
                     }
                 ],
                 "id": "EncryptionCapabilities",
                 "properties": {
                     "canEncrypt": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "description": "Whether the encryption technology is configured to support message encryption.",
                         "type": "boolean"
                     },
                     "canSign": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "description": "Whether the encryption technology is configured to support message signing.",
                         "type": "boolean"
                     }
@@ -352,84 +521,139 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/identities.html#mailidentity"
+                    },
+                    {
+                        "version_added": "91"
                     }
                 ],
                 "id": "MailIdentity",
                 "properties": {
                     "accountId": {
                         "$ref": "accounts.MailAccountId",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "description": "The id of the $(ref:accounts.MailAccount) this identity belongs to. The <var>accountId</var> property is read-only.",
                         "optional": true
                     },
                     "composeHtml": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "description": "If the identity uses HTML as the default compose format.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "email": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "description": "The user's email address as used when messages are sent from this identity.",
                         "optional": true,
                         "type": "string"
                     },
                     "encryptionCapabilities": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "description": "The encryption capabilities of this identity. Read only.",
                         "optional": true,
                         "properties": {
                             "OpenPGP": {
                                 "$ref": "identities.EncryptionCapabilities",
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "description": "The capabilities of this identity for the OpenPGP encryption technology."
                             },
                             "S/MIME": {
                                 "$ref": "identities.EncryptionCapabilities",
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "description": "The capabilities of this identity for the S/MIME encryption technology."
                             }
                         },
                         "type": "object"
                     },
                     "id": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "description": "A unique identifier for this identity. The <var>id</var> property is read-only.",
                         "optional": true,
                         "type": "string"
                     },
                     "label": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "description": "A user-defined label for this identity.",
                         "optional": true,
                         "type": "string"
                     },
                     "name": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "description": "The user's name as used when messages are sent from this identity.",
                         "optional": true,
                         "type": "string"
                     },
                     "organization": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "description": "The organization associated with this identity.",
                         "optional": true,
                         "type": "string"
                     },
                     "replyTo": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "description": "The reply-to email address associated with this identity.",
                         "optional": true,
                         "type": "string"
                     },
                     "signature": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "description": "The signature of the identity.",
                         "optional": true,
                         "type": "string"
                     },
                     "signatureIsPlainText": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "description": "If the signature should be interpreted as plain text or as HTML.",
                         "optional": true,
                         "type": "boolean"

@@ -1,6 +1,10 @@
 [
     {
-        "annotations": [],
+        "annotations": [
+            {
+                "version_added": "66"
+            }
+        ],
         "applicationVersion": "151.0a1",
         "namespace": "manifest",
         "types": [
@@ -13,7 +17,11 @@
                         ],
                         "enums": {
                             "accountsRead": {
-                                "annotations": []
+                                "annotations": [
+                                    {
+                                        "version_added": "66"
+                                    }
+                                ]
                             }
                         },
                         "type": "string"
@@ -23,13 +31,20 @@
         ]
     },
     {
-        "annotations": [],
+        "annotations": [
+            {
+                "version_added": "66"
+            }
+        ],
         "description": "The accounts API provides access to the user's server accounts.",
         "events": [
             {
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/accounts.html#oncreated-accountid-account"
+                    },
+                    {
+                        "version_added": "98"
                     }
                 ],
                 "description": "Fired when a new account has been created.",
@@ -37,12 +52,20 @@
                 "parameters": [
                     {
                         "$ref": "MailAccountId",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "98"
+                            }
+                        ],
                         "name": "accountId"
                     },
                     {
                         "$ref": "MailAccount",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "98"
+                            }
+                        ],
                         "name": "account"
                     }
                 ],
@@ -52,6 +75,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/accounts.html#ondeleted-accountid"
+                    },
+                    {
+                        "version_added": "98"
                     }
                 ],
                 "description": "Fired when an account has been removed.",
@@ -59,7 +85,11 @@
                 "parameters": [
                     {
                         "$ref": "MailAccountId",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "98"
+                            }
+                        ],
                         "name": "accountId"
                     }
                 ],
@@ -69,6 +99,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/accounts.html#onupdated-accountid-changedvalues"
+                    },
+                    {
+                        "version_added": "98"
                     }
                 ],
                 "description": "Fired when a property of an account has been modified. Folders and identities of accounts are not monitored by this event, use the dedicated folder and identity events instead. A changed <var>defaultIdentity</var> is reported only after a different identity has been assigned as default identity, but not after a property of the default identity has been changed.",
@@ -76,20 +109,36 @@
                 "parameters": [
                     {
                         "$ref": "MailAccountId",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "98"
+                            }
+                        ],
                         "name": "accountId"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "98"
+                            }
+                        ],
                         "name": "changedValues",
                         "properties": {
                             "defaultIdentity": {
                                 "$ref": "identities.MailIdentity",
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "98"
+                                    }
+                                ],
                                 "description": "The default identity of this account."
                             },
                             "name": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "98"
+                                    }
+                                ],
                                 "description": "The human-friendly name of this account.",
                                 "type": "string"
                             }
@@ -105,6 +154,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/accounts.html#list-includesubfolders"
+                    },
+                    {
+                        "version_added": "66"
                     }
                 ],
                 "async": "callback",
@@ -112,7 +164,11 @@
                 "name": "list",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "default": false,
                         "description": "Specifies whether the $(ref:folders.MailFolder) in the <var>rootFolder</var> property of each found $(ref:accounts.MailAccount) should populate its <var>subFolders</var> property, and include all (nested!) subfolders. Defaults to <var>false</var>.",
                         "name": "includeSubFolders",
@@ -120,12 +176,20 @@
                         "type": "boolean"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "accounts.MailAccount"
                                 },
@@ -141,6 +205,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/accounts.html#get-accountid-includesubfolders"
+                    },
+                    {
+                        "version_added": "66"
                     }
                 ],
                 "async": "callback",
@@ -149,11 +216,19 @@
                 "parameters": [
                     {
                         "$ref": "MailAccountId",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "name": "accountId"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "default": false,
                         "description": "Specifies whether the $(ref:folders.MailFolder) in the <var>rootFolder</var> property of the returned $(ref:accounts.MailAccount) should populate its <var>subFolders</var> property, and include all (nested!) subfolders. Defaults to <var>false</var>.",
                         "name": "includeSubFolders",
@@ -161,19 +236,35 @@
                         "type": "boolean"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ],
                                 "choices": [
                                     {
                                         "$ref": "accounts.MailAccount",
-                                        "annotations": []
+                                        "annotations": [
+                                            {
+                                                "version_added": "91"
+                                            }
+                                        ]
                                     },
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "127"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
                                 ]
@@ -188,6 +279,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/accounts.html#getdefault-includesubfolders"
+                    },
+                    {
+                        "version_added": "85"
                     }
                 ],
                 "async": "callback",
@@ -195,7 +289,11 @@
                 "name": "getDefault",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "89"
+                            }
+                        ],
                         "default": false,
                         "description": "Specifies whether the $(ref:folders.MailFolder) in the <var>rootFolder</var> property of the default $(ref:accounts.MailAccount) should populate its <var>subFolders</var> property, and include all (nested!) subfolders. Defaults to <var>false</var>",
                         "name": "includeSubFolders",
@@ -203,19 +301,35 @@
                         "type": "boolean"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "91"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "91"
+                                    }
+                                ],
                                 "choices": [
                                     {
                                         "$ref": "accounts.MailAccount",
-                                        "annotations": []
+                                        "annotations": [
+                                            {
+                                                "version_added": "91"
+                                            }
+                                        ]
                                     },
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "127"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
                                 ]
@@ -236,6 +350,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/accounts.html#mailaccount"
+                    },
+                    {
+                        "version_added": "88"
                     }
                 ],
                 "description": "An object describing a mail account, as returned for example by the $(ref:accounts.list) and $(ref:accounts.get) methods.",
@@ -243,11 +360,19 @@
                 "properties": {
                     "id": {
                         "$ref": "MailAccountId",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "88"
+                            }
+                        ],
                         "description": "A unique identifier for this account."
                     },
                     "identities": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "88"
+                            }
+                        ],
                         "description": "The identities associated with this account. The default identity is listed first, others in no particular order.",
                         "items": {
                             "$ref": "identities.MailIdentity"
@@ -255,25 +380,45 @@
                         "type": "array"
                     },
                     "name": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "88"
+                            }
+                        ],
                         "description": "The human-friendly name of this account.",
                         "type": "string"
                     },
                     "rootFolder": {
                         "$ref": "folders.MailFolder",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "121"
+                            }
+                        ],
                         "description": "The root folder associated with this account."
                     },
                     "type": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "88"
+                            }
+                        ],
                         "choices": [
                             {
                                 "$ref": "accounts.NativeMailAccountType",
-                                "annotations": []
+                                "annotations": [
+                                    {
+                                        "version_added": "88"
+                                    }
+                                ]
                             },
                             {
                                 "$ref": "accounts.ExtensionMailAccountType",
-                                "annotations": []
+                                "annotations": [
+                                    {
+                                        "version_added": "131"
+                                    }
+                                ]
                             }
                         ],
                         "description": "What sort of account this is. Either one of the natively supported account types, or an account type added by an extension."
@@ -285,6 +430,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/accounts.html#mailaccountid"
+                    },
+                    {
+                        "version_added": "121"
                     }
                 ],
                 "description": "A unique id representing a $(ref:accounts.MailAccount).",
@@ -295,6 +443,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/accounts.html#nativemailaccounttype"
+                    },
+                    {
+                        "version_added": "131"
                     }
                 ],
                 "description": "The type of an account natively supported by Thunderbird.",
@@ -308,22 +459,46 @@
                 ],
                 "enums": {
                     "ews": {
-                        "annotations": []
+                        "annotations": [
+                            {
+                                "version_added": "142"
+                            }
+                        ]
                     },
                     "imap": {
-                        "annotations": []
+                        "annotations": [
+                            {
+                                "version_added": "131"
+                            }
+                        ]
                     },
                     "local": {
-                        "annotations": []
+                        "annotations": [
+                            {
+                                "version_added": "131"
+                            }
+                        ]
                     },
                     "nntp": {
-                        "annotations": []
+                        "annotations": [
+                            {
+                                "version_added": "131"
+                            }
+                        ]
                     },
                     "pop3": {
-                        "annotations": []
+                        "annotations": [
+                            {
+                                "version_added": "131"
+                            }
+                        ]
                     },
                     "rss": {
-                        "annotations": []
+                        "annotations": [
+                            {
+                                "version_added": "131"
+                            }
+                        ]
                     }
                 },
                 "id": "NativeMailAccountType",
@@ -333,6 +508,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/accounts.html#extensionmailaccounttype"
+                    },
+                    {
+                        "version_added": "131"
                     }
                 ],
                 "description": "The type of an account which was added by an extension. For the time being there is no guarantee for account types added by extensions to always work as expected.",

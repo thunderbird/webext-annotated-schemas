@@ -1,6 +1,10 @@
 [
     {
-        "annotations": [],
+        "annotations": [
+            {
+                "version_added": "66"
+            }
+        ],
         "applicationVersion": "151.0a1",
         "namespace": "manifest",
         "types": [
@@ -8,6 +12,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/manifest.html#keyname"
+                    },
+                    {
+                        "version_added": "66"
                     }
                 ],
                 "description": "Definition of a shortcut, for example <var>Alt+F5</var>. The string must match the shortcut format as defined by the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/commands#shortcut_values'>MDN page of the commands API</a>.",
@@ -58,6 +65,9 @@
                                     ""
                                 ],
                                 "type": "JSON"
+                            },
+                            {
+                                "version_added": "66"
                             }
                         ],
                         "description": "A <em>dictionary object</em> defining one or more commands as <em>name-value</em> pairs, the <em>name</em> being the name of the command and the <em>value</em> being a $(ref:CommandsShortcut).",
@@ -73,12 +83,19 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/manifest.html#commandsshortcut"
+                    },
+                    {
+                        "version_added": "141"
                     }
                 ],
                 "id": "CommandsShortcut",
                 "properties": {
                     "description": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "141"
+                            }
+                        ],
                         "optional": true,
                         "preprocess": "localize",
                         "type": "string"
@@ -88,30 +105,50 @@
                             "deprecated": "Unknown platform name",
                             "type": "string"
                         },
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "141"
+                            }
+                        ],
                         "optional": true,
                         "properties": {
                             "default": {
                                 "$ref": "KeyName",
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "141"
+                                    }
+                                ],
                                 "description": "Default key combination.",
                                 "optional": true
                             },
                             "linux": {
                                 "$ref": "KeyName",
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "141"
+                                    }
+                                ],
                                 "description": "Key combination on Linux.",
                                 "optional": true
                             },
                             "mac": {
                                 "$ref": "KeyName",
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "141"
+                                    }
+                                ],
                                 "description": "Key combination on Mac.",
                                 "optional": true
                             },
                             "windows": {
                                 "$ref": "KeyName",
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "141"
+                                    }
+                                ],
                                 "description": "Key combination on Windows.",
                                 "optional": true
                             }
@@ -127,6 +164,9 @@
         "annotations": [
             {
                 "text": "Thunderbird's commands API is largely the same as the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/commands'>Firefox commands API</a>."
+            },
+            {
+                "version_added": "66"
             }
         ],
         "description": "Use the commands API to add keyboard shortcuts that trigger actions in your extension, for example opening one of the action popups or sending a command to the extension.",
@@ -135,19 +175,30 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/commands.html#oncommand-command-tab"
+                    },
+                    {
+                        "version_added": "66"
                     }
                 ],
                 "description": "Fired when a registered command is activated using a keyboard shortcut. This is a user input event handler. For asynchronous listeners some <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/User_actions'>restrictions</a> apply.",
                 "name": "onCommand",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "name": "command",
                         "type": "string"
                     },
                     {
                         "$ref": "tabs.Tab",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "106"
+                            }
+                        ],
                         "description": "The details of the active tab while the command occurred.",
                         "name": "tab"
                     }
@@ -158,27 +209,46 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/commands.html#onchanged-changeinfo"
+                    },
+                    {
+                        "version_added": "115"
                     }
                 ],
                 "description": "Fired when a registered command's shortcut is changed.",
                 "name": "onChanged",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "115"
+                            }
+                        ],
                         "name": "changeInfo",
                         "properties": {
                             "name": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "description": "The name of the shortcut.",
                                 "type": "string"
                             },
                             "newShortcut": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "description": "The new shortcut active for this command, or blank if not active.",
                                 "type": "string"
                             },
                             "oldShortcut": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "description": "The old shortcut which is no longer active for this command, or blank if the shortcut was previously inactive.",
                                 "type": "string"
                             }
@@ -194,6 +264,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/commands.html#getall"
+                    },
+                    {
+                        "version_added": "66"
                     }
                 ],
                 "async": "callback",
@@ -201,13 +274,21 @@
                 "name": "getAll",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "description": "Called to return the registered commands.",
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "66"
+                                    }
+                                ],
                                 "items": {
                                     "$ref": "Command"
                                 },
@@ -224,6 +305,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/commands.html#openshortcutsettings"
+                    },
+                    {
+                        "version_added": "137"
                     }
                 ],
                 "async": true,
@@ -236,6 +320,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/commands.html#reset-name"
+                    },
+                    {
+                        "version_added": "66"
                     }
                 ],
                 "async": true,
@@ -243,7 +330,11 @@
                 "name": "reset",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "description": "The name of the command.",
                         "name": "name",
                         "type": "string"
@@ -255,6 +346,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/commands.html#update-detail"
+                    },
+                    {
+                        "version_added": "66"
                     }
                 ],
                 "async": true,
@@ -262,23 +356,39 @@
                 "name": "update",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "description": "The new details for the command.",
                         "name": "detail",
                         "properties": {
                             "description": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "66"
+                                    }
+                                ],
                                 "description": "The description for the command.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "name": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "66"
+                                    }
+                                ],
                                 "description": "The name of the command.",
                                 "type": "string"
                             },
                             "shortcut": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "66"
+                                    }
+                                ],
                                 "description": "An empty string to clear the shortcut, or a string matching the format defined by the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/commands#shortcut_values'>MDN page of the commands API</a>  to set a new shortcut key. If the string does not match this format, the function throws an error.",
                                 "format": "manifestShortcutKeyOrEmpty",
                                 "optional": true,
@@ -300,24 +410,39 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/commands.html#command"
+                    },
+                    {
+                        "version_added": "66"
                     }
                 ],
                 "id": "Command",
                 "properties": {
                     "description": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "description": "The description of the Extension Command",
                         "optional": true,
                         "type": "string"
                     },
                     "name": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "description": "The name of the Extension Command",
                         "optional": true,
                         "type": "string"
                     },
                     "shortcut": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "66"
+                            }
+                        ],
                         "description": "The shortcut active for this command, or blank if not active.",
                         "optional": true,
                         "type": "string"

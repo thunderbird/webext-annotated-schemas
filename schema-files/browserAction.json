@@ -1,6 +1,10 @@
 [
     {
-        "annotations": [],
+        "annotations": [
+            {
+                "version_added": "64"
+            }
+        ],
         "applicationVersion": "151.0a1",
         "namespace": "manifest",
         "types": [
@@ -11,11 +15,19 @@
                         "additionalProperties": {
                             "$ref": "UnrecognizedProperty"
                         },
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "optional": true,
                         "properties": {
                             "allowed_spaces": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "default": [
                                     "mail"
                                 ],
@@ -32,25 +44,53 @@
                                     ],
                                     "enums": {
                                         "addressbook": {
-                                            "annotations": []
+                                            "annotations": [
+                                                {
+                                                    "version_added": "115"
+                                                }
+                                            ]
                                         },
                                         "calendar": {
-                                            "annotations": []
+                                            "annotations": [
+                                                {
+                                                    "version_added": "115"
+                                                }
+                                            ]
                                         },
                                         "chat": {
-                                            "annotations": []
+                                            "annotations": [
+                                                {
+                                                    "version_added": "115"
+                                                }
+                                            ]
                                         },
                                         "default": {
-                                            "annotations": []
+                                            "annotations": [
+                                                {
+                                                    "version_added": "115"
+                                                }
+                                            ]
                                         },
                                         "mail": {
-                                            "annotations": []
+                                            "annotations": [
+                                                {
+                                                    "version_added": "115"
+                                                }
+                                            ]
                                         },
                                         "settings": {
-                                            "annotations": []
+                                            "annotations": [
+                                                {
+                                                    "version_added": "115"
+                                                }
+                                            ]
                                         },
                                         "tasks": {
-                                            "annotations": []
+                                            "annotations": [
+                                                {
+                                                    "version_added": "115"
+                                                }
+                                            ]
                                         }
                                     },
                                     "type": "string"
@@ -59,14 +99,22 @@
                                 "type": "array"
                             },
                             "browser_style": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "default": false,
                                 "description": "Enable browser styles. See the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Browser_styles'>MDN documentation on browser styles</a> for more information.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "default_area": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "deprecated": "Unsupported on Thunderbird.",
                                 "description": "Defines the location the action button will appear. Deprecated and ignored. Replaced by <var>allowed_spaces</var>",
                                 "optional": true,
@@ -74,19 +122,31 @@
                             },
                             "default_icon": {
                                 "$ref": "manifest.IconPath",
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "description": "The paths to one or more icons for the action button.",
                                 "optional": true
                             },
                             "default_label": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "description": "The label of the action button, defaults to its title. Can be set to an empty string to not display any label. If the containing toolbar is configured to display text only, the title will be used as fallback.",
                                 "optional": true,
                                 "preprocess": "localize",
                                 "type": "string"
                             },
                             "default_popup": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "description": "The html document to be opened as a popup when the user clicks on the action button. Ignored for action buttons with type <var>menu</var>.",
                                 "format": "relativeUrl",
                                 "optional": true,
@@ -94,14 +154,22 @@
                                 "type": "string"
                             },
                             "default_title": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "description": "The title of the action button. This shows up in the tooltip and the label. Defaults to the add-on name.",
                                 "optional": true,
                                 "preprocess": "localize",
                                 "type": "string"
                             },
                             "default_windows": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "default": [
                                     "normal"
                                 ],
@@ -113,10 +181,18 @@
                                     ],
                                     "enums": {
                                         "messageDisplay": {
-                                            "annotations": []
+                                            "annotations": [
+                                                {
+                                                    "version_added": "115"
+                                                }
+                                            ]
                                         },
                                         "normal": {
-                                            "annotations": []
+                                            "annotations": [
+                                                {
+                                                    "version_added": "115"
+                                                }
+                                            ]
                                         }
                                     },
                                     "type": "string"
@@ -125,7 +201,11 @@
                                 "type": "array"
                             },
                             "theme_icons": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "115"
+                                    }
+                                ],
                                 "description": "Specifies dark and light icons to be used with themes. The <var>light</var> icon is used on dark backgrounds and vice versa. The default theme uses the <var>default_icon</var> for light backgrounds (if specified).",
                                 "items": {
                                     "$ref": "ThemeIcons"
@@ -135,7 +215,11 @@
                                 "type": "array"
                             },
                             "type": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "116"
+                                    }
+                                ],
                                 "default": "button",
                                 "description": "Specifies the type of the button. Default type is <var>button</var>.",
                                 "enum": [
@@ -144,12 +228,19 @@
                                 ],
                                 "enums": {
                                     "button": {
-                                        "annotations": []
+                                        "annotations": [
+                                            {
+                                                "version_added": "116"
+                                            }
+                                        ]
                                     },
                                     "menu": {
                                         "annotations": [
                                             {
                                                 "text": "The $(ref:menus.ContextType.action_menu) context of the $(doc:menus) can be used to add menu entries to a menu-typed action button."
+                                            },
+                                            {
+                                                "version_added": "116"
                                             }
                                         ]
                                     }
@@ -169,13 +260,20 @@
         ]
     },
     {
-        "annotations": [],
+        "annotations": [
+            {
+                "version_added": "105"
+            }
+        ],
         "description": "Use the action API to add a button to Thunderbird's unified toolbar. In addition to its icon, an action button can also have a tooltip, a badge, and a popup.",
         "events": [
             {
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#onclicked-tab-info"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "description": "Fired when an action button is clicked. This event will not fire if the action has a popup. This is a user input event handler. For asynchronous listeners some <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/User_actions'>restrictions</a> apply.",
@@ -183,12 +281,20 @@
                 "parameters": [
                     {
                         "$ref": "tabs.Tab",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "tab"
                     },
                     {
                         "$ref": "OnClickData",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "info",
                         "optional": true
                     }
@@ -201,6 +307,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#settitle-details"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -208,32 +317,56 @@
                 "name": "setTitle",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "description": "Sets the title only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "title": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "choices": [
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "105"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "105"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
                                 ],
                                 "description": "A string the action button should display as its label and when moused over. Cleared by setting it to <var>null</var> or an empty string (title defined the manifest will be used)."
                             },
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -244,7 +377,11 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -257,6 +394,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#gettitle-details"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -264,18 +404,30 @@
                 "name": "getTitle",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "description": "Specifies for which tab the title should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -286,12 +438,20 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "name": "result",
                                 "type": "string"
                             }
@@ -305,6 +465,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#setlabel-details"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -312,32 +475,56 @@
                 "name": "setLabel",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "label": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "choices": [
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "105"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "105"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
                                 ],
                                 "description": "A string the action button should use as its label, overriding the defined title. Can be set to an empty string to not display any label at all. If the containing toolbar is configured to display text only, its title will be used. Cleared by setting it to <var>null</var>."
                             },
                             "tabId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "description": "Sets the label only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -348,7 +535,11 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -361,6 +552,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#getlabel-details"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -368,18 +562,30 @@
                 "name": "getLabel",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "description": "Specifies for which tab the label should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -390,19 +596,35 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "choices": [
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "105"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "127"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
                                 ],
@@ -418,6 +640,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#seticon-details"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -425,19 +650,35 @@
                 "name": "setIcon",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "imageData": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "choices": [
                                     {
                                         "$ref": "ImageDataType",
-                                        "annotations": []
+                                        "annotations": [
+                                            {
+                                                "version_added": "105"
+                                            }
+                                        ]
                                     },
                                     {
                                         "$ref": "ImageDataDictionary",
-                                        "annotations": []
+                                        "annotations": [
+                                            {
+                                                "version_added": "105"
+                                            }
+                                        ]
                                     }
                                 ],
                                 "description": "The image data for one or more icons for the action button.",
@@ -445,19 +686,31 @@
                             },
                             "path": {
                                 "$ref": "manifest.IconPath",
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "description": "The paths to one or more icons for the action button.",
                                 "optional": true
                             },
                             "tabId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "description": "Sets the icon only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -468,7 +721,11 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -481,6 +738,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#setpopup-details"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -488,32 +748,56 @@
                 "name": "setPopup",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "popup": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "choices": [
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "105"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "105"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
                                 ],
                                 "description": "The html file to show in a popup. Can be set to an empty string to not open a popup. Cleared by setting it to <var>null</var> (popup value defined the manifest will be used)."
                             },
                             "tabId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "description": "Sets the popup only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -524,7 +808,11 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -537,6 +825,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#getpopup-details"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -544,18 +835,30 @@
                 "name": "getPopup",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "description": "Specifies for which tab the popup document should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -566,12 +869,20 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "name": "result",
                                 "type": "string"
                             }
@@ -585,6 +896,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#setbadgetext-details"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -592,32 +906,56 @@
                 "name": "setBadgeText",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "description": "Sets the badge text only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "text": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "choices": [
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "105"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "105"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
                                 ],
                                 "description": "Any number of characters can be passed, but only about four can fit in the space. Cleared by setting it to <var>null</var> or an empty string."
                             },
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -628,7 +966,11 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -641,6 +983,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#getbadgetext-details"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -648,18 +993,30 @@
                 "name": "getBadgeText",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "description": "Specifies for which tab the badge text should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -670,12 +1027,20 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "name": "result",
                                 "type": "string"
                             }
@@ -689,6 +1054,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#setbadgetextcolor-details"
+                    },
+                    {
+                        "version_added": "128"
                     }
                 ],
                 "async": true,
@@ -696,36 +1064,64 @@
                 "name": "setBadgeTextColor",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "color": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "choices": [
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "128"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
                                         "$ref": "ColorArray",
-                                        "annotations": []
+                                        "annotations": [
+                                            {
+                                                "version_added": "128"
+                                            }
+                                        ]
                                     },
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "128"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
                                 ],
                                 "description": "The color to use as text color in the badge. Cleared by setting it to <var>null</var>."
                             },
                             "tabId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "description": "Sets the text color for the badge only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -742,6 +1138,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#getbadgetextcolor-details"
+                    },
+                    {
+                        "version_added": "128"
                     }
                 ],
                 "async": "callback",
@@ -749,18 +1148,30 @@
                 "name": "getBadgeTextColor",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "description": "Specifies for which tab the badge text color should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -771,13 +1182,21 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "128"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "ColorArray",
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "128"
+                                    }
+                                ],
                                 "name": "result"
                             }
                         ],
@@ -790,6 +1209,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#setbadgebackgroundcolor-details"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -797,36 +1219,64 @@
                 "name": "setBadgeBackgroundColor",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "color": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "choices": [
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "105"
+                                            }
+                                        ],
                                         "type": "string"
                                     },
                                     {
                                         "$ref": "ColorArray",
-                                        "annotations": []
+                                        "annotations": [
+                                            {
+                                                "version_added": "105"
+                                            }
+                                        ]
                                     },
                                     {
-                                        "annotations": [],
+                                        "annotations": [
+                                            {
+                                                "version_added": "105"
+                                            }
+                                        ],
                                         "type": "null"
                                     }
                                 ],
                                 "description": "The color to use as background in the badge. Cleared by setting it to <var>null</var>."
                             },
                             "tabId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "description": "Sets the background color for the badge only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -837,7 +1287,11 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -850,6 +1304,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#getbadgebackgroundcolor-details"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -857,18 +1314,30 @@
                 "name": "getBadgeBackgroundColor",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "description": "Specifies for which tab the badge background color should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -879,13 +1348,21 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "ColorArray",
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "name": "result"
                             }
                         ],
@@ -898,6 +1375,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#enable-tabid"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -905,7 +1385,11 @@
                 "name": "enable",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "description": "The id of the tab for which you want to modify the action button.",
                         "minimum": 0,
                         "name": "tabId",
@@ -913,7 +1397,11 @@
                         "type": "integer"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -926,6 +1414,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#disable-tabid"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -933,7 +1424,11 @@
                 "name": "disable",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "description": "The id of the tab for which you want to modify the action button.",
                         "minimum": 0,
                         "name": "tabId",
@@ -941,7 +1436,11 @@
                         "type": "integer"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -954,6 +1453,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#isenabled-details"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -961,18 +1463,30 @@
                 "name": "isEnabled",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "description": "Specifies for which tab the state should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "108"
+                                    }
+                                ],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -983,12 +1497,20 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "105"
+                                    }
+                                ],
                                 "type": "boolean"
                             }
                         ],
@@ -1001,6 +1523,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#openpopup-options"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "async": "callback",
@@ -1008,13 +1533,21 @@
                 "name": "openPopup",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ],
                         "description": "An object with information about the popup to open.",
                         "name": "options",
                         "optional": true,
                         "properties": {
                             "windowId": {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
                                 "description": "Defaults to the current window.",
                                 "minimum": -2,
                                 "optional": true,
@@ -1024,12 +1557,20 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "113"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "113"
+                                    }
+                                ],
                                 "type": "boolean"
                             }
                         ],
@@ -1049,6 +1590,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#colorarray"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "description": "An array of four integers in the range [0,255] that make up the RGBA color. For example, opaque red is <var>[255, 0, 0, 255]</var>.",
@@ -1069,6 +1613,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#imagedatatype"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "description": "Pixel data for an image. Must be an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object (for example, from a <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/canvas'>canvas</a> element).",
@@ -1081,6 +1628,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#imagedatadictionary"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "description": "A <em>dictionary object</em> to specify multiple <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> objects in different sizes, so the icon does not have to be scaled for a device with a different pixel density. Each entry is a <em>name-value</em> pair with <em>value</em> being an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object, and <em>name</em> its size.",
@@ -1096,19 +1646,30 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/action.html#onclickdata"
+                    },
+                    {
+                        "version_added": "105"
                     }
                 ],
                 "description": "Information sent when an action button is clicked.",
                 "id": "OnClickData",
                 "properties": {
                     "button": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "description": "An integer value of button by which menu item was clicked.",
                         "optional": true,
                         "type": "integer"
                     },
                     "modifiers": {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "105"
+                            }
+                        ],
                         "description": "An array of keyboard modifiers that were held while the menu item was clicked.",
                         "items": {
                             "enum": [
@@ -1120,12 +1681,19 @@
                             ],
                             "enums": {
                                 "Alt": {
-                                    "annotations": []
+                                    "annotations": [
+                                        {
+                                            "version_added": "105"
+                                        }
+                                    ]
                                 },
                                 "Command": {
                                     "annotations": [
                                         {
                                             "text": "Only available on macOS."
+                                        },
+                                        {
+                                            "version_added": "105"
                                         }
                                     ]
                                 },
@@ -1133,6 +1701,9 @@
                                     "annotations": [
                                         {
                                             "text": "Not available on macOS."
+                                        },
+                                        {
+                                            "version_added": "105"
                                         }
                                     ]
                                 },
@@ -1140,11 +1711,18 @@
                                     "annotations": [
                                         {
                                             "text": "Only available on macOS, but of limited use in a click event: Holding down the CTRL key while clicking with the mouse is referred to as a 'CTRL click' under macOS and is interpreted as a right mouse click. In a default profile  the <var>dom.event.treat_ctrl_click_as_right_click.disabled</var> preference is not enabled and the <var>MacCtrl</var> modifier key is not forwarded to the API."
+                                        },
+                                        {
+                                            "version_added": "105"
                                         }
                                     ]
                                 },
                                 "Shift": {
-                                    "annotations": []
+                                    "annotations": [
+                                        {
+                                            "version_added": "105"
+                                        }
+                                    ]
                                 }
                             },
                             "type": "string"

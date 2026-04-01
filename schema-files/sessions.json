@@ -1,6 +1,10 @@
 [
     {
-        "annotations": [],
+        "annotations": [
+            {
+                "version_added": "140"
+            }
+        ],
         "applicationVersion": "151.0a1",
         "namespace": "manifest",
         "types": [
@@ -13,7 +17,11 @@
                         ],
                         "enums": {
                             "sessions": {
-                                "annotations": []
+                                "annotations": [
+                                    {
+                                        "version_added": "140"
+                                    }
+                                ]
                             }
                         },
                         "type": "string"
@@ -29,6 +37,9 @@
             },
             {
                 "note": "The Sessions API currently does not require the <permission>sessions</permission> permission, but it will soon. It's recommended to request this permission before it becomes mandatory, to ensure your add-on continues to function properly."
+            },
+            {
+                "version_added": "116"
             }
         ],
         "description": "The sessions API allows to add tab related session data to Thunderbird's tabs, which will be restored on app restart.",
@@ -37,6 +48,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/sessions.html#settabvalue-tabid-key-value"
+                    },
+                    {
+                        "version_added": "116"
                     }
                 ],
                 "async": true,
@@ -44,19 +58,31 @@
                 "name": "setTabValue",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "116"
+                            }
+                        ],
                         "description": "ID of the tab with which you want to associate the data. Error is thrown if ID is invalid.",
                         "name": "tabId",
                         "type": "integer"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "116"
+                            }
+                        ],
                         "description": "Key that you can later use to retrieve this particular data value.",
                         "name": "key",
                         "type": "string"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "116"
+                            }
+                        ],
                         "name": "value",
                         "type": "string"
                     }
@@ -67,6 +93,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/sessions.html#gettabvalue-tabid-key"
+                    },
+                    {
+                        "version_added": "116"
                     }
                 ],
                 "async": "callback",
@@ -74,24 +103,40 @@
                 "name": "getTabValue",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "116"
+                            }
+                        ],
                         "description": "ID of the tab whose data you are trying to retrieve. Error is thrown if ID is invalid.",
                         "name": "tabId",
                         "type": "integer"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "116"
+                            }
+                        ],
                         "description": "Key identifying the particular value to retrieve.",
                         "name": "key",
                         "type": "string"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "116"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [],
+                                "annotations": [
+                                    {
+                                        "version_added": "116"
+                                    }
+                                ],
                                 "optional": true,
                                 "type": "string"
                             }
@@ -105,6 +150,9 @@
                 "annotations": [
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/sessions.html#removetabvalue-tabid-key"
+                    },
+                    {
+                        "version_added": "116"
                     }
                 ],
                 "async": true,
@@ -112,13 +160,21 @@
                 "name": "removeTabValue",
                 "parameters": [
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "116"
+                            }
+                        ],
                         "description": "ID of the tab whose data you are trying to remove. Error is thrown if ID is invalid.",
                         "name": "tabId",
                         "type": "integer"
                     },
                     {
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "116"
+                            }
+                        ],
                         "description": "Key identifying the particular value to remove.",
                         "name": "key",
                         "type": "string"
