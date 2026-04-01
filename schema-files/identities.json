@@ -2,7 +2,7 @@
     {
         "annotations": [
             {
-                "version_added": "91.0a1"
+                "version_added": "91.0"
             }
         ],
         "applicationVersion": "140.9.0esr",
@@ -19,7 +19,7 @@
                             "accountsIdentities": {
                                 "annotations": [
                                     {
-                                        "version_added": "91.0a1"
+                                        "version_added": "91.0"
                                     }
                                 ]
                             }
@@ -33,7 +33,7 @@
     {
         "annotations": [
             {
-                "version_added": "91.0a1"
+                "version_added": "91.0"
             }
         ],
         "description": "The identities API allows to manage the user's identities (each account can have multiple identities).",
@@ -41,7 +41,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91.0a1"
+                        "version_added": "91.0"
                     }
                 ],
                 "description": "Fired when a new identity has been created and added to an account. The event also fires for default identities that are created when a new account is added.",
@@ -50,7 +50,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "identityId",
@@ -60,7 +60,7 @@
                         "$ref": "MailIdentity",
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "identity"
@@ -71,7 +71,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91.0a1"
+                        "version_added": "91.0"
                     }
                 ],
                 "description": "Fired when an identity has been removed from an account.",
@@ -80,7 +80,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "identityId",
@@ -92,7 +92,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91.0a1"
+                        "version_added": "91.0"
                     }
                 ],
                 "description": "Fired when one or more properties of an identity have been modified. The returned $(ref:identities.MailIdentity) includes only the changed values.",
@@ -101,7 +101,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "identityId",
@@ -111,7 +111,7 @@
                         "$ref": "MailIdentity",
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "changedValues"
@@ -124,7 +124,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/identities.html#list-accountid"
+                    },
+                    {
+                        "version_added": "91.0"
                     }
                 ],
                 "async": "callback",
@@ -135,7 +138,7 @@
                         "$ref": "accounts.MailAccountId",
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "accountId",
@@ -144,7 +147,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "callback",
@@ -153,7 +156,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "91.0a1"
+                                        "version_added": "91.0"
                                     }
                                 ],
                                 "items": {
@@ -170,7 +173,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91.0a1"
+                        "version_added": "91.0"
                     }
                 ],
                 "async": "callback",
@@ -180,7 +183,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "identityId",
@@ -189,7 +192,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "callback",
@@ -198,7 +201,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "91.0a1"
+                                        "version_added": "91.0"
                                     }
                                 ],
                                 "choices": [
@@ -206,14 +209,14 @@
                                         "$ref": "identities.MailIdentity",
                                         "annotations": [
                                             {
-                                                "version_added": "91.0a1"
+                                                "version_added": "91.0"
                                             }
                                         ]
                                     },
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "127.0a1"
+                                                "version_added": "128.0"
                                             }
                                         ],
                                         "type": "null"
@@ -229,7 +232,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91.0a1"
+                        "version_added": "91.0"
                     }
                 ],
                 "async": "callback",
@@ -240,7 +243,7 @@
                         "$ref": "accounts.MailAccountId",
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "accountId"
@@ -249,7 +252,7 @@
                         "$ref": "identities.MailIdentity",
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "details"
@@ -257,7 +260,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "callback",
@@ -267,7 +270,7 @@
                                 "$ref": "identities.MailIdentity",
                                 "annotations": [
                                     {
-                                        "version_added": "91.0a1"
+                                        "version_added": "91.0"
                                     }
                                 ]
                             }
@@ -283,7 +286,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91.0a1"
+                        "version_added": "91.0"
                     }
                 ],
                 "async": true,
@@ -293,7 +296,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "identityId",
@@ -308,7 +311,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91.0a1"
+                        "version_added": "91.0"
                     }
                 ],
                 "async": "callback",
@@ -318,7 +321,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "identityId",
@@ -328,7 +331,7 @@
                         "$ref": "identities.MailIdentity",
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "details"
@@ -336,7 +339,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "callback",
@@ -346,7 +349,7 @@
                                 "$ref": "identities.MailIdentity",
                                 "annotations": [
                                     {
-                                        "version_added": "91.0a1"
+                                        "version_added": "91.0"
                                     }
                                 ]
                             }
@@ -362,7 +365,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91.0a1"
+                        "version_added": "91.0"
                     }
                 ],
                 "async": "callback",
@@ -373,7 +376,7 @@
                         "$ref": "accounts.MailAccountId",
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "accountId"
@@ -381,7 +384,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "callback",
@@ -390,7 +393,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "91.0a1"
+                                        "version_added": "91.0"
                                     }
                                 ],
                                 "choices": [
@@ -398,14 +401,14 @@
                                         "$ref": "identities.MailIdentity",
                                         "annotations": [
                                             {
-                                                "version_added": "91.0a1"
+                                                "version_added": "91.0"
                                             }
                                         ]
                                     },
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "127.0a1"
+                                                "version_added": "128.0"
                                             }
                                         ],
                                         "type": "null"
@@ -421,7 +424,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91.0a1"
+                        "version_added": "91.0"
                     }
                 ],
                 "async": true,
@@ -432,7 +435,7 @@
                         "$ref": "accounts.MailAccountId",
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "accountId"
@@ -440,7 +443,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "identityId",
@@ -458,7 +461,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128.0a1"
+                        "version_added": "128.0"
                     }
                 ],
                 "id": "EncryptionCapabilities",
@@ -466,7 +469,7 @@
                     "canEncrypt": {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "Whether the encryption technology is configured to support message encryption.",
@@ -475,7 +478,7 @@
                     "canSign": {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "Whether the encryption technology is configured to support message signing.",
@@ -487,7 +490,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/identities.html#mailidentity"
+                    },
+                    {
+                        "version_added": "91.0"
                     }
                 ],
                 "id": "MailIdentity",
@@ -496,7 +502,7 @@
                         "$ref": "accounts.MailAccountId",
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "description": "The id of the $(ref:accounts.MailAccount) this identity belongs to. The <var>accountId</var> property is read-only.",
@@ -505,7 +511,7 @@
                     "composeHtml": {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "description": "If the identity uses HTML as the default compose format.",
@@ -515,7 +521,7 @@
                     "email": {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "description": "The user's email address as used when messages are sent from this identity.",
@@ -525,7 +531,7 @@
                     "encryptionCapabilities": {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "The encryption capabilities of this identity. Read only.",
@@ -535,7 +541,7 @@
                                 "$ref": "identities.EncryptionCapabilities",
                                 "annotations": [
                                     {
-                                        "version_added": "128.0a1"
+                                        "version_added": "128.0"
                                     }
                                 ],
                                 "description": "The capabilities of this identity for the OpenPGP encryption technology."
@@ -544,7 +550,7 @@
                                 "$ref": "identities.EncryptionCapabilities",
                                 "annotations": [
                                     {
-                                        "version_added": "128.0a1"
+                                        "version_added": "128.0"
                                     }
                                 ],
                                 "description": "The capabilities of this identity for the S/MIME encryption technology."
@@ -555,7 +561,7 @@
                     "id": {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "description": "A unique identifier for this identity. The <var>id</var> property is read-only.",
@@ -565,7 +571,7 @@
                     "label": {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "description": "A user-defined label for this identity.",
@@ -575,7 +581,7 @@
                     "name": {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "description": "The user's name as used when messages are sent from this identity.",
@@ -585,7 +591,7 @@
                     "organization": {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "description": "The organization associated with this identity.",
@@ -595,7 +601,7 @@
                     "replyTo": {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "description": "The reply-to email address associated with this identity.",
@@ -605,7 +611,7 @@
                     "signature": {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "description": "The signature of the identity.",
@@ -615,7 +621,7 @@
                     "signatureIsPlainText": {
                         "annotations": [
                             {
-                                "version_added": "91.0a1"
+                                "version_added": "91.0"
                             }
                         ],
                         "description": "If the signature should be interpreted as plain text or as HTML.",

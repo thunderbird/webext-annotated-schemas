@@ -2,7 +2,7 @@
     {
         "annotations": [
             {
-                "version_added": "70.0a1"
+                "version_added": "68.1.1"
             }
         ],
         "description": "A message can be displayed in either Thunderbird's main mail tab (a.k.a 3-pane tab), a tab of its own, or in a window of its own. All are referenced by <var>tabId</var> in this API. Display windows are considered to have exactly one tab, which has limited functionality compared to tabs from the main window.",
@@ -10,7 +10,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "81.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/messageDisplay.html#onmessagesdisplayed-tab-messages-displayedmessages"
+                    },
+                    {
+                        "version_added": "78.3.2"
                     }
                 ],
                 "description": "Fired when either a single message is displayed or when multiple messages are displayed, whether in a 3-pane tab, a message tab, or a message window.",
@@ -20,7 +23,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "81.0a1"
+                                "version_added": "78.3.2"
                             }
                         ],
                         "name": "tab"
@@ -29,7 +32,7 @@
                         "$ref": "messages.MessageList",
                         "annotations": [
                             {
-                                "version_added": "81.0a1"
+                                "version_added": "78.3.2"
                             }
                         ],
                         "name": "displayedMessages"
@@ -42,7 +45,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "81.0a1"
+                        "version_added": "78.3.2"
                     }
                 ],
                 "async": "callback",
@@ -52,7 +55,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "81.0a1"
+                                "version_added": "78.3.2"
                             }
                         ],
                         "minimum": 1,
@@ -63,7 +66,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "96.0a1"
+                                "version_added": "102.0"
                             }
                         ],
                         "name": "callback",
@@ -73,7 +76,7 @@
                                 "$ref": "messages.MessageList",
                                 "annotations": [
                                     {
-                                        "version_added": "96.0a1"
+                                        "version_added": "102.0"
                                     }
                                 ]
                             }
@@ -86,7 +89,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "102.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/messageDisplay.html#open-openproperties"
+                    },
+                    {
+                        "version_added": "102.0"
                     }
                 ],
                 "async": "callback",
@@ -96,7 +102,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "102.0a1"
+                                "version_added": "102.0"
                             }
                         ],
                         "description": "Settings for opening the message. Exactly one of messageId, headerMessageId or file must be specified.",
@@ -105,7 +111,7 @@
                             "active": {
                                 "annotations": [
                                     {
-                                        "version_added": "102.0a1"
+                                        "version_added": "102.0"
                                     }
                                 ],
                                 "description": "Whether the new tab should become the active tab in the window. Only applicable to messages opened in tabs.",
@@ -116,7 +122,7 @@
                                 "additionalProperties": true,
                                 "annotations": [
                                     {
-                                        "version_added": "114.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "description": "The DOM file object of a message to be opened.",
@@ -127,7 +133,7 @@
                             "headerMessageId": {
                                 "annotations": [
                                     {
-                                        "version_added": "102.0a1"
+                                        "version_added": "102.0"
                                     }
                                 ],
                                 "description": "The headerMessageId of a message to be opened. Will throw an <em>ExtensionError</em>, if the provided <var>headerMessageId</var> is unknown or invalid. Not supported for external messages.",
@@ -137,7 +143,7 @@
                             "location": {
                                 "annotations": [
                                     {
-                                        "version_added": "102.0a1"
+                                        "version_added": "102.0"
                                     }
                                 ],
                                 "description": "Where to open the message. If not specified, the users preference is honoured.",
@@ -149,14 +155,14 @@
                                     "tab": {
                                         "annotations": [
                                             {
-                                                "version_added": "102.0a1"
+                                                "version_added": "102.0"
                                             }
                                         ]
                                     },
                                     "window": {
                                         "annotations": [
                                             {
-                                                "version_added": "102.0a1"
+                                                "version_added": "102.0"
                                             }
                                         ]
                                     }
@@ -168,7 +174,7 @@
                                 "$ref": "messages.MessageId",
                                 "annotations": [
                                     {
-                                        "version_added": "102.0a1"
+                                        "version_added": "102.0"
                                     }
                                 ],
                                 "description": "The id of a message to be opened. Will throw an <em>ExtensionError</em>, if the provided <var>messageId</var> is unknown or invalid.",
@@ -177,7 +183,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "102.0a1"
+                                        "version_added": "102.0"
                                     }
                                 ],
                                 "description": "The id of the window, where the new tab should be created. Defaults to the current window. Only applicable to messages opened in tabs.",
@@ -191,7 +197,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "102.0a1"
+                                "version_added": "102.0"
                             }
                         ],
                         "name": "callback",
@@ -201,7 +207,7 @@
                                 "$ref": "tabs.Tab",
                                 "annotations": [
                                     {
-                                        "version_added": "102.0a1"
+                                        "version_added": "102.0"
                                     }
                                 ],
                                 "name": "tab"

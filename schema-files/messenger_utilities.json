@@ -2,7 +2,7 @@
     {
         "annotations": [
             {
-                "version_added": "137.0a1"
+                "version_added": "140.0"
             }
         ],
         "description": "The messengerUtilities API provides helpful methods for working with messages and emails.",
@@ -10,7 +10,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "137.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/messengerUtilities.html#converttoplaintext-body-options"
+                    },
+                    {
+                        "version_added": "140.0"
                     }
                 ],
                 "async": "callback",
@@ -20,7 +23,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "description": "The to-be-converted body.",
@@ -30,7 +33,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "name": "options",
@@ -39,7 +42,7 @@
                             "flowed": {
                                 "annotations": [
                                     {
-                                        "version_added": "137.0a1"
+                                        "version_added": "140.0"
                                     }
                                 ],
                                 "description": "The converted plain text will be wrapped to lines not longer than 72 characters and use format flowed, as defined by RFC 2646.",
@@ -52,7 +55,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "name": "callback",
@@ -61,7 +64,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "137.0a1"
+                                        "version_added": "140.0"
                                     }
                                 ],
                                 "type": "string"
@@ -75,7 +78,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "137.0a1"
+                        "version_added": "140.0"
                     }
                 ],
                 "async": "callback",
@@ -85,7 +88,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "description": "The size in bytes.",
@@ -95,7 +98,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "name": "callback",
@@ -104,7 +107,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "137.0a1"
+                                        "version_added": "140.0"
                                     }
                                 ],
                                 "type": "string"
@@ -118,7 +121,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "137.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/messengerUtilities.html#parsemailboxstring-mailboxstring-preservegroups"
+                    },
+                    {
+                        "version_added": "140.0"
                     }
                 ],
                 "async": "callback",
@@ -128,7 +134,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "description": "The string to be parsed (e.g. <var>User <user@example.com>, other-user@example.com</var>)",
@@ -138,7 +144,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "description": "Keep grouped hierachies. Groups may be specified in a mailbox string as follows: <var>GroupName : user1 <user1@example.com>, user2@example,com ;</var>.",
@@ -149,7 +155,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "name": "callback",
@@ -158,7 +164,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "137.0a1"
+                                        "version_added": "140.0"
                                     }
                                 ],
                                 "items": {
@@ -175,7 +181,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "137.0a1"
+                        "version_added": "140.0"
                     }
                 ],
                 "async": "callback",
@@ -185,7 +191,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "name": "headerName",
@@ -194,14 +200,14 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "choices": [
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "137.0a1"
+                                        "version_added": "140.0"
                                     }
                                 ],
                                 "type": "string"
@@ -209,7 +215,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "137.0a1"
+                                        "version_added": "140.0"
                                     }
                                 ],
                                 "items": {
@@ -223,7 +229,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "description": "Headers containing multiple mailbox strings need special handling. For example the header <var>=?UTF-8?Q?H=C3=B6rst=2C_Kenny?= <K.Hoerst@invalid>, new@thunderbird.bug</var> will be wrongly decoded to <var>Hörst, Kenny <K.Hoerst@invalid>, new@thunderbird.bug</var>, corrupting the structure of the first mailbox string. This option overrides the default behavior of treating the headers defined in $(ref:messengerUtilities.MailboxHeaders) as mailbox headers.",
@@ -234,7 +240,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "name": "callback",
@@ -243,7 +249,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "137.0a1"
+                                        "version_added": "140.0"
                                     }
                                 ],
                                 "items": {
@@ -260,7 +266,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "137.0a1"
+                        "version_added": "140.0"
                     }
                 ],
                 "async": "callback",
@@ -270,7 +276,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "name": "headerName",
@@ -279,14 +285,14 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "choices": [
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "137.0a1"
+                                        "version_added": "140.0"
                                     }
                                 ],
                                 "type": "string"
@@ -294,7 +300,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "137.0a1"
+                                        "version_added": "140.0"
                                     }
                                 ],
                                 "items": {
@@ -308,7 +314,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "description": "Headers containing multiple mailbox strings need special handling. This option overrides the default behavior of treating the headers defined in $(ref:messengerUtilities.MailboxHeaders) as mailbox headers.",
@@ -319,7 +325,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "name": "callback",
@@ -328,7 +334,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "137.0a1"
+                                        "version_added": "140.0"
                                     }
                                 ],
                                 "items": {
@@ -348,7 +354,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "137.0a1"
+                        "version_added": "140.0"
                     }
                 ],
                 "description": "Representation of a parsed mailbox string (see RFC 5322, section 3.4).",
@@ -357,7 +363,7 @@
                     "email": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "description": "The <var>addr-spec</var> associated with the provided address, if available.",
@@ -367,7 +373,7 @@
                     "group": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "description": "The members of the group, if available.",
@@ -380,7 +386,7 @@
                     "name": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ],
                         "description": "The <var>display-name</var> associated with the provided address or group, if available.",
@@ -393,7 +399,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "137.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/messengerUtilities.html#mailboxheaders"
+                    },
+                    {
+                        "version_added": "140.0"
                     }
                 ],
                 "description": "MIME headers, which by default are treated as containing one or more mailbox strings.",
@@ -421,126 +430,126 @@
                     "approved": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "bcc": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "cc": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "delivered-to": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "disposition-notification-to": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "from": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "mail-followup-to": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "mail-reply-to": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "reply-to": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "resent-bcc": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "resent-cc": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "resent-from": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "resent-reply-to": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "resent-sender": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "resent-to": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "return-receipt-to": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "sender": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     },
                     "to": {
                         "annotations": [
                             {
-                                "version_added": "137.0a1"
+                                "version_added": "140.0"
                             }
                         ]
                     }

@@ -2,7 +2,7 @@
     {
         "annotations": [
             {
-                "version_added": "128.0a1"
+                "version_added": "128.0"
             }
         ],
         "applicationVersion": "140.9.0esr",
@@ -19,7 +19,7 @@
                             "sensitiveDataUpload": {
                                 "annotations": [
                                     {
-                                        "version_added": "128.0a1"
+                                        "version_added": "128.0"
                                     }
                                 ]
                             }
@@ -33,14 +33,17 @@
     {
         "annotations": [
             {
-                "version_added": "128.0a1"
+                "version_added": "128.0"
             }
         ],
         "functions": [
             {
                 "annotations": [
                     {
-                        "version_added": "128.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/scripting.compose.html#getregisteredscripts-filter"
+                    },
+                    {
+                        "version_added": "128.0"
                     }
                 ],
                 "async": "callback",
@@ -51,7 +54,7 @@
                         "$ref": "ComposeScriptFilter",
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "An object to filter the extension's registered compose scripts.",
@@ -61,7 +64,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "The resulting array contains the registered compose scripts.",
@@ -70,7 +73,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "128.0a1"
+                                        "version_added": "128.0"
                                     }
                                 ],
                                 "items": {
@@ -91,7 +94,10 @@
                         "note": "Registered scripts will only be applied to newly opened message compose tabs. To apply the script to already open message compose tabs, manually inject your script by calling $(ref:scripting.executeScript) for each of the open <var>messageCompose</var> tabs."
                     },
                     {
-                        "version_added": "128.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/scripting.compose.html#registerscripts-scripts"
+                    },
+                    {
+                        "version_added": "128.0"
                     }
                 ],
                 "async": "callback",
@@ -101,7 +107,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "Contains a list of compose scripts to be registered. If there are errors during script parsing/file validation, or if the IDs specified already exist, then no scripts are registered.",
@@ -114,7 +120,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "Invoked upon completion of the registration.",
@@ -128,7 +134,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/scripting.compose.html#unregisterscripts-filter"
+                    },
+                    {
+                        "version_added": "128.0"
                     }
                 ],
                 "async": "callback",
@@ -139,7 +148,7 @@
                         "$ref": "ComposeScriptFilter",
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "If specified, only unregisters compose scripts which match the filter. Otherwise, all of the extension's compose scripts are unregistered.",
@@ -149,7 +158,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "Invoked upon completion of the unregistration.",
@@ -169,7 +178,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/scripting.compose.html#composescriptdetails"
+                    },
+                    {
+                        "version_added": "128.0"
                     }
                 ],
                 "id": "ComposeScriptDetails",
@@ -177,7 +189,7 @@
                     "css": {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "The list of CSS files to be injected. These are injected in the order they appear in this array.",
@@ -190,7 +202,7 @@
                     "id": {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "The id of the compose script, specified in the API call.",
@@ -199,7 +211,7 @@
                     "js": {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "The list of JavaScript files to be injected. These are injected in the order they appear in this array.",
@@ -213,7 +225,7 @@
                         "$ref": "extensionTypes.RunAt",
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "Specifies when JavaScript files are injected. The preferred and default value is <code>document_idle</code>.",
@@ -225,7 +237,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128.0a1"
+                        "version_added": "128.0"
                     }
                 ],
                 "id": "ComposeScriptFilter",
@@ -233,7 +245,7 @@
                     "ids": {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "The IDs of specific compose scripts to retrieve with <code>getRegisteredScripts()</code> or to unregister with <code>unregisterScripts()</code>.",
@@ -251,14 +263,17 @@
     {
         "annotations": [
             {
-                "version_added": "128.0a1"
+                "version_added": "128.0"
             }
         ],
         "functions": [
             {
                 "annotations": [
                     {
-                        "version_added": "128.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/scripting.messageDisplay.html#getregisteredscripts-filter"
+                    },
+                    {
+                        "version_added": "128.0"
                     }
                 ],
                 "async": "callback",
@@ -269,7 +284,7 @@
                         "$ref": "MessageDisplayScriptFilter",
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "An object to filter the extension's registered message display scripts.",
@@ -279,7 +294,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "The resulting array contains the registered message display scripts.",
@@ -288,7 +303,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "128.0a1"
+                                        "version_added": "128.0"
                                     }
                                 ],
                                 "items": {
@@ -309,7 +324,10 @@
                         "note": "Registered scripts will only be applied to newly opened messages. To apply the script to already open messages, manually inject your script by calling $(ref:scripting.executeScript) for each of the open <var>messageDisplay</var> tabs."
                     },
                     {
-                        "version_added": "128.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/scripting.messageDisplay.html#registerscripts-scripts"
+                    },
+                    {
+                        "version_added": "128.0"
                     }
                 ],
                 "async": "callback",
@@ -319,7 +337,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "Contains a list of message display scripts to be registered. If there are errors during script parsing/file validation, or if the IDs specified already exist, then no scripts are registered.",
@@ -332,7 +350,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "Invoked upon completion of the registration.",
@@ -346,7 +364,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/scripting.messageDisplay.html#unregisterscripts-filter"
+                    },
+                    {
+                        "version_added": "128.0"
                     }
                 ],
                 "async": "callback",
@@ -357,7 +378,7 @@
                         "$ref": "MessageDisplayScriptFilter",
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "If specified, only unregisters message display scripts which match the filter. Otherwise, all of the extension's message display scripts are unregistered.",
@@ -367,7 +388,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "Invoked upon completion of the unregistration.",
@@ -387,7 +408,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/scripting.messageDisplay.html#messagedisplayscriptdetails"
+                    },
+                    {
+                        "version_added": "128.0"
                     }
                 ],
                 "id": "MessageDisplayScriptDetails",
@@ -395,7 +419,7 @@
                     "css": {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "The list of CSS files to be injected. These are injected in the order they appear in this array.",
@@ -408,7 +432,7 @@
                     "id": {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "The id of the message display script, specified in the API call.",
@@ -417,7 +441,7 @@
                     "js": {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "The list of JavaScript files to be injected. These are injected in the order they appear in this array.",
@@ -431,7 +455,7 @@
                         "$ref": "extensionTypes.RunAt",
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "Specifies when JavaScript files are injected. The preferred and default value is <code>document_idle</code>.",
@@ -443,7 +467,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/scripting.messageDisplay.html#messagedisplayscriptfilter"
+                    },
+                    {
+                        "version_added": "128.0"
                     }
                 ],
                 "id": "MessageDisplayScriptFilter",
@@ -451,7 +478,7 @@
                     "ids": {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "description": "The IDs of specific message display scripts to retrieve with <code>getRegisteredScripts()</code> or to unregister with <code>unregisterScripts()</code>.",
