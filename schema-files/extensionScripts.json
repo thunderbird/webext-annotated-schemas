@@ -2,7 +2,7 @@
     {
         "annotations": [
             {
-                "version_added": "82.0a1"
+                "version_added": "78.4.0"
             }
         ],
         "applicationVersion": "140.9.0esr",
@@ -20,14 +20,14 @@
                             "messagesModify": {
                                 "annotations": [
                                     {
-                                        "version_added": "82.0a1"
+                                        "version_added": "78.4.0"
                                     }
                                 ]
                             },
                             "sensitiveDataUpload": {
                                 "annotations": [
                                     {
-                                        "version_added": "115.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ]
                             }
@@ -41,7 +41,7 @@
     {
         "annotations": [
             {
-                "version_added": "82.0a1"
+                "version_added": "78.4.0"
             }
         ],
         "functions": [
@@ -51,7 +51,10 @@
                         "note": "Registered scripts will only be applied to newly opened message composer tabs. To apply the script to already open message composer tab, manually inject your script by calling $(ref:tabs.executeScript) for each of the open <var>messageCompose</var> tabs."
                     },
                     {
-                        "version_added": "82.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeScripts.html#register-composescriptoptions"
+                    },
+                    {
+                        "version_added": "78.4.0"
                     }
                 ],
                 "async": true,
@@ -62,7 +65,7 @@
                         "$ref": "RegisteredComposeScriptOptions",
                         "annotations": [
                             {
-                                "version_added": "82.0a1"
+                                "version_added": "78.4.0"
                             }
                         ],
                         "name": "composeScriptOptions"
@@ -79,7 +82,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "82.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeScripts.html#registeredcomposescriptoptions"
+                    },
+                    {
+                        "version_added": "78.4.0"
                     }
                 ],
                 "description": "Details of a compose script registered programmatically.",
@@ -88,7 +94,7 @@
                     "css": {
                         "annotations": [
                             {
-                                "version_added": "82.0a1"
+                                "version_added": "78.4.0"
                             }
                         ],
                         "description": "The list of CSS files to inject.",
@@ -101,7 +107,7 @@
                     "js": {
                         "annotations": [
                             {
-                                "version_added": "82.0a1"
+                                "version_added": "78.4.0"
                             }
                         ],
                         "description": "The list of JavaScript files to inject.",
@@ -117,7 +123,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "82.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeScripts.html#registeredcomposescript"
+                    },
+                    {
+                        "version_added": "78.4.0"
                     }
                 ],
                 "description": "An object that represents a compose script registered programmatically.",
@@ -125,7 +134,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "82.0a1"
+                                "version_added": "78.4.0"
                             }
                         ],
                         "async": true,
@@ -143,7 +152,7 @@
     {
         "annotations": [
             {
-                "version_added": "82.0a1"
+                "version_added": "78.4.0"
             }
         ],
         "functions": [
@@ -153,7 +162,10 @@
                         "note": "Registered scripts will only be applied to newly opened messages. To apply the script to already open messages, manually inject your script by calling $(ref:tabs.executeScript) for each of the open <var>messageDisplay</var> tabs."
                     },
                     {
-                        "version_added": "82.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayScripts.html#register-messagedisplayscriptoptions"
+                    },
+                    {
+                        "version_added": "78.4.0"
                     }
                 ],
                 "async": true,
@@ -164,7 +176,7 @@
                         "$ref": "RegisteredMessageDisplayScriptOptions",
                         "annotations": [
                             {
-                                "version_added": "82.0a1"
+                                "version_added": "78.4.0"
                             }
                         ],
                         "name": "messageDisplayScriptOptions"
@@ -181,7 +193,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "82.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayScripts.html#registeredmessagedisplayscriptoptions"
+                    },
+                    {
+                        "version_added": "78.4.0"
                     }
                 ],
                 "description": "Details of a message display script registered programmatically",
@@ -190,7 +205,7 @@
                     "css": {
                         "annotations": [
                             {
-                                "version_added": "82.0a1"
+                                "version_added": "78.4.0"
                             }
                         ],
                         "description": "The list of CSS files to inject",
@@ -203,7 +218,7 @@
                     "js": {
                         "annotations": [
                             {
-                                "version_added": "82.0a1"
+                                "version_added": "78.4.0"
                             }
                         ],
                         "description": "The list of JavaScript files to inject",
@@ -216,7 +231,7 @@
                     "runAt": {
                         "annotations": [
                             {
-                                "version_added": "126.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "default": "document_idle",
@@ -230,21 +245,21 @@
                             "document_end": {
                                 "annotations": [
                                     {
-                                        "version_added": "126.0a1"
+                                        "version_added": "128.0"
                                     }
                                 ]
                             },
                             "document_idle": {
                                 "annotations": [
                                     {
-                                        "version_added": "126.0a1"
+                                        "version_added": "128.0"
                                     }
                                 ]
                             },
                             "document_start": {
                                 "annotations": [
                                     {
-                                        "version_added": "126.0a1"
+                                        "version_added": "128.0"
                                     }
                                 ]
                             }
@@ -258,7 +273,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "82.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayScripts.html#registeredmessagedisplayscript"
+                    },
+                    {
+                        "version_added": "78.4.0"
                     }
                 ],
                 "description": "An object that represents a message display script registered programmatically",
@@ -266,7 +284,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "82.0a1"
+                                "version_added": "78.4.0"
                             }
                         ],
                         "async": true,

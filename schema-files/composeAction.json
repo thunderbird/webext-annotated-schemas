@@ -2,7 +2,7 @@
     {
         "annotations": [
             {
-                "version_added": "64.0a1"
+                "version_added": "68.0"
             }
         ],
         "applicationVersion": "140.9.0esr",
@@ -17,7 +17,7 @@
                         },
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "optional": true,
@@ -25,7 +25,7 @@
                             "browser_style": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "default": false,
@@ -36,7 +36,7 @@
                             "default_area": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Defines the location the composeAction button will appear. The default location is <var>maintoolbar</var>.",
@@ -48,14 +48,14 @@
                                     "formattoolbar": {
                                         "annotations": [
                                             {
-                                                "version_added": "64.0a1"
+                                                "version_added": "68.0"
                                             }
                                         ]
                                     },
                                     "maintoolbar": {
                                         "annotations": [
                                             {
-                                                "version_added": "64.0a1"
+                                                "version_added": "68.0"
                                             }
                                         ]
                                     }
@@ -67,7 +67,7 @@
                                 "$ref": "manifest.IconPath",
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The paths to one or more icons for the composeAction button.",
@@ -76,7 +76,7 @@
                             "default_label": {
                                 "annotations": [
                                     {
-                                        "version_added": "84.0b3"
+                                        "version_added": "78.6.1"
                                     }
                                 ],
                                 "description": "The label of the composeAction button, defaults to its title. Can be set to an empty string to not display any label. If the containing toolbar is configured to display text only, the title will be used as fallback.",
@@ -87,7 +87,7 @@
                             "default_popup": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The html document to be opened as a popup when the user clicks on the composeAction button. Ignored for action buttons with type <var>menu</var>.",
@@ -99,7 +99,7 @@
                             "default_title": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The title of the composeAction button. This shows up in the tooltip and the label. Defaults to the add-on name.",
@@ -110,7 +110,7 @@
                             "theme_icons": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Specifies dark and light icons to be used with themes. The <var>light</var> icon is used on dark backgrounds and vice versa. The default theme uses the <var>default_icon</var> for light backgrounds (if specified).",
@@ -124,7 +124,7 @@
                             "type": {
                                 "annotations": [
                                     {
-                                        "version_added": "90.0a1"
+                                        "version_added": "91.0"
                                     }
                                 ],
                                 "default": "button",
@@ -137,14 +137,14 @@
                                     "button": {
                                         "annotations": [
                                             {
-                                                "version_added": "90.0a1"
+                                                "version_added": "91.0"
                                             }
                                         ]
                                     },
                                     "menu": {
                                         "annotations": [
                                             {
-                                                "version_added": "90.0a1"
+                                                "version_added": "91.0"
                                             }
                                         ]
                                     }
@@ -162,7 +162,7 @@
     {
         "annotations": [
             {
-                "version_added": "64.0a1"
+                "version_added": "68.0"
             }
         ],
         "description": "Use a composeAction to put a button in the message composition toolbars. In addition to its icon, a composeAction button can also have a tooltip, a badge, and a popup.",
@@ -170,7 +170,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#onclicked-tab-info"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "Fired when a composeAction button is clicked. This event will not fire if the composeAction has a popup. This is a user input event handler. For asynchronous listeners some <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/User_actions'>restrictions</a> apply.",
@@ -180,7 +183,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "74.0b2"
+                                "version_added": "78.0"
                             }
                         ],
                         "name": "tab"
@@ -189,7 +192,7 @@
                         "$ref": "OnClickData",
                         "annotations": [
                             {
-                                "version_added": "74.0b2"
+                                "version_added": "78.0"
                             }
                         ],
                         "name": "info",
@@ -203,7 +206,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#settitle-details"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -213,7 +219,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "details",
@@ -221,7 +227,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Sets the title only for the given tab.",
@@ -232,14 +238,14 @@
                             "title": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "64.0a1"
+                                                "version_added": "68.0"
                                             }
                                         ],
                                         "type": "string"
@@ -247,7 +253,7 @@
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "64.0a1"
+                                                "version_added": "68.0"
                                             }
                                         ],
                                         "type": "null"
@@ -258,7 +264,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -273,7 +279,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -287,7 +293,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#gettitle-details"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -297,7 +306,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "details",
@@ -305,7 +314,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "108.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "description": "Specifies for which tab the title should be retrieved. If no tab is specified, the global value is retrieved.",
@@ -316,7 +325,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "108.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -331,7 +340,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -340,7 +349,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "name": "result",
@@ -355,7 +364,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "84.0b3"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#setlabel-details"
+                    },
+                    {
+                        "version_added": "78.6.1"
                     }
                 ],
                 "async": "callback",
@@ -365,7 +377,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "84.0b3"
+                                "version_added": "78.6.1"
                             }
                         ],
                         "name": "details",
@@ -373,14 +385,14 @@
                             "label": {
                                 "annotations": [
                                     {
-                                        "version_added": "84.0b3"
+                                        "version_added": "78.6.1"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "84.0b3"
+                                                "version_added": "78.6.1"
                                             }
                                         ],
                                         "type": "string"
@@ -388,7 +400,7 @@
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "84.0b3"
+                                                "version_added": "78.6.1"
                                             }
                                         ],
                                         "type": "null"
@@ -399,7 +411,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "84.0b3"
+                                        "version_added": "78.6.1"
                                     }
                                 ],
                                 "description": "Sets the label only for the given tab.",
@@ -410,7 +422,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "84.0b3"
+                                        "version_added": "78.6.1"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -425,7 +437,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "84.0b3"
+                                "version_added": "78.6.1"
                             }
                         ],
                         "name": "callback",
@@ -439,7 +451,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "84.0b3"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#getlabel-details"
+                    },
+                    {
+                        "version_added": "78.6.1"
                     }
                 ],
                 "async": "callback",
@@ -449,7 +464,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "84.0b3"
+                                "version_added": "78.6.1"
                             }
                         ],
                         "name": "details",
@@ -457,7 +472,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "108.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "description": "Specifies for which tab the label should be retrieved. If no tab is specified, the global value is retrieved.",
@@ -468,7 +483,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "108.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -483,7 +498,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "84.0b3"
+                                "version_added": "78.6.1"
                             }
                         ],
                         "name": "callback",
@@ -492,14 +507,14 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "84.0b3"
+                                        "version_added": "78.6.1"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "84.0b3"
+                                                "version_added": "78.6.1"
                                             }
                                         ],
                                         "type": "string"
@@ -507,7 +522,7 @@
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "127.0a1"
+                                                "version_added": "128.0"
                                             }
                                         ],
                                         "type": "null"
@@ -524,7 +539,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#seticon-details"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -534,7 +552,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "details",
@@ -542,7 +560,7 @@
                             "imageData": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "choices": [
@@ -550,7 +568,7 @@
                                         "$ref": "ImageDataType",
                                         "annotations": [
                                             {
-                                                "version_added": "64.0a1"
+                                                "version_added": "68.0"
                                             }
                                         ]
                                     },
@@ -558,7 +576,7 @@
                                         "$ref": "ImageDataDictionary",
                                         "annotations": [
                                             {
-                                                "version_added": "64.0a1"
+                                                "version_added": "68.0"
                                             }
                                         ]
                                     }
@@ -570,7 +588,7 @@
                                 "$ref": "manifest.IconPath",
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The paths to one or more icons for the composeAction button.",
@@ -579,7 +597,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Sets the icon only for the given tab.",
@@ -590,7 +608,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -605,7 +623,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -619,7 +637,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#setpopup-details"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -629,7 +650,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "details",
@@ -637,14 +658,14 @@
                             "popup": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "64.0a1"
+                                                "version_added": "68.0"
                                             }
                                         ],
                                         "type": "string"
@@ -652,7 +673,7 @@
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "64.0a1"
+                                                "version_added": "68.0"
                                             }
                                         ],
                                         "type": "null"
@@ -663,7 +684,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Sets the popup only for the given tab.",
@@ -674,7 +695,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -689,7 +710,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -703,7 +724,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#getpopup-details"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -713,7 +737,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "details",
@@ -721,7 +745,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "108.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "description": "Specifies for which tab the popup document should be retrieved. If no tab is specified, the global value is retrieved.",
@@ -732,7 +756,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "108.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -747,7 +771,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -756,7 +780,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "name": "result",
@@ -771,7 +795,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#setbadgetext-details"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -781,7 +808,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "details",
@@ -789,7 +816,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Sets the badge text only for the given tab.",
@@ -800,14 +827,14 @@
                             "text": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "64.0a1"
+                                                "version_added": "68.0"
                                             }
                                         ],
                                         "type": "string"
@@ -815,7 +842,7 @@
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "64.0a1"
+                                                "version_added": "68.0"
                                             }
                                         ],
                                         "type": "null"
@@ -826,7 +853,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -841,7 +868,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -855,7 +882,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#getbadgetext-details"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -865,7 +895,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "details",
@@ -873,7 +903,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "108.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "description": "Specifies for which tab the badge text should be retrieved. If no tab is specified, the global value is retrieved.",
@@ -884,7 +914,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "108.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -899,7 +929,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -908,7 +938,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "name": "result",
@@ -923,7 +953,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#setbadgetextcolor-details"
+                    },
+                    {
+                        "version_added": "128.0"
                     }
                 ],
                 "async": true,
@@ -933,7 +966,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "name": "details",
@@ -941,14 +974,14 @@
                             "color": {
                                 "annotations": [
                                     {
-                                        "version_added": "128.0a1"
+                                        "version_added": "128.0"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "128.0a1"
+                                                "version_added": "128.0"
                                             }
                                         ],
                                         "type": "string"
@@ -957,14 +990,14 @@
                                         "$ref": "ColorArray",
                                         "annotations": [
                                             {
-                                                "version_added": "128.0a1"
+                                                "version_added": "128.0"
                                             }
                                         ]
                                     },
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "128.0a1"
+                                                "version_added": "128.0"
                                             }
                                         ],
                                         "type": "null"
@@ -975,7 +1008,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "128.0a1"
+                                        "version_added": "128.0"
                                     }
                                 ],
                                 "description": "Sets the text color for the badge only for the given tab.",
@@ -986,7 +1019,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "128.0a1"
+                                        "version_added": "128.0"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -1004,7 +1037,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#getbadgetextcolor-details"
+                    },
+                    {
+                        "version_added": "128.0"
                     }
                 ],
                 "async": "callback",
@@ -1014,7 +1050,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "name": "details",
@@ -1022,7 +1058,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "128.0a1"
+                                        "version_added": "128.0"
                                     }
                                 ],
                                 "description": "Specifies for which tab the badge text color should be retrieved. If no tab is specified, the global value is retrieved.",
@@ -1033,7 +1069,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "128.0a1"
+                                        "version_added": "128.0"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -1048,7 +1084,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "128.0a1"
+                                "version_added": "128.0"
                             }
                         ],
                         "name": "callback",
@@ -1058,7 +1094,7 @@
                                 "$ref": "ColorArray",
                                 "annotations": [
                                     {
-                                        "version_added": "128.0a1"
+                                        "version_added": "128.0"
                                     }
                                 ],
                                 "name": "result"
@@ -1072,7 +1108,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#setbadgebackgroundcolor-details"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -1082,7 +1121,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "details",
@@ -1090,14 +1129,14 @@
                             "color": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "64.0a1"
+                                                "version_added": "68.0"
                                             }
                                         ],
                                         "type": "string"
@@ -1106,14 +1145,14 @@
                                         "$ref": "ColorArray",
                                         "annotations": [
                                             {
-                                                "version_added": "64.0a1"
+                                                "version_added": "68.0"
                                             }
                                         ]
                                     },
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "64.0a1"
+                                                "version_added": "68.0"
                                             }
                                         ],
                                         "type": "null"
@@ -1124,7 +1163,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Sets the background color for the badge only for the given tab.",
@@ -1135,7 +1174,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -1150,7 +1189,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -1164,7 +1203,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#getbadgebackgroundcolor-details"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -1174,7 +1216,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "details",
@@ -1182,7 +1224,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "108.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "description": "Specifies for which tab the badge background color should be retrieved. If no tab is specified, the global value is retrieved.",
@@ -1193,7 +1235,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "108.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -1208,7 +1250,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -1218,7 +1260,7 @@
                                 "$ref": "ColorArray",
                                 "annotations": [
                                     {
-                                        "version_added": "64.0a1"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "name": "result"
@@ -1232,7 +1274,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#enable-tabid"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -1242,7 +1287,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The id of the tab for which you want to modify the composeAction button.",
@@ -1254,7 +1299,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -1268,7 +1313,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#disable-tabid"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -1278,7 +1326,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The id of the tab for which you want to modify the composeAction button.",
@@ -1290,7 +1338,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -1304,7 +1352,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#isenabled-details"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -1314,7 +1365,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "64.0a1"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "details",
@@ -1322,7 +1373,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "108.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "description": "Specifies for which tab the state should be retrieved. If no tab is specified, the global value is retrieved.",
@@ -1333,7 +1384,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "108.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -1348,7 +1399,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "96.0a1"
+                                "version_added": "102.0"
                             }
                         ],
                         "name": "callback",
@@ -1357,7 +1408,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "96.0a1"
+                                        "version_added": "102.0"
                                     }
                                 ],
                                 "type": "boolean"
@@ -1371,7 +1422,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#openpopup-options"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -1381,7 +1435,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "113.0a1"
+                                "version_added": "115.0"
                             }
                         ],
                         "description": "An object with information about the popup to open.",
@@ -1391,7 +1445,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "113.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "description": "Defaults to the current window.",
@@ -1405,7 +1459,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "113.0a1"
+                                "version_added": "115.0"
                             }
                         ],
                         "name": "callback",
@@ -1414,7 +1468,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "113.0a1"
+                                        "version_added": "115.0"
                                     }
                                 ],
                                 "type": "boolean"
@@ -1434,7 +1488,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#colorarray"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "An array of four integers in the range [0,255] that make up the RGBA color. For example, opaque red is <var>[255, 0, 0, 255]</var>.",
@@ -1454,7 +1511,10 @@
                 },
                 "annotations": [
                     {
-                        "version_added": "64.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#imagedatatype"
+                    },
+                    {
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "Pixel data for an image. Must be an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object (for example, from a <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/canvas'>canvas</a> element).",
@@ -1466,7 +1526,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "90.0a1"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#imagedatadictionary"
+                    },
+                    {
+                        "version_added": "91.0"
                     }
                 ],
                 "description": "A <em>dictionary object</em> to specify multiple <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> objects in different sizes, so the icon does not have to be scaled for a device with a different pixel density. Each entry is a <em>name-value</em> pair with <em>value</em> being an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object, and <em>name</em> its size.",
@@ -1481,7 +1544,10 @@
             {
                 "annotations": [
                     {
-                        "version_added": "74.0b2"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/composeAction.html#onclickdata"
+                    },
+                    {
+                        "version_added": "78.0"
                     }
                 ],
                 "description": "Information sent when a composeAction button is clicked.",
@@ -1490,7 +1556,7 @@
                     "button": {
                         "annotations": [
                             {
-                                "version_added": "74.0b2"
+                                "version_added": "78.0"
                             }
                         ],
                         "description": "An integer value of button by which menu item was clicked.",
@@ -1500,7 +1566,7 @@
                     "modifiers": {
                         "annotations": [
                             {
-                                "version_added": "74.0b2"
+                                "version_added": "78.0"
                             }
                         ],
                         "description": "An array of keyboard modifiers that were held while the menu item was clicked.",
@@ -1516,7 +1582,7 @@
                                 "Alt": {
                                     "annotations": [
                                         {
-                                            "version_added": "74.0b2"
+                                            "version_added": "78.0"
                                         }
                                     ]
                                 },
@@ -1526,7 +1592,7 @@
                                             "text": "Only available on macOS."
                                         },
                                         {
-                                            "version_added": "74.0b2"
+                                            "version_added": "78.0"
                                         }
                                     ]
                                 },
@@ -1536,7 +1602,7 @@
                                             "text": "Not available on macOS."
                                         },
                                         {
-                                            "version_added": "74.0b2"
+                                            "version_added": "78.0"
                                         }
                                     ]
                                 },
@@ -1546,14 +1612,14 @@
                                             "text": "Only available on macOS, but of limited use in a click event: Holding down the CTRL key while clicking with the mouse is referred to as a 'CTRL click' under macOS and is interpreted as a right mouse click. In a default profile  the <var>dom.event.treat_ctrl_click_as_right_click.disabled</var> preference is not enabled and the <var>MacCtrl</var> modifier key is not forwarded to the API."
                                         },
                                         {
-                                            "version_added": "74.0b2"
+                                            "version_added": "78.0"
                                         }
                                     ]
                                 },
                                 "Shift": {
                                     "annotations": [
                                         {
-                                            "version_added": "74.0b2"
+                                            "version_added": "78.0"
                                         }
                                     ]
                                 }
