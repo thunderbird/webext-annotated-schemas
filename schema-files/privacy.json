@@ -31,7 +31,7 @@
                 "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/privacy"
             },
             {
-                "version_added": "54"
+                "version_added": "60.0"
             }
         ],
         "namespace": "privacy",
@@ -45,7 +45,7 @@
                 "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/privacy/network"
             },
             {
-                "version_added": "54"
+                "version_added": "60.0"
             }
         ],
         "description": "Use the <code>browser.privacy</code> API to control usage of the features in the browser that can affect a user's privacy.",
@@ -58,7 +58,7 @@
                 "$ref": "types.Setting",
                 "annotations": [
                     {
-                        "version_added": "95"
+                        "version_added": "102.0"
                     }
                 ],
                 "description": "Allow users to query the status of 'Global Privacy Control'. This setting's value is of type boolean, defaulting to <code>false</code>."
@@ -67,7 +67,7 @@
                 "$ref": "types.Setting",
                 "annotations": [
                     {
-                        "version_added": "84"
+                        "version_added": "91.0"
                     }
                 ],
                 "description": "Allow users to query the mode for 'HTTPS-Only Mode'. This setting's value is of type HTTPSOnlyModeOption, defaulting to <code>never</code>."
@@ -76,7 +76,7 @@
                 "$ref": "types.Setting",
                 "annotations": [
                     {
-                        "version_added": "54"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "If enabled, the browser attempts to speed up your web browsing experience by pre-resolving DNS entries, prerendering sites (<code>&lt;link rel='prefetch' ...&gt;</code>), and preemptively opening TCP and SSL connections to servers.  This preference's value is a boolean, defaulting to <code>true</code>."
@@ -85,7 +85,7 @@
                 "$ref": "types.Setting",
                 "annotations": [
                     {
-                        "version_added": "55"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Allow users to enable and disable RTCPeerConnections (aka WebRTC)."
@@ -102,7 +102,7 @@
                         "note": "Starting in Thunderbird 70, a value of <code>disable_non_proxied_udp</code> requires a proxy if one is configured, but allows connections to go through if no proxy is set up. Previously, in this mode WebRTC could only be used if a proxy was configured and TURN over TCP was available; this behavior is now exposed as <code>proxy_only</code>."
                     },
                     {
-                        "version_added": "54"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Allow users to specify the media performance/privacy tradeoffs which impacts how WebRTC traffic will be routed and how much local address information is exposed. This preference's value is of type IPHandlingPolicy, defaulting to <code>default</code>."
@@ -170,7 +170,7 @@
                 "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/privacy/services"
             },
             {
-                "version_added": "56"
+                "version_added": "60.0"
             }
         ],
         "description": "Use the <code>browser.privacy</code> API to control usage of the features in the browser that can affect a user's privacy.",
@@ -183,7 +183,7 @@
                 "$ref": "types.Setting",
                 "annotations": [
                     {
-                        "version_added": "56"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "If enabled, the password manager will ask if you want to save passwords. This preference's value is a boolean, defaulting to <code>true</code>."
@@ -196,7 +196,7 @@
                 "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/privacy/websites"
             },
             {
-                "version_added": "54"
+                "version_added": "60.0"
             }
         ],
         "description": "Use the <code>browser.privacy</code> API to control usage of the features in the browser that can affect a user's privacy.",
@@ -217,7 +217,7 @@
                         "note": "The <code>behavior</code> property value \"reject_trackers\" was introduced in version 64."
                     },
                     {
-                        "version_added": "59"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Allow users to specify the default settings for allowing cookies, as well as whether all cookies should be created as non-persistent cookies. This setting's value is of type CookieConfig."
@@ -226,7 +226,7 @@
                 "$ref": "types.Setting",
                 "annotations": [
                     {
-                        "version_added": "58"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "If enabled, the browser will associate all data (including cookies, HSTS data, cached images, and more) for any third party domains with the domain in the address bar. This prevents third party trackers from using directly stored information to identify you across different websites, but may break websites where you login with a third party account (such as a Facebook or Google login.) The value of this preference is of type boolean, and the default value is <code>false</code>."
@@ -235,7 +235,7 @@
                 "$ref": "types.Setting",
                 "annotations": [
                     {
-                        "version_added": "54"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "If enabled, the browser sends auditing pings when requested by a website (<code>&lt;a ping&gt;</code>). The value of this preference is of type boolean, and the default value is <code>true</code>."
@@ -254,7 +254,7 @@
                 "$ref": "types.Setting",
                 "annotations": [
                     {
-                        "version_added": "56"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "If enabled, the browser sends <code>referer</code> headers with your requests. Yes, the name of this preference doesn't match the misspelled header. No, we're not going to change it. The value of this preference is of type boolean, and the default value is <code>true</code>."
@@ -263,7 +263,7 @@
                 "$ref": "types.Setting",
                 "annotations": [
                     {
-                        "version_added": "58"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "If enabled, the browser attempts to appear similar to other users by reporting generic information to websites. This can prevent websites from uniquely identifying users. Examples of data that is spoofed include number of CPU cores, precision of JavaScript timers, the local timezone, and disabling features such as GamePad support, and the WebSpeech and Navigator APIs. The value of this preference is of type boolean, and the default value is <code>false</code>."
@@ -282,7 +282,7 @@
                 "$ref": "types.Setting",
                 "annotations": [
                     {
-                        "version_added": "57"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Allow users to specify the mode for tracking protection. This setting's value is of type TrackingProtectionModeOption, defaulting to <code>private_browsing_only</code>."

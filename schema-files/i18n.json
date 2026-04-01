@@ -42,7 +42,7 @@
                 "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n"
             },
             {
-                "version_added": "45"
+                "version_added": "45.0"
             }
         ],
         "defaultContexts": [
@@ -58,7 +58,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/getAcceptLanguages"
                     },
                     {
-                        "version_added": "47"
+                        "version_added": "52.0"
                     }
                 ],
                 "async": "callback",
@@ -92,7 +92,7 @@
                         "note": "Thunderbird 47 and earlier returns \"??\" instead of \"\" if the message is not found in _locales, <a href=\"https://bugzil.la/1258199\">bug 1258199</a> changed this act to match Chrome, landed on Thunderbird 48."
                     },
                     {
-                        "version_added": "45"
+                        "version_added": "45.0"
                     }
                 ],
                 "description": "Gets the localized string for the specified message. If the message is missing, this method returns an empty string (''). If the format of the <code>getMessage()</code> call is wrong &mdash; for example, <em>messageName</em> is not a string or the <em>substitutions</em> array has more than 9 elements &mdash; this method returns <code>undefined</code>.",
@@ -126,7 +126,7 @@
                         "note": "Thunderbird 55 and earlier returns a language tag that's separated with the underscore character instead of hyphen, see <a href=\"https://bugzil.la/1374552\">bug 1374552</a>."
                     },
                     {
-                        "version_added": "47"
+                        "version_added": "52.0"
                     }
                 ],
                 "description": "Gets the browser UI language of the browser. This is different from $(ref:i18n.getAcceptLanguages) which returns the preferred user languages.",
@@ -144,7 +144,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/detectLanguage"
                     },
                     {
-                        "version_added": "47"
+                        "version_added": "52.0"
                     }
                 ],
                 "async": "callback",
@@ -202,7 +202,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/i18n/LanguageCode"
                     },
                     {
-                        "version_added": "45"
+                        "version_added": "45.0"
                     }
                 ],
                 "description": "An ISO language code such as <code>en</code> or <code>fr</code>. For a complete list of languages supported by this method, see <a href='http://src.chromium.org/viewvc/chrome/trunk/src/third_party/cld/languages/internal/languages.cc'>kLanguageInfoTable</a>. For an unknown language, <code>und</code> will be returned, which means that [percentage] of the text is unknown to CLD",
