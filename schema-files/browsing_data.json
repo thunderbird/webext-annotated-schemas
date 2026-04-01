@@ -31,7 +31,7 @@
                 "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData"
             },
             {
-                "version_added": "53"
+                "version_added": "60.0"
             }
         ],
         "description": "Use the <code>chrome.browsingData</code> API to remove browsing data from a user's local profile.",
@@ -42,7 +42,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/settings"
                     },
                     {
-                        "version_added": "53"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -85,7 +85,7 @@
                         "note": "Specifying <code>dataTypes.history</code> will also remove download history and service workers."
                     },
                     {
-                        "version_added": "53"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -141,7 +141,7 @@
                         "note": "<code>removalOptions.since</code> is not supported."
                     },
                     {
-                        "version_added": "53"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -168,7 +168,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeCookies"
                     },
                     {
-                        "version_added": "53"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -195,7 +195,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeDownloads"
                     },
                     {
-                        "version_added": "53"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -242,7 +242,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeFormData"
                     },
                     {
-                        "version_added": "53"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -273,7 +273,7 @@
                         "note": "This function also removes download history and service workers."
                     },
                     {
-                        "version_added": "53"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -324,7 +324,7 @@
                         "note": "<code>removalOptions.since</code> is not supported."
                     },
                     {
-                        "version_added": "57"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -351,7 +351,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removePluginData"
                     },
                     {
-                        "version_added": "53"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -378,7 +378,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removePasswords"
                     },
                     {
-                        "version_added": "53"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -435,7 +435,7 @@
                                 "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/RemovalOptions"
                             },
                             {
-                                "version_added": "84"
+                                "version_added": "91.0"
                             }
                         ],
                         "description": "Only remove data associated with this specific cookieStoreId.",
@@ -453,7 +453,7 @@
                                 "note": "From Thunderbird 77 also supports the specification of hostnames for the deletion of service worker and indexedDB items."
                             },
                             {
-                                "version_added": "56"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "Only remove data associated with these hostnames (only applies to cookies and localStorage).",
@@ -509,7 +509,7 @@
                                 "note": "<code>since</code> is not supported with the following data types: <code>cache</code>, <code>indexedDB</code>, <code>localStorage</code>, and <code>serviceWorkers</code>."
                             },
                             {
-                                "version_added": "53"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "Remove data accumulated on or after this date, represented in milliseconds since the epoch (accessible via the <code>getTime</code> method of the JavaScript <code>Date</code> object). If absent, defaults to 0 (which would remove all browsing data).",
@@ -528,7 +528,7 @@
                                 "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/DataTypeSet"
                             },
                             {
-                                "version_added": "53"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "The browser's cache. Note: when removing data, this clears the <em>entire</em> cache: it is not limited to the range you specify.",
@@ -538,7 +538,7 @@
                     "cookies": {
                         "annotations": [
                             {
-                                "version_added": "53"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "The browser's cookies.",
@@ -548,7 +548,7 @@
                     "downloads": {
                         "annotations": [
                             {
-                                "version_added": "53"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "The browser's download list.",
@@ -558,7 +558,7 @@
                     "formData": {
                         "annotations": [
                             {
-                                "version_added": "53"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "The browser's stored form data.",
@@ -568,7 +568,7 @@
                     "history": {
                         "annotations": [
                             {
-                                "version_added": "53"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "The browser's history.",
@@ -578,7 +578,7 @@
                     "indexedDB": {
                         "annotations": [
                             {
-                                "version_added": "57"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "Websites' IndexedDB data.",
@@ -588,7 +588,7 @@
                     "localStorage": {
                         "annotations": [
                             {
-                                "version_added": "57"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "Websites' local storage data.",
@@ -598,7 +598,7 @@
                     "passwords": {
                         "annotations": [
                             {
-                                "version_added": "53"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "Stored passwords.",
@@ -608,7 +608,7 @@
                     "pluginData": {
                         "annotations": [
                             {
-                                "version_added": "53"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "Plugins' data.",
@@ -628,7 +628,7 @@
                     "serviceWorkers": {
                         "annotations": [
                             {
-                                "version_added": "53"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "Service Workers.",
