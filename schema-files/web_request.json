@@ -63,7 +63,7 @@
                 "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest"
             },
             {
-                "version_added": "45.0"
+                "version_added": "60.0"
             }
         ],
         "description": "Use the <code>browser.webRequest</code> API to observe and analyze traffic and to intercept, block, or modify requests in-flight.",
@@ -78,7 +78,7 @@
                         "note": "Asynchronous event listeners are supported from version 52."
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when a request is about to occur.",
@@ -103,7 +103,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "52.0"
+                                "version_added": "60.0"
                             }
                         ],
                         "name": "details",
@@ -131,7 +131,7 @@
                             "frameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The value 0 indicates that the request happens in the main frame; a positive value indicates the ID of a subframe in which the request happens. If the document of a (sub-)frame is loaded (<code>type</code> is <code>main_frame</code> or <code>sub_frame</code>), <code>frameId</code> indicates the ID of this frame, not the ID of the outer frame. Frame IDs are unique within a tab.",
@@ -150,7 +150,7 @@
                             "method": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Standard HTTP method.",
@@ -159,7 +159,7 @@
                             "originUrl": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "URL of the resource that triggered this request.",
@@ -169,7 +169,7 @@
                             "parentFrameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "ID of frame that wraps the frame which sent the request. Set to -1 if no parent frame exists.",
@@ -215,7 +215,7 @@
                             "requestId": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the request. Request IDs are unique within a browser session. As a result, they could be used to relate different events of the same request.",
@@ -224,7 +224,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the tab in which the request takes place. Set to -1 if the request isn't related to a tab.",
@@ -242,7 +242,7 @@
                             "timeStamp": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The time when this signal is triggered, in milliseconds since the epoch.",
@@ -252,7 +252,7 @@
                                 "$ref": "ResourceType",
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "How the requested resource will be used."
@@ -260,7 +260,7 @@
                             "url": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "type": "string"
@@ -300,7 +300,7 @@
                         "note": "Asynchronous event listeners are supported from version 52."
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired before sending an HTTP request, once the request headers are available. This may occur after a TCP connection is made to the server, but before any HTTP data is sent. ",
@@ -325,7 +325,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ],
                         "name": "details",
@@ -353,7 +353,7 @@
                             "frameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The value 0 indicates that the request happens in the main frame; a positive value indicates the ID of a subframe in which the request happens. If the document of a (sub-)frame is loaded (<code>type</code> is <code>main_frame</code> or <code>sub_frame</code>), <code>frameId</code> indicates the ID of this frame, not the ID of the outer frame. Frame IDs are unique within a tab.",
@@ -372,7 +372,7 @@
                             "method": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Standard HTTP method.",
@@ -381,7 +381,7 @@
                             "originUrl": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "URL of the resource that triggered this request.",
@@ -391,7 +391,7 @@
                             "parentFrameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "ID of frame that wraps the frame which sent the request. Set to -1 if no parent frame exists.",
@@ -410,7 +410,7 @@
                             "requestId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the request. Request IDs are unique within a browser session. As a result, they could be used to relate different events of the same request.",
@@ -419,7 +419,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the tab in which the request takes place. Set to -1 if the request isn't related to a tab.",
@@ -437,7 +437,7 @@
                             "timeStamp": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The time when this signal is triggered, in milliseconds since the epoch.",
@@ -447,7 +447,7 @@
                                 "$ref": "ResourceType",
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "How the requested resource will be used."
@@ -455,7 +455,7 @@
                             "url": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "type": "string"
@@ -491,7 +491,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired just before a request is going to be sent to the server (modifications of previous onBeforeSendHeaders callbacks are visible by the time onSendHeaders is fired).",
@@ -516,7 +516,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ],
                         "name": "details",
@@ -544,7 +544,7 @@
                             "frameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The value 0 indicates that the request happens in the main frame; a positive value indicates the ID of a subframe in which the request happens. If the document of a (sub-)frame is loaded (<code>type</code> is <code>main_frame</code> or <code>sub_frame</code>), <code>frameId</code> indicates the ID of this frame, not the ID of the outer frame. Frame IDs are unique within a tab.",
@@ -563,7 +563,7 @@
                             "method": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Standard HTTP method.",
@@ -572,7 +572,7 @@
                             "originUrl": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "URL of the resource that triggered this request.",
@@ -582,7 +582,7 @@
                             "parentFrameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "ID of frame that wraps the frame which sent the request. Set to -1 if no parent frame exists.",
@@ -592,7 +592,7 @@
                                 "$ref": "HttpHeaders",
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The HTTP request headers that have been sent out with this request.",
@@ -601,7 +601,7 @@
                             "requestId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the request. Request IDs are unique within a browser session. As a result, they could be used to relate different events of the same request.",
@@ -610,7 +610,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the tab in which the request takes place. Set to -1 if the request isn't related to a tab.",
@@ -628,7 +628,7 @@
                             "timeStamp": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The time when this signal is triggered, in milliseconds since the epoch.",
@@ -638,7 +638,7 @@
                                 "$ref": "ResourceType",
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "How the requested resource will be used."
@@ -646,7 +646,7 @@
                             "url": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "type": "string"
@@ -685,7 +685,7 @@
                         "note": "Asynchronous event listeners are supported from version 52."
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when HTTP response headers of a request have been received.",
@@ -710,7 +710,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ],
                         "name": "details",
@@ -738,7 +738,7 @@
                             "frameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The value 0 indicates that the request happens in the main frame; a positive value indicates the ID of a subframe in which the request happens. If the document of a (sub-)frame is loaded (<code>type</code> is <code>main_frame</code> or <code>sub_frame</code>), <code>frameId</code> indicates the ID of this frame, not the ID of the outer frame. Frame IDs are unique within a tab.",
@@ -757,7 +757,7 @@
                             "method": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Standard HTTP method.",
@@ -766,7 +766,7 @@
                             "originUrl": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "URL of the resource that triggered this request.",
@@ -776,7 +776,7 @@
                             "parentFrameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "ID of frame that wraps the frame which sent the request. Set to -1 if no parent frame exists.",
@@ -785,7 +785,7 @@
                             "requestId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the request. Request IDs are unique within a browser session. As a result, they could be used to relate different events of the same request.",
@@ -795,7 +795,7 @@
                                 "$ref": "HttpHeaders",
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The HTTP response headers that have been received with this response.",
@@ -804,7 +804,7 @@
                             "statusCode": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Standard HTTP status code returned by the server.",
@@ -813,7 +813,7 @@
                             "statusLine": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "HTTP status line of the response or the 'HTTP/0.9 200 OK' string for HTTP/0.9 responses (i.e., responses that lack a status line).",
@@ -822,7 +822,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the tab in which the request takes place. Set to -1 if the request isn't related to a tab.",
@@ -840,7 +840,7 @@
                             "timeStamp": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The time when this signal is triggered, in milliseconds since the epoch.",
@@ -850,7 +850,7 @@
                                 "$ref": "ResourceType",
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "How the requested resource will be used."
@@ -858,7 +858,7 @@
                             "url": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "type": "string"
@@ -1168,7 +1168,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onResponseStarted"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when the first byte of the response body is received. For HTTP requests, this means that the status line and response headers are available.",
@@ -1193,7 +1193,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ],
                         "name": "details",
@@ -1221,7 +1221,7 @@
                             "frameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The value 0 indicates that the request happens in the main frame; a positive value indicates the ID of a subframe in which the request happens. If the document of a (sub-)frame is loaded (<code>type</code> is <code>main_frame</code> or <code>sub_frame</code>), <code>frameId</code> indicates the ID of this frame, not the ID of the outer frame. Frame IDs are unique within a tab.",
@@ -1230,7 +1230,7 @@
                             "fromCache": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Indicates if this response was fetched from disk cache.",
@@ -1249,7 +1249,7 @@
                             "ip": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The server IP address that the request was actually sent to. Note that it may be a literal IPv6 address.",
@@ -1259,7 +1259,7 @@
                             "method": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Standard HTTP method.",
@@ -1268,7 +1268,7 @@
                             "originUrl": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "URL of the resource that triggered this request.",
@@ -1278,7 +1278,7 @@
                             "parentFrameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "ID of frame that wraps the frame which sent the request. Set to -1 if no parent frame exists.",
@@ -1287,7 +1287,7 @@
                             "requestId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the request. Request IDs are unique within a browser session. As a result, they could be used to relate different events of the same request.",
@@ -1297,7 +1297,7 @@
                                 "$ref": "HttpHeaders",
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The HTTP response headers that were received along with this response.",
@@ -1306,7 +1306,7 @@
                             "statusCode": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Standard HTTP status code returned by the server.",
@@ -1315,7 +1315,7 @@
                             "statusLine": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "HTTP status line of the response or the 'HTTP/0.9 200 OK' string for HTTP/0.9 responses (i.e., responses that lack a status line) or an empty string if there are no headers.",
@@ -1324,7 +1324,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the tab in which the request takes place. Set to -1 if the request isn't related to a tab.",
@@ -1342,7 +1342,7 @@
                             "timeStamp": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The time when this signal is triggered, in milliseconds since the epoch.",
@@ -1352,7 +1352,7 @@
                                 "$ref": "ResourceType",
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "How the requested resource will be used."
@@ -1360,7 +1360,7 @@
                             "url": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "type": "string"
@@ -1391,7 +1391,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRedirect"
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when a server-initiated redirect is about to occur.",
@@ -1416,7 +1416,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "52.0"
+                                "version_added": "60.0"
                             }
                         ],
                         "name": "details",
@@ -1444,7 +1444,7 @@
                             "frameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The value 0 indicates that the request happens in the main frame; a positive value indicates the ID of a subframe in which the request happens. If the document of a (sub-)frame is loaded (<code>type</code> is <code>main_frame</code> or <code>sub_frame</code>), <code>frameId</code> indicates the ID of this frame, not the ID of the outer frame. Frame IDs are unique within a tab.",
@@ -1453,7 +1453,7 @@
                             "fromCache": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Indicates if this response was fetched from disk cache.",
@@ -1472,7 +1472,7 @@
                             "ip": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The server IP address that the request was actually sent to. Note that it may be a literal IPv6 address.",
@@ -1482,7 +1482,7 @@
                             "method": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Standard HTTP method.",
@@ -1491,7 +1491,7 @@
                             "originUrl": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "URL of the resource that triggered this request.",
@@ -1501,7 +1501,7 @@
                             "parentFrameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "ID of frame that wraps the frame which sent the request. Set to -1 if no parent frame exists.",
@@ -1510,7 +1510,7 @@
                             "redirectUrl": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The new URL.",
@@ -1519,7 +1519,7 @@
                             "requestId": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the request. Request IDs are unique within a browser session. As a result, they could be used to relate different events of the same request.",
@@ -1529,7 +1529,7 @@
                                 "$ref": "HttpHeaders",
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The HTTP response headers that were received along with this redirect.",
@@ -1538,7 +1538,7 @@
                             "statusCode": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Standard HTTP status code returned by the server.",
@@ -1547,7 +1547,7 @@
                             "statusLine": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "HTTP status line of the response or the 'HTTP/0.9 200 OK' string for HTTP/0.9 responses (i.e., responses that lack a status line) or an empty string if there are no headers.",
@@ -1556,7 +1556,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the tab in which the request takes place. Set to -1 if the request isn't related to a tab.",
@@ -1574,7 +1574,7 @@
                             "timeStamp": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The time when this signal is triggered, in milliseconds since the epoch.",
@@ -1584,7 +1584,7 @@
                                 "$ref": "ResourceType",
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "How the requested resource will be used."
@@ -1592,7 +1592,7 @@
                             "url": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "type": "string"
@@ -1623,7 +1623,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onCompleted"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when a request is completed.",
@@ -1648,7 +1648,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ],
                         "name": "details",
@@ -1676,7 +1676,7 @@
                             "frameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The value 0 indicates that the request happens in the main frame; a positive value indicates the ID of a subframe in which the request happens. If the document of a (sub-)frame is loaded (<code>type</code> is <code>main_frame</code> or <code>sub_frame</code>), <code>frameId</code> indicates the ID of this frame, not the ID of the outer frame. Frame IDs are unique within a tab.",
@@ -1685,7 +1685,7 @@
                             "fromCache": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Indicates if this response was fetched from disk cache.",
@@ -1704,7 +1704,7 @@
                             "ip": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The server IP address that the request was actually sent to. Note that it may be a literal IPv6 address.",
@@ -1714,7 +1714,7 @@
                             "method": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Standard HTTP method.",
@@ -1723,7 +1723,7 @@
                             "originUrl": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "URL of the resource that triggered this request.",
@@ -1733,7 +1733,7 @@
                             "parentFrameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "ID of frame that wraps the frame which sent the request. Set to -1 if no parent frame exists.",
@@ -1742,7 +1742,7 @@
                             "requestId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the request. Request IDs are unique within a browser session. As a result, they could be used to relate different events of the same request.",
@@ -1756,7 +1756,7 @@
                                 "$ref": "HttpHeaders",
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The HTTP response headers that were received along with this response.",
@@ -1769,7 +1769,7 @@
                             "statusCode": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Standard HTTP status code returned by the server.",
@@ -1778,7 +1778,7 @@
                             "statusLine": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "HTTP status line of the response or the 'HTTP/0.9 200 OK' string for HTTP/0.9 responses (i.e., responses that lack a status line) or an empty string if there are no headers.",
@@ -1787,7 +1787,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the tab in which the request takes place. Set to -1 if the request isn't related to a tab.",
@@ -1805,7 +1805,7 @@
                             "timeStamp": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The time when this signal is triggered, in milliseconds since the epoch.",
@@ -1815,7 +1815,7 @@
                                 "$ref": "ResourceType",
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "How the requested resource will be used."
@@ -1823,7 +1823,7 @@
                             "url": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "type": "string"
@@ -1853,7 +1853,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when an error occurs.",
@@ -1869,7 +1869,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ],
                         "name": "details",
@@ -1897,7 +1897,7 @@
                             "error": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The error description. This string is <em>not</em> guaranteed to remain backwards compatible between releases. You must not parse and act based upon its content.",
@@ -1906,7 +1906,7 @@
                             "frameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The value 0 indicates that the request happens in the main frame; a positive value indicates the ID of a subframe in which the request happens. If the document of a (sub-)frame is loaded (<code>type</code> is <code>main_frame</code> or <code>sub_frame</code>), <code>frameId</code> indicates the ID of this frame, not the ID of the outer frame. Frame IDs are unique within a tab.",
@@ -1915,7 +1915,7 @@
                             "fromCache": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Indicates if this response was fetched from disk cache.",
@@ -1934,7 +1934,7 @@
                             "ip": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The server IP address that the request was actually sent to. Note that it may be a literal IPv6 address.",
@@ -1944,7 +1944,7 @@
                             "method": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Standard HTTP method.",
@@ -1953,7 +1953,7 @@
                             "originUrl": {
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "URL of the resource that triggered this request.",
@@ -1963,7 +1963,7 @@
                             "parentFrameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "ID of frame that wraps the frame which sent the request. Set to -1 if no parent frame exists.",
@@ -1972,7 +1972,7 @@
                             "requestId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the request. Request IDs are unique within a browser session. As a result, they could be used to relate different events of the same request.",
@@ -1981,7 +1981,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The ID of the tab in which the request takes place. Set to -1 if the request isn't related to a tab.",
@@ -1999,7 +1999,7 @@
                             "timeStamp": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The time when this signal is triggered, in milliseconds since the epoch.",
@@ -2009,7 +2009,7 @@
                                 "$ref": "ResourceType",
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "How the requested resource will be used."
@@ -2017,7 +2017,7 @@
                             "url": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "type": "string"
@@ -2142,7 +2142,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/MAX_HANDLER_BEHAVIOR_CHANGED_CALLS_PER_10_MINUTES"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "The maximum number of times that <code>handlerBehaviorChanged</code> can be called per 10 minute sustained interval. <code>handlerBehaviorChanged</code> is an expensive function call that shouldn't be called often.",
@@ -2156,7 +2156,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/ResourceType"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "enum": [
@@ -2185,35 +2185,35 @@
                     "beacon": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "csp_report": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "font": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "image": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "imageset": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
@@ -2231,42 +2231,42 @@
                     "main_frame": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "media": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "object": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "other": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "ping": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "script": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
@@ -2280,49 +2280,49 @@
                     "stylesheet": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "sub_frame": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "web_manifest": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "websocket": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "xml_dtd": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "xmlhttprequest": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "xslt": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ]
                     }
@@ -2409,7 +2409,7 @@
                         "note": "Before Thunderbird 78, if a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception."
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "An object describing filters to apply to webRequest events.",
@@ -2446,7 +2446,7 @@
                                 "note": "Before Thunderbird 56, moz-extension:// URLs were not allowed."
                             },
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "A list of URLs or URL patterns. Requests that cannot match any of the URLs will be filtered out.",
@@ -2474,7 +2474,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/HttpHeaders"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "An array of HTTP headers. Each header is represented as a dictionary containing the keys <code>name</code> and either <code>value</code> or <code>binaryValue</code>.",
@@ -2509,7 +2509,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/BlockingResponse"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Returns value for event handlers that have the 'blocking' extraInfoSpec applied. Allows the event handler to modify network requests.",
@@ -2889,7 +2889,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/UploadData"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Contains data uploaded in a URL request.",
