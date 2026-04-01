@@ -35,7 +35,7 @@
                 "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime"
             },
             {
-                "version_added": "45.0"
+                "version_added": "60.0"
             }
         ],
         "description": "Use the <code>browser.runtime</code> API to retrieve the background page, return details about the manifest, and listen for and respond to events in the app or extension lifecycle. You can also use this API to convert the relative path of URLs to fully-qualified URLs.",
@@ -46,7 +46,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onStartup"
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when a profile that has this extension installed first starts up. This event is not fired for incognito profiles.",
@@ -63,7 +63,7 @@
                         "note": "Before version 55, this event is not triggered for temporarily installed add-ons."
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when the extension is first installed, when the extension is updated to a new version, and when the browser is updated to a new version.",
@@ -97,7 +97,7 @@
                                 "$ref": "OnInstalledReason",
                                 "annotations": [
                                     {
-                                        "version_added": "52.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "The reason that this event is being dispatched."
@@ -157,7 +157,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUpdateAvailable"
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when an update is available, but isn't installed immediately because the app is currently running. If you do nothing, the update will be installed the next time the background page gets unloaded, if you want it to be installed sooner you can explicitly call $(ref:runtime.reload). If your extension is using a persistent background page, the background page of course never gets unloaded, so unless you call $(ref:runtime.reload) manually in response to this event the update will not get installed until the next time the browser itself restarts. If no handlers are listening for this event, and your extension has a persistent background page, it behaves as if $(ref:runtime.reload) is called in response to this event.",
@@ -206,7 +206,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onConnect"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when a connection is made from either an extension process or a content script.",
@@ -278,7 +278,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onMessage"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when a message is sent from either an extension process or a content script.",
@@ -459,7 +459,7 @@
                         "note": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then it will always return <code>null</code>."
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -526,7 +526,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/openOptionsPage"
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -556,7 +556,7 @@
                         "note": "Returns null for missing values, and removes unsupported keys."
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Returns details about the app or extension from the manifest. The object returned is a serialization of the full $(topic:manifest)[manifest file].",
@@ -582,7 +582,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getURL"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Converts a relative path within an app/extension install directory to a fully-qualified URL.",
@@ -662,7 +662,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/reload"
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Reloads the app or extension.",
@@ -727,7 +727,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/connect"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Attempts to connect to connect listeners within an extension/app (such as the background page), or other extensions/apps. This is useful for content scripts connecting to their extension processes, inter-app/extension communication, and $(topic:manifest/externally_connectable)[web messaging]. Note that this does not connect to any listeners in a content script. Extensions may connect to content scripts embedded in tabs via $(ref:tabs.connect).",
@@ -772,7 +772,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/connectNative"
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Connects to a native application in the host machine.",
@@ -805,7 +805,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendMessage"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "responseCallback",
@@ -829,7 +829,7 @@
                             "includeTlsChannelId": {
                                 "annotations": [
                                     {
-                                        "version_added": "45.0"
+                                        "version_added": "60.0"
                                     }
                                 ],
                                 "description": "Whether the TLS channel ID will be passed into onMessageExternal for processes that are listening for the connection event.",
@@ -864,7 +864,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/sendNativeMessage"
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "responseCallback",
@@ -906,7 +906,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBrowserInfo"
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -933,7 +933,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPlatformInfo"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -998,7 +998,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/id"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "The ID of the extension/app.",
@@ -1017,7 +1017,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/lastError"
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "This will be defined during an API method callback if there was an error",
@@ -1104,7 +1104,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/Port"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "An object which allows two way communication with other pages.",
@@ -1147,7 +1147,7 @@
                         "note": "Before version 54, 'id' was the add-on's internal UUID, not the add-on ID."
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "An object containing information about the script context that sent a message or request.",
@@ -1156,7 +1156,7 @@
                     "frameId": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "The $(topic:frame_ids)[frame] that opened the connection. 0 for top-level frames, positive for child frames. This will only be set when <code>tab</code> is set.",
@@ -1166,7 +1166,7 @@
                     "id": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "The ID of the extension or app that opened the connection, if any.",
@@ -1177,7 +1177,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "The $(ref:tabs.Tab) which opened the connection, if any. This property will <strong>only</strong> be present when the connection was opened from a tab (including content scripts), and <strong>only</strong> if the receiver is an extension, not an app.",
@@ -1197,7 +1197,7 @@
                     "url": {
                         "annotations": [
                             {
-                                "version_added": "45.0"
+                                "version_added": "60.0"
                             }
                         ],
                         "description": "The URL of the page or frame that opened the connection. If the sender is in an iframe, it will be iframe's URL not the URL of the page which hosts it.",
@@ -1222,7 +1222,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformOs"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "The operating system the browser is running on.",
@@ -1247,7 +1247,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformArch"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "The machine's processor architecture.",
@@ -1274,7 +1274,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformInfo"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "An object containing information about the current platform.",
@@ -1356,7 +1356,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnInstalledReason"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "The reason that this event is being dispatched.",
@@ -1378,7 +1378,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnRestartRequiredReason"
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "The reason that the event is being dispatched. 'app_update' is used when the restart is needed because the application is updated to a newer version. 'os_update' is used when the restart is needed because the browser/OS is updated to a newer version. 'periodic' is used when the system runs for more than the permitted uptime set in the enterprise policy.",

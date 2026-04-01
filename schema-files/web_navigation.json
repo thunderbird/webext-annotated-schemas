@@ -31,7 +31,7 @@
                 "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation"
             },
             {
-                "version_added": "45.0"
+                "version_added": "60.0"
             }
         ],
         "description": "Use the <code>browser.webNavigation</code> API to receive notifications about the status of navigation requests in-flight.",
@@ -50,7 +50,7 @@
                         "note": "If the filter parameter is empty, Thunderbird raises an exception."
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when a navigation is about to occur.",
@@ -111,7 +111,7 @@
                         "note": "If the filter parameter is empty, Thunderbird raises an exception."
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when a navigation is committed. The document (and the resources it refers to, such as images and subframes) might still be downloading, but at least part of the document has been received from the server and the browser has decided to switch to the new document.",
@@ -179,7 +179,7 @@
                         "note": "If the filter parameter is empty, Thunderbird raises an exception."
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when the page's DOM is fully constructed, but the referenced resources may not finish loading.",
@@ -236,7 +236,7 @@
                         "note": "If the filter parameter is empty, Thunderbird raises an exception."
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when a document, including the resources it refers to, is completely loaded and initialized.",
@@ -293,7 +293,7 @@
                         "note": "If the filter parameter is empty, Thunderbird raises an exception."
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when an error occurs and the navigation is aborted. This can happen if either a network error occurred, or the user aborted the navigation.",
@@ -416,7 +416,7 @@
                         "note": "If the filter parameter is empty, Thunderbird raises an exception."
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when the reference fragment of a frame was updated. All future events for that frame will use the updated URL.",
@@ -480,7 +480,7 @@
                         "note": "Although you can add listeners for this event, it will never fire because the underlying functionality is not supported."
                     },
                     {
-                        "version_added": "45.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when the contents of the tab is replaced by a different (usually previously pre-rendered) tab.",
@@ -513,7 +513,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/onHistoryStateUpdated"
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Fired when the frame's history was updated to a new URL. All future events for that frame will use the updated URL.",
@@ -575,7 +575,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/getFrame"
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -652,7 +652,7 @@
                         "note": "The returned objects do not include the <code>errorOccurred</code> property. See <a href=\"https://bugzil.la/1248418\">bug 1248418</a>."
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "async": "callback",
@@ -729,7 +729,7 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webNavigation/TransitionType"
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "description": "Cause of the navigation. The same transition types as defined in the history API are used. These are the same transition types as defined in the $(topic:transition_types)[history API] except with <code>\"start_page\"</code> in place of <code>\"auto_toplevel\"</code> (for backwards compatibility).",
@@ -750,7 +750,7 @@
                     "auto_bookmark": {
                         "annotations": [
                             {
-                                "version_added": "52.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
@@ -761,28 +761,28 @@
                                 "note": "Partially supported as the default transition type for subframes."
                             },
                             {
-                                "version_added": "52.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "form_submit": {
                         "annotations": [
                             {
-                                "version_added": "52.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "generated": {
                         "annotations": [
                             {
-                                "version_added": "52.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
                     "keyword": {
                         "annotations": [
                             {
-                                "version_added": "52.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
@@ -800,7 +800,7 @@
                                 "note": "Partially supported as the default transition type for top-level frames."
                             },
                             {
-                                "version_added": "52.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
@@ -814,7 +814,7 @@
                     "reload": {
                         "annotations": [
                             {
-                                "version_added": "52.0"
+                                "version_added": "60.0"
                             }
                         ]
                     },
@@ -828,7 +828,7 @@
                     "typed": {
                         "annotations": [
                             {
-                                "version_added": "52.0"
+                                "version_added": "60.0"
                             }
                         ]
                     }
@@ -846,7 +846,7 @@
                         "note": "'server_redirect' is limited to top-level frames and 'client_redirect' is not supplied when redirections are created by JavaScript."
                     },
                     {
-                        "version_added": "52.0"
+                        "version_added": "60.0"
                     }
                 ],
                 "enum": [
@@ -859,7 +859,7 @@
                     "from_address_bar": {
                         "annotations": [
                             {
-                                "version_added": "52.0"
+                                "version_added": "60.0"
                             }
                         ]
                     }
