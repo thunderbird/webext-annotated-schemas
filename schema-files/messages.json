@@ -1,10 +1,6 @@
 [
     {
-        "annotations": [
-            {
-                "version_added": "66"
-            }
-        ],
+        "annotations": [],
         "applicationVersion": "151.0a1",
         "namespace": "manifest",
         "types": [
@@ -25,67 +21,31 @@
                         ],
                         "enums": {
                             "messagesDelete": {
-                                "annotations": [
-                                    {
-                                        "version_added": "91"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "messagesImport": {
-                                "annotations": [
-                                    {
-                                        "version_added": "106"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "messagesModifyPermanent": {
-                                "annotations": [
-                                    {
-                                        "version_added": "123"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "messagesMove": {
-                                "annotations": [
-                                    {
-                                        "version_added": "66"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "messagesRead": {
-                                "annotations": [
-                                    {
-                                        "version_added": "66"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "messagesTags": {
-                                "annotations": [
-                                    {
-                                        "version_added": "102"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "messagesTagsList": {
-                                "annotations": [
-                                    {
-                                        "version_added": "122"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "messagesUpdate": {
-                                "annotations": [
-                                    {
-                                        "version_added": "122"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "sensitiveDataUpload": {
-                                "annotations": [
-                                    {
-                                        "version_added": "115"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         },
                         "type": "string"
@@ -101,9 +61,6 @@
             },
             {
                 "warning": "Some functions in this API potentially return a lot of messages. See $(doc:guides/messageLists) for more information."
-            },
-            {
-                "version_added": "66"
             }
         ],
         "description": "The messages API allows to access and manage the user's messages.",
@@ -111,7 +68,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#onupdated-message-changedproperties-oldproperties"
                     }
                 ],
                 "description": "Fired when one or more properties of a message have been updated.",
@@ -119,29 +76,17 @@
                 "parameters": [
                     {
                         "$ref": "messages.MessageHeader",
-                        "annotations": [
-                            {
-                                "version_added": "91"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "message"
                     },
                     {
                         "$ref": "messages.MessageProperties",
-                        "annotations": [
-                            {
-                                "version_added": "91"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "changedProperties"
                     },
                     {
                         "$ref": "messages.MessageProperties",
-                        "annotations": [
-                            {
-                                "version_added": "137"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "oldProperties"
                     }
                 ],
@@ -150,7 +95,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#onmoved-originalmessages-movedmessages"
                     }
                 ],
                 "description": "Fired when messages have been moved.",
@@ -158,20 +103,12 @@
                 "parameters": [
                     {
                         "$ref": "messages.MessageList",
-                        "annotations": [
-                            {
-                                "version_added": "91"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "originalMessages"
                     },
                     {
                         "$ref": "messages.MessageList",
-                        "annotations": [
-                            {
-                                "version_added": "91"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "movedMessages"
                     }
                 ],
@@ -183,7 +120,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#oncopied-originalmessages-copiedmessages"
                     }
                 ],
                 "description": "Fired when messages have been copied.",
@@ -191,20 +128,12 @@
                 "parameters": [
                     {
                         "$ref": "messages.MessageList",
-                        "annotations": [
-                            {
-                                "version_added": "91"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "originalMessages"
                     },
                     {
                         "$ref": "messages.MessageList",
-                        "annotations": [
-                            {
-                                "version_added": "91"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "copiedMessages"
                     }
                 ],
@@ -216,7 +145,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "91"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#ondeleted-messages"
                     }
                 ],
                 "description": "Fired when messages have been permanently deleted.",
@@ -224,11 +153,7 @@
                 "parameters": [
                     {
                         "$ref": "messages.MessageList",
-                        "annotations": [
-                            {
-                                "version_added": "91"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "messages"
                     }
                 ],
@@ -240,17 +165,13 @@
             {
                 "annotations": [
                     {
-                        "version_added": "75"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#onnewmailreceived-folder-messages"
                     }
                 ],
                 "description": "Fired when a new message is received, and has been handled by message filters and junk classification. Filters running after junk classification may move the message again.",
                 "extraParameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Monitor all folders (including all special use folders as defined by $(ref:folders.MailFolderSpecialUse)) instead of just inbox folders and normal folders.",
                         "name": "monitorAllFolders",
                         "optional": true,
@@ -261,20 +182,12 @@
                 "parameters": [
                     {
                         "$ref": "folders.MailFolder",
-                        "annotations": [
-                            {
-                                "version_added": "75"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "folder"
                     },
                     {
                         "$ref": "messages.MessageList",
-                        "annotations": [
-                            {
-                                "version_added": "75"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "messages"
                     }
                 ],
@@ -288,7 +201,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#list-folderid-options"
                     }
                 ],
                 "async": "callback",
@@ -297,28 +210,16 @@
                 "parameters": [
                     {
                         "$ref": "folders.MailFolderId",
-                        "annotations": [
-                            {
-                                "version_added": "66"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "folderId"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "96"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "options",
                         "optional": true,
                         "properties": {
                             "sortOrder": {
-                                "annotations": [
-                                    {
-                                        "version_added": "148"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The sort order for the returned messages. Ignored if <var>sortType</var> is not specified.",
                                 "enum": [
                                     "ascending",
@@ -326,29 +227,17 @@
                                 ],
                                 "enums": {
                                     "ascending": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "148"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "descending": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "148"
-                                            }
-                                        ]
+                                        "annotations": []
                                     }
                                 },
                                 "optional": true,
                                 "type": "string"
                             },
                             "sortType": {
-                                "annotations": [
-                                    {
-                                        "version_added": "148"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Specifies how the returned messages should be sorted. Default sort order is <var>descending</var>, if not specified otherwise. Returning sorted messages is faster than manually sorting the messages afterwards, but slower than returning the messages in their original order.",
                                 "enum": [
                                     "author",
@@ -365,81 +254,37 @@
                                 ],
                                 "enums": {
                                     "author": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "148"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "date": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "148"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "flagged": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "148"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "junk": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "148"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "junkScore": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "148"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "priority": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "148"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "read": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "148"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "recipients": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "148"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "size": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "148"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "subject": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "148"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "tags": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "148"
-                                            }
-                                        ]
+                                        "annotations": []
                                     }
                                 },
                                 "optional": true,
@@ -449,21 +294,13 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "148"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "messages.MessageList",
-                                "annotations": [
-                                    {
-                                        "version_added": "148"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         ],
                         "type": "function"
@@ -477,7 +314,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#continuelist-messagelistid"
                     }
                 ],
                 "async": "callback",
@@ -485,30 +322,18 @@
                 "name": "continueList",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "66"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "messageListId",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "96"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "messages.MessageList",
-                                "annotations": [
-                                    {
-                                        "version_added": "96"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         ],
                         "type": "function"
@@ -519,7 +344,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "120"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#abortlist-messagelistid"
                     }
                 ],
                 "async": true,
@@ -527,11 +352,7 @@
                 "name": "abortList",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "120"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "messageListId",
                         "type": "string"
                     }
@@ -541,7 +362,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#get-messageid"
                     }
                 ],
                 "async": "callback",
@@ -550,29 +371,17 @@
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
-                        "annotations": [
-                            {
-                                "version_added": "66"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "messageId"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "96"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "messages.MessageHeader",
-                                "annotations": [
-                                    {
-                                        "version_added": "96"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         ],
                         "type": "function"
@@ -583,7 +392,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#getfull-messageid-options"
                     }
                 ],
                 "async": "callback",
@@ -592,48 +401,28 @@
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
-                        "annotations": [
-                            {
-                                "version_added": "66"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "messageId"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "96"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "options",
                         "optional": true,
                         "properties": {
                             "decodeContent": {
-                                "annotations": [
-                                    {
-                                        "version_added": "133"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Whether to decode quoted-printable or base64 encoded content of message parts. Defaults to <var>true</var>.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "decodeHeaders": {
-                                "annotations": [
-                                    {
-                                        "version_added": "133"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Whether to decode RFC 2047 encoded headers of message parts. Defaults to <var>true</var>.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "decrypt": {
-                                "annotations": [
-                                    {
-                                        "version_added": "125"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Whether the message should be decrypted. If the message could not be decrypted, its parts are omitted. Defaults to <var>true</var>.",
                                 "optional": true,
                                 "type": "boolean"
@@ -642,21 +431,13 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "125"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "messages.MessagePart",
-                                "annotations": [
-                                    {
-                                        "version_added": "125"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         ],
                         "type": "function"
@@ -670,7 +451,7 @@
                         "note": "Unlike $(ref:messages.getFull), this function is not MIME-aware and simply returns every header line found before the first blank line that separates the headers from the RFC 822 message body. This includes headers such as <var>Content-Type</var> and <var>Content-Transfer-Encoding</var>, which are otherwise associated with a specific MIME part."
                     },
                     {
-                        "version_added": "147"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#getheaders-messageid-options"
                     }
                 ],
                 "async": "callback",
@@ -679,28 +460,16 @@
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
-                        "annotations": [
-                            {
-                                "version_added": "147"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "messageId"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "147"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "options",
                         "optional": true,
                         "properties": {
                             "decodeHeaders": {
-                                "annotations": [
-                                    {
-                                        "version_added": "147"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Whether to decode RFC 2047 encoded headers. Defaults to <var>true</var>.",
                                 "optional": true,
                                 "type": "boolean"
@@ -709,21 +478,13 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "147"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "messages.HeadersDictionary",
-                                "annotations": [
-                                    {
-                                        "version_added": "147"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         ],
                         "type": "function"
@@ -734,7 +495,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "72"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#getraw-message-options"
                     }
                 ],
                 "async": "callback",
@@ -742,38 +503,22 @@
                 "name": "getRaw",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "72"
-                            }
-                        ],
+                        "annotations": [],
                         "choices": [
                             {
                                 "$ref": "messages.MessageId",
-                                "annotations": [
-                                    {
-                                        "version_added": "72"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             {
                                 "$ref": "messages.MessagePart",
-                                "annotations": [
-                                    {
-                                        "version_added": "133"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         ],
                         "description": "Either a $(ref:messages.MessageId) of an existing message, or a $(ref:messages.MessagePart) with raw header and raw content data representing a full RFC 822 message (the provided data will be used as-is without applying any further encoding). See the <var>decodeHeaders</var> and <var>decodeContent</var> options of $(ref:messages.getFull) for further details on how to retrieve a $(ref:messages.MessagePart) with raw values. You can use $(ref:messengerUtilities.decodeMimeHeader) and $(ref:messengerUtilities.encodeMimeHeader) to manipulate a raw MessagePart.",
                         "name": "message"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "96"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "options",
                         "optional": true,
                         "properties": {
@@ -803,9 +548,6 @@
                                     },
                                     {
                                         "text": "See MDN for <a href='https://developer.mozilla.org/en-US/docs/Web/API/Encoding_API/Encodings'>supported input encodings</a>."
-                                    },
-                                    {
-                                        "version_added": "117"
                                     }
                                 ],
                                 "description": "The message can either be returned as a DOM File (default) or as a <a href='https://udn.realityripple.com/docs/Web/API/DOMString/Binary'>binary string</a>. It is recommended to use the <var>File</var> format, because the DOM File object can be used as-is with the downloads API and has useful methods to access the content, like <a href='https://developer.mozilla.org/en-US/docs/Web/API/Blob/text'>File.text()</a> and <a href='https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer'>File.arrayBuffer()</a>.",
@@ -815,29 +557,17 @@
                                 ],
                                 "enums": {
                                     "BinaryString": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "117"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "File": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "117"
-                                            }
-                                        ]
+                                        "annotations": []
                                     }
                                 },
                                 "optional": true,
                                 "type": "string"
                             },
                             "decrypt": {
-                                "annotations": [
-                                    {
-                                        "version_added": "125"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Whether the message should be decrypted. Throws, if the message could not be decrypted.",
                                 "optional": true,
                                 "type": "boolean"
@@ -846,36 +576,20 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "117"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "117"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "117"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "string"
                                     },
                                     {
                                         "additionalProperties": true,
-                                        "annotations": [
-                                            {
-                                                "version_added": "117"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "isInstanceOf": "File",
                                         "type": "object"
                                     }
@@ -890,7 +604,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "88"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#listattachments-messageid"
                     }
                 ],
                 "async": "callback",
@@ -899,28 +613,16 @@
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
-                        "annotations": [
-                            {
-                                "version_added": "88"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "messageId"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "96"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "96"
-                                    }
-                                ],
+                                "annotations": [],
                                 "items": {
                                     "$ref": "messages.MessageAttachment"
                                 },
@@ -938,7 +640,7 @@
                         "note": "A message usually contains only one inline text part per subtype, but technically messages can contain multiple inline text parts per subtype."
                     },
                     {
-                        "version_added": "129"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#listinlinetextparts-messageid"
                     }
                 ],
                 "async": "callback",
@@ -947,28 +649,16 @@
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
-                        "annotations": [
-                            {
-                                "version_added": "129"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "messageId"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "129"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "129"
-                                    }
-                                ],
+                                "annotations": [],
                                 "items": {
                                     "$ref": "messages.InlineTextPart"
                                 },
@@ -997,7 +687,7 @@
                         "type": "JavaScript"
                     },
                     {
-                        "version_added": "88"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#getattachmentfile-messageid-partname"
                     }
                 ],
                 "async": "callback",
@@ -1006,40 +696,24 @@
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
-                        "annotations": [
-                            {
-                                "version_added": "88"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "messageId"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "88"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The <var>partName</var> of an attachment to be retrieved from the decrypted message.",
                         "name": "partName",
                         "pattern": "^\\d+(\\.\\d+\\$?)*$",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "96"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "additionalProperties": true,
-                                "annotations": [
-                                    {
-                                        "version_added": "96"
-                                    }
-                                ],
+                                "annotations": [],
                                 "isInstanceOf": "File",
                                 "type": "object"
                             }
@@ -1052,7 +726,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "123"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#deleteattachments-messageid-partnames"
                     }
                 ],
                 "async": true,
@@ -1060,20 +734,12 @@
                 "name": "deleteAttachments",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "123"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "messageId",
                         "type": "integer"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "123"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "An array of attachments, identifying the to be deleted attachments by their <var>partName</var>.",
                         "items": {
                             "pattern": "^\\d+(\\.\\d+)*$",
@@ -1092,7 +758,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "114"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#openattachment-messageid-partname-tabid"
                     }
                 ],
                 "async": true,
@@ -1101,29 +767,17 @@
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
-                        "annotations": [
-                            {
-                                "version_added": "114"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "messageId"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "114"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "partName",
                         "pattern": "^\\d+(\\.\\d+)*$",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "114"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The ID of the tab associated with the message opening.",
                         "name": "tabId",
                         "type": "integer"
@@ -1134,7 +788,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "69"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#query-queryinfo"
                     }
                 ],
                 "async": "callback",
@@ -1142,36 +796,20 @@
                 "name": "query",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "69"
-                            }
-                        ],
+                        "annotations": [],
                         "default": {},
                         "name": "queryInfo",
                         "optional": true,
                         "properties": {
                             "accountId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "121"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
                                         "$ref": "accounts.MailAccountId",
-                                        "annotations": [
-                                            {
-                                                "version_added": "121"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "129"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "items": {
                                             "$ref": "accounts.MailAccountId"
                                         },
@@ -1182,93 +820,53 @@
                                 "optional": true
                             },
                             "attachment": {
-                                "annotations": [
-                                    {
-                                        "version_added": "96"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "96"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "boolean"
                                     },
                                     {
                                         "$ref": "QueryRange",
-                                        "annotations": [
-                                            {
-                                                "version_added": "121"
-                                            }
-                                        ]
+                                        "annotations": []
                                     }
                                 ],
                                 "description": "Whether the message has attachments, or not. Supports to specify a $(ref:messages.QueryRange) (min/max) instead of a simple boolean value (none/some).",
                                 "optional": true
                             },
                             "author": {
-                                "annotations": [
-                                    {
-                                        "version_added": "69"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages with this value matching the author. The search value is a single email address, a name or a combination (e.g.: <var>Name <user@domain.org></var>). The address part of the search value (if provided) must match the author's address completely. The name part of the search value (if provided) must match the author's name partially. All matches are done case-insensitive.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "autoPaginationTimeout": {
-                                "annotations": [
-                                    {
-                                        "version_added": "120"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Set the timeout in ms after which results should be returned, even if the nominal number of messages-per-page has not yet been reached. Defaults to <var>1000</var> ms. Setting it to <var>0</var> will disable auto-pagination.",
                                 "optional": true,
                                 "type": "integer"
                             },
                             "body": {
-                                "annotations": [
-                                    {
-                                        "version_added": "69"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages with this value in the body of the mail.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "flagged": {
-                                "annotations": [
-                                    {
-                                        "version_added": "69"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only flagged (or unflagged if false) messages.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "folderId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "121"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
                                         "$ref": "folders.MailFolderId",
-                                        "annotations": [
-                                            {
-                                                "version_added": "121"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "129"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "items": {
                                             "$ref": "folders.MailFolderId"
                                         },
@@ -1280,180 +878,108 @@
                             },
                             "fromDate": {
                                 "$ref": "extensionTypes.Date",
-                                "annotations": [
-                                    {
-                                        "version_added": "69"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages with a date after this value.",
                                 "optional": true
                             },
                             "fromMe": {
-                                "annotations": [
-                                    {
-                                        "version_added": "69"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages with the author's address matching any configured identity.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "fullText": {
-                                "annotations": [
-                                    {
-                                        "version_added": "69"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages with this value somewhere in the mail (subject, body or author).",
                                 "optional": true,
                                 "type": "string"
                             },
                             "headerMessageId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "85"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages with a Message-ID header matching this value.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "includeSubFolders": {
-                                "annotations": [
-                                    {
-                                        "version_added": "91"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Search the specified folder recursively.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "junk": {
-                                "annotations": [
-                                    {
-                                        "version_added": "121"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages whith the specified junk state.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "junkScore": {
                                 "$ref": "QueryRange",
-                                "annotations": [
-                                    {
-                                        "version_added": "121"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages with a junk score in the specified range.",
                                 "optional": true
                             },
                             "messagesPerPage": {
-                                "annotations": [
-                                    {
-                                        "version_added": "120"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Set the nominal number of messages-per-page for this query. Defaults to <var>100</var> messages.",
                                 "optional": true,
                                 "type": "integer"
                             },
                             "new": {
-                                "annotations": [
-                                    {
-                                        "version_added": "121"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages with the specified new state.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "online": {
-                                "annotations": [
-                                    {
-                                        "version_added": "129"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Query the server directly instead of the local message database. Online queries currently only support querying the <var>headerMessageId</var> property. Currently only supported for NNTP accounts.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "read": {
-                                "annotations": [
-                                    {
-                                        "version_added": "121"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages with the specified read state.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "recipients": {
-                                "annotations": [
-                                    {
-                                        "version_added": "69"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages whose recipients match all specified addresses. The search value is a semicolon separated list of email addresses, names or combinations (e.g.: <var>Name <user@domain.org></var>). For a match, all specified addresses must equal a recipient's address completely and all specified names must match a recipient's name partially. All matches are done case-insensitive.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "returnMessageListId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "120"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The <em>messageListId</em> is usually returned together with the first page, after some messages have been found. Enabling this option will change the return value of this function and return the <em>messageListId</em> directly.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "size": {
                                 "$ref": "QueryRange",
-                                "annotations": [
-                                    {
-                                        "version_added": "121"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages with a size in the specified byte range.",
                                 "optional": true
                             },
                             "subject": {
-                                "annotations": [
-                                    {
-                                        "version_added": "69"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages whose subject contains the provided string.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "tags": {
                                 "$ref": "messages.tags.TagsDetail",
-                                "annotations": [
-                                    {
-                                        "version_added": "74"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages with the specified tags. For a list of available tags, call the $(ref:messages.tags.list) method.",
                                 "optional": true
                             },
                             "toDate": {
                                 "$ref": "extensionTypes.Date",
-                                "annotations": [
-                                    {
-                                        "version_added": "69"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages with a date before this value.",
                                 "optional": true
                             },
                             "toMe": {
-                                "annotations": [
-                                    {
-                                        "version_added": "69"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Returns only messages with at least one recipient address matching any configured identity.",
                                 "optional": true,
                                 "type": "boolean"
@@ -1462,35 +988,19 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "96"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "96"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
                                         "$ref": "messages.MessageList",
-                                        "annotations": [
-                                            {
-                                                "version_added": "96"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "120"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "string"
                                     }
                                 ]
@@ -1504,7 +1014,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#update-messageid-newproperties"
                     }
                 ],
                 "async": true,
@@ -1513,20 +1023,12 @@
                 "parameters": [
                     {
                         "$ref": "messages.MessageId",
-                        "annotations": [
-                            {
-                                "version_added": "66"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "messageId"
                     },
                     {
                         "$ref": "messages.MessageProperties",
-                        "annotations": [
-                            {
-                                "version_added": "66"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "newProperties"
                     }
                 ],
@@ -1538,7 +1040,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#move-messageids-folderid-options"
                     }
                 ],
                 "async": true,
@@ -1546,11 +1048,7 @@
                 "name": "move",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "66"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The IDs of the messages to move.",
                         "items": {
                             "$ref": "messages.MessageId"
@@ -1560,29 +1058,17 @@
                     },
                     {
                         "$ref": "folders.MailFolderId",
-                        "annotations": [
-                            {
-                                "version_added": "66"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The folder to move the messages to.",
                         "name": "folderId"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "137"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "options",
                         "optional": true,
                         "properties": {
                             "isUserAction": {
-                                "annotations": [
-                                    {
-                                        "version_added": "137"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Whether this move operation should be treated as a user action, for example allowing undo.",
                                 "optional": true,
                                 "type": "boolean"
@@ -1600,7 +1086,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#copy-messageids-folderid-options"
                     }
                 ],
                 "async": true,
@@ -1608,11 +1094,7 @@
                 "name": "copy",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "66"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The IDs of the messages to copy.",
                         "items": {
                             "$ref": "messages.MessageId"
@@ -1622,29 +1104,17 @@
                     },
                     {
                         "$ref": "folders.MailFolderId",
-                        "annotations": [
-                            {
-                                "version_added": "66"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The folder to copy the messages to.",
                         "name": "folderId"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "137"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "options",
                         "optional": true,
                         "properties": {
                             "isUserAction": {
-                                "annotations": [
-                                    {
-                                        "version_added": "137"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Whether this copy operation should be treated as a user action, for example allowing undo.",
                                 "optional": true,
                                 "type": "boolean"
@@ -1662,7 +1132,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "66"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#delete-messageids-options"
                     }
                 ],
                 "async": true,
@@ -1670,11 +1140,7 @@
                 "name": "delete",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "66"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The IDs of the messages to delete.",
                         "items": {
                             "$ref": "messages.MessageId"
@@ -1683,45 +1149,25 @@
                         "type": "array"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "66"
-                            }
-                        ],
+                        "annotations": [],
                         "choices": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "66"
-                                    }
-                                ],
+                                "annotations": [],
                                 "deprecated": "Specify the options object instead of a plain boolean to delete messages permanently.",
                                 "description": "Whether the message will be deleted permanently, regardless of the account's deletion behavior settings.",
                                 "type": "boolean"
                             },
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "137"
-                                    }
-                                ],
+                                "annotations": [],
                                 "properties": {
                                     "deletePermanently": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "137"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "description": "Whether the message will be deleted permanently, regardless of the account's deletion behavior settings. A permanently deleted message cannot be restored, even if the action is defined as a user action. Use this with care!",
                                         "optional": true,
                                         "type": "boolean"
                                     },
                                     "isUserAction": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "137"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "description": "Whether this copy operation should be treated as a user action, for example allowing undo.",
                                         "optional": true,
                                         "type": "boolean"
@@ -1742,7 +1188,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "106"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#import-file-folderid-properties"
                     }
                 ],
                 "async": "callback",
@@ -1751,51 +1197,31 @@
                 "parameters": [
                     {
                         "additionalProperties": true,
-                        "annotations": [
-                            {
-                                "version_added": "106"
-                            }
-                        ],
+                        "annotations": [],
                         "isInstanceOf": "File",
                         "name": "file",
                         "type": "object"
                     },
                     {
                         "$ref": "folders.MailFolderId",
-                        "annotations": [
-                            {
-                                "version_added": "106"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The folder to import the messages into.",
                         "name": "folderId"
                     },
                     {
                         "$ref": "messages.MessageProperties",
-                        "annotations": [
-                            {
-                                "version_added": "106"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "properties",
                         "optional": true
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "106"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "messages.MessageHeader",
-                                "annotations": [
-                                    {
-                                        "version_added": "106"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         ],
                         "type": "function"
@@ -1810,7 +1236,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "68"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#archive-messageids"
                     }
                 ],
                 "async": true,
@@ -1818,11 +1244,7 @@
                 "name": "archive",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "68"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The IDs of the messages to archive.",
                         "items": {
                             "$ref": "messages.MessageId"
@@ -1845,7 +1267,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "122"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#messageid"
                     }
                 ],
                 "description": "A unique id representing a $(ref:messages.MessageHeader) and the associated message. This id doesn’t refer to the Message-ID email header. It is an internal tracking number that does not remain after a restart. Nor does it follow an email that has been moved to a different folder.",
@@ -1856,27 +1278,19 @@
             {
                 "annotations": [
                     {
-                        "version_added": "129"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#inlinetextpart"
                     }
                 ],
                 "description": "An inline part with content type <var>text/*</var>. These parts are not returned by $(ref:messages.listAttachments) and usually make up the readable content of the message, mostly with content type <var>text/plain</var> or <var>text/html</var>",
                 "id": "InlineTextPart",
                 "properties": {
                     "content": {
-                        "annotations": [
-                            {
-                                "version_added": "129"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The content of this inline text part.",
                         "type": "string"
                     },
                     "contentType": {
-                        "annotations": [
-                            {
-                                "version_added": "129"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The content type of the part. Most common types for inline text parts are <var>text/plain</var> and <var>text/html</var>. Possible other (deprecated) types are <var>text/richtext</var> and <var>text/enriched</var>. Some calendaring services include an inline text part with type <var>text/calendar</var>.",
                         "type": "string"
                     }
@@ -1886,7 +1300,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "131"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#mailboxheaderstring"
                     }
                 ],
                 "description": "Content may either be a single email address, or a mailbox string (see RFC 5322, section 3.4). Use $(ref:messengerUtilities.parseMailboxString) to extract the name and/or the email from the mailbox string.",
@@ -1896,7 +1310,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "89"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#messageheader"
                     }
                 ],
                 "description": "Basic information about a message.",
@@ -1904,18 +1318,10 @@
                 "properties": {
                     "author": {
                         "$ref": "messages.MailBoxHeaderString",
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ]
+                        "annotations": []
                     },
                     "bccList": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The Bcc recipients. Not populated for news/nntp messages.",
                         "items": {
                             "$ref": "messages.MailBoxHeaderString"
@@ -1923,11 +1329,7 @@
                         "type": "array"
                     },
                     "ccList": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The Cc recipients. Not populated for news/nntp messages.",
                         "items": {
                             "$ref": "messages.MailBoxHeaderString"
@@ -1936,102 +1338,58 @@
                     },
                     "date": {
                         "$ref": "extensionTypes.Date",
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The date and time when the message was sent, according to the Date header in the message."
                     },
                     "external": {
-                        "annotations": [
-                            {
-                                "version_added": "106"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Whether this message is a real message or an external message (opened from a file or from an attachment).",
                         "type": "boolean"
                     },
                     "flagged": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Whether this message is flagged (a.k.a. starred).",
                         "type": "boolean"
                     },
                     "folder": {
                         "$ref": "folders.MailFolder",
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The <permission>accountsRead</permission> permission is required for this property to be included. Not available for external or attached messages.",
                         "optional": true
                     },
                     "headerMessageId": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The message-id header of the message.",
                         "type": "string"
                     },
                     "headersOnly": {
-                        "annotations": [
-                            {
-                                "version_added": "102"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Some account types (for example <var>pop3</var>) allow to download only the headers of the message, but not its body. The body of such messages will not be available.",
                         "type": "boolean"
                     },
                     "id": {
                         "$ref": "messages.MessageId",
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ]
+                        "annotations": []
                     },
                     "junk": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Whether the message has been marked as junk. Always <var>false</var> for news/nntp messages and external messages.",
                         "type": "boolean"
                     },
                     "junkScore": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The junk score associated with the message. Always <var>0</var> for news/nntp messages and external messages.",
                         "maximum": 100,
                         "minimum": 0,
                         "type": "integer"
                     },
                     "new": {
-                        "annotations": [
-                            {
-                                "version_added": "106"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Whether the message has been received recently and is marked as new.",
                         "type": "boolean"
                     },
                     "priority": {
-                        "annotations": [
-                            {
-                                "version_added": "148"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The priority of the message.",
                         "enum": [
                             "none",
@@ -2043,66 +1401,34 @@
                         ],
                         "enums": {
                             "high": {
-                                "annotations": [
-                                    {
-                                        "version_added": "148"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "highest": {
-                                "annotations": [
-                                    {
-                                        "version_added": "148"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "low": {
-                                "annotations": [
-                                    {
-                                        "version_added": "148"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "lowest": {
-                                "annotations": [
-                                    {
-                                        "version_added": "148"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "none": {
-                                "annotations": [
-                                    {
-                                        "version_added": "148"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "normal": {
-                                "annotations": [
-                                    {
-                                        "version_added": "148"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         },
                         "type": "string"
                     },
                     "read": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Whether the message has been marked as read. Not available for external or attached messages.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "recipients": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The To recipients. Not populated for news/nntp messages.",
                         "items": {
                             "$ref": "messages.MailBoxHeaderString"
@@ -2110,29 +1436,17 @@
                         "type": "array"
                     },
                     "size": {
-                        "annotations": [
-                            {
-                                "version_added": "90"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The total size of the message in bytes.",
                         "type": "integer"
                     },
                     "subject": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The subject of the message.",
                         "type": "string"
                     },
                     "tags": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Tags associated with this message. For a list of available tags, use $(ref:messages.tags.list).",
                         "items": {
                             "type": "string"
@@ -2145,44 +1459,28 @@
             {
                 "annotations": [
                     {
-                        "version_added": "89"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#messagelist"
                     }
                 ],
                 "description": "See $(doc:guides/messageLists) for more information.",
                 "id": "MessageList",
                 "properties": {
                     "id": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "choices": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "89"
-                                    }
-                                ],
+                                "annotations": [],
                                 "type": "string"
                             },
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "type": "null"
                             }
                         ],
                         "description": "Id of the message list, to be used with $(ref:messages.continueList) or $(ref:messages.abortList)."
                     },
                     "messages": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "items": {
                             "$ref": "messages.MessageHeader"
                         },
@@ -2194,37 +1492,25 @@
             {
                 "annotations": [
                     {
-                        "version_added": "89"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#messagepart"
                     }
                 ],
                 "description": "Represents an email message \"part\", which could be the whole message.",
                 "id": "MessagePart",
                 "properties": {
                     "body": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The quoted-printable or base64 decoded content of the part. Only present for parts with a content type of <var>text/*</var> and only if requested, see the <var>decodeContent</var> option of $(ref:messages.getFull). Use $(ref:messages.getAttachmentFile) to retrieve the content of parts which have a content type other than <var>text/*</var>.",
                         "optional": true,
                         "type": "string"
                     },
                     "contentType": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "optional": true,
                         "type": "string"
                     },
                     "decryptionStatus": {
-                        "annotations": [
-                            {
-                                "version_added": "125"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The decryption status, only available for the root part.",
                         "enum": [
                             "none",
@@ -2234,32 +1520,16 @@
                         ],
                         "enums": {
                             "fail": {
-                                "annotations": [
-                                    {
-                                        "version_added": "125"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "none": {
-                                "annotations": [
-                                    {
-                                        "version_added": "125"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "skipped": {
-                                "annotations": [
-                                    {
-                                        "version_added": "125"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "success": {
-                                "annotations": [
-                                    {
-                                        "version_added": "125"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         },
                         "optional": true,
@@ -2267,40 +1537,24 @@
                     },
                     "headers": {
                         "$ref": "messages.HeadersDictionary",
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "A <em>dictionary object</em> of RFC 2047 decoded part headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>. Only present if requested, see the <var>decodeHeaders</var> option of $(ref:messages.getFull).",
                         "optional": true
                     },
                     "name": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Name of the part, if it is a file.",
                         "optional": true,
                         "type": "string"
                     },
                     "partName": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The identifier of this part, used in $(ref:messages.getAttachmentFile).",
                         "optional": true,
                         "type": "string"
                     },
                     "parts": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Any sub-parts of this part.",
                         "items": {
                             "$ref": "messages.MessagePart"
@@ -2309,31 +1563,19 @@
                         "type": "array"
                     },
                     "rawBody": {
-                        "annotations": [
-                            {
-                                "version_added": "133"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The raw content of the part. Only present if requested, see the <var>decodeContent</var> option of $(ref:messages.getFull).",
                         "optional": true,
                         "type": "string"
                     },
                     "rawHeaders": {
                         "$ref": "messages.HeadersDictionary",
-                        "annotations": [
-                            {
-                                "version_added": "133"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "A <em>dictionary object</em> of raw part headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>. Only present if requested, see the <var>decodeHeaders</var> option of $(ref:messages.getFull).",
                         "optional": true
                     },
                     "size": {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The size of this part. The size of parts with content type <em>message/rfc822</em> is not the actual message size (on disc), but the total size of its decoded body parts, excluding headers.",
                         "optional": true,
                         "type": "integer"
@@ -2344,58 +1586,38 @@
             {
                 "annotations": [
                     {
-                        "version_added": "106"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#messageproperties"
                     }
                 ],
                 "description": "Message properties used in $(ref:messages.update) and $(ref:messages.import). They can also be monitored by $(ref:messages.onUpdated).",
                 "id": "MessageProperties",
                 "properties": {
                     "flagged": {
-                        "annotations": [
-                            {
-                                "version_added": "106"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Whether the message is flagged (a.k.a starred).",
                         "optional": true,
                         "type": "boolean"
                     },
                     "junk": {
-                        "annotations": [
-                            {
-                                "version_added": "106"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Whether the message is marked as junk. Only supported in $(ref:messages.update).",
                         "optional": true,
                         "type": "boolean"
                     },
                     "new": {
-                        "annotations": [
-                            {
-                                "version_added": "106"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Whether the message is marked as new. Only supported in $(ref:messages.import).",
                         "optional": true,
                         "type": "boolean"
                     },
                     "read": {
-                        "annotations": [
-                            {
-                                "version_added": "106"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Whether the message is marked as read.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "tags": {
-                        "annotations": [
-                            {
-                                "version_added": "106"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Tags associated with this message. For a list of available tags, call the $(ref:messages.tags.list) method.",
                         "items": {
                             "type": "string"
@@ -2409,83 +1631,51 @@
             {
                 "annotations": [
                     {
-                        "version_added": "98"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#messageattachment"
                     }
                 ],
                 "description": "Represents an attachment in a message.",
                 "id": "MessageAttachment",
                 "properties": {
                     "contentDisposition": {
-                        "annotations": [
-                            {
-                                "version_added": "135"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The content disposition of the attachment, for example <var>attachment</var> for normal attachments, or <var>inline</var> for inline attachments.",
                         "type": "string"
                     },
                     "contentId": {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The content-id of this part. Available for related parts, which are referenced from other places inside the same message (e.g. inline images).",
                         "optional": true,
                         "type": "string"
                     },
                     "contentType": {
-                        "annotations": [
-                            {
-                                "version_added": "98"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The content type of the attachment. A value of <var>text/x-moz-deleted</var> indicates that the original attachment was permanently deleted and replaced by a placeholder text attachment with some meta information about the original attachment.",
                         "type": "string"
                     },
                     "headers": {
                         "$ref": "messages.HeadersDictionary",
-                        "annotations": [
-                            {
-                                "version_added": "135"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "A <em>dictionary object</em> of RFC 2047 decoded attachment headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>."
                     },
                     "message": {
                         "$ref": "messages.MessageHeader",
-                        "annotations": [
-                            {
-                                "version_added": "106"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "A MessageHeader, if this attachment is a message.",
                         "optional": true
                     },
                     "name": {
-                        "annotations": [
-                            {
-                                "version_added": "98"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The name, as displayed to the user, of this attachment. This is usually but not always the filename of the attached file.",
                         "type": "string"
                     },
                     "partName": {
-                        "annotations": [
-                            {
-                                "version_added": "98"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Identifies the MIME part of the message associated with this attachment.",
                         "type": "string"
                     },
                     "size": {
-                        "annotations": [
-                            {
-                                "version_added": "98"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The size in bytes of this attachment.",
                         "type": "integer"
                     }
@@ -2501,7 +1691,7 @@
                 },
                 "annotations": [
                     {
-                        "version_added": "147"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#headersdictionary"
                     }
                 ],
                 "description": "A <em>dictionary object</em> of headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>.",
@@ -2511,28 +1701,20 @@
             {
                 "annotations": [
                     {
-                        "version_added": "121"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#queryrange"
                     }
                 ],
                 "description": "An object defining a range.",
                 "id": "QueryRange",
                 "properties": {
                     "max": {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The maximum value required to match the query.",
                         "optional": true,
                         "type": "integer"
                     },
                     "min": {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The minimum value required to match the query.",
                         "optional": true,
                         "type": "integer"
@@ -2543,17 +1725,13 @@
         ]
     },
     {
-        "annotations": [
-            {
-                "version_added": "121"
-            }
-        ],
+        "annotations": [],
         "description": "The messages.tags API allows to manage the user's message tags.",
         "events": [
             {
                 "annotations": [
                     {
-                        "version_added": "136"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.tags.html#oncreated-tag"
                     }
                 ],
                 "description": "Fired when a new message tag has been created.",
@@ -2561,11 +1739,7 @@
                 "parameters": [
                     {
                         "$ref": "messages.tags.MessageTag",
-                        "annotations": [
-                            {
-                                "version_added": "136"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "tag"
                     }
                 ],
@@ -2577,39 +1751,27 @@
             {
                 "annotations": [
                     {
-                        "version_added": "136"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.tags.html#onupdated-key-changedproperties-oldproperties"
                     }
                 ],
                 "description": "Fired when one or more properties of a message tag have been updated.",
                 "name": "onUpdated",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "136"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Unique tag identifier of the updated message tag.",
                         "name": "key",
                         "type": "string"
                     },
                     {
                         "$ref": "messages.tags.MessageTagProperties",
-                        "annotations": [
-                            {
-                                "version_added": "136"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The changed message tag properties.",
                         "name": "changedProperties"
                     },
                     {
                         "$ref": "messages.tags.MessageTagProperties",
-                        "annotations": [
-                            {
-                                "version_added": "136"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The old values of the changed message tag properties.",
                         "name": "oldProperties"
                     }
@@ -2622,18 +1784,14 @@
             {
                 "annotations": [
                     {
-                        "version_added": "136"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.tags.html#ondeleted-key"
                     }
                 ],
                 "description": "Fired when a message tag has been deleted.",
                 "name": "onDeleted",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "136"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Unique tag identifier of the deleted message tag.",
                         "name": "key",
                         "type": "string"
@@ -2649,7 +1807,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "121"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.tags.html#list"
                     }
                 ],
                 "async": "callback",
@@ -2657,20 +1815,12 @@
                 "name": "list",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "121"
-                                    }
-                                ],
+                                "annotations": [],
                                 "items": {
                                     "$ref": "messages.tags.MessageTag"
                                 },
@@ -2688,7 +1838,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "121"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.tags.html#create-key-tag-color"
                     }
                 ],
                 "async": true,
@@ -2696,11 +1846,7 @@
                 "name": "create",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Unique tag identifier (will be converted to lower case). Must not include <var>()<>{/%*\"</var> or spaces. Will be auto-generated if not provided.",
                         "name": "key",
                         "optional": true,
@@ -2708,41 +1854,25 @@
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Human-readable tag name.",
                         "name": "tag",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Tag color in hex format (i.e.: <var>#000080</var> for navy blue).",
                         "name": "color",
                         "pattern": "^#[0-9a-fA-F]{6}",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "136"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "136"
-                                    }
-                                ],
+                                "annotations": [],
                                 "name": "key",
                                 "type": "string"
                             }
@@ -2758,7 +1888,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "121"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.tags.html#update-key-updateproperties"
                     }
                 ],
                 "async": true,
@@ -2766,11 +1896,7 @@
                 "name": "update",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Unique tag identifier (will be converted to lower case). Must not include <var>()<>{/%*\"</var> or spaces.",
                         "name": "key",
                         "pattern": "^[^ ()/{%*<>\"]+$",
@@ -2778,11 +1904,7 @@
                     },
                     {
                         "$ref": "messages.tags.MessageTagProperties",
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "updateProperties"
                     }
                 ],
@@ -2794,7 +1916,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "121"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.tags.html#delete-key"
                     }
                 ],
                 "async": true,
@@ -2802,11 +1924,7 @@
                 "name": "delete",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Unique tag identifier (will be converted to lower case). Must not include <var>()<>{/%*\"</var> or spaces.",
                         "name": "key",
                         "pattern": "^[^ ()/{%*<>\"]+$",
@@ -2824,44 +1942,28 @@
             {
                 "annotations": [
                     {
-                        "version_added": "121"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.tags.html#messagetag"
                     }
                 ],
                 "id": "MessageTag",
                 "properties": {
                     "color": {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Tag color in upper case hex format (i.e.: <var>#000080</var> for navy blue).",
                         "type": "string"
                     },
                     "key": {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Unique tag identifier.",
                         "type": "string"
                     },
                     "ordinal": {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "A custom sort string.",
                         "type": "string"
                     },
                     "tag": {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Human-readable tag name.",
                         "type": "string"
                     }
@@ -2871,38 +1973,26 @@
             {
                 "annotations": [
                     {
-                        "version_added": "136"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.tags.html#messagetagproperties"
                     }
                 ],
                 "id": "MessageTagProperties",
                 "properties": {
                     "color": {
-                        "annotations": [
-                            {
-                                "version_added": "136"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Tag color in upper case hex format (i.e.: <var>#000080</var> for navy blue).",
                         "optional": true,
                         "pattern": "^#[0-9a-fA-F]{6}",
                         "type": "string"
                     },
                     "ordinal": {
-                        "annotations": [
-                            {
-                                "version_added": "136"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "A custom sort string.",
                         "optional": true,
                         "type": "string"
                     },
                     "tag": {
-                        "annotations": [
-                            {
-                                "version_added": "136"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Human-readable tag name.",
                         "optional": true,
                         "type": "string"
@@ -2913,18 +2003,14 @@
             {
                 "annotations": [
                     {
-                        "version_added": "121"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.tags.html#tagsdetail"
                     }
                 ],
                 "description": "Used for filtering messages by tag in various methods. Note that functions using this type may have a partial implementation.",
                 "id": "TagsDetail",
                 "properties": {
                     "mode": {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Whether <var>all</var> of the tag filters must apply, <var>any</var> of them, or <var>none</var>. The <var>none</var> mode ignores the provided filters and selects only messages without any tags.",
                         "enum": [
                             "all",
@@ -2933,35 +2019,19 @@
                         ],
                         "enums": {
                             "all": {
-                                "annotations": [
-                                    {
-                                        "version_added": "121"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "any": {
-                                "annotations": [
-                                    {
-                                        "version_added": "121"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "none": {
-                                "annotations": [
-                                    {
-                                        "version_added": "148"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         },
                         "type": "string"
                     },
                     "tags": {
-                        "annotations": [
-                            {
-                                "version_added": "121"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "A <em>dictionary object</em> with one or more filter condition as <em>key-value</em> pairs, the <em>key</em> being the tag to filter on, and the <em>value</em> being a boolean expression, requesting whether a message must include (<var>true</var>) or exclude (<var>false</var>) the tag. For a list of available tags, call the $(ref:messages.tags.list) method.",
                         "patternProperties": {
                             ".*": {

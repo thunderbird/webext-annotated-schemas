@@ -1,10 +1,6 @@
 [
     {
-        "annotations": [
-            {
-                "version_added": "137"
-            }
-        ],
+        "annotations": [],
         "applicationVersion": "151.0a1",
         "namespace": "manifest",
         "types": [
@@ -17,11 +13,7 @@
                         ],
                         "enums": {
                             "messengerSettings": {
-                                "annotations": [
-                                    {
-                                        "version_added": "137"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         },
                         "type": "string"
@@ -31,11 +23,7 @@
         ]
     },
     {
-        "annotations": [
-            {
-                "version_added": "137"
-            }
-        ],
+        "annotations": [],
         "description": "The messengerSettings API allows to access global messenger settings.",
         "namespace": "messengerSettings",
         "permissions": [
@@ -51,7 +39,7 @@
                         }
                     },
                     {
-                        "version_added": "137"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messengerSettings.messageLineLengthLimit.html"
                     }
                 ],
                 "description": "The line length limit for outgoing messages, to comply with requirements from RFC 2822. See description of $(ref:messengerSettings.messagePlainTextFlowedOutputEnabled). This property is read-only."
@@ -65,7 +53,7 @@
                         }
                     },
                     {
-                        "version_added": "137"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messengerSettings.messagePlainTextFlowedOutputEnabled.html"
                     }
                 ],
                 "description": "Whether long lines in outgoing plain text messages will get soft line breaks (<var> \n</var>) or hard line breaks (<var>\n</var>), to comply with requirements from RFC 2822. Soft line breaks will be ignored when displayed by the receiving client. When flowed output is enabled, add-ons should not create plain text messages with manually inserted hard or soft line breaks to achieve a certain text width, as that will most probably interfere with the default line break handling and generate ridged text. When flowed output is disabled, add-ons could add hard line breaks to have control over the final message, but any line longer than the maximum line length will still receive additional hard line breaks. See $(ref:messengerSettings.messageLineLengthLimit). This property is read-only."
@@ -79,7 +67,7 @@
                         }
                     },
                     {
-                        "version_added": "147"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messengerSettings.readerDisplayAttachmentsInline.html"
                     }
                 ],
                 "description": "Whether supported attachments (for example, media files) are shown inline within the body of displayed messages. This property is read-only."

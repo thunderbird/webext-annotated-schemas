@@ -1,10 +1,6 @@
 [
     {
-        "annotations": [
-            {
-                "version_added": "128"
-            }
-        ],
+        "annotations": [],
         "applicationVersion": "151.0a1",
         "namespace": "manifest",
         "types": [
@@ -17,11 +13,7 @@
                         ],
                         "enums": {
                             "sensitiveDataUpload": {
-                                "annotations": [
-                                    {
-                                        "version_added": "128"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         },
                         "type": "string"
@@ -31,16 +23,12 @@
         ]
     },
     {
-        "annotations": [
-            {
-                "version_added": "128"
-            }
-        ],
+        "annotations": [],
         "functions": [
             {
                 "annotations": [
                     {
-                        "version_added": "128"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/scripting.compose.html#getregisteredscripts-filter"
                     }
                 ],
                 "async": "callback",
@@ -49,30 +37,18 @@
                 "parameters": [
                     {
                         "$ref": "ComposeScriptFilter",
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "An object to filter the extension's registered compose scripts.",
                         "name": "filter",
                         "optional": true
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The resulting array contains the registered compose scripts.",
                         "name": "callback",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "128"
-                                    }
-                                ],
+                                "annotations": [],
                                 "items": {
                                     "$ref": "ComposeScriptDetails"
                                 },
@@ -94,7 +70,7 @@
                         "hint": "There is a known issue in the logging mechanism of compose scripts: All entries logged to the console appear twice."
                     },
                     {
-                        "version_added": "128"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/scripting.compose.html#registerscripts-scripts"
                     }
                 ],
                 "async": "callback",
@@ -102,11 +78,7 @@
                 "name": "registerScripts",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Contains a list of compose scripts to be registered. If there are errors during script parsing/file validation, or if the IDs specified already exist, then no scripts are registered.",
                         "items": {
                             "$ref": "ComposeScriptDetails"
@@ -115,11 +87,7 @@
                         "type": "array"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Invoked upon completion of the registration.",
                         "name": "callback",
                         "parameters": [],
@@ -131,7 +99,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/scripting.compose.html#unregisterscripts-filter"
                     }
                 ],
                 "async": "callback",
@@ -140,21 +108,13 @@
                 "parameters": [
                     {
                         "$ref": "ComposeScriptFilter",
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "If specified, only unregisters compose scripts which match the filter. Otherwise, all of the extension's compose scripts are unregistered.",
                         "name": "filter",
                         "optional": true
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Invoked upon completion of the unregistration.",
                         "name": "callback",
                         "parameters": [],
@@ -172,17 +132,13 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/scripting.compose.html#composescriptdetails"
                     }
                 ],
                 "id": "ComposeScriptDetails",
                 "properties": {
                     "css": {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The list of CSS files to be injected. These are injected in the order they appear in this array.",
                         "items": {
                             "$ref": "manifest.ExtensionURL"
@@ -191,20 +147,12 @@
                         "type": "array"
                     },
                     "id": {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The id of the compose script, specified in the API call.",
                         "type": "string"
                     },
                     "js": {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The list of JavaScript files to be injected. These are injected in the order they appear in this array.",
                         "items": {
                             "$ref": "manifest.ExtensionURL"
@@ -214,11 +162,7 @@
                     },
                     "runAt": {
                         "$ref": "extensionTypes.RunAt",
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Specifies when JavaScript files are injected. The preferred and default value is <code>document_idle</code>.",
                         "optional": true
                     }
@@ -228,17 +172,13 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/scripting.compose.html#composescriptfilter"
                     }
                 ],
                 "id": "ComposeScriptFilter",
                 "properties": {
                     "ids": {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The IDs of specific compose scripts to retrieve with <code>getRegisteredScripts()</code> or to unregister with <code>unregisterScripts()</code>.",
                         "items": {
                             "type": "string"
@@ -252,16 +192,12 @@
         ]
     },
     {
-        "annotations": [
-            {
-                "version_added": "128"
-            }
-        ],
+        "annotations": [],
         "functions": [
             {
                 "annotations": [
                     {
-                        "version_added": "128"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/scripting.messageDisplay.html#getregisteredscripts-filter"
                     }
                 ],
                 "async": "callback",
@@ -270,30 +206,18 @@
                 "parameters": [
                     {
                         "$ref": "MessageDisplayScriptFilter",
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "An object to filter the extension's registered message display scripts.",
                         "name": "filter",
                         "optional": true
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The resulting array contains the registered message display scripts.",
                         "name": "callback",
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "128"
-                                    }
-                                ],
+                                "annotations": [],
                                 "items": {
                                     "$ref": "MessageDisplayScriptDetails"
                                 },
@@ -315,7 +239,7 @@
                         "hint": "There is a known issue in the logging mechanism of message display scripts: All entries logged to the console appear twice."
                     },
                     {
-                        "version_added": "128"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/scripting.messageDisplay.html#registerscripts-scripts"
                     }
                 ],
                 "async": "callback",
@@ -323,11 +247,7 @@
                 "name": "registerScripts",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Contains a list of message display scripts to be registered. If there are errors during script parsing/file validation, or if the IDs specified already exist, then no scripts are registered.",
                         "items": {
                             "$ref": "MessageDisplayScriptDetails"
@@ -336,11 +256,7 @@
                         "type": "array"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Invoked upon completion of the registration.",
                         "name": "callback",
                         "parameters": [],
@@ -352,7 +268,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/scripting.messageDisplay.html#unregisterscripts-filter"
                     }
                 ],
                 "async": "callback",
@@ -361,21 +277,13 @@
                 "parameters": [
                     {
                         "$ref": "MessageDisplayScriptFilter",
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "If specified, only unregisters message display scripts which match the filter. Otherwise, all of the extension's message display scripts are unregistered.",
                         "name": "filter",
                         "optional": true
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Invoked upon completion of the unregistration.",
                         "name": "callback",
                         "parameters": [],
@@ -393,17 +301,13 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/scripting.messageDisplay.html#messagedisplayscriptdetails"
                     }
                 ],
                 "id": "MessageDisplayScriptDetails",
                 "properties": {
                     "css": {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The list of CSS files to be injected. These are injected in the order they appear in this array.",
                         "items": {
                             "$ref": "manifest.ExtensionURL"
@@ -412,20 +316,12 @@
                         "type": "array"
                     },
                     "id": {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The id of the message display script, specified in the API call.",
                         "type": "string"
                     },
                     "js": {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The list of JavaScript files to be injected. These are injected in the order they appear in this array.",
                         "items": {
                             "$ref": "manifest.ExtensionURL"
@@ -435,11 +331,7 @@
                     },
                     "runAt": {
                         "$ref": "extensionTypes.RunAt",
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Specifies when JavaScript files are injected. The preferred and default value is <code>document_idle</code>.",
                         "optional": true
                     }
@@ -449,17 +341,13 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/scripting.messageDisplay.html#messagedisplayscriptfilter"
                     }
                 ],
                 "id": "MessageDisplayScriptFilter",
                 "properties": {
                     "ids": {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The IDs of specific message display scripts to retrieve with <code>getRegisteredScripts()</code> or to unregister with <code>unregisterScripts()</code>.",
                         "items": {
                             "type": "string"

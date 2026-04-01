@@ -1,10 +1,6 @@
 [
     {
-        "annotations": [
-            {
-                "version_added": "71"
-            }
-        ],
+        "annotations": [],
         "applicationVersion": "151.0a1",
         "namespace": "manifest",
         "types": [
@@ -15,61 +11,37 @@
                         "additionalProperties": {
                             "$ref": "UnrecognizedProperty"
                         },
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "optional": true,
                         "properties": {
                             "browser_style": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "default": false,
                                 "description": "Enable browser styles. See the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Browser_styles'>MDN documentation on browser styles</a> for more information.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "default_area": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Currently unused.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "default_icon": {
                                 "$ref": "manifest.IconPath",
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The paths to one or more icons for the messageDisplayAction button.",
                                 "optional": true
                             },
                             "default_label": {
-                                "annotations": [
-                                    {
-                                        "version_added": "85"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The label of the messageDisplayAction button, defaults to its title. Can be set to an empty string to not display any label. If the containing toolbar is configured to display text only, the title will be used as fallback.",
                                 "optional": true,
                                 "preprocess": "localize",
                                 "type": "string"
                             },
                             "default_popup": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The html document to be opened as a popup when the user clicks on the messageDisplayAction button. Ignored for action buttons with type <var>menu</var>.",
                                 "format": "relativeUrl",
                                 "optional": true,
@@ -77,22 +49,14 @@
                                 "type": "string"
                             },
                             "default_title": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The title of the messageDisplayAction button. This shows up in the tooltip and the label. Defaults to the add-on name.",
                                 "optional": true,
                                 "preprocess": "localize",
                                 "type": "string"
                             },
                             "theme_icons": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Specifies dark and light icons to be used with themes. The <var>light</var> icon is used on dark backgrounds and vice versa. The default theme uses the <var>default_icon</var> for light backgrounds (if specified).",
                                 "items": {
                                     "$ref": "ThemeIcons"
@@ -102,11 +66,7 @@
                                 "type": "array"
                             },
                             "type": {
-                                "annotations": [
-                                    {
-                                        "version_added": "90"
-                                    }
-                                ],
+                                "annotations": [],
                                 "default": "button",
                                 "description": "Specifies the type of the button. Default type is <var>button</var>.",
                                 "enum": [
@@ -115,19 +75,12 @@
                                 ],
                                 "enums": {
                                     "button": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "90"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "menu": {
                                         "annotations": [
                                             {
                                                 "text": "The $(ref:menus.ContextType.message_display_action_menu) context of the $(doc:menus) can be used to add menu entries to a menu-typed messageDisplayAction button."
-                                            },
-                                            {
-                                                "version_added": "90"
                                             }
                                         ]
                                     }
@@ -143,17 +96,13 @@
         ]
     },
     {
-        "annotations": [
-            {
-                "version_added": "71"
-            }
-        ],
+        "annotations": [],
         "description": "Use a messageDisplayAction to put a button in the message display toolbar. In addition to its icon, a messageDisplayAction button can also have a tooltip, a badge, and a popup.",
         "events": [
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#onclicked-tab-info"
                     }
                 ],
                 "description": "Fired when a messageDisplayAction button is clicked. This event will not fire if the messageDisplayAction has a popup. This is a user input event handler. For asynchronous listeners some <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/User_actions'>restrictions</a> apply.",
@@ -161,20 +110,12 @@
                 "parameters": [
                     {
                         "$ref": "tabs.Tab",
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "tab"
                     },
                     {
                         "$ref": "OnClickData",
-                        "annotations": [
-                            {
-                                "version_added": "75"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "info",
                         "optional": true
                     }
@@ -186,7 +127,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#settitle-details"
                     }
                 ],
                 "async": "callback",
@@ -194,56 +135,32 @@
                 "name": "setTitle",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Sets the title only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "title": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "71"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "string"
                                     },
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "71"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "null"
                                     }
                                 ],
                                 "description": "A string the messageDisplayAction button should display as its label and when moused over. Cleared by setting it to <var>null</var> or an empty string (title defined the manifest will be used)."
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -254,11 +171,7 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -270,7 +183,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#gettitle-details"
                     }
                 ],
                 "async": "callback",
@@ -278,30 +191,18 @@
                 "name": "getTitle",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "108"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Specifies for which tab the title should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "108"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -312,20 +213,12 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "name": "result",
                                 "type": "string"
                             }
@@ -338,7 +231,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "85"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#setlabel-details"
                     }
                 ],
                 "async": "callback",
@@ -346,56 +239,32 @@
                 "name": "setLabel",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "85"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "details",
                         "properties": {
                             "label": {
-                                "annotations": [
-                                    {
-                                        "version_added": "85"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "85"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "string"
                                     },
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "85"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "null"
                                     }
                                 ],
                                 "description": "A string the messageDisplayAction button should use as its label, overriding the defined title. Can be set to an empty string to not display any label at all. If the containing toolbar is configured to display text only, its title will be used. Cleared by setting it to <var>null</var>."
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "85"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Sets the label only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "85"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -406,11 +275,7 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "85"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -422,7 +287,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "85"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#getlabel-details"
                     }
                 ],
                 "async": "callback",
@@ -430,30 +295,18 @@
                 "name": "getLabel",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "85"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "108"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Specifies for which tab the label should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "108"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -464,35 +317,19 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "85"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "85"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "85"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "string"
                                     },
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "127"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "null"
                                     }
                                 ],
@@ -507,7 +344,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#seticon-details"
                     }
                 ],
                 "async": "callback",
@@ -515,35 +352,19 @@
                 "name": "setIcon",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "details",
                         "properties": {
                             "imageData": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
                                         "$ref": "ImageDataType",
-                                        "annotations": [
-                                            {
-                                                "version_added": "71"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     {
                                         "$ref": "ImageDataDictionary",
-                                        "annotations": [
-                                            {
-                                                "version_added": "71"
-                                            }
-                                        ]
+                                        "annotations": []
                                     }
                                 ],
                                 "description": "The image data for one or more icons for the composeAction button.",
@@ -551,31 +372,19 @@
                             },
                             "path": {
                                 "$ref": "manifest.IconPath",
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The paths to one or more icons for the messageDisplayAction button.",
                                 "optional": true
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Sets the icon only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -586,11 +395,7 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -602,7 +407,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#setpopup-details"
                     }
                 ],
                 "async": "callback",
@@ -610,56 +415,32 @@
                 "name": "setPopup",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "details",
                         "properties": {
                             "popup": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "71"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "string"
                                     },
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "71"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "null"
                                     }
                                 ],
                                 "description": "The html file to show in a popup. Can be set to an empty string to not open a popup. Cleared by setting it to <var>null</var> (action will use the popup value defined in the manifest)."
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Sets the popup only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -670,11 +451,7 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -686,7 +463,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#getpopup-details"
                     }
                 ],
                 "async": "callback",
@@ -694,30 +471,18 @@
                 "name": "getPopup",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "108"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Specifies for which tab the popup document should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "108"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -728,20 +493,12 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "name": "result",
                                 "type": "string"
                             }
@@ -754,7 +511,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#setbadgetext-details"
                     }
                 ],
                 "async": "callback",
@@ -762,56 +519,32 @@
                 "name": "setBadgeText",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Sets the badge text only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "text": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "71"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "string"
                                     },
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "71"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "null"
                                     }
                                 ],
                                 "description": "Any number of characters can be passed, but only about four can fit in the space. Cleared by setting it to <var>null</var> or an empty string."
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -822,11 +555,7 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -838,7 +567,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#getbadgetext-details"
                     }
                 ],
                 "async": "callback",
@@ -846,30 +575,18 @@
                 "name": "getBadgeText",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "108"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Specifies for which tab the badge text should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "108"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -880,20 +597,12 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "name": "result",
                                 "type": "string"
                             }
@@ -906,7 +615,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#setbadgetextcolor-details"
                     }
                 ],
                 "async": true,
@@ -914,64 +623,36 @@
                 "name": "setBadgeTextColor",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "details",
                         "properties": {
                             "color": {
-                                "annotations": [
-                                    {
-                                        "version_added": "128"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "128"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "string"
                                     },
                                     {
                                         "$ref": "ColorArray",
-                                        "annotations": [
-                                            {
-                                                "version_added": "128"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "128"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "null"
                                     }
                                 ],
                                 "description": "The color to use as text color in the badge. Cleared by setting it to <var>null</var>."
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "128"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Sets the text color for the badge only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "128"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -987,7 +668,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "128"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#getbadgetextcolor-details"
                     }
                 ],
                 "async": "callback",
@@ -995,30 +676,18 @@
                 "name": "getBadgeTextColor",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "128"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Specifies for which tab the badge text color should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "128"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -1029,21 +698,13 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "ColorArray",
-                                "annotations": [
-                                    {
-                                        "version_added": "128"
-                                    }
-                                ],
+                                "annotations": [],
                                 "name": "result"
                             }
                         ],
@@ -1055,7 +716,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#setbadgebackgroundcolor-details"
                     }
                 ],
                 "async": "callback",
@@ -1063,64 +724,36 @@
                 "name": "setBadgeBackgroundColor",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "details",
                         "properties": {
                             "color": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "71"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "string"
                                     },
                                     {
                                         "$ref": "ColorArray",
-                                        "annotations": [
-                                            {
-                                                "version_added": "71"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "71"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "null"
                                     }
                                 ],
                                 "description": "The color to use as background in the badge. Cleared by setting it to <var>null</var>."
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Sets the background color for the badge only for the given tab.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -1131,11 +764,7 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -1147,7 +776,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#getbadgebackgroundcolor-details"
                     }
                 ],
                 "async": "callback",
@@ -1155,30 +784,18 @@
                 "name": "getBadgeBackgroundColor",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "108"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Specifies for which tab the badge background color should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "108"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -1189,21 +806,13 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "ColorArray",
-                                "annotations": [
-                                    {
-                                        "version_added": "71"
-                                    }
-                                ],
+                                "annotations": [],
                                 "name": "result"
                             }
                         ],
@@ -1215,7 +824,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#enable-tabid"
                     }
                 ],
                 "async": "callback",
@@ -1223,11 +832,7 @@
                 "name": "enable",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The id of the tab for which you want to modify the messageDisplayAction button.",
                         "minimum": 0,
                         "name": "tabId",
@@ -1235,11 +840,7 @@
                         "type": "integer"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -1251,7 +852,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#disable-tabid"
                     }
                 ],
                 "async": "callback",
@@ -1259,11 +860,7 @@
                 "name": "disable",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The id of the tab for which you want to modify the messageDisplayAction button.",
                         "minimum": 0,
                         "name": "tabId",
@@ -1271,11 +868,7 @@
                         "type": "integer"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -1287,7 +880,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#isenabled-details"
                     }
                 ],
                 "async": "callback",
@@ -1295,30 +888,18 @@
                 "name": "isEnabled",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "71"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "details",
                         "properties": {
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "108"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Specifies for which tab the state should be retrieved. If no tab is specified, the global value is retrieved.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "108"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Will throw an error if used.",
                                 "minimum": -2,
                                 "optional": true,
@@ -1329,20 +910,12 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "96"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "96"
-                                    }
-                                ],
+                                "annotations": [],
                                 "type": "boolean"
                             }
                         ],
@@ -1354,7 +927,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#openpopup-options"
                     }
                 ],
                 "async": "callback",
@@ -1362,21 +935,13 @@
                 "name": "openPopup",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "113"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "An object with information about the popup to open.",
                         "name": "options",
                         "optional": true,
                         "properties": {
                             "windowId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "113"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Defaults to the current window.",
                                 "minimum": -2,
                                 "optional": true,
@@ -1386,20 +951,12 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "113"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "113"
-                                    }
-                                ],
+                                "annotations": [],
                                 "type": "boolean"
                             }
                         ],
@@ -1417,7 +974,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#colorarray"
                     }
                 ],
                 "description": "An array of four integers in the range [0,255] that make up the RGBA color. For example, opaque red is <var>[255, 0, 0, 255]</var>.",
@@ -1437,7 +994,7 @@
                 },
                 "annotations": [
                     {
-                        "version_added": "71"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#imagedatatype"
                     }
                 ],
                 "description": "Pixel data for an image. Must be an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object (for example, from a <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/canvas'>canvas</a> element).",
@@ -1449,7 +1006,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "90"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#imagedatadictionary"
                     }
                 ],
                 "description": "A <em>dictionary object</em> to specify multiple <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> objects in different sizes, so the icon does not have to be scaled for a device with a different pixel density. Each entry is a <em>name-value</em> pair with <em>value</em> being an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object, and <em>name</em> its size.",
@@ -1464,28 +1021,20 @@
             {
                 "annotations": [
                     {
-                        "version_added": "75"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messageDisplayAction.html#onclickdata"
                     }
                 ],
                 "description": "Information sent when a messageDisplayAction button is clicked.",
                 "id": "OnClickData",
                 "properties": {
                     "button": {
-                        "annotations": [
-                            {
-                                "version_added": "75"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "An integer value of button by which menu item was clicked.",
                         "optional": true,
                         "type": "integer"
                     },
                     "modifiers": {
-                        "annotations": [
-                            {
-                                "version_added": "75"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "An array of keyboard modifiers that were held while the menu item was clicked.",
                         "items": {
                             "enum": [
@@ -1497,19 +1046,12 @@
                             ],
                             "enums": {
                                 "Alt": {
-                                    "annotations": [
-                                        {
-                                            "version_added": "75"
-                                        }
-                                    ]
+                                    "annotations": []
                                 },
                                 "Command": {
                                     "annotations": [
                                         {
                                             "text": "Only available on macOS."
-                                        },
-                                        {
-                                            "version_added": "75"
                                         }
                                     ]
                                 },
@@ -1517,9 +1059,6 @@
                                     "annotations": [
                                         {
                                             "text": "Not available on macOS."
-                                        },
-                                        {
-                                            "version_added": "75"
                                         }
                                     ]
                                 },
@@ -1527,18 +1066,11 @@
                                     "annotations": [
                                         {
                                             "text": "Only available on macOS, but of limited use in a click event: Holding down the CTRL key while clicking with the mouse is referred to as a 'CTRL click' under macOS and is interpreted as a right mouse click. In a default profile  the <var>dom.event.treat_ctrl_click_as_right_click.disabled</var> preference is not enabled and the <var>MacCtrl</var> modifier key is not forwarded to the API."
-                                        },
-                                        {
-                                            "version_added": "75"
                                         }
                                     ]
                                 },
                                 "Shift": {
-                                    "annotations": [
-                                        {
-                                            "version_added": "75"
-                                        }
-                                    ]
+                                    "annotations": []
                                 }
                             },
                             "type": "string"

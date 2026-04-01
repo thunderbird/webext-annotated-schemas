@@ -1,10 +1,6 @@
 [
     {
-        "annotations": [
-            {
-                "version_added": "64"
-            }
-        ],
+        "annotations": [],
         "applicationVersion": "151.0a1",
         "namespace": "manifest",
         "types": [
@@ -18,18 +14,10 @@
                         ],
                         "enums": {
                             "addressBooks": {
-                                "annotations": [
-                                    {
-                                        "version_added": "64"
-                                    }
-                                ]
+                                "annotations": []
                             },
                             "sensitiveDataUpload": {
-                                "annotations": [
-                                    {
-                                        "version_added": "115"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         },
                         "type": "string"
@@ -39,17 +27,13 @@
         ]
     },
     {
-        "annotations": [
-            {
-                "version_added": "64"
-            }
-        ],
+        "annotations": [],
         "description": "The addressBooks API allows to access and manage the user's address books.",
         "events": [
             {
                 "annotations": [
                     {
-                        "version_added": "64"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.html#oncreated-node"
                     }
                 ],
                 "description": "Fired when an address book is created.",
@@ -57,11 +41,7 @@
                 "parameters": [
                     {
                         "$ref": "AddressBookNode",
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "node"
                     }
                 ],
@@ -70,7 +50,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.html#onupdated-node"
                     }
                 ],
                 "description": "Fired when an address book is renamed.",
@@ -78,11 +58,7 @@
                 "parameters": [
                     {
                         "$ref": "AddressBookNode",
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "node"
                     }
                 ],
@@ -91,18 +67,14 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.html#ondeleted-id"
                     }
                 ],
                 "description": "Fired when an addressBook is deleted.",
                 "name": "onDeleted",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     }
@@ -114,7 +86,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.html#openui"
                     }
                 ],
                 "async": "callback",
@@ -122,21 +94,13 @@
                 "name": "openUI",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "114"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "tabs.Tab",
-                                "annotations": [
-                                    {
-                                        "version_added": "114"
-                                    }
-                                ],
+                                "annotations": [],
                                 "name": "return"
                             }
                         ],
@@ -148,7 +112,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.html#closeui"
                     }
                 ],
                 "async": true,
@@ -160,7 +124,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.html#list-complete"
                     }
                 ],
                 "async": "callback",
@@ -168,11 +132,7 @@
                 "name": "list",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "default": false,
                         "description": "If set to true, results will include contacts and mailing lists for each address book.",
                         "name": "complete",
@@ -180,20 +140,12 @@
                         "type": "boolean"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "89"
-                                    }
-                                ],
+                                "annotations": [],
                                 "items": {
                                     "$ref": "AddressBookNode"
                                 },
@@ -208,7 +160,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.html#get-id-complete"
                     }
                 ],
                 "async": "callback",
@@ -216,20 +168,12 @@
                 "name": "get",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "default": false,
                         "description": "If set to true, results will include contacts and mailing lists for this address book.",
                         "name": "complete",
@@ -237,21 +181,13 @@
                         "type": "boolean"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "AddressBookNode",
-                                "annotations": [
-                                    {
-                                        "version_added": "89"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         ],
                         "type": "function"
@@ -262,7 +198,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.html#create-properties"
                     }
                 ],
                 "async": "callback",
@@ -270,39 +206,23 @@
                 "name": "create",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "properties",
                         "properties": {
                             "name": {
-                                "annotations": [
-                                    {
-                                        "version_added": "64"
-                                    }
-                                ],
+                                "annotations": [],
                                 "type": "string"
                             }
                         },
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "89"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "89"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The id of the new address book.",
                                 "type": "string"
                             }
@@ -315,7 +235,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.html#update-id-properties"
                     }
                 ],
                 "async": true,
@@ -323,28 +243,16 @@
                 "name": "update",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "properties",
                         "properties": {
                             "name": {
-                                "annotations": [
-                                    {
-                                        "version_added": "64"
-                                    }
-                                ],
+                                "annotations": [],
                                 "type": "string"
                             }
                         },
@@ -356,7 +264,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.html#delete-id"
                     }
                 ],
                 "async": true,
@@ -364,11 +272,7 @@
                 "name": "delete",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     }
@@ -384,7 +288,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.html#nodetype"
                     }
                 ],
                 "description": "Indicates the type of a Node.",
@@ -395,25 +299,13 @@
                 ],
                 "enums": {
                     "addressBook": {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ]
+                        "annotations": []
                     },
                     "contact": {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ]
+                        "annotations": []
                     },
                     "mailingList": {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ]
+                        "annotations": []
                     }
                 },
                 "id": "NodeType",
@@ -422,18 +314,14 @@
             {
                 "annotations": [
                     {
-                        "version_added": "64"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.html#addressbooknode"
                     }
                 ],
                 "description": "A node representing an address book.",
                 "id": "AddressBookNode",
                 "properties": {
                     "contacts": {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "A list of contacts held by this node's address book or mailing list.",
                         "items": {
                             "$ref": "contacts.ContactNode"
@@ -442,20 +330,12 @@
                         "type": "array"
                     },
                     "id": {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The unique identifier for the node. IDs are unique within the current profile, and they remain valid even after the program is restarted.",
                         "type": "string"
                     },
                     "mailingLists": {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "A list of mailingLists in this node's address book.",
                         "items": {
                             "$ref": "mailingLists.MailingListNode"
@@ -464,50 +344,30 @@
                         "type": "array"
                     },
                     "name": {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "type": "string"
                     },
                     "parentId": {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The <var>id</var> of the parent object.",
                         "optional": true,
                         "type": "string"
                     },
                     "readOnly": {
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Indicates if the object is read-only.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "remote": {
-                        "annotations": [
-                            {
-                                "version_added": "92"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Indicates if the address book is accessed via remote look-up.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "type": {
                         "$ref": "NodeType",
-                        "annotations": [
-                            {
-                                "version_added": "64"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Always set to <var>addressBook</var>."
                     }
                 },
@@ -528,9 +388,6 @@
             },
             {
                 "text": "So far, only the API for search-only address books has been implemented."
-            },
-            {
-                "version_added": "91"
             }
         ],
         "description": "The address book provider API allows to add address books, which are not stored or cached by Thunderbird itself, but are handled completely by the extension. Address books created by the this API will forward all access requests to the WebExtension.",
@@ -573,46 +430,30 @@
                         "type": "JavaScript"
                     },
                     {
-                        "version_added": "91"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.provider.html#onsearchrequest-node-searchstring-query"
                     }
                 ],
                 "description": "Registering this listener will create a read-only address book, similar to an LDAP address book. When selecting this address book, users will first see no contacts, but they can search for contacts, which will fire this event. Contacts returned by the listener callback will be displayed as contact cards in the address book. Several listeners can be registered, to create multiple address books.",
                 "extraParameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "91"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Descriptions for the address book created by registering this listener.",
                         "name": "parameters",
                         "properties": {
                             "addressBookName": {
-                                "annotations": [
-                                    {
-                                        "version_added": "91"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The name of the created address book. If not provided, the name of the extension is used.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "id": {
-                                "annotations": [
-                                    {
-                                        "version_added": "91"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The unique identifier of the created address book. If not provided, a unique identifier will be generated for you.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "isSecure": {
-                                "annotations": [
-                                    {
-                                        "version_added": "91"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Whether the address book search queries are using encrypted protocols like HTTPS.",
                                 "optional": true,
                                 "type": "boolean"
@@ -625,19 +466,11 @@
                 "parameters": [
                     {
                         "$ref": "AddressBookNode",
-                        "annotations": [
-                            {
-                                "version_added": "91"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "node"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "91"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The search text that the user entered. Not available when invoked from the advanced address book search dialog.",
                         "name": "searchString",
                         "optional": true,
@@ -647,9 +480,6 @@
                         "annotations": [
                             {
                                 "note": "This parameter may change in future releases of Thunderbird."
-                            },
-                            {
-                                "version_added": "91"
                             }
                         ],
                         "description": "The boolean query expression corresponding to the search.",
@@ -661,19 +491,11 @@
                 "returns": {
                     "properties": {
                         "isCompleteResult": {
-                            "annotations": [
-                                {
-                                    "version_added": "142"
-                                }
-                            ],
+                            "annotations": [],
                             "type": "boolean"
                         },
                         "results": {
-                            "annotations": [
-                                {
-                                    "version_added": "142"
-                                }
-                            ],
+                            "annotations": [],
                             "items": {
                                 "$ref": "ContactProperties"
                             },
@@ -691,17 +513,13 @@
         ]
     },
     {
-        "annotations": [
-            {
-                "version_added": "127"
-            }
-        ],
+        "annotations": [],
         "description": "The contacts API allows to access and manage the user's contacts.",
         "events": [
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#oncreated-node"
                     }
                 ],
                 "description": "Fired when a contact is created.",
@@ -709,11 +527,7 @@
                 "parameters": [
                     {
                         "$ref": "ContactNode",
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "node"
                     }
                 ],
@@ -722,7 +536,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "149"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#onmanycreated-node"
                     }
                 ],
                 "description": "Fired when a large number of contacts are added. The contacts are not emitted for performance reasons. The event indicates significant changes, and consumers should rebuild any cached representation of the address book.",
@@ -730,11 +544,7 @@
                 "parameters": [
                     {
                         "$ref": "AddressBookNode",
-                        "annotations": [
-                            {
-                                "version_added": "149"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "node"
                     }
                 ],
@@ -743,7 +553,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#onupdated-node-oldvcard"
                     }
                 ],
                 "description": "Fired when a contact is changed.",
@@ -751,19 +561,11 @@
                 "parameters": [
                     {
                         "$ref": "ContactNode",
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "node"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "oldVCard",
                         "type": "string"
                     }
@@ -773,27 +575,19 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#ondeleted-parentid-id"
                     }
                 ],
                 "description": "Fired when a contact is removed from an address book.",
                 "name": "onDeleted",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "parentId",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     }
@@ -805,7 +599,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#list-parentid"
                     }
                 ],
                 "async": "callback",
@@ -813,29 +607,17 @@
                 "name": "list",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "parentId",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "items": {
                                     "$ref": "ContactNode"
                                 },
@@ -850,7 +632,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#query-queryinfo"
                     }
                 ],
                 "async": "callback",
@@ -859,28 +641,16 @@
                 "parameters": [
                     {
                         "$ref": "QueryInfo",
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "queryInfo"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "items": {
                                     "$ref": "ContactNode"
                                 },
@@ -895,7 +665,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#get-id"
                     }
                 ],
                 "async": "callback",
@@ -903,30 +673,18 @@
                 "name": "get",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "ContactNode",
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         ],
                         "type": "function"
@@ -937,7 +695,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#getphoto-id"
                     }
                 ],
                 "async": "callback",
@@ -945,46 +703,26 @@
                 "name": "getPhoto",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
                                         "additionalProperties": true,
-                                        "annotations": [
-                                            {
-                                                "version_added": "127"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "isInstanceOf": "File",
                                         "type": "object"
                                     },
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "127"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "null"
                                     }
                                 ]
@@ -998,7 +736,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#setphoto-id-file"
                     }
                 ],
                 "async": true,
@@ -1006,21 +744,13 @@
                 "name": "setPhoto",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     },
                     {
                         "additionalProperties": true,
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "isInstanceOf": "File",
                         "name": "file",
                         "type": "object"
@@ -1031,7 +761,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#create-parentid-vcard"
                     }
                 ],
                 "async": "callback",
@@ -1039,39 +769,23 @@
                 "name": "create",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "parentId",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The vCard for the new contact. If it includes an (optional) id and an existing contact has this id already, an exception is thrown.",
                         "name": "vCard",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "128"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The ID of the new contact.",
                                 "type": "string"
                             }
@@ -1084,7 +798,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#update-id-vcard"
                     }
                 ],
                 "async": true,
@@ -1092,20 +806,12 @@
                 "name": "update",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The updated vCard for the contact.",
                         "name": "vCard",
                         "type": "string"
@@ -1116,7 +822,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#delete-id"
                     }
                 ],
                 "async": true,
@@ -1124,11 +830,7 @@
                 "name": "delete",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     }
@@ -1144,72 +846,48 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#queryinfo"
                     }
                 ],
                 "description": "Object defining a query for $(ref:contacts.query).",
                 "id": "QueryInfo",
                 "properties": {
                     "includeLocal": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "default": true,
                         "description": "Whether to include results from local address books. Defaults to <var>true</var>.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "includeReadOnly": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "default": true,
                         "description": "Whether to include results from read-only address books. Defaults to <var>true</var>.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "includeReadWrite": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "default": true,
                         "description": "Whether to include results from read-write address books. Defaults to <var>true</var>.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "includeRemote": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "default": true,
                         "description": "Whether to include results from remote address books. Defaults to <var>true</var>.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "parentId": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The id of the address book to search. If not specified, all address books are searched.",
                         "optional": true,
                         "type": "string"
                     },
                     "searchString": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "One or more space-separated terms to search for in predefined contact fields (defined by the preference <var>mail.addr_book.quicksearchquery.format</var>).",
                         "optional": true,
                         "type": "string"
@@ -1220,66 +898,42 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#contactnode"
                     }
                 ],
                 "description": "A node representing a contact in an address book.",
                 "id": "ContactNode",
                 "properties": {
                     "id": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The unique identifier for the node. IDs are unique within the current profile, and they remain valid even after the program is restarted.",
                         "type": "string"
                     },
                     "parentId": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The <var>id</var> of the parent object.",
                         "optional": true,
                         "type": "string"
                     },
                     "readOnly": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Indicates if the object is read-only.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "remote": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Indicates if the object came from a remote address book.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "type": {
                         "$ref": "addressBooks.NodeType",
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Always set to <var>contact</var>."
                     },
                     "vCard": {
-                        "annotations": [
-                            {
-                                "version_added": "128"
-                            }
-                        ],
+                        "annotations": [],
                         "type": "string"
                     }
                 },
@@ -1288,7 +942,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#contactproperties"
                     }
                 ],
                 "description": "A set of individual properties for a particular contact, and its vCard string. Further information can be found in $(doc:guides/vcard).",
@@ -1297,19 +951,11 @@
                     "^\\w+$": {
                         "choices": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "type": "string"
                             },
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "type": "null"
                             }
                         ]
@@ -1320,7 +966,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.contacts.html#propertychange"
                     }
                 ],
                 "description": "A dictionary of changed properties. Keys are the property name that changed, values are an object containing <var>oldValue</var> and <var>newValue</var>. Values can be either a string or <var>null</var>.",
@@ -1329,51 +975,27 @@
                     "^\\w+$": {
                         "properties": {
                             "newValue": {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "127"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "string"
                                     },
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "127"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "null"
                                     }
                                 ]
                             },
                             "oldValue": {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "127"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "string"
                                     },
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "127"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "type": "null"
                                     }
                                 ]
@@ -1387,17 +1009,13 @@
         ]
     },
     {
-        "annotations": [
-            {
-                "version_added": "127"
-            }
-        ],
+        "annotations": [],
         "description": "The mailingLists API allows to access and manage the user's mailing lists.",
         "events": [
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.mailingLists.html#oncreated-node"
                     }
                 ],
                 "description": "Fired when a mailing list is created.",
@@ -1405,11 +1023,7 @@
                 "parameters": [
                     {
                         "$ref": "MailingListNode",
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "node"
                     }
                 ],
@@ -1418,7 +1032,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.mailingLists.html#onupdated-node"
                     }
                 ],
                 "description": "Fired when a mailing list is changed.",
@@ -1426,11 +1040,7 @@
                 "parameters": [
                     {
                         "$ref": "MailingListNode",
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "node"
                     }
                 ],
@@ -1439,27 +1049,19 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.mailingLists.html#ondeleted-parentid-id"
                     }
                 ],
                 "description": "Fired when a mailing list is deleted.",
                 "name": "onDeleted",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "parentId",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     }
@@ -1469,7 +1071,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.mailingLists.html#onmemberadded-node"
                     }
                 ],
                 "description": "Fired when a contact is added to the mailing list.",
@@ -1477,11 +1079,7 @@
                 "parameters": [
                     {
                         "$ref": "contacts.ContactNode",
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "node"
                     }
                 ],
@@ -1490,27 +1088,19 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.mailingLists.html#onmemberremoved-parentid-id"
                     }
                 ],
                 "description": "Fired when a contact is removed from the mailing list.",
                 "name": "onMemberRemoved",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "parentId",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     }
@@ -1522,7 +1112,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.mailingLists.html#list-parentid"
                     }
                 ],
                 "async": "callback",
@@ -1530,29 +1120,17 @@
                 "name": "list",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "parentId",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "items": {
                                     "$ref": "MailingListNode"
                                 },
@@ -1567,7 +1145,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.mailingLists.html#get-id"
                     }
                 ],
                 "async": "callback",
@@ -1575,30 +1153,18 @@
                 "name": "get",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "MailingListNode",
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ]
+                                "annotations": []
                             }
                         ],
                         "type": "function"
@@ -1609,7 +1175,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.mailingLists.html#create-parentid-properties"
                     }
                 ],
                 "async": "callback",
@@ -1617,45 +1183,25 @@
                 "name": "create",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "parentId",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "properties",
                         "properties": {
                             "description": {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "optional": true,
                                 "type": "string"
                             },
                             "name": {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "type": "string"
                             },
                             "nickName": {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "optional": true,
                                 "type": "string"
                             }
@@ -1663,20 +1209,12 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The ID of the new mailing list.",
                                 "type": "string"
                             }
@@ -1689,7 +1227,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.mailingLists.html#update-id-properties"
                     }
                 ],
                 "async": true,
@@ -1697,45 +1235,25 @@
                 "name": "update",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "properties",
                         "properties": {
                             "description": {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "optional": true,
                                 "type": "string"
                             },
                             "name": {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "type": "string"
                             },
                             "nickName": {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "optional": true,
                                 "type": "string"
                             }
@@ -1748,7 +1266,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.mailingLists.html#delete-id"
                     }
                 ],
                 "async": true,
@@ -1756,11 +1274,7 @@
                 "name": "delete",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     }
@@ -1770,7 +1284,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.mailingLists.html#addmember-id-contactid"
                     }
                 ],
                 "async": true,
@@ -1778,20 +1292,12 @@
                 "name": "addMember",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "contactId",
                         "type": "string"
                     }
@@ -1801,7 +1307,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.mailingLists.html#listmembers-id"
                     }
                 ],
                 "async": "callback",
@@ -1809,29 +1315,17 @@
                 "name": "listMembers",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "127"
-                                    }
-                                ],
+                                "annotations": [],
                                 "items": {
                                     "$ref": "contacts.ContactNode"
                                 },
@@ -1846,7 +1340,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.mailingLists.html#removemember-id-contactid"
                     }
                 ],
                 "async": true,
@@ -1854,20 +1348,12 @@
                 "name": "removeMember",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "id",
                         "type": "string"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "contactId",
                         "type": "string"
                     }
@@ -1883,18 +1369,14 @@
             {
                 "annotations": [
                     {
-                        "version_added": "127"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/addressBooks.mailingLists.html#mailinglistnode"
                     }
                 ],
                 "description": "A node representing a mailing list.",
                 "id": "MailingListNode",
                 "properties": {
                     "contacts": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "A list of contacts held by this node's address book or mailing list.",
                         "items": {
                             "$ref": "contacts.ContactNode"
@@ -1903,75 +1385,43 @@
                         "type": "array"
                     },
                     "description": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "type": "string"
                     },
                     "id": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The unique identifier for the node. IDs are unique within the current profile, and they remain valid even after the program is restarted.",
                         "type": "string"
                     },
                     "name": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "type": "string"
                     },
                     "nickName": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "type": "string"
                     },
                     "parentId": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The <var>id</var> of the parent object.",
                         "optional": true,
                         "type": "string"
                     },
                     "readOnly": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Indicates if the object is read-only.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "remote": {
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Indicates if the object came from a remote address book.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "type": {
                         "$ref": "addressBooks.NodeType",
-                        "annotations": [
-                            {
-                                "version_added": "127"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Always set to <var>mailingList</var>."
                     }
                 },

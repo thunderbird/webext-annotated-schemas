@@ -3,9 +3,6 @@
         "annotations": [
             {
                 "note": "This API can be used with Thunderbird's main window and popup windows, both of which support web tabs, as well as with other window types like the composer window, which does not. Ensure your code handles each window type appropriately based on its capabilities."
-            },
-            {
-                "version_added": "62"
             }
         ],
         "description": "The windows API supports creating, modifying and interacting with Thunderbird windows.",
@@ -13,7 +10,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#oncreated-window"
                     }
                 ],
                 "description": "Fired when a window is created.",
@@ -31,11 +28,7 @@
                 "parameters": [
                     {
                         "$ref": "Window",
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Details of the window that was created.",
                         "name": "window"
                     }
@@ -45,7 +38,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#onremoved-windowid"
                     }
                 ],
                 "description": "Fired when a window is removed (closed).",
@@ -62,11 +55,7 @@
                 "name": "onRemoved",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "ID of the removed window.",
                         "minimum": 0,
                         "name": "windowId",
@@ -81,7 +70,7 @@
                         "note": "On some Linux window managers, WINDOW_ID_NONE will always be sent immediately preceding a switch from one window to another."
                     },
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#onfocuschanged-windowid"
                     }
                 ],
                 "description": "Fired when the currently focused window changes. Will be $(ref:windows.WINDOW_ID_NONE), if all windows have lost focus.",
@@ -98,11 +87,7 @@
                 "name": "onFocusChanged",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "ID of the newly focused window.",
                         "minimum": -1,
                         "name": "windowId",
@@ -116,7 +101,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#get-windowid-getinfo"
                     }
                 ],
                 "async": "callback",
@@ -124,41 +109,25 @@
                 "name": "get",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "minimum": -2,
                         "name": "windowId",
                         "type": "integer"
                     },
                     {
                         "$ref": "GetInfo",
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "getInfo",
                         "optional": true
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "Window",
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "name": "window"
                             }
                         ],
@@ -170,7 +139,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#getcurrent-getinfo"
                     }
                 ],
                 "async": "callback",
@@ -179,30 +148,18 @@
                 "parameters": [
                     {
                         "$ref": "GetInfo",
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "getInfo",
                         "optional": true
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "Window",
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "name": "window"
                             }
                         ],
@@ -214,7 +171,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#getlastfocused-getinfo"
                     }
                 ],
                 "async": "callback",
@@ -223,30 +180,18 @@
                 "parameters": [
                     {
                         "$ref": "GetInfo",
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "getInfo",
                         "optional": true
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "Window",
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "name": "window"
                             }
                         ],
@@ -258,7 +203,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#getall-getinfo"
                     }
                 ],
                 "async": "callback",
@@ -267,29 +212,17 @@
                 "parameters": [
                     {
                         "$ref": "GetInfo",
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "getInfo",
                         "optional": true
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "items": {
                                     "$ref": "Window"
                                 },
@@ -305,7 +238,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#create-createdata"
                     }
                 ],
                 "async": "callback",
@@ -313,21 +246,13 @@
                 "name": "create",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "default": {},
                         "name": "createData",
                         "optional": true,
                         "properties": {
                             "allowScriptsToClose": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Allow scripts running inside the window to close the window by calling <code>window.close()</code>. Defaults to <var>true</var> when the given URL points to an extension page (a page included with this extension and loaded with the <var>moz-extension:</var> protocol), defaults to <var>false</var> otherwise.",
                                 "optional": true,
                                 "type": "boolean"
@@ -339,9 +264,6 @@
                                     },
                                     {
                                         "note": "The <permission>cookies</permission> permission is required to be able to specify this property. Furthermore, the <permission>contextualIdentities</permission> permission should be requested, to enable the contextual identities feature (enabled by default only on Thunderbird Daily)."
-                                    },
-                                    {
-                                        "version_added": "115"
                                     }
                                 ],
                                 "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities/ContextualIdentity#cookiestoreid'>CookieStore</a> id which all initially opened tabs should use. Either a custom id created using the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/contextualIdentities'>contextualIdentities API</a>, or a built-in one: <var>firefox-default</var>, <var>firefox-container-1</var>, <var>firefox-container-2</var>, <var>firefox-container-3</var>, <var>firefox-container-4</var>, <var>firefox-container-5</var>.",
@@ -349,53 +271,33 @@
                                 "type": "string"
                             },
                             "focused": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "If true, opens an active window. If false, opens an inactive window.",
                                 "optional": true,
                                 "type": "boolean",
                                 "unsupported": true
                             },
                             "height": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The height in pixels of the new window, including the frame. If not specified defaults to a natural height.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "incognito": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "optional": true,
                                 "type": "boolean",
                                 "unsupported": true
                             },
                             "left": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The number of pixels to position the new window from the left edge of the screen. If not specified, the new window is offset naturally from the last focused window.",
                                 "optional": true,
                                 "type": "integer"
                             },
                             "linkHandler": {
-                                "annotations": [
-                                    {
-                                        "version_added": "136"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Thunderbird is a mail client, not a browser. It is possible to load a web page, but opening follow-up pages through hyperlinks should be handled by the user's default browser. This property specifies to what extent this behavior should be enforced. The default <var>balanced</var> link handler will open links to the same host directly in Thunderbird, everything else will be opened in the user's default browser. A <var>relaxed</var> link handler will open all links inside of Thunderbird, a <var>strict</var> link handler will open all links in the user's default browser, except links to the same page.",
                                 "enum": [
                                     "strict",
@@ -404,25 +306,13 @@
                                 ],
                                 "enums": {
                                     "balanced": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "136"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "relaxed": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "136"
-                                            }
-                                        ]
+                                        "annotations": []
                                     },
                                     "strict": {
-                                        "annotations": [
-                                            {
-                                                "version_added": "136"
-                                            }
-                                        ]
+                                        "annotations": []
                                     }
                                 },
                                 "optional": true,
@@ -430,77 +320,45 @@
                             },
                             "state": {
                                 "$ref": "WindowState",
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The initial state of the window. The <var>minimized</var>, <var>maximized</var> and <var>fullscreen</var> states cannot be combined with <var>left</var>, <var>top</var>, <var>width</var> or <var>height</var>.",
                                 "optional": true
                             },
                             "tabId": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The id of the tab for which you want to adopt to the new window.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "titlePreface": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "A string to add to the beginning of the window title.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "top": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The number of pixels to position the new window from the top edge of the screen. If not specified, the new window is offset naturally from the last focused window.",
                                 "optional": true,
                                 "type": "integer"
                             },
                             "type": {
                                 "$ref": "CreateType",
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Specifies what type of window to create. Thunderbird does not support <var>panel</var> and <var>detached_panel</var>, they are interpreted as <var>popup</var>.",
                                 "optional": true
                             },
                             "url": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "choices": [
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "62"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "format": "relativeUrl",
                                         "type": "string"
                                     },
                                     {
-                                        "annotations": [
-                                            {
-                                                "version_added": "62"
-                                            }
-                                        ],
+                                        "annotations": [],
                                         "items": {
                                             "format": "relativeUrl",
                                             "type": "string"
@@ -512,11 +370,7 @@
                                 "optional": true
                             },
                             "width": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The width in pixels of the new window, including the frame. If not specified defaults to a natural width.",
                                 "minimum": 0,
                                 "optional": true,
@@ -526,21 +380,13 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "Window",
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Contains details about the created window.",
                                 "name": "window"
                             }
@@ -553,7 +399,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#update-windowid-updateinfo"
                     }
                 ],
                 "async": "callback",
@@ -561,100 +407,60 @@
                 "name": "update",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "minimum": -2,
                         "name": "windowId",
                         "type": "integer"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "updateInfo",
                         "properties": {
                             "drawAttention": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "Setting this to <var>true</var> will cause the window to be displayed in a manner that draws the user's attention to the window, without changing the focused window. The effect lasts until the user changes focus to the window. This option has no effect if the window already has focus.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "focused": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "If true, brings the window to the front. If false, brings the next window in the z-order to the front.",
                                 "optional": true,
                                 "type": "boolean"
                             },
                             "height": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The height to resize the window to in pixels.",
                                 "minimum": 0,
                                 "optional": true,
                                 "type": "integer"
                             },
                             "left": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The offset from the left edge of the screen to move the window to in pixels. This value is ignored for panels.",
                                 "optional": true,
                                 "type": "integer"
                             },
                             "state": {
                                 "$ref": "WindowState",
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The new state of the window. The <var>minimized</var>, <var>maximized</var> and <var>fullscreen</var> states cannot be combined with <var>left</var>, <var>top</var>, <var>width</var> or <var>height</var>.",
                                 "optional": true
                             },
                             "titlePreface": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "A string to add to the beginning of the window title.",
                                 "optional": true,
                                 "type": "string"
                             },
                             "top": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The offset from the top edge of the screen to move the window to in pixels. This value is ignored for panels.",
                                 "optional": true,
                                 "type": "integer"
                             },
                             "width": {
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "description": "The width to resize the window to in pixels.",
                                 "minimum": 0,
                                 "optional": true,
@@ -664,21 +470,13 @@
                         "type": "object"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
                             {
                                 "$ref": "Window",
-                                "annotations": [
-                                    {
-                                        "version_added": "62"
-                                    }
-                                ],
+                                "annotations": [],
                                 "name": "window"
                             }
                         ],
@@ -690,7 +488,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#remove-windowid"
                     }
                 ],
                 "async": "callback",
@@ -698,21 +496,13 @@
                 "name": "remove",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "minimum": -2,
                         "name": "windowId",
                         "type": "integer"
                     },
                     {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "callback",
                         "optional": true,
                         "parameters": [],
@@ -724,7 +514,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "85"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#opendefaultbrowser-url"
                     }
                 ],
                 "async": true,
@@ -732,11 +522,7 @@
                 "name": "openDefaultBrowser",
                 "parameters": [
                     {
-                        "annotations": [
-                            {
-                                "version_added": "85"
-                            }
-                        ],
+                        "annotations": [],
                         "name": "url",
                         "type": "string"
                     }
@@ -749,7 +535,7 @@
             "WINDOW_ID_CURRENT": {
                 "annotations": [
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#window_id_current"
                     }
                 ],
                 "description": "The windowId value that represents the current window.",
@@ -758,7 +544,7 @@
             "WINDOW_ID_NONE": {
                 "annotations": [
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#window_id_none"
                     }
                 ],
                 "description": "The windowId value that represents the absence of a window.",
@@ -769,7 +555,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#windowtype"
                     }
                 ],
                 "description": "The type of a window. Under some circumstances a window may not be assigned a type property.",
@@ -784,9 +570,6 @@
                         "annotations": [
                             {
                                 "text": "A non-modal stand-alone message compose window."
-                            },
-                            {
-                                "version_added": "70"
                             }
                         ]
                     },
@@ -794,9 +577,6 @@
                         "annotations": [
                             {
                                 "text": "A non-modal stand-alone message display window, viewing a single message."
-                            },
-                            {
-                                "version_added": "70"
                             }
                         ]
                     },
@@ -804,9 +584,6 @@
                         "annotations": [
                             {
                                 "text": "A normal Thunderbird window, a.k.a. 3-pane-window (folder pane, message pane and preview pane)."
-                            },
-                            {
-                                "version_added": "62"
                             }
                         ]
                     },
@@ -814,9 +591,6 @@
                         "annotations": [
                             {
                                 "text": "A non-modal stand-alone popup window."
-                            },
-                            {
-                                "version_added": "62"
                             }
                         ]
                     }
@@ -830,7 +604,7 @@
                         "note": "On Linux systems using Wayland, clients cannot detect whether a window is minimized. Minimized windows are therefore reported as <var>normal</var>."
                     },
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#windowstate"
                     }
                 ],
                 "description": "The state of this window.",
@@ -843,39 +617,19 @@
                 ],
                 "enums": {
                     "docked": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ]
+                        "annotations": []
                     },
                     "fullscreen": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ]
+                        "annotations": []
                     },
                     "maximized": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ]
+                        "annotations": []
                     },
                     "minimized": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ]
+                        "annotations": []
                     },
                     "normal": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ]
+                        "annotations": []
                     }
                 },
                 "id": "WindowState",
@@ -884,85 +638,53 @@
             {
                 "annotations": [
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#window"
                     }
                 ],
                 "id": "Window",
                 "properties": {
                     "alwaysOnTop": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Whether the window is set to be always on top.",
                         "type": "boolean"
                     },
                     "focused": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Whether the window is currently the focused window.",
                         "type": "boolean"
                     },
                     "height": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The height of the window, including the frame, in pixels.",
                         "optional": true,
                         "type": "integer"
                     },
                     "id": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The ID of the window. Window IDs are unique within a session.",
                         "minimum": 0,
                         "optional": true,
                         "type": "integer"
                     },
                     "incognito": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Whether the window is incognito. Since Thunderbird does not support the incognito mode, this is always <var>false</var>.",
                         "type": "boolean"
                     },
                     "left": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The offset of the window from the left edge of the screen in pixels.",
                         "optional": true,
                         "type": "integer"
                     },
                     "state": {
                         "$ref": "WindowState",
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The state of this window.",
                         "optional": true
                     },
                     "tabs": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "Array of $(ref:tabs.Tab) objects representing the current tabs in the window. Only included if requested by $(ref:windows.get), $(ref:windows.getCurrent), $(ref:windows.getAll) or $(ref:windows.getLastFocused), and the optional $(ref:windows.GetInfo) parameter has its <var>populate</var> member set to <var>true</var>.",
                         "items": {
                             "$ref": "tabs.Tab"
@@ -971,41 +693,25 @@
                         "type": "array"
                     },
                     "title": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The title of the window. Read-only.",
                         "optional": true,
                         "type": "string"
                     },
                     "top": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The offset of the window from the top edge of the screen in pixels.",
                         "optional": true,
                         "type": "integer"
                     },
                     "type": {
                         "$ref": "WindowType",
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The type of window this is.",
                         "optional": true
                     },
                     "width": {
-                        "annotations": [
-                            {
-                                "version_added": "62"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "The width of the window, including the frame, in pixels.",
                         "optional": true,
                         "type": "integer"
@@ -1016,7 +722,7 @@
             {
                 "annotations": [
                     {
-                        "version_added": "62"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#createtype"
                     }
                 ],
                 "description": "Specifies what type of window to create. Thunderbird does not support <var>panel</var> and <var>detached_panel</var>, they are interpreted as <var>popup</var>.",
@@ -1031,9 +737,6 @@
                         "annotations": [
                             {
                                 "text": "Not supported, same as <var>popup</var>"
-                            },
-                            {
-                                "version_added": "62"
                             }
                         ]
                     },
@@ -1041,9 +744,6 @@
                         "annotations": [
                             {
                                 "text": "A normal Thunderbird window, a.k.a. 3-pane-window (folder pane, message pane and preview pane)."
-                            },
-                            {
-                                "version_added": "62"
                             }
                         ]
                     },
@@ -1051,9 +751,6 @@
                         "annotations": [
                             {
                                 "text": "Not supported, same as <var>popup</var>"
-                            },
-                            {
-                                "version_added": "62"
                             }
                         ]
                     },
@@ -1061,9 +758,6 @@
                         "annotations": [
                             {
                                 "text": "A non-modal stand-alone popup window."
-                            },
-                            {
-                                "version_added": "62"
                             }
                         ]
                     }
@@ -1074,28 +768,20 @@
             {
                 "annotations": [
                     {
-                        "version_added": "79"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/windows.html#getinfo"
                     }
                 ],
                 "description": "Specifies additional requirements for the returned windows.",
                 "id": "GetInfo",
                 "properties": {
                     "populate": {
-                        "annotations": [
-                            {
-                                "version_added": "79"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "If true, the $(ref:windows.Window) returned will have a <var>tabs</var> property that contains an array of $(ref:tabs.Tab) objects representing the tabs inside the window. The $(ref:tabs.Tab) objects only contain the <var>url</var>, <var>title</var> and <var>favIconUrl</var> properties if the extension's manifest file includes the <permission>tabs</permission> permission.",
                         "optional": true,
                         "type": "boolean"
                     },
                     "windowTypes": {
-                        "annotations": [
-                            {
-                                "version_added": "79"
-                            }
-                        ],
+                        "annotations": [],
                         "description": "If set, the $(ref:windows.Window) returned will be filtered based on its type. Supported by $(ref:windows.getAll) only, ignored in all other functions.",
                         "items": {
                             "$ref": "WindowType"
