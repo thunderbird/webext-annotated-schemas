@@ -707,7 +707,7 @@
                         "version_added": "60.0"
                     }
                 ],
-                "description": "<dl><dt>file</dt><dd>The download's filename is suspicious.</dd><dt>url</dt><dd>The download's URL is known to be malicious.</dd><dt>content</dt><dd>The downloaded file is known to be malicious.</dd><dt>uncommon</dt><dd>The download's URL is not commonly downloaded and could be dangerous.</dd><dt>safe</dt><dd>The download presents no known danger to the user's computer.</dd></dl>These string constants will never change, however the set of DangerTypes may change.",
+                "description": "These string constants will never change, however the set of DangerTypes may change.",
                 "enum": [
                     "file",
                     "url",
@@ -718,6 +718,23 @@
                     "safe",
                     "accepted"
                 ],
+                "enums": {
+                    "content": {
+                        "description": "The downloaded file is known to be malicious."
+                    },
+                    "file": {
+                        "description": "The download's filename is suspicious."
+                    },
+                    "safe": {
+                        "description": "The download presents no known danger to the user's computer."
+                    },
+                    "uncommon": {
+                        "description": "The download's URL is not commonly downloaded and could be dangerous."
+                    },
+                    "url": {
+                        "description": "The download's URL is known to be malicious."
+                    }
+                },
                 "id": "DangerType",
                 "type": "string"
             },
@@ -730,12 +747,23 @@
                         "version_added": "60.0"
                     }
                 ],
-                "description": "<dl><dt>in_progress</dt><dd>The download is currently receiving data from the server.</dd><dt>interrupted</dt><dd>An error broke the connection with the file host.</dd><dt>complete</dt><dd>The download completed successfully.</dd></dl>These string constants will never change, however the set of States may change.",
+                "description": "These string constants will never change, however the set of States may change.",
                 "enum": [
                     "in_progress",
                     "interrupted",
                     "complete"
                 ],
+                "enums": {
+                    "complete": {
+                        "description": "The download completed successfully."
+                    },
+                    "in_progress": {
+                        "description": "The download is currently receiving data from the server."
+                    },
+                    "interrupted": {
+                        "description": "An error broke the connection with the file host."
+                    }
+                },
                 "id": "State",
                 "type": "string"
             },
