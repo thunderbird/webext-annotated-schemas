@@ -202,12 +202,18 @@
                                     "sendLater": {
                                         "annotations": [
                                             {
+                                                "text": "The message was queued to be sent later."
+                                            },
+                                            {
                                                 "version_added": "105"
                                             }
                                         ]
                                     },
                                     "sendNow": {
                                         "annotations": [
+                                            {
+                                                "text": "The message was sent immediately."
+                                            },
                                             {
                                                 "version_added": "105"
                                             }
@@ -304,6 +310,9 @@
                                     "autoSave": {
                                         "annotations": [
                                             {
+                                                "text": "The message was auto-saved."
+                                            },
+                                            {
                                                 "version_added": "125"
                                             }
                                         ]
@@ -311,12 +320,18 @@
                                     "draft": {
                                         "annotations": [
                                             {
+                                                "text": "The message was saved as a draft."
+                                            },
+                                            {
                                                 "version_added": "105"
                                             }
                                         ]
                                     },
                                     "template": {
                                         "annotations": [
+                                            {
+                                                "text": "The message was saved as a template."
+                                            },
                                             {
                                                 "version_added": "105"
                                             }
@@ -612,6 +627,9 @@
                             "replyToAll": {
                                 "annotations": [
                                     {
+                                        "text": "Reply to all recipients."
+                                    },
+                                    {
                                         "version_added": "67"
                                     }
                                 ]
@@ -619,12 +637,18 @@
                             "replyToList": {
                                 "annotations": [
                                     {
+                                        "text": "Reply to the mailing list."
+                                    },
+                                    {
                                         "version_added": "67"
                                     }
                                 ]
                             },
                             "replyToSender": {
                                 "annotations": [
+                                    {
+                                        "text": "Reply to the sender only."
+                                    },
                                     {
                                         "version_added": "67"
                                     }
@@ -709,12 +733,18 @@
                             "forwardAsAttachment": {
                                 "annotations": [
                                     {
+                                        "text": "Forward the message as an attachment."
+                                    },
+                                    {
                                         "version_added": "67"
                                     }
                                 ]
                             },
                             "forwardInline": {
                                 "annotations": [
+                                    {
+                                        "text": "Forward the message inline."
+                                    },
                                     {
                                         "version_added": "67"
                                     }
@@ -1264,6 +1294,9 @@
                                     "default": {
                                         "annotations": [
                                             {
+                                                "text": "Send using the default send mode."
+                                            },
+                                            {
                                                 "version_added": "90"
                                             }
                                         ]
@@ -1271,12 +1304,18 @@
                                     "sendLater": {
                                         "annotations": [
                                             {
+                                                "text": "Queue the message to be sent later."
+                                            },
+                                            {
                                                 "version_added": "90"
                                             }
                                         ]
                                     },
                                     "sendNow": {
                                         "annotations": [
+                                            {
+                                                "text": "Send the message immediately."
+                                            },
                                             {
                                                 "version_added": "90"
                                             }
@@ -1413,12 +1452,18 @@
                                     "draft": {
                                         "annotations": [
                                             {
+                                                "text": "Save as a draft."
+                                            },
+                                            {
                                                 "version_added": "102"
                                             }
                                         ]
                                     },
                                     "template": {
                                         "annotations": [
+                                            {
+                                                "text": "Save as a template."
+                                            },
                                             {
                                                 "version_added": "102"
                                             }
@@ -1620,7 +1665,38 @@
                         "type": "object"
                     }
                 ],
-                "id": "ComposeRecipient"
+                "id": "ComposeRecipient",
+                "properties": {
+                    "type": {
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "enums": {
+                            "contact": {
+                                "annotations": [
+                                    {
+                                        "text": "The ID references a contact."
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ]
+                            },
+                            "mailingList": {
+                                "annotations": [
+                                    {
+                                        "text": "The ID references a mailing list."
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
             },
             {
                 "annotations": [
@@ -1820,12 +1896,18 @@
                             "auto": {
                                 "annotations": [
                                     {
+                                        "text": "Send as plain text if the message does not include any formatting, otherwise send as <var>both</var>."
+                                    },
+                                    {
                                         "version_added": "102"
                                     }
                                 ]
                             },
                             "both": {
                                 "annotations": [
+                                    {
+                                        "text": "Send as both plain text and HTML (multipart/alternative)."
+                                    },
                                     {
                                         "version_added": "102"
                                     }
@@ -1834,12 +1916,18 @@
                             "html": {
                                 "annotations": [
                                     {
+                                        "text": "Send as HTML only."
+                                    },
+                                    {
                                         "version_added": "102"
                                     }
                                 ]
                             },
                             "plaintext": {
                                 "annotations": [
+                                    {
+                                        "text": "Send as plain text only."
+                                    },
                                     {
                                         "version_added": "102"
                                     }
@@ -1976,12 +2064,18 @@
                             "high": {
                                 "annotations": [
                                     {
+                                        "text": "High priority."
+                                    },
+                                    {
                                         "version_added": "102"
                                     }
                                 ]
                             },
                             "highest": {
                                 "annotations": [
+                                    {
+                                        "text": "Highest priority."
+                                    },
                                     {
                                         "version_added": "102"
                                     }
@@ -1990,6 +2084,9 @@
                             "low": {
                                 "annotations": [
                                     {
+                                        "text": "Low priority."
+                                    },
+                                    {
                                         "version_added": "102"
                                     }
                                 ]
@@ -1997,12 +2094,18 @@
                             "lowest": {
                                 "annotations": [
                                     {
+                                        "text": "Lowest priority."
+                                    },
+                                    {
                                         "version_added": "102"
                                     }
                                 ]
                             },
                             "normal": {
                                 "annotations": [
+                                    {
+                                        "text": "Normal priority (default)."
+                                    },
                                     {
                                         "version_added": "102"
                                     }
@@ -2104,12 +2207,18 @@
                             "draft": {
                                 "annotations": [
                                     {
+                                        "text": "A draft message is being edited."
+                                    },
+                                    {
                                         "version_added": "88"
                                     }
                                 ]
                             },
                             "forward": {
                                 "annotations": [
+                                    {
+                                        "text": "A forwarded message is being composed."
+                                    },
                                     {
                                         "version_added": "88"
                                     }
@@ -2118,6 +2227,9 @@
                             "new": {
                                 "annotations": [
                                     {
+                                        "text": "A new message is being composed."
+                                    },
+                                    {
                                         "version_added": "88"
                                     }
                                 ]
@@ -2125,12 +2237,18 @@
                             "redirect": {
                                 "annotations": [
                                     {
+                                        "text": "A redirected message is being composed."
+                                    },
+                                    {
                                         "version_added": "90"
                                     }
                                 ]
                             },
                             "reply": {
                                 "annotations": [
+                                    {
+                                        "text": "A reply is being composed."
+                                    },
                                     {
                                         "version_added": "88"
                                     }
