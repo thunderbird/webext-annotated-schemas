@@ -2832,6 +2832,55 @@
             {
                 "annotations": [
                     {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.tags.html#get-key"
+                    },
+                    {
+                        "version_added": "151"
+                    }
+                ],
+                "async": "callback",
+                "description": "Returns a message tag identified by its key.",
+                "name": "get",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "151"
+                            }
+                        ],
+                        "description": "The key of the message tag to retrieve.",
+                        "name": "key",
+                        "type": "string"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "151"
+                            }
+                        ],
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "$ref": "messages.tags.MessageTag",
+                                "annotations": [
+                                    {
+                                        "version_added": "151"
+                                    }
+                                ]
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "permissions": [
+                    "messagesTagsList"
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.tags.html#create-key-tag-color"
                     },
                     {
