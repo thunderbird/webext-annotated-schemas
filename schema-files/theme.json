@@ -5,7 +5,7 @@
                 "version_added": "86"
             }
         ],
-        "applicationVersion": "150.0.2",
+        "applicationVersion": "151.0",
         "namespace": "manifest",
         "types": [
             {
@@ -99,12 +99,12 @@
                         },
                         "annotations": [
                             {
-                                "text": "The following example maps the theme color key <var>popup_affordance</var> to the CSS variable </var>--arrowpanel-dimmed</var>:"
+                                "text": "The following example maps the theme color key <var>popup_affordance</var> to the CSS variable <var>--panel-dimmed</var>:"
                             },
                             {
                                 "code": [
                                     "{",
-                                    "  \"popup_affordance\": \"--arrowpanel-dimmed\"",
+                                    "  \"popup_affordance\": \"--panel-dimmed\"",
                                     "}",
                                     ""
                                 ],
@@ -124,7 +124,7 @@
                         },
                         "annotations": [
                             {
-                                "text": "The following example maps the theme image key <var>theme_toolbar</var> to the CSS variable </var>--toolbar-bgimage</var>:"
+                                "text": "The following example maps the theme image key <var>theme_toolbar</var> to the CSS variable <var>--toolbar-bgimage</var>:"
                             },
                             {
                                 "code": [
@@ -149,7 +149,7 @@
                         },
                         "annotations": [
                             {
-                                "text": "The following example maps the theme property key <var>toolbar_image_alignment</var> to the CSS variable </var>--toolbar-bgalignment</var>:"
+                                "text": "The following example maps the theme property key <var>toolbar_image_alignment</var> to the CSS variable <var>--toolbar-bgalignment</var>:"
                             },
                             {
                                 "code": [
@@ -184,7 +184,7 @@
                                 "type": "CSS"
                             },
                             {
-                                "text": "The following <em>manifest.json</em> file maps the </var>--chat-button-color</var> CSS variable to the theme color key <var>exp_chat_button</var> and uses it to set a color for the chat button:"
+                                "text": "The following <em>manifest.json</em> file maps the <var>--chat-button-color</var> CSS variable to the theme color key <var>exp_chat_button</var> and uses it to set a color for the chat button:"
                             },
                             {
                                 "code": [
@@ -743,6 +743,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "An array of alignment values, one for each image in <var>additional_backgrounds</var>.",
                                 "items": {
                                     "enum": [
                                         "bottom",
@@ -764,12 +765,18 @@
                                         "bottom": {
                                             "annotations": [
                                                 {
+                                                    "text": "Align to the bottom."
+                                                },
+                                                {
                                                     "version_added": "86"
                                                 }
                                             ]
                                         },
                                         "center": {
                                             "annotations": [
+                                                {
+                                                    "text": "Align to the center horizontally."
+                                                },
                                                 {
                                                     "version_added": "86"
                                                 }
@@ -778,12 +785,18 @@
                                         "center bottom": {
                                             "annotations": [
                                                 {
+                                                    "text": "Align to the center bottom."
+                                                },
+                                                {
                                                     "version_added": "86"
                                                 }
                                             ]
                                         },
                                         "center center": {
                                             "annotations": [
+                                                {
+                                                    "text": "Align to the center horizontally and vertically."
+                                                },
                                                 {
                                                     "version_added": "86"
                                                 }
@@ -792,12 +805,18 @@
                                         "center top": {
                                             "annotations": [
                                                 {
+                                                    "text": "Align to the center top."
+                                                },
+                                                {
                                                     "version_added": "86"
                                                 }
                                             ]
                                         },
                                         "left": {
                                             "annotations": [
+                                                {
+                                                    "text": "Align to the left."
+                                                },
                                                 {
                                                     "version_added": "86"
                                                 }
@@ -806,12 +825,18 @@
                                         "left bottom": {
                                             "annotations": [
                                                 {
+                                                    "text": "Align to the left bottom."
+                                                },
+                                                {
                                                     "version_added": "86"
                                                 }
                                             ]
                                         },
                                         "left center": {
                                             "annotations": [
+                                                {
+                                                    "text": "Align to the left center."
+                                                },
                                                 {
                                                     "version_added": "86"
                                                 }
@@ -820,12 +845,18 @@
                                         "left top": {
                                             "annotations": [
                                                 {
+                                                    "text": "Align to the left top."
+                                                },
+                                                {
                                                     "version_added": "86"
                                                 }
                                             ]
                                         },
                                         "right": {
                                             "annotations": [
+                                                {
+                                                    "text": "Align to the right."
+                                                },
                                                 {
                                                     "version_added": "86"
                                                 }
@@ -834,12 +865,18 @@
                                         "right bottom": {
                                             "annotations": [
                                                 {
+                                                    "text": "Align to the right bottom."
+                                                },
+                                                {
                                                     "version_added": "86"
                                                 }
                                             ]
                                         },
                                         "right center": {
                                             "annotations": [
+                                                {
+                                                    "text": "Align to the right center."
+                                                },
                                                 {
                                                     "version_added": "86"
                                                 }
@@ -848,12 +885,18 @@
                                         "right top": {
                                             "annotations": [
                                                 {
+                                                    "text": "Align to the right top."
+                                                },
+                                                {
                                                     "version_added": "86"
                                                 }
                                             ]
                                         },
                                         "top": {
                                             "annotations": [
+                                                {
+                                                    "text": "Align to the top."
+                                                },
                                                 {
                                                     "version_added": "86"
                                                 }
@@ -872,6 +915,7 @@
                                         "version_added": "86"
                                     }
                                 ],
+                                "description": "An array of tiling values, one for each image in <var>additional_backgrounds</var>.",
                                 "items": {
                                     "enum": [
                                         "no-repeat",
@@ -883,12 +927,18 @@
                                         "no-repeat": {
                                             "annotations": [
                                                 {
+                                                    "text": "The background image is not repeated."
+                                                },
+                                                {
                                                     "version_added": "86"
                                                 }
                                             ]
                                         },
                                         "repeat": {
                                             "annotations": [
+                                                {
+                                                    "text": "The background image is repeated both horizontally and vertically."
+                                                },
                                                 {
                                                     "version_added": "86"
                                                 }
@@ -897,12 +947,18 @@
                                         "repeat-x": {
                                             "annotations": [
                                                 {
+                                                    "text": "The background image is repeated horizontally."
+                                                },
+                                                {
                                                     "version_added": "86"
                                                 }
                                             ]
                                         },
                                         "repeat-y": {
                                             "annotations": [
+                                                {
+                                                    "text": "The background image is repeated vertically."
+                                                },
                                                 {
                                                     "version_added": "86"
                                                 }
@@ -932,12 +988,18 @@
                                     "auto": {
                                         "annotations": [
                                             {
+                                                "text": "Automatically determine the color scheme."
+                                            },
+                                            {
                                                 "version_added": "100"
                                             }
                                         ]
                                     },
                                     "dark": {
                                         "annotations": [
+                                            {
+                                                "text": "Use a dark color scheme."
+                                            },
                                             {
                                                 "version_added": "100"
                                             }
@@ -946,12 +1008,18 @@
                                     "light": {
                                         "annotations": [
                                             {
+                                                "text": "Use a light color scheme."
+                                            },
+                                            {
                                                 "version_added": "100"
                                             }
                                         ]
                                     },
                                     "system": {
                                         "annotations": [
+                                            {
+                                                "text": "Use the system color scheme."
+                                            },
                                             {
                                                 "version_added": "148"
                                             }
@@ -978,12 +1046,18 @@
                                     "auto": {
                                         "annotations": [
                                             {
+                                                "text": "Automatically determine the color scheme."
+                                            },
+                                            {
                                                 "version_added": "100"
                                             }
                                         ]
                                     },
                                     "dark": {
                                         "annotations": [
+                                            {
+                                                "text": "Use a dark color scheme."
+                                            },
                                             {
                                                 "version_added": "100"
                                             }
@@ -992,12 +1066,18 @@
                                     "light": {
                                         "annotations": [
                                             {
+                                                "text": "Use a light color scheme."
+                                            },
+                                            {
                                                 "version_added": "100"
                                             }
                                         ]
                                     },
                                     "system": {
                                         "annotations": [
+                                            {
+                                                "text": "Use the system color scheme."
+                                            },
                                             {
                                                 "version_added": "148"
                                             }

@@ -5,7 +5,7 @@
                 "version_added": "66"
             }
         ],
-        "applicationVersion": "150.0.2",
+        "applicationVersion": "151.0",
         "namespace": "manifest",
         "types": [
             {
@@ -2129,12 +2129,18 @@
                             "high": {
                                 "annotations": [
                                     {
+                                        "text": "High priority."
+                                    },
+                                    {
                                         "version_added": "148"
                                     }
                                 ]
                             },
                             "highest": {
                                 "annotations": [
+                                    {
+                                        "text": "Highest priority."
+                                    },
                                     {
                                         "version_added": "148"
                                     }
@@ -2143,12 +2149,18 @@
                             "low": {
                                 "annotations": [
                                     {
+                                        "text": "Low priority."
+                                    },
+                                    {
                                         "version_added": "148"
                                     }
                                 ]
                             },
                             "lowest": {
                                 "annotations": [
+                                    {
+                                        "text": "Lowest priority."
+                                    },
                                     {
                                         "version_added": "148"
                                     }
@@ -2157,12 +2169,18 @@
                             "none": {
                                 "annotations": [
                                     {
+                                        "text": "No priority set."
+                                    },
+                                    {
                                         "version_added": "148"
                                     }
                                 ]
                             },
                             "normal": {
                                 "annotations": [
+                                    {
+                                        "text": "Normal priority."
+                                    },
                                     {
                                         "version_added": "148"
                                     }
@@ -2326,12 +2344,18 @@
                             "fail": {
                                 "annotations": [
                                     {
+                                        "text": "Decryption failed."
+                                    },
+                                    {
                                         "version_added": "125"
                                     }
                                 ]
                             },
                             "none": {
                                 "annotations": [
+                                    {
+                                        "text": "The part is not encrypted."
+                                    },
                                     {
                                         "version_added": "125"
                                     }
@@ -2340,12 +2364,18 @@
                             "skipped": {
                                 "annotations": [
                                     {
+                                        "text": "Decryption was skipped."
+                                    },
+                                    {
                                         "version_added": "125"
                                     }
                                 ]
                             },
                             "success": {
                                 "annotations": [
+                                    {
+                                        "text": "The part was successfully decrypted."
+                                    },
                                     {
                                         "version_added": "125"
                                     }
@@ -2789,6 +2819,55 @@
                                     "$ref": "messages.tags.MessageTag"
                                 },
                                 "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "permissions": [
+                    "messagesTagsList"
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv3/messages.tags.html#get-key"
+                    },
+                    {
+                        "version_added": "151"
+                    }
+                ],
+                "async": "callback",
+                "description": "Returns a message tag identified by its key.",
+                "name": "get",
+                "parameters": [
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "151"
+                            }
+                        ],
+                        "description": "The key of the message tag to retrieve.",
+                        "name": "key",
+                        "type": "string"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "151"
+                            }
+                        ],
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "$ref": "messages.tags.MessageTag",
+                                "annotations": [
+                                    {
+                                        "version_added": "151"
+                                    }
+                                ]
                             }
                         ],
                         "type": "function"
