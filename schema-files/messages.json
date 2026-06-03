@@ -2532,6 +2532,78 @@
             {
                 "annotations": [
                     {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#attachmenttype"
+                    },
+                    {
+                        "version_added": "153"
+                    }
+                ],
+                "description": "The type of an attachment in a message.",
+                "enum": [
+                    "normal",
+                    "detached",
+                    "deleted",
+                    "linked",
+                    "cloudFile"
+                ],
+                "enums": {
+                    "cloudFile": {
+                        "annotations": [
+                            {
+                                "text": "The attachment's content is not part of the message but stored by a cloud provider."
+                            },
+                            {
+                                "version_added": "153"
+                            }
+                        ]
+                    },
+                    "deleted": {
+                        "annotations": [
+                            {
+                                "text": "The attachment's content was permanently removed and only a placeholder remains."
+                            },
+                            {
+                                "version_added": "153"
+                            }
+                        ]
+                    },
+                    "detached": {
+                        "annotations": [
+                            {
+                                "text": "The attachment's content is stored in a detached local file."
+                            },
+                            {
+                                "version_added": "153"
+                            }
+                        ]
+                    },
+                    "linked": {
+                        "annotations": [
+                            {
+                                "text": "The attachment's content is not part of the message but referenced by a link."
+                            },
+                            {
+                                "version_added": "153"
+                            }
+                        ]
+                    },
+                    "normal": {
+                        "annotations": [
+                            {
+                                "text": "A normal attachment."
+                            },
+                            {
+                                "version_added": "153"
+                            }
+                        ]
+                    }
+                },
+                "id": "AttachmentType",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/daily-mv3/messages.html#messageattachment"
                     },
                     {
@@ -2541,6 +2613,16 @@
                 "description": "Represents an attachment in a message.",
                 "id": "MessageAttachment",
                 "properties": {
+                    "cloudFileUrl": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "The remote location a <var>cloudFile</var> attachment's content is stored at. Present for <var>cloudFile</var> attachments (see $(ref:messages.AttachmentType)), whose content is not part of the message.",
+                        "optional": true,
+                        "type": "string"
+                    },
                     "contentDisposition": {
                         "annotations": [
                             {
@@ -2578,6 +2660,16 @@
                         ],
                         "description": "A <em>dictionary object</em> of RFC 2047 decoded attachment headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>."
                     },
+                    "linkUrl": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "The remote location the attachment's content is linked to. Present for <var>linked</var> attachments (see $(ref:messages.AttachmentType)), whose content is not part of the message and can be fetched from this url.",
+                        "optional": true,
+                        "type": "string"
+                    },
                     "message": {
                         "$ref": "messages.MessageHeader",
                         "annotations": [
@@ -2594,7 +2686,7 @@
                                 "version_added": "98"
                             }
                         ],
-                        "description": "The name, as displayed to the user, of this attachment. This is usually but not always the filename of the attached file.",
+                        "description": "The name, as displayed to the user, of this attachment. This is usually but not always the filename of the attached file. For a <var>cloudFile</var> attachment, this is the real name of the linked file, when the message provides one.",
                         "type": "string"
                     },
                     "partName": {
@@ -2614,6 +2706,15 @@
                         ],
                         "description": "The size in bytes of this attachment.",
                         "type": "integer"
+                    },
+                    "type": {
+                        "$ref": "messages.AttachmentType",
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "The type of this attachment."
                     }
                 },
                 "type": "object"
