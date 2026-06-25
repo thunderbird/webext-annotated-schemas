@@ -5,7 +5,7 @@
                 "version_added": "66"
             }
         ],
-        "applicationVersion": "152.0b3",
+        "applicationVersion": "153.0b3",
         "namespace": "manifest",
         "types": [
             {
@@ -15,15 +15,23 @@
                         "enum": [
                             "messagesDelete",
                             "messagesImport",
+                            "messagesModifyPermanent",
                             "messagesMove",
                             "messagesRead",
+                            "messages.save",
                             "messagesTags",
                             "messagesTagsList",
                             "messagesUpdate",
-                            "messagesModifyPermanent",
                             "sensitiveDataUpload"
                         ],
                         "enums": {
+                            "messages.save": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ]
+                            },
                             "messagesDelete": {
                                 "annotations": [
                                     {
@@ -84,6 +92,26 @@
                                 "annotations": [
                                     {
                                         "version_added": "115"
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "$extend": "OptionalOnlyPermission",
+                "choices": [
+                    {
+                        "enum": [
+                            "messages.send"
+                        ],
+                        "enums": {
+                            "messages.send": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
                                     }
                                 ]
                             }
@@ -1962,6 +1990,288 @@
             {
                 "annotations": [
                     {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#sendmessage-details-options"
+                    },
+                    {
+                        "version_added": "153"
+                    }
+                ],
+                "async": "callback",
+                "description": "Sends a message programmatically in the background without user interaction. If the send mode is not specified or set to <value>default</value>, the message will be sent directly if the user is online and placed in the user's outbox otherwise. The returned Promise fulfills once the message has been successfully sent or placed in the user's outbox. Throws when there has been an error while sending the message to the outgoing mail server.\n**Note:** If no <value>deliveryFormat</value> is specified, the message is sent as plain text when the body contains no HTML formatting.\n**Note:** It is possible to pass in a $(ref:compose.ComposeDetails) object as the <value>details</value> parameter, and it will be interpreted as a $(ref:messages.NewMessageDetails) object.",
+                "name": "sendMessage",
+                "parameters": [
+                    {
+                        "$ref": "messages.NewMessageDetails",
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "name": "details"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "mode": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ],
+                                "enum": [
+                                    "default",
+                                    "sendNow",
+                                    "sendLater"
+                                ],
+                                "enums": {
+                                    "default": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153"
+                                            }
+                                        ]
+                                    },
+                                    "sendLater": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153"
+                                            }
+                                        ]
+                                    },
+                                    "sendNow": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ],
+                                "name": "return",
+                                "properties": {
+                                    "headerMessageId": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153"
+                                            }
+                                        ],
+                                        "description": "The header messageId of the outgoing message. Only included for actually sent messages.",
+                                        "optional": true,
+                                        "type": "string"
+                                    },
+                                    "messages": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153"
+                                            }
+                                        ],
+                                        "description": "Copies of the sent message. The number of created copies depends on the applied file carbon copy configuration (fcc).",
+                                        "items": {
+                                            "$ref": "messages.MessageHeader"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "mode": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153"
+                                            }
+                                        ],
+                                        "description": "The used send mode.",
+                                        "enum": [
+                                            "sendNow",
+                                            "sendLater"
+                                        ],
+                                        "enums": {
+                                            "sendLater": {
+                                                "annotations": [
+                                                    {
+                                                        "version_added": "153"
+                                                    }
+                                                ]
+                                            },
+                                            "sendNow": {
+                                                "annotations": [
+                                                    {
+                                                        "version_added": "153"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "permissions": [
+                    "messages.send"
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#savemessage-details-options"
+                    },
+                    {
+                        "version_added": "153"
+                    }
+                ],
+                "async": "callback",
+                "description": "Saves a message programmatically as a draft or as a template in the background without user interaction. The save mode defaults to <value>draft</value>. The returned Promise fulfills once the message has been successfully saved. Throws when there has been an error while saving the message.\n**Note:** If no <value>deliveryFormat</value> is specified, the message is saved as plain text when the body contains no HTML formatting.",
+                "name": "saveMessage",
+                "parameters": [
+                    {
+                        "$ref": "NewMessageDetails",
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "name": "details"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "mode": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ],
+                                "enum": [
+                                    "draft",
+                                    "template"
+                                ],
+                                "enums": {
+                                    "draft": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153"
+                                            }
+                                        ]
+                                    },
+                                    "template": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "name": "callback",
+                        "optional": true,
+                        "parameters": [
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ],
+                                "name": "return",
+                                "properties": {
+                                    "messages": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153"
+                                            }
+                                        ],
+                                        "description": "The saved message(s). The number of saved messages depends on the applied file carbon copy configuration (fcc).",
+                                        "items": {
+                                            "$ref": "messages.MessageHeader"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "mode": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153"
+                                            }
+                                        ],
+                                        "description": "The used save mode.",
+                                        "enum": [
+                                            "draft",
+                                            "template"
+                                        ],
+                                        "enums": {
+                                            "draft": {
+                                                "annotations": [
+                                                    {
+                                                        "version_added": "153"
+                                                    }
+                                                ]
+                                            },
+                                            "template": {
+                                                "annotations": [
+                                                    {
+                                                        "version_added": "153"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "permissions": [
+                    "messages.save"
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#archive-messageids"
                     },
                     {
@@ -2801,6 +3111,78 @@
             {
                 "annotations": [
                     {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#attachmenttype"
+                    },
+                    {
+                        "version_added": "153"
+                    }
+                ],
+                "description": "The type of an attachment in a message.",
+                "enum": [
+                    "normal",
+                    "detached",
+                    "deleted",
+                    "linked",
+                    "cloudFile"
+                ],
+                "enums": {
+                    "cloudFile": {
+                        "annotations": [
+                            {
+                                "text": "The attachment's content is not part of the message but stored by a cloud provider."
+                            },
+                            {
+                                "version_added": "153"
+                            }
+                        ]
+                    },
+                    "deleted": {
+                        "annotations": [
+                            {
+                                "text": "The attachment's content was permanently removed and only a placeholder remains."
+                            },
+                            {
+                                "version_added": "153"
+                            }
+                        ]
+                    },
+                    "detached": {
+                        "annotations": [
+                            {
+                                "text": "The attachment's content is stored in a detached local file."
+                            },
+                            {
+                                "version_added": "153"
+                            }
+                        ]
+                    },
+                    "linked": {
+                        "annotations": [
+                            {
+                                "text": "The attachment's content is not part of the message but referenced by a link."
+                            },
+                            {
+                                "version_added": "153"
+                            }
+                        ]
+                    },
+                    "normal": {
+                        "annotations": [
+                            {
+                                "text": "A normal attachment."
+                            },
+                            {
+                                "version_added": "153"
+                            }
+                        ]
+                    }
+                },
+                "id": "AttachmentType",
+                "type": "string"
+            },
+            {
+                "annotations": [
+                    {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#messageattachment"
                     },
                     {
@@ -2810,6 +3192,16 @@
                 "description": "Represents an attachment in a message.",
                 "id": "MessageAttachment",
                 "properties": {
+                    "cloudFileUrl": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "The remote location a <var>cloudFile</var> attachment's content is stored at. Present for <var>cloudFile</var> attachments (see $(ref:messages.AttachmentType)), whose content is not part of the message.",
+                        "optional": true,
+                        "type": "string"
+                    },
                     "contentDisposition": {
                         "annotations": [
                             {
@@ -2847,6 +3239,16 @@
                         ],
                         "description": "A <em>dictionary object</em> of RFC 2047 decoded attachment headers as <em>key-value</em> pairs, with the header name as <em>key</em>, and an array of headers as <em>value</em>."
                     },
+                    "linkUrl": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "The remote location the attachment's content is linked to. Present for <var>linked</var> attachments (see $(ref:messages.AttachmentType)), whose content is not part of the message and can be fetched from this url.",
+                        "optional": true,
+                        "type": "string"
+                    },
                     "message": {
                         "$ref": "messages.MessageHeader",
                         "annotations": [
@@ -2863,7 +3265,7 @@
                                 "version_added": "98"
                             }
                         ],
-                        "description": "The name, as displayed to the user, of this attachment. This is usually but not always the filename of the attached file.",
+                        "description": "The name, as displayed to the user, of this attachment. This is usually but not always the filename of the attached file. For a <var>cloudFile</var> attachment, this is the real name of the linked file, when the message provides one.",
                         "type": "string"
                     },
                     "partName": {
@@ -2883,6 +3285,15 @@
                         ],
                         "description": "The size in bytes of this attachment.",
                         "type": "integer"
+                    },
+                    "type": {
+                        "$ref": "messages.AttachmentType",
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "The type of this attachment."
                     }
                 },
                 "type": "object"
@@ -2937,6 +3348,422 @@
                         "description": "The minimum value required to match the query.",
                         "optional": true,
                         "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "additionalProperties": true,
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/messages.html#newmessagedetails"
+                    },
+                    {
+                        "version_added": "153"
+                    }
+                ],
+                "description": "Details of a message to be sent.",
+                "id": "NewMessageDetails",
+                "properties": {
+                    "additionalFccFolder": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "$ref": "folders.MailFolder",
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ]
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ],
+                                "enum": [
+                                    ""
+                                ],
+                                "enums": {
+                                    "": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "type": "string"
+                            }
+                        ],
+                        "description": "An additional fcc folder. Only effective for send operations ($(ref:messages.sendMessage)), has no effect for save operations ($(ref:messages.saveMessage)), which only ever store the message in the primary draft or template folder. For compatibility with $(ref:compose.ComposeDetails), setting an empty string is supported as well, but has no effect.",
+                        "optional": true
+                    },
+                    "attachVCard": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "Wether or not the vCard of the used identity will be attached to the message during send.",
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "attachments": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "Attachments to add to the message. **Note:** $(ref:compose.ComposeAttachments) are included as real file attachments, not as cloudFile links.",
+                        "items": {
+                            "choices": [
+                                {
+                                    "$ref": "compose.FileAttachment",
+                                    "annotations": [
+                                        {
+                                            "version_added": "153"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "$ref": "compose.ComposeAttachment",
+                                    "annotations": [
+                                        {
+                                            "version_added": "153"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "bcc": {
+                        "$ref": "compose.ComposeRecipientList",
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "body": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "The HTML content for the message.",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "cc": {
+                        "$ref": "compose.ComposeRecipientList",
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "contentLanguage": {
+                        "annotations": [
+                            {
+                                "note": "No <var>Content-Language</var> header is added if the user has enabled the <var>mail.suppress_content_language</var> preference."
+                            },
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "The languages of the message content, used for the <em>Content-Language</em> header. Each entry is a free-form language tag (for example <var>en-US</var>). If omitted, no <em>Content-Language</em> header is added. The i18n API's <var>detectLanguage()</var> can be used to derive a value from the message body, which should be converted to plain text first (for example via $(ref:messengerUtilities.convertToPlainText)), so that markup does not influence the detection.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "customHeaders": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "Array of custom headers.",
+                        "items": {
+                            "$ref": "compose.CustomHeader"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "deliveryFormat": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "Defines the mime format of the sent message. Defaults to <value>auto</value>, which prefers to send plain text messages, if the specified body does not include any formatting.\n**Note**: If a plain text body and an HTML body is included in the message, the plain text body is always derived from the included HTML body. It is not possible to specify two independent values via <value>body</value> and <value>plainTextBody</value>.",
+                        "enum": [
+                            "auto",
+                            "plaintext",
+                            "html",
+                            "both"
+                        ],
+                        "enums": {
+                            "auto": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ]
+                            },
+                            "both": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ]
+                            },
+                            "html": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ]
+                            },
+                            "plaintext": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ]
+                            }
+                        },
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "deliveryStatusNotification": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "Let the sender know when the recipient's server received the message. Not supported by all servers.",
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "followupTo": {
+                        "$ref": "compose.ComposeRecipientList",
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "from": {
+                        "$ref": "compose.ComposeRecipient",
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "*Caution*: Setting a value for <val>from</val> does not change the used identity, it overrides the FROM header. Many email servers do not accept emails where the FROM header does not match the sender identity. Must be set to exactly one valid email address.",
+                        "optional": true
+                    },
+                    "identityId": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "The ID of an identity from the $(doc:accounts) API. Defaults to the default identity. The permission <permission>accountsRead</permission> is required to include the <val>identityId</val>.",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "isPlainText": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "Whether the message should be sent as plain text or as HTML. Prefers a specified <value>plainTextBody</value> over a specified <value>body</value>.",
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "newsgroups": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ],
+                                "type": "string"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ],
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        ],
+                        "description": "A single newsgroup name or an array of newsgroup names.",
+                        "optional": true
+                    },
+                    "overrideDefaultFccFolder": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "choices": [
+                            {
+                                "$ref": "folders.MailFolder",
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ]
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ],
+                                "enum": [
+                                    ""
+                                ],
+                                "enums": {
+                                    "": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "type": "string"
+                            }
+                        ],
+                        "description": " This value overrides the default fcc setting (defined by the used identity) for this message. Either a $(ref:folders.MailFolder) specifying the folder for the copy of the sent message, or an empty string to not save a copy at all.",
+                        "optional": true
+                    },
+                    "plainTextBody": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "The content for a plain text message. A specified <value>body</value> will be preferred, except when <value>isPlainText</value> is specified as well.",
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "priority": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "The priority of the message.",
+                        "enum": [
+                            "lowest",
+                            "low",
+                            "normal",
+                            "high",
+                            "highest"
+                        ],
+                        "enums": {
+                            "high": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ]
+                            },
+                            "highest": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ]
+                            },
+                            "low": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ]
+                            },
+                            "lowest": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ]
+                            },
+                            "normal": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ]
+                            }
+                        },
+                        "optional": true,
+                        "type": "string"
+                    },
+                    "replyTo": {
+                        "$ref": "compose.ComposeRecipientList",
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "optional": true
+                    },
+                    "returnReceipt": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "description": "Add the <em>Disposition-Notification-To</em> header to the message to requests the recipients email client to send a reply once the message has been received. Recipient server may strip the header and the recipient might ignore the request.",
+                        "optional": true,
+                        "type": "boolean"
+                    },
+                    "subject": {
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "type": "string"
+                    },
+                    "to": {
+                        "$ref": "compose.ComposeRecipientList",
+                        "annotations": [
+                            {
+                                "version_added": "153"
+                            }
+                        ],
+                        "optional": true
                     }
                 },
                 "type": "object"
