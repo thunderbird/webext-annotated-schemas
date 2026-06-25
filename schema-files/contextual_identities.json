@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "152.0b3",
+        "applicationVersion": "153.0b3",
         "namespace": "manifest",
         "types": [
             {
@@ -170,6 +170,68 @@
                             }
                         },
                         "type": "object"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "async": "callback",
+                "description": "Retrieves the list of colors supported by contextual identities.",
+                "name": "getSupportedColors",
+                "parameters": [
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "items": {
+                                    "properties": {
+                                        "color": {
+                                            "description": "The color name, as accepted by the color property of create and update.",
+                                            "type": "string"
+                                        },
+                                        "colorCode": {
+                                            "description": "The color hash for this color name.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "name": "colors",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "async": "callback",
+                "description": "Retrieves the list of icons supported by contextual identities.",
+                "name": "getSupportedIcons",
+                "parameters": [
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "items": {
+                                    "properties": {
+                                        "icon": {
+                                            "description": "The icon name, as accepted by the icon property of create and update.",
+                                            "type": "string"
+                                        },
+                                        "iconUrl": {
+                                            "description": "The icon url for this icon name.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "name": "icons",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
                     }
                 ],
                 "type": "function"

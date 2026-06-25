@@ -5,7 +5,7 @@
                 "version_added": "62"
             }
         ],
-        "applicationVersion": "152.0b3",
+        "applicationVersion": "153.0b3",
         "namespace": "manifest",
         "types": [
             {
@@ -574,6 +574,16 @@
                         "name": "connectInfo",
                         "optional": true,
                         "properties": {
+                            "documentId": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ],
+                                "description": "Open a port to a specific document identified by <var>documentId</var> instead of all frames in the tab.",
+                                "optional": true,
+                                "type": "string"
+                            },
                             "frameId": {
                                 "annotations": [
                                     {
@@ -646,6 +656,16 @@
                         "name": "options",
                         "optional": true,
                         "properties": {
+                            "documentId": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ],
+                                "description": "Send a message to a specific document identified by <var>documentId</var> instead of all frames in the tab.",
+                                "optional": true,
+                                "type": "string"
+                            },
                             "frameId": {
                                 "annotations": [
                                     {
