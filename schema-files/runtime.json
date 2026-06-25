@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "153.0a1",
+        "applicationVersion": "154.0a1",
         "namespace": "manifest",
         "types": [
             {
@@ -606,6 +606,27 @@
                     "content",
                     "devtools"
                 ],
+                "description": "Get the documentId of any window global or frame element. Throws for invalid targets, such as unloaded frames.",
+                "name": "getDocumentId",
+                "parameters": [
+                    {
+                        "description": "A WindowProxy or a browsing context container Element (iframe, frame, embed, or object) for the target frame.",
+                        "name": "target",
+                        "type": "any"
+                    }
+                ],
+                "returns": {
+                    "description": "The documentId of the target document.",
+                    "type": "string"
+                },
+                "type": "function"
+            },
+            {
+                "allowCrossOriginArguments": true,
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
                 "annotations": [
                     {
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getFrameId"
@@ -618,7 +639,7 @@
                 "name": "getFrameId",
                 "parameters": [
                     {
-                        "description": "A WindowProxy or a Browsing Context container element (IFrame, Frame, Embed, Object) for the target frame.",
+                        "description": "A WindowProxy or a browsing context container Element (iframe, frame, embed, or object) for the target frame.",
                         "name": "target",
                         "type": "any"
                     }
@@ -1126,8 +1147,7 @@
                     "documentId": {
                         "description": "An UUID for the document associated with this context, or undefined if it is not hosted in a document",
                         "optional": true,
-                        "type": "string",
-                        "unsupported": true
+                        "type": "string"
                     },
                     "documentOrigin": {
                         "description": "The origin of the document associated with this context, or undefined if it is not hosted in a document",
@@ -1220,6 +1240,16 @@
                 "description": "An object containing information about the script context that sent a message or request.",
                 "id": "MessageSender",
                 "properties": {
+                    "documentId": {
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "description": "A UUID of the document that opened the connection.",
+                        "optional": true,
+                        "type": "string"
+                    },
                     "frameId": {
                         "annotations": [
                             {
