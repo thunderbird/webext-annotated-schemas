@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "152.0.1",
+        "applicationVersion": "153.0",
         "namespace": "manifest",
         "types": [
             {
@@ -71,6 +71,11 @@
                                 "description": "0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique for a given tab and process.",
                                 "type": "integer"
                             },
+                            "parentDocumentId": {
+                                "description": "A UUID of the parent document owning this frame. This is not set if there is no parent.",
+                                "optional": true,
+                                "type": "string"
+                            },
                             "parentFrameId": {
                                 "description": "ID of frame that wraps the frame. Set to -1 of no parent frame exists.",
                                 "type": "integer"
@@ -128,9 +133,18 @@
                     {
                         "name": "details",
                         "properties": {
+                            "documentId": {
+                                "description": "A UUID of the document loaded.",
+                                "type": "string"
+                            },
                             "frameId": {
                                 "description": "0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.",
                                 "type": "integer"
+                            },
+                            "parentDocumentId": {
+                                "description": "A UUID of the parent document owning this frame. This is not set if there is no parent.",
+                                "optional": true,
+                                "type": "string"
                             },
                             "processId": {
                                 "description": "The ID of the process runs the renderer for this tab.",
@@ -196,9 +210,18 @@
                     {
                         "name": "details",
                         "properties": {
+                            "documentId": {
+                                "description": "A UUID of the document loaded.",
+                                "type": "string"
+                            },
                             "frameId": {
                                 "description": "0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.",
                                 "type": "integer"
+                            },
+                            "parentDocumentId": {
+                                "description": "A UUID of the parent document owning this frame. This is not set if there is no parent.",
+                                "optional": true,
+                                "type": "string"
                             },
                             "processId": {
                                 "description": "The ID of the process runs the renderer for this tab.",
@@ -253,9 +276,18 @@
                     {
                         "name": "details",
                         "properties": {
+                            "documentId": {
+                                "description": "A UUID of the document loaded.",
+                                "type": "string"
+                            },
                             "frameId": {
                                 "description": "0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.",
                                 "type": "integer"
+                            },
+                            "parentDocumentId": {
+                                "description": "A UUID of the parent document owning this frame. This is not set if there is no parent.",
+                                "optional": true,
+                                "type": "string"
                             },
                             "processId": {
                                 "description": "The ID of the process runs the renderer for this tab.",
@@ -310,6 +342,10 @@
                     {
                         "name": "details",
                         "properties": {
+                            "documentId": {
+                                "description": "A UUID of the document loaded.",
+                                "type": "string"
+                            },
                             "error": {
                                 "description": "The error description.",
                                 "type": "string",
@@ -318,6 +354,11 @@
                             "frameId": {
                                 "description": "0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.",
                                 "type": "integer"
+                            },
+                            "parentDocumentId": {
+                                "description": "A UUID of the parent document owning this frame. This is not set if there is no parent.",
+                                "optional": true,
+                                "type": "string"
                             },
                             "processId": {
                                 "description": "The ID of the process runs the renderer for this tab.",
@@ -433,9 +474,18 @@
                     {
                         "name": "details",
                         "properties": {
+                            "documentId": {
+                                "description": "A UUID of the document loaded.",
+                                "type": "string"
+                            },
                             "frameId": {
                                 "description": "0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.",
                                 "type": "integer"
+                            },
+                            "parentDocumentId": {
+                                "description": "A UUID of the parent document owning this frame. This is not set if there is no parent.",
+                                "optional": true,
+                                "type": "string"
                             },
                             "processId": {
                                 "description": "The ID of the process runs the renderer for this tab.",
@@ -530,9 +580,18 @@
                     {
                         "name": "details",
                         "properties": {
+                            "documentId": {
+                                "description": "A UUID of the document loaded.",
+                                "type": "string"
+                            },
                             "frameId": {
                                 "description": "0 indicates the navigation happens in the tab content window; a positive value indicates navigation in a subframe. Frame IDs are unique within a tab.",
                                 "type": "integer"
+                            },
+                            "parentDocumentId": {
+                                "description": "A UUID of the parent document owning this frame. This is not set if there is no parent.",
+                                "optional": true,
+                                "type": "string"
                             },
                             "processId": {
                                 "description": "The ID of the process runs the renderer for this tab.",
@@ -579,16 +638,22 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Retrieves information about the given frame. A frame refers to an &lt;iframe&gt; or a &lt;frame&gt; of a web page and is identified by a tab ID and a frame ID.",
+                "description": "Retrieves information about the given frame. A frame refers to an &lt;iframe&gt; or a &lt;frame&gt; of a web page and is identified by a tab ID and a frame ID, or by its document ID.",
                 "name": "getFrame",
                 "parameters": [
                     {
                         "description": "Information about the frame to retrieve information about.",
                         "name": "details",
                         "properties": {
+                            "documentId": {
+                                "description": "The UUID of the document. If provided, tabId and frameId are optional. If all are provided, the frame is only returned if all properties match.",
+                                "optional": true,
+                                "type": "string"
+                            },
                             "frameId": {
-                                "description": "The ID of the frame in the given tab.",
+                                "description": "The ID of the frame in the given tab. Must be specified if documentId is not set.",
                                 "minimum": 0,
+                                "optional": true,
                                 "type": "integer"
                             },
                             "processId": {
@@ -597,8 +662,9 @@
                                 "type": "integer"
                             },
                             "tabId": {
-                                "description": "The ID of the tab in which the frame is.",
+                                "description": "The ID of the tab in which the frame is. Must be specified if documentId is not set.",
                                 "minimum": 0,
+                                "optional": true,
                                 "type": "integer"
                             }
                         },
@@ -612,6 +678,10 @@
                                 "name": "details",
                                 "optional": true,
                                 "properties": {
+                                    "documentId": {
+                                        "description": "A UUID of the document loaded.",
+                                        "type": "string"
+                                    },
                                     "errorOccurred": {
                                         "description": "True if the last navigation in this frame was interrupted by an error, i.e. the onErrorOccurred event fired.",
                                         "optional": true,
@@ -620,6 +690,11 @@
                                     "frameId": {
                                         "description": "The ID of the frame. 0 indicates that this is the main frame; a positive value indicates the ID of a subframe.",
                                         "type": "integer"
+                                    },
+                                    "parentDocumentId": {
+                                        "description": "A UUID of the parent document owning this frame. This is not set if there is no parent.",
+                                        "optional": true,
+                                        "type": "string"
                                     },
                                     "parentFrameId": {
                                         "description": "ID of frame that wraps the frame. Set to -1 of no parent frame exists.",
@@ -678,6 +753,10 @@
                                 "description": "A list of frames in the given tab, null if the specified tab ID is invalid.",
                                 "items": {
                                     "properties": {
+                                        "documentId": {
+                                            "description": "A UUID of the document loaded.",
+                                            "type": "string"
+                                        },
                                         "errorOccurred": {
                                             "description": "True if the last navigation in this frame was interrupted by an error, i.e. the onErrorOccurred event fired.",
                                             "optional": true,
@@ -686,6 +765,11 @@
                                         "frameId": {
                                             "description": "The ID of the frame. 0 indicates that this is the main frame; a positive value indicates the ID of a subframe.",
                                             "type": "integer"
+                                        },
+                                        "parentDocumentId": {
+                                            "description": "A UUID of the parent document owning this frame. This is not set if there is no parent.",
+                                            "optional": true,
+                                            "type": "string"
                                         },
                                         "parentFrameId": {
                                             "description": "ID of frame that wraps the frame. Set to -1 of no parent frame exists.",

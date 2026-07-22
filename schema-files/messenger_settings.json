@@ -5,7 +5,7 @@
                 "version_added": "137"
             }
         ],
-        "applicationVersion": "152.0.1",
+        "applicationVersion": "153.0",
         "namespace": "manifest",
         "types": [
             {
@@ -42,6 +42,18 @@
             "messengerSettings"
         ],
         "properties": {
+            "composeInlineSpellCheckEnabled": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/mv2/messengerSettings.composeInlineSpellCheckEnabled.html"
+                    },
+                    {
+                        "version_added": "153"
+                    }
+                ],
+                "description": "Whether the inline (real-time) spell checker is enabled in the message compose window."
+            },
             "messageLineLengthLimit": {
                 "$ref": "types.Setting",
                 "annotations": [
