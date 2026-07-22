@@ -5,7 +5,7 @@
                 "version_added": "140"
             }
         ],
-        "applicationVersion": "152.0.1",
+        "applicationVersion": "153.0",
         "namespace": "manifest",
         "types": [
             {
@@ -71,6 +71,16 @@
                                 "description": "A string to identify this provider in the login manager. This <em>should</em> match the hostname of the authorization endpoint, although that is not required.",
                                 "type": "string"
                             },
+                            "issuerIdentifier": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ],
+                                "description": "The OAuth authorization server issuer identifier, as defined by RFC 9207. If provided, it <em>must</em> be an exact string match to what the provider gives in the iss field.",
+                                "optional": true,
+                                "type": "string"
+                            },
                             "redirectionEndpoint": {
                                 "annotations": [
                                     {
@@ -78,7 +88,6 @@
                                     }
                                 ],
                                 "description": "OAuth redirection endpoint.",
-                                "format": "url",
                                 "type": "string"
                             },
                             "scopes": {
@@ -99,6 +108,16 @@
                                 "description": "OAuth token endpoint address.",
                                 "format": "url",
                                 "type": "string"
+                            },
+                            "useExternalBrowser": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153"
+                                    }
+                                ],
+                                "description": "If the login flow should use the system web browser. If true, the redirectionEndpoint <em>must</em> be a loopback address, so an origin of http://127.0.0.1 or http://localhost.",
+                                "optional": true,
+                                "type": "boolean"
                             },
                             "usePKCE": {
                                 "annotations": [
