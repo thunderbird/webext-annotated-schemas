@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest",
         "types": [
             {
@@ -12,7 +12,7 @@
                                 "version_added": true
                             }
                         ],
-                        "optional": "true",
+                        "optional": true,
                         "type": "string"
                     },
                     "l10n_resources": {
@@ -114,6 +114,28 @@
                     "description": "Message localized for current locale.",
                     "type": "string"
                 },
+                "type": "function"
+            },
+            {
+                "async": "callback",
+                "description": "Gets the preferred locales of the operating system. This is different from the locales set in the browser; to get those, use $(ref:i18n.getAcceptLanguages).",
+                "name": "getPreferredSystemLanguages",
+                "parameters": [
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "description": "Array of LanguageCode",
+                                "items": {
+                                    "$ref": "LanguageCode"
+                                },
+                                "name": "languages",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
+                    }
+                ],
                 "type": "function"
             },
             {

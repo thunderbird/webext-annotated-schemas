@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest",
         "permissions": [],
         "types": [
@@ -63,7 +63,6 @@
                     "manifest_version": {
                         "maximum": 3,
                         "minimum": 2,
-                        "postprocess": "manifestVersionCheck",
                         "type": "integer"
                     },
                     "name": {
@@ -414,6 +413,11 @@
                 "type": "string"
             },
             {
+                "annotations": [
+                    {
+                        "warning": "Unlike Firefox, Thunderbird does not use the built-in onboarding flow that prompts users to opt into data collection. In Thunderbird, add-ons must request consent explicitly, for example by adding a checkbox on the options page or by showing a popup. The application does not provide an automatic prompt."
+                    }
+                ],
                 "enum": [
                     "authenticationInfo",
                     "bookmarksInfo",
@@ -516,6 +520,11 @@
                 "type": "string"
             },
             {
+                "annotations": [
+                    {
+                        "text": "A path relative to the root of the extension, must not be empty and can be localized."
+                    }
+                ],
                 "format": "strictRelativeUrl",
                 "id": "ExtensionFileUrl",
                 "pattern": "\\S",
@@ -569,6 +578,11 @@
                         },
                         "optional": true,
                         "properties": {
+                            "has_previous_consent": {
+                                "default": false,
+                                "optional": true,
+                                "type": "boolean"
+                            },
                             "optional": {
                                 "default": [],
                                 "items": {
@@ -719,6 +733,11 @@
                         },
                         "optional": true,
                         "type": "array"
+                    },
+                    "css_origin": {
+                        "$ref": "extensionTypes.CSSOrigin",
+                        "default": "author",
+                        "optional": true
                     },
                     "exclude_globs": {
                         "items": {

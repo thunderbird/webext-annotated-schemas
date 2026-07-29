@@ -5,7 +5,7 @@
                 "version_added": "140.0"
             }
         ],
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest",
         "types": [
             {
@@ -42,9 +42,26 @@
             "messengerSettings"
         ],
         "properties": {
+            "composeInlineSpellCheckEnabled": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messengerSettings.composeInlineSpellCheckEnabled.html"
+                    },
+                    {
+                        "version_added": "153.0"
+                    }
+                ],
+                "description": "Whether the inline (real-time) spell checker is enabled in the message compose window."
+            },
             "messageLineLengthLimit": {
                 "$ref": "types.Setting",
                 "annotations": [
+                    {
+                        "additional_properties": {
+                            "readOnly": true
+                        }
+                    },
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messengerSettings.messageLineLengthLimit.html"
                     },
@@ -52,11 +69,16 @@
                         "version_added": "140.0"
                     }
                 ],
-                "description": "The line length limit for outgoing messages, to comply with requirements from RFC 2822. See description of $(ref:messengerSettings.messagePlainTextFlowedOutputEnabled)."
+                "description": "The line length limit for outgoing messages, to comply with requirements from RFC 2822. See description of $(ref:messengerSettings.messagePlainTextFlowedOutputEnabled). This property is read-only."
             },
             "messagePlainTextFlowedOutputEnabled": {
                 "$ref": "types.Setting",
                 "annotations": [
+                    {
+                        "additional_properties": {
+                            "readOnly": true
+                        }
+                    },
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messengerSettings.messagePlainTextFlowedOutputEnabled.html"
                     },
@@ -64,7 +86,24 @@
                         "version_added": "140.0"
                     }
                 ],
-                "description": "Whether long lines in outgoing plain text messages will get soft line breaks (<var> \n</var>) or hard line breaks (<var>\n</var>), to comply with requirements from RFC 2822. Soft line breaks will be ignored when displayed by the receiving client. When flowed output is enabled, add-ons should not create plain text messages with manually inserted hard or soft line breaks to achieve a certain text width, as that will most probably interfere with the default line break handling and generate ridged text. When flowed output is disabled, add-ons could add hard line breaks to have control over the final message, but any line longer than the maximum line length will still receive additional hard line breaks. See $(ref:messengerSettings.messageLineLengthLimit)."
+                "description": "Whether long lines in outgoing plain text messages will get soft line breaks (<var> \n</var>) or hard line breaks (<var>\n</var>), to comply with requirements from RFC 2822. Soft line breaks will be ignored when displayed by the receiving client. When flowed output is enabled, add-ons should not create plain text messages with manually inserted hard or soft line breaks to achieve a certain text width, as that will most probably interfere with the default line break handling and generate ridged text. When flowed output is disabled, add-ons could add hard line breaks to have control over the final message, but any line longer than the maximum line length will still receive additional hard line breaks. See $(ref:messengerSettings.messageLineLengthLimit). This property is read-only."
+            },
+            "readerDisplayAttachmentsInline": {
+                "$ref": "types.Setting",
+                "annotations": [
+                    {
+                        "additional_properties": {
+                            "readOnly": true
+                        }
+                    },
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messengerSettings.readerDisplayAttachmentsInline.html"
+                    },
+                    {
+                        "version_added": "153.0"
+                    }
+                ],
+                "description": "Whether supported attachments (for example, media files) are shown inline within the body of displayed messages. This property is read-only."
             }
         }
     }

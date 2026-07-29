@@ -2,6 +2,9 @@
     {
         "annotations": [
             {
+                "text": "The contentScripts API allows to register and unregister scripts for content pages."
+            },
+            {
                 "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/contentScripts"
             },
             {
@@ -64,6 +67,11 @@
                         },
                         "optional": true,
                         "type": "array"
+                    },
+                    "cssOrigin": {
+                        "$ref": "extensionTypes.CSSOrigin",
+                        "description": "The css origin of the stylesheet to inject. Defaults to \"author\".",
+                        "optional": true
                     },
                     "excludeGlobs": {
                         "items": {
@@ -159,7 +167,7 @@
         ]
     },
     {
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest"
     }
 ]

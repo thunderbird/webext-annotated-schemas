@@ -124,7 +124,7 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messengerUtilities.html#parsemailboxstring-mailboxstring-preservegroups"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messengerUtilities.html#parsemailboxstring-mailboxstring-options"
                     },
                     {
                         "version_added": "140.0"
@@ -150,10 +150,53 @@
                                 "version_added": "140.0"
                             }
                         ],
-                        "description": "Keep grouped hierachies. Groups may be specified in a mailbox string as follows: <var>GroupName : user1 <user1@example.com>, user2@example,com ;</var>.",
-                        "name": "preserveGroups",
-                        "optional": true,
-                        "type": "boolean"
+                        "choices": [
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "140.0"
+                                    }
+                                ],
+                                "deprecated": "Specify the options object instead of a plain boolean to preserve groups.",
+                                "description": "Keep grouped hierarchies. Groups may be specified in a mailbox string as follows: <var>GroupName : user1 <user1@example.com>, user2@example,com ;</var>.",
+                                "type": "boolean"
+                            },
+                            {
+                                "annotations": [
+                                    {
+                                        "version_added": "153.0"
+                                    }
+                                ],
+                                "properties": {
+                                    "expandMailingLists": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ],
+                                        "description": "Expand Thunderbird mailing lists (specified as <var>ListName <ListName></var>) and include the parsed primary email addresses of all members. When used together with <var>preserveGroups</var>, the mailing list's name and hierarchy are preserved. If the mailing list does not exist, or the <permission>addressBook</permission> permission is not granted, the entries are not expanded and returned unchanged.",
+                                        "optional": true,
+                                        "permissions": [
+                                            "addressBooks"
+                                        ],
+                                        "type": "boolean"
+                                    },
+                                    "preserveGroups": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ],
+                                        "description": "Keep grouped hierarchies. Groups may be specified in a mailbox string as follows: <var>GroupName : user1 <user1@example.com>, user2@example,com ;</var>.",
+                                        "optional": true,
+                                        "type": "boolean"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "name": "options",
+                        "optional": true
                     },
                     {
                         "annotations": [
@@ -442,12 +485,18 @@
                     "approved": {
                         "annotations": [
                             {
+                                "text": "The moderator approval header, used in mailing lists."
+                            },
+                            {
                                 "version_added": "140.0"
                             }
                         ]
                     },
                     "bcc": {
                         "annotations": [
+                            {
+                                "text": "Bcc recipients."
+                            },
                             {
                                 "version_added": "140.0"
                             }
@@ -456,12 +505,18 @@
                     "cc": {
                         "annotations": [
                             {
+                                "text": "Cc recipients."
+                            },
+                            {
                                 "version_added": "140.0"
                             }
                         ]
                     },
                     "delivered-to": {
                         "annotations": [
+                            {
+                                "text": "The address the message was delivered to."
+                            },
                             {
                                 "version_added": "140.0"
                             }
@@ -470,12 +525,18 @@
                     "disposition-notification-to": {
                         "annotations": [
                             {
+                                "text": "The address to send return receipts to."
+                            },
+                            {
                                 "version_added": "140.0"
                             }
                         ]
                     },
                     "from": {
                         "annotations": [
+                            {
+                                "text": "Who the message is from."
+                            },
                             {
                                 "version_added": "140.0"
                             }
@@ -484,12 +545,18 @@
                     "mail-followup-to": {
                         "annotations": [
                             {
+                                "text": "The address for follow-up messages (used in mailing lists)."
+                            },
+                            {
                                 "version_added": "140.0"
                             }
                         ]
                     },
                     "mail-reply-to": {
                         "annotations": [
+                            {
+                                "text": "The address for direct replies to the author (used in mailing lists)."
+                            },
                             {
                                 "version_added": "140.0"
                             }
@@ -498,12 +565,18 @@
                     "reply-to": {
                         "annotations": [
                             {
+                                "text": "The address for replies."
+                            },
+                            {
                                 "version_added": "140.0"
                             }
                         ]
                     },
                     "resent-bcc": {
                         "annotations": [
+                            {
+                                "text": "Bcc recipients of the resent message."
+                            },
                             {
                                 "version_added": "140.0"
                             }
@@ -512,12 +585,18 @@
                     "resent-cc": {
                         "annotations": [
                             {
+                                "text": "Cc recipients of the resent message."
+                            },
+                            {
                                 "version_added": "140.0"
                             }
                         ]
                     },
                     "resent-from": {
                         "annotations": [
+                            {
+                                "text": "The sender of the resent message."
+                            },
                             {
                                 "version_added": "140.0"
                             }
@@ -526,12 +605,18 @@
                     "resent-reply-to": {
                         "annotations": [
                             {
+                                "text": "The reply-to address of the resent message."
+                            },
+                            {
                                 "version_added": "140.0"
                             }
                         ]
                     },
                     "resent-sender": {
                         "annotations": [
+                            {
+                                "text": "The actual sender of the resent message."
+                            },
                             {
                                 "version_added": "140.0"
                             }
@@ -540,12 +625,18 @@
                     "resent-to": {
                         "annotations": [
                             {
+                                "text": "The primary recipients of the resent message."
+                            },
+                            {
                                 "version_added": "140.0"
                             }
                         ]
                     },
                     "return-receipt-to": {
                         "annotations": [
+                            {
+                                "text": "The address to send return receipts to. (Deprecated.)"
+                            },
                             {
                                 "version_added": "140.0"
                             }
@@ -554,12 +645,18 @@
                     "sender": {
                         "annotations": [
                             {
+                                "text": "The actual sender of the message (may differ from <var>from</var>)."
+                            },
+                            {
                                 "version_added": "140.0"
                             }
                         ]
                     },
                     "to": {
                         "annotations": [
+                            {
+                                "text": "The primary recipients of the message."
+                            },
                             {
                                 "version_added": "140.0"
                             }
@@ -572,7 +669,7 @@
         ]
     },
     {
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest"
     }
 ]

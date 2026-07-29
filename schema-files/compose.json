@@ -5,7 +5,7 @@
                 "version_added": "78.0"
             }
         ],
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest",
         "types": [
             {
@@ -135,6 +135,7 @@
                                 "version_added": "102.3.0"
                             }
                         ],
+                        "description": "The tab of the associated compose window. By the time the event listener is called, this window may have already been destroyed.",
                         "name": "tab"
                     },
                     {
@@ -145,6 +146,15 @@
                         ],
                         "name": "sendInfo",
                         "properties": {
+                            "details": {
+                                "$ref": "ComposeDetails",
+                                "annotations": [
+                                    {
+                                        "version_added": "153.0"
+                                    }
+                                ],
+                                "description": "The $(ref:compose.ComposeDetails) of the send message."
+                            },
                             "error": {
                                 "annotations": [
                                     {
@@ -171,7 +181,7 @@
                                         "version_added": "102.3.0"
                                     }
                                 ],
-                                "description": "Copies of the sent message. The number of created copies depends on the applied file carbon copy configuration (fcc).",
+                                "description": "Copies of the sent message. The number of created copies depends on the applied file carbon copy configuration (fcc). The <permission>messagesRead</permission> permission is required for this property to be included.",
                                 "items": {
                                     "$ref": "messages.MessageHeader"
                                 },
@@ -192,12 +202,18 @@
                                     "sendLater": {
                                         "annotations": [
                                             {
+                                                "text": "The message was queued to be sent later."
+                                            },
+                                            {
                                                 "version_added": "102.3.0"
                                             }
                                         ]
                                     },
                                     "sendNow": {
                                         "annotations": [
+                                            {
+                                                "text": "The message was sent immediately."
+                                            },
                                             {
                                                 "version_added": "102.3.0"
                                             }
@@ -244,6 +260,15 @@
                         ],
                         "name": "saveInfo",
                         "properties": {
+                            "details": {
+                                "$ref": "ComposeDetails",
+                                "annotations": [
+                                    {
+                                        "version_added": "153.0"
+                                    }
+                                ],
+                                "description": "The $(ref:compose.ComposeDetails) of the saved message."
+                            },
                             "error": {
                                 "annotations": [
                                     {
@@ -257,10 +282,13 @@
                             "messages": {
                                 "annotations": [
                                     {
+                                        "note": "Starting with Thunderbird version 142, the File Carbon Copy (FCC) configuration is no longer respected during save operations. Regardless of any FCC settings, only one message is saved, and it is stored in the default folder for the given save mode."
+                                    },
+                                    {
                                         "version_added": "102.3.0"
                                     }
                                 ],
-                                "description": "The saved message(s). The number of saved messages depends on the applied file carbon copy configuration (fcc).",
+                                "description": "An array with exactly one element, the saved message. The <permission>messagesRead</permission> permission is required for this property to be included.",
                                 "items": {
                                     "$ref": "messages.MessageHeader"
                                 },
@@ -282,6 +310,9 @@
                                     "autoSave": {
                                         "annotations": [
                                             {
+                                                "text": "The message was auto-saved."
+                                            },
+                                            {
                                                 "version_added": "128.0"
                                             }
                                         ]
@@ -289,12 +320,18 @@
                                     "draft": {
                                         "annotations": [
                                             {
+                                                "text": "The message was saved as a draft."
+                                            },
+                                            {
                                                 "version_added": "102.3.0"
                                             }
                                         ]
                                     },
                                     "template": {
                                         "annotations": [
+                                            {
+                                                "text": "The message was saved as a template."
+                                            },
                                             {
                                                 "version_added": "102.3.0"
                                             }
@@ -590,6 +627,9 @@
                             "replyToAll": {
                                 "annotations": [
                                     {
+                                        "text": "Reply to all recipients."
+                                    },
+                                    {
                                         "version_added": "68.0"
                                     }
                                 ]
@@ -597,12 +637,18 @@
                             "replyToList": {
                                 "annotations": [
                                     {
+                                        "text": "Reply to the mailing list."
+                                    },
+                                    {
                                         "version_added": "68.0"
                                     }
                                 ]
                             },
                             "replyToSender": {
                                 "annotations": [
+                                    {
+                                        "text": "Reply to the sender only."
+                                    },
                                     {
                                         "version_added": "68.0"
                                     }
@@ -687,12 +733,18 @@
                             "forwardAsAttachment": {
                                 "annotations": [
                                     {
+                                        "text": "Forward the message as an attachment."
+                                    },
+                                    {
                                         "version_added": "68.0"
                                     }
                                 ]
                             },
                             "forwardInline": {
                                 "annotations": [
+                                    {
+                                        "text": "Forward the message inline."
+                                    },
                                     {
                                         "version_added": "68.0"
                                     }
@@ -1242,6 +1294,9 @@
                                     "default": {
                                         "annotations": [
                                             {
+                                                "text": "Send using the default send mode."
+                                            },
+                                            {
                                                 "version_added": "91.0"
                                             }
                                         ]
@@ -1249,12 +1304,18 @@
                                     "sendLater": {
                                         "annotations": [
                                             {
+                                                "text": "Queue the message to be sent later."
+                                            },
+                                            {
                                                 "version_added": "91.0"
                                             }
                                         ]
                                     },
                                     "sendNow": {
                                         "annotations": [
+                                            {
+                                                "text": "Send the message immediately."
+                                            },
                                             {
                                                 "version_added": "91.0"
                                             }
@@ -1391,12 +1452,18 @@
                                     "draft": {
                                         "annotations": [
                                             {
+                                                "text": "Save as a draft."
+                                            },
+                                            {
                                                 "version_added": "102.0"
                                             }
                                         ]
                                     },
                                     "template": {
                                         "annotations": [
+                                            {
+                                                "text": "Save as a template."
+                                            },
                                             {
                                                 "version_added": "102.0"
                                             }
@@ -1428,10 +1495,13 @@
                                     "messages": {
                                         "annotations": [
                                             {
+                                                "note": "Starting with Thunderbird version 142, the File Carbon Copy (FCC) configuration is no longer respected during save operations. Regardless of any FCC settings, only one message is saved, and it is stored in the default folder for the given save mode."
+                                            },
+                                            {
                                                 "version_added": "102.0"
                                             }
                                         ],
-                                        "description": "The saved message(s). The number of saved messages depends on the applied file carbon copy configuration (fcc).",
+                                        "description": "An array with exactly one element, the saved message.",
                                         "items": {
                                             "$ref": "messages.MessageHeader"
                                         },
@@ -1543,7 +1613,7 @@
                                 "version_added": "68.0"
                             }
                         ],
-                        "description": "A name and email address in the format <var>Name <email@example.com></var>, or just an email address.",
+                        "description": "A name and email address in mailbox format (<var>Name <email@example.com></var>), or just an email address. Mailing lists are specified as <var>ListName <ListName></var>. Use $(ref:messengerUtilities.parseMailboxString) to extract the name and/or the email from the mailbox string, or to expand mailing list entries.",
                         "type": "string"
                     },
                     {
@@ -1595,7 +1665,38 @@
                         "type": "object"
                     }
                 ],
-                "id": "ComposeRecipient"
+                "id": "ComposeRecipient",
+                "properties": {
+                    "type": {
+                        "annotations": [
+                            {
+                                "version_added": false
+                            }
+                        ],
+                        "enums": {
+                            "contact": {
+                                "annotations": [
+                                    {
+                                        "text": "The ID references a contact."
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ]
+                            },
+                            "mailingList": {
+                                "annotations": [
+                                    {
+                                        "text": "The ID references a mailing list."
+                                    },
+                                    {
+                                        "version_added": false
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
             },
             {
                 "annotations": [
@@ -1718,7 +1819,7 @@
                                 ]
                             }
                         ],
-                        "description": "An additional fcc folder which can be selected while composing the message, an empty string if not used. The permission <permission>accountsRead</permission> is required to use this property.",
+                        "description": "An additional fcc folder which can be selected while composing the message, an empty string if not used. Has no effect when the message is saved as a draft or template; the additional copy is only created when the message is actually sent or queued for sending. The permission <permission>accountsRead</permission> is required to use this property.",
                         "optional": true
                     },
                     "attachPublicPGPKey": {
@@ -1832,12 +1933,18 @@
                             "auto": {
                                 "annotations": [
                                     {
+                                        "text": "Send as plain text if the message does not include any formatting, otherwise send as <var>both</var>."
+                                    },
+                                    {
                                         "version_added": "102.0"
                                     }
                                 ]
                             },
                             "both": {
                                 "annotations": [
+                                    {
+                                        "text": "Send as both plain text and HTML (multipart/alternative)."
+                                    },
                                     {
                                         "version_added": "102.0"
                                     }
@@ -1846,12 +1953,18 @@
                             "html": {
                                 "annotations": [
                                     {
+                                        "text": "Send as HTML only."
+                                    },
+                                    {
                                         "version_added": "102.0"
                                     }
                                 ]
                             },
                             "plaintext": {
                                 "annotations": [
+                                    {
+                                        "text": "Send as plain text only."
+                                    },
                                     {
                                         "version_added": "102.0"
                                     }
@@ -2004,7 +2117,7 @@
                                 ]
                             }
                         ],
-                        "description": " This value overrides the default fcc setting (defined by the used identity) for this message only. Either a $(ref:folders.MailFolder) specifying the folder for the copy of the sent message, or an empty string to not save a copy at all. The permission <permission>accountsRead</permission> is required to use this property.",
+                        "description": "This value overrides the default fcc setting (defined by the used identity) for this message only. Either a $(ref:folders.MailFolder) specifying the folder for the copy of the sent message, or an empty string to not save a copy at all. The permission <permission>accountsRead</permission> is required to use this property.",
                         "optional": true
                     },
                     "plainTextBody": {
@@ -2035,12 +2148,18 @@
                             "high": {
                                 "annotations": [
                                     {
+                                        "text": "High priority."
+                                    },
+                                    {
                                         "version_added": "102.0"
                                     }
                                 ]
                             },
                             "highest": {
                                 "annotations": [
+                                    {
+                                        "text": "Highest priority."
+                                    },
                                     {
                                         "version_added": "102.0"
                                     }
@@ -2049,6 +2168,9 @@
                             "low": {
                                 "annotations": [
                                     {
+                                        "text": "Low priority."
+                                    },
+                                    {
                                         "version_added": "102.0"
                                     }
                                 ]
@@ -2056,12 +2178,18 @@
                             "lowest": {
                                 "annotations": [
                                     {
+                                        "text": "Lowest priority."
+                                    },
+                                    {
                                         "version_added": "102.0"
                                     }
                                 ]
                             },
                             "normal": {
                                 "annotations": [
+                                    {
+                                        "text": "Normal priority (default)."
+                                    },
                                     {
                                         "version_added": "102.0"
                                     }
@@ -2078,7 +2206,7 @@
                                 "version_added": "91.3.1"
                             }
                         ],
-                        "description": "The id of the original message (in case of draft, template, forward or reply). Read-only. Is <var>undefined</var> in all other cases or if the original message was opened from file.",
+                        "description": "The id of the original message (in case of draft, template, forward or reply). Read-only. Is <var>undefined</var> in all other cases or if the original message was opened from file. The <permission>messagesRead</permission> permission is required to use this property.",
                         "optional": true
                     },
                     "replyTo": {
@@ -2163,12 +2291,18 @@
                             "draft": {
                                 "annotations": [
                                     {
+                                        "text": "A draft message is being edited."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "forward": {
                                 "annotations": [
+                                    {
+                                        "text": "A forwarded message is being composed."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -2177,6 +2311,9 @@
                             "new": {
                                 "annotations": [
                                     {
+                                        "text": "A new message is being composed."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
@@ -2184,12 +2321,18 @@
                             "redirect": {
                                 "annotations": [
                                     {
+                                        "text": "A redirected message is being composed."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "reply": {
                                 "annotations": [
+                                    {
+                                        "text": "A reply is being composed."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }

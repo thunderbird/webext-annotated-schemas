@@ -5,7 +5,7 @@
                 "version_added": "140.0"
             }
         ],
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest",
         "types": [
             {
@@ -17,7 +17,7 @@
                                 "version_added": "140.0"
                             }
                         ],
-                        "description": "Describes an OAuth authentication provider for Thunderbird to use when connecting to mail/address book/calendar services. You will need to have a client ID registered with the provider to use this API.",
+                        "description": "Describes an OAuth authentication provider for Thunderbird. You will need to have a client ID registered with the provider to use this API.",
                         "optional": true,
                         "properties": {
                             "authorizationEndpoint": {
@@ -71,6 +71,16 @@
                                 "description": "A string to identify this provider in the login manager. This <em>should</em> match the hostname of the authorization endpoint, although that is not required.",
                                 "type": "string"
                             },
+                            "issuerIdentifier": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153.0"
+                                    }
+                                ],
+                                "description": "The OAuth authorization server issuer identifier, as defined by RFC 9207. If provided, it <em>must</em> be an exact string match to what the provider gives in the iss field.",
+                                "optional": true,
+                                "type": "string"
+                            },
                             "redirectionEndpoint": {
                                 "annotations": [
                                     {
@@ -78,7 +88,6 @@
                                     }
                                 ],
                                 "description": "OAuth redirection endpoint.",
-                                "format": "url",
                                 "type": "string"
                             },
                             "scopes": {
@@ -100,6 +109,16 @@
                                 "format": "url",
                                 "type": "string"
                             },
+                            "useExternalBrowser": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153.0"
+                                    }
+                                ],
+                                "description": "If the login flow should use the system web browser. If true, the redirectionEndpoint <em>must</em> be a loopback address, so an origin of http://127.0.0.1 or http://localhost.",
+                                "optional": true,
+                                "type": "boolean"
+                            },
                             "usePKCE": {
                                 "annotations": [
                                     {
@@ -118,6 +137,14 @@
         ]
     },
     {
+        "annotations": [
+            {
+                "text": "The oauthProvider API allows to manage OAuth authentication providers for Thunderbird to use when connecting to mail/address book/calendar services."
+            },
+            {
+                "version_added": false
+            }
+        ],
         "namespace": "oauthProvider"
     }
 ]
