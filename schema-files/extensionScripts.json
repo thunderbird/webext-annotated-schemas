@@ -5,7 +5,7 @@
                 "version_added": "78.4.0"
             }
         ],
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest",
         "types": [
             {
@@ -35,7 +35,174 @@
                         "type": "string"
                     }
                 ]
+            },
+            {
+                "additionalProperties": {
+                    "$ref": "UnrecognizedProperty"
+                },
+                "annotations": [
+                    {
+                        "note": "The <var>run_at</var> option is not supported for compose scripts, because the compose editor does not load content in the same way as a regular web page."
+                    },
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/manifest.html#composescript"
+                    },
+                    {
+                        "version_added": "153.0"
+                    }
+                ],
+                "description": "A script and/or CSS to inject into compose windows via the manifest.",
+                "id": "ComposeScript",
+                "properties": {
+                    "css": {
+                        "annotations": [
+                            {
+                                "version_added": "153.0"
+                            }
+                        ],
+                        "description": "The list of CSS files to inject.",
+                        "items": {
+                            "$ref": "ExtensionURL"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "js": {
+                        "annotations": [
+                            {
+                                "version_added": "153.0"
+                            }
+                        ],
+                        "description": "The list of JavaScript files to inject.",
+                        "items": {
+                            "$ref": "ExtensionURL"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "additionalProperties": {
+                    "$ref": "UnrecognizedProperty"
+                },
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/manifest.html#messagedisplayscript"
+                    },
+                    {
+                        "version_added": "153.0"
+                    }
+                ],
+                "description": "A script and/or CSS to inject into message display pages via the manifest.",
+                "id": "MessageDisplayScript",
+                "properties": {
+                    "css": {
+                        "annotations": [
+                            {
+                                "version_added": "153.0"
+                            }
+                        ],
+                        "description": "The list of CSS files to inject.",
+                        "items": {
+                            "$ref": "ExtensionURL"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "js": {
+                        "annotations": [
+                            {
+                                "version_added": "153.0"
+                            }
+                        ],
+                        "description": "The list of JavaScript files to inject.",
+                        "items": {
+                            "$ref": "ExtensionURL"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "run_at": {
+                        "annotations": [
+                            {
+                                "version_added": "153.0"
+                            }
+                        ],
+                        "default": "document_idle",
+                        "description": "Determines when the files specified in css and js are injected. The states directly correspond to <code>Document.readyState</code>: <var>loading</var>, <var>interactive</var> and <var>complete</var>.",
+                        "enum": [
+                            "document_start",
+                            "document_end",
+                            "document_idle"
+                        ],
+                        "enums": {
+                            "document_end": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153.0"
+                                    }
+                                ]
+                            },
+                            "document_idle": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153.0"
+                                    }
+                                ]
+                            },
+                            "document_start": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153.0"
+                                    }
+                                ]
+                            }
+                        },
+                        "optional": true,
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            {
+                "$extend": "WebExtensionManifest",
+                "properties": {
+                    "compose_scripts": {
+                        "annotations": [
+                            {
+                                "version_added": "153.0"
+                            }
+                        ],
+                        "description": "Scripts and CSS to inject into compose windows.",
+                        "items": {
+                            "$ref": "ComposeScript"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    },
+                    "message_display_scripts": {
+                        "annotations": [
+                            {
+                                "version_added": "153.0"
+                            }
+                        ],
+                        "description": "Scripts and CSS to inject into message display pages.",
+                        "items": {
+                            "$ref": "MessageDisplayScript"
+                        },
+                        "optional": true,
+                        "type": "array"
+                    }
+                }
             }
         ]
+    },
+    {
+        "namespace": "composeScripts"
+    },
+    {
+        "namespace": "messageDisplayScripts"
     }
 ]

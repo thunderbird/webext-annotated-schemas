@@ -43,7 +43,7 @@
                         "type": "object"
                     },
                     {
-                        "description": "The name of the storage area (<code>\"sync\"</code>, <code>\"local\"</code> or <code>\"managed\"</code>) the changes are for.",
+                        "description": "The name of the storage area (<code>\"session\"</code>, <code>\"sync\"</code>, <code>\"local\"</code> or <code>\"managed\"</code>) the changes are for.",
                         "name": "areaName",
                         "type": "string"
                     }
@@ -109,7 +109,7 @@
                 }
             },
             "session": {
-                "$ref": "StorageAreaWithUsage",
+                "$ref": "StorageArea",
                 "allowedContexts": [
                     "devtools"
                 ],
@@ -137,7 +137,7 @@
                 }
             },
             "sync": {
-                "$ref": "StorageAreaWithUsage",
+                "$ref": "StorageArea",
                 "annotations": [
                     {
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/sync"
@@ -344,8 +344,30 @@
                                 "type": "function"
                             }
                         ],
-                        "type": "function",
-                        "unsupported": true
+                        "type": "function"
+                    },
+                    {
+                        "async": "callback",
+                        "description": "Gets the keys of all items in storage.",
+                        "name": "getKeys",
+                        "parameters": [
+                            {
+                                "description": "Callback with the keys of all items in storage, or on failure (in which case $(ref:runtime.lastError) will be set).",
+                                "name": "callback",
+                                "parameters": [
+                                    {
+                                        "description": "The keys of all items in storage.",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "name": "keys",
+                                        "type": "array"
+                                    }
+                                ],
+                                "type": "function"
+                            }
+                        ],
+                        "type": "function"
                     },
                     {
                         "annotations": [
@@ -442,184 +464,11 @@
                 ],
                 "id": "StorageArea",
                 "type": "object"
-            },
-            {
-                "events": [
-                    {
-                        "description": "Fired when one or more items change.",
-                        "name": "onChanged",
-                        "parameters": [
-                            {
-                                "additionalProperties": {
-                                    "$ref": "StorageChange"
-                                },
-                                "description": "Object mapping each key that changed to its corresponding $(ref:storage.StorageChange) for that item.",
-                                "name": "changes",
-                                "type": "object"
-                            }
-                        ],
-                        "type": "function"
-                    }
-                ],
-                "functions": [
-                    {
-                        "async": "callback",
-                        "description": "Gets one or more items from storage.",
-                        "name": "get",
-                        "parameters": [
-                            {
-                                "choices": [
-                                    {
-                                        "type": "string"
-                                    },
-                                    {
-                                        "items": {
-                                            "type": "string"
-                                        },
-                                        "type": "array"
-                                    },
-                                    {
-                                        "additionalProperties": {
-                                            "type": "any"
-                                        },
-                                        "description": "Storage items to return in the callback, where the values are replaced with those from storage if they exist.",
-                                        "type": "object"
-                                    }
-                                ],
-                                "description": "A single key to get, list of keys to get, or a dictionary specifying default values (see description of the object).  An empty list or object will return an empty result object.  Pass in <code>null</code> to get the entire contents of storage.",
-                                "name": "keys",
-                                "optional": true
-                            },
-                            {
-                                "description": "Callback with storage items, or on failure (in which case $(ref:runtime.lastError) will be set).",
-                                "name": "callback",
-                                "parameters": [
-                                    {
-                                        "additionalProperties": {
-                                            "type": "any"
-                                        },
-                                        "description": "Object with items in their key-value mappings.",
-                                        "name": "items",
-                                        "type": "object"
-                                    }
-                                ],
-                                "type": "function"
-                            }
-                        ],
-                        "type": "function"
-                    },
-                    {
-                        "async": "callback",
-                        "description": "Gets the amount of space (in bytes) being used by one or more items.",
-                        "name": "getBytesInUse",
-                        "parameters": [
-                            {
-                                "choices": [
-                                    {
-                                        "type": "string"
-                                    },
-                                    {
-                                        "items": {
-                                            "type": "string"
-                                        },
-                                        "type": "array"
-                                    }
-                                ],
-                                "description": "A single key or list of keys to get the total usage for. An empty list will return 0. Pass in <code>null</code> to get the total usage of all of storage.",
-                                "name": "keys",
-                                "optional": true
-                            },
-                            {
-                                "description": "Callback with the amount of space being used by storage, or on failure (in which case $(ref:runtime.lastError) will be set).",
-                                "name": "callback",
-                                "parameters": [
-                                    {
-                                        "description": "Amount of space being used in storage, in bytes.",
-                                        "name": "bytesInUse",
-                                        "type": "integer"
-                                    }
-                                ],
-                                "type": "function"
-                            }
-                        ],
-                        "type": "function"
-                    },
-                    {
-                        "async": "callback",
-                        "description": "Sets multiple items.",
-                        "name": "set",
-                        "parameters": [
-                            {
-                                "additionalProperties": {
-                                    "type": "any"
-                                },
-                                "description": "<p>An object which gives each key/value pair to update storage with. Any other key/value pairs in storage will not be affected.</p><p>Primitive values such as numbers will serialize as expected. Values with a <code>typeof</code> <code>\"object\"</code> and <code>\"function\"</code> will typically serialize to <code>{}</code>, with the exception of <code>Array</code> (serializes as expected), <code>Date</code>, and <code>Regex</code> (serialize using their <code>String</code> representation).</p>",
-                                "name": "items",
-                                "type": "object"
-                            },
-                            {
-                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
-                                "name": "callback",
-                                "optional": true,
-                                "parameters": [],
-                                "type": "function"
-                            }
-                        ],
-                        "type": "function"
-                    },
-                    {
-                        "async": "callback",
-                        "description": "Removes one or more items from storage.",
-                        "name": "remove",
-                        "parameters": [
-                            {
-                                "choices": [
-                                    {
-                                        "type": "string"
-                                    },
-                                    {
-                                        "items": {
-                                            "type": "string"
-                                        },
-                                        "type": "array"
-                                    }
-                                ],
-                                "description": "A single key or a list of keys for items to remove.",
-                                "name": "keys"
-                            },
-                            {
-                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
-                                "name": "callback",
-                                "optional": true,
-                                "parameters": [],
-                                "type": "function"
-                            }
-                        ],
-                        "type": "function"
-                    },
-                    {
-                        "async": "callback",
-                        "description": "Removes all items from storage.",
-                        "name": "clear",
-                        "parameters": [
-                            {
-                                "description": "Callback on success, or on failure (in which case $(ref:runtime.lastError) will be set).",
-                                "name": "callback",
-                                "optional": true,
-                                "parameters": [],
-                                "type": "function"
-                            }
-                        ],
-                        "type": "function"
-                    }
-                ],
-                "id": "StorageAreaWithUsage",
-                "type": "object"
             }
         ]
     },
     {
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest"
     }
 ]

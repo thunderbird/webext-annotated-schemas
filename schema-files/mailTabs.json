@@ -331,14 +331,14 @@
             {
                 "annotations": [
                     {
-                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#getlistedmessages-tabid"
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/mailTabs.html#getlistedmessages-tabid-options"
                     },
                     {
                         "version_added": "128.0"
                     }
                 ],
                 "async": "callback",
-                "description": "Lists the messages in the current view, honoring sort order and filters.",
+                "description": "Lists the messages in the current view, honoring sort order and filters as used in the UI. Sort order of the returned messages can be overridden via the <var>options</var> parameter",
                 "name": "getListedMessages",
                 "parameters": [
                     {
@@ -359,6 +359,150 @@
                                 "version_added": "128.0"
                             }
                         ],
+                        "name": "options",
+                        "optional": true,
+                        "properties": {
+                            "sortOrder": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153.0"
+                                    }
+                                ],
+                                "description": "The sort order for the returned messages. Ignored if <var>sortType</var> is not specified.",
+                                "enum": [
+                                    "ascending",
+                                    "descending"
+                                ],
+                                "enums": {
+                                    "ascending": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ]
+                                    },
+                                    "descending": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "sortType": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153.0"
+                                    }
+                                ],
+                                "description": "Specifies how the returned messages should be sorted. This does not change the actual sort of the displayed messages. Default sort order is <var>descending</var>, if not specified otherwise. Returning sorted messages is faster than manually sorting the messages afterwards, but slower than returning the messages in their original order.",
+                                "enum": [
+                                    "author",
+                                    "date",
+                                    "flagged",
+                                    "junk",
+                                    "junkScore",
+                                    "priority",
+                                    "read",
+                                    "recipients",
+                                    "size",
+                                    "subject",
+                                    "tags"
+                                ],
+                                "enums": {
+                                    "author": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ]
+                                    },
+                                    "date": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ]
+                                    },
+                                    "flagged": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ]
+                                    },
+                                    "junk": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ]
+                                    },
+                                    "junkScore": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ]
+                                    },
+                                    "priority": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ]
+                                    },
+                                    "read": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ]
+                                    },
+                                    "recipients": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ]
+                                    },
+                                    "size": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ]
+                                    },
+                                    "subject": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ]
+                                    },
+                                    "tags": {
+                                        "annotations": [
+                                            {
+                                                "version_added": "153.0"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "optional": true,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "annotations": [
+                            {
+                                "version_added": "153.0"
+                            }
+                        ],
                         "name": "callback",
                         "optional": true,
                         "parameters": [
@@ -366,7 +510,7 @@
                                 "$ref": "messages.MessageList",
                                 "annotations": [
                                     {
-                                        "version_added": "128.0"
+                                        "version_added": "153.0"
                                     }
                                 ]
                             }
@@ -680,12 +824,18 @@
                     "all": {
                         "annotations": [
                             {
+                                "text": "Show all folders."
+                            },
+                            {
                                 "version_added": "128.0"
                             }
                         ]
                     },
                     "favorite": {
                         "annotations": [
+                            {
+                                "text": "Show only favorite folders."
+                            },
                             {
                                 "version_added": "128.0"
                             }
@@ -694,12 +844,18 @@
                     "recent": {
                         "annotations": [
                             {
+                                "text": "Show recently used folders."
+                            },
+                            {
                                 "version_added": "128.0"
                             }
                         ]
                     },
                     "tags": {
                         "annotations": [
+                            {
+                                "text": "Show virtual tag folders."
+                            },
                             {
                                 "version_added": "128.0"
                             }
@@ -708,12 +864,18 @@
                     "unified": {
                         "annotations": [
                             {
+                                "text": "Show the unified folder view."
+                            },
+                            {
                                 "version_added": "128.0"
                             }
                         ]
                     },
                     "unread": {
                         "annotations": [
+                            {
+                                "text": "Show only folders with unread messages."
+                            },
                             {
                                 "version_added": "128.0"
                             }
@@ -802,6 +964,9 @@
                             "groupedBySortType": {
                                 "annotations": [
                                     {
+                                        "text": "Messages are grouped by the current sort type."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
@@ -809,12 +974,18 @@
                             "groupedByThread": {
                                 "annotations": [
                                     {
+                                        "text": "Messages are grouped by threads."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
                             },
                             "ungrouped": {
                                 "annotations": [
+                                    {
+                                        "text": "Messages are not grouped."
+                                    },
                                     {
                                         "version_added": "128.0"
                                     }
@@ -840,6 +1011,9 @@
                             "standard": {
                                 "annotations": [
                                     {
+                                        "text": "The standard layout with the folder pane on the left, and the message list and message display stacked on the right."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
@@ -847,12 +1021,18 @@
                             "vertical": {
                                 "annotations": [
                                     {
+                                        "text": "The vertical layout with the folder pane, message list, and message display side by side in three columns."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "wide": {
                                 "annotations": [
+                                    {
+                                        "text": "The wide layout with the folder pane and message list side by side on top, and the message display on the bottom."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -887,6 +1067,9 @@
                             "ascending": {
                                 "annotations": [
                                     {
+                                        "text": "Ascending sort order."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
@@ -894,12 +1077,18 @@
                             "descending": {
                                 "annotations": [
                                     {
+                                        "text": "Descending sort order."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "none": {
                                 "annotations": [
+                                    {
+                                        "text": "No sort order."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -942,12 +1131,18 @@
                             "account": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by account, grouping messages belonging to the same account."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "attachments": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by attachment status."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -956,12 +1151,18 @@
                             "author": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by author."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "correspondent": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by correspondents."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -970,12 +1171,18 @@
                             "custom": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by a custom column."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "date": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by date."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -984,12 +1191,18 @@
                             "flagged": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by starred status."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "id": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by the Message-ID header, a unique identifier assigned by the sending server."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -998,12 +1211,18 @@
                             "junkStatus": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by spam status."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "location": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by folder location."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -1012,12 +1231,18 @@
                             "none": {
                                 "annotations": [
                                     {
+                                        "text": "Not sorted."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "priority": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by priority."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -1026,12 +1251,18 @@
                             "received": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by received date."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "recipient": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by recipient."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -1040,12 +1271,18 @@
                             "size": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by message size."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "status": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by message status."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -1054,12 +1291,18 @@
                             "subject": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by subject."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "tags": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by tags."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -1068,12 +1311,18 @@
                             "thread": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by thread, grouping messages that belong to the same conversation."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "unread": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by unread status."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -1173,6 +1422,9 @@
                             "groupedBySortType": {
                                 "annotations": [
                                     {
+                                        "text": "Messages are grouped by the current sort type."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
@@ -1180,12 +1432,18 @@
                             "groupedByThread": {
                                 "annotations": [
                                     {
+                                        "text": "Messages are grouped by threads."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
                             },
                             "ungrouped": {
                                 "annotations": [
+                                    {
+                                        "text": "Messages are not grouped."
+                                    },
                                     {
                                         "version_added": "128.0"
                                     }
@@ -1211,6 +1469,9 @@
                             "standard": {
                                 "annotations": [
                                     {
+                                        "text": "The standard layout with the folder pane on the left, and the message list and message display stacked on the right."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
@@ -1218,12 +1479,18 @@
                             "vertical": {
                                 "annotations": [
                                     {
+                                        "text": "The vertical layout with the folder pane, message list, and message display side by side in three columns."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
                             },
                             "wide": {
                                 "annotations": [
+                                    {
+                                        "text": "The wide layout with the folder pane and message list side by side on top, and the message display on the bottom."
+                                    },
                                     {
                                         "version_added": "128.0"
                                     }
@@ -1259,6 +1526,9 @@
                             "ascending": {
                                 "annotations": [
                                     {
+                                        "text": "Ascending sort order."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
@@ -1266,12 +1536,18 @@
                             "descending": {
                                 "annotations": [
                                     {
+                                        "text": "Descending sort order."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
                             },
                             "none": {
                                 "annotations": [
+                                    {
+                                        "text": "No sort order."
+                                    },
                                     {
                                         "version_added": "128.0"
                                     }
@@ -1314,12 +1590,18 @@
                             "account": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by account, grouping messages belonging to the same account."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
                             },
                             "attachments": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by attachment status."
+                                    },
                                     {
                                         "version_added": "128.0"
                                     }
@@ -1328,12 +1610,18 @@
                             "author": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by author."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
                             },
                             "correspondent": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by correspondents."
+                                    },
                                     {
                                         "version_added": "128.0"
                                     }
@@ -1342,12 +1630,18 @@
                             "custom": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by a custom column."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
                             },
                             "date": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by date."
+                                    },
                                     {
                                         "version_added": "128.0"
                                     }
@@ -1356,12 +1650,18 @@
                             "flagged": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by starred status."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
                             },
                             "id": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by the Message-ID header, a unique identifier assigned by the sending server."
+                                    },
                                     {
                                         "version_added": "128.0"
                                     }
@@ -1370,12 +1670,18 @@
                             "junkStatus": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by spam status."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
                             },
                             "location": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by folder location."
+                                    },
                                     {
                                         "version_added": "128.0"
                                     }
@@ -1384,12 +1690,18 @@
                             "none": {
                                 "annotations": [
                                     {
+                                        "text": "Not sorted."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
                             },
                             "priority": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by priority."
+                                    },
                                     {
                                         "version_added": "128.0"
                                     }
@@ -1398,12 +1710,18 @@
                             "received": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by received date."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
                             },
                             "recipient": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by recipient."
+                                    },
                                     {
                                         "version_added": "128.0"
                                     }
@@ -1412,12 +1730,18 @@
                             "size": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by message size."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
                             },
                             "status": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by message status."
+                                    },
                                     {
                                         "version_added": "128.0"
                                     }
@@ -1426,12 +1750,18 @@
                             "subject": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by subject."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
                             },
                             "tags": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by tags."
+                                    },
                                     {
                                         "version_added": "128.0"
                                     }
@@ -1440,12 +1770,18 @@
                             "thread": {
                                 "annotations": [
                                     {
+                                        "text": "Sort by thread, grouping messages that belong to the same conversation."
+                                    },
+                                    {
                                         "version_added": "128.0"
                                     }
                                 ]
                             },
                             "unread": {
                                 "annotations": [
+                                    {
+                                        "text": "Sort by unread status."
+                                    },
                                     {
                                         "version_added": "128.0"
                                     }
@@ -1524,7 +1860,7 @@
         ]
     },
     {
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest"
     }
 ]

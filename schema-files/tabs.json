@@ -5,7 +5,7 @@
                 "version_added": "60.3.0"
             }
         ],
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest",
         "types": [
             {
@@ -574,6 +574,16 @@
                         "name": "connectInfo",
                         "optional": true,
                         "properties": {
+                            "documentId": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153.0"
+                                    }
+                                ],
+                                "description": "Open a port to a specific document identified by <var>documentId</var> instead of all frames in the tab.",
+                                "optional": true,
+                                "type": "string"
+                            },
                             "frameId": {
                                 "annotations": [
                                     {
@@ -646,6 +656,16 @@
                         "name": "options",
                         "optional": true,
                         "properties": {
+                            "documentId": {
+                                "annotations": [
+                                    {
+                                        "version_added": "153.0"
+                                    }
+                                ],
+                                "description": "Send a message to a specific document identified by <var>documentId</var> instead of all frames in the tab.",
+                                "optional": true,
+                                "type": "string"
+                            },
                             "frameId": {
                                 "annotations": [
                                     {
@@ -1026,7 +1046,7 @@
                                         "version_added": "60.3.0"
                                     }
                                 ],
-                                "description": "Match page titles against a pattern.",
+                                "description": "Match page titles against a pattern. The <permission>tabs</permission> permission is required to use this property.",
                                 "optional": true,
                                 "type": "string"
                             },
@@ -1087,7 +1107,7 @@
                                         "type": "array"
                                     }
                                 ],
-                                "description": "Match tabs against one or more <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL Patterns</a>. Fragment identifiers are not matched.",
+                                "description": "Match tabs against one or more <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL Patterns</a>. Fragment identifiers are not matched. The <permission>tabs</permission> permission is required to use this property.",
                                 "optional": true
                             },
                             "windowId": {
@@ -1236,7 +1256,7 @@
                     }
                 ],
                 "async": "callback",
-                "description": "Moves one or more tabs to a new position within its current window, or to a different window. Tabs can only be moved to and from windows of type <var>normal</var>.",
+                "description": "Moves one or more tabs to a new position within its current window, or to a different window. Tabs can only be moved to and from windows of type <var>normal</var>. The primary mail tab cannot be moved, attempting to actively reposition it will throw an <em>ExtensionError</em>. Other tabs also cannot be placed before the primary mail tab, they will automatically be positioned after it, ensuring that the primary mail tab always remains first.",
                 "name": "move",
                 "parameters": [
                     {
@@ -1517,6 +1537,9 @@
                     "groupId": {
                         "annotations": [
                             {
+                                "note": "Thunderbird does not support tab groups. This property will always be <code>-1</code> and cannot be changed."
+                            },
+                            {
                                 "version_added": "140.0"
                             }
                         ],
@@ -1584,6 +1607,20 @@
                         ],
                         "description": "The id of the space.",
                         "minimum": 1,
+                        "optional": true,
+                        "type": "integer"
+                    },
+                    "splitViewId": {
+                        "annotations": [
+                            {
+                                "note": "Thunderbird does not support Split View. This property will always be <code>-1</code> and cannot be changed."
+                            },
+                            {
+                                "version_added": "153.0"
+                            }
+                        ],
+                        "description": "The ID of the Split View that the tab belongs to. -1 if the tab does not belong to a split view.",
+                        "minimum": -1,
                         "optional": true,
                         "type": "integer"
                     },

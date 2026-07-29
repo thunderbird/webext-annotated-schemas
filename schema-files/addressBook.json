@@ -5,7 +5,7 @@
                 "version_added": "68.0"
             }
         ],
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest",
         "types": [
             {
@@ -430,6 +430,9 @@
                     "addressBook": {
                         "annotations": [
                             {
+                                "text": "An address book node."
+                            },
+                            {
                                 "version_added": "68.0"
                             }
                         ]
@@ -437,12 +440,18 @@
                     "contact": {
                         "annotations": [
                             {
+                                "text": "A contact node."
+                            },
+                            {
                                 "version_added": "68.0"
                             }
                         ]
                     },
                     "mailingList": {
                         "annotations": [
+                            {
+                                "text": "A mailing list node."
+                            },
                             {
                                 "version_added": "68.0"
                             }
@@ -754,6 +763,30 @@
                         "annotations": [
                             {
                                 "version_added": "128.0"
+                            }
+                        ],
+                        "name": "node"
+                    }
+                ],
+                "type": "function"
+            },
+            {
+                "annotations": [
+                    {
+                        "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/addressBooks.contacts.html#onmanycreated-node"
+                    },
+                    {
+                        "version_added": "153.0"
+                    }
+                ],
+                "description": "Fired when a large number of contacts are added. The contacts are not emitted for performance reasons. The event indicates significant changes, and consumers should rebuild any cached representation of the address book.",
+                "name": "onManyCreated",
+                "parameters": [
+                    {
+                        "$ref": "AddressBookNode",
+                        "annotations": [
+                            {
+                                "version_added": "153.0"
                             }
                         ],
                         "name": "node"
@@ -1201,7 +1234,7 @@
                         "version_added": "128.0"
                     }
                 ],
-                "description": "Object defining a query for $(ref:contacts.quickSearch).",
+                "description": "Object defining a query for $(ref:contacts.query).",
                 "id": "QueryInfo",
                 "properties": {
                     "includeLocal": {

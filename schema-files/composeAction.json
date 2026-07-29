@@ -5,7 +5,7 @@
                 "version_added": "68.0"
             }
         ],
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest",
         "types": [
             {
@@ -20,6 +20,7 @@
                                 "version_added": "68.0"
                             }
                         ],
+                        "description": "Defines the appearance and behavior of a composeAction button in the message compose window.",
                         "optional": true,
                         "properties": {
                             "browser_style": {
@@ -48,12 +49,18 @@
                                     "formattoolbar": {
                                         "annotations": [
                                             {
+                                                "text": "The formatting toolbar of the message compose window."
+                                            },
+                                            {
                                                 "version_added": "68.0"
                                             }
                                         ]
                                     },
                                     "maintoolbar": {
                                         "annotations": [
+                                            {
+                                                "text": "The main toolbar of the message compose window."
+                                            },
                                             {
                                                 "version_added": "68.0"
                                             }
@@ -143,6 +150,9 @@
                                     },
                                     "menu": {
                                         "annotations": [
+                                            {
+                                                "text": "The $(ref:menus.ContextType.compose_action_menu) context of the $(doc:menus) can be used to add menu entries to a menu-typed composeAction button."
+                                            },
                                             {
                                                 "version_added": "91.0"
                                             }

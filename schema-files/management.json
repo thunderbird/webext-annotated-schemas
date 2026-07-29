@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest",
         "types": [
             {
@@ -416,7 +416,7 @@
                 "type": "string"
             },
             {
-                "description": "How the extension was installed. One of<br><var>development</var>: The extension was loaded unpacked in developer mode,<br><var>normal</var>: The extension was installed normally via an .xpi file,<br><var>sideload</var>: The extension was installed by other software on the machine,<br><var>admin</var>: The extension was installed by policy,<br><var>other</var>: The extension was installed by other means.",
+                "description": "How the extension was installed.",
                 "enum": [
                     "development",
                     "normal",
@@ -424,6 +424,23 @@
                     "admin",
                     "other"
                 ],
+                "enums": {
+                    "admin": {
+                        "description": "The extension was installed by policy"
+                    },
+                    "development": {
+                        "description": "The extension was loaded unpacked in developer mode,"
+                    },
+                    "normal": {
+                        "description": "The extension was installed normally via an .xpi file"
+                    },
+                    "other": {
+                        "description": "The extension was installed by other means."
+                    },
+                    "sideload": {
+                        "description": "The extension was installed by other software on the machine"
+                    }
+                },
                 "id": "ExtensionInstallType",
                 "type": "string"
             },
@@ -471,7 +488,7 @@
                         "type": "array"
                     },
                     "icons": {
-                        "description": "A list of icon information. Note that this just reflects what was declared in the manifest, and the actual image at that url may be larger or smaller than what was declared, so you might consider using explicit width and height attributes on img tags referencing these images. See the <a href='manifest/icons'>manifest documentation on icons</a> for more details.",
+                        "description": "A list of icon information. Note that this just reflects what was declared in the manifest, and the actual image at that url may be larger or smaller than what was declared, so you might consider using explicit width and height attributes on img tags referencing these images. See the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/icons'>manifest documentation on icons</a> for more details.",
                         "items": {
                             "$ref": "IconInfo"
                         },
@@ -527,7 +544,7 @@
                         "type": "string"
                     },
                     "version": {
-                        "description": "The <a href='manifest/version'>version</a> of this extension.",
+                        "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/version'>version</a> of this extension.",
                         "type": "string"
                     },
                     "versionName": {
@@ -536,7 +553,7 @@
                                 "version_added": false
                             }
                         ],
-                        "description": "The <a href='manifest/version#version_name'>version name</a> of this extension if the manifest specified one.",
+                        "description": "The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/version_name'>version name</a> of this extension if the manifest specified one.",
                         "optional": true,
                         "type": "string"
                     }

@@ -5,7 +5,7 @@
                 "version_added": "68.0"
             }
         ],
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest",
         "types": [
             {
@@ -1033,6 +1033,9 @@
                     "header_pane_link": {
                         "annotations": [
                             {
+                                "text": "Applies when the user context-clicks a link in the message header pane."
+                            },
+                            {
                                 "version_added": "140.0"
                             }
                         ]
@@ -1181,12 +1184,18 @@
                     "checkbox": {
                         "annotations": [
                             {
+                                "text": "A menu item with a checkbox."
+                            },
+                            {
                                 "version_added": "68.0"
                             }
                         ]
                     },
                     "normal": {
                         "annotations": [
+                            {
+                                "text": "A normal menu item."
+                            },
                             {
                                 "version_added": "68.0"
                             }
@@ -1195,12 +1204,18 @@
                     "radio": {
                         "annotations": [
                             {
+                                "text": "A menu item with a radio button."
+                            },
+                            {
                                 "version_added": "68.0"
                             }
                         ]
                     },
                     "separator": {
                         "annotations": [
+                            {
+                                "text": "A separator line in the menu."
+                            },
                             {
                                 "version_added": "68.0"
                             }
@@ -1302,12 +1317,18 @@
                             "composeBcc": {
                                 "annotations": [
                                     {
+                                        "text": "The Bcc field of the message compose window."
+                                    },
+                                    {
                                         "version_added": "102.0"
                                     }
                                 ]
                             },
                             "composeCc": {
                                 "annotations": [
+                                    {
+                                        "text": "The Cc field of the message compose window."
+                                    },
                                     {
                                         "version_added": "102.0"
                                     }
@@ -1316,12 +1337,18 @@
                             "composeNewsgroupTo": {
                                 "annotations": [
                                     {
+                                        "text": "The Newsgroup field of the message compose window."
+                                    },
+                                    {
                                         "version_added": "102.0"
                                     }
                                 ]
                             },
                             "composeReplyTo": {
                                 "annotations": [
+                                    {
+                                        "text": "The Reply-To field of the message compose window."
+                                    },
                                     {
                                         "version_added": "102.0"
                                     }
@@ -1330,12 +1357,18 @@
                             "composeSubject": {
                                 "annotations": [
                                     {
+                                        "text": "The subject field of the message compose window."
+                                    },
+                                    {
                                         "version_added": "102.0"
                                     }
                                 ]
                             },
                             "composeTo": {
                                 "annotations": [
+                                    {
+                                        "text": "The To field of the message compose window."
+                                    },
                                     {
                                         "version_added": "102.0"
                                     }
@@ -1442,7 +1475,7 @@
                                 "version_added": "128.0"
                             }
                         ],
-                        "description": "The selected folders in the folder pane. Only available for the <var>folder_pane</var> context. The <permission>accountsRead</permission> permission is required. The returned selection includes the folders which would be affected by a context action through Thunderbirds UI, which may not be the actuall selected folders. For example, if the user has multiple folders selected and opens the context menu for a folder outside that selection, only the folder for which the context menu was opened, is returned.",
+                        "description": "The selected folders in the folder pane. Only available for the <var>folder_pane</var> context. The <permission>accountsRead</permission> permission is required. The returned selection includes the folders which would be affected by a context action through Thunderbird's UI, which may not be the currently selected folders. For example, if the user has multiple folders selected and opens the context menu for a folder outside that selection, only the folder for which the context menu was opened, is returned.",
                         "items": {
                             "$ref": "folders.MailFolder"
                         },
@@ -1456,7 +1489,7 @@
                                 "version_added": "91.0"
                             }
                         ],
-                        "description": "The selected message(s) in the message list (a.k.a. the thread pane). Only available for the <var>message_list</var> context. The <permission>messagesRead</permission> permission is required. The returned selection includes the messages which would be affected by a context action through Thunderbirds UI, which may not be the actuall selected messages. For example, if the user has multiple messages selected and opens the context menu for a message outside that selection, only the message for which the context menu was opened, is returned.",
+                        "description": "The selected message(s) in the message list (a.k.a. the thread pane). Only available for the <var>message_list</var> context. The <permission>messagesRead</permission> permission is required. The returned selection includes the messages which would be affected by a context action through Thunderbird's UI, which may not be the currently selected messages. For example, if the user has multiple messages selected and opens the context menu for a message outside that selection, only the message for which the context menu was opened, is returned.",
                         "optional": true
                     },
                     "selectionText": {
@@ -1608,12 +1641,18 @@
                             "composeBcc": {
                                 "annotations": [
                                     {
+                                        "text": "The Bcc field of the message compose window."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "composeCc": {
                                 "annotations": [
+                                    {
+                                        "text": "The Cc field of the message compose window."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -1622,12 +1661,18 @@
                             "composeNewsgroupTo": {
                                 "annotations": [
                                     {
+                                        "text": "The Newsgroup field of the message compose window."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "composeReplyTo": {
                                 "annotations": [
+                                    {
+                                        "text": "The Reply-To field of the message compose window."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -1636,12 +1681,18 @@
                             "composeSubject": {
                                 "annotations": [
                                     {
+                                        "text": "The subject field of the message compose window."
+                                    },
+                                    {
                                         "version_added": "91.0"
                                     }
                                 ]
                             },
                             "composeTo": {
                                 "annotations": [
+                                    {
+                                        "text": "The To field of the message compose window."
+                                    },
                                     {
                                         "version_added": "91.0"
                                     }
@@ -1827,7 +1878,7 @@
                                 "version_added": "128.0"
                             }
                         ],
-                        "description": "The selected folders in the folder pane. Only available for the <var>folder_pane</var> context. The <permission>accountsRead</permission> permission is required. The returned selection includes the folders which would be affected by a context action through Thunderbirds UI, which may not be the actuall selected folders. For example, if the user has multiple folders selected and opens the context menu for a folder outside that selection, only the folder for which the context menu was opened, is returned.",
+                        "description": "The selected folders in the folder pane. Only available for the <var>folder_pane</var> context. The <permission>accountsRead</permission> permission is required. The returned selection includes the folders which would be affected by a context action through Thunderbird's UI, which may not be the currently selected folders. For example, if the user has multiple folders selected and opens the context menu for a folder outside that selection, only the folder for which the context menu was opened, is returned.",
                         "items": {
                             "$ref": "folders.MailFolder"
                         },
@@ -1841,7 +1892,7 @@
                                 "version_added": "68.0"
                             }
                         ],
-                        "description": "The selected message(s) in the message list (a.k.a. the thread pane). Only available for the <var>message_list</var> context. The <permission>messagesRead</permission> permission is required. The returned selection includes the messages which would be affected by a context action through Thunderbirds UI, which may not be the actuall selected messages. For example, if the user has multiple messages selected and opens the context menu for a message outside that selection, only the message for which the context menu was opened, is returned.",
+                        "description": "The selected message(s) in the message list (a.k.a. the thread pane). Only available for the <var>message_list</var> context. The <permission>messagesRead</permission> permission is required. The returned selection includes the messages which would be affected by a context action through Thunderbird's UI, which may not be the currently selected messages. For example, if the user has multiple messages selected and opens the context menu for a message outside that selection, only the message for which the context menu was opened, is returned.",
                         "optional": true
                     },
                     "selectionText": {
@@ -1982,6 +2033,9 @@
                     "_execute_action": {
                         "annotations": [
                             {
+                                "text": "Triggers the action of the extension."
+                            },
+                            {
                                 "version_added": "128.3.2"
                             }
                         ]
@@ -1989,12 +2043,18 @@
                     "_execute_compose_action": {
                         "annotations": [
                             {
+                                "text": "Triggers the compose action of the extension."
+                            },
+                            {
                                 "version_added": "128.3.2"
                             }
                         ]
                     },
                     "_execute_message_display_action": {
                         "annotations": [
+                            {
+                                "text": "Triggers the message display action of the extension."
+                            },
                             {
                                 "version_added": "128.3.2"
                             }

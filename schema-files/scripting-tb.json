@@ -5,7 +5,7 @@
                 "version_added": "128.0"
             }
         ],
-        "applicationVersion": "140.13.0esr",
+        "applicationVersion": "153.0.1esr",
         "namespace": "manifest",
         "types": [
             {
@@ -36,6 +36,7 @@
                 "version_added": "128.0"
             }
         ],
+        "description": "The scripting.compose API allows to register and unregister scripts for the message compose window.",
         "functions": [
             {
                 "annotations": [
@@ -92,6 +93,9 @@
                 "annotations": [
                     {
                         "note": "Registered scripts will only be applied to newly opened message compose tabs. To apply the script to already open message compose tabs, manually inject your script by calling $(ref:scripting.executeScript) for each of the open <var>messageCompose</var> tabs."
+                    },
+                    {
+                        "hint": "There is a known issue in the logging mechanism of compose scripts: All entries logged to the console appear twice."
                     },
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/scripting.compose.html#registerscripts-scripts"
@@ -269,6 +273,7 @@
                 "version_added": "128.0"
             }
         ],
+        "description": "The scripting.messageDisplay API allows to register and unregister scripts for the message display window.",
         "functions": [
             {
                 "annotations": [
@@ -325,6 +330,9 @@
                 "annotations": [
                     {
                         "note": "Registered scripts will only be applied to newly opened messages. To apply the script to already open messages, manually inject your script by calling $(ref:scripting.executeScript) for each of the open <var>messageDisplay</var> tabs."
+                    },
+                    {
+                        "hint": "There is a known issue in the logging mechanism of message display scripts: All entries logged to the console appear twice."
                     },
                     {
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/scripting.messageDisplay.html#registerscripts-scripts"
