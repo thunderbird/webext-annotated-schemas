@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "153.0.3",
+        "applicationVersion": "154.0",
         "namespace": "manifest",
         "permissions": [],
         "types": [
@@ -143,12 +143,17 @@
                         "additionalProperties": {
                             "$ref": "UnrecognizedProperty"
                         },
-                        "onError": "warn",
                         "optional": true,
                         "properties": {
                             "extension_pages": {
                                 "description": "The Content Security Policy used for extension pages.",
                                 "format": "contentSecurityPolicy",
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "sandbox": {
+                                "description": "The content security policy used for sandboxed extension pages.",
+                                "format": "contentSecurityPolicySandbox",
                                 "optional": true,
                                 "type": "string"
                             }
@@ -255,6 +260,22 @@
                         },
                         "optional": true,
                         "type": "array"
+                    },
+                    "sandbox": {
+                        "additionalProperties": {
+                            "$ref": "UnrecognizedProperty"
+                        },
+                        "optional": true,
+                        "properties": {
+                            "pages": {
+                                "description": "The list of pages in the form of globs to serve as sandboxed extension pages.",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
                     },
                     "web_accessible_resources": {
                         "items": {
