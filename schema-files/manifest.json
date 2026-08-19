@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "153.0.3",
+        "applicationVersion": "154.0",
         "namespace": "manifest",
         "permissions": [],
         "types": [
@@ -151,7 +151,6 @@
                     },
                     "content_security_policy": {
                         "format": "contentSecurityPolicy",
-                        "onError": "warn",
                         "optional": true,
                         "type": "string"
                     },
@@ -242,6 +241,28 @@
                         },
                         "optional": true,
                         "type": "array"
+                    },
+                    "sandbox": {
+                        "additionalProperties": {
+                            "$ref": "UnrecognizedProperty"
+                        },
+                        "optional": true,
+                        "properties": {
+                            "content_security_policy": {
+                                "description": "The content security policy used for sandboxed extension pages.",
+                                "format": "contentSecurityPolicySandbox",
+                                "optional": true,
+                                "type": "string"
+                            },
+                            "pages": {
+                                "description": "The list of pages in the form of globs to serve as sandboxed extension pages.",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
                     },
                     "web_accessible_resources": {
                         "items": {
