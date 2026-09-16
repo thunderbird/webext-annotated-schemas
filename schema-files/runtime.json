@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "157.0a1",
+        "applicationVersion": "158.0a1",
         "namespace": "manifest",
         "types": [
             {
@@ -569,6 +569,20 @@
                     "description": "The manifest details.",
                     "properties": {},
                     "type": "object"
+                },
+                "type": "function"
+            },
+            {
+                "allowedContexts": [
+                    "content",
+                    "devtools"
+                ],
+                "description": "Returns the extension version as declared in the manifest.",
+                "name": "getVersion",
+                "parameters": [],
+                "returns": {
+                    "description": "The extension version.",
+                    "type": "string"
                 },
                 "type": "function"
             },
