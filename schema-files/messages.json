@@ -5,7 +5,7 @@
                 "version_added": "66"
             }
         ],
-        "applicationVersion": "158.0a1",
+        "applicationVersion": "159.0a1",
         "namespace": "manifest",
         "types": [
             {
@@ -3724,10 +3724,10 @@
                                 "version_added": "121"
                             }
                         ],
-                        "description": "Unique tag identifier (will be converted to lower case). Must not include <var>()<>{/%*\"</var> or spaces. Will be auto-generated if not provided.",
+                        "description": "Unique tag identifier (will be converted to lower case). Must be an ASCII string that is safe to use as an IMAP keyword. Will be auto-generated if not provided.",
                         "name": "key",
                         "optional": true,
-                        "pattern": "^[^ ()/{%*<>\"]+$",
+                        "pattern": "^[!#$&'+,\\-.0-9:=?@A-Z^_`a-z|~]+$",
                         "type": "string"
                     },
                     {
