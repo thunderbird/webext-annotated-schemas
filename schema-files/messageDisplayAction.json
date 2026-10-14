@@ -2,7 +2,7 @@
     {
         "annotations": [
             {
-                "version_added": "78.0"
+                "version_added": "68.2.3"
             }
         ],
         "applicationVersion": "153.5.1esr",
@@ -17,7 +17,7 @@
                         },
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "description": "Defines the appearance and behavior of a messageDisplayAction button in the message display window.",
@@ -26,7 +26,7 @@
                             "browser_style": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "default": false,
@@ -37,7 +37,7 @@
                             "default_area": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "Currently unused.",
@@ -48,7 +48,7 @@
                                 "$ref": "manifest.IconPath",
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "The paths to one or more icons for the messageDisplayAction button.",
@@ -57,7 +57,7 @@
                             "default_label": {
                                 "annotations": [
                                     {
-                                        "version_added": "91.0"
+                                        "version_added": "78.6.1"
                                     }
                                 ],
                                 "description": "The label of the messageDisplayAction button, defaults to its title. Can be set to an empty string to not display any label. If the containing toolbar is configured to display text only, the title will be used as fallback.",
@@ -68,7 +68,7 @@
                             "default_popup": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "The html document to be opened as a popup when the user clicks on the messageDisplayAction button. Ignored for action buttons with type <var>menu</var>.",
@@ -80,7 +80,7 @@
                             "default_title": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "The title of the messageDisplayAction button. This shows up in the tooltip and the label. Defaults to the add-on name.",
@@ -91,7 +91,7 @@
                             "theme_icons": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "Specifies dark and light icons to be used with themes. The <var>light</var> icon is used on dark backgrounds and vice versa. The default theme uses the <var>default_icon</var> for light backgrounds (if specified).",
@@ -146,7 +146,7 @@
     {
         "annotations": [
             {
-                "version_added": "78.0"
+                "version_added": "68.2.3"
             }
         ],
         "description": "Use a messageDisplayAction to put a button in the message display toolbar. In addition to its icon, a messageDisplayAction button can also have a tooltip, a badge, and a popup.",
@@ -157,7 +157,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#onclicked-tab-info"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "description": "Fired when a messageDisplayAction button is clicked. This event will not fire if the messageDisplayAction has a popup. This is a user input event handler. For asynchronous listeners some <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/User_actions'>restrictions</a> apply.",
@@ -167,7 +167,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "tab"
@@ -193,7 +193,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#settitle-details"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "async": "callback",
@@ -203,7 +203,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "details",
@@ -211,7 +211,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "Sets the title only for the given tab.",
@@ -222,14 +222,14 @@
                             "title": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "78.0"
+                                                "version_added": "68.2.3"
                                             }
                                         ],
                                         "type": "string"
@@ -237,7 +237,7 @@
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "78.0"
+                                                "version_added": "68.2.3"
                                             }
                                         ],
                                         "type": "null"
@@ -248,7 +248,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -263,7 +263,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "callback",
@@ -280,7 +280,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#gettitle-details"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "async": "callback",
@@ -290,7 +290,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "details",
@@ -324,7 +324,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "callback",
@@ -333,7 +333,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "name": "result",
@@ -351,7 +351,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#setlabel-details"
                     },
                     {
-                        "version_added": "91.0"
+                        "version_added": "78.6.1"
                     }
                 ],
                 "async": "callback",
@@ -361,7 +361,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0"
+                                "version_added": "78.6.1"
                             }
                         ],
                         "name": "details",
@@ -369,14 +369,14 @@
                             "label": {
                                 "annotations": [
                                     {
-                                        "version_added": "91.0"
+                                        "version_added": "78.6.1"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "91.0"
+                                                "version_added": "78.6.1"
                                             }
                                         ],
                                         "type": "string"
@@ -384,7 +384,7 @@
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "91.0"
+                                                "version_added": "78.6.1"
                                             }
                                         ],
                                         "type": "null"
@@ -395,7 +395,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "91.0"
+                                        "version_added": "78.6.1"
                                     }
                                 ],
                                 "description": "Sets the label only for the given tab.",
@@ -406,7 +406,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "91.0"
+                                        "version_added": "78.6.1"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -421,7 +421,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0"
+                                "version_added": "78.6.1"
                             }
                         ],
                         "name": "callback",
@@ -438,7 +438,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#getlabel-details"
                     },
                     {
-                        "version_added": "91.0"
+                        "version_added": "78.6.1"
                     }
                 ],
                 "async": "callback",
@@ -448,7 +448,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0"
+                                "version_added": "78.6.1"
                             }
                         ],
                         "name": "details",
@@ -482,7 +482,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0"
+                                "version_added": "78.6.1"
                             }
                         ],
                         "name": "callback",
@@ -491,14 +491,14 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "91.0"
+                                        "version_added": "78.6.1"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "91.0"
+                                                "version_added": "78.6.1"
                                             }
                                         ],
                                         "type": "string"
@@ -526,7 +526,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#seticon-details"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "async": "callback",
@@ -536,7 +536,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "details",
@@ -544,7 +544,7 @@
                             "imageData": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "choices": [
@@ -552,7 +552,7 @@
                                         "$ref": "ImageDataType",
                                         "annotations": [
                                             {
-                                                "version_added": "78.0"
+                                                "version_added": "68.2.3"
                                             }
                                         ]
                                     },
@@ -560,7 +560,7 @@
                                         "$ref": "ImageDataDictionary",
                                         "annotations": [
                                             {
-                                                "version_added": "78.0"
+                                                "version_added": "68.2.3"
                                             }
                                         ]
                                     }
@@ -572,7 +572,7 @@
                                 "$ref": "manifest.IconPath",
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "The paths to one or more icons for the messageDisplayAction button.",
@@ -581,7 +581,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "Sets the icon only for the given tab.",
@@ -592,7 +592,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -607,7 +607,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "callback",
@@ -624,7 +624,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#setpopup-details"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "async": "callback",
@@ -634,7 +634,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "details",
@@ -642,14 +642,14 @@
                             "popup": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "78.0"
+                                                "version_added": "68.2.3"
                                             }
                                         ],
                                         "type": "string"
@@ -657,7 +657,7 @@
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "78.0"
+                                                "version_added": "68.2.3"
                                             }
                                         ],
                                         "type": "null"
@@ -668,7 +668,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "Sets the popup only for the given tab.",
@@ -679,7 +679,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -694,7 +694,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "callback",
@@ -711,7 +711,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#getpopup-details"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "async": "callback",
@@ -721,7 +721,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "details",
@@ -755,7 +755,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "callback",
@@ -764,7 +764,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "name": "result",
@@ -782,7 +782,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#setbadgetext-details"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "async": "callback",
@@ -792,7 +792,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "details",
@@ -800,7 +800,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "Sets the badge text only for the given tab.",
@@ -811,14 +811,14 @@
                             "text": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "78.0"
+                                                "version_added": "68.2.3"
                                             }
                                         ],
                                         "type": "string"
@@ -826,7 +826,7 @@
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "78.0"
+                                                "version_added": "68.2.3"
                                             }
                                         ],
                                         "type": "null"
@@ -837,7 +837,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -852,7 +852,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "callback",
@@ -869,7 +869,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#getbadgetext-details"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "async": "callback",
@@ -879,7 +879,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "details",
@@ -913,7 +913,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "callback",
@@ -922,7 +922,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "name": "result",
@@ -1095,7 +1095,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#setbadgebackgroundcolor-details"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "async": "callback",
@@ -1105,7 +1105,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "details",
@@ -1113,14 +1113,14 @@
                             "color": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "78.0"
+                                                "version_added": "68.2.3"
                                             }
                                         ],
                                         "type": "string"
@@ -1129,14 +1129,14 @@
                                         "$ref": "ColorArray",
                                         "annotations": [
                                             {
-                                                "version_added": "78.0"
+                                                "version_added": "68.2.3"
                                             }
                                         ]
                                     },
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "78.0"
+                                                "version_added": "68.2.3"
                                             }
                                         ],
                                         "type": "null"
@@ -1147,7 +1147,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "Sets the background color for the badge only for the given tab.",
@@ -1158,7 +1158,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -1173,7 +1173,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "callback",
@@ -1190,7 +1190,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#getbadgebackgroundcolor-details"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "async": "callback",
@@ -1200,7 +1200,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "details",
@@ -1234,7 +1234,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "callback",
@@ -1244,7 +1244,7 @@
                                 "$ref": "ColorArray",
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.2.3"
                                     }
                                 ],
                                 "name": "result"
@@ -1261,7 +1261,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#enable-tabid"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "async": "callback",
@@ -1271,7 +1271,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "description": "The id of the tab for which you want to modify the messageDisplayAction button.",
@@ -1283,7 +1283,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "callback",
@@ -1300,7 +1300,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#disable-tabid"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "async": "callback",
@@ -1310,7 +1310,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "description": "The id of the tab for which you want to modify the messageDisplayAction button.",
@@ -1322,7 +1322,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "callback",
@@ -1339,7 +1339,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#isenabled-details"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "async": "callback",
@@ -1349,7 +1349,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.2.3"
                             }
                         ],
                         "name": "details",
@@ -1409,7 +1409,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#openpopup-options"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "async": "callback",
@@ -1475,7 +1475,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#colorarray"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "description": "An array of four integers in the range [0,255] that make up the RGBA color. For example, opaque red is <var>[255, 0, 0, 255]</var>.",
@@ -1498,7 +1498,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplayAction.html#imagedatatype"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.2.3"
                     }
                 ],
                 "description": "Pixel data for an image. Must be an <a href='https://developer.mozilla.org/en-US/docs/Web/API/ImageData'>ImageData</a> object (for example, from a <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/canvas'>canvas</a> element).",

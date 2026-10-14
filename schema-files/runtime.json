@@ -70,6 +70,11 @@
                 "name": "onInstalled",
                 "parameters": [
                     {
+                        "annotations": [
+                            {
+                                "version_added": "60.0"
+                            }
+                        ],
                         "name": "details",
                         "properties": {
                             "id": {
@@ -606,6 +611,14 @@
                     "content",
                     "devtools"
                 ],
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getDocumentId"
+                    },
+                    {
+                        "version_added": "153.0"
+                    }
+                ],
                 "description": "Get the documentId of any window global or frame element. Throws for invalid targets, such as unloaded frames.",
                 "name": "getDocumentId",
                 "parameters": [
@@ -654,6 +667,17 @@
                 "annotations": [
                     {
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/setUninstallURL"
+                    },
+                    {
+                        "version_added": "60.0"
+                    },
+                    {
+                        "bcd": true,
+                        "note": "The maximum length is 1023 characters."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Thunderbird 47–115: The maximum length is 255 characters."
                     }
                 ],
                 "async": "callback",
@@ -844,6 +868,11 @@
                         "type": "any"
                     },
                     {
+                        "annotations": [
+                            {
+                                "version_added": "60.0"
+                            }
+                        ],
                         "name": "options",
                         "optional": true,
                         "properties": {
@@ -1176,7 +1205,7 @@
                     "documentId": {
                         "annotations": [
                             {
-                                "version_added": false
+                                "version_added": "153.0"
                             }
                         ],
                         "description": "A UUID of the document that opened the connection.",

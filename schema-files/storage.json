@@ -301,11 +301,15 @@
                             },
                             {
                                 "bcd": true,
-                                "note": "Supported by the <code>sync</code> and, from Thunderbird 131, <code>session</code> storage areas."
+                                "note": "Supported by the <code>sync</code> storage area from Thunderbird 78."
                             },
                             {
                                 "bcd": true,
-                                "note": "Not implemented in <code>local</code>, see <a href=\"https://bugzil.la/1385832\">bug 1385832</a>"
+                                "note": "Supported by the <code>session</code> storage area from Thunderbird 131."
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Supported by the <code>local</code> and <code>managed</code> storage areas from Thunderbird 144."
                             },
                             {
                                 "version_added": "78.0"
@@ -347,6 +351,14 @@
                         "type": "function"
                     },
                     {
+                        "annotations": [
+                            {
+                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getKeys"
+                            },
+                            {
+                                "version_added": "153.0"
+                            }
+                        ],
                         "async": "callback",
                         "description": "Gets the keys of all items in storage.",
                         "name": "getKeys",

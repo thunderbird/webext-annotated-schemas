@@ -816,7 +816,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messages.html#getraw-message-options"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.7.0"
                     }
                 ],
                 "async": "callback",
@@ -826,7 +826,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.7.0"
                             }
                         ],
                         "choices": [
@@ -834,7 +834,7 @@
                                 "$ref": "messages.MessageId",
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.7.0"
                                     }
                                 ]
                             },
@@ -1234,7 +1234,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messages.html#query-queryinfo"
                     },
                     {
-                        "version_added": "78.0"
+                        "version_added": "68.1.3"
                     }
                 ],
                 "async": "callback",
@@ -1244,7 +1244,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.0"
+                                "version_added": "68.1.3"
                             }
                         ],
                         "default": {},
@@ -1284,14 +1284,14 @@
                             "attachment": {
                                 "annotations": [
                                     {
-                                        "version_added": "102.0"
+                                        "version_added": "91.4.1"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "102.0"
+                                                "version_added": "91.4.1"
                                             }
                                         ],
                                         "type": "boolean"
@@ -1311,7 +1311,7 @@
                             "author": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.1.3"
                                     }
                                 ],
                                 "description": "Returns only messages with this value matching the author. The search value is a single email address, a name or a combination (e.g.: <var>Name <user@domain.org></var>). The address part of the search value (if provided) must match the author's address completely. The name part of the search value (if provided) must match the author's name partially. All matches are done case-insensitive.",
@@ -1331,7 +1331,7 @@
                             "body": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.1.3"
                                     }
                                 ],
                                 "description": "Returns only messages with this value in the body of the mail.",
@@ -1341,7 +1341,7 @@
                             "flagged": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.1.3"
                                     }
                                 ],
                                 "description": "Returns only flagged (or unflagged if false) messages.",
@@ -1352,7 +1352,7 @@
                                 "$ref": "folders.MailFolder",
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.1.3"
                                     }
                                 ],
                                 "deprecated": "Support deprecated since Thunderbird 121 and removed in Manifest V3: messages.queryInfo.folder has been replaced by messages.queryInfo.folderId.",
@@ -1393,7 +1393,7 @@
                                 "$ref": "extensionTypes.Date",
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.1.3"
                                     }
                                 ],
                                 "description": "Returns only messages with a date after this value.",
@@ -1402,7 +1402,7 @@
                             "fromMe": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.1.3"
                                     }
                                 ],
                                 "description": "Returns only messages with the author's address matching any configured identity.",
@@ -1412,7 +1412,7 @@
                             "fullText": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.1.3"
                                     }
                                 ],
                                 "description": "Returns only messages with this value somewhere in the mail (subject, body or author).",
@@ -1492,7 +1492,7 @@
                             "recipients": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.1.3"
                                     }
                                 ],
                                 "description": "Returns only messages whose recipients match all specified addresses. The search value is a semicolon separated list of email addresses, names or combinations (e.g.: <var>Name <user@domain.org></var>). For a match, all specified addresses must equal a recipient's address completely and all specified names must match a recipient's name partially. All matches are done case-insensitive.",
@@ -1522,7 +1522,7 @@
                             "subject": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.1.3"
                                     }
                                 ],
                                 "description": "Returns only messages whose subject contains the provided string.",
@@ -1543,7 +1543,7 @@
                                 "$ref": "extensionTypes.Date",
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.1.3"
                                     }
                                 ],
                                 "description": "Returns only messages with a date before this value.",
@@ -1552,7 +1552,7 @@
                             "toMe": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.1.3"
                                     }
                                 ],
                                 "description": "Returns only messages with at least one recipient address matching any configured identity.",
@@ -1562,7 +1562,7 @@
                             "unread": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.0"
+                                        "version_added": "68.1.3"
                                     }
                                 ],
                                 "description": "Returns only unread (or read if false) messages.",

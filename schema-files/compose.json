@@ -122,7 +122,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/compose.html#onaftersend-tab-sendinfo"
                     },
                     {
-                        "version_added": "115.0"
+                        "version_added": "102.3.0"
                     }
                 ],
                 "description": "Fired when sending a message succeeded or failed.",
@@ -132,7 +132,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "115.0"
+                                "version_added": "102.3.0"
                             }
                         ],
                         "description": "The tab of the associated compose window. By the time the event listener is called, this window may have already been destroyed.",
@@ -141,7 +141,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "115.0"
+                                "version_added": "102.3.0"
                             }
                         ],
                         "name": "sendInfo",
@@ -158,7 +158,7 @@
                             "error": {
                                 "annotations": [
                                     {
-                                        "version_added": "115.0"
+                                        "version_added": "102.3.0"
                                     }
                                 ],
                                 "description": "An error description, if sending the message failed.",
@@ -168,7 +168,7 @@
                             "headerMessageId": {
                                 "annotations": [
                                     {
-                                        "version_added": "115.0"
+                                        "version_added": "102.3.0"
                                     }
                                 ],
                                 "description": "The header messageId of the outgoing message. Only included for actually sent messages.",
@@ -178,7 +178,7 @@
                             "messages": {
                                 "annotations": [
                                     {
-                                        "version_added": "115.0"
+                                        "version_added": "102.3.0"
                                     }
                                 ],
                                 "description": "Copies of the sent message. The number of created copies depends on the applied file carbon copy configuration (fcc). The <permission>messagesRead</permission> permission is required for this property to be included.",
@@ -190,7 +190,7 @@
                             "mode": {
                                 "annotations": [
                                     {
-                                        "version_added": "115.0"
+                                        "version_added": "102.3.0"
                                     }
                                 ],
                                 "description": "The used send mode.",
@@ -205,7 +205,7 @@
                                                 "text": "The message was queued to be sent later."
                                             },
                                             {
-                                                "version_added": "115.0"
+                                                "version_added": "102.3.0"
                                             }
                                         ]
                                     },
@@ -215,7 +215,7 @@
                                                 "text": "The message was sent immediately."
                                             },
                                             {
-                                                "version_added": "115.0"
+                                                "version_added": "102.3.0"
                                             }
                                         ]
                                     }
@@ -237,7 +237,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/compose.html#onaftersave-tab-saveinfo"
                     },
                     {
-                        "version_added": "115.0"
+                        "version_added": "102.3.0"
                     }
                 ],
                 "description": "Fired when saving a message as draft or template succeeded or failed.",
@@ -247,7 +247,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "115.0"
+                                "version_added": "102.3.0"
                             }
                         ],
                         "name": "tab"
@@ -255,7 +255,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "115.0"
+                                "version_added": "102.3.0"
                             }
                         ],
                         "name": "saveInfo",
@@ -272,7 +272,7 @@
                             "error": {
                                 "annotations": [
                                     {
-                                        "version_added": "115.0"
+                                        "version_added": "102.3.0"
                                     }
                                 ],
                                 "description": "An error description, if saving the message failed.",
@@ -285,7 +285,7 @@
                                         "note": "Starting with Thunderbird version 142, the File Carbon Copy (FCC) configuration is no longer respected during save operations. Regardless of any FCC settings, only one message is saved, and it is stored in the default folder for the given save mode."
                                     },
                                     {
-                                        "version_added": "115.0"
+                                        "version_added": "102.3.0"
                                     }
                                 ],
                                 "description": "An array with exactly one element, the saved message. The <permission>messagesRead</permission> permission is required for this property to be included.",
@@ -297,7 +297,7 @@
                             "mode": {
                                 "annotations": [
                                     {
-                                        "version_added": "115.0"
+                                        "version_added": "102.3.0"
                                     }
                                 ],
                                 "description": "The used save mode.",
@@ -323,7 +323,7 @@
                                                 "text": "The message was saved as a draft."
                                             },
                                             {
-                                                "version_added": "115.0"
+                                                "version_added": "102.3.0"
                                             }
                                         ]
                                     },
@@ -333,7 +333,7 @@
                                                 "text": "The message was saved as a template."
                                             },
                                             {
-                                                "version_added": "115.0"
+                                                "version_added": "102.3.0"
                                             }
                                         ]
                                     }
@@ -427,7 +427,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/compose.html#onidentitychanged-tab-identityid"
                     },
                     {
-                        "version_added": "91.0"
+                        "version_added": "78.0"
                     }
                 ],
                 "description": "Fired when the user changes the identity that will be used to send a message being composed.",
@@ -437,7 +437,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "91.0"
+                                "version_added": "78.0"
                             }
                         ],
                         "name": "tab"
@@ -445,7 +445,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0"
+                                "version_added": "78.0"
                             }
                         ],
                         "name": "identityId",
@@ -556,7 +556,7 @@
                         "$ref": "ComposeDetails",
                         "annotations": [
                             {
-                                "version_added": "91.0"
+                                "version_added": "78.7.0"
                             }
                         ],
                         "name": "details",
@@ -1848,7 +1848,7 @@
                     "attachments": {
                         "annotations": [
                             {
-                                "version_added": "91.0"
+                                "version_added": "78.3.2"
                             }
                         ],
                         "description": "Only used in the begin* functions. Attachments to add to the message.",
@@ -1858,7 +1858,7 @@
                                     "$ref": "FileAttachment",
                                     "annotations": [
                                         {
-                                            "version_added": "91.0"
+                                            "version_added": "78.3.2"
                                         }
                                     ]
                                 },
@@ -2203,7 +2203,7 @@
                         "$ref": "messages.MessageId",
                         "annotations": [
                             {
-                                "version_added": "102.0"
+                                "version_added": "91.3.1"
                             }
                         ],
                         "description": "The id of the original message (in case of draft, template, forward or reply). Read-only. Is <var>undefined</var> in all other cases or if the original message was opened from file. The <permission>messagesRead</permission> permission is required to use this property.",
@@ -2416,7 +2416,7 @@
                     "size": {
                         "annotations": [
                             {
-                                "version_added": "91.0"
+                                "version_added": "78.5.0"
                             }
                         ],
                         "description": "The size in bytes of this attachment. Read-only.",
