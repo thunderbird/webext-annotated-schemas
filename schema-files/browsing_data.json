@@ -82,7 +82,11 @@
                     },
                     {
                         "bcd": true,
-                        "note": "Specifying <code>dataTypes.history</code> will also remove download history and service workers."
+                        "note": "Specifying <code>dataTypes.history</code> also removes download history and service workers."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Specifying <code>dataTypes.localStorage</code> also removes <a href=\"https://developer.mozilla.org/docs/Web/API/Window/sessionStorage\">sessionStorage</a> from Thunderbird 146."
                     },
                     {
                         "version_added": "53"
@@ -135,10 +139,6 @@
                 "annotations": [
                     {
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/removeCache"
-                    },
-                    {
-                        "bcd": true,
-                        "note": "<code>removalOptions.since</code> is not supported."
                     },
                     {
                         "version_added": "53"
@@ -321,7 +321,7 @@
                     },
                     {
                         "bcd": true,
-                        "note": "<code>removalOptions.since</code> is not supported."
+                        "note": "Also removes <a href=\"https://developer.mozilla.org/docs/Web/API/Window/sessionStorage\">sessionStorage</a> from Thunderbird 146."
                     },
                     {
                         "version_added": "57"
@@ -426,14 +426,19 @@
         ],
         "types": [
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/RemovalOptions"
+                    },
+                    {
+                        "version_added": "53"
+                    }
+                ],
                 "description": "Options that determine exactly what data will be removed.",
                 "id": "RemovalOptions",
                 "properties": {
                     "cookieStoreId": {
                         "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/RemovalOptions"
-                            },
                             {
                                 "version_added": "84"
                             }
@@ -519,14 +524,19 @@
                 "type": "object"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/DataTypeSet"
+                    },
+                    {
+                        "version_added": "53"
+                    }
+                ],
                 "description": "A set of data types. Missing data types are interpreted as <code>false</code>.",
                 "id": "DataTypeSet",
                 "properties": {
                     "cache": {
                         "annotations": [
-                            {
-                                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/DataTypeSet"
-                            },
                             {
                                 "version_added": "53"
                             }
