@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "159.0b2",
+        "applicationVersion": "159.0b3",
         "namespace": "manifest",
         "types": [
             {
@@ -771,12 +771,24 @@
                 "type": "string"
             },
             {
+                "annotations": [
+                    {
+                        "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/downloads/DownloadItem"
+                    },
+                    {
+                        "version_added": "47"
+                    }
+                ],
                 "id": "DownloadItem",
                 "properties": {
                     "byExtensionId": {
                         "annotations": [
                             {
                                 "version_added": "47"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Thunderbird 47–68: Always returns <code>undefined</code>."
                             }
                         ],
                         "optional": true,
@@ -786,6 +798,10 @@
                         "annotations": [
                             {
                                 "version_added": "47"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Thunderbird 47–68: Always returns <code>undefined</code>."
                             }
                         ],
                         "optional": true,
