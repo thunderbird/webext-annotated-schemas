@@ -2,7 +2,7 @@
     {
         "annotations": [
             {
-                "version_added": "68.1.1"
+                "version_added": "78.0"
             }
         ],
         "description": "A message can be displayed in either Thunderbird's main mail tab (a.k.a 3-pane tab), a tab of its own, or in a window of its own. All are referenced by <var>tabId</var> in this API. Display windows are considered to have exactly one tab, which has limited functionality compared to tabs from the main window.",
@@ -13,7 +13,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplay.html#onmessagedisplayed-tab-message"
                     },
                     {
-                        "version_added": "68.1.1"
+                        "version_added": "78.0"
                     }
                 ],
                 "description": "Fired when a message is displayed, whether in a 3-pane tab, a message tab, or a message window.",
@@ -23,7 +23,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "68.1.1"
+                                "version_added": "78.0"
                             }
                         ],
                         "name": "tab"
@@ -32,7 +32,7 @@
                         "$ref": "messages.MessageHeader",
                         "annotations": [
                             {
-                                "version_added": "68.1.1"
+                                "version_added": "78.0"
                             }
                         ],
                         "name": "message"
@@ -46,7 +46,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplay.html#onmessagesdisplayed-tab-messages-displayedmessages"
                     },
                     {
-                        "version_added": "78.3.2"
+                        "version_added": "91.0"
                     }
                 ],
                 "description": "Fired when either a single message is displayed or when multiple messages are displayed, whether in a 3-pane tab, a message tab, or a message window.",
@@ -56,7 +56,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "78.3.2"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "tab"
@@ -64,7 +64,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.3.2"
+                                "version_added": "91.0"
                             }
                         ],
                         "items": {
@@ -84,7 +84,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplay.html#getdisplayedmessage-tabid"
                     },
                     {
-                        "version_added": "68.1.1"
+                        "version_added": "78.0"
                     }
                 ],
                 "async": "callback",
@@ -94,7 +94,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "68.1.1"
+                                "version_added": "78.0"
                             }
                         ],
                         "minimum": 1,
@@ -148,7 +148,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv2/messageDisplay.html#getdisplayedmessages-tabid"
                     },
                     {
-                        "version_added": "78.3.2"
+                        "version_added": "91.0"
                     }
                 ],
                 "async": "callback",
@@ -158,7 +158,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.3.2"
+                                "version_added": "91.0"
                             }
                         ],
                         "minimum": 1,
@@ -331,7 +331,7 @@
         ]
     },
     {
-        "applicationVersion": "153.3.1esr",
+        "applicationVersion": "153.5.1esr",
         "namespace": "manifest"
     }
 ]
