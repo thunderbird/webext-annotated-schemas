@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "159.0b2",
+        "applicationVersion": "159.0b3",
         "namespace": "manifest",
         "types": [
             {
@@ -26,6 +26,14 @@
         ]
     },
     {
+        "annotations": [
+            {
+                "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies"
+            },
+            {
+                "version_added": "45"
+            }
+        ],
         "description": "Use the <code>browser.cookies</code> API to query and modify cookies, and to be notified when they change.",
         "events": [
             {
@@ -498,6 +506,15 @@
                         "type": "string"
                     },
                     "expirationDate": {
+                        "annotations": [
+                            {
+                                "bcd": true,
+                                "note": "Includes milliseconds in the fractional part from Thunderbird 142."
+                            },
+                            {
+                                "version_added": "45"
+                            }
+                        ],
                         "description": "The expiration date of the cookie as the number of seconds since the UNIX epoch. Not provided for session cookies.",
                         "optional": true,
                         "type": "number"
