@@ -2,10 +2,10 @@
     {
         "annotations": [
             {
-                "version_added": "60.3.0"
+                "version_added": "68.0"
             }
         ],
-        "applicationVersion": "153.3.1esr",
+        "applicationVersion": "153.5.1esr",
         "namespace": "manifest",
         "types": [
             {
@@ -39,7 +39,7 @@
                             "tabs": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ]
                             }
@@ -53,7 +53,7 @@
     {
         "annotations": [
             {
-                "version_added": "60.3.0"
+                "version_added": "68.0"
             }
         ],
         "description": "The tabs API supports creating, modifying and interacting with tabs in Thunderbird windows.",
@@ -64,7 +64,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#oncreated-tab"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "Fired when a tab is created. The tab may still be loading, with its title being <var>loading...</var> and its URL being <var>about:blank</var>. To detect when the tab has finished loading, listen to the $(ref:tabs.onUpdated) event.",
@@ -74,7 +74,7 @@
                         "$ref": "Tab",
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "Details of the tab that was created.",
@@ -89,7 +89,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#onupdated-tabid-changeinfo-tab"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "Fired when a tab is updated.",
@@ -98,7 +98,7 @@
                         "$ref": "UpdateFilter",
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "A set of filters that restricts the events that will be sent to this listener.",
@@ -111,7 +111,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "minimum": 0,
@@ -121,7 +121,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "Lists the changes to the state of the tab that was updated.",
@@ -130,7 +130,7 @@
                             "favIconUrl": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The tab's new favicon URL.",
@@ -140,7 +140,7 @@
                             "status": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The status of the tab. Can be either <var>loading</var> or <var>complete</var>.",
@@ -150,7 +150,7 @@
                             "url": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The tab's URL if it has changed.",
@@ -164,7 +164,7 @@
                         "$ref": "Tab",
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "Gives the state of the tab that was updated.",
@@ -179,7 +179,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#onmoved-tabid-moveinfo"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "Fired when a tab is moved within a window. Only one move event is fired, representing the tab the user directly moved. Move events are not fired for the other tabs that must move in response. This event is not fired when a tab is moved between windows. For that, see $(ref:tabs.onDetached).",
@@ -188,7 +188,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "minimum": 0,
@@ -198,7 +198,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "moveInfo",
@@ -206,7 +206,7 @@
                             "fromIndex": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "minimum": 0,
@@ -215,7 +215,7 @@
                             "toIndex": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "minimum": 0,
@@ -224,7 +224,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "minimum": 0,
@@ -242,7 +242,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#onactivated-activeinfo"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "Fires when the active tab in a window changes. The tab's URL may not be set at the time this event fired, listen to the $(ref:tabs.onUpdated) event instead to be notified when a URL is set.",
@@ -251,7 +251,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "activeInfo",
@@ -270,7 +270,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The ID of the tab that has become active.",
@@ -280,7 +280,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The ID of the window the active tab changed inside of.",
@@ -299,7 +299,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#ondetached-tabid-detachinfo"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "Fired when a tab is detached from a window, for example because it is being moved between windows.",
@@ -308,7 +308,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "minimum": 0,
@@ -318,7 +318,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "detachInfo",
@@ -326,7 +326,7 @@
                             "oldPosition": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "minimum": 0,
@@ -335,7 +335,7 @@
                             "oldWindowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "minimum": 0,
@@ -353,7 +353,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#onattached-tabid-attachinfo"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "Fired when a tab is attached to a window, for example because it was moved between windows.",
@@ -362,7 +362,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "minimum": 0,
@@ -372,7 +372,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "attachInfo",
@@ -380,7 +380,7 @@
                             "newPosition": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "minimum": 0,
@@ -389,7 +389,7 @@
                             "newWindowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "minimum": 0,
@@ -407,7 +407,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#onremoved-tabid-removeinfo"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "Fired when a tab is closed.",
@@ -416,7 +416,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "minimum": 0,
@@ -426,7 +426,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "removeInfo",
@@ -434,7 +434,7 @@
                             "isWindowClosing": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Is <var>true</var> when the tab is being closed because its window is being closed.",
@@ -443,7 +443,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The window whose tab is closed.",
@@ -464,7 +464,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#get-tabid"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -474,7 +474,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "minimum": 0,
@@ -484,7 +484,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -494,7 +494,7 @@
                                 "$ref": "Tab",
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "name": "tab"
@@ -511,7 +511,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#getcurrent"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -521,7 +521,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -531,7 +531,7 @@
                                 "$ref": "Tab",
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "name": "tab",
@@ -549,7 +549,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#connect-tabid-connectinfo"
                     },
                     {
-                        "version_added": "78.4.0"
+                        "version_added": "91.0"
                     }
                 ],
                 "description": "Connects to the content script(s) in the specified tab. The <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onConnect'>runtime.onConnect</a> event is fired in each content script running in the specified tab for the current extension. For more details, see <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts'>Content Script Messaging</a>.",
@@ -558,7 +558,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.4.0"
+                                "version_added": "91.0"
                             }
                         ],
                         "minimum": 0,
@@ -568,7 +568,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.4.0"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "connectInfo",
@@ -587,7 +587,7 @@
                             "frameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.4.0"
+                                        "version_added": "91.0"
                                     }
                                 ],
                                 "description": "Open a port to a specific frame identified by <var>frameId</var> instead of all frames in the tab.",
@@ -598,7 +598,7 @@
                             "name": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.4.0"
+                                        "version_added": "91.0"
                                     }
                                 ],
                                 "description": "Will be passed into onConnect for content scripts that are listening for the connection event.",
@@ -621,7 +621,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#sendmessage-tabid-message-options-responsecallback"
                     },
                     {
-                        "version_added": "78.4.0"
+                        "version_added": "91.0"
                     }
                 ],
                 "async": "responseCallback",
@@ -631,7 +631,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.4.0"
+                                "version_added": "91.0"
                             }
                         ],
                         "minimum": 0,
@@ -641,7 +641,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.4.0"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "message",
@@ -650,7 +650,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.4.0"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "options",
@@ -669,7 +669,7 @@
                             "frameId": {
                                 "annotations": [
                                     {
-                                        "version_added": "78.4.0"
+                                        "version_added": "91.0"
                                     }
                                 ],
                                 "description": "Send a message to a specific frame identified by <var>frameId</var> instead of all frames in the tab.",
@@ -683,7 +683,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "78.4.0"
+                                "version_added": "91.0"
                             }
                         ],
                         "name": "responseCallback",
@@ -692,7 +692,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "78.4.0"
+                                        "version_added": "91.0"
                                     }
                                 ],
                                 "description": "The JSON response object sent by the handler of the message. If an error occurs while connecting to the specified tab, the callback will be called with no arguments and <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/lastError'>runtime.lastError</a> will be set to the error message.",
@@ -711,7 +711,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#create-createproperties"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -721,7 +721,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "Properties for the new tab. Defaults to an empty tab, if no <var>url</var> is provided.",
@@ -730,7 +730,7 @@
                             "active": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Whether the tab should become the active tab in the window. Does not affect whether the window is focused (see $(ref:windows.update)). Defaults to <var>true</var>.",
@@ -756,7 +756,7 @@
                             "index": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The position the tab should take in the window. The provided value will be clamped to between zero and the number of tabs in the window.",
@@ -805,7 +805,7 @@
                             "selected": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "deprecated": "Please use <var>createProperties.active</var>.",
@@ -817,7 +817,7 @@
                             "url": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The URL to navigate the tab to initially. If the URL points to a content page (a web page, an extension page or a registered WebExtension protocol handler page), the tab will navigate to the requested page. All other URLs will be opened externally after creating an empty tab. Fully-qualified URLs must include a scheme (i.e. <var>http://www.google.com</var>, not <var>www.google.com</var>). Relative URLs will be relative to the root of the extension. ",
@@ -827,7 +827,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The window to create the new tab in. Defaults to the current window.",
@@ -841,7 +841,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -851,7 +851,7 @@
                                 "$ref": "Tab",
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "A Promise that will be fulfilled with a $(ref:tabs.Tab) object containing details about the created tab. If the tab could not be created (for example, because it was added to a non-normal window) the promise will be rejected with an error message. The returned promise resolves as soon as the tab has been created. The tab may still be loading, with its title being <var>loading...</var> and its URL being <var>about:blank</var>. To detect when the tab has finished loading, listen to the $(ref:tabs.onUpdated) event before creating the tab.",
@@ -869,7 +869,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#duplicate-tabid"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -879,7 +879,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The ID of the tab which is to be duplicated.",
@@ -890,7 +890,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -900,7 +900,7 @@
                                 "$ref": "Tab",
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Details about the duplicated tab. The $(ref:tabs.Tab) object doesn't contain <var>url</var>, <var>title</var> and <var>favIconUrl</var> if the <permission>tabs</permission> permission has not been requested.",
@@ -918,7 +918,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#query-queryinfo"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -928,7 +928,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "default": {},
@@ -938,7 +938,7 @@
                             "active": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Whether the tabs are active in their windows.",
@@ -981,7 +981,7 @@
                             "currentWindow": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Whether the tabs are in the current window.",
@@ -991,7 +991,7 @@
                             "highlighted": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Whether the tabs are highlighted. Works as an alias of active.",
@@ -1001,7 +1001,7 @@
                             "index": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The position of the tabs within their windows.",
@@ -1012,7 +1012,7 @@
                             "lastFocusedWindow": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Whether the tabs are in the last focused window.",
@@ -1034,7 +1034,7 @@
                                 "$ref": "TabStatus",
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Whether the tabs have completed loading.",
@@ -1043,7 +1043,7 @@
                             "title": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Match page titles against a pattern. The <permission>tabs</permission> permission is required to use this property.",
@@ -1083,14 +1083,14 @@
                             "url": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "60.3.0"
+                                                "version_added": "68.0"
                                             }
                                         ],
                                         "type": "string"
@@ -1098,7 +1098,7 @@
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "60.3.0"
+                                                "version_added": "68.0"
                                             }
                                         ],
                                         "items": {
@@ -1113,7 +1113,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The ID of the parent window, or $(ref:windows.WINDOW_ID_CURRENT) for the current window.",
@@ -1125,7 +1125,7 @@
                                 "$ref": "WindowType",
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The type of window the tabs are in.",
@@ -1137,7 +1137,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -1146,7 +1146,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "items": {
@@ -1167,7 +1167,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#update-tabid-updateproperties"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -1177,7 +1177,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "Defaults to the selected tab of the current window.",
@@ -1189,7 +1189,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "Properties which should to be updated.",
@@ -1198,7 +1198,7 @@
                             "active": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Set this to <var>true</var>, if the tab should become active. Does not affect whether the window is focused (see $(ref:windows.update)). Setting this to <var>false</var> has no effect.",
@@ -1211,7 +1211,7 @@
                                         "note": "This function will throw an error, if a content page is loaded into a non-content tab (its type must be either <var>content</var> or <var>mail</var>)."
                                     },
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "A URL of a page to load. If the URL points to a content page (a web page, an extension page or a registered WebExtension protocol handler page), the tab will navigate to the requested page. All other URLs will be opened externally without changing the tab.",
@@ -1224,7 +1224,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -1234,7 +1234,7 @@
                                 "$ref": "Tab",
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Details about the updated tab. The $(ref:tabs.Tab) object doesn't contain <var>url</var>, <var>title</var> and <var>favIconUrl</var> if the <permission>tabs</permission> permission has not been requested.",
@@ -1252,7 +1252,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#move-tabids-moveproperties"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -1262,14 +1262,14 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "choices": [
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "minimum": 0,
@@ -1278,7 +1278,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "items": {
@@ -1294,7 +1294,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "moveProperties",
@@ -1302,7 +1302,7 @@
                             "index": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The position to move the tab to. <var>-1</var> will place the tab at the end of the window.",
@@ -1312,7 +1312,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Defaults to the window the tab is currently in.",
@@ -1326,7 +1326,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -1335,7 +1335,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Details about the moved tabs.",
@@ -1357,7 +1357,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#reload-tabid-reloadproperties"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -1367,7 +1367,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The ID of the tab to reload; defaults to the selected tab of the current window.",
@@ -1379,7 +1379,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "reloadProperties",
@@ -1388,7 +1388,7 @@
                             "bypassCache": {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "Whether using any local cache. Default is false.",
@@ -1401,7 +1401,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -1418,7 +1418,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#remove-tabids"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -1428,14 +1428,14 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "choices": [
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "minimum": 0,
@@ -1444,7 +1444,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "60.3.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "items": {
@@ -1460,7 +1460,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "callback",
@@ -1480,7 +1480,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#tab_id_none"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "An ID which represents the absence of a tab.",
@@ -1494,7 +1494,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#tab"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "id": "Tab",
@@ -1502,7 +1502,7 @@
                     "active": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "Whether the tab is active in its window. (Does not necessarily mean the window is focused.)",
@@ -1524,7 +1524,7 @@
                     "favIconUrl": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The URL of the tab's favicon. This property is only present if the extension's manifest includes the <permission>tabs</permission> permission. It may also be an empty string if the tab is loading.",
@@ -1551,7 +1551,7 @@
                     "height": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The height of the tab in pixels.",
@@ -1561,7 +1561,7 @@
                     "highlighted": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "Whether the tab is highlighted. Works as an alias of active",
@@ -1570,7 +1570,7 @@
                     "id": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The ID of the tab. Tab IDs are unique within a session. Under some circumstances a Tab may not be assigned an ID. Tab ID can also be set to $(ref:tabs.TAB_ID_NONE) for apps and devtools windows.",
@@ -1581,7 +1581,7 @@
                     "index": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The zero-based index of the tab within its window.",
@@ -1591,7 +1591,7 @@
                     "selected": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "deprecated": "Please use $(ref:tabs.Tab.highlighted).",
@@ -1627,7 +1627,7 @@
                     "status": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "Either <var>loading</var> or <var>complete</var>.",
@@ -1637,7 +1637,7 @@
                     "title": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The title of the tab. This property is only present if the extension's manifest includes the <permission>tabs</permission> permission.",
@@ -1659,7 +1659,7 @@
                     "url": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The URL the tab is displaying. This property is only present if the extension's manifest includes the <permission>tabs</permission> permission.",
@@ -1672,7 +1672,7 @@
                     "width": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The width of the tab in pixels.",
@@ -1682,7 +1682,7 @@
                     "windowId": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The ID of the window the tab is contained within.",
@@ -1699,7 +1699,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#tabstatus"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "Whether the tabs have completed loading.",
@@ -1711,14 +1711,14 @@
                     "complete": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ]
                     },
                     "loading": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ]
                     }
@@ -1837,7 +1837,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#windowtype"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "The type of a window. Under some circumstances a Window may not be assigned a type property.",
@@ -1854,49 +1854,49 @@
                     "app": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ]
                     },
                     "devtools": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ]
                     },
                     "messageCompose": {
                         "annotations": [
                             {
-                                "version_added": "78.9.0"
+                                "version_added": "91.0"
                             }
                         ]
                     },
                     "messageDisplay": {
                         "annotations": [
                             {
-                                "version_added": "78.9.0"
+                                "version_added": "91.0"
                             }
                         ]
                     },
                     "normal": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ]
                     },
                     "panel": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ]
                     },
                     "popup": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ]
                     }
@@ -1910,7 +1910,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#updatepropertyname"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "Event names supported in $(ref:tabs.onUpdated).",
@@ -1923,21 +1923,21 @@
                     "favIconUrl": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ]
                     },
                     "status": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ]
                     },
                     "title": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ]
                     }
@@ -1951,7 +1951,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/tabs.html#updatefilter"
                     },
                     {
-                        "version_added": "60.3.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "An object describing filters to apply to $(ref:tabs.onUpdated) events.",
@@ -1960,7 +1960,7 @@
                     "properties": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "A list of property names. Events that do not match any of the names will be filtered out.",
@@ -1974,7 +1974,7 @@
                     "tabId": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "optional": true,
@@ -1983,7 +1983,7 @@
                     "urls": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "A list of URLs or URL patterns. Events that cannot match any of the URLs will be filtered out. Filtering with urls requires the <permission>tabs</permission> or <permission>activeTab</permission> permission.",
@@ -1997,7 +1997,7 @@
                     "windowId": {
                         "annotations": [
                             {
-                                "version_added": "60.3.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "optional": true,

@@ -2,10 +2,10 @@
     {
         "annotations": [
             {
-                "version_added": "102.0"
+                "version_added": "68.0"
             }
         ],
-        "applicationVersion": "153.3.1esr",
+        "applicationVersion": "153.5.1esr",
         "namespace": "manifest",
         "types": [
             {
@@ -14,7 +14,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/commands.html#keyname"
                     },
                     {
-                        "version_added": "102.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "Definition of a shortcut, for example <var>Alt+F5</var>. The string must match the shortcut format as defined by the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/commands#shortcut_values'>MDN page of the commands API</a>.",
@@ -67,7 +67,7 @@
                                 "type": "JSON"
                             },
                             {
-                                "version_added": "102.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "A <em>dictionary object</em> defining one or more commands as <em>name-value</em> pairs, the <em>name</em> being the name of the command and the <em>value</em> being a $(ref:CommandsShortcut).",
@@ -166,7 +166,7 @@
                 "text": "Thunderbird's commands API is largely the same as the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/commands'>Firefox commands API</a>."
             },
             {
-                "version_added": "102.0"
+                "version_added": "68.0"
             }
         ],
         "description": "Use the commands API to add keyboard shortcuts that trigger actions in your extension, for example opening one of the action popups or sending a command to the extension.",
@@ -177,7 +177,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/commands.html#oncommand-command-tab"
                     },
                     {
-                        "version_added": "102.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "description": "Fired when a registered command is activated using a keyboard shortcut. This is a user input event handler. For asynchronous listeners some <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/User_actions'>restrictions</a> apply.",
@@ -186,7 +186,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "102.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "name": "command",
@@ -196,7 +196,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "102.3.3"
+                                "version_added": "115.0"
                             }
                         ],
                         "description": "The details of the active tab while the command occurred.",
@@ -266,7 +266,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/commands.html#getall"
                     },
                     {
-                        "version_added": "102.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "async": "callback",
@@ -276,7 +276,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "102.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "Called to return the registered commands.",
@@ -286,7 +286,7 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "102.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "items": {
@@ -322,7 +322,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/commands.html#reset-name"
                     },
                     {
-                        "version_added": "102.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "async": true,
@@ -332,7 +332,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "102.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The name of the command.",
@@ -348,7 +348,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/commands.html#update-detail"
                     },
                     {
-                        "version_added": "102.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "async": true,
@@ -358,7 +358,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "102.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The new details for the command.",
@@ -367,7 +367,7 @@
                             "description": {
                                 "annotations": [
                                     {
-                                        "version_added": "102.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The description for the command.",
@@ -377,7 +377,7 @@
                             "name": {
                                 "annotations": [
                                     {
-                                        "version_added": "102.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "The name of the command.",
@@ -386,7 +386,7 @@
                             "shortcut": {
                                 "annotations": [
                                     {
-                                        "version_added": "102.0"
+                                        "version_added": "68.0"
                                     }
                                 ],
                                 "description": "An empty string to clear the shortcut, or a string matching the format defined by the <a href='https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/commands#shortcut_values'>MDN page of the commands API</a>  to set a new shortcut key. If the string does not match this format, the function throws an error.",
@@ -412,7 +412,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/commands.html#command"
                     },
                     {
-                        "version_added": "102.0"
+                        "version_added": "68.0"
                     }
                 ],
                 "id": "Command",
@@ -420,7 +420,7 @@
                     "description": {
                         "annotations": [
                             {
-                                "version_added": "102.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The description of the Extension Command",
@@ -430,7 +430,7 @@
                     "name": {
                         "annotations": [
                             {
-                                "version_added": "102.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The name of the Extension Command",
@@ -440,7 +440,7 @@
                     "shortcut": {
                         "annotations": [
                             {
-                                "version_added": "102.0"
+                                "version_added": "68.0"
                             }
                         ],
                         "description": "The shortcut active for this command, or blank if not active.",
