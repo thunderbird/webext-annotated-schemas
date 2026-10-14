@@ -2,7 +2,7 @@
     {
         "annotations": [
             {
-                "version_added": "78.0"
+                "version_added": "68.1.1"
             }
         ],
         "description": "A message can be displayed in either Thunderbird's main mail tab (a.k.a 3-pane tab), a tab of its own, or in a window of its own. All are referenced by <var>tabId</var> in this API. Display windows are considered to have exactly one tab, which has limited functionality compared to tabs from the main window.",
@@ -13,7 +13,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/messageDisplay.html#onmessagesdisplayed-tab-messages-displayedmessages"
                     },
                     {
-                        "version_added": "91.0"
+                        "version_added": "78.3.2"
                     }
                 ],
                 "description": "Fired when either a single message is displayed or when multiple messages are displayed, whether in a 3-pane tab, a message tab, or a message window.",
@@ -23,7 +23,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "91.0"
+                                "version_added": "78.3.2"
                             }
                         ],
                         "name": "tab"
@@ -32,7 +32,7 @@
                         "$ref": "messages.MessageList",
                         "annotations": [
                             {
-                                "version_added": "91.0"
+                                "version_added": "78.3.2"
                             }
                         ],
                         "name": "displayedMessages"
@@ -48,7 +48,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/esr-mv3/messageDisplay.html#getdisplayedmessages-tabid"
                     },
                     {
-                        "version_added": "91.0"
+                        "version_added": "78.3.2"
                     }
                 ],
                 "async": "callback",
@@ -58,7 +58,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "91.0"
+                                "version_added": "78.3.2"
                             }
                         ],
                         "minimum": 1,
