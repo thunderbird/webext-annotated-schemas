@@ -5,7 +5,7 @@
                 "version_added": "64"
             }
         ],
-        "applicationVersion": "159.0b1",
+        "applicationVersion": "159.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -184,7 +184,7 @@
                             "default_label": {
                                 "annotations": [
                                     {
-                                        "version_added": "84"
+                                        "version_added": "85"
                                     }
                                 ],
                                 "description": "The label of the browserAction button, defaults to its title. Can be set to an empty string to not display any label. If the containing toolbar is configured to display text only, the title will be used as fallback.",
@@ -336,7 +336,7 @@
                         "$ref": "tabs.Tab",
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "75"
                             }
                         ],
                         "name": "tab"
@@ -345,7 +345,7 @@
                         "$ref": "OnClickData",
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "75"
                             }
                         ],
                         "name": "info",
@@ -520,7 +520,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/browserAction.html#setlabel-details"
                     },
                     {
-                        "version_added": "84"
+                        "version_added": "85"
                     }
                 ],
                 "async": "callback",
@@ -530,7 +530,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "84"
+                                "version_added": "85"
                             }
                         ],
                         "name": "details",
@@ -538,14 +538,14 @@
                             "label": {
                                 "annotations": [
                                     {
-                                        "version_added": "84"
+                                        "version_added": "85"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "84"
+                                                "version_added": "85"
                                             }
                                         ],
                                         "type": "string"
@@ -553,7 +553,7 @@
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "84"
+                                                "version_added": "85"
                                             }
                                         ],
                                         "type": "null"
@@ -564,7 +564,7 @@
                             "tabId": {
                                 "annotations": [
                                     {
-                                        "version_added": "84"
+                                        "version_added": "85"
                                     }
                                 ],
                                 "description": "Sets the label only for the given tab.",
@@ -575,7 +575,7 @@
                             "windowId": {
                                 "annotations": [
                                     {
-                                        "version_added": "84"
+                                        "version_added": "85"
                                     }
                                 ],
                                 "description": "Will throw an error if used.",
@@ -590,7 +590,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "84"
+                                "version_added": "85"
                             }
                         ],
                         "name": "callback",
@@ -607,7 +607,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/browserAction.html#getlabel-details"
                     },
                     {
-                        "version_added": "84"
+                        "version_added": "85"
                     }
                 ],
                 "async": "callback",
@@ -617,7 +617,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "84"
+                                "version_added": "85"
                             }
                         ],
                         "name": "details",
@@ -651,7 +651,7 @@
                     {
                         "annotations": [
                             {
-                                "version_added": "84"
+                                "version_added": "85"
                             }
                         ],
                         "name": "callback",
@@ -660,14 +660,14 @@
                             {
                                 "annotations": [
                                     {
-                                        "version_added": "84"
+                                        "version_added": "85"
                                     }
                                 ],
                                 "choices": [
                                     {
                                         "annotations": [
                                             {
-                                                "version_added": "84"
+                                                "version_added": "85"
                                             }
                                         ],
                                         "type": "string"
@@ -1701,7 +1701,7 @@
                         "api_documentation_url": "https://webextension-api.thunderbird.net/en/beta-mv2/browserAction.html#onclickdata"
                     },
                     {
-                        "version_added": "74"
+                        "version_added": "75"
                     }
                 ],
                 "description": "Information sent when an action button is clicked.",
@@ -1710,7 +1710,7 @@
                     "button": {
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "75"
                             }
                         ],
                         "description": "An integer value of button by which menu item was clicked.",
@@ -1720,7 +1720,7 @@
                     "modifiers": {
                         "annotations": [
                             {
-                                "version_added": "74"
+                                "version_added": "75"
                             }
                         ],
                         "description": "An array of keyboard modifiers that were held while the menu item was clicked.",
@@ -1736,7 +1736,7 @@
                                 "Alt": {
                                     "annotations": [
                                         {
-                                            "version_added": "74"
+                                            "version_added": "75"
                                         }
                                     ]
                                 },
@@ -1746,7 +1746,7 @@
                                             "text": "Only available on macOS."
                                         },
                                         {
-                                            "version_added": "74"
+                                            "version_added": "75"
                                         }
                                     ]
                                 },
@@ -1756,7 +1756,7 @@
                                             "text": "Not available on macOS."
                                         },
                                         {
-                                            "version_added": "74"
+                                            "version_added": "75"
                                         }
                                     ]
                                 },
@@ -1766,14 +1766,14 @@
                                             "text": "Only available on macOS, but of limited use in a click event: Holding down the CTRL key while clicking with the mouse is referred to as a 'CTRL click' under macOS and is interpreted as a right mouse click. In a default profile  the <var>dom.event.treat_ctrl_click_as_right_click.disabled</var> preference is not enabled and the <var>MacCtrl</var> modifier key is not forwarded to the API."
                                         },
                                         {
-                                            "version_added": "74"
+                                            "version_added": "75"
                                         }
                                     ]
                                 },
                                 "Shift": {
                                     "annotations": [
                                         {
-                                            "version_added": "74"
+                                            "version_added": "75"
                                         }
                                     ]
                                 }
