@@ -346,11 +346,19 @@
                         "mdn_documentation_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/management/setEnabled"
                     },
                     {
-                        "bcd": true,
-                        "note": "Only extensions whose 'type' is 'theme' can be enabled and disabled."
+                        "version_added": "55"
                     },
                     {
-                        "version_added": "55"
+                        "bcd": true,
+                        "note": "Any extension can enable and disable themes."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Extensions installed via policies can enable and disable any extension."
+                    },
+                    {
+                        "bcd": true,
+                        "note": "Thunderbird 55–139: Extensions can only enable and disable themes."
                     }
                 ],
                 "async": "callback",
@@ -501,7 +509,15 @@
                     },
                     "installType": {
                         "$ref": "ExtensionInstallType",
-                        "annotations": [],
+                        "annotations": [
+                            {
+                                "version_added": "51"
+                            },
+                            {
+                                "bcd": true,
+                                "note": "Thunderbird 51–126: When the add-on is installed using an enterprise policy the value \"other\" is set, rather than the expected value of \"admin\"."
+                            }
+                        ],
                         "description": "How the extension was installed."
                     },
                     "mayDisable": {
