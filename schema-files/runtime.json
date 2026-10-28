@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "159.0b4",
+        "applicationVersion": "160.0b2",
         "namespace": "manifest",
         "types": [
             {
@@ -1289,6 +1289,11 @@
                         "description": "The worldId of the USER_SCRIPT world that sent the message. Only present on onUserScriptMessage and onUserScriptConnect (in port.sender) events.",
                         "optional": true,
                         "type": "string"
+                    },
+                    "windowId": {
+                        "description": "The window ID of the document that opened the connection.",
+                        "optional": true,
+                        "type": "integer"
                     }
                 },
                 "type": "object"
@@ -1333,8 +1338,8 @@
                 ],
                 "description": "The machine's processor architecture.",
                 "enum": [
-                    "aarch64",
                     "arm",
+                    "arm64",
                     "ppc64",
                     "riscv64",
                     "s390x",
