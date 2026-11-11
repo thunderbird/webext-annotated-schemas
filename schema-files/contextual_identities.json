@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "161.0a1",
+        "applicationVersion": "162.0a1",
         "namespace": "manifest",
         "types": [
             {
@@ -152,7 +152,7 @@
                         "version_added": "53"
                     }
                 ],
-                "async": true,
+                "async": "callback",
                 "description": "Retrieves information about a single contextual identity.",
                 "name": "get",
                 "parameters": [
@@ -160,6 +160,17 @@
                         "description": "The ID of the contextual identity cookie store. ",
                         "name": "cookieStoreId",
                         "type": "string"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "$ref": "ContextualIdentity",
+                                "description": "The requested contextual identity.",
+                                "name": "contextualIdentity"
+                            }
+                        ],
+                        "type": "function"
                     }
                 ],
                 "type": "function"
@@ -177,7 +188,7 @@
                         "version_added": "53"
                     }
                 ],
-                "async": true,
+                "async": "callback",
                 "description": "Retrieves all contextual identities",
                 "name": "query",
                 "parameters": [
@@ -192,6 +203,20 @@
                             }
                         },
                         "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "description": "The contextual identities that match the filter.",
+                                "items": {
+                                    "$ref": "ContextualIdentity"
+                                },
+                                "name": "contextualIdentities",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
                     }
                 ],
                 "type": "function"
@@ -287,7 +312,7 @@
                         "version_added": "53"
                     }
                 ],
-                "async": true,
+                "async": "callback",
                 "description": "Creates a contextual identity with the given data.",
                 "name": "create",
                 "parameters": [
@@ -312,6 +337,17 @@
                             }
                         },
                         "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "$ref": "ContextualIdentity",
+                                "description": "The created contextual identity.",
+                                "name": "contextualIdentity"
+                            }
+                        ],
+                        "type": "function"
                     }
                 ],
                 "type": "function"
@@ -333,7 +369,7 @@
                         "version_added": "53"
                     }
                 ],
-                "async": true,
+                "async": "callback",
                 "description": "Updates a contextual identity with the given data.",
                 "name": "update",
                 "parameters": [
@@ -363,6 +399,17 @@
                             }
                         },
                         "type": "object"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "$ref": "ContextualIdentity",
+                                "description": "The updated contextual identity.",
+                                "name": "contextualIdentity"
+                            }
+                        ],
+                        "type": "function"
                     }
                 ],
                 "type": "function"
@@ -420,7 +467,7 @@
                         "version_added": "53"
                     }
                 ],
-                "async": true,
+                "async": "callback",
                 "description": "Deletes a contextual identity by its cookie Store ID.",
                 "name": "remove",
                 "parameters": [
@@ -428,6 +475,17 @@
                         "description": "The ID of the contextual identity cookie store. ",
                         "name": "cookieStoreId",
                         "type": "string"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "$ref": "ContextualIdentity",
+                                "description": "The removed contextual identity.",
+                                "name": "contextualIdentity"
+                            }
+                        ],
+                        "type": "function"
                     }
                 ],
                 "type": "function"

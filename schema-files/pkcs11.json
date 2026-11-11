@@ -1,6 +1,6 @@
 [
     {
-        "applicationVersion": "161.0a1",
+        "applicationVersion": "162.0a1",
         "namespace": "manifest",
         "types": [
             {
@@ -45,13 +45,24 @@
                         "version_added": "58"
                     }
                 ],
-                "async": true,
+                "async": "callback",
                 "description": "checks whether a PKCS#11 module, given by name, is installed",
                 "name": "isModuleInstalled",
                 "parameters": [
                     {
                         "name": "name",
                         "type": "string"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "description": "Whether the module is installed.",
+                                "name": "result",
+                                "type": "boolean"
+                            }
+                        ],
+                        "type": "function"
                     }
                 ],
                 "type": "function"
@@ -110,13 +121,64 @@
                         "version_added": "58"
                     }
                 ],
-                "async": true,
+                "async": "callback",
                 "description": "Enumerate a module's slots, each with their name and whether a token is present",
                 "name": "getModuleSlots",
                 "parameters": [
                     {
                         "name": "name",
                         "type": "string"
+                    },
+                    {
+                        "name": "callback",
+                        "parameters": [
+                            {
+                                "description": "The slots of the module.",
+                                "items": {
+                                    "properties": {
+                                        "name": {
+                                            "description": "The name of the slot.",
+                                            "type": "string"
+                                        },
+                                        "token": {
+                                            "choices": [
+                                                {
+                                                    "properties": {
+                                                        "FWVersion": {
+                                                            "type": "string"
+                                                        },
+                                                        "HWVersion": {
+                                                            "type": "string"
+                                                        },
+                                                        "isLoggedIn": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "manufacturer": {
+                                                            "type": "string"
+                                                        },
+                                                        "name": {
+                                                            "type": "string"
+                                                        },
+                                                        "serial": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                {
+                                                    "type": "null"
+                                                }
+                                            ],
+                                            "description": "The token in the slot, or null if the slot is disabled or empty."
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "name": "slots",
+                                "type": "array"
+                            }
+                        ],
+                        "type": "function"
                     }
                 ],
                 "type": "function"
